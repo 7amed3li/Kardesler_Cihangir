@@ -30,8 +30,8 @@ export default function SmartFilters({ activeFilter, setActiveFilter }) {
             onClick={() => setActiveFilter(isActive ? null : f.id)}
             className={`flex items-center gap-2 px-4 py-1.5 rounded text-xs font-medium tracking-wider uppercase transition-all duration-300 border ${
               isActive 
-                ? "bg-white text-black border-white" 
-                : "bg-transparent border-white/20 text-gray-400 hover:border-white/50 hover:text-white"
+                ? "bg-teal text-cream border-teal" 
+                : "bg-transparent border-teal-dim/50 text-cream-dim hover:border-teal hover:text-cream"
             }`}
           >
             <span>{f.label}</span>

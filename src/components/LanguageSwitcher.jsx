@@ -34,19 +34,19 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center gap-1 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-all border border-white/10 h-8 sm:h-9 w-8 sm:w-9 justify-center"
+        className="flex items-center gap-1 p-2 rounded-full bg-teal-dim/20 hover:bg-teal-dim/40 transition-all border border-teal-dim/40 h-8 sm:h-9 w-8 sm:w-9 justify-center"
       >
-        <Globe size={16} className="text-[#D4AF37]" />
+        <Globe size={16} className="text-gold" />
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 w-36 bg-[#1a1a1a] border border-[#333] rounded-xl shadow-2xl overflow-hidden z-50 start-0 sm:start-auto sm:end-0">
+        <div className="absolute mt-2 w-36 bg-ink-2 border border-gold/20 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] overflow-hidden z-50 start-0 sm:start-auto sm:end-0">
           {Object.keys(translations).map((code) => (
             <button
               key={code}
               onClick={() => selectLang(code)}
-              className={`w-full px-4 py-3 text-sm hover:bg-[#333] transition-colors text-start ${
-                lang === code ? "text-[#D4AF37] font-bold bg-[#2a2a2a]" : "text-gray-300"
+              className={`w-full px-4 py-3 text-sm hover:bg-ink transition-colors text-start ${
+                lang === code ? "text-gold font-bold bg-ink" : "text-cream-dim"
               }`}
             >
               {translations[code].language}

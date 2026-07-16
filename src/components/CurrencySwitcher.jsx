@@ -32,14 +32,14 @@ export default function CurrencySwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 bg-white/5 hover:bg-white/10 border border-white/10 px-2.5 py-1.5 rounded-full text-white text-xs sm:text-sm font-medium transition-all h-8 sm:h-9"
+        className="flex items-center gap-1 bg-teal-dim/20 hover:bg-teal-dim/40 border border-teal-dim/40 px-2.5 py-1.5 rounded-full text-cream text-xs sm:text-sm font-medium transition-all h-8 sm:h-9"
       >
-        <Coins size={14} className="text-[#D4AF37]" />
+        <Coins size={14} className="text-gold" />
         <span>{currency}</span>
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 w-28 bg-[#1a1a1a] border border-[#333] rounded-xl overflow-hidden shadow-2xl z-50 end-0">
+        <div className="absolute mt-2 w-28 bg-ink-2 border border-gold/20 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.5)] z-50 end-0">
           {currencies.map((c) => (
             <button
               key={c.code}
@@ -49,8 +49,8 @@ export default function CurrencySwitcher() {
               }}
               className={`w-full text-start px-4 py-2.5 text-sm font-medium transition-colors ${
                 currency === c.code
-                  ? "bg-[#D4AF37]/20 text-[#D4AF37]"
-                  : "text-gray-300 hover:bg-[#333]"
+                  ? "bg-ink text-gold font-bold"
+                  : "text-cream-dim hover:bg-ink"
               }`}
             >
               {c.symbol} {c.code}
