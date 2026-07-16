@@ -7,18 +7,16 @@ const AppContext = createContext();
 
 const EXCHANGE_RATES = {
   TRY: { symbol: "₺", rate: 1 },
-  USD: { symbol: "$", rate: 0.031 }, // 1 USD = ~32 TRY
-  EUR: { symbol: "€", rate: 0.029 }, // 1 EUR = ~34 TRY
-  GBP: { symbol: "£", rate: 0.024 }, // 1 GBP = ~41 TRY
+  USD: { symbol: "$", rate: 0.031 },
+  EUR: { symbol: "€", rate: 0.029 },
+  GBP: { symbol: "£", rate: 0.024 },
 };
 
 export function AppProvider({ children }) {
   const [lang, setLang] = useState("tr");
   const [currency, setCurrency] = useState("TRY");
-  const [cart, setCart] = useState([]);
   const [table, setTable] = useState(null);
 
-  // Load saved preferences on mount
   useEffect(() => {
     const savedLang = localStorage.getItem("app_lang");
     if (savedLang && translations[savedLang]) {
@@ -30,7 +28,6 @@ export function AppProvider({ children }) {
       setCurrency(savedCurrency);
     }
     
-    // Check URL for table number
     const params = new URLSearchParams(window.location.search);
     const tableParam = params.get("table");
     if (tableParam) {
@@ -59,34 +56,6 @@ export function AppProvider({ children }) {
 
   const getCurrencySymbol = () => EXCHANGE_RATES[currency].symbol;
 
-  const addToCart = (item) => {
-    setCart((prev) => {
-      const existing = prev.find((i) => i.id === item.id);
-      if (existing) {
-        return prev.map((i) =>
-          i.id === item.id ? { ...i, qty: i.qty + 1 } : i
-        );
-      }
-      return [...prev, { ...item, qty: 1 }];
-    });
-  };
-
-  const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((i) => i.id !== id));
-  };
-
-  const updateQty = (id, delta) => {
-    setCart((prev) =>
-      prev.map((i) => {
-        if (i.id === id) {
-          const newQty = i.qty + delta;
-          return newQty > 0 ? { ...i, qty: newQty } : i;
-        }
-        return i;
-      })
-    );
-  };
-
   const t = translations[lang] || translations["en"];
   const isRtl = lang === "ar";
 
@@ -101,10 +70,6 @@ export function AppProvider({ children }) {
         getCurrencySymbol,
         t,
         isRtl,
-        cart,
-        addToCart,
-        removeFromCart,
-        updateQty,
         table,
       }}
     >
@@ -116,4 +81,3 @@ export function AppProvider({ children }) {
 }
 
 export const useAppContext = () => useContext(AppContext);
-

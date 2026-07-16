@@ -5,7 +5,6 @@ import { menuData } from "@/data/menuData";
 import MenuSelector from "@/components/MenuSelector";
 import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
-import Cart from "@/components/Cart";
 import { useAppContext } from "@/context/AppContext";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,7 +17,7 @@ export default function Home() {
   const trendingItems = menuData.flatMap(cat => cat.items).filter(item => item.trending);
 
   return (
-    <div className="pb-32 bg-[#0a0a0a] min-h-screen text-white font-sans selection:bg-[#D4AF37] selection:text-black">
+    <div className="pb-8 bg-[#0a0a0a] min-h-screen text-white font-sans selection:bg-[#D4AF37] selection:text-black">
       {/* Premium Minimal Hero Section */}
       <section className="w-full pt-16 pb-12 flex flex-col items-center justify-center text-center px-4">
         <motion.div 
@@ -121,8 +120,7 @@ export default function Home() {
         </AnimatePresence>
       </section>
 
-      {/* Shopping Cart */}
-      <Cart />
+
     </div>
   );
 }

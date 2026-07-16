@@ -2,12 +2,11 @@
 
 import React from "react";
 import Tilt from "react-parallax-tilt";
-import { Plus } from "lucide-react";
 import { useAppContext } from "../context/AppContext";
 import { motion } from "framer-motion";
 
 export default function FoodCard({ item, index, isVertical = false }) {
-  const { lang, addToCart, t, convertPrice, getCurrencySymbol } = useAppContext();
+  const { lang, t, convertPrice, getCurrencySymbol } = useAppContext();
 
   const name = item?.name?.[lang] || item?.name?.en || item?.name?.tr || "Yeni Ürün";
   const description = item?.description?.[lang] || item?.description?.en || item?.description?.tr || "";
@@ -37,12 +36,12 @@ export default function FoodCard({ item, index, isVertical = false }) {
           {/* Subtle image scaling on hover */}
           <div className="absolute inset-0 bg-[#1a1a1a] group-hover:scale-105 transition-transform duration-1000"></div>
 
-          {/* Price Tag (Clean, minimalist) */}
+          {/* Price Tag */}
           <div className="absolute top-3 left-3 z-20 flex items-center justify-center px-3 py-1 rounded bg-black/90 backdrop-blur-md text-white border border-white/10 shadow-lg">
             <span className="font-medium text-sm tracking-wide">{displayPrice} {symbol}</span>
           </div>
 
-          {/* Simple Text Badges (No Neon) */}
+          {/* Text Badges */}
           <div className="absolute bottom-3 left-3 z-20 flex flex-wrap gap-1.5">
             {item.tags?.includes("signature") && (
               <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-[#D4AF37] border border-[#D4AF37]/30 bg-[#D4AF37]/10 backdrop-blur-md rounded-sm">
@@ -63,27 +62,15 @@ export default function FoodCard({ item, index, isVertical = false }) {
         </div>
 
         {/* Content Section */}
-        <div className={`flex flex-col flex-grow ${isVertical ? "p-5" : "p-3 md:p-5"} justify-between relative z-10 w-full min-w-0 bg-[#111111]`}>
-          <div className="min-w-0 mb-4">
-            <h3 className="font-normal text-lg md:text-xl text-white leading-tight mb-1 truncate md:whitespace-normal group-hover:text-[#D4AF37] transition-colors">
-              {name}
-            </h3>
-            {description && (
-              <p className="text-xs md:text-sm text-gray-400 mt-2 line-clamp-2 leading-relaxed font-light">
-                {description}
-              </p>
-            )}
-          </div>
-
-          <div className="flex justify-end mt-auto">
-            <button
-              onClick={() => addToCart(item)}
-              className="flex items-center justify-center gap-2 px-4 py-2 rounded border border-white/10 hover:border-white/30 text-white hover:text-white transition-all text-xs uppercase tracking-widest font-medium w-full sm:w-auto bg-transparent hover:bg-white/5 active:scale-95 duration-200"
-            >
-              <Plus size={14} className="text-gray-400" />
-              <span>{t.addToCart}</span>
-            </button>
-          </div>
+        <div className={`flex flex-col flex-grow ${isVertical ? "p-5" : "p-3 md:p-5"} justify-center relative z-10 w-full min-w-0 bg-[#111111]`}>
+          <h3 className="font-normal text-lg md:text-xl text-white leading-tight mb-1 truncate md:whitespace-normal group-hover:text-[#D4AF37] transition-colors">
+            {name}
+          </h3>
+          {description && (
+            <p className="text-xs md:text-sm text-gray-400 mt-2 line-clamp-2 leading-relaxed font-light">
+              {description}
+            </p>
+          )}
         </div>
       </motion.div>
     </Tilt>
