@@ -81,7 +81,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-[#0a0a0a] text-white pb-16">
       {/* Hero Header */}
       <section className="pt-12 pb-10 px-4 text-center">
-        <img src="/logo.png" alt="Kardeşler Cihangir Logo" className="w-20 h-20 mx-auto mb-6 object-contain" />
+        <img src="/logo.webp" alt="Kardeşler Cihangir Logo" className="w-20 h-20 mx-auto mb-6 object-contain" />
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">{t.about}</h1>
         <p className="text-[#D4AF37] text-sm tracking-widest uppercase mb-2">Kebap · Pide · Lahmacun</p>
         <p className="text-gray-400 text-sm max-w-md mx-auto leading-relaxed">{content.address}</p>
