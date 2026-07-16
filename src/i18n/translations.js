@@ -34,6 +34,15 @@ export const translations = {
     description: "Detaylar",
     exploreMenu: "Menüyü Keşfet",
     categories: "Kategori",
+    reviewsTitle: "Misafirlerimiz Ne Diyor?",
+    reviewsSubtitle: "Güvenilir platformlardan gerçek değerlendirmeler. Doğrulamak için tıklayın.",
+    reviewsCountText: "değerlendirme",
+    review1: "\"Hayatımda yediğim en iyi Adana kebaplarından biriydi. Mezeler de harikaydı.\"",
+    review2: "\"Enfes lezzetler, güler yüzlü personel ve şahane Cihangir atmosferi.\"",
+    review3: "\"Gerçek esnaf lokantası sıcaklığı ve yılların değişmeyen lezzeti.\"",
+    review4: "\"İnanılmaz otantik yemekler. Porsiyonlar çok doyurucu ve fiyatlar bu bölge için çok uygun.\"",
+    review5: "\"Teslimat çok hızlıydı ve yemek sıcacık geldi. Beyti Kebap tek kelimeyle mükemmeldi.\"",
+    review6: "\"Caminin hemen yanında sıcacık bir mekan. Serpme kahvaltı için her hafta sonu buradayız.\""
   },
   en: {
     language: "English",
@@ -70,6 +79,15 @@ export const translations = {
     description: "Details",
     exploreMenu: "Explore Menu",
     categories: "Categories",
+    reviewsTitle: "What Our Guests Say",
+    reviewsSubtitle: "Real ratings from trusted platforms. Click to verify.",
+    reviewsCountText: "reviews",
+    review1: "\"One of the best Adana kebabs I've ever had. The mezes were also amazing.\"",
+    review2: "\"Delicious food, friendly staff, and the wonderful atmosphere of Cihangir.\"",
+    review3: "\"The warmth of a real traditional restaurant and a taste that hasn't changed for years.\"",
+    review4: "\"Incredible authentic food. The portions are very generous and prices are reasonable for this area.\"",
+    review5: "\"Delivery was fast and the food arrived piping hot. The Beyti Kebab is simply perfect.\"",
+    review6: "\"A cozy place right next to the mosque. We come here every weekend for the mixed breakfast.\""
   },
   ar: {
     language: "العربية",
@@ -106,6 +124,15 @@ export const translations = {
     description: "التفاصيل",
     exploreMenu: "استكشف القائمة",
     categories: "أقسام",
+    reviewsTitle: "ماذا يقول ضيوفنا؟",
+    reviewsSubtitle: "تقييمات حقيقية من منصات موثوقة. اضغط للتحقق.",
+    reviewsCountText: "تقييم",
+    review1: "\"من أفضل كباب أضنة التي تذوقتها في حياتي. المقبلات أيضاً كانت رائعة.\"",
+    review2: "\"نكهات لذيذة، طاقم ودود، وأجواء رائعة في جيهانغير.\"",
+    review3: "\"دفء المطعم التقليدي الحقيقي وطعم لم يتغير منذ سنوات.\"",
+    review4: "\"طعام أصيل لا يصدق. الكميات كبيرة والأسعار مناسبة جداً لهذه المنطقة.\"",
+    review5: "\"التوصيل كان سريعاً جداً والطعام وصل ساخناً. كباب بيتي كان مثالياً بكل معنى الكلمة.\"",
+    review6: "\"مكان دافئ بجوار المسجد تماماً. نأتي إلى هنا كل نهاية أسبوع لتناول فطور السيربمه.\""
   },
   fr: {
     language: "Français",
@@ -142,5 +169,14 @@ export const translations = {
     description: "Détails",
     exploreMenu: "Explorer le Menu",
     categories: "Catégories",
+    reviewsTitle: "Ce Que Disent Nos Invités",
+    reviewsSubtitle: "Évaluations réelles sur des plateformes de confiance. Cliquez pour vérifier.",
+    reviewsCountText: "avis",
+    review1: "\"L'un des meilleurs kebabs Adana que j'aie jamais mangés. Les mezzés étaient aussi incroyables.\"",
+    review2: "\"Une nourriture délicieuse, un personnel sympathique et l'atmosphère merveilleuse de Cihangir.\"",
+    review3: "\"La chaleur d'un vrai restaurant traditionnel et un goût qui n'a pas changé depuis des années.\"",
+    review4: "\"Une nourriture authentique incroyable. Les portions sont généreuses et les prix raisonnables pour le quartier.\"",
+    review5: "\"Livraison très rapide et nourriture arrivée chaude. Le Beyti Kebab est tout simplement parfait.\"",
+    review6: "\"Un endroit chaleureux juste à côté de la mosquée. Nous venons ici chaque week-end pour le petit-déjeuner.\""
   }
 };

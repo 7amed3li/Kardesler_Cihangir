@@ -5,6 +5,8 @@ import { menuData } from "@/data/menuData";
 import MenuSelector from "@/components/MenuSelector";
 import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
+import ReviewSection from "@/components/ReviewSection";
+import Footer from "@/components/Footer";
 import { useAppContext } from "@/context/AppContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ChevronDown, Flame, UtensilsCrossed } from "lucide-react";
@@ -252,6 +254,16 @@ export default function Home() {
           })}
         </AnimatePresence>
       </section>
+
+      {/* ═══════════════════════════════════════════
+          REAL REVIEWS SECTION
+          ═══════════════════════════════════════════ */}
+      <ReviewSection />
+
+      {/* ═══════════════════════════════════════════
+          FOOTER
+          ═══════════════════════════════════════════ */}
+      <Footer />
 
     </div>
   );
