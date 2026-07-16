@@ -15,9 +15,7 @@ export default function Header() {
       <div className="max-w-5xl mx-auto px-3 sm:px-4 h-14 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-[#D4AF37] to-[#8a6b1c] flex items-center justify-center">
-            <span className="font-bold text-black text-base sm:text-xl">K</span>
-          </div>
+          <img src="/logo.png" alt="Kardeşler Cihangir Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
           <div className="flex flex-col">
             <span className="text-sm sm:text-base font-bold text-white leading-tight">
               Kardeşler
