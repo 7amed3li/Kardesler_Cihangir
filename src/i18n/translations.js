@@ -23,6 +23,7 @@ export const translations = {
     spicy: "Acılı",
     trending: "En Çok Tercih Edilenler",
     calories: "kcal",
+    close: "Kapat",
   },
   en: {
     language: "English",
@@ -48,6 +49,7 @@ export const translations = {
     spicy: "Spicy",
     trending: "Trending Picks",
     calories: "kcal",
+    close: "Close",
   },
   ar: {
     language: "العربية",
@@ -73,6 +75,7 @@ export const translations = {
     spicy: "حار",
     trending: "أكثر ما يعشقه ضيوفنا",
     calories: "سعرة",
+    close: "إغلاق",
   },
   fr: {
     language: "Français",
@@ -98,5 +101,6 @@ export const translations = {
     spicy: "Épicé",
     trending: "Choix Populaires",
     calories: "kcal",
+    close: "Fermer",
   }
 };

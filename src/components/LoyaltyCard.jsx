@@ -10,9 +10,7 @@ export default function LoyaltyCard() {
   const [visits, setVisits] = useState(0);
 
   useEffect(() => {
-    // Simulate fetching visits from localStorage (which acts as our user session)
     const storedVisits = parseInt(localStorage.getItem("loyalty_visits") || "0", 10);
-    // Auto-increment for demo purposes if it's a new table session
     if (!sessionStorage.getItem("visited_this_session")) {
       const newVisits = storedVisits < 10 ? storedVisits + 1 : 10;
       localStorage.setItem("loyalty_visits", newVisits.toString());
@@ -22,6 +20,8 @@ export default function LoyaltyCard() {
       setVisits(storedVisits);
     }
   }, []);
+
+  const closeModal = () => setIsOpen(false);
 
   return (
     <>
@@ -36,10 +36,20 @@ export default function LoyaltyCard() {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-[#111] border border-[#D4AF37]/30 rounded-3xl p-8 max-w-sm w-full relative shadow-2xl shadow-[#D4AF37]/10">
-            <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4 text-gray-400 hover:text-white">
-              <X size={20} />
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-[#111] border border-[#D4AF37]/30 rounded-3xl p-8 max-w-sm w-full relative shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button - Top Right */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 end-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all z-10"
+            >
+              <X size={18} />
             </button>
 
             <div className="text-center mb-6">
@@ -48,14 +58,14 @@ export default function LoyaltyCard() {
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">{t.loyalty}</h2>
               <p className="text-sm text-gray-400">
-                {visits >= 10 
-                  ? "Congratulations! You earned a free Künefe!" 
+                {visits >= 10
+                  ? "Congratulations! You earned a free Künefe!"
                   : `You are ${10 - visits} visits away from a free Künefe.`}
               </p>
             </div>
 
             {/* Punch Card Grid */}
-            <div className="grid grid-cols-5 gap-3 mb-8">
+            <div className="grid grid-cols-5 gap-3 mb-6">
               {Array.from({ length: 10 }).map((_, i) => (
                 <div
                   key={i}
@@ -71,10 +81,18 @@ export default function LoyaltyCard() {
             </div>
 
             {visits >= 10 && (
-              <button className="w-full bg-gradient-to-r from-[#D4AF37] to-[#8a6b1c] text-black font-bold py-3 rounded-xl shadow-lg shadow-[#D4AF37]/20 animate-pulse">
+              <button className="w-full bg-gradient-to-r from-[#D4AF37] to-[#8a6b1c] text-black font-bold py-3 rounded-xl shadow-lg mb-3">
                 Claim Reward
               </button>
             )}
+
+            {/* Big Close Button at Bottom */}
+            <button
+              onClick={closeModal}
+              className="w-full py-3 rounded-xl border border-white/20 text-gray-300 hover:bg-white/10 hover:text-white transition-all text-sm font-medium tracking-wide"
+            >
+              {t.close || "Close"}
+            </button>
           </div>
         </div>
       )}
