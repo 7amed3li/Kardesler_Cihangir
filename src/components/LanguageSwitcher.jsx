@@ -34,12 +34,9 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center gap-2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all border border-white/10 backdrop-blur-md"
+        className="flex items-center gap-1 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-all border border-white/10 h-8 sm:h-9 w-8 sm:w-9 justify-center"
       >
-        <Globe size={20} className="text-[#D4AF37]" />
-        <span className="text-sm font-medium hidden sm:block uppercase">
-          {lang}
-        </span>
+        <Globe size={16} className="text-[#D4AF37]" />
       </button>
 
       {isOpen && (

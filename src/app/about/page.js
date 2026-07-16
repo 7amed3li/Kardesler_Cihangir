@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MapPin, Phone, Clock, Globe, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Clock, MessageCircle, Globe } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
 
 const aboutContent = {
@@ -55,7 +55,6 @@ const aboutContent = {
   },
 };
 
-// Inline SVG icons for social media (not available in lucide-react)
 function InstagramIcon({ size = 24 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -79,89 +78,92 @@ export default function AboutPage() {
   const content = aboutContent[lang] || aboutContent.en;
 
   return (
-    <div className="pb-24 px-4 py-8 max-w-4xl mx-auto">
-      {/* Page Title */}
-      <div className="text-center mb-12">
-        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-tr from-[#D4AF37] to-[#8a6b1c] flex items-center justify-center shadow-xl shadow-[#D4AF37]/20">
+    <div className="min-h-screen bg-[#0a0a0a] text-white pb-16">
+      {/* Hero Header */}
+      <section className="pt-12 pb-10 px-4 text-center">
+        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-tr from-[#D4AF37] to-[#8a6b1c] flex items-center justify-center shadow-xl">
           <span className="font-bold text-black text-3xl">K</span>
         </div>
-        <h1 className="text-4xl font-bold text-white mb-3">{t.about}</h1>
-        <p className="text-gray-400 text-lg">
-          Kebap · Pide · Lahmacun
-        </p>
-        <p className="text-[#D4AF37] text-sm mt-1">{content.address}</p>
-      </div>
+        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">{t.about}</h1>
+        <p className="text-[#D4AF37] text-sm tracking-widest uppercase mb-2">Kebap · Pide · Lahmacun</p>
+        <p className="text-gray-400 text-sm max-w-md mx-auto leading-relaxed">{content.address}</p>
+      </section>
 
-      <div className="grid md:grid-cols-2 gap-8 mb-12">
-        {/* Storytelling */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md hover:border-[#D4AF37]/30 transition-colors">
-          <h2 className="text-2xl font-bold text-[#D4AF37] mb-4">{content.storyTitle}</h2>
-          <p className="text-gray-300 leading-relaxed mb-4">{content.storyP1}</p>
-          <p className="text-gray-300 leading-relaxed">{content.storyP2}</p>
-        </div>
+      <div className="max-w-3xl mx-auto px-4 space-y-6">
+        {/* Our Story */}
+        <section className="bg-[#111] border border-white/10 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#D4AF37] mb-5">{content.storyTitle}</h2>
+          <p className="text-white/80 leading-loose mb-4 text-sm sm:text-base">{content.storyP1}</p>
+          <p className="text-white/80 leading-loose text-sm sm:text-base">{content.storyP2}</p>
+        </section>
 
         {/* Contact Info */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md flex flex-col gap-6 hover:border-[#D4AF37]/30 transition-colors">
-          <h2 className="text-2xl font-bold text-[#D4AF37] mb-2">{content.contactTitle}</h2>
+        <section className="bg-[#111] border border-white/10 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#D4AF37] mb-6">{content.contactTitle}</h2>
           
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center shrink-0">
-              <MapPin size={20} />
+          <div className="space-y-5">
+            {/* Address */}
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0">
+                <MapPin size={18} />
+              </div>
+              <div>
+                <h3 className="font-medium text-white text-sm mb-1">Adres / Address</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{content.address}</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-bold text-white">Adres / Address</h3>
-              <p className="text-gray-400 text-sm">{content.address}</p>
+
+            {/* Phone */}
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0">
+                <Phone size={18} />
+              </div>
+              <div>
+                <h3 className="font-medium text-white text-sm mb-1">{content.orderLine}</h3>
+                <a href="tel:+905348662715" className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors">+90 534 866 27 15</a>
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0">
+                <Clock size={18} />
+              </div>
+              <div>
+                <h3 className="font-medium text-white text-sm mb-1">{content.workHoursLabel}</h3>
+                <p className="text-white/60 text-sm">{content.workHours}</p>
+              </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center shrink-0">
-              <Phone size={20} />
-            </div>
-            <div>
-              <h3 className="font-bold text-white">{content.orderLine}</h3>
-              <a href="tel:+905348662715" className="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors">+90 534 866 27 15</a>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center shrink-0">
-              <Clock size={20} />
-            </div>
-            <div>
-              <h3 className="font-bold text-white">{content.workHoursLabel}</h3>
-              <p className="text-gray-400 text-sm">{content.workHours}</p>
-            </div>
-          </div>
-
-          {/* WhatsApp Quick Order */}
+          {/* WhatsApp Button */}
           <a
             href="https://wa.me/905348662715"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 mt-2 py-3 rounded-xl bg-green-600/20 border border-green-500/30 hover:bg-green-600/30 transition-colors"
+            className="flex items-center justify-center gap-2 mt-6 py-3 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 hover:bg-[#25D366]/25 transition-colors"
           >
-            <MessageCircle size={20} className="text-green-400" />
-            <span className="text-green-400 font-medium text-sm">{content.whatsapp}</span>
+            <MessageCircle size={18} className="text-[#25D366]" />
+            <span className="text-[#25D366] font-medium text-sm">{content.whatsapp}</span>
           </a>
-        </div>
-      </div>
+        </section>
 
-      {/* Social */}
-      <div className="text-center">
-        <h3 className="text-xl font-bold text-white mb-6">{content.followUs}</h3>
-        <div className="flex justify-center gap-4 mb-8">
-          <a href="#" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#D4AF37]/20 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all text-gray-400">
-            <InstagramIcon size={24} />
-          </a>
-          <a href="#" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#D4AF37]/20 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all text-gray-400">
-            <FacebookIcon size={24} />
-          </a>
-          <a href="https://kardeslercihangir.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#D4AF37]/20 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all text-gray-400">
-            <Globe size={24} />
-          </a>
-        </div>
-        <p className="text-gray-500 text-xs">© 2026 Kardeşler Cihangir | Ava Istanbul</p>
+        {/* Social Media */}
+        <section className="text-center py-8">
+          <h3 className="text-lg font-medium text-white mb-6">{content.followUs}</h3>
+          <div className="flex justify-center gap-4 mb-8">
+            <a href="#" className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-gray-400">
+              <InstagramIcon size={22} />
+            </a>
+            <a href="#" className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-gray-400">
+              <FacebookIcon size={22} />
+            </a>
+            <a href="https://kardeslercihangir.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-gray-400">
+              <Globe size={22} />
+            </a>
+          </div>
+          <p className="text-gray-600 text-xs">© 2026 Kardeşler Cihangir</p>
+        </section>
       </div>
     </div>
   );
