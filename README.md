@@ -1,6 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🍽️ Kardeşler Cihangir | Digital Menu
 
-## Getting Started
+Welcome to the **Kardeşler Cihangir** Digital Menu repository. This project is a modern, premium, and interactive digital menu built for a high-end authentic Turkish restaurant located in the heart of Cihangir.
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-f24e1e?style=for-the-badge&logo=framer)
+
+## ✨ Key Features
+
+- **Premium Minimalist Design:** A sleek, dark-themed UI that exudes elegance, focusing on high-quality typography and subtle interactions (no overpowering glows or neon colors).
+- **Multi-Language Support (i18n):** Instantly switch between Turkish, English, Arabic, and French without reloading the page.
+- **Live Currency Converter:** Real-time price conversion for tourists (TRY, USD, EUR, GBP) via a sleek top-bar toggle.
+- **Smart Dietary Filters:** Filter menu items instantly by *Chef's Recommendations*, *Vegetarian*, and *Spicy*.
+- **Interactive 3D Cards:** Subtle Parallax Tilt effects on food cards for an engaging but professional user experience.
+- **Smart Loyalty & Review System:** Built-in modal components to capture user feedback and track loyalty points.
+
+## 🚀 Getting Started
 
 First, run the development server:
 
@@ -16,21 +32,18 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/src/app` - Next.js App Router (Pages & Layouts)
+- `/src/components` - Reusable UI components (`FoodCard`, `Header`, `SmartFilters`, etc.)
+- `/src/context` - Global state management (`AppContext.jsx` for language, currency, cart state)
+- `/src/data` - Static mock data (`menuData.js`)
+- `/src/i18n` - Translation dictionaries (`translations.js`)
 
-## Learn More
+## 🎨 Design Philosophy
 
-To learn more about Next.js, take a look at the following resources:
+This application was designed to move away from typical "tech-heavy" looks. It embraces **Minimalist Elegance**—using deep blacks, clean white text, subtle gold accents (`#D4AF37`), and thoughtful negative space to simulate the experience of a 5-star fine dining establishment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is proprietary and created specifically for **Kardeşler Cihangir**. All rights reserved.
