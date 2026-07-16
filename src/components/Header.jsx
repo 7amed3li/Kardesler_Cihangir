@@ -20,7 +20,7 @@ export default function Header() {
             <span className="text-sm sm:text-base font-bold text-white leading-tight">
               Kardeşler
             </span>
-            <span className="text-[9px] text-gray-500 uppercase tracking-widest hidden sm:block">
+            <span className="text-[9px] text-gray-500 uppercase tracking-widest">
               Kebap & Pide
             </span>
           </div>
