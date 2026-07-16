@@ -37,8 +37,15 @@ export default function FoodCard({ item, index, isVertical = false }) {
           <div className="absolute inset-0 bg-[#1a1a1a] group-hover:scale-105 transition-transform duration-1000"></div>
 
           {/* Price Tag */}
-          <div className="absolute top-3 left-3 z-20 flex items-center justify-center px-3 py-1 rounded bg-black/90 backdrop-blur-md text-white border border-white/10 shadow-lg">
-            <span className="font-medium text-sm tracking-wide">{displayPrice} {symbol}</span>
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-2">
+            <span className="flex items-center px-3 py-1 rounded bg-black/90 backdrop-blur-md text-white border border-white/10 shadow-lg font-medium text-sm tracking-wide">
+              {displayPrice} {symbol}
+            </span>
+            {item.calories && (
+              <span className="flex items-center px-2 py-1 rounded bg-black/90 backdrop-blur-md text-gray-400 border border-white/10 text-[11px] tracking-wide">
+                {item.calories} {t.calories || "kcal"}
+              </span>
+            )}
           </div>
 
           {/* Text Badges */}

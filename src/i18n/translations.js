@@ -22,6 +22,7 @@ export const translations = {
     vegetarian: "Vejetaryen",
     spicy: "Acılı",
     trending: "En Çok Tercih Edilenler",
+    calories: "kcal",
   },
   en: {
     language: "English",
@@ -46,6 +47,7 @@ export const translations = {
     vegetarian: "Vegetarian",
     spicy: "Spicy",
     trending: "Trending Picks",
+    calories: "kcal",
   },
   ar: {
     language: "العربية",
@@ -70,6 +72,7 @@ export const translations = {
     vegetarian: "نباتي",
     spicy: "حار",
     trending: "أكثر ما يعشقه ضيوفنا",
+    calories: "سعرة",
   },
   fr: {
     language: "Français",
@@ -94,5 +97,6 @@ export const translations = {
     vegetarian: "Végétarien",
     spicy: "Épicé",
     trending: "Choix Populaires",
+    calories: "kcal",
   }
 };
