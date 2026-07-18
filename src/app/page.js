@@ -55,20 +55,25 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
             className="flex items-center justify-center gap-2 mb-8"
           >
-            <span className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-teal-dim/40 bg-teal-dim/10 backdrop-blur-md text-xs tracking-widest">
-              <MapPin size={12} className="text-teal" />
-              <span className="text-cream-dim">{t.heroLocation || "Firuzağa Mah. Cihangir, Beyoğlu, İstanbul"}</span>
-            </span>
+            <a 
+              href="https://maps.google.com/?q=Kardeşler+Kebap+Pide+Cihangir+Beyoğlu+İstanbul" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-teal-dim/40 bg-teal-dim/10 backdrop-blur-md text-xs tracking-widest hover:border-teal hover:bg-teal-dim/20 transition-all duration-300 cursor-pointer group"
+            >
+              <MapPin size={12} className="text-teal group-hover:animate-bounce" />
+              <span className="text-cream-dim group-hover:text-cream transition-colors">{t.heroLocation || "Firuzağa Mah. Cihangir, Beyoğlu, İstanbul"}</span>
+            </a>
           </motion.div>
 
           {/* Main Logo Name */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.15, duration: 0.4 }}
           >
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-cream mb-2 tracking-tight leading-none" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.welcome || "Kardeşler"}
@@ -82,7 +87,7 @@ export default function Home() {
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.25, duration: 0.4 }}
             className="flex items-center justify-center gap-3 mb-8"
           >
             <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-gold/60"></div>
@@ -94,7 +99,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
             className="text-cream-dim/80 text-sm sm:text-base md:text-lg font-light tracking-wide max-w-lg mx-auto leading-relaxed mb-10"
           >
             {t.subtitle || "Where tradition meets taste in the heart of Cihangir"}
@@ -104,7 +109,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
+            transition={{ delay: 0.35, duration: 0.3 }}
             className="flex items-center justify-center gap-8 sm:gap-12 mb-10"
           >
             {/* Items Count */}
@@ -130,7 +135,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.4 }}
+              transition={{ delay: 0.4, duration: 0.3 }}
               className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-teal/30 bg-teal/10 backdrop-blur-md"
             >
               <span className="text-xs font-light text-cream-dim tracking-widest uppercase">{t.table}</span>
@@ -143,7 +148,7 @@ export default function Home() {
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.6 }}
+            transition={{ delay: 0.45, duration: 0.3 }}
             onClick={scrollToMenu}
             className="group relative px-8 py-4 bg-gradient-to-r from-copper to-copper/80 text-cream font-bold text-sm tracking-widest uppercase rounded-lg hover:shadow-[0_0_30px_rgba(198,98,43,0.3)] transition-all duration-500 hover:scale-105"
           >
@@ -155,7 +160,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
         >
           <ChevronDown size={20} className="text-cream-dim/30 animate-bounce" />
@@ -221,7 +226,7 @@ export default function Home() {
           MENU ITEMS LIST
           ═══════════════════════════════════════════ */}
       <section className="px-4 py-8 min-h-[50vh]">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout">
           {menuData.map((category) => {
             if (activeCategory !== category.id) return null;
 
@@ -236,8 +241,8 @@ export default function Home() {
                 key={category.id} 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
                 className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
               >
                 {filteredItems.length > 0 ? (

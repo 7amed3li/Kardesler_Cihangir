@@ -31,12 +31,12 @@ export default function Footer() {
             <h3 className="text-sm font-bold text-cream tracking-widest uppercase mb-6">
               İletişim
             </h3>
-            <div className="flex items-start gap-3 mb-4 text-left">
-              <MapPin size={16} className="text-teal mt-0.5 shrink-0" />
-              <p className="text-cream-dim/80 text-sm font-light leading-relaxed max-w-xs">
+            <a href="https://maps.google.com/?q=Karde%C5%9Fler+Kebap+Pide+Cihangir+Beyo%C4%9Flu+%C4%B0stanbul" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 mb-4 text-left group hover:opacity-100 transition-all duration-300">
+              <MapPin size={16} className="text-teal mt-0.5 shrink-0 group-hover:animate-bounce" />
+              <p className="text-cream-dim/80 text-sm font-light leading-relaxed max-w-xs group-hover:text-cream transition-colors underline-offset-2 group-hover:underline decoration-teal/40">
                 Firuzağa Mah. Firuzağa Camii Sok.<br/> No:1A, Cihangir, Beyoğlu, İstanbul
               </p>
-            </div>
+            </a>
             <div className="flex items-center gap-3">
               <Phone size={16} className="text-teal shrink-0" />
               <a href="tel:+902122432822" className="text-cream-dim/80 text-sm font-light hover:text-copper transition-colors">

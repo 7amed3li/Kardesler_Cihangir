@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Tilt from "react-parallax-tilt";
 import { useAppContext } from "../context/AppContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
@@ -19,82 +18,71 @@ export default function FoodCard({ item, index, isVertical = false }) {
 
   return (
     <>
-      <Tilt
-        tiltMaxAngleX={2}
-        tiltMaxAngleY={2}
-        perspective={1500}
-        scale={1.01}
-        transitionSpeed={1500}
-        className={`h-full ${isVertical ? "w-full" : ""}`}
+      {/* Pure CSS hover tilt — no JS overhead */}
+      <div
+        className={`group relative rounded-xl bg-ink-2 border border-teal-dim/30 hover:border-gold overflow-hidden transition-all duration-300 flex ${isVertical ? "flex-col" : "flex-row md:flex-col"} items-stretch ${isVertical ? "h-auto" : "h-36 md:h-full"} shadow-sm hover:shadow-[0_4px_20px_rgba(47,158,147,0.15)] hover:-translate-y-0.5`}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.05, duration: 0.4, ease: "easeOut" }}
-          className={`group relative rounded-xl bg-ink-2 border border-teal-dim/30 hover:border-gold overflow-hidden transition-all duration-500 flex ${isVertical ? "flex-col" : "flex-row md:flex-col"} items-stretch ${isVertical ? "h-auto" : "h-36 md:h-full"} shadow-sm hover:shadow-[0_4px_20px_rgba(47,158,147,0.15)]`}
+        {/* Image Section */}
+        <div 
+          className={`${isVertical ? "w-full h-48" : "w-32 md:w-full h-full md:h-48"} shrink-0 relative overflow-hidden bg-ink z-10 cursor-pointer`}
+          onClick={() => setIsModalOpen(true)}
         >
-          {/* Image Section */}
-          <div 
-            className={`${isVertical ? "w-full h-48" : "w-32 md:w-full h-full md:h-48"} shrink-0 relative overflow-hidden bg-ink z-10 cursor-pointer`}
-            onClick={() => setIsModalOpen(true)}
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent z-10 pointer-events-none"></div>
-            
-            {/* Subtle image scaling on hover */}
-            <div className="absolute inset-0 bg-ink-2 group-hover:scale-105 transition-transform duration-1000">
-              {item.image && (
-                <Image src={item.image} alt={name} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              )}
-            </div>
-
-            {/* Price Tag */}
-            <div className="absolute top-3 left-3 z-20 flex items-center gap-2 pointer-events-none">
-              <span className="flex items-center px-3 py-1 rounded bg-ink/90 backdrop-blur-md text-copper border border-copper/30 shadow-lg font-bold text-sm tracking-wide">
-                {displayPrice} {symbol}
-              </span>
-              {item.calories && (
-                <span className="flex items-center px-2 py-1 rounded bg-cream/90 backdrop-blur-md text-ink border border-cream/30 font-bold text-[11px] tracking-wide">
-                  {item.calories} {t.calories || "kcal"}
-                </span>
-              )}
-            </div>
-
-            {/* Text Badges */}
-            <div className="absolute bottom-3 left-3 z-20 flex flex-wrap gap-1.5 pointer-events-none">
-              {item.tags?.includes("signature") && (
-                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-gold border border-gold/30 bg-gold/10 backdrop-blur-md rounded-sm font-bold">
-                  {t.signature || "Signature"}
-                </span>
-              )}
-              {item.tags?.includes("spicy") && (
-                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-brick border border-brick/30 bg-brick/10 backdrop-blur-md rounded-sm font-bold">
-                  {t.spicy || "Spicy"}
-                </span>
-              )}
-              {item.tags?.includes("vegetarian") && (
-                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-teal border border-teal/30 bg-teal/10 backdrop-blur-md rounded-sm font-bold">
-                  {t.vegetarian || "Veg"}
-                </span>
-              )}
-            </div>
-          </div>
-
-          {/* Content Section */}
-          <div 
-            className={`flex flex-col flex-grow ${isVertical ? "p-5" : "p-3 md:p-5"} justify-center relative z-10 w-full min-w-0 bg-ink-2 cursor-pointer`}
-            onClick={() => setIsModalOpen(true)}
-          >
-            <h3 className="font-normal text-lg md:text-xl text-cream leading-tight mb-1 truncate md:whitespace-normal group-hover:text-gold transition-colors">
-              {name}
-            </h3>
-            {description && (
-              <p className="text-xs md:text-sm text-cream-dim mt-2 line-clamp-2 leading-relaxed font-light opacity-90">
-                {description}
-              </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent z-10 pointer-events-none"></div>
+          
+          {/* Subtle image scaling on hover */}
+          <div className="absolute inset-0 bg-ink-2 group-hover:scale-105 transition-transform duration-700">
+            {item.image && (
+              <Image src={item.image} alt={name} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             )}
           </div>
-        </motion.div>
-      </Tilt>
+
+          {/* Price Tag */}
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-2 pointer-events-none">
+            <span className="flex items-center px-3 py-1 rounded bg-ink/90 backdrop-blur-md text-copper border border-copper/30 shadow-lg font-bold text-sm tracking-wide">
+              {displayPrice} {symbol}
+            </span>
+            {item.calories && (
+              <span className="flex items-center px-2 py-1 rounded bg-cream/90 backdrop-blur-md text-ink border border-cream/30 font-bold text-[11px] tracking-wide">
+                {item.calories} {t.calories || "kcal"}
+              </span>
+            )}
+          </div>
+
+          {/* Text Badges */}
+          <div className="absolute bottom-3 left-3 z-20 flex flex-wrap gap-1.5 pointer-events-none">
+            {item.tags?.includes("signature") && (
+              <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-gold border border-gold/30 bg-gold/10 backdrop-blur-md rounded-sm font-bold">
+                {t.signature || "Signature"}
+              </span>
+            )}
+            {item.tags?.includes("spicy") && (
+              <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-brick border border-brick/30 bg-brick/10 backdrop-blur-md rounded-sm font-bold">
+                {t.spicy || "Spicy"}
+              </span>
+            )}
+            {item.tags?.includes("vegetarian") && (
+              <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-teal border border-teal/30 bg-teal/10 backdrop-blur-md rounded-sm font-bold">
+                {t.vegetarian || "Veg"}
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div 
+          className={`flex flex-col flex-grow ${isVertical ? "p-5" : "p-3 md:p-5"} justify-center relative z-10 w-full min-w-0 bg-ink-2 cursor-pointer`}
+          onClick={() => setIsModalOpen(true)}
+        >
+          <h3 className="font-normal text-lg md:text-xl text-cream leading-tight mb-1 truncate md:whitespace-normal group-hover:text-gold transition-colors">
+            {name}
+          </h3>
+          {description && (
+            <p className="text-xs md:text-sm text-cream-dim mt-2 line-clamp-2 leading-relaxed font-light opacity-90">
+              {description}
+            </p>
+          )}
+        </div>
+      </div>
 
       {/* Modal */}
       <AnimatePresence>
@@ -103,14 +91,15 @@ export default function FoodCard({ item, index, isVertical = false }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="bg-ink border border-gold/30 rounded-3xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative"
               onClick={(e) => e.stopPropagation()}
             >
