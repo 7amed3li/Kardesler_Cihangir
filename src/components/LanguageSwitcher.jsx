@@ -40,7 +40,7 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 w-36 bg-ink-2 border border-gold/20 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] overflow-hidden z-50 start-0 sm:start-auto sm:end-0">
+        <div className="absolute mt-2 right-0 w-36 bg-ink-2 border border-gold/20 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] overflow-hidden z-50">
           {Object.keys(translations).map((code) => (
             <button
               key={code}
