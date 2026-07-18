@@ -22,7 +22,7 @@ export const menuData = [
         name: { tr: "Paçanga Böreği", en: "Pachanga Pastry", ar: "فطيرة باتشانجا", fr: "Pâtisserie Pachanga" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 300.00,
-        image: "/images/pacanga.jpg",
+        image: "/images/2-Pacanga-Boregi.webp",
         tags: [],
       },
       {
@@ -30,7 +30,7 @@ export const menuData = [
         name: { tr: "Omlet", en: "Omlette", ar: "أومليت", fr: "Omelette" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 250.00,
-        image: "/images/omlet.jpg",
+        image: "/images/3-Omlet.webp",
         tags: ["vegetarian"],
       },
       {
@@ -47,7 +47,7 @@ export const menuData = [
         name: { tr: "Sahanda Yumurta", en: "Fried Egg", ar: "بيض مقلي", fr: "Œuf sur le plat" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 200.00,
-        image: "/images/yumurta.jpg",
+        image: "/images/5-Sahanda-Yumurta.webp",
         tags: ["vegetarian"],
       },
       {
@@ -55,7 +55,7 @@ export const menuData = [
         name: { tr: "Sucuklu Yumurta", en: "Saussage with Egg", ar: "بيض بالسجق", fr: "Œufs à la saucisse" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 230.00,
-        image: "/images/sucuklu.jpg",
+        image: "/images/6-Sucuklu-Yumurta.webp",
         tags: [],
       },
       {
@@ -63,7 +63,7 @@ export const menuData = [
         name: { tr: "Kavurmalı Yumurta", en: "Beaf Roasted Meat with Egg", ar: "بيض باللحم المحمر", fr: "Œuf à la viande rôtie" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 300.00,
-        image: "/images/kavurmali.jpg",
+        image: "/images/7-Kavurmali-Yumurta.webp",
         tags: [],
       },
       {
@@ -71,7 +71,7 @@ export const menuData = [
         name: { tr: "Kuzu Gerdan Çorba", en: "Lamb Soup", ar: "شوربة رقبة غنم", fr: "Soupe d'agneau" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 330.00,
-        image: "/images/kuzu_corba.jpg",
+        image: "/images/8-Kuzu-Gerdan-Corba.webp",
         tags: ["signature"],
       },
       {
@@ -79,7 +79,7 @@ export const menuData = [
         name: { tr: "Şehriyeli Tavuk Çorbası", en: "Chicken Soup", ar: "شوربة دجاج بالشعيرية", fr: "Soupe de poulet" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/tavuk_corba.jpg",
+        image: "/images/9-Sehriyeli-Tavuk-Corbasi.webp",
         tags: [],
       },
       {
@@ -87,7 +87,7 @@ export const menuData = [
         name: { tr: "Ezogelin / Mercimek Çorbası", en: "Lentil Soup", ar: "شوربة عدس", fr: "Soupe aux lentilles" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 150.00,
-        image: "/images/mercimek_corba.jpg",
+        image: "/images/10-Ezogelin-Mercimek-Corbasi.webp",
         tags: ["vegetarian"],
       }
     ]
@@ -115,7 +115,7 @@ export const menuData = [
         name: { tr: "Mardin Kebap", en: "Mardin Kebab", ar: "كباب ماردين", fr: "Kebab Mardin" },
         description: { tr: "180 gr.", en: "180 gr. Mardin Kebab", ar: "180 غرام كباب ماردين", fr: "180 gr. Kebab Mardin" },
         price: 750.00,
-        image: "/images/mardin.jpg",
+        image: "/images/12-Mardin-Kebap.webp",
         tags: ["signature"],
       },
       {
@@ -123,7 +123,7 @@ export const menuData = [
         name: { tr: "Beyti Kebap", en: "Beyti Kebab", ar: "كباب بيتي", fr: "Kebab Beyti" },
         description: { tr: "170 gr. Sarımsaklı", en: "170 gr. Grill Minced Beaf Meat with Garlicky", ar: "170 غرام كباب بالثوم", fr: "170 gr. Kebab à l'ail" },
         price: 730.00,
-        image: "/images/beyti.jpg",
+        image: "/images/beyti-1024x677.webp",
         tags: [],
       },
       {
@@ -131,7 +131,7 @@ export const menuData = [
         name: { tr: "Domatesli Kebap", en: "Tomatoes Kebab", ar: "كباب بالطماطم", fr: "Kebab aux tomates" },
         description: { tr: "150 gr.", en: "150 gr. Grill Tomatoes, Beaf Meat", ar: "150 غرام طماطم ولحم مشوي", fr: "150 gr. Tomates et viande grillées" },
         price: 700.00,
-        image: "/images/domatesli.jpg",
+        image: "/images/13-Domatesli-Kebap.webp",
         tags: [],
       },
       {
@@ -139,7 +139,7 @@ export const menuData = [
         name: { tr: "Patlıcanlı Kebap", en: "Eggplant Kebab", ar: "كباب بالباذنجان", fr: "Kebab aux aubergines" },
         description: { tr: "160 gr.", en: "160 gr. Grill Eggplant, Minced Beaf Meat", ar: "160 غرام كباب باذنجان", fr: "160 gr. Kebab d'aubergines" },
         price: 700.00,
-        image: "/images/patlicanli.jpg",
+        image: "/images/14-Patlicanli-Kebap.webp",
         tags: [],
       },
       {
@@ -147,7 +147,7 @@ export const menuData = [
         name: { tr: "Kuzu Şiş Kebap", en: "Lamb Shish Kebab", ar: "شيش كباب غنم", fr: "Brochette d'agneau" },
         description: { tr: "150 gr. Lokum gibi", en: "150 gr. Lamb Shish Kebab", ar: "150 غرام شيش كباب غنم", fr: "150 gr. Brochette d'agneau" },
         price: 700.00,
-        image: "/images/kuzu_sis.jpg",
+        image: "/images/26-Kuzu-Sis-Kebap.webp",
         tags: ["signature"],
       },
       {
@@ -155,7 +155,7 @@ export const menuData = [
         name: { tr: "Ali Nazik Kebap", en: "Ali Nazik Kebab", ar: "كباب علي نازك", fr: "Kebab Ali Nazik" },
         description: { tr: "150 gr.", en: "150 gr. Grill Lamb Meat and Eggplant with Garlicky Yogurt", ar: "150 غرام لحم باذنجان ولبن بالثوم", fr: "150 gr. Agneau, aubergine et yaourt à l'ail" },
         price: 730.00,
-        image: "/images/ali_nazik.jpg",
+        image: "/images/21-Ali-Nazik-Kebap.webp",
         tags: [],
       },
       {
@@ -163,7 +163,7 @@ export const menuData = [
         name: { tr: "İnegöl Köfte", en: "Grill Meatball", ar: "كفتة إينيغول", fr: "Boulettes grillées" },
         description: { tr: "150 gr.", en: "150 gr. Grill Meatball", ar: "150 غرام كفتة مشوية", fr: "150 gr. Boulettes grillées" },
         price: 625.00,
-        image: "/images/inegol_kofte.jpg",
+        image: "/images/22-Inegol-Kofte.webp",
         tags: [],
       },
       {
@@ -171,7 +171,7 @@ export const menuData = [
         name: { tr: "Vali Kebabı", en: "Vali Kebab", ar: "كباب الوالي", fr: "Kebab Vali" },
         description: { tr: "220 gr.", en: "220 gr. Grill Chicken, Lamb, Mince Beaf Meat with Eggplant, Tomatoes and Pepper with Cheese", ar: "220 غرام دجاج وغنم ولحم بقري مع باذنجان وطماطم وفلفل وجبنة", fr: "220 gr. Poulet, agneau, viande hachée avec aubergine et fromage" },
         price: 870.00,
-        image: "/images/vali.jpg",
+        image: "/images/17-Vali-Kebabi.webp",
         tags: ["signature"],
       },
       {
@@ -179,7 +179,7 @@ export const menuData = [
         name: { tr: "Tavuk Şiş Izgara", en: "Chicken Shish", ar: "شيش دجاج مشوي", fr: "Brochette de poulet" },
         description: { tr: "150 gr.", en: "150 gr. Chicken Shish", ar: "150 غرام شيش دجاج", fr: "150 gr. Brochette de poulet" },
         price: 575.00,
-        image: "/images/tavuk_sis.jpg",
+        image: "/images/31-Tavuk-Sis-Izgara.webp",
         tags: [],
       },
       {
@@ -187,7 +187,7 @@ export const menuData = [
         name: { tr: "Tavuk Kanat", en: "Chicken Wings", ar: "أجنحة دجاج", fr: "Ailes de poulet" },
         description: { tr: "170 gr.", en: "170 gr. Chicken Wings", ar: "170 غرام أجنحة دجاج", fr: "170 gr. Ailes de poulet" },
         price: 600.00,
-        image: "/images/tavuk_kanat.jpg",
+        image: "/images/30-Tavuk-Kanat.webp",
         tags: [],
       },
       {
@@ -195,7 +195,7 @@ export const menuData = [
         name: { tr: "Kuzu Lokum", en: "Lamb Loin", ar: "لحم غنم لقم", fr: "Filet d'agneau" },
         description: { tr: "220 gr.", en: "220 gr. Lamb Loin with Bulgur Rice and with Salad", ar: "220 غرام لحم غنم مع برغل وسلطة", fr: "220 gr. Filet d'agneau avec boulgour et salade" },
         price: 1100.00,
-        image: "/images/kuzu_lokum.jpg",
+        image: "/images/23-Kuzu-Lokum.webp",
         tags: ["signature"],
         trending: true,
       },
@@ -204,7 +204,7 @@ export const menuData = [
         name: { tr: "Kuzu Pirzola", en: "Lamb Chops", ar: "ريش غنم", fr: "Côtelettes d'agneau" },
         description: { tr: "320 gr.", en: "320 gr. Lamb Chops", ar: "320 غرام ريش غنم", fr: "320 gr. Côtelettes d'agneau" },
         price: 1350.00,
-        image: "/images/kuzu_pirzola.jpg",
+        image: "/images/24-Kuzu-Pirzola.webp",
         tags: ["signature"],
       },
       {
@@ -212,7 +212,7 @@ export const menuData = [
         name: { tr: "Kiremit Kebap", en: "Casserole Kebab", ar: "كباب كاسرول", fr: "Kebab en casserole" },
         description: { tr: "160 gr.", en: "160 gr. Casserole Kebab", ar: "160 غرام كباب كاسرول", fr: "160 gr. Kebab en casserole" },
         price: 700.00,
-        image: "/images/kiremit.jpg",
+        image: "/images/19-Kiremit-Kebap.webp",
         tags: [],
       },
       {
@@ -220,7 +220,7 @@ export const menuData = [
         name: { tr: "İskender Kebap", en: "Iskender Kebab", ar: "إسكندر كباب", fr: "Kebab Iskender" },
         description: { tr: "140 gr.", en: "140 gr. Iskender Kebab", ar: "140 غرام كباب إسكندر", fr: "140 gr. Kebab Iskender" },
         price: 625.00,
-        image: "/images/iskender.jpg",
+        image: "/images/18-Iskender-Kebap.webp",
         tags: ["signature"],
         trending: true,
       },
@@ -229,7 +229,7 @@ export const menuData = [
         name: { tr: "Yoğurtlu Kebap", en: "Kebab with Yogurt", ar: "كباب باللبن", fr: "Kebab au yaourt" },
         description: { tr: "140 gr.", en: "140 gr. Grill Minced Beaf Meat with Yogurt", ar: "140 غرام كباب مفروم مع لبن", fr: "140 gr. Viande hachée grillée au yaourt" },
         price: 625.00,
-        image: "/images/yogurtlu.jpg",
+        image: "/images/16-Yogurtlu-Kebap.webp",
         tags: [],
       },
       {
@@ -237,7 +237,7 @@ export const menuData = [
         name: { tr: "Altı Ezmeli Kebap", en: "Mashed Tomatoes Kebab", ar: "كباب بالطماطم المهروسة", fr: "Kebab aux tomates écrasées" },
         description: { tr: "140 gr.", en: "140 gr. Mashed Tomatoes Kebab", ar: "140 غرام كباب بالطماطم المهروسة", fr: "140 gr. Kebab aux tomates écrasées" },
         price: 650.00,
-        image: "/images/ezmeli.jpg",
+        image: "/images/20-Alti-Ezmeli-Kebap.webp",
         tags: [],
       },
       {
@@ -245,7 +245,7 @@ export const menuData = [
         name: { tr: "Dana Bonfile", en: "Beaf Veal Steak Sish", ar: "ستيك لحم بقري", fr: "Steak de veau" },
         description: { tr: "200 gr.", en: "200 gr. Beaf Veal Steak Sish with Bulgur Rice and Salad", ar: "200 غرام ستيك لحم بقري مع برغل وسلطة", fr: "200 gr. Steak de veau avec boulgour et salade" },
         price: 950.00,
-        image: "/images/dana_bonfile.jpg",
+        image: "/images/25-Dana-Bonfile.webp",
         tags: ["signature"],
       },
       {
@@ -253,7 +253,7 @@ export const menuData = [
         name: { tr: "Dana Çöp Şiş", en: "Beaf Sish Kebab", ar: "شيش كباب بقري", fr: "Brochette de bœuf" },
         description: { tr: "200 gr.", en: "200 gr. Beaf Sish Kebap with Bulgur Rice and Salad", ar: "200 غرام شيش كباب بقري مع برغل وسلطة", fr: "200 gr. Brochette de bœuf avec boulgour et salade" },
         price: 750.00,
-        image: "/images/dana_cop_sis.jpg",
+        image: "/images/29-Dana-Cop-Sis.webp",
         tags: [],
       },
       {
@@ -261,7 +261,7 @@ export const menuData = [
         name: { tr: "Karışık Kebap 1", en: "Mixed Kebab 1", ar: "كباب مشكل 1", fr: "Kebab Mixte 1" },
         description: { tr: "350 gr.", en: "350 gr. Grilled chicken, lamb, meatball, tomatoes kebab, mince beaf meat salad with bulgur rice", ar: "350 غرام تشكيلة مشاوي مع برغل وسلطة", fr: "350 gr. Mixte de viandes grillées avec boulgour" },
         price: 1600.00,
-        image: "/images/karisik1.jpg",
+        image: "/images/27-Karisik-Kebap_1.webp",
         tags: ["signature"],
         trending: true,
       },
@@ -270,7 +270,7 @@ export const menuData = [
         name: { tr: "Karışık Kebap 2", en: "Mixed Kebab 2", ar: "كباب مشكل 2", fr: "Kebab Mixte 2" },
         description: { tr: "550 gr.", en: "550 gr. Grill lamb sish, meatball, lamb chops, beaf steak meat, mince beaf meat and Appetizers", ar: "550 غرام تشكيلة مشاوي فاخرة مع مقبلات", fr: "550 gr. Assortiment de grillades avec entrées" },
         price: 2450.00,
-        image: "/images/karisik2.jpg",
+        image: "/images/28-Karisik-Kebap_2.webp",
         tags: ["signature"],
       }
     ]
@@ -289,7 +289,7 @@ export const menuData = [
         name: { tr: "Mardin Kebap Menü", en: "Special Mardin Kebab", ar: "منيو كباب ماردين", fr: "Menu Kebab Mardin" },
         description: { tr: "180 gr.", en: "180 gr. Special Mardin Kebab", ar: "180 غرام كباب ماردين خاص", fr: "180 gr. Kebab Mardin spécial" },
         price: 1050.00,
-        image: "/images/mardin_menu.jpg",
+        image: "/images/mardin_menu.webp",
         tags: ["signature"],
       },
       {
@@ -297,7 +297,7 @@ export const menuData = [
         name: { tr: "Tavuk Kanat Menü", en: "Special Chicken Wings", ar: "منيو أجنحة دجاج", fr: "Menu Ailes de poulet" },
         description: { tr: "160 gr.", en: "160 gr. Special Chicken Wings", ar: "160 غرام أجنحة دجاج خاصة", fr: "160 gr. Ailes de poulet spéciales" },
         price: 830.00,
-        image: "/images/tavuk_kanat_menu.jpg",
+        image: "/images/tavuk_kanat_menu.webp",
         tags: [],
       },
       {
@@ -305,7 +305,7 @@ export const menuData = [
         name: { tr: "Kuzu Ciğer Menü", en: "Special Lamb Liver", ar: "منيو كبدة غنم", fr: "Menu Foie d'agneau" },
         description: { tr: "170 gr.", en: "170 gr. Special Lamb Liver", ar: "170 غرام كبدة غنم خاصة", fr: "170 gr. Foie d'agneau spécial" },
         price: 1000.00,
-        image: "/images/kuzu_ciger_menu.jpg",
+        image: "/images/kuzu_ciger_menu.webp",
         tags: [],
       },
       {
@@ -313,7 +313,7 @@ export const menuData = [
         name: { tr: "Kuzu Şiş Kebap Menü", en: "Special Lamb Shish Kebab", ar: "منيو شيش كباب غنم", fr: "Menu Brochette d'agneau" },
         description: { tr: "140 gr.", en: "140 gr. Special Lamb Shish Kebab", ar: "140 غرام شيش كباب غنم خاص", fr: "140 gr. Brochette d'agneau spéciale" },
         price: 1000.00,
-        image: "/images/kuzu_sis_menu.jpg",
+        image: "/images/kuzu_sis_menu.webp",
         tags: [],
       }
     ]
@@ -332,7 +332,7 @@ export const menuData = [
         name: { tr: "Mezeli Adana & Urfa Kebap", en: "Adana & Urfa with Appetizers", ar: "كباب أضنة وأورفا مع مقبلات", fr: "Adana & Urfa avec entrées" },
         description: { tr: "140 gr.", en: "140 gr. Grill Minced Beaf Meat with Appetizers", ar: "140 غرام كباب مفروم مع مقبلات", fr: "140 gr. Viande hachée grillée avec entrées" },
         price: 725.00,
-        image: "/images/mezeli_adana.jpg",
+        image: "/images/mezeli_adana.webp",
         tags: ["spicy"],
       },
       {
@@ -340,7 +340,7 @@ export const menuData = [
         name: { tr: "Mezeli Dana Çöp Şiş", en: "Beaf Shish Kebab with Appetizers", ar: "شيش كباب بقري مع مقبلات", fr: "Brochette bœuf avec entrées" },
         description: { tr: "200 gr.", en: "200 gr. Beaf Shish Kebab with Appetizers", ar: "200 غرام شيش كباب بقري مع مقبلات", fr: "200 gr. Brochette de bœuf avec entrées" },
         price: 800.00,
-        image: "/images/mezeli_cop_sis.jpg",
+        image: "/images/mezeli_cop_sis.webp",
         tags: [],
       },
       {
@@ -348,7 +348,7 @@ export const menuData = [
         name: { tr: "Mezeli Kuzu Pirzola", en: "Lamb Chops with Appetizer", ar: "ريش غنم مع مقبلات", fr: "Côtelettes d'agneau avec entrées" },
         description: { tr: "320 gr.", en: "320 gr. Lamb Chops with Appetizer", ar: "320 غرام ريش غنم مع مقبلات", fr: "320 gr. Côtelettes d'agneau avec entrées" },
         price: 1450.00,
-        image: "/images/mezeli_pirzola.jpg",
+        image: "/images/mezeli_pirzola.webp",
         tags: ["signature"],
       },
       {
@@ -356,7 +356,7 @@ export const menuData = [
         name: { tr: "Mezeli Kuzu Lokum", en: "Lamb Delight with Appetizers", ar: "لحم غنم لقم مع مقبلات", fr: "Filet d'agneau avec entrées" },
         description: { tr: "220 gr.", en: "220 gr. Lamb Delight with Appetizers", ar: "220 غرام لحم غنم لقم مع مقبلات", fr: "220 gr. Filet d'agneau avec entrées" },
         price: 1100.00,
-        image: "/images/mezeli_lokum.jpg",
+        image: "/images/mezeli_lokum.webp",
         tags: [],
       },
       {
@@ -364,7 +364,7 @@ export const menuData = [
         name: { tr: "Mezeli İnegöl Köfte", en: "İnegöl Meatballs with Appetizers", ar: "كفتة إينيغول مع مقبلات", fr: "Boulettes İnegöl avec entrées" },
         description: { tr: "150 gr.", en: "150 gr. İnegöl Meatballs with Appetizers", ar: "150 غرام كفتة إينيغول مع مقبلات", fr: "150 gr. Boulettes İnegöl avec entrées" },
         price: 725.00,
-        image: "/images/mezeli_kofte.jpg",
+        image: "/images/mezeli_kofte.webp",
         tags: [],
       },
       {
@@ -372,7 +372,7 @@ export const menuData = [
         name: { tr: "Mezeli Kuzu Şiş", en: "Lamb Shish with Appetizers", ar: "شيش غنم مع مقبلات", fr: "Brochette d'agneau avec entrées" },
         description: { tr: "150 gr.", en: "150 gr. Lamb Shish with Appetizers", ar: "150 غرام شيش غنم مع مقبلات", fr: "150 gr. Brochette d'agneau avec entrées" },
         price: 800.00,
-        image: "/images/mezeli_kuzu_sis.jpg",
+        image: "/images/mezeli_kuzu_sis.webp",
         tags: [],
       },
       {
@@ -380,7 +380,7 @@ export const menuData = [
         name: { tr: "Mezeli Dana Bonfile", en: "Beaf Tenderloin with Appetizers", ar: "ستيك بقري مع مقبلات", fr: "Filet de bœuf avec entrées" },
         description: { tr: "200 gr.", en: "200 gr. Beaf Tenderloin with Appetizers", ar: "200 غرام ستيك بقري مع مقبلات", fr: "200 gr. Filet de bœuf avec entrées" },
         price: 1050.00,
-        image: "/images/mezeli_bonfile.jpg",
+        image: "/images/mezeli_bonfile.webp",
         tags: ["signature"],
       },
       {
@@ -388,7 +388,7 @@ export const menuData = [
         name: { tr: "Mezeli Dürüm", en: "Appetizer Wrap", ar: "دورم مع مقبلات", fr: "Wrap avec entrées" },
         description: { tr: "90 gr.", en: "90 gr. Appetizer Wrap", ar: "90 غرام دورم مع مقبلات", fr: "90 gr. Wrap avec entrées" },
         price: 480.00,
-        image: "/images/mezeli_durum.jpg",
+        image: "/images/mezeli_durum.webp",
         tags: [],
       },
       {
@@ -396,7 +396,7 @@ export const menuData = [
         name: { tr: "Mezeli Tavuk Kanat", en: "Chicken Wings with Appetizers", ar: "أجنحة دجاج مع مقبلات", fr: "Ailes de poulet avec entrées" },
         description: { tr: "150 gr.", en: "150 gr. Chicken Wings with Appetizers", ar: "150 غرام أجنحة دجاج مع مقبلات", fr: "150 gr. Ailes de poulet avec entrées" },
         price: 725.00,
-        image: "/images/mezeli_tavuk_kanat.jpg",
+        image: "/images/mezeli_tavuk_kanat.webp",
         tags: [],
       },
       {
@@ -404,7 +404,7 @@ export const menuData = [
         name: { tr: "Mezeli Tavuk Şiş", en: "Chicken Shish with Appetizers", ar: "شيش دجاج مع مقبلات", fr: "Brochette de poulet avec entrées" },
         description: { tr: "150 gr.", en: "150 gr. Chicken Shish with Appetizers", ar: "150 غرام شيش دجاج مع مقبلات", fr: "150 gr. Brochette de poulet avec entrées" },
         price: 625.00,
-        image: "/images/mezeli_tavuk_sis.jpg",
+        image: "/images/mezeli_tavuk_sis.webp",
         tags: [],
       },
       {
@@ -412,7 +412,7 @@ export const menuData = [
         name: { tr: "Karışık Meze Tabağı", en: "Mixed Appetizer Platter", ar: "طبق مقبلات مشكل", fr: "Plateau d'entrées mixtes" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 500.00,
-        image: "/images/karisik_meze.jpg",
+        image: "/images/karisik_meze.webp",
         tags: ["vegetarian"],
       }
     ]
@@ -431,7 +431,7 @@ export const menuData = [
         name: { tr: "Adana Dürüm", en: "Adana Kebab Wrap", ar: "دورم أضنة", fr: "Wrap Adana" },
         description: { tr: "95 gr.", en: "95 gr. Adana Kebab Wrap", ar: "95 غرام دورم أضنة", fr: "95 gr. Wrap Adana" },
         price: 330.00,
-        image: "/images/adana_durum.jpg",
+        image: "/images/adana_durum.webp",
         tags: ["spicy"],
       },
       {
@@ -439,7 +439,7 @@ export const menuData = [
         name: { tr: "Urfa Dürüm", en: "Urfa Kebab Wrap", ar: "دورم أورفا", fr: "Wrap Urfa" },
         description: { tr: "95 gr.", en: "95 gr. Urfa Kebab Wrap", ar: "95 غرام دورم أورفا", fr: "95 gr. Wrap Urfa" },
         price: 330.00,
-        image: "/images/urfa_durum.jpg",
+        image: "/images/urfa_durum.webp",
         tags: [],
       },
       {
@@ -447,7 +447,7 @@ export const menuData = [
         name: { tr: "Dana Çöp Şiş Dürüm", en: "Beef Shish Kebab Wrap", ar: "دورم شيش بقري", fr: "Wrap brochette de bœuf" },
         description: { tr: "95 gr.", en: "95 gr. Beef Shish Kebab Wrap", ar: "95 غرام دورم شيش بقري", fr: "95 gr. Wrap brochette de bœuf" },
         price: 380.00,
-        image: "/images/cop_sis_durum.jpg",
+        image: "/images/cop_sis_durum.webp",
         tags: [],
       },
       {
@@ -455,7 +455,7 @@ export const menuData = [
         name: { tr: "Tavuk Şiş Dürüm", en: "Chicken Shish Wrap", ar: "دورم شيش دجاج", fr: "Wrap brochette poulet" },
         description: { tr: "95 gr.", en: "95 gr. Chicken Shish Wrap", ar: "95 غرام دورم شيش دجاج", fr: "95 gr. Wrap brochette de poulet" },
         price: 300.00,
-        image: "/images/tavuk_sis_durum.jpg",
+        image: "/images/tavuk_sis_durum.webp",
         tags: [],
       },
       {
@@ -463,7 +463,7 @@ export const menuData = [
         name: { tr: "Kuzu Şiş Dürüm", en: "Lamb Shish Kebab Wrap", ar: "دورم شيش غنم", fr: "Wrap brochette d'agneau" },
         description: { tr: "95 gr.", en: "95 gr. Lamb Shish Kebab Wrap", ar: "95 غرام دورم شيش غنم", fr: "95 gr. Wrap brochette d'agneau" },
         price: 380.00,
-        image: "/images/kuzu_sis_durum.jpg",
+        image: "/images/kuzu_sis_durum.webp",
         tags: [],
       },
       {
@@ -471,7 +471,7 @@ export const menuData = [
         name: { tr: "Kuzu Ciğer Dürüm", en: "Lamb Liver Wrap", ar: "دورم كبدة غنم", fr: "Wrap foie d'agneau" },
         description: { tr: "95 gr.", en: "95 gr. Lamb Liver Wrap", ar: "95 غرام دورم كبدة غنم", fr: "95 gr. Wrap foie d'agneau" },
         price: 380.00,
-        image: "/images/kuzu_ciger_durum.jpg",
+        image: "/images/kuzu_ciger_durum.webp",
         tags: [],
       },
       {
@@ -479,7 +479,7 @@ export const menuData = [
         name: { tr: "Köfte Dürüm", en: "Meatball Wrap", ar: "دورم كفتة", fr: "Wrap boulettes" },
         description: { tr: "95 gr.", en: "95 gr. Meatball Wrap", ar: "95 غرام دورم كفتة", fr: "95 gr. Wrap boulettes" },
         price: 330.00,
-        image: "/images/kofte_durum.jpg",
+        image: "/images/kofte_durum.webp",
         tags: [],
       },
       {
@@ -487,7 +487,7 @@ export const menuData = [
         name: { tr: "Çiğköfte Dürüm", en: "Vegetarian Raw Wrap", ar: "دورم كفتة نية نباتية", fr: "Wrap cru végétarien" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 250.00,
-        image: "/images/cigkofte_durum.jpg",
+        image: "/images/cigkofte_durum.webp",
         tags: ["vegetarian"],
       }
     ]
@@ -506,7 +506,7 @@ export const menuData = [
         name: { tr: "Kaşarlı Pide", en: "Pita with Cheddar Cheese", ar: "بيدا بالجبن", fr: "Pita au fromage" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 390.00,
-        image: "/images/kasarli_pide.jpg",
+        image: "/images/kasarli_pide.webp",
         tags: ["vegetarian"],
       },
       {
@@ -514,7 +514,7 @@ export const menuData = [
         name: { tr: "Kaşarlı Yumurtalı Pide", en: "Pita with Cheddar Cheese, Egg", ar: "بيدا بالجبن والبيض", fr: "Pita fromage et œuf" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 400.00,
-        image: "/images/kasarli_yumurtali_pide.jpg",
+        image: "/images/kasarli_yumurtali_pide.webp",
         tags: ["vegetarian"],
       },
       {
@@ -522,7 +522,7 @@ export const menuData = [
         name: { tr: "Kaşarlı Sucuklu Pide", en: "Pita with Cheddar Cheese, Sausage", ar: "بيدا بالجبن والسجق", fr: "Pita fromage et saucisse" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 430.00,
-        image: "/images/kasarli_sucuklu_pide.jpg",
+        image: "/images/kasarli_sucuklu_pide.webp",
         tags: [],
       },
       {
@@ -530,7 +530,7 @@ export const menuData = [
         name: { tr: "Kaşarlı Sucuklu Yumurtalı Pide", en: "Pita with Cheddar Cheese Sausage, Egg", ar: "بيدا بالجبن والسجق والبيض", fr: "Pita fromage, saucisse et œuf" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 450.00,
-        image: "/images/kasarli_sucuklu_yumurtali_pide.jpg",
+        image: "/images/kasarli_sucuklu_yumurtali_pide.webp",
         tags: [],
       },
       {
@@ -538,7 +538,7 @@ export const menuData = [
         name: { tr: "Kıymalı Pide", en: "Pita with Minced Meat", ar: "بيدا باللحم المفروم", fr: "Pita à la viande hachée" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 430.00,
-        image: "/images/kiymali_pide.jpg",
+        image: "/images/kiymali_pide.webp",
         tags: [],
       },
       {
@@ -546,7 +546,7 @@ export const menuData = [
         name: { tr: "Kıymalı Kaşarlı Pide", en: "Pita with Mince, Cheddar Cheese", ar: "بيدا باللحم المفروم والجبن", fr: "Pita viande hachée et fromage" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 460.00,
-        image: "/images/kiymali_kasarli_pide.jpg",
+        image: "/images/kiymali_kasarli_pide.webp",
         tags: [],
       },
       {
@@ -554,7 +554,7 @@ export const menuData = [
         name: { tr: "Kuşbaşılı Pide", en: "Pita with Chopped Meat", ar: "بيدا بقطع اللحم", fr: "Pita aux morceaux de viande" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 450.00,
-        image: "/images/kusbasili_pide.jpg",
+        image: "/images/kusbasili_pide.webp",
         tags: [],
       },
       {
@@ -562,7 +562,7 @@ export const menuData = [
         name: { tr: "Kuşbaşılı Kaşarlı Pide", en: "Pita with Chopped Meat, Cheddar Cheese", ar: "بيدا بقطع اللحم والجبن", fr: "Pita morceaux de viande et fromage" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 480.00,
-        image: "/images/kusbasili_kasarli_pide.jpg",
+        image: "/images/kusbasili_kasarli_pide.webp",
         tags: [],
       },
       {
@@ -570,7 +570,7 @@ export const menuData = [
         name: { tr: "Kavurmalı Pide", en: "Pita with Minced Lamb Meat", ar: "بيدا بالكاورما", fr: "Pita à la viande d'agneau" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 480.00,
-        image: "/images/kavurmali_pide.jpg",
+        image: "/images/kavurmali_pide.webp",
         tags: [],
       },
       {
@@ -578,7 +578,7 @@ export const menuData = [
         name: { tr: "Kavurmalı Kaşarlı Pide", en: "Pita with Minced Lamb Meat, Cheddar Cheese", ar: "بيدا بالكاورما والجبن", fr: "Pita viande d'agneau et fromage" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 510.00,
-        image: "/images/kavurmali_kasarli_pide.jpg",
+        image: "/images/kavurmali_kasarli_pide.webp",
         tags: [],
       },
       {
@@ -586,7 +586,7 @@ export const menuData = [
         name: { tr: "Beyaz Peynirli Pide", en: "Pita with Feta Cheese", ar: "بيدا بالجبنة البيضاء", fr: "Pita au fromage feta" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 390.00,
-        image: "/images/beyaz_peynirli_pide.jpg",
+        image: "/images/beyaz_peynirli_pide.webp",
         tags: ["vegetarian"],
       },
       {
@@ -594,7 +594,7 @@ export const menuData = [
         name: { tr: "Kaşarlı Mantarlı Sebzeli Pide", en: "Pita with Cheese, Mushrooms and Vegetables", ar: "بيدا بالجبن والفطر والخضار", fr: "Pita fromage, champignons et légumes" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 390.00,
-        image: "/images/sebzeli_pide.jpg",
+        image: "/images/sebzeli_pide.webp",
         tags: ["vegetarian"],
       },
       {
@@ -602,7 +602,7 @@ export const menuData = [
         name: { tr: "Pastırmalı Kaşarlı Pide", en: "Pita with Pastrami and Cheddar Cheese", ar: "بيدا بالبسطرمة والجبن", fr: "Pita pastrami et fromage" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 480.00,
-        image: "/images/pastirmali_pide.jpg",
+        image: "/images/pastirmali_pide.webp",
         tags: [],
       },
       {
@@ -610,7 +610,7 @@ export const menuData = [
         name: { tr: "Tavuklu Kaşarlı Pide", en: "Chicken and Cheddar Pita", ar: "بيدا بالدجاج والجبن", fr: "Pita poulet et fromage" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 450.00,
-        image: "/images/tavuklu_pide.jpg",
+        image: "/images/tavuklu_pide.webp",
         tags: [],
       }
     ]
@@ -629,7 +629,7 @@ export const menuData = [
         name: { tr: "Etli Konya", en: "Pita with Konya Meat", ar: "بيدا بلحم قونيا", fr: "Pita viande de Konya" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 430.00,
-        image: "/images/etli_konya.jpg",
+        image: "/images/etli_konya.webp",
         tags: [],
       },
       {
@@ -637,7 +637,7 @@ export const menuData = [
         name: { tr: "Etli Etmek", en: "Pita with Chopped Meat", ar: "خبز باللحم", fr: "Pain à la viande" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 460.00,
-        image: "/images/etli_etmek.jpg",
+        image: "/images/etli_etmek.webp",
         tags: [],
       },
       {
@@ -645,7 +645,7 @@ export const menuData = [
         name: { tr: "Lahmacun", en: "Turkish Pizza Covered with Mince", ar: "لحم بعجين", fr: "Lahmacun" },
         description: { tr: "Çıtır Çıtır", en: "Crispy", ar: "مقرمش", fr: "Croustillant" },
         price: 190.00,
-        image: "/images/lahmacun.jpg",
+        image: "/images/lahmacun.webp",
         tags: ["spicy"],
         trending: true,
       },
@@ -654,7 +654,7 @@ export const menuData = [
         name: { tr: "Özel Lahmacun", en: "Special Turkish Pizza", ar: "لحم بعجين خاص", fr: "Lahmacun Spécial" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 320.00,
-        image: "/images/ozel_lahmacun.jpg",
+        image: "/images/ozel_lahmacun.webp",
         tags: ["signature"],
       }
     ]
@@ -673,7 +673,7 @@ export const menuData = [
         name: { tr: "Semiz Otu", en: "Purslane", ar: "بقلة", fr: "Pourpier" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/semiz_otu.jpg",
+        image: "/images/semiz_otu.webp",
         tags: ["vegetarian"],
       },
       {
@@ -681,7 +681,7 @@ export const menuData = [
         name: { tr: "Kuru Cacık", en: "Dry Tzatziki", ar: "جاجيك جاف", fr: "Tzatziki sec" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/kuru_cacik.jpg",
+        image: "/images/kuru_cacik.webp",
         tags: ["vegetarian"],
       },
       {
@@ -689,7 +689,7 @@ export const menuData = [
         name: { tr: "Mütebbel", en: "Eggplant with Tahin", ar: "متبل", fr: "Aubergine au tahini" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/mutebbel.jpg",
+        image: "/images/mutebbel.webp",
         tags: ["vegetarian"],
       },
       {
@@ -697,7 +697,7 @@ export const menuData = [
         name: { tr: "Otlu Yoğurtlu Meze", en: "Basil and Yogurt", ar: "مزة بالأعشاب واللبن", fr: "Yaourt aux herbes" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/otlu_yogurt.jpg",
+        image: "/images/otlu_yogurt.webp",
         tags: ["vegetarian"],
       },
       {
@@ -705,7 +705,7 @@ export const menuData = [
         name: { tr: "Havuç Taratör", en: "Carrot with Yogurt", ar: "جزر باللبن", fr: "Carottes au yaourt" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/havuc_tarator.jpg",
+        image: "/images/havuc_tarator.webp",
         tags: ["vegetarian"],
       },
       {
@@ -713,7 +713,7 @@ export const menuData = [
         name: { tr: "Köz Biberli Yoğurt", en: "Roasted Pepper Yogurt", ar: "لبن بالفلفل المشوي", fr: "Yaourt au poivron grillé" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/koz_biberli.jpg",
+        image: "/images/koz_biberli.webp",
         tags: ["vegetarian"],
       },
       {
@@ -721,7 +721,7 @@ export const menuData = [
         name: { tr: "Babagannuş", en: "Eggplant, Tomatoes and Pepper", ar: "بابا غنوج", fr: "Baba ganoush" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/babagannush.jpg",
+        image: "/images/babagannush.webp",
         tags: ["vegetarian"],
       },
       {
@@ -729,7 +729,7 @@ export const menuData = [
         name: { tr: "Ezme Salata", en: "Spicy Salad", ar: "سلطة أزمة (حارة)", fr: "Salade épicée" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/ezme_salata.jpg",
+        image: "/images/ezme_salata.webp",
         tags: ["vegetarian", "spicy"],
       },
       {
@@ -737,7 +737,7 @@ export const menuData = [
         name: { tr: "Humus", en: "Hummus", ar: "حمص", fr: "Houmous" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/humus.jpg",
+        image: "/images/humus.webp",
         tags: ["vegetarian"],
       }
     ]
@@ -756,7 +756,7 @@ export const menuData = [
         name: { tr: "Mevsim Salatası", en: "Season Salad", ar: "سلطة موسمية", fr: "Salade de saison" },
         description: { tr: "", en: "Harrot, Cucumber, Tomatoes, Vegatable", ar: "جزر، خيار، طماطم، خضار", fr: "Carotte, concombre, tomates, légumes" },
         price: 200.00,
-        image: "/images/mevsim_salata.jpg",
+        image: "/images/mevsim_salata.webp",
         tags: ["vegetarian"],
       },
       {
@@ -764,7 +764,7 @@ export const menuData = [
         name: { tr: "Çoban Salata", en: "Shepherd Salad", ar: "سلطة راعي", fr: "Salade du berger" },
         description: { tr: "", en: "Tomatoes, Cucumber, Pepper, Vegatable", ar: "طماطم، خيار، فلفل، خضار", fr: "Tomates, concombre, poivron, légumes" },
         price: 200.00,
-        image: "/images/coban_salata.jpg",
+        image: "/images/coban_salata.webp",
         tags: ["vegetarian"],
       },
       {
@@ -772,7 +772,7 @@ export const menuData = [
         name: { tr: "Çiğ Köfte", en: "Vegeterian Raw Meatball", ar: "كفتة نية نباتية", fr: "Boulettes crues végétariennes" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 300.00,
-        image: "/images/cig_kofte.jpg",
+        image: "/images/cig_kofte.webp",
         tags: ["vegetarian"],
       },
       {
@@ -780,7 +780,7 @@ export const menuData = [
         name: { tr: "İçli Köfte", en: "Friese Meatball with Walnut", ar: "كبة مقلية بالجوز", fr: "Boulettes farcies aux noix" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 450.00,
-        image: "/images/icli_kofte.jpg",
+        image: "/images/icli_kofte.webp",
         tags: [],
       },
       {
@@ -788,7 +788,7 @@ export const menuData = [
         name: { tr: "Cacık", en: "Cucumber Yogurt", ar: "جاجيك", fr: "Tzatziki" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 150.00,
-        image: "/images/cacik.jpg",
+        image: "/images/cacik.webp",
         tags: ["vegetarian"],
       },
       {
@@ -796,7 +796,7 @@ export const menuData = [
         name: { tr: "Yoğurt", en: "Yoghurt", ar: "لبن", fr: "Yaourt" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 120.00,
-        image: "/images/yogurt.jpg",
+        image: "/images/yogurt.webp",
         tags: ["vegetarian"],
       }
     ]
@@ -815,7 +815,7 @@ export const menuData = [
         name: { tr: "Künefe", en: "Kunefah", ar: "كنافة", fr: "Kunefe" },
         description: { tr: "Hatay usulü", en: "Hatay style", ar: "على طريقة هاتاي", fr: "Style Hatay" },
         price: 250.00,
-        image: "/images/kunefe.jpg",
+        image: "/images/kunefe.webp",
         tags: ["vegetarian", "signature"],
         trending: true,
       },
@@ -824,7 +824,7 @@ export const menuData = [
         name: { tr: "Fırın Sütlaç", en: "Rice Pudding", ar: "أرز بالحليب", fr: "Riz au lait" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 200.00,
-        image: "/images/sutlac.jpg",
+        image: "/images/sutlac.webp",
         tags: ["vegetarian"],
       },
       {
@@ -832,7 +832,7 @@ export const menuData = [
         name: { tr: "Kazandibi", en: "Kazandibi Sweet", ar: "كازان ديبي", fr: "Kazandibi" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 200.00,
-        image: "/images/kazandibi.jpg",
+        image: "/images/kazandibi.webp",
         tags: ["vegetarian"],
       },
       {
@@ -840,7 +840,7 @@ export const menuData = [
         name: { tr: "Trileçe", en: "Trilece", ar: "تريليتشة", fr: "Trilece" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 200.00,
-        image: "/images/trilece.jpg",
+        image: "/images/trilece.webp",
         tags: ["vegetarian"],
       }
     ]
@@ -859,7 +859,7 @@ export const menuData = [
         name: { tr: "Cola", en: "Cola", ar: "كولا", fr: "Cola" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/cola.jpg",
+        image: "/images/cola.webp",
         tags: [],
       },
       {
@@ -867,7 +867,7 @@ export const menuData = [
         name: { tr: "Fanta", en: "Fanta", ar: "فانتا", fr: "Fanta" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/fanta.jpg",
+        image: "/images/fanta.webp",
         tags: [],
       },
       {
@@ -875,7 +875,7 @@ export const menuData = [
         name: { tr: "Sprite", en: "Sprite", ar: "سبرايت", fr: "Sprite" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/sprite.jpg",
+        image: "/images/sprite.webp",
         tags: [],
       },
       {
@@ -883,7 +883,7 @@ export const menuData = [
         name: { tr: "Çamlıca", en: "Flavored Soft Drink", ar: "تشامليجا", fr: "Boisson gazeuse aromatisée" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/camlica.jpg",
+        image: "/images/camlica.webp",
         tags: [],
       },
       {
@@ -891,7 +891,7 @@ export const menuData = [
         name: { tr: "Litrelik Cola", en: "Liter of Coke", ar: "كولا لتر", fr: "Cola 1L" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/litrelik_cola.jpg",
+        image: "/images/litrelik_cola.webp",
         tags: [],
       },
       {
@@ -899,7 +899,7 @@ export const menuData = [
         name: { tr: "Ayran (Küçük)", en: "Yoghurt Drink (Small)", ar: "عيران (صغير)", fr: "Ayran (Petit)" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 85.00,
-        image: "/images/ayran.jpg",
+        image: "/images/ayran.webp",
         tags: [],
       },
       {
@@ -907,7 +907,7 @@ export const menuData = [
         name: { tr: "Ayran (Litrelik)", en: "Yoghurt Drink (Liter)", ar: "عيران (لتر)", fr: "Ayran (1L)" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 170.00,
-        image: "/images/ayran_litrelik.jpg",
+        image: "/images/ayran_litrelik.webp",
         tags: [],
       },
       {
@@ -915,7 +915,7 @@ export const menuData = [
         name: { tr: "Şalgam", en: "Turnip Juice", ar: "عصير اللفت", fr: "Jus de navet" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 85.00,
-        image: "/images/salgam.jpg",
+        image: "/images/salgam.webp",
         tags: [],
       },
       {
@@ -923,7 +923,7 @@ export const menuData = [
         name: { tr: "Meyve Suları", en: "Fruit Juice", ar: "عصير فواكه", fr: "Jus de fruits" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/meyve_sulari.jpg",
+        image: "/images/meyve_sulari.webp",
         tags: [],
       },
       {
@@ -931,7 +931,7 @@ export const menuData = [
         name: { tr: "Ice Tea", en: "Ice Tea", ar: "شاي مثلج", fr: "Thé glacé" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/ice_tea.jpg",
+        image: "/images/ice_tea.webp",
         tags: [],
       },
       {
@@ -939,7 +939,7 @@ export const menuData = [
         name: { tr: "Sıkma Portakal", en: "Fresh Orange Juice", ar: "عصير برتقال طازج", fr: "Jus d'orange frais" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 250.00,
-        image: "/images/portakal.jpg",
+        image: "/images/portakal.webp",
         tags: [],
       },
       {
@@ -947,7 +947,7 @@ export const menuData = [
         name: { tr: "Sıkma Nar", en: "Fresh Pomegranate Juice", ar: "عصير رمان طازج", fr: "Jus de grenade frais" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 280.00,
-        image: "/images/nar.jpg",
+        image: "/images/nar.webp",
         tags: [],
       },
       {
@@ -955,7 +955,7 @@ export const menuData = [
         name: { tr: "Limonata", en: "Lemonade", ar: "ليمونادة", fr: "Limonade" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 200.00,
-        image: "/images/limonata.jpg",
+        image: "/images/limonata.webp",
         tags: [],
       },
       {
@@ -963,7 +963,7 @@ export const menuData = [
         name: { tr: "Soda", en: "Sparkling Water", ar: "مياه غازية", fr: "Eau gazeuse" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 80.00,
-        image: "/images/soda.jpg",
+        image: "/images/soda.webp",
         tags: [],
       },
       {
@@ -971,7 +971,7 @@ export const menuData = [
         name: { tr: "Su", en: "Water", ar: "ماء", fr: "Eau" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 30.00,
-        image: "/images/su.jpg",
+        image: "/images/su.webp",
         tags: [],
       }
     ]
