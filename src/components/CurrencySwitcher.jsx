@@ -5,7 +5,7 @@ import { Coins } from "lucide-react";
 import { useAppContext } from "../context/AppContext";
 
 export default function CurrencySwitcher() {
-  const { currency, changeCurrency } = useAppContext();
+  const { currency, changeCurrency, ratesSource } = useAppContext();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -28,6 +28,8 @@ export default function CurrencySwitcher() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
+  const isLive = ratesSource && ratesSource !== "fallback";
+
   return (
     <div className="relative" ref={dropdownRef}>
       <button
@@ -36,6 +38,10 @@ export default function CurrencySwitcher() {
       >
         <Coins size={14} className="text-gold" />
         <span>{currency}</span>
+        {/* Live indicator dot */}
+        {isLive && (
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" title="Live rates" />
+        )}
       </button>
 
       {isOpen && (
@@ -56,6 +62,10 @@ export default function CurrencySwitcher() {
               {c.symbol} {c.code}
             </button>
           ))}
+          {/* Source indicator */}
+          <div className="px-3 py-1.5 text-[9px] text-cream-dim/40 border-t border-gold/10 text-center">
+            {isLive ? "🟢 Live ECB rates" : "⏳ Loading..."}
+          </div>
         </div>
       )}
     </div>
