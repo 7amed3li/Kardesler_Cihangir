@@ -2,7 +2,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { useAppContext } from "../context/AppContext";
-import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function MenuSelector({ categories, activeCategory, setActiveCategory }) {
@@ -71,11 +70,8 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
 
               {/* Active pill background */}
               {isActive && (
-                <motion.div
-                  layoutId="activeCategoryPill"
-                  className="absolute inset-0 rounded-lg bg-teal-dim/30 border border-teal/30"
-                  initial={false}
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                <div
+                  className="absolute inset-0 rounded-lg bg-teal-dim/30 border border-teal/30 animate-fadeIn"
                 />
               )}
             </button>
@@ -85,3 +81,4 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
     </div>
   );
 }
+

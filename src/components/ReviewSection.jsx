@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { Star, ExternalLink } from "lucide-react";
 
@@ -60,19 +59,13 @@ export default function ReviewSection() {
     { id: 6, name: 'Canan E.', source: 'Yandex Maps', initial: 'C', link: 'https://yandex.com.tr/harita/org/kardesler_kebap_cafe/1044439169/' },
   ];
 
-  // We duplicate the array to create a seamless infinite scrolling marquee effect
   const marqueeItems = [...userComments, ...userComments];
 
   return (
     <section className="py-16 bg-ink border-t border-teal-dim/20 overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col items-center px-4 mb-14">
         
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center text-center mb-10"
-        >
+        <div className="flex flex-col items-center text-center mb-10">
           <span className="text-[10px] text-gold tracking-[0.4em] uppercase mb-2">★★★</span>
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-cream tracking-wide mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
             {t.reviewsTitle || "What our guests say"}
@@ -80,20 +73,16 @@ export default function ReviewSection() {
           <p className="text-cream-dim/60 text-sm font-light tracking-wide max-w-md">
             {t.reviewsSubtitle || "Real ratings from trusted platforms. Click to verify."}
           </p>
-        </motion.div>
+        </div>
 
         {/* Platform Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full max-w-4xl">
-          {reviews.map((review, idx) => (
-            <motion.a
+          {reviews.map((review) => (
+            <a
               key={review.id}
               href={review.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
               className="group relative flex flex-col items-center justify-center p-5 rounded-2xl bg-ink-2 border border-teal-dim/20 hover:border-copper/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(198,98,43,0.1)]"
             >
               <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -115,28 +104,26 @@ export default function ReviewSection() {
               <span className="text-[10px] text-cream-dim/40 uppercase tracking-widest">
                 {review.reviewsCount} {t.reviewsCountText || "reviews"}
               </span>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>
 
-      {/* Infinite Scrolling Marquee for Comments */}
+      {/* CSS-only Infinite Marquee */}
       <div 
         className="relative w-full pb-4" 
         onMouseEnter={() => setIsPaused(true)} 
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Gradient overlays to smooth edges */}
+        {/* Gradient overlays */}
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
 
-        <motion.div
+        <div
           className="flex gap-6 pl-6 w-max"
-          animate={{ x: isPaused ? undefined : "-50%" }}
-          transition={{
-            ease: "linear",
-            duration: 40,
-            repeat: Infinity,
+          style={{
+            animation: "marqueeScroll 40s linear infinite",
+            animationPlayState: isPaused ? "paused" : "running",
           }}
         >
           {marqueeItems.map((comment, idx) => (
@@ -177,7 +164,7 @@ export default function ReviewSection() {
               </div>
             </a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

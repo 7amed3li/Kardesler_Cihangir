@@ -1,21 +1,29 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { menuData } from "@/data/menuData";
 import MenuSelector from "@/components/MenuSelector";
 import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
-import ReviewSection from "@/components/ReviewSection";
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
 import { useAppContext } from "@/context/AppContext";
-import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ChevronDown, Flame, UtensilsCrossed } from "lucide-react";
+
+// Lazy load heavy below-fold components
+const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState(menuData[0].id);
   const [activeFilter, setActiveFilter] = useState(null);
   const { t, table } = useAppContext();
   const menuRef = useRef(null);
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger hero animations after first paint
+    requestAnimationFrame(() => setHeroVisible(true));
+  }, []);
 
   // Extract trending items
   const trendingItems = menuData.flatMap(cat => cat.items).filter(item => item.trending);
@@ -45,18 +53,11 @@ export default function Home() {
           <div className="absolute bottom-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2 }}
-          className="relative z-10 max-w-3xl mx-auto"
-        >
+        <div className={`relative z-10 max-w-3xl mx-auto transition-opacity duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}>
           {/* Location Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.3 }}
-            className="flex items-center justify-center gap-2 mb-8"
+          <div
+            className={`flex items-center justify-center gap-2 mb-8 transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}
+            style={{ transitionDelay: "100ms" }}
           >
             <a 
               href="https://maps.google.com/?q=Kardeşler+Kebap+Pide+Cihangir+Beyoğlu+İstanbul" 
@@ -67,13 +68,12 @@ export default function Home() {
               <MapPin size={12} className="text-teal group-hover:animate-bounce" />
               <span className="text-cream-dim group-hover:text-cream transition-colors">{t.heroLocation || "Firuzağa Mah. Cihangir, Beyoğlu, İstanbul"}</span>
             </a>
-          </motion.div>
+          </div>
 
           {/* Main Logo Name */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.15, duration: 0.4 }}
+          <div
+            className={`transition-all duration-600 ${heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+            style={{ transitionDelay: "150ms" }}
           >
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-cream mb-2 tracking-tight leading-none" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.welcome || "Kardeşler"}
@@ -81,36 +81,30 @@ export default function Home() {
             <p className="text-copper text-lg sm:text-xl md:text-2xl font-medium tracking-[0.4em] uppercase mb-6">
               {t.heroTagline || "Kebap & Pide"}
             </p>
-          </motion.div>
+          </div>
 
           {/* Ornamental Divider */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 0.25, duration: 0.4 }}
-            className="flex items-center justify-center gap-3 mb-8"
+          <div
+            className={`flex items-center justify-center gap-3 mb-8 transition-all duration-500 ${heroVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
+            style={{ transitionDelay: "250ms" }}
           >
             <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-gold/60"></div>
             <Flame size={16} className="text-gold" />
             <div className="w-16 sm:w-24 h-px bg-gradient-to-l from-transparent to-gold/60"></div>
-          </motion.div>
+          </div>
 
           {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.4 }}
-            className="text-cream-dim/80 text-sm sm:text-base md:text-lg font-light tracking-wide max-w-lg mx-auto leading-relaxed mb-10"
+          <p
+            className={`text-cream-dim/80 text-sm sm:text-base md:text-lg font-light tracking-wide max-w-lg mx-auto leading-relaxed mb-10 transition-all duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}
+            style={{ transitionDelay: "300ms" }}
           >
             {t.subtitle || "Where tradition meets taste in the heart of Cihangir"}
-          </motion.p>
+          </p>
 
           {/* Stats Row — Only real data */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.3 }}
-            className="flex items-center justify-center gap-8 sm:gap-12 mb-10"
+          <div
+            className={`flex items-center justify-center gap-8 sm:gap-12 mb-10 transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+            style={{ transitionDelay: "350ms" }}
           >
             {/* Items Count */}
             <div className="flex flex-col items-center">
@@ -128,43 +122,41 @@ export default function Home() {
               <span className="text-3xl sm:text-4xl font-black text-cream mb-1">{menuData.length}</span>
               <span className="text-[10px] sm:text-xs text-cream-dim/60 uppercase tracking-widest">{t.categories || "categories"}</span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Table Badge */}
           {table && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.3 }}
-              className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-teal/30 bg-teal/10 backdrop-blur-md"
+            <div 
+              className={`mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-teal/30 bg-teal/10 backdrop-blur-md transition-all duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}
+              style={{ transitionDelay: "400ms" }}
             >
               <span className="text-xs font-light text-cream-dim tracking-widest uppercase">{t.table}</span>
               <span className="w-px h-4 bg-teal/40"></span>
               <span className="text-lg font-bold text-teal">{table}</span>
-            </motion.div>
+            </div>
           )}
 
           {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.3 }}
-            onClick={scrollToMenu}
-            className="group relative px-8 py-4 bg-gradient-to-r from-copper to-copper/80 text-cream font-bold text-sm tracking-widest uppercase rounded-lg hover:shadow-[0_0_30px_rgba(198,98,43,0.3)] transition-all duration-500 hover:scale-105"
+          <div
+            className={`transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+            style={{ transitionDelay: "450ms" }}
           >
-            <span>{t.heroCta || "Explore Menu"}</span>
-          </motion.button>
-        </motion.div>
+            <button
+              onClick={scrollToMenu}
+              className="group relative px-8 py-4 bg-gradient-to-r from-copper to-copper/80 text-cream font-bold text-sm tracking-widest uppercase rounded-lg hover:shadow-[0_0_30px_rgba(198,98,43,0.3)] transition-all duration-500 hover:scale-105"
+            >
+              <span>{t.heroCta || "Explore Menu"}</span>
+            </button>
+          </div>
+        </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
+        <div
+          className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-10 transition-opacity duration-700 ${heroVisible ? "opacity-100" : "opacity-0"}`}
+          style={{ transitionDelay: "600ms" }}
         >
           <ChevronDown size={20} className="text-cream-dim/30 animate-bounce" />
-        </motion.div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -175,12 +167,7 @@ export default function Home() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-copper/5 rounded-full blur-[100px]"></div>
         
         <div className="relative z-10 flex flex-col items-center mb-10">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center"
-          >
+          <div className="flex flex-col items-center">
             {/* Decorative fire icon */}
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-gradient-to-r from-transparent to-copper/60"></div>
@@ -194,7 +181,7 @@ export default function Home() {
             <p className="text-cream-dim/50 text-xs tracking-[0.3em] uppercase">
               {t.heroTagline || "Kebap & Pide"}
             </p>
-          </motion.div>
+          </div>
         </div>
         
         <div className="flex overflow-x-auto gap-5 pb-6 px-2 no-scrollbar snap-x">
@@ -226,38 +213,32 @@ export default function Home() {
           MENU ITEMS LIST
           ═══════════════════════════════════════════ */}
       <section className="px-4 py-8 min-h-[50vh]">
-        <AnimatePresence mode="popLayout">
-          {menuData.map((category) => {
-            if (activeCategory !== category.id) return null;
+        {menuData.map((category) => {
+          if (activeCategory !== category.id) return null;
 
-            // Apply smart filters
-            const filteredItems = category.items.filter(item => {
-              if (!activeFilter) return true;
-              return item.tags?.includes(activeFilter);
-            });
+          // Apply smart filters
+          const filteredItems = category.items.filter(item => {
+            if (!activeFilter) return true;
+            return item.tags?.includes(activeFilter);
+          });
 
-            return (
-              <motion.div 
-                key={category.id} 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
-              >
-                {filteredItems.length > 0 ? (
-                  filteredItems.map((item, index) => (
-                    <FoodCard key={item.id} item={item} index={index} />
-                  ))
-                ) : (
-                  <div className="col-span-full py-16 text-center">
-                    <p className="text-cream-dim font-light tracking-wide">No dishes match the selected filter.</p>
-                  </div>
-                )}
-              </motion.div>
-            )
-          })}
-        </AnimatePresence>
+          return (
+            <div 
+              key={category.id} 
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 animate-fadeIn"
+            >
+              {filteredItems.length > 0 ? (
+                filteredItems.map((item, index) => (
+                  <FoodCard key={item.id} item={item} index={index} />
+                ))
+              ) : (
+                <div className="col-span-full py-16 text-center">
+                  <p className="text-cream-dim font-light tracking-wide">No dishes match the selected filter.</p>
+                </div>
+              )}
+            </div>
+          )
+        })}
       </section>
 
       {/* ═══════════════════════════════════════════

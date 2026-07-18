@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { useAppContext } from "../context/AppContext";
-import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
 
@@ -18,7 +17,6 @@ export default function FoodCard({ item, index, isVertical = false }) {
 
   return (
     <>
-      {/* Pure CSS hover tilt — no JS overhead */}
       <div
         className={`group relative rounded-xl bg-ink-2 border border-teal-dim/30 hover:border-gold overflow-hidden transition-all duration-300 flex ${isVertical ? "flex-col" : "flex-row md:flex-col"} items-stretch ${isVertical ? "h-auto" : "h-36 md:h-full"} shadow-sm hover:shadow-[0_4px_20px_rgba(47,158,147,0.15)] hover:-translate-y-0.5`}
       >
@@ -29,10 +27,16 @@ export default function FoodCard({ item, index, isVertical = false }) {
         >
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent z-10 pointer-events-none"></div>
           
-          {/* Subtle image scaling on hover */}
           <div className="absolute inset-0 bg-ink-2 group-hover:scale-105 transition-transform duration-700">
             {item.image && (
-              <Image src={item.image} alt={name} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <Image 
+                src={item.image} 
+                alt={name} 
+                fill 
+                style={{ objectFit: "cover" }} 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading={index < 3 && isVertical ? "eager" : "lazy"}
+              />
             )}
           </div>
 
@@ -41,11 +45,6 @@ export default function FoodCard({ item, index, isVertical = false }) {
             <span className="flex items-center px-3 py-1 rounded bg-ink/90 backdrop-blur-md text-copper border border-copper/30 shadow-lg font-bold text-sm tracking-wide">
               {displayPrice} {symbol}
             </span>
-            {item.calories && (
-              <span className="flex items-center px-2 py-1 rounded bg-cream/90 backdrop-blur-md text-ink border border-cream/30 font-bold text-[11px] tracking-wide">
-                {item.calories} {t.calories || "kcal"}
-              </span>
-            )}
           </div>
 
           {/* Text Badges */}
@@ -84,98 +83,81 @@ export default function FoodCard({ item, index, isVertical = false }) {
         </div>
       </div>
 
-      {/* Modal */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
-            onClick={() => setIsModalOpen(false)}
+      {/* Modal — Pure CSS transition */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 animate-fadeIn"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="bg-ink border border-gold/30 rounded-3xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative animate-scaleIn"
+            onClick={(e) => e.stopPropagation()}
           >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="bg-ink border border-gold/30 rounded-3xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative"
-              onClick={(e) => e.stopPropagation()}
+            {/* Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 end-4 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-cream hover:bg-black hover:text-gold transition-colors backdrop-blur-md border border-white/10"
+              aria-label="Close"
             >
-              {/* Close Button */}
+              <X size={20} />
+            </button>
+
+            {/* Modal Image */}
+            <div className="w-full h-64 shrink-0 relative bg-ink-2">
+              {item.image ? (
+                <Image src={item.image} alt={name} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 400px" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-ink-2">
+                  <span className="text-gray-500 font-light">No Image</span>
+                </div>
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-ink to-transparent pointer-events-none"></div>
+            </div>
+
+            {/* Modal Details */}
+            <div className="p-6 overflow-y-auto no-scrollbar flex flex-col gap-4">
+              <div className="flex justify-between items-start gap-4">
+                <h2 className="text-2xl font-bold text-cream">{name}</h2>
+                <span className="shrink-0 text-xl font-bold text-copper bg-copper/10 px-3 py-1 rounded-lg border border-copper/30">
+                  {displayPrice} {symbol}
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {item.tags?.includes("signature") && (
+                  <span className="px-3 py-1 bg-gold/10 text-gold border border-gold/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    {t.signature || "Signature"}
+                  </span>
+                )}
+                {item.tags?.includes("spicy") && (
+                  <span className="px-3 py-1 bg-brick/10 text-brick border border-brick/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    {t.spicy || "Spicy"}
+                  </span>
+                )}
+                {item.tags?.includes("vegetarian") && (
+                  <span className="px-3 py-1 bg-teal/10 text-teal border border-teal/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    {t.vegetarian || "Veg"}
+                  </span>
+                )}
+              </div>
+
+              {description && (
+                <div className="mt-2">
+                  <h4 className="text-sm font-bold text-gold mb-2 uppercase tracking-widest">{t.description || "Details"}</h4>
+                  <p className="text-cream-dim leading-relaxed">{description}</p>
+                </div>
+              )}
+              
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 end-4 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-cream hover:bg-black hover:text-gold transition-colors backdrop-blur-md border border-white/10"
+                className="mt-6 w-full py-4 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors border border-teal-dim/50"
               >
-                <X size={20} />
+                {t.close || "Close"}
               </button>
-
-              {/* Modal Image */}
-              <div className="w-full h-64 shrink-0 relative bg-ink-2">
-                {item.image ? (
-                  <Image src={item.image} alt={name} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 400px" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-ink-2">
-                    <span className="text-gray-500 font-light">No Image</span>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink to-transparent pointer-events-none"></div>
-              </div>
-
-              {/* Modal Details (Scrollable) */}
-              <div className="p-6 overflow-y-auto no-scrollbar flex flex-col gap-4">
-                <div className="flex justify-between items-start gap-4">
-                  <h2 className="text-2xl font-bold text-cream">{name}</h2>
-                  <span className="shrink-0 text-xl font-bold text-copper bg-copper/10 px-3 py-1 rounded-lg border border-copper/30">
-                    {displayPrice} {symbol}
-                  </span>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {item.calories && (
-                    <span className="px-3 py-1 bg-cream text-ink text-xs font-bold rounded-full">
-                      {item.calories} {t.calories || "kcal"}
-                    </span>
-                  )}
-                  {item.tags?.includes("signature") && (
-                    <span className="px-3 py-1 bg-gold/10 text-gold border border-gold/30 text-xs font-bold rounded-full uppercase tracking-wider">
-                      {t.signature || "Signature"}
-                    </span>
-                  )}
-                  {item.tags?.includes("spicy") && (
-                    <span className="px-3 py-1 bg-brick/10 text-brick border border-brick/30 text-xs font-bold rounded-full uppercase tracking-wider">
-                      {t.spicy || "Spicy"}
-                    </span>
-                  )}
-                  {item.tags?.includes("vegetarian") && (
-                    <span className="px-3 py-1 bg-teal/10 text-teal border border-teal/30 text-xs font-bold rounded-full uppercase tracking-wider">
-                      {t.vegetarian || "Veg"}
-                    </span>
-                  )}
-                </div>
-
-                {description && (
-                  <div className="mt-2">
-                    <h4 className="text-sm font-bold text-gold mb-2 uppercase tracking-widest">{t.description || "Details"}</h4>
-                    <p className="text-cream-dim leading-relaxed">
-                      {description}
-                    </p>
-                  </div>
-                )}
-                
-                {/* Add to cart or other action could go here */}
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="mt-6 w-full py-4 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors border border-teal-dim/50"
-                >
-                  {t.close || "Close"}
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
