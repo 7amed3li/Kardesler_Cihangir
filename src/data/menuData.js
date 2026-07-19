@@ -859,7 +859,6 @@ export const menuData = [
         name: { tr: "Cola", en: "Cola", ar: "كولا", fr: "Cola" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/cola.webp",
         tags: [],
       },
       {
@@ -867,7 +866,6 @@ export const menuData = [
         name: { tr: "Fanta", en: "Fanta", ar: "فانتا", fr: "Fanta" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/fanta.webp",
         tags: [],
       },
       {
@@ -875,7 +873,6 @@ export const menuData = [
         name: { tr: "Sprite", en: "Sprite", ar: "سبرايت", fr: "Sprite" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/sprite.webp",
         tags: [],
       },
       {
@@ -883,7 +880,6 @@ export const menuData = [
         name: { tr: "Çamlıca", en: "Flavored Soft Drink", ar: "تشامليجا", fr: "Boisson gazeuse aromatisée" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/camlica.webp",
         tags: [],
       },
       {
@@ -891,7 +887,6 @@ export const menuData = [
         name: { tr: "Litrelik Cola", en: "Liter of Coke", ar: "كولا لتر", fr: "Cola 1L" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 180.00,
-        image: "/images/litrelik_cola.webp",
         tags: [],
       },
       {
@@ -899,7 +894,6 @@ export const menuData = [
         name: { tr: "Ayran (Küçük)", en: "Yoghurt Drink (Small)", ar: "عيران (صغير)", fr: "Ayran (Petit)" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 85.00,
-        image: "/images/ayran.webp",
         tags: [],
       },
       {
@@ -907,7 +901,6 @@ export const menuData = [
         name: { tr: "Ayran (Litrelik)", en: "Yoghurt Drink (Liter)", ar: "عيران (لتر)", fr: "Ayran (1L)" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 170.00,
-        image: "/images/ayran_litrelik.webp",
         tags: [],
       },
       {
@@ -915,7 +908,6 @@ export const menuData = [
         name: { tr: "Şalgam", en: "Turnip Juice", ar: "عصير اللفت", fr: "Jus de navet" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 85.00,
-        image: "/images/salgam.webp",
         tags: [],
       },
       {
@@ -923,7 +915,6 @@ export const menuData = [
         name: { tr: "Meyve Suları", en: "Fruit Juice", ar: "عصير فواكه", fr: "Jus de fruits" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/meyve_sulari.webp",
         tags: [],
       },
       {
@@ -931,7 +922,6 @@ export const menuData = [
         name: { tr: "Ice Tea", en: "Ice Tea", ar: "شاي مثلج", fr: "Thé glacé" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 110.00,
-        image: "/images/ice_tea.webp",
         tags: [],
       },
       {
@@ -939,7 +929,6 @@ export const menuData = [
         name: { tr: "Sıkma Portakal", en: "Fresh Orange Juice", ar: "عصير برتقال طازج", fr: "Jus d'orange frais" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 250.00,
-        image: "/images/portakal.webp",
         tags: [],
       },
       {
@@ -947,7 +936,6 @@ export const menuData = [
         name: { tr: "Sıkma Nar", en: "Fresh Pomegranate Juice", ar: "عصير رمان طازج", fr: "Jus de grenade frais" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 280.00,
-        image: "/images/nar.webp",
         tags: [],
       },
       {
@@ -955,7 +943,6 @@ export const menuData = [
         name: { tr: "Limonata", en: "Lemonade", ar: "ليمونادة", fr: "Limonade" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 200.00,
-        image: "/images/limonata.webp",
         tags: [],
       },
       {
@@ -963,7 +950,6 @@ export const menuData = [
         name: { tr: "Soda", en: "Sparkling Water", ar: "مياه غازية", fr: "Eau gazeuse" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 80.00,
-        image: "/images/soda.webp",
         tags: [],
       },
       {
@@ -971,7 +957,6 @@ export const menuData = [
         name: { tr: "Su", en: "Water", ar: "ماء", fr: "Eau" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 30.00,
-        image: "/images/su.webp",
         tags: [],
       }
     ]
