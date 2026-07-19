@@ -34,6 +34,7 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
       {canScrollLeft && (
         <button 
           onClick={() => scroll(-1)} 
+          aria-label="Scroll left"
           className="absolute left-0 top-0 bottom-0 z-10 w-10 flex items-center justify-center bg-gradient-to-r from-ink via-ink/80 to-transparent"
         >
           <ChevronLeft size={18} className="text-cream-dim" />
@@ -44,6 +45,7 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
       {canScrollRight && (
         <button 
           onClick={() => scroll(1)} 
+          aria-label="Scroll right"
           className="absolute right-0 top-0 bottom-0 z-10 w-10 flex items-center justify-center bg-gradient-to-l from-ink via-ink/80 to-transparent"
         >
           <ChevronRight size={18} className="text-cream-dim" />
