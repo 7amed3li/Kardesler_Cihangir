@@ -35,7 +35,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 fill 
                 style={{ objectFit: "cover" }} 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                loading={index < 3 && isVertical ? "eager" : "lazy"}
+                priority={index < 3 && isVertical}
               />
             )}
           </div>
