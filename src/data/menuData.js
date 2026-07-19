@@ -431,7 +431,7 @@ export const menuData = [
         name: { tr: "Adana Dürüm", en: "Adana Kebab Wrap", ar: "دورم أضنة", fr: "Wrap Adana" },
         description: { tr: "95 gr.", en: "95 gr. Adana Kebab Wrap", ar: "95 غرام دورم أضنة", fr: "95 gr. Wrap Adana" },
         price: 330.00,
-        image: "/images/adana_durum.webp",
+        image: "/images/durum.webp",
         tags: ["spicy"],
       },
       {
@@ -439,7 +439,7 @@ export const menuData = [
         name: { tr: "Urfa Dürüm", en: "Urfa Kebab Wrap", ar: "دورم أورفا", fr: "Wrap Urfa" },
         description: { tr: "95 gr.", en: "95 gr. Urfa Kebab Wrap", ar: "95 غرام دورم أورفا", fr: "95 gr. Wrap Urfa" },
         price: 330.00,
-        image: "/images/urfa_durum.webp",
+        image: "/images/durum.webp",
         tags: [],
       },
       {
@@ -447,7 +447,7 @@ export const menuData = [
         name: { tr: "Dana Çöp Şiş Dürüm", en: "Beef Shish Kebab Wrap", ar: "دورم شيش بقري", fr: "Wrap brochette de bœuf" },
         description: { tr: "95 gr.", en: "95 gr. Beef Shish Kebab Wrap", ar: "95 غرام دورم شيش بقري", fr: "95 gr. Wrap brochette de bœuf" },
         price: 380.00,
-        image: "/images/cop_sis_durum.webp",
+        image: "/images/durum.webp",
         tags: [],
       },
       {
@@ -455,7 +455,7 @@ export const menuData = [
         name: { tr: "Tavuk Şiş Dürüm", en: "Chicken Shish Wrap", ar: "دورم شيش دجاج", fr: "Wrap brochette poulet" },
         description: { tr: "95 gr.", en: "95 gr. Chicken Shish Wrap", ar: "95 غرام دورم شيش دجاج", fr: "95 gr. Wrap brochette de poulet" },
         price: 300.00,
-        image: "/images/tavuk_sis_durum.webp",
+        image: "/images/durum.webp",
         tags: [],
       },
       {
@@ -463,7 +463,7 @@ export const menuData = [
         name: { tr: "Kuzu Şiş Dürüm", en: "Lamb Shish Kebab Wrap", ar: "دورم شيش غنم", fr: "Wrap brochette d'agneau" },
         description: { tr: "95 gr.", en: "95 gr. Lamb Shish Kebab Wrap", ar: "95 غرام دورم شيش غنم", fr: "95 gr. Wrap brochette d'agneau" },
         price: 380.00,
-        image: "/images/kuzu_sis_durum.webp",
+        image: "/images/durum.webp",
         tags: [],
       },
       {
@@ -471,7 +471,7 @@ export const menuData = [
         name: { tr: "Kuzu Ciğer Dürüm", en: "Lamb Liver Wrap", ar: "دورم كبدة غنم", fr: "Wrap foie d'agneau" },
         description: { tr: "95 gr.", en: "95 gr. Lamb Liver Wrap", ar: "95 غرام دورم كبدة غنم", fr: "95 gr. Wrap foie d'agneau" },
         price: 380.00,
-        image: "/images/kuzu_ciger_durum.webp",
+        image: "/images/durum.webp",
         tags: [],
       },
       {
@@ -479,7 +479,7 @@ export const menuData = [
         name: { tr: "Köfte Dürüm", en: "Meatball Wrap", ar: "دورم كفتة", fr: "Wrap boulettes" },
         description: { tr: "95 gr.", en: "95 gr. Meatball Wrap", ar: "95 غرام دورم كفتة", fr: "95 gr. Wrap boulettes" },
         price: 330.00,
-        image: "/images/kofte_durum.webp",
+        image: "/images/durum.webp",
         tags: [],
       },
       {
@@ -487,7 +487,7 @@ export const menuData = [
         name: { tr: "Çiğköfte Dürüm", en: "Vegetarian Raw Wrap", ar: "دورم كفتة نية نباتية", fr: "Wrap cru végétarien" },
         description: { tr: "", en: "", ar: "", fr: "" },
         price: 250.00,
-        image: "/images/cigkofte_durum.webp",
+        image: "/images/durum.webp",
         tags: ["vegetarian"],
       }
     ]
