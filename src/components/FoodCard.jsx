@@ -33,7 +33,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 src={item.image} 
                 alt={name} 
                 fill 
-                style={{ objectFit: "cover" }} 
+                style={{ objectFit: "contain" }} 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority={index < 3 && isVertical}
               />
@@ -105,7 +105,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
             {/* Modal Image */}
             <div className="w-full h-64 shrink-0 relative bg-ink-2">
               {item.image ? (
-                <Image src={item.image} alt={name} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 400px" />
+                <Image src={item.image} alt={name} fill style={{ objectFit: "contain", padding: "0.5rem" }} sizes="(max-width: 768px) 100vw, 400px" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-ink-2">
                   <span className="text-gray-500 font-light">No Image</span>
