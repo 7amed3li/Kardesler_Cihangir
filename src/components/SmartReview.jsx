@@ -32,11 +32,11 @@ export default function SmartReview({ onClose }) {
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
         <div className="bg-[#111] border border-white/10 rounded-3xl p-6 max-w-sm w-full relative">
-          <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white">
+          <button onClick={onClose} aria-label="Close modal" className="absolute top-4 right-4 text-gray-300 hover:text-white">
             <X size={20} />
           </button>
           <h3 className="text-xl font-bold text-white mb-2 text-center">We value your feedback</h3>
-          <p className="text-gray-400 text-sm mb-4 text-center">
+          <p className="text-gray-300 text-sm mb-4 text-center">
             We are sorry to hear your experience was not perfect. Please let us know what went wrong so we can fix it immediately.
           </p>
           <textarea
@@ -57,14 +57,14 @@ export default function SmartReview({ onClose }) {
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
         <div className="bg-[#111] border border-white/10 rounded-3xl p-6 max-w-sm w-full relative text-center">
-          <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white">
+          <button onClick={onClose} aria-label="Close modal" className="absolute top-4 right-4 text-gray-300 hover:text-white">
             <X size={20} />
           </button>
           <div className="w-16 h-16 bg-[#D4AF37]/20 text-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4">
             <Star size={32} fill="currentColor" />
           </div>
           <h3 className="text-xl font-bold text-white mb-2">Thank you!</h3>
-          <p className="text-gray-400 text-sm">Your review has been directed to our public platforms. We appreciate your support!</p>
+          <p className="text-gray-300 text-sm">Your review has been directed to our public platforms. We appreciate your support!</p>
         </div>
       </div>
     );
@@ -73,13 +73,13 @@ export default function SmartReview({ onClose }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
       <div className="bg-[#111] border border-white/10 rounded-3xl p-8 max-w-sm w-full relative shadow-2xl">
-        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+        <button onClick={onClose} aria-label="Close modal" className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors">
           <X size={20} />
         </button>
 
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-white mb-2">{t.rateUs}</h2>
-          <p className="text-sm text-gray-400">How was your experience at Kardeşler Cihangir?</p>
+          <p className="text-sm text-gray-300">How was your experience at Kardeşler Cihangir?</p>
         </div>
 
         <div className={`flex justify-center gap-2 mb-8 ${isRtl ? 'flex-row-reverse' : ''}`}>

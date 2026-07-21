@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useAppContext } from "../context/AppContext";
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 
@@ -47,6 +47,27 @@ export default function Footer() {
   const { t, lang } = useAppContext();
   const currentYear = new Date().getFullYear();
   const fc = footerContent[lang] || footerContent.en;
+
+  const [isMapVisible, setIsMapVisible] = useState(false);
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsMapVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" } // Load slightly before it comes into view
+    );
+
+    if (mapRef.current) {
+      observer.observe(mapRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <footer className="bg-ink-2 border-t border-teal-dim/20 pt-12 pb-6 px-4">
@@ -126,16 +147,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Dark-themed Google Maps Embed */}
-        <div className="map-dark-container w-full h-48 sm:h-56 mb-8 rounded-2xl">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4186457106093!2d28.981119576483584!3d41.0332822713498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sKarde%C5%9Fler%20Kebap%20Cihangir!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Kardeşler Cihangir Location"
-            allowFullScreen
-          ></iframe>
-        </div>
+          {/* Dark-themed Google Maps Embed */}
+          <div ref={mapRef} className="map-dark-container w-full h-48 sm:h-56 mb-8 rounded-2xl relative bg-ink/50 overflow-hidden flex items-center justify-center">
+            {!isMapVisible && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-teal-dim/50">
+                <MapPin className="w-8 h-8 mb-2 animate-pulse" />
+                <span className="text-xs uppercase tracking-widest">Loading Map...</span>
+              </div>
+            )}
+            {isMapVisible && (
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4186457106093!2d28.981119576483584!3d41.0332822713498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sKarde%C5%9Fler%20Kebap%20Cihangir!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Kardeşler Cihangir Location"
+                allowFullScreen
+              ></iframe>
+            )}
+          </div>
 
         {/* Ottoman Divider */}
         <div className="ottoman-divider max-w-sm mx-auto mb-6"></div>

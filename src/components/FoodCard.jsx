@@ -107,6 +107,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
             {/* Close Button */}
             <button
               onClick={() => setIsModalOpen(false)}
+              aria-label="Close modal"
               className="absolute top-4 end-4 z-50 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold transition-colors border-white/10"
               aria-label="Close"
             >
@@ -122,6 +123,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 {/* Zoom Button */}
                 <button
                   onClick={() => setIsFullscreenImage(true)}
+                  aria-label="View fullscreen image"
                   className="absolute bottom-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold hover:scale-110 transition-all border-white/20 shadow-lg"
                   aria-label="Zoom Image"
                 >
@@ -166,6 +168,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
               
               <button
                 onClick={() => setIsModalOpen(false)}
+                aria-label="Close modal"
                 className="mt-6 w-full py-4 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors duration-300 border border-teal-dim/50"
               >
                 {t.close || "Close"}
@@ -185,6 +188,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
           {/* Close Fullscreen Button */}
           <button
             onClick={() => setIsFullscreenImage(false)}
+            aria-label="Close fullscreen image"
             className="absolute top-6 end-6 z-[9999999] w-12 h-12 flex items-center justify-center rounded-full bg-cream text-ink hover:bg-gold hover:scale-110 transition-all shadow-[0_0_20px_rgba(250,243,231,0.3)]"
             aria-label="Close Fullscreen"
           >

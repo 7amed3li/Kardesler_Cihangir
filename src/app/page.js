@@ -218,9 +218,9 @@ export default function Home() {
               <div className="w-8 h-px bg-gradient-to-l from-transparent to-copper/60"></div>
             </div>
             
-            <h3 className="text-2xl sm:text-3xl font-black text-cream tracking-wide uppercase mb-2" style={{ fontFamily: "var(--font-cairo)" }}>
+            <h2 className="text-2xl sm:text-3xl font-black text-cream tracking-wide uppercase mb-2" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.trending || "Most Loved by Our Guests"}
-            </h3>
+            </h2>
             <p className="text-cream-dim/50 text-xs tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-playfair)" }}>
               {t.heroTagline || "Kebap & Pide"}
             </p>

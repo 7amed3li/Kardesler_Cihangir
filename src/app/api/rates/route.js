@@ -21,7 +21,10 @@ export async function GET() {
   try {
     const res = await fetch(
       "https://api.frankfurter.dev/v1/latest?base=TRY&symbols=USD,EUR,GBP",
-      { next: { revalidate: 300 } } // Next.js fetch cache: 5 min
+      { 
+        next: { revalidate: 300 }, // Next.js fetch cache: 5 min
+        signal: AbortSignal.timeout(1500)
+      }
     );
 
     if (!res.ok) throw new Error(`API responded ${res.status}`);
