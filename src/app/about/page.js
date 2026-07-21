@@ -16,6 +16,7 @@ const aboutContent = {
     workHours: "Her gün: 10:00 - 02:00",
     followUs: "Bizi Takip Edin",
     whatsapp: "WhatsApp Sipariş",
+    findUs: "Bizi Bulun",
   },
   en: {
     storyTitle: "Our Story",
@@ -28,6 +29,7 @@ const aboutContent = {
     workHours: "Everyday: 10:00 AM - 02:00 AM",
     followUs: "Follow Us",
     whatsapp: "WhatsApp Order",
+    findUs: "Find Us",
   },
   ar: {
     storyTitle: "قصتنا",
@@ -40,6 +42,7 @@ const aboutContent = {
     workHours: "يومياً: 10:00 صباحاً - 02:00 ليلاً",
     followUs: "تابعنا",
     whatsapp: "اطلب عبر واتساب",
+    findUs: "موقعنا",
   },
   fr: {
     storyTitle: "Notre Histoire",
@@ -52,6 +55,7 @@ const aboutContent = {
     workHours: "Tous les jours : 10h00 - 02h00",
     followUs: "Suivez-nous",
     whatsapp: "Commande WhatsApp",
+    findUs: "Trouvez-nous",
   },
 };
 
@@ -78,58 +82,77 @@ export default function AboutPage() {
   const content = aboutContent[lang] || aboutContent.en;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white pb-16">
+    <div className="min-h-screen bg-transparent text-cream pb-16">
       {/* Hero Header */}
-      <section className="pt-12 pb-10 px-4 text-center">
+      <section className="pt-12 pb-10 px-4 text-center animate-fadeInUp">
         <img src="/logo.webp" alt="Kardeşler Cihangir Logo" className="w-20 h-20 mx-auto mb-6 object-contain" />
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">{t.about}</h1>
-        <p className="text-[#D4AF37] text-sm tracking-widest uppercase mb-2">Kebap · Pide · Lahmacun</p>
-        <p className="text-gray-400 text-sm max-w-md mx-auto leading-relaxed">{content.address}</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-cream mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
+          {t.about}
+        </h1>
+        <p className="text-copper text-sm tracking-widest uppercase mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+          Kebap · Pide · Lahmacun
+        </p>
+        <p className="text-cream-dim/60 text-sm max-w-md mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+          {content.address}
+        </p>
       </section>
+
+      {/* Ottoman Divider */}
+      <div className="ottoman-divider max-w-xs mx-auto mb-8"></div>
 
       <div className="max-w-3xl mx-auto px-4 space-y-6">
         {/* Our Story */}
-        <section className="bg-[#111] border border-white/10 rounded-2xl p-6 sm:p-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#D4AF37] mb-5">{content.storyTitle}</h2>
-          <p className="text-white/80 leading-loose mb-4 text-sm sm:text-base">{content.storyP1}</p>
-          <p className="text-white/80 leading-loose text-sm sm:text-base">{content.storyP2}</p>
+        <section className="glass-card rounded-2xl p-6 sm:p-8 animate-fadeInUp" style={{ animationDelay: "100ms" }}>
+          <h2 className="text-xl sm:text-2xl font-bold text-gold mb-5" style={{ fontFamily: "var(--font-cairo)" }}>
+            {content.storyTitle}
+          </h2>
+          <p className="text-cream-dim/80 leading-loose mb-4 text-sm sm:text-base" style={{ fontFamily: "var(--font-inter)" }}>
+            {content.storyP1}
+          </p>
+          <p className="text-cream-dim/80 leading-loose text-sm sm:text-base" style={{ fontFamily: "var(--font-inter)" }}>
+            {content.storyP2}
+          </p>
         </section>
 
         {/* Contact Info */}
-        <section className="bg-[#111] border border-white/10 rounded-2xl p-6 sm:p-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#D4AF37] mb-6">{content.contactTitle}</h2>
+        <section className="glass-card rounded-2xl p-6 sm:p-8 animate-fadeInUp" style={{ animationDelay: "200ms" }}>
+          <h2 className="text-xl sm:text-2xl font-bold text-gold mb-6" style={{ fontFamily: "var(--font-cairo)" }}>
+            {content.contactTitle}
+          </h2>
           
           <div className="space-y-5">
             {/* Address */}
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
                 <MapPin size={18} />
               </div>
               <div>
-                <h3 className="font-medium text-white text-sm mb-1">Adres / Address</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{content.address}</p>
+                <h3 className="font-medium text-cream text-sm mb-1">Adres / Address</h3>
+                <p className="text-cream-dim/60 text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                  {content.address}
+                </p>
               </div>
             </div>
 
             {/* Phone */}
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
                 <Phone size={18} />
               </div>
               <div>
-                <h3 className="font-medium text-white text-sm mb-1">{content.orderLine}</h3>
-                <a href="tel:+905348662715" className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors">+90 534 866 27 15</a>
+                <h3 className="font-medium text-cream text-sm mb-1">{content.orderLine}</h3>
+                <a href="tel:+905348662715" className="text-cream-dim/60 text-sm hover:text-copper transition-colors">+90 534 866 27 15</a>
               </div>
             </div>
 
             {/* Hours */}
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
                 <Clock size={18} />
               </div>
               <div>
-                <h3 className="font-medium text-white text-sm mb-1">{content.workHoursLabel}</h3>
-                <p className="text-white/60 text-sm">{content.workHours}</p>
+                <h3 className="font-medium text-cream text-sm mb-1">{content.workHoursLabel}</h3>
+                <p className="text-cream-dim/60 text-sm">{content.workHours}</p>
               </div>
             </div>
           </div>
@@ -139,28 +162,52 @@ export default function AboutPage() {
             href="https://wa.me/905348662715"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 mt-6 py-3 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 hover:bg-[#25D366]/25 transition-colors"
+            className="flex items-center justify-center gap-2 mt-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-all duration-300"
           >
             <MessageCircle size={18} className="text-[#25D366]" />
             <span className="text-[#25D366] font-medium text-sm">{content.whatsapp}</span>
           </a>
         </section>
 
+        {/* Map Section */}
+        <section className="glass-card rounded-2xl p-6 sm:p-8 animate-fadeInUp" style={{ animationDelay: "300ms" }}>
+          <h2 className="text-xl sm:text-2xl font-bold text-gold mb-5" style={{ fontFamily: "var(--font-cairo)" }}>
+            {content.findUs}
+          </h2>
+          <div className="map-dark-container w-full h-56 sm:h-72 rounded-2xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4186457106093!2d28.981119576483584!3d41.0332822713498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sKarde%C5%9Fler%20Kebap%20Cihangir!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Kardeşler Cihangir Location"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </section>
+
         {/* Social Media */}
-        <section className="text-center py-8">
-          <h3 className="text-lg font-medium text-white mb-6">{content.followUs}</h3>
+        <section className="text-center py-8 animate-fadeInUp" style={{ animationDelay: "400ms" }}>
+          <h3 className="text-lg font-medium text-cream mb-6" style={{ fontFamily: "var(--font-cairo)" }}>
+            {content.followUs}
+          </h3>
           <div className="flex justify-center gap-4 mb-8">
-            <a href="#" className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-gray-400">
+            <a href="https://www.instagram.com/kardeslerkebapcihangir/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
               <InstagramIcon size={22} />
             </a>
-            <a href="#" className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-gray-400">
+            <a href="#" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
               <FacebookIcon size={22} />
             </a>
-            <a href="https://kardeslercihangir.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-gray-400">
+            <a href="https://kardeslercihangir.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
               <Globe size={22} />
             </a>
           </div>
-          <p className="text-gray-600 text-xs">© 2026 Kardeşler Cihangir</p>
+
+          {/* Ottoman Divider */}
+          <div className="ottoman-divider max-w-xs mx-auto mb-6"></div>
+
+          <p className="text-cream-dim/30 text-xs" style={{ fontFamily: "var(--font-inter)" }}>
+            © {new Date().getFullYear()} Kardeşler Cihangir
+          </p>
         </section>
       </div>
     </div>

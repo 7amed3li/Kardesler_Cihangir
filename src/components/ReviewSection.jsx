@@ -1,12 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useAppContext } from "../context/AppContext";
 import { Star, ExternalLink } from "lucide-react";
+
+// Scroll-reveal hook
+function useReveal() {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); obs.unobserve(el); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, isVisible };
+}
 
 export default function ReviewSection() {
   const { t } = useAppContext();
   const [isPaused, setIsPaused] = useState(false);
+  const reveal = useReveal();
 
   const reviews = [
     {
@@ -62,28 +80,35 @@ export default function ReviewSection() {
   const marqueeItems = [...userComments, ...userComments];
 
   return (
-    <section className="py-16 bg-ink border-t border-teal-dim/20 overflow-hidden">
+    <section
+      ref={reveal.ref}
+      className={`py-16 bg-ink border-t border-teal-dim/20 overflow-hidden transition-all duration-700 ${reveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+    >
       <div className="max-w-6xl mx-auto flex flex-col items-center px-4 mb-14">
         
+        {/* Ottoman Divider */}
+        <div className="ottoman-divider max-w-xs mx-auto mb-10"></div>
+
         <div className="flex flex-col items-center text-center mb-10">
           <span className="text-[10px] text-gold tracking-[0.4em] uppercase mb-2">★★★</span>
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-cream tracking-wide mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
             {t.reviewsTitle || "What our guests say"}
           </h3>
-          <p className="text-cream-dim/60 text-sm font-light tracking-wide max-w-md">
+          <p className="text-cream-dim/60 text-sm font-light tracking-wide max-w-md" style={{ fontFamily: "var(--font-inter)" }}>
             {t.reviewsSubtitle || "Real ratings from trusted platforms. Click to verify."}
           </p>
         </div>
 
         {/* Platform Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full max-w-4xl">
-          {reviews.map((review) => (
+          {reviews.map((review, idx) => (
             <a
               key={review.id}
               href={review.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col items-center justify-center p-5 rounded-2xl bg-ink-2 border border-teal-dim/20 hover:border-copper/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(198,98,43,0.1)]"
+              className={`group relative flex flex-col items-center justify-center p-5 rounded-2xl glass-card hover:border-copper/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(198,98,43,0.1)] animate-fadeInUp`}
+              style={{ animationDelay: `${idx * 100}ms` }}
             >
               <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <ExternalLink size={14} className="text-cream-dim/40" />
@@ -101,7 +126,7 @@ export default function ReviewSection() {
               <span className="text-sm font-bold text-cream-dim tracking-wide mb-0.5">
                 {review.name}
               </span>
-              <span className="text-[10px] text-cream-dim/40 uppercase tracking-widest">
+              <span className="text-[10px] text-cream-dim/40 uppercase tracking-widest" style={{ fontFamily: "var(--font-inter)" }}>
                 {review.reviewsCount} {t.reviewsCountText || "reviews"}
               </span>
             </a>
@@ -132,9 +157,9 @@ export default function ReviewSection() {
               href={comment.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-[280px] sm:w-[350px] shrink-0 p-7 rounded-2xl bg-ink-2/80 backdrop-blur-md border border-teal-dim/20 flex flex-col justify-between hover:border-copper/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(198,98,43,0.1)] cursor-pointer"
+              className="group relative w-[280px] sm:w-[350px] shrink-0 p-7 rounded-2xl glass-card flex flex-col justify-between hover:border-copper/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(198,98,43,0.1)] cursor-pointer"
             >
-              <div className="absolute top-4 right-4 text-gold/5 text-6xl font-serif leading-none group-hover:text-gold/20 transition-colors">"</div>
+              <div className="absolute top-4 right-4 text-gold/5 text-6xl font-serif leading-none group-hover:text-gold/20 transition-colors">&quot;</div>
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <ExternalLink size={14} className="text-copper" />
               </div>
@@ -145,7 +170,7 @@ export default function ReviewSection() {
                 ))}
               </div>
               
-              <p className="text-[14px] sm:text-[15px] text-cream-dim/90 font-light leading-relaxed mb-6 relative z-10">
+              <p className="text-[14px] sm:text-[15px] text-cream-dim/90 font-light leading-relaxed mb-6 relative z-10" style={{ fontFamily: "var(--font-inter)" }}>
                 {t[`review${comment.id}`]}
               </p>
               

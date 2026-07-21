@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { menuData } from "@/data/menuData";
 import MenuSelector from "@/components/MenuSelector";
 import SmartFilters from "@/components/SmartFilters";
@@ -13,12 +13,40 @@ import { MapPin, ChevronDown, Flame, UtensilsCrossed } from "lucide-react";
 const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
+// Hook: Intersection Observer for scroll-reveal animations
+function useReveal() {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isVisible };
+}
+
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState(menuData[0].id);
   const [activeFilter, setActiveFilter] = useState(null);
-  const { t, table } = useAppContext();
+  const { t } = useAppContext();
   const menuRef = useRef(null);
   const [heroVisible, setHeroVisible] = useState(false);
+
+  // Scroll-reveal refs for each section
+  const trendingReveal = useReveal();
+  const menuReveal = useReveal();
 
   useEffect(() => {
     // Trigger hero animations after first paint
@@ -37,20 +65,37 @@ export default function Home() {
     <div className="pb-8 bg-transparent min-h-screen text-cream font-sans selection:bg-copper selection:text-cream">
       
       {/* ═══════════════════════════════════════════
-          HERO SECTION — The Grand First Impression
+          HERO SECTION — Cinematic First Impression
           ═══════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+      <section className="relative w-full min-h-[92vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 z-0">
-          {/* Radial glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/5 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-copper/5 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gold/5 rounded-full blur-[80px]"></div>
+        {/* Cinematic Background Image */}
+        <div className="hero-bg">
+          <img
+            src="/images/hero-bg.png"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+
+        {/* Animated decorative elements */}
+        <div className="absolute inset-0 z-[1] pointer-events-none">
+          {/* Top Ottoman border line */}
+          <div className="absolute top-[12%] left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
+          {/* Bottom Ottoman border line */}
+          <div className="absolute bottom-[15%] left-0 w-full h-px bg-gradient-to-r from-transparent via-copper/15 to-transparent"></div>
           
-          {/* Decorative lines */}
-          <div className="absolute top-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-dim/20 to-transparent"></div>
-          <div className="absolute bottom-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
+          {/* Corner accents */}
+          <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-gold/20 rounded-tl-sm hidden md:block"></div>
+          <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-gold/20 rounded-tr-sm hidden md:block"></div>
+          <div className="absolute bottom-24 left-8 w-12 h-12 border-b-2 border-l-2 border-gold/20 rounded-bl-sm hidden md:block"></div>
+          <div className="absolute bottom-24 right-8 w-12 h-12 border-b-2 border-r-2 border-gold/20 rounded-br-sm hidden md:block"></div>
+          
+          {/* Radial glows */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/5 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-copper/5 rounded-full blur-[100px]"></div>
         </div>
 
         <div className={`relative z-10 max-w-3xl mx-auto transition-opacity duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}>
@@ -63,7 +108,7 @@ export default function Home() {
               href="https://maps.google.com/?q=Kardeşler+Kebap+Pide+Cihangir+Beyoğlu+İstanbul" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-teal-dim/40 bg-teal-dim/10 backdrop-blur-md text-xs tracking-widest hover:border-teal hover:bg-teal-dim/20 transition-all duration-300 cursor-pointer group"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-teal-dim/40 glass-card text-xs tracking-widest hover:border-teal hover:bg-teal-dim/20 transition-all duration-300 cursor-pointer group"
             >
               <MapPin size={12} className="text-teal group-hover:animate-bounce" />
               <span className="text-cream-dim group-hover:text-cream transition-colors">{t.heroLocation || "Firuzağa Mah. Cihangir, Beyoğlu, İstanbul"}</span>
@@ -72,41 +117,46 @@ export default function Home() {
 
           {/* Main Logo Name */}
           <div
-            className={`transition-all duration-600 ${heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
-            style={{ transitionDelay: "150ms" }}
+            className={`transition-all duration-700 ${heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+            style={{ transitionDelay: "200ms" }}
           >
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-cream mb-2 tracking-tight leading-none" style={{ fontFamily: "var(--font-cairo)" }}>
+            <h1
+              className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-cream mb-2 tracking-tight leading-none"
+              style={{ fontFamily: "var(--font-cairo)" }}
+            >
               {t.welcome || "Kardeşler"}
             </h1>
-            <p className="text-copper text-lg sm:text-xl md:text-2xl font-medium tracking-[0.4em] uppercase mb-6">
+            <p className="text-copper text-lg sm:text-xl md:text-2xl font-medium tracking-[0.4em] uppercase mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
               {t.heroTagline || "Kebap & Pide"}
             </p>
           </div>
 
-          {/* Ornamental Divider */}
+          {/* Ornamental Divider — Ottoman-inspired */}
           <div
-            className={`flex items-center justify-center gap-3 mb-8 transition-all duration-500 ${heroVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
-            style={{ transitionDelay: "250ms" }}
+            className={`flex items-center justify-center gap-3 mb-8 transition-all duration-600 ${heroVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
+            style={{ transitionDelay: "300ms" }}
           >
             <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-gold/60"></div>
-            <Flame size={16} className="text-gold" />
+            <div className="relative">
+              <Flame size={16} className="text-gold" />
+              <div className="absolute inset-0 blur-md bg-gold/20 rounded-full"></div>
+            </div>
             <div className="w-16 sm:w-24 h-px bg-gradient-to-l from-transparent to-gold/60"></div>
           </div>
 
           {/* Subtitle */}
           <p
             className={`text-cream-dim/80 text-sm sm:text-base md:text-lg font-light tracking-wide max-w-lg mx-auto leading-relaxed mb-10 transition-all duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}
-            style={{ transitionDelay: "300ms" }}
+            style={{ transitionDelay: "350ms", fontFamily: "var(--font-inter)" }}
           >
             {t.subtitle || "Where tradition meets taste in the heart of Cihangir"}
           </p>
 
-          {/* Stats Row — Only real data */}
+          {/* Stats Row */}
           <div
             className={`flex items-center justify-center gap-8 sm:gap-12 mb-10 transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-            style={{ transitionDelay: "350ms" }}
+            style={{ transitionDelay: "400ms" }}
           >
-            {/* Items Count */}
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-1.5 mb-1">
                 <UtensilsCrossed size={16} className="text-teal" />
@@ -117,35 +167,22 @@ export default function Home() {
 
             <div className="w-px h-12 bg-gold/20"></div>
 
-            {/* Categories */}
             <div className="flex flex-col items-center">
               <span className="text-3xl sm:text-4xl font-black text-cream mb-1">{menuData.length}</span>
               <span className="text-[10px] sm:text-xs text-cream-dim/60 uppercase tracking-widest">{t.categories || "categories"}</span>
             </div>
           </div>
 
-          {/* Table Badge */}
-          {table && (
-            <div 
-              className={`mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-teal/30 bg-teal/10 backdrop-blur-md transition-all duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}
-              style={{ transitionDelay: "400ms" }}
-            >
-              <span className="text-xs font-light text-cream-dim tracking-widest uppercase">{t.table}</span>
-              <span className="w-px h-4 bg-teal/40"></span>
-              <span className="text-lg font-bold text-teal">{table}</span>
-            </div>
-          )}
-
           {/* CTA Button */}
           <div
             className={`transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-            style={{ transitionDelay: "450ms" }}
+            style={{ transitionDelay: "500ms" }}
           >
             <button
               onClick={scrollToMenu}
-              className="group relative px-8 py-4 bg-gradient-to-r from-copper to-copper/80 text-cream font-bold text-sm tracking-widest uppercase rounded-lg hover:shadow-[0_0_30px_rgba(198,98,43,0.3)] transition-all duration-500 hover:scale-105"
+              className="group relative px-10 py-4 bg-gradient-to-r from-copper to-copper/80 text-cream font-bold text-sm tracking-widest uppercase rounded-xl hover:shadow-[0_0_40px_rgba(198,98,43,0.35)] transition-all duration-500 hover:scale-105 animate-pulseGlow"
             >
-              <span>{t.heroCta || "Explore Menu"}</span>
+              <span style={{ fontFamily: "var(--font-inter)" }}>{t.heroCta || "Explore Menu"}</span>
             </button>
           </div>
         </div>
@@ -153,7 +190,7 @@ export default function Home() {
         {/* Scroll indicator */}
         <div
           className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-10 transition-opacity duration-700 ${heroVisible ? "opacity-100" : "opacity-0"}`}
-          style={{ transitionDelay: "600ms" }}
+          style={{ transitionDelay: "700ms" }}
         >
           <ChevronDown size={20} className="text-cream-dim/30 animate-bounce" />
         </div>
@@ -162,23 +199,29 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           TRENDING / CHEF'S PICKS
           ═══════════════════════════════════════════ */}
-      <section ref={menuRef} className="relative py-12 px-4 bg-gradient-to-b from-ink-2 via-ink to-ink overflow-hidden">
+      <section
+        ref={(el) => { menuRef.current = el; if (trendingReveal.ref) trendingReveal.ref.current = el; }}
+        className={`relative py-16 px-4 bg-gradient-to-b from-ink-2 via-ink to-ink overflow-hidden transition-all duration-700 ${trendingReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      >
         {/* Background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-copper/5 rounded-full blur-[100px]"></div>
         
+        {/* Ottoman Divider at top */}
+        <div className="ottoman-divider max-w-xl mx-auto mb-12"></div>
+
         <div className="relative z-10 flex flex-col items-center mb-10">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center ottoman-bracket">
             {/* Decorative fire icon */}
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-px bg-gradient-to-r from-transparent to-copper/60"></div>
-              <Flame size={22} className="text-copper" />
+              <Flame size={22} className="text-copper animate-float" />
               <div className="w-8 h-px bg-gradient-to-l from-transparent to-copper/60"></div>
             </div>
             
             <h3 className="text-2xl sm:text-3xl font-black text-cream tracking-wide uppercase mb-2" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.trending || "Most Loved by Our Guests"}
             </h3>
-            <p className="text-cream-dim/50 text-xs tracking-[0.3em] uppercase">
+            <p className="text-cream-dim/50 text-xs tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-playfair)" }}>
               {t.heroTagline || "Kebap & Pide"}
             </p>
           </div>

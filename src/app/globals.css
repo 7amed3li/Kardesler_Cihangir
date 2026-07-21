@@ -27,24 +27,345 @@
   
   --font-cairo: "Cairo", sans-serif;
   --font-tajawal: "Tajawal", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(198,98,43,0.10), transparent 60%), var(--ink);
+  background:
+    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(198,98,43,0.10), transparent 60%),
+    radial-gradient(ellipse 600px 400px at 80% 50%, rgba(47,158,147,0.04), transparent 50%),
+    radial-gradient(ellipse 400px 300px at 20% 80%, rgba(212,162,76,0.04), transparent 50%),
+    var(--ink);
   color: var(--cream);
   overflow-x: hidden;
 }
 
-::selection {
-  background: var(--copper);
-  color: var(--cream);
-}
-
-/* Hide scrollbar but keep scroll */
+/* Hide scrollbar for clean UI */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; box-shadow: 0 0 15px rgba(212,162,76,0.3); }
+  50% { opacity: 1; box-shadow: 0 0 30px rgba(212,162,76,0.6); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(47, 158, 147, 0.3); }
+  50% { border-color: rgba(47, 158, 147, 0.8); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   ANIMATION UTILITY CLASSES
+   ========================================================================== */
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.5s ease-out both;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-borderGlow {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.animate-spinSlow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Stagger delays for children */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+.stagger-6 { animation-delay: 300ms; }
+.stagger-7 { animation-delay: 350ms; }
+.stagger-8 { animation-delay: 400ms; }
+
+/* ==========================================================================
+   GLASSMORPHISM
+   ========================================================================== */
+
+.glass-card {
+  background: rgba(24, 16, 9, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(47, 158, 147, 0.15);
+}
+
+.glass-card-strong {
+  background: rgba(24, 16, 9, 0.80);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(47, 158, 147, 0.25);
+}
+
+/* ==========================================================================
+   OTTOMAN DECORATIVE ELEMENTS
+   ========================================================================== */
+
+.ottoman-divider {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(212, 162, 76, 0.15) 15%,
+    rgba(212, 162, 76, 0.4) 50%,
+    rgba(212, 162, 76, 0.15) 85%,
+    transparent
+  );
+}
+
+.ottoman-divider::before {
+  content: "✦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: var(--gold);
+  background: var(--ink);
+  padding: 0 12px;
+  letter-spacing: 8px;
+}
+
+.ottoman-corner {
+  position: relative;
+}
+
+.ottoman-corner::before,
+.ottoman-corner::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(212, 162, 76, 0.3);
+  pointer-events: none;
+}
+
+.ottoman-corner::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-color: inherit;
+}
+
+.ottoman-corner::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-color: inherit;
+}
+
+/* Ornamental bracket pattern */
+.ottoman-bracket {
+  position: relative;
+  padding: 1.5rem 2rem;
+}
+
+.ottoman-bracket::before,
+.ottoman-bracket::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.ottoman-bracket::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  border-top-left-radius: 4px;
+}
+
+.ottoman-bracket::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  border-bottom-right-radius: 4px;
+}
+
+/* ==========================================================================
+   SCROLL-TRIGGERED REVEAL
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   HERO BACKGROUND
+   ========================================================================== */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(24,16,9,0.50) 0%,
+      rgba(24,16,9,0.70) 40%,
+      rgba(24,16,9,0.92) 80%,
+      var(--ink) 100%
+    );
+  z-index: 1;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.6) saturate(1.1);
+}
+
+/* ==========================================================================
+   GOOGLE MAPS DARK THEME
+   ========================================================================== */
+
+.map-dark-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(47, 158, 147, 0.2);
+}
+
+.map-dark-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: brightness(0.75) contrast(1.1) saturate(0) invert(0.92) hue-rotate(180deg);
+}
+
+/* ==========================================================================
+   FOOD CARD HOVER EFFECTS
+   ========================================================================== */
+
+.food-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 32px rgba(198, 98, 43, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   MODAL OVERLAY
+   ========================================================================== */
+
+.modal-overlay {
+  animation: fadeIn 0.25s ease-out both;
+}
+
+.modal-content {
+  animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }

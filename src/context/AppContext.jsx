@@ -45,10 +45,13 @@ function saveRatesToStorage(rates, source, lastUpdated) {
 export function AppProvider({ children }) {
   const [lang, setLang] = useState("tr");
   const [currency, setCurrency] = useState("TRY");
-  const [table, setTable] = useState(null);
   const [exchangeRates, setExchangeRates] = useState(HARDCODED_FALLBACK);
   const [ratesSource, setRatesSource] = useState("fallback");
   const [ratesLastUpdated, setRatesLastUpdated] = useState(null);
+
+  // ═══════════════════════════════════════════
+  // EXCHANGE RATES
+  // ═══════════════════════════════════════════
 
   // Fetch live exchange rates from our API route
   const fetchRates = useCallback(async () => {
@@ -79,16 +82,6 @@ export function AppProvider({ children }) {
     if (savedCurrency && HARDCODED_FALLBACK[savedCurrency]) {
       setCurrency(savedCurrency);
     }
-    
-    const params = new URLSearchParams(window.location.search);
-    const tableParam = params.get("table");
-    if (tableParam) {
-      setTable(tableParam);
-      localStorage.setItem("table", tableParam);
-    } else {
-      const savedTable = localStorage.getItem("table");
-      if (savedTable) setTable(savedTable);
-    }
 
     // Load last known rates from localStorage immediately (instant, no network)
     const lastKnown = getLastKnownRates();
@@ -117,36 +110,46 @@ export function AppProvider({ children }) {
   };
 
   const convertPrice = (priceInTRY) => {
-    const { rate } = exchangeRates[currency] || FALLBACK_RATES[currency];
+    const rateData = exchangeRates[currency] || HARDCODED_FALLBACK[currency];
+    const { rate } = rateData;
     return (priceInTRY * rate).toFixed(2);
   };
 
-  const getCurrencySymbol = () => (exchangeRates[currency] || FALLBACK_RATES[currency]).symbol;
+  const getCurrencySymbol = () => {
+    const rateData = exchangeRates[currency] || HARDCODED_FALLBACK[currency];
+    return rateData.symbol;
+  };
 
   const t = translations[lang] || translations["en"];
   const isRtl = lang === "ar";
 
+  // Context Value
+  // ═══════════════════════════════════════════
+  const value = {
+    // Language
+    lang,
+    setLang,
+    t,
+    isRtl,
+    // Exchange Rates
+    currency,
+    setCurrency,
+    exchangeRates,
+    ratesSource,
+    ratesLastUpdated,
+    getCurrencySymbol,
+    convertPrice,
+  };
+
   return (
-    <AppContext.Provider
-      value={{
-        lang,
-        changeLang,
-        currency,
-        changeCurrency,
-        convertPrice,
-        getCurrencySymbol,
-        t,
-        isRtl,
-        table,
-        ratesSource,
-        ratesLastUpdated,
-      }}
-    >
-      <div dir={isRtl ? "rtl" : "ltr"} className={isRtl ? "font-arabic" : ""}>
+    <AppContext.Provider value={value}>
+      <div dir={isRtl ? "rtl" : "ltr"} className={isRtl ? "font-[var(--font-tajawal)]" : ""}>
         {children}
       </div>
     </AppContext.Provider>
   );
 }
 
-export const useAppContext = () => useContext(AppContext);
+export function useAppContext() {
+  return useContext(AppContext);
+}
