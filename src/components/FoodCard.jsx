@@ -28,13 +28,13 @@ export default function FoodCard({ item, index, isVertical = false }) {
   return (
     <>
       <div
-        className={`group relative rounded-xl bg-ink-2 border border-teal-dim/20 hover:border-gold/50 overflow-hidden transition-all duration-300 flex ${isVertical ? "flex-col" : "flex-row md:flex-col"} items-stretch ${isVertical ? "h-auto" : "h-36 md:h-full"} food-card-hover animate-fadeInUp`}
+        className={`group relative rounded-xl bg-ink-2 border border-teal-dim/20 hover:border-gold/50 overflow-hidden transition-all duration-300 flex ${isVertical ? "flex-col" : "flex-row"} items-stretch ${isVertical ? "h-auto" : "h-36 sm:h-40"} food-card-hover animate-fadeInUp`}
         style={{ animationDelay: staggerDelay }}
       >
         {/* Image Section */}
         {item.image && (
           <div 
-            className={`${isVertical ? "w-full aspect-square" : "w-32 md:w-full h-full md:aspect-square"} shrink-0 relative overflow-hidden bg-ink z-10 cursor-pointer`}
+            className={`${isVertical ? "w-full aspect-[4/3] sm:aspect-square" : "w-32 sm:w-40 h-full shrink-0"} relative overflow-hidden bg-ink z-10 cursor-pointer`}
             onClick={() => setIsModalOpen(true)}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent z-10 pointer-events-none"></div>
@@ -80,7 +80,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
 
         {/* Content Section */}
         <div 
-          className={`flex flex-col flex-grow ${isVertical ? "p-5" : "p-3 md:p-5"} justify-center relative z-10 w-full min-w-0 bg-ink-2 cursor-pointer`}
+          className={`flex flex-col flex-grow ${isVertical ? "p-4 sm:p-5" : "p-3 sm:p-5"} justify-center relative z-10 w-full min-w-0 bg-ink-2 cursor-pointer`}
           onClick={() => setIsModalOpen(true)}
         >
           <h3 className="font-normal text-lg md:text-xl text-cream leading-tight mb-1 truncate md:whitespace-normal group-hover:text-gold transition-colors duration-300">
