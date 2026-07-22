@@ -56,8 +56,8 @@ const contactContent = {
 };
 
 export default function ContactPage() {
-  const { lang } = useAppContext();
-  const c = contactContent[lang] || contactContent.en;
+  const { t } = useAppContext();
+  const c = t.contactPage || {};
 
   return (
     <div className="min-h-screen bg-transparent text-cream pb-16">

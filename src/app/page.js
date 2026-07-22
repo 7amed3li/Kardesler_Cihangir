@@ -6,6 +6,7 @@ import MenuSelector from "@/components/MenuSelector";
 import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import { MapPin, ChevronDown, Flame, UtensilsCrossed } from "lucide-react";
 
@@ -71,12 +72,14 @@ export default function Home() {
         
         {/* Cinematic Background Image */}
         <div className="hero-bg">
-          <img
+          <Image
             src="/images/hero-bg.png"
             alt=""
             aria-hidden="true"
-            loading="eager"
-            fetchPriority="high"
+            priority={true}
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+            sizes="100vw"
           />
         </div>
 

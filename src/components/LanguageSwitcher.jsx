@@ -34,13 +34,14 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
+        aria-label="Change Language"
         className="flex items-center gap-1 p-2 rounded-full bg-teal-dim/20 hover:bg-teal-dim/40 transition-all border border-teal-dim/40 h-8 sm:h-9 w-8 sm:w-9 justify-center"
       >
         <Globe size={16} className="text-gold" />
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 right-0 w-36 bg-ink-2 border border-gold/20 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] overflow-hidden z-50">
+        <div className="absolute mt-2 end-0 w-36 bg-ink-2 border border-gold/20 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] overflow-hidden z-50">
           {Object.keys(translations).map((code) => (
             <button
               key={code}

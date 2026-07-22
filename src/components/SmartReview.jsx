@@ -32,7 +32,7 @@ export default function SmartReview({ onClose }) {
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
         <div className="bg-[#111] border border-white/10 rounded-3xl p-6 max-w-sm w-full relative">
-          <button onClick={onClose} aria-label="Close modal" className="absolute top-4 right-4 text-gray-300 hover:text-white">
+          <button onClick={onClose} aria-label="Close modal" className="absolute top-4 end-4 text-gray-300 hover:text-white">
             <X size={20} />
           </button>
           <h3 className="text-xl font-bold text-white mb-2 text-center">We value your feedback</h3>
@@ -57,7 +57,7 @@ export default function SmartReview({ onClose }) {
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
         <div className="bg-[#111] border border-white/10 rounded-3xl p-6 max-w-sm w-full relative text-center">
-          <button onClick={onClose} aria-label="Close modal" className="absolute top-4 right-4 text-gray-300 hover:text-white">
+          <button onClick={onClose} aria-label="Close modal" className="absolute top-4 end-4 text-gray-300 hover:text-white">
             <X size={20} />
           </button>
           <div className="w-16 h-16 bg-[#D4AF37]/20 text-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4">
@@ -73,7 +73,7 @@ export default function SmartReview({ onClose }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
       <div className="bg-[#111] border border-white/10 rounded-3xl p-8 max-w-sm w-full relative shadow-2xl">
-        <button onClick={onClose} aria-label="Close modal" className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors">
+        <button onClick={onClose} aria-label="Close modal" className="absolute top-4 end-4 text-gray-300 hover:text-white transition-colors">
           <X size={20} />
         </button>
 
@@ -86,6 +86,7 @@ export default function SmartReview({ onClose }) {
           {[1, 2, 3, 4, 5].map((star) => (
             <button
               key={star}
+              aria-label={`Rate ${star} stars`}
               onMouseEnter={() => setHoverRating(star)}
               onMouseLeave={() => setHoverRating(0)}
               onClick={() => handleRate(star)}

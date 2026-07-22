@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { translations } from "../i18n/translations";
+import { translations, menuTranslations } from "../i18n/translations";
 
 const AppContext = createContext();
 
@@ -121,6 +121,7 @@ export function AppProvider({ children }) {
   };
 
   const t = translations[lang] || translations["en"];
+  const menuT = menuTranslations[lang] || menuTranslations["en"];
   const isRtl = lang === "ar";
 
   // Context Value
@@ -128,12 +129,13 @@ export function AppProvider({ children }) {
   const value = {
     // Language
     lang,
-    setLang,
+    changeLang,
     t,
+    menuT,
     isRtl,
     // Exchange Rates
     currency,
-    setCurrency,
+    changeCurrency,
     exchangeRates,
     ratesSource,
     ratesLastUpdated,

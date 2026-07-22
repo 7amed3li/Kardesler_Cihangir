@@ -7,6 +7,7 @@ import { ShoppingBag, X, Plus, Minus, Trash2, Send, CheckCircle, AlertCircle, Lo
 export default function OrderFlow() {
   const {
     t,
+    menuT,
     lang,
     cart,
     cartCount,
@@ -23,66 +24,7 @@ export default function OrderFlow() {
   } = useAppContext();
 
   const symbol = getCurrencySymbol();
-
-  const orderLabels = {
-    tr: {
-      yourOrder: "Siparişiniz",
-      empty: "Sepetiniz boş",
-      emptyHint: "Menüden ürün ekleyerek başlayın",
-      total: "Toplam",
-      sendOrder: "Siparişi Gönder",
-      sending: "Gönderiliyor...",
-      sent: "Sipariş Gönderildi!",
-      sentHint: "Siparişiniz mutfağa iletildi",
-      error: "Gönderilemedi",
-      errorHint: "Tekrar deneyin",
-      clear: "Temizle",
-      table: "Masa",
-    },
-    en: {
-      yourOrder: "Your Order",
-      empty: "Your cart is empty",
-      emptyHint: "Start adding items from the menu",
-      total: "Total",
-      sendOrder: "Send to Kitchen",
-      sending: "Sending...",
-      sent: "Order Sent!",
-      sentHint: "Your order has been sent to the kitchen",
-      error: "Failed to Send",
-      errorHint: "Please try again",
-      clear: "Clear",
-      table: "Table",
-    },
-    ar: {
-      yourOrder: "طلبك",
-      empty: "سلتك فارغة",
-      emptyHint: "ابدأ بإضافة الأصناف من القائمة",
-      total: "المجموع",
-      sendOrder: "أرسل للمطبخ",
-      sending: "جارٍ الإرسال...",
-      sent: "تم إرسال الطلب!",
-      sentHint: "تم إرسال طلبك إلى المطبخ",
-      error: "فشل الإرسال",
-      errorHint: "يرجى المحاولة مرة أخرى",
-      clear: "مسح",
-      table: "طاولة",
-    },
-    fr: {
-      yourOrder: "Votre Commande",
-      empty: "Votre panier est vide",
-      emptyHint: "Commencez à ajouter des articles du menu",
-      total: "Total",
-      sendOrder: "Envoyer en Cuisine",
-      sending: "Envoi en cours...",
-      sent: "Commande Envoyée !",
-      sentHint: "Votre commande a été envoyée en cuisine",
-      error: "Échec de l'envoi",
-      errorHint: "Veuillez réessayer",
-      clear: "Effacer",
-    },
-  };
-
-  const labels = orderLabels[lang] || orderLabels.en;
+  const labels = t.orderFlow || {};
 
   return (
     <>
@@ -90,6 +32,7 @@ export default function OrderFlow() {
       {!isCartOpen && (
         <button
           onClick={() => setIsCartOpen(true)}
+          aria-label={labels.yourOrder}
           className="fixed bottom-6 end-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-copper to-copper/80 text-cream flex items-center justify-center shadow-[0_4px_24px_rgba(198,98,43,0.4)] hover:scale-110 transition-all duration-300 animate-fadeInUp"
         >
           <ShoppingBag size={22} />
@@ -120,6 +63,7 @@ export default function OrderFlow() {
               </div>
               <button
                 onClick={() => setIsCartOpen(false)}
+                aria-label="Close cart"
                 className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-cream-dim hover:text-cream transition-colors"
               >
                 <X size={18} />
@@ -139,7 +83,7 @@ export default function OrderFlow() {
               ) : (
                 <div className="space-y-3">
                   {cart.map((item) => {
-                    const name = item?.name?.[lang] || item?.name?.en || item?.name?.tr || "";
+                    const name = menuT.items[item.id]?.name || item?.name?.en || "";
                     return (
                       <div
                         key={item.id}
@@ -157,6 +101,7 @@ export default function OrderFlow() {
                         <div className="flex items-center gap-1.5 shrink-0">
                           <button
                             onClick={() => removeFromCart(item.id)}
+                            aria-label="Decrease quantity"
                             className="w-7 h-7 rounded-full border border-teal-dim/30 flex items-center justify-center text-cream-dim hover:text-brick hover:border-brick/50 transition-colors"
                           >
                             {item.qty === 1 ? <Trash2 size={12} /> : <Minus size={12} />}
@@ -164,6 +109,7 @@ export default function OrderFlow() {
                           <span className="w-6 text-center text-sm font-bold text-cream">{item.qty}</span>
                           <button
                             onClick={() => addToCart(item)}
+                            aria-label="Increase quantity"
                             className="w-7 h-7 rounded-full border border-teal-dim/30 flex items-center justify-center text-cream-dim hover:text-teal hover:border-teal/50 transition-colors"
                           >
                             <Plus size={12} />

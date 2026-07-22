@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { MapPin, Phone, Clock, MessageCircle, Globe } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
 
@@ -57,6 +58,19 @@ const aboutContent = {
     whatsapp: "Commande WhatsApp",
     findUs: "Trouvez-nous",
   },
+  ru: {
+    storyTitle: "Наша История",
+    storyP1: "Kardeşler Kebap & Pide находится в самом сердце Джихангира, одного из самых ярких и исторических районов Стамбула, в квартале Фирузага. На протяжении многих лет мы являемся обязательной остановкой для местных жителей и туристов со всего мира, предлагая лучшие вкусы традиционной турецкой кухни.",
+    storyP2: "Наш секрет кроется в использовании только самых свежих ингредиентов, традиционных методов приготовления на дровах и оригинальных рецептах, передаваемых из поколения в поколение. Почувствуйте настоящий вкус Стамбула с каждым кусочком.",
+    contactTitle: "Контакты и Часы Работы",
+    address: "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
+    orderLine: "Линия заказов",
+    workHoursLabel: "Часы работы",
+    workHours: "Ежедневно: 10:00 - 02:00",
+    followUs: "Следите за нами",
+    whatsapp: "Заказ по WhatsApp",
+    findUs: "Как нас найти",
+  },
 };
 
 function InstagramIcon({ size = 24 }) {
@@ -78,14 +92,16 @@ function FacebookIcon({ size = 24 }) {
 }
 
 export default function AboutPage() {
-  const { t, lang } = useAppContext();
-  const content = aboutContent[lang] || aboutContent.en;
+  const { t } = useAppContext();
+  const content = t.aboutPage || {};
 
   return (
     <div className="min-h-screen bg-transparent text-cream pb-16">
       {/* Hero Header */}
       <section className="pt-12 pb-10 px-4 text-center animate-fadeInUp">
-        <img src="/logo.webp" alt="Kardeşler Cihangir Logo" className="w-20 h-20 mx-auto mb-6 object-contain" />
+        <div className="relative w-20 h-20 mx-auto mb-6 shrink-0">
+          <Image src="/logo.webp" alt="Kardeşler Cihangir Logo" fill sizes="80px" style={{ objectFit: 'contain' }} />
+        </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-cream mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
           {t.about}
         </h1>
@@ -191,13 +207,13 @@ export default function AboutPage() {
             {content.followUs}
           </h3>
           <div className="flex justify-center gap-4 mb-8">
-            <a href="https://www.instagram.com/kardeslerkebapcihangir/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
+            <a href="https://www.instagram.com/kardeslerkebapcihangir/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
               <InstagramIcon size={22} />
             </a>
-            <a href="#" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
+            <a href="#" aria-label="Facebook" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
               <FacebookIcon size={22} />
             </a>
-            <a href="https://kardeslercihangir.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
+            <a href="https://kardeslercihangir.com" target="_blank" rel="noopener noreferrer" aria-label="Website" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-copper/50 hover:text-copper transition-all text-cream-dim">
               <Globe size={22} />
             </a>
           </div>

@@ -34,6 +34,7 @@ export default function CurrencySwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Change Currency"
         className="flex items-center gap-1 bg-teal-dim/20 hover:bg-teal-dim/40 border border-teal-dim/40 px-2.5 py-1.5 rounded-full text-cream text-xs sm:text-sm font-medium transition-all h-8 sm:h-9"
       >
         <Coins size={14} className="text-gold" />

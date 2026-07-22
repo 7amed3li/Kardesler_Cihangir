@@ -4,49 +4,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { useAppContext } from "../context/AppContext";
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 
-const footerContent = {
-  tr: {
-    contact: "İletişim",
-    social: "Sosyal Medya",
-    hours: "Çalışma Saatleri",
-    hoursValue: "Her gün: 10:00 - 02:00",
-    whatsapp: "WhatsApp Sipariş",
-    rights: "Tüm hakları saklıdır.",
-    madeBy: "Tasarım ve Geliştirme",
-  },
-  en: {
-    contact: "Contact",
-    social: "Social Media",
-    hours: "Working Hours",
-    hoursValue: "Everyday: 10:00 AM - 02:00 AM",
-    whatsapp: "WhatsApp Order",
-    rights: "All rights reserved.",
-    madeBy: "Designed & Developed by",
-  },
-  ar: {
-    contact: "التواصل",
-    social: "وسائل التواصل",
-    hours: "ساعات العمل",
-    hoursValue: "يومياً: 10:00 صباحاً - 02:00 ليلاً",
-    whatsapp: "اطلب عبر واتساب",
-    rights: "جميع الحقوق محفوظة.",
-    madeBy: "تصميم وتطوير",
-  },
-  fr: {
-    contact: "Contact",
-    social: "Réseaux Sociaux",
-    hours: "Horaires",
-    hoursValue: "Tous les jours : 10h00 - 02h00",
-    whatsapp: "Commande WhatsApp",
-    rights: "Tous droits réservés.",
-    madeBy: "Conçu et développé par",
-  },
-};
-
 export default function Footer() {
-  const { t, lang } = useAppContext();
+  const { t } = useAppContext();
   const currentYear = new Date().getFullYear();
-  const fc = footerContent[lang] || footerContent.en;
+  const fc = t.footer || {};
 
   const [isMapVisible, setIsMapVisible] = useState(false);
   const mapRef = useRef(null);

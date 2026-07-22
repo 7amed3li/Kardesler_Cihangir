@@ -5,7 +5,7 @@ import { useAppContext } from "../context/AppContext";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function MenuSelector({ categories, activeCategory, setActiveCategory }) {
-  const { lang } = useAppContext();
+  const { menuT } = useAppContext();
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -67,7 +67,7 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
               <span className={`relative z-10 block text-[11px] sm:text-xs font-bold tracking-wider uppercase whitespace-nowrap transition-colors duration-300 ${
                 isActive ? "text-cream" : "text-cream-dim/60 hover:text-cream-dim"
               }`}>
-                {cat.category[lang] || cat.category.en}
+                {menuT.categories[cat.id] || cat.category.en}
               </span>
 
               {/* Active pill background */}

@@ -27,6 +27,7 @@ export default function LoyaltyCard() {
     <>
       <button
         onClick={() => setIsOpen(true)}
+        aria-label="Loyalty Card"
         className="flex items-center gap-2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all border border-white/10 backdrop-blur-md"
       >
         <Gift size={20} className="text-[#D4AF37]" />
@@ -47,6 +48,7 @@ export default function LoyaltyCard() {
             {/* Close Button - Top Right */}
             <button
               onClick={closeModal}
+              aria-label="Close modal"
               className="absolute top-4 end-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all z-10"
             >
               <X size={18} />

@@ -312,9 +312,9 @@ export default function SmartSplash() {
       
       <div className="stage">
         <div className="halo"></div>
-        <img className="logo-layer layer-top" src="/logo.webp" alt="Kardeşler Logo" />
-        <img className="logo-layer layer-mid" src="/logo.webp" alt="Kardeşler Logo" />
-        <img className="logo-layer layer-bottom" src="/logo.webp" alt="Kardeşler Logo" />
+        <Image className="logo-layer layer-top" src="/logo.webp" alt="Kardeşler Logo" fill priority sizes="(max-width: 768px) 100vw, 440px" />
+        <Image className="logo-layer layer-mid" src="/logo.webp" alt="Kardeşler Logo" fill priority sizes="(max-width: 768px) 100vw, 440px" />
+        <Image className="logo-layer layer-bottom" src="/logo.webp" alt="Kardeşler Logo" fill priority sizes="(max-width: 768px) 100vw, 440px" />
         <div className="impact-ring"></div>
         <div className="shine"></div>
       </div>

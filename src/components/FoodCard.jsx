@@ -7,7 +7,7 @@ import { X, ZoomIn } from "lucide-react";
 import Image from "next/image";
 
 export default function FoodCard({ item, index, isVertical = false }) {
-  const { lang, t, convertPrice, getCurrencySymbol } = useAppContext();
+  const { menuT, t, convertPrice, getCurrencySymbol } = useAppContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -16,8 +16,8 @@ export default function FoodCard({ item, index, isVertical = false }) {
     setMounted(true);
   }, []);
 
-  const name = item?.name?.[lang] || item?.name?.en || item?.name?.tr || "Yeni Ürün";
-  const description = item?.description?.[lang] || item?.description?.en || item?.description?.tr || "";
+  const name = menuT.items[item.id]?.name || item?.name?.en || "Yeni Ürün";
+  const description = menuT.items[item.id]?.desc || item?.description?.en || "";
 
   const displayPrice = convertPrice(item.price);
   const symbol = getCurrencySymbol();
@@ -109,7 +109,6 @@ export default function FoodCard({ item, index, isVertical = false }) {
               onClick={() => setIsModalOpen(false)}
               aria-label="Close modal"
               className="absolute top-4 end-4 z-50 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold transition-colors border-white/10"
-              aria-label="Close"
             >
               <X size={20} />
             </button>
@@ -124,8 +123,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 <button
                   onClick={() => setIsFullscreenImage(true)}
                   aria-label="View fullscreen image"
-                  className="absolute bottom-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold hover:scale-110 transition-all border-white/20 shadow-lg"
-                  aria-label="Zoom Image"
+                  className="absolute bottom-4 end-4 z-20 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold hover:scale-110 transition-all border-white/20 shadow-lg"
                 >
                   <ZoomIn size={18} />
                 </button>
@@ -190,7 +188,6 @@ export default function FoodCard({ item, index, isVertical = false }) {
             onClick={() => setIsFullscreenImage(false)}
             aria-label="Close fullscreen image"
             className="absolute top-6 end-6 z-[9999999] w-12 h-12 flex items-center justify-center rounded-full bg-cream text-ink hover:bg-gold hover:scale-110 transition-all shadow-[0_0_20px_rgba(250,243,231,0.3)]"
-            aria-label="Close Fullscreen"
           >
             <X size={28} strokeWidth={2.5} />
           </button>
