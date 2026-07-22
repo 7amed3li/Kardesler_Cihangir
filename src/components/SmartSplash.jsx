@@ -11,30 +11,22 @@ export default function SmartSplash() {
 
   useEffect(() => {
     setMounted(true);
+    setShow(true);
     
-    // Check if the splash has already been shown in this session
-    const hasSeenSplash = sessionStorage.getItem("hasSeenSplash");
+    // Start fade out after 1.2 seconds
+    const fadeOutTimer = setTimeout(() => {
+      setIsFadingOut(true);
+    }, 1200);
     
-    if (!hasSeenSplash) {
-      setShow(true);
-      // Mark as seen for future reloads in the same tab
-      sessionStorage.setItem("hasSeenSplash", "true");
-      
-      // Start fade out after 1.2 seconds
-      const fadeOutTimer = setTimeout(() => {
-        setIsFadingOut(true);
-      }, 1200);
-      
-      // Fully unmount after 1.5 seconds
-      const unmountTimer = setTimeout(() => {
-        setShow(false);
-      }, 1500);
-      
-      return () => {
-        clearTimeout(fadeOutTimer);
-        clearTimeout(unmountTimer);
-      };
-    }
+    // Fully unmount after 1.5 seconds
+    const unmountTimer = setTimeout(() => {
+      setShow(false);
+    }, 1500);
+    
+    return () => {
+      clearTimeout(fadeOutTimer);
+      clearTimeout(unmountTimer);
+    };
   }, []);
 
   if (!show || !mounted) return null;
