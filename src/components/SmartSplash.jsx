@@ -20,15 +20,15 @@ export default function SmartSplash() {
       // Mark as seen for future reloads in the same tab
       sessionStorage.setItem("hasSeenSplash", "true");
       
-      // Start fade out after 4 seconds
+      // Start fade out after 1.2 seconds
       const fadeOutTimer = setTimeout(() => {
         setIsFadingOut(true);
-      }, 4000);
+      }, 1200);
       
-      // Fully unmount after 4.5 seconds
+      // Fully unmount after 1.5 seconds
       const unmountTimer = setTimeout(() => {
         setShow(false);
-      }, 4500);
+      }, 1500);
       
       return () => {
         clearTimeout(fadeOutTimer);
@@ -295,7 +295,7 @@ export default function SmartSplash() {
       
       <div className="embers" id="embers">
         {/* Render some random ember particles */}
-        {[...Array(24)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div 
             key={i} 
             className="ember-dot"
