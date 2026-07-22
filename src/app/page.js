@@ -17,7 +17,7 @@ const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 // Hook: Intersection Observer for scroll-reveal animations
 function useReveal() {
   const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
@@ -43,7 +43,7 @@ export default function Home() {
   const [activeFilter, setActiveFilter] = useState(null);
   const { t } = useAppContext();
   const menuRef = useRef(null);
-  const [heroVisible, setHeroVisible] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(true);
 
   // Scroll-reveal refs for each section
   const trendingReveal = useReveal();
