@@ -5,14 +5,12 @@ import { menuData } from "@/data/menuData";
 import MenuSelector from "@/components/MenuSelector";
 import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import { MapPin, ChevronDown, Flame, UtensilsCrossed } from "lucide-react";
 
-// Lazy load heavy below-fold components
-const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: false });
-const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
+import ReviewSection from "@/components/ReviewSection";
+import Footer from "@/components/Footer";
 
 // Hook: Intersection Observer for scroll-reveal animations
 function useReveal() {
