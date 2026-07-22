@@ -19,6 +19,11 @@ export const metadata = {
     "lahmacun",
     "Firuzağa",
   ],
+  icons: {
+    icon: "/logo.webp",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
+  },
   authors: [{ name: "Kardeşler Kebap Cihangir" }],
   creator: "Hamed Mohamed",
   openGraph: {
