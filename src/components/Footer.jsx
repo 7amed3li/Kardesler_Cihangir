@@ -57,7 +57,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold text-cream tracking-widest uppercase mb-6">
               {fc.contact}
             </h3>
-            <a href="https://maps.google.com/?q=Karde%C5%9Fler+Kebap+Pide+Cihangir+Beyo%C4%9Flu+%C4%B0stanbul" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 mb-4 text-left group hover:opacity-100 transition-all duration-300">
+            <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 mb-4 text-left group hover:opacity-100 transition-all duration-300">
               <MapPin size={16} className="text-teal mt-0.5 shrink-0 group-hover:animate-bounce" />
               <p className="text-cream-dim/80 text-sm font-light leading-relaxed max-w-xs group-hover:text-cream transition-colors underline-offset-2 group-hover:underline decoration-teal/40" style={{ fontFamily: "var(--font-inter)" }}>
                 Firuzağa Mah. Firuzağa Camii Sok.<br/> No:1A, Cihangir, Beyoğlu, İstanbul
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
           {/* Dark-themed Google Maps Embed */}
-          <div ref={mapRef} className="map-dark-container w-full h-48 sm:h-56 mb-8 rounded-2xl relative bg-ink/50 overflow-hidden flex items-center justify-center">
+          <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" ref={mapRef} className="map-dark-container block w-full h-48 sm:h-56 mb-8 rounded-2xl relative bg-ink/50 overflow-hidden flex items-center justify-center group cursor-pointer hover:border-teal/50 transition-colors">
             {!isMapVisible && (
               <div className="absolute inset-0 flex flex-col items-center justify-center text-teal-dim/50">
                 <MapPin className="w-8 h-8 mb-2 animate-pulse" />
@@ -118,14 +118,14 @@ export default function Footer() {
             )}
             {isMapVisible && (
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4186457106093!2d28.981119576483584!3d41.0332822713498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sKarde%C5%9Fler%20Kebap%20Cihangir!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.9142835848525!2d28.97746737659556!3d41.0296766713437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab769b7b9abf5%3A0x86131481b4f4201e!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1721648880000!5m2!1str!2str"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Kardeşler Cihangir Location"
                 allowFullScreen
               ></iframe>
             )}
-          </div>
+          </a>
 
         {/* Ottoman Divider */}
         <div className="ottoman-divider max-w-sm mx-auto mb-6"></div>
@@ -138,7 +138,7 @@ export default function Footer() {
           <p className="text-cream-dim/30 text-[10px] tracking-widest uppercase flex items-center gap-1">
             {fc.madeBy}
             <a 
-              href="https://github.com/7amed3li" 
+              href="https://www.hamedmohamed.dev/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-teal hover:text-copper transition-colors font-bold ml-1"

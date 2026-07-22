@@ -190,15 +190,15 @@ export default function AboutPage() {
           <h2 className="text-xl sm:text-2xl font-bold text-gold mb-5" style={{ fontFamily: "var(--font-cairo)" }}>
             {content.findUs}
           </h2>
-          <div className="map-dark-container w-full h-56 sm:h-72 rounded-2xl">
+          <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="map-dark-container block w-full h-56 sm:h-72 rounded-2xl group cursor-pointer hover:border-teal/50 transition-colors">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4186457106093!2d28.981119576483584!3d41.0332822713498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sKarde%C5%9Fler%20Kebap%20Cihangir!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.9142835848525!2d28.97746737659556!3d41.0296766713437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab769b7b9abf5%3A0x86131481b4f4201e!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1721648880000!5m2!1str!2str"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Kardeşler Cihangir Location"
               allowFullScreen
             ></iframe>
-          </div>
+          </a>
         </section>
 
         {/* Social Media */}

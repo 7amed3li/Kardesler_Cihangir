@@ -77,7 +77,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Address */}
           <a
-            href="https://maps.google.com/?q=Kardeşler+Kebap+Pide+Cihangir+Beyoğlu+İstanbul"
+            href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir"
             target="_blank"
             rel="noopener noreferrer"
             className="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-copper/40 transition-all duration-300 group animate-fadeInUp"
@@ -153,17 +153,17 @@ export default function ContactPage() {
           <h2 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "var(--font-cairo)" }}>
             {c.findUs}
           </h2>
-          <div className="map-dark-container w-full h-64 sm:h-80 rounded-2xl mb-4">
+          <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="map-dark-container block w-full h-64 sm:h-80 rounded-2xl mb-4 group cursor-pointer hover:border-teal/50 transition-colors">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4186457106093!2d28.981119576483584!3d41.0332822713498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sKarde%C5%9Fler%20Kebap%20Cihangir!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.9142835848525!2d28.97746737659556!3d41.0296766713437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab769b7b9abf5%3A0x86131481b4f4201e!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1721648880000!5m2!1str!2str"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Kardeşler Cihangir Location"
               allowFullScreen
             ></iframe>
-          </div>
+          </a>
           <a
-            href="https://maps.google.com/?q=Kardeşler+Kebap+Pide+Cihangir+Beyoğlu+İstanbul"
+            href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-copper/15 border border-copper/30 text-copper font-bold text-sm hover:bg-copper hover:text-cream transition-all duration-300"

@@ -2,16 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { createPortal } from "react-dom";
 
 export default function SmartSplash() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    setShow(true);
     
     // Start fade out after 1.2 seconds
     const fadeOutTimer = setTimeout(() => {
@@ -29,7 +25,7 @@ export default function SmartSplash() {
     };
   }, []);
 
-  if (!show || !mounted) return null;
+  if (!show) return null;
 
   const splashContent = (
     <div className={`splash-container ${isFadingOut ? 'fade-out' : ''}`}>
@@ -286,17 +282,26 @@ export default function SmartSplash() {
       `}</style>
       
       <div className="embers" id="embers">
-        {/* Render some random ember particles */}
-        {[...Array(8)].map((_, i) => (
+        {/* Render deterministic ember particles for SSR hydration matching */}
+        {[
+          { left: "12%", s: "3px", dur: "7s", delay: "0s", drift: "15px" },
+          { left: "25%", s: "5px", dur: "5s", delay: "2s", drift: "-10px" },
+          { left: "45%", s: "2px", dur: "6s", delay: "1s", drift: "8px" },
+          { left: "55%", s: "4px", dur: "8s", delay: "3s", drift: "-12px" },
+          { left: "75%", s: "6px", dur: "4s", delay: "0.5s", drift: "5px" },
+          { left: "85%", s: "3px", dur: "9s", delay: "1.5s", drift: "20px" },
+          { left: "95%", s: "4px", dur: "5.5s", delay: "2.5s", drift: "-15px" },
+          { left: "35%", s: "5px", dur: "6.5s", delay: "3.5s", drift: "10px" },
+        ].map((ember, i) => (
           <div 
             key={i} 
             className="ember-dot"
             style={{
-              left: (Math.random() * 100) + "%",
-              "--s": (Math.random() * 4 + 2) + "px",
-              "--dur": (Math.random() * 5 + 4) + "s",
-              "--delay": (Math.random() * 4) + "s",
-              "--drift": (Math.random() * 40 - 20) + "px"
+              left: ember.left,
+              "--s": ember.s,
+              "--dur": ember.dur,
+              "--delay": ember.delay,
+              "--drift": ember.drift
             }}
           ></div>
         ))}
@@ -322,5 +327,5 @@ export default function SmartSplash() {
     </div>
   );
 
-  return createPortal(splashContent, document.body);
+  return splashContent;
 }

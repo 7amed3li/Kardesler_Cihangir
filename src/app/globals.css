@@ -341,6 +341,7 @@ body {
   height: 100%;
   border: 0;
   filter: brightness(0.75) contrast(1.1) saturate(0) invert(0.92) hue-rotate(180deg);
+  pointer-events: none;
 }
 
 /* ==========================================================================
