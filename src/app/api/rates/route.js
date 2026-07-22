@@ -20,10 +20,10 @@ export async function GET() {
 
   try {
     const res = await fetch(
-      "https://api.frankfurter.dev/v1/latest?base=TRY&symbols=USD,EUR,GBP",
+      "https://api.exchangerate-api.com/v4/latest/TRY",
       { 
         next: { revalidate: 300 }, // Next.js fetch cache: 5 min
-        signal: AbortSignal.timeout(1500)
+        signal: AbortSignal.timeout(2000)
       }
     );
 
@@ -37,8 +37,9 @@ export async function GET() {
         USD: { symbol: "$", rate: data.rates.USD },
         EUR: { symbol: "€", rate: data.rates.EUR },
         GBP: { symbol: "£", rate: data.rates.GBP },
+        RUB: { symbol: "₽", rate: data.rates.RUB },
       },
-      source: "frankfurter.dev (ECB)",
+      source: "exchangerate-api.com",
       lastUpdated: data.date,
       fetchedAt: new Date().toISOString(),
     };
@@ -53,6 +54,7 @@ export async function GET() {
         USD: { symbol: "$", rate: 0.02121 },
         EUR: { symbol: "€", rate: 0.01855 },
         GBP: { symbol: "£", rate: 0.01579 },
+        RUB: { symbol: "₽", rate: 2.65 }, // Fallback for RUB
       },
       source: "fallback",
       lastUpdated: new Date().toISOString().split("T")[0],

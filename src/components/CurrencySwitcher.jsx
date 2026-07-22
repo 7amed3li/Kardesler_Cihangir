@@ -14,6 +14,7 @@ export default function CurrencySwitcher() {
     { code: "USD", symbol: "$" },
     { code: "EUR", symbol: "€" },
     { code: "GBP", symbol: "£" },
+    { code: "RUB", symbol: "₽" },
   ];
 
   useEffect(() => {
