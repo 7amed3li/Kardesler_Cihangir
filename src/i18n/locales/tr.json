@@ -6,8 +6,8 @@
   "heroLocation": "Firuzağa Mah. Firuzağa Camii Sok. No:1A, Cihangir, Beyoğlu",
   "heroRating": "4.7",
   "heroRatingText": "puan",
-  "heroItems": "100+ çeşit",
-  "heroItemsText": "menü",
+  "heroItems": "100+",
+  "heroItemsText": "çeşit",
   "heroCta": "Menüyü Keşfet",
   "menu": "Menü",
   "about": "Hakkımızda",
@@ -60,10 +60,10 @@
     "contact": "İletişim",
     "social": "Sosyal Medya",
     "hours": "Çalışma Saatleri",
-    "hoursValue": "Her gün: 10:00 - 02:00",
+    "hoursValue": "Her gün: 09:00 - 02:00",
     "whatsapp": "WhatsApp Sipariş",
     "rights": "Tüm hakları saklıdır.",
-    "madeBy": "Tasarım ve Geliştirme"
+    "madeBy": "Tasarım ve Geliştirme:"
   },
   "aboutPage": {
     "storyTitle": "Hikayemiz",
@@ -73,7 +73,7 @@
     "address": "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul",
     "orderLine": "Sipariş Hattı",
     "workHoursLabel": "Çalışma Saatleri",
-    "workHours": "Her gün: 10:00 - 02:00",
+    "workHours": "Her gün: 09:00 - 02:00",
     "followUs": "Bizi Takip Edin",
     "whatsapp": "WhatsApp Sipariş",
     "findUs": "Bizi Bulun"
@@ -85,7 +85,7 @@
     "addressLabel": "Adres",
     "phoneLabel": "Sipariş Hattı",
     "hoursLabel": "Çalışma Saatleri",
-    "hours": "Her gün: 10:00 - 02:00",
+    "hours": "Her gün: 09:00 - 02:00",
     "whatsapp": "WhatsApp Sipariş",
     "directions": "Yol Tarifi Al",
     "findUs": "Bizi Bulun"

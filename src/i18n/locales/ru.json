@@ -60,10 +60,10 @@
     "contact": "Контакты",
     "social": "Социальные сети",
     "hours": "Часы работы",
-    "hoursValue": "Ежедневно: 10:00 - 02:00",
+    "hoursValue": "Ежедневно: 09:00 - 02:00",
     "whatsapp": "Заказ по WhatsApp",
     "rights": "Все права защищены.",
-    "madeBy": "Дизайн и разработка"
+    "madeBy": "Дизайн и разработка от"
   },
   "aboutPage": {
     "storyTitle": "Наша История",
@@ -73,7 +73,7 @@
     "address": "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
     "orderLine": "Линия заказов",
     "workHoursLabel": "Часы работы",
-    "workHours": "Ежедневно: 10:00 - 02:00",
+    "workHours": "Ежедневно: 09:00 - 02:00",
     "followUs": "Следите за нами",
     "whatsapp": "Заказ по WhatsApp",
     "findUs": "Как нас найти"
@@ -85,7 +85,7 @@
     "addressLabel": "Адрес",
     "phoneLabel": "Линия заказов",
     "hoursLabel": "Часы работы",
-    "hours": "Ежедневно: 10:00 - 02:00",
+    "hours": "Ежедневно: 09:00 - 02:00",
     "whatsapp": "Заказ по WhatsApp",
     "directions": "Проложить маршрут",
     "findUs": "Как нас найти"

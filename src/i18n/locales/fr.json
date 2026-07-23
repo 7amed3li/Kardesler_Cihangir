@@ -36,12 +36,12 @@
   "reviewsTitle": "Ce Que Disent Nos Invités",
   "reviewsSubtitle": "Évaluations réelles sur des plateformes de confiance. Cliquez pour vérifier.",
   "reviewsCountText": "avis",
-  "review1": "\"L'un des meilleurs kebabs Adana que j'aie jamais mangés. Les mezzés étaient aussi incroyables.\"",
+  "review1": "\"L'un des meilleurs kebabs Adana que j'aie jamais mangés. Les mezze étaient aussi incroyables.\"",
   "review2": "\"Une nourriture délicieuse, un personnel sympathique et l'atmosphère merveilleuse de Cihangir.\"",
   "review3": "\"La chaleur d'un vrai restaurant traditionnel et un goût qui n'a pas changé depuis des années.\"",
   "review4": "\"Une nourriture authentique incroyable. Les portions sont généreuses et les prix raisonnables pour le quartier.\"",
   "review5": "\"Livraison très rapide et nourriture arrivée chaude. Le Beyti Kebab est tout simplement parfait.\"",
-  "review6": "\"Un endroit chaleureux juste à côté de la mosquée. Nous venons ici chaque week-end pour le petit-déjeuner.\"",
+  "review6": "\"Un endroit chaleureux juste à côté de la mosquée. Nous venons ici chaque week-end pour le copieux petit-déjeuner turc.\"",
   "orderFlow": {
     "yourOrder": "Votre Commande",
     "empty": "Votre panier est vide",
@@ -60,7 +60,7 @@
     "contact": "Contact",
     "social": "Réseaux Sociaux",
     "hours": "Horaires",
-    "hoursValue": "Tous les jours : 10h00 - 02h00",
+    "hoursValue": "Tous les jours : 09h00 - 02h00",
     "whatsapp": "Commande WhatsApp",
     "rights": "Tous droits réservés.",
     "madeBy": "Conçu et développé par"
@@ -73,7 +73,7 @@
     "address": "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
     "orderLine": "Ligne de commande",
     "workHoursLabel": "Horaires d'ouverture",
-    "workHours": "Tous les jours : 10h00 - 02h00",
+    "workHours": "Tous les jours : 09h00 - 02h00",
     "followUs": "Suivez-nous",
     "whatsapp": "Commande WhatsApp",
     "findUs": "Trouvez-nous"
@@ -85,7 +85,7 @@
     "addressLabel": "Adresse",
     "phoneLabel": "Ligne de commande",
     "hoursLabel": "Horaires d'ouverture",
-    "hours": "Tous les jours : 10h00 - 02h00",
+    "hours": "Tous les jours : 09h00 - 02h00",
     "whatsapp": "Commande WhatsApp",
     "directions": "Itinéraire",
     "findUs": "Trouvez-nous"
