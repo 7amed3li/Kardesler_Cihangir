@@ -18,13 +18,13 @@ function useReveal() {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
-  return { ref, isVisible };
+  return [ref, isVisible];
 }
 
 export default function ReviewSection() {
   const { t } = useAppContext();
   const [isPaused, setIsPaused] = useState(false);
-  const reveal = useReveal();
+  const [revealRef, isVisible] = useReveal();
 
   const reviews = [
     {
@@ -81,8 +81,8 @@ export default function ReviewSection() {
 
   return (
     <section
-      ref={reveal.ref}
-      className={`py-16 bg-ink border-t border-teal-dim/20 overflow-hidden transition-all duration-700 ${reveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      ref={revealRef}
+      className={`py-16 bg-ink border-t border-teal-dim/20 overflow-hidden transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center px-4 mb-14">
         

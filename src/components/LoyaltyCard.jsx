@@ -15,8 +15,10 @@ export default function LoyaltyCard() {
       const newVisits = storedVisits < 10 ? storedVisits + 1 : 10;
       localStorage.setItem("loyalty_visits", newVisits.toString());
       sessionStorage.setItem("visited_this_session", "true");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisits(newVisits);
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisits(storedVisits);
     }
   }, []);

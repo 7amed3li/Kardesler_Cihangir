@@ -33,7 +33,7 @@ function useReveal() {
     return () => observer.disconnect();
   }, []);
 
-  return { ref, isVisible };
+  return [ref, isVisible];
 }
 
 export default function Home() {
@@ -44,8 +44,13 @@ export default function Home() {
   const [heroVisible, setHeroVisible] = useState(true);
 
   // Scroll-reveal refs for each section
-  const trendingReveal = useReveal();
-  const menuReveal = useReveal();
+  const [trendingRef, isTrendingVisible] = useReveal();
+  const [menuRevealRef, isMenuVisible] = useReveal();
+
+  const handleTrendingRef = (el) => {
+    menuRef.current = el;
+    if (trendingRef) trendingRef.current = el;
+  };
 
   useEffect(() => {
     // Trigger hero animations after first paint
@@ -201,8 +206,8 @@ export default function Home() {
           TRENDING / CHEF'S PICKS
           ═══════════════════════════════════════════ */}
       <section
-        ref={(el) => { menuRef.current = el; if (trendingReveal.ref) trendingReveal.ref.current = el; }}
-        className={`relative py-16 px-4 bg-gradient-to-b from-ink-2 via-ink to-ink overflow-hidden transition-all duration-700 ${trendingReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        ref={handleTrendingRef}
+        className={`relative py-16 px-4 bg-gradient-to-b from-ink-2 via-ink to-ink overflow-hidden transition-all duration-700 ${isTrendingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
       >
         {/* Background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-copper/5 rounded-full blur-[100px]"></div>
@@ -256,7 +261,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           MENU ITEMS LIST
           ═══════════════════════════════════════════ */}
-      <section className="px-4 py-8 min-h-[50vh]">
+      <section 
+        ref={menuRevealRef}
+        className={`px-4 py-8 min-h-[50vh] transition-all duration-700 ${isMenuVisible ? "opacity-100" : "opacity-0"}`}
+      >
         {menuData.map((category) => {
           if (activeCategory !== category.id) return null;
 

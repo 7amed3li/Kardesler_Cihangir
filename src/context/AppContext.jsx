@@ -76,11 +76,13 @@ export function AppProvider({ children }) {
   useEffect(() => {
     const savedLang = localStorage.getItem("app_lang");
     if (savedLang && translations[savedLang]) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLang(savedLang);
     }
     
     const savedCurrency = localStorage.getItem("app_currency");
-    if (savedCurrency && HARDCODED_FALLBACK[savedCurrency]) {
+    if (savedCurrency && ["TRY", "USD", "EUR", "GBP", "RUB"].includes(savedCurrency)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrency(savedCurrency);
     }
 
