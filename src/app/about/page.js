@@ -105,7 +105,7 @@ export default function AboutPage() {
         <h1 className="text-3xl sm:text-4xl font-bold text-cream mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
           {t.about}
         </h1>
-        <p className="text-copper text-sm tracking-widest uppercase mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+        <p className="text-copper text-sm tracking-widest uppercase mb-2" style={{ fontFamily: "var(--font-inter)" }}>
           Kebap · Pide · Lahmacun
         </p>
         <p className="text-cream-dim/60 text-sm max-w-md mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>

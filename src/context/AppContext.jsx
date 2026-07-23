@@ -148,7 +148,7 @@ export function AppProvider({ children }) {
 
   return (
     <AppContext.Provider value={value}>
-      <div dir={isRtl ? "rtl" : "ltr"} className={isRtl ? "font-[var(--font-tajawal)]" : ""}>
+      <div dir={isRtl ? "rtl" : "ltr"} className={isRtl ? "font-[var(--font-cairo)]" : ""}>
         {children}
       </div>
     </AppContext.Provider>

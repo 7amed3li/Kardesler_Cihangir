@@ -35,7 +35,7 @@ export default function LanguageSwitcher() {
       <button
         onClick={toggleDropdown}
         aria-label="Change Language"
-        className="flex items-center gap-1 p-2 rounded-full bg-teal-dim/20 hover:bg-teal-dim/40 transition-all border border-teal-dim/40 h-8 sm:h-9 w-8 sm:w-9 justify-center"
+        className="flex items-center gap-1 p-2 rounded-full bg-teal-dim/20 hover:bg-teal-dim/40 transition-all border border-teal-dim/40 h-11 w-11 justify-center"
       >
         <Globe size={16} className="text-gold" />
       </button>

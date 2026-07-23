@@ -39,7 +39,7 @@ export default function Header() {
             <span className="text-sm sm:text-base font-bold text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
               Kardeşler
             </span>
-            <span className="text-[9px] text-cream-dim uppercase tracking-widest opacity-80" style={{ fontFamily: "var(--font-playfair)" }}>
+            <span className="text-[9px] text-cream-dim uppercase tracking-widest opacity-80" style={{ fontFamily: "var(--font-inter)" }}>
               Kebap & Pide
             </span>
           </div>
@@ -54,7 +54,7 @@ export default function Header() {
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full border transition-all duration-300 ${
+              className={`w-11 h-11 flex items-center justify-center rounded-full border transition-all duration-300 ${
                 isMenuOpen 
                   ? "bg-gold/20 border-gold text-gold" 
                   : "bg-teal-dim/20 border-teal-dim/40 text-cream-dim hover:text-gold hover:border-gold hover:bg-gold/10"

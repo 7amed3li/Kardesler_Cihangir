@@ -44,7 +44,7 @@ export default function Footer() {
             <h2 className="text-3xl font-black text-cream mb-2 tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.welcome || "Kardeşler"}
             </h2>
-            <p className="text-copper text-xs font-medium tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            <p className="text-copper text-xs font-medium tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-inter)" }}>
               {t.heroTagline || "Kebap & Pide"}
             </p>
             <p className="text-cream-dim/60 text-sm font-light leading-relaxed max-w-xs" style={{ fontFamily: "var(--font-inter)" }}>

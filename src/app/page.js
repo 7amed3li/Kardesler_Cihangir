@@ -9,7 +9,8 @@ import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import { MapPin, ChevronDown, Flame, UtensilsCrossed } from "lucide-react";
 
-import ReviewSection from "@/components/ReviewSection";
+import dynamic from "next/dynamic";
+const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: true });
 import Footer from "@/components/Footer";
 
 // Hook: Intersection Observer for scroll-reveal animations
@@ -58,8 +59,8 @@ export default function Home() {
   }, []);
 
   // Extract trending items
-  const trendingItems = menuData.flatMap(cat => cat.items).filter(item => item.trending);
-  const totalItems = menuData.reduce((acc, cat) => acc + cat.items.length, 0);
+  const trendingItems = menuData.flatMap(cat => cat.items || []).filter(item => item && item.trending);
+  const totalItems = menuData.reduce((acc, cat) => acc + (cat.items ? cat.items.length : 0), 0);
 
   const scrollToMenu = () => {
     menuRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -132,7 +133,7 @@ export default function Home() {
             >
               {t.welcome || "Kardeşler"}
             </h1>
-            <p className="text-copper text-lg sm:text-xl md:text-2xl font-medium tracking-[0.4em] uppercase mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
+            <p className="text-copper text-lg sm:text-xl md:text-2xl font-medium tracking-[0.4em] uppercase mb-6" style={{ fontFamily: "var(--font-inter)" }}>
               {t.heroTagline || "Kebap & Pide"}
             </p>
           </div>
@@ -227,7 +228,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-black text-cream tracking-wide uppercase mb-2" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.trending || "Most Loved by Our Guests"}
             </h2>
-            <p className="text-cream-dim/50 text-xs tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-playfair)" }}>
+            <p className="text-cream-dim/50 text-xs tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-inter)" }}>
               {t.heroTagline || "Kebap & Pide"}
             </p>
           </div>
@@ -279,8 +280,8 @@ export default function Home() {
               key={category.id} 
               className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 animate-fadeIn"
             >
-              {filteredItems.length > 0 ? (
-                filteredItems.map((item, index) => (
+              {filteredItems.filter(item => item && item.id).length > 0 ? (
+                filteredItems.filter(item => item && item.id).map((item, index) => (
                   <FoodCard key={item.id} item={item} index={index} />
                 ))
               ) : (

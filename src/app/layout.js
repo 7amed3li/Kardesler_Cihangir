@@ -61,6 +61,9 @@ export const metadata = {
   },
 };
 
+// Dynamic URL for Schema
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kardeslercihangir.com";
+
 // Restaurant Schema.org JSON-LD
 const restaurantSchema = {
   "@context": "https://schema.org",
@@ -68,7 +71,7 @@ const restaurantSchema = {
   name: "Kardeşler Kebap & Pide",
   alternateName: "Kardeşler Cihangir",
   image: "/images/hero-bg.png",
-  url: "https://kardeslercihangir.com",
+  url: siteUrl,
   telephone: "+902122432822",
   address: {
     "@type": "PostalAddress",
@@ -105,12 +108,25 @@ const restaurantSchema = {
     reviewCount: "1200",
     bestRating: "5",
   },
-  menu: "https://kardeslercihangir.com",
+  menu: siteUrl,
   acceptsReservations: "True",
   hasMenu: {
     "@type": "Menu",
     name: "Digital Menu",
-    url: "https://kardeslercihangir.com",
+    url: siteUrl,
+    hasMenuSection: [
+      { "@type": "MenuSection", name: "Kahvaltı" },
+      { "@type": "MenuSection", name: "Kebap" },
+      { "@type": "MenuSection", name: "Özel Menü" },
+      { "@type": "MenuSection", name: "Mezeli Kebaplar" },
+      { "@type": "MenuSection", name: "Dürümler" },
+      { "@type": "MenuSection", name: "Pide" },
+      { "@type": "MenuSection", name: "Lahmacun" },
+      { "@type": "MenuSection", name: "Meze" },
+      { "@type": "MenuSection", name: "Salata" },
+      { "@type": "MenuSection", name: "Tatlı" },
+      { "@type": "MenuSection", name: "Soğuk İçecek" }
+    ]
   },
 };
 
@@ -124,7 +140,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

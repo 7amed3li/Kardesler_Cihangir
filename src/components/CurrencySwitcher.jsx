@@ -36,7 +36,7 @@ export default function CurrencySwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Change Currency"
-        className="flex items-center gap-1 bg-teal-dim/20 hover:bg-teal-dim/40 border border-teal-dim/40 px-2.5 py-1.5 rounded-full text-cream text-xs sm:text-sm font-medium transition-all h-8 sm:h-9"
+        className="flex items-center gap-1 bg-teal-dim/20 hover:bg-teal-dim/40 border border-teal-dim/40 px-3 py-1.5 rounded-full text-cream text-xs sm:text-sm font-medium transition-all h-11 min-w-[44px] justify-center"
       >
         <Coins size={14} className="text-gold" />
         <span>{currency}</span>

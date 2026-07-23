@@ -77,7 +77,7 @@ export default function ReviewSection() {
     { id: 6, name: 'Canan E.', source: 'Yandex Maps', initial: 'C', link: 'https://yandex.com.tr/harita/org/kardesler_kebap_cafe/1044439169/' },
   ];
 
-  const marqueeItems = [...userComments, ...userComments];
+  const marqueeItems = userComments;
 
   return (
     <section
@@ -144,20 +144,14 @@ export default function ReviewSection() {
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
 
-        <div
-          className="flex gap-6 pl-6 w-max"
-          style={{
-            animation: "marqueeScroll 40s linear infinite",
-            animationPlayState: isPaused ? "paused" : "running",
-          }}
-        >
+        <div className="flex gap-6 pl-6 w-full overflow-x-auto snap-x no-scrollbar pb-6 pt-2">
           {marqueeItems.map((comment, idx) => (
             <a
               key={`marquee-${comment.id}-${idx}`}
               href={comment.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-[280px] sm:w-[350px] shrink-0 p-7 rounded-2xl glass-card flex flex-col justify-between hover:border-copper/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(198,98,43,0.1)] cursor-pointer"
+              className="group relative w-[280px] sm:w-[350px] shrink-0 p-7 rounded-2xl glass-card flex flex-col justify-between hover:border-copper/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(198,98,43,0.1)] cursor-pointer snap-center"
             >
               <div className="absolute top-4 right-4 text-gold/5 text-6xl font-serif leading-none group-hover:text-gold/20 transition-colors">&quot;</div>
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

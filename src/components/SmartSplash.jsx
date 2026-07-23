@@ -113,7 +113,6 @@ export default function SmartSplash() {
 
         /* the fixed nameplate — appears once, then never moves again */
         .layer-mid {
-            clip-path: inset(43% 0% 35% 0% round 2%);
             opacity: 0;
             transform: scale(0.94);
             animation: mid-settle 620ms 60ms cubic-bezier(.22, .9, .32, 1.15) forwards;
@@ -123,48 +122,6 @@ export default function SmartSplash() {
             to {
                 opacity: 1;
                 transform: scale(1);
-            }
-        }
-
-        /* top badge piece */
-        .layer-top {
-            clip-path: inset(0% 0% 57% 0% round 2%);
-            opacity: 0;
-            transform: translateY(-120px) translateX(-14px) rotate(-14deg) scale(0.92);
-            filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) blur(4px);
-            animation: drop-top 900ms 260ms cubic-bezier(.16, .9, .2, 1.28) forwards;
-        }
-
-        @keyframes drop-top {
-            60% {
-                opacity: 1;
-                filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) blur(0);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) translateX(0) rotate(0) scale(1);
-                filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) blur(0);
-            }
-        }
-
-        /* bottom badge piece */
-        .layer-bottom {
-            clip-path: inset(65% 0% 0% 0% round 2%);
-            opacity: 0;
-            transform: translateY(120px) translateX(14px) rotate(14deg) scale(0.92);
-            filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) blur(4px);
-            animation: drop-bottom 900ms 260ms cubic-bezier(.16, .9, .2, 1.28) forwards;
-        }
-
-        @keyframes drop-bottom {
-            60% {
-                opacity: 1;
-                filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) blur(0);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) translateX(0) rotate(0) scale(1);
-                filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) blur(0);
             }
         }
 
@@ -235,7 +192,7 @@ export default function SmartSplash() {
         /* ---------- tagline + loader ---------- */
         .tagline {
             margin-top: 26px;
-            font-family: 'Cinzel', var(--font-playfair, serif);
+            font-family: var(--font-inter, sans-serif);
             font-weight: 500;
             letter-spacing: 0.42em;
             font-size: clamp(11px, 1.6vw, 14px);
@@ -309,9 +266,7 @@ export default function SmartSplash() {
       
       <div className="stage">
         <div className="halo"></div>
-        <Image className="logo-layer layer-top" src="/logo.webp" alt="Kardeşler Logo" fill priority sizes="(max-width: 768px) 100vw, 440px" />
         <Image className="logo-layer layer-mid" src="/logo.webp" alt="Kardeşler Logo" fill priority sizes="(max-width: 768px) 100vw, 440px" />
-        <Image className="logo-layer layer-bottom" src="/logo.webp" alt="Kardeşler Logo" fill priority sizes="(max-width: 768px) 100vw, 440px" />
         <div className="impact-ring"></div>
         <div className="shine"></div>
       </div>
