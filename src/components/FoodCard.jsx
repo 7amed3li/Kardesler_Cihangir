@@ -45,21 +45,21 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 src={item.image} 
                 alt={name} 
                 fill 
-                style={{ objectFit: "cover" }} 
+                style={{ objectFit: "contain" }} 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority={false}
               />
             </div>
 
             {/* Price Tag — Glassmorphism */}
-            <div className="absolute top-3 start- z-20 flex items-center gap-2 pointer-events-none">
+            <div className="absolute top-3 start-3 z-20 flex items-center gap-2 pointer-events-none">
               <span className="flex items-center px-3 py-1 rounded-lg glass-card-strong text-copper border-copper/20 shadow-lg font-bold text-sm tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
                 {displayPrice} {symbol}
               </span>
             </div>
 
             {/* Text Badges */}
-            <div className="absolute bottom-3 start- z-20 flex flex-wrap gap-1.5 pointer-events-none">
+            <div className="absolute bottom-3 start-3 z-20 flex flex-wrap gap-1.5 pointer-events-none">
               {item.tags?.includes("signature") && (
                 <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-gold border border-gold/30 bg-gold/10 backdrop-blur-md rounded-sm font-bold">
                   {t.signature || "Signature"}
@@ -117,7 +117,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
             {/* Modal Image */}
             {item.image && (
               <div className="w-full h-56 sm:h-72 shrink-0 relative bg-ink-2 group">
-                <Image src={item.image} alt={name} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 400px" />
+                <Image src={item.image} alt={name} fill style={{ objectFit: "contain" }} sizes="(max-width: 768px) 100vw, 400px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent pointer-events-none"></div>
                 
                 {/* Zoom Button */}

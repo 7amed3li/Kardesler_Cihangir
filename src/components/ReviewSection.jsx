@@ -132,7 +132,7 @@ export default function ReviewSection() {
               className={`group relative flex flex-col items-center justify-center p-5 rounded-2xl glass-card hover:border-copper/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(198,98,43,0.1)] animate-fadeInUp`}
               style={{ animationDelay: `${idx * 100}ms` }}
             >
-              <div className="absolute top-3 end- opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-3 end-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <ExternalLink size={14} className="text-cream-dim/40" />
               </div>
               
@@ -163,12 +163,12 @@ export default function ReviewSection() {
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Gradient overlays */}
-        <div className="absolute start- top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute end- top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute start-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute end-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
 
         <div 
           ref={scrollRef}
-          className="flex gap-6 ps- w-full overflow-x-auto snap-x no-scrollbar pb-6 pt-2 scroll-smooth"
+          className="flex gap-6 ps-6 w-full overflow-x-auto snap-x no-scrollbar pb-6 pt-2 scroll-smooth"
         >
           {marqueeItems.map((comment, idx) => (
             <a
@@ -178,8 +178,8 @@ export default function ReviewSection() {
               rel="noopener noreferrer"
               className="group relative w-[280px] sm:w-[350px] shrink-0 p-7 rounded-2xl glass-card flex flex-col justify-between hover:border-copper/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(198,98,43,0.1)] cursor-pointer snap-center"
             >
-              <div className="absolute top-4 end- text-gold/5 text-6xl font-serif leading-none group-hover:text-gold/20 transition-colors">&quot;</div>
-              <div className="absolute top-4 end- opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-4 end-4 text-gold/5 text-6xl font-serif leading-none group-hover:text-gold/20 transition-colors">&quot;</div>
+              <div className="absolute top-4 end-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <ExternalLink size={14} className="text-copper" />
               </div>
               

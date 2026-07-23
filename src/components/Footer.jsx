@@ -141,7 +141,7 @@ export default function Footer() {
               href="https://www.hamedmohamed.dev/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-teal hover:text-copper transition-colors font-bold ms-"
+              className="text-teal hover:text-copper transition-colors font-bold ms-1"
             >
               HAMED MOHAMED
             </a>

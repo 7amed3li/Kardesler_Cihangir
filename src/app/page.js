@@ -90,19 +90,19 @@ export default function Home() {
         {/* Animated decorative elements */}
         <div className="absolute inset-0 z-[1] pointer-events-none">
           {/* Top Ottoman border line */}
-          <div className="absolute top-[12%] start- w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
+          <div className="absolute top-[12%] start-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
           {/* Bottom Ottoman border line */}
-          <div className="absolute bottom-[15%] start- w-full h-px bg-gradient-to-r from-transparent via-copper/15 to-transparent"></div>
+          <div className="absolute bottom-[15%] start-0 w-full h-px bg-gradient-to-r from-transparent via-copper/15 to-transparent"></div>
           
           {/* Corner accents */}
-          <div className="absolute top-8 start- w-12 h-12 border-t-2 border-s-2 border-gold/20 rounded-tl-sm hidden md:block"></div>
-          <div className="absolute top-8 end- w-12 h-12 border-t-2 border-e-2 border-gold/20 rounded-tr-sm hidden md:block"></div>
-          <div className="absolute bottom-24 start- w-12 h-12 border-b-2 border-s-2 border-gold/20 rounded-bl-sm hidden md:block"></div>
-          <div className="absolute bottom-24 end- w-12 h-12 border-b-2 border-e-2 border-gold/20 rounded-br-sm hidden md:block"></div>
+          <div className="absolute top-8 start-8 w-12 h-12 border-t-2 border-s-2 border-gold/20 rounded-tl-sm hidden md:block"></div>
+          <div className="absolute top-8 end-8 w-12 h-12 border-t-2 border-e-2 border-gold/20 rounded-tr-sm hidden md:block"></div>
+          <div className="absolute bottom-24 start-8 w-12 h-12 border-b-2 border-s-2 border-gold/20 rounded-bl-sm hidden md:block"></div>
+          <div className="absolute bottom-24 end-8 w-12 h-12 border-b-2 border-e-2 border-gold/20 rounded-br-sm hidden md:block"></div>
           
           {/* Radial glows */}
-          <div className="absolute top-1/2 start-/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/5 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute top-0 end- w-[300px] h-[300px] bg-copper/5 rounded-full blur-[100px]"></div>
+          <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/5 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute top-0 end-0 w-[300px] h-[300px] bg-copper/5 rounded-full blur-[100px]"></div>
         </div>
 
         <div className={`relative z-10 max-w-3xl mx-auto transition-opacity duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}>
@@ -196,7 +196,7 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <div
-          className={`absolute bottom-6 start-/2 -translate-x-1/2 z-10 transition-opacity duration-700 ${heroVisible ? "opacity-100" : "opacity-0"}`}
+          className={`absolute bottom-6 start-1/2 -translate-x-1/2 z-10 transition-opacity duration-700 ${heroVisible ? "opacity-100" : "opacity-0"}`}
           style={{ transitionDelay: "700ms" }}
         >
           <ChevronDown size={20} className="text-cream-dim/30 animate-bounce" />
@@ -211,7 +211,7 @@ export default function Home() {
         className={`relative py-16 px-4 bg-gradient-to-b from-ink-2 via-ink to-ink overflow-hidden transition-all duration-700 ${isTrendingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
       >
         {/* Background glow */}
-        <div className="absolute top-0 start-/2 -translate-x-1/2 w-[500px] h-[200px] bg-copper/5 rounded-full blur-[100px]"></div>
+        <div className="absolute top-0 start-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-copper/5 rounded-full blur-[100px]"></div>
         
         {/* Ottoman Divider at top */}
         <div className="ottoman-divider max-w-xl mx-auto mb-12"></div>
