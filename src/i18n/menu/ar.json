@@ -13,121 +13,429 @@
     "soguk_icecek": "مشروبات باردة"
   },
   "items": {
-    "serpme_kahvalti": { "name": "فطور تركي مشكّل (لشخصين)", "desc": "تشكيلة فطور غنية ومتنوعة" },
-    "pacanga_boregi": { "name": "بوريك باتشانجا (فطيرة بالجبنة واللحم)", "desc": "" },
-    "omlet": { "name": "أومليت", "desc": "" },
-    "menemen": { "name": "منمن (بيض بالطماطم والفلفل)", "desc": "" },
-    "sahanda_yumurta": { "name": "بيض مقلي", "desc": "" },
-    "sucuklu_yumurta": { "name": "بيض بالسجق التركي", "desc": "" },
-    "kavurmali_yumurta": { "name": "بيض باللحم المحمّر (كاورما)", "desc": "" },
-    "kuzu_gerdan_corba": { "name": "شوربة لحم غنم", "desc": "" },
-    "sehriyeli_tavuk_corbasi": { "name": "شوربة دجاج بالشعيرية", "desc": "" },
-    "ezogelin_mercimek_corbasi": { "name": "شوربة عدس", "desc": "" },
-
-    "adana_urfa": { "name": "كباب أضنة وأورفا", "desc": "140 غرام - لحم مفروم مشوي على الفحم" },
-    "mardin_kebap": { "name": "كباب ماردين", "desc": "180 غرام - كباب على طريقة ماردين" },
-    "beyti_kebap": { "name": "كباب بيتي", "desc": "170 غرام - كباب لحم بالثوم ملفوف بالخبز" },
-    "domatesli_kebap": { "name": "كباب بالطماطم", "desc": "150 غرام - كباب مشوي مع طماطم" },
-    "patlicanli_kebap": { "name": "كباب بالباذنجان", "desc": "160 غرام - كباب لحم مع باذنجان مشوي" },
-    "kuzu_sis_kebap": { "name": "شيش لحم غنم", "desc": "150 غرام - قطع غنم طرية مشوية على أسياخ" },
-    "ali_nazik_kebap": { "name": "علي نازك", "desc": "150 غرام - لحم غنم مشوي على باذنجان مدخّن بالزبادي والثوم" },
-    "inegol_kofte": { "name": "كفتة تركية مشوية", "desc": "150 غرام - كفتة على طريقة إينيغول" },
-    "vali_kebabi": { "name": "كباب الوالي (مشكّل)", "desc": "220 غرام - دجاج وغنم ولحم بقري مع باذنجان وطماطم وفلفل وجبنة" },
-    "tavuk_sis_izgara": { "name": "شيش طاووق (دجاج مشوي)", "desc": "150 غرام - صدور دجاج متبلة مشوية على أسياخ" },
-    "tavuk_kanat": { "name": "أجنحة دجاج مشوية", "desc": "170 غرام" },
-    "kuzu_lokum": { "name": "لحم غنم لوقم (طري)", "desc": "220 غرام - قطع لحم غنم طرية مع برغل وسلطة" },
-    "kuzu_pirzola": { "name": "ريش غنم مشوية", "desc": "320 غرام - ريش غنم على الفحم" },
-    "kiremit_kebap": { "name": "كباب بالصاج (كاسرول)", "desc": "160 غرام - كباب مطبوخ على صاج فخاري" },
-    "iskender_kebap": { "name": "إسكندر كباب", "desc": "140 غرام - شرائح لحم فوق خبز بصلصة الطماطم والزبدة" },
-    "yogurtlu_kebap": { "name": "كباب بالزبادي", "desc": "140 غرام - كباب لحم مع زبادي" },
-    "alti_ezmeli_kebap": { "name": "كباب على صلصة طماطم مشوية", "desc": "140 غرام - كباب فوق طماطم مهروسة مشوية" },
-    "dana_bonfile": { "name": "ستيك لحم بقري (فيليه)", "desc": "200 غرام - ستيك فيليه بقري مع برغل وسلطة" },
-    "dana_cop_sis": { "name": "شيش لحم بقري (قطع صغيرة)", "desc": "200 غرام - قطع لحم بقري مشوية مع برغل وسلطة" },
-    "karisik_kebap_1": { "name": "مشويات مشكّلة 1", "desc": "350 غرام - تشكيلة: دجاج، غنم، كفتة، كباب بالطماطم، لحم مفروم مع برغل" },
-    "karisik_kebap_2": { "name": "مشويات مشكّلة 2 (فاخرة)", "desc": "550 غرام - تشكيلة فاخرة: شيش غنم، كفتة، ريش، ستيك، لحم مفروم مع مقبلات" },
-
-    "mardin_kebap_menu": { "name": "وجبة كباب ماردين", "desc": "180 غرام - وجبة كاملة مع مقبلات ومشروب" },
-    "tavuk_kanat_menu": { "name": "وجبة أجنحة دجاج", "desc": "160 غرام - وجبة كاملة مع مقبلات ومشروب" },
-    "kuzu_ciger_menu": { "name": "وجبة كبدة غنم", "desc": "170 غرام - وجبة كاملة مع مقبلات ومشروب" },
-    "kuzu_sis_menu": { "name": "وجبة شيش غنم", "desc": "140 غرام - وجبة كاملة مع مقبلات ومشروب" },
-
-    "mezeli_adana_urfa": { "name": "كباب أضنة وأورفا مع مقبلات", "desc": "140 غرام - كباب لحم مع تشكيلة مقبلات" },
-    "mezeli_dana_cop_sis": { "name": "شيش لحم بقري مع مقبلات", "desc": "200 غرام" },
-    "mezeli_kuzu_pirzola": { "name": "ريش غنم مع مقبلات", "desc": "320 غرام" },
-    "mezeli_kuzu_lokum": { "name": "لحم غنم لوقم مع مقبلات", "desc": "220 غرام" },
-    "mezeli_inegol_kofte": { "name": "كفتة تركية مع مقبلات", "desc": "150 غرام" },
-    "mezeli_kuzu_sis": { "name": "شيش غنم مع مقبلات", "desc": "150 غرام" },
-    "mezeli_dana_bonfile": { "name": "ستيك بقري مع مقبلات", "desc": "200 غرام" },
-    "mezeli_durum": { "name": "ساندوتش دورم مع مقبلات", "desc": "90 غرام" },
-    "mezeli_tavuk_kanat": { "name": "أجنحة دجاج مع مقبلات", "desc": "150 غرام" },
-    "mezeli_tavuk_sis": { "name": "شيش طاووق مع مقبلات", "desc": "150 غرام" },
-    "karisik_meze_tabagi": { "name": "طبق مقبلات مشكّل", "desc": "" },
-
-    "adana_durum": { "name": "ساندوتش كباب أضنة", "desc": "95 غرام - كباب أضنة في خبز رقيق" },
-    "urfa_durum": { "name": "ساندوتش كباب أورفا", "desc": "95 غرام - كباب أورفا في خبز رقيق" },
-    "dana_cop_sis_durum": { "name": "ساندوتش شيش لحم بقري", "desc": "95 غرام" },
-    "tavuk_sis_durum": { "name": "ساندوتش شيش طاووق", "desc": "95 غرام - دجاج مشوي في خبز رقيق" },
-    "kuzu_sis_durum": { "name": "ساندوتش شيش غنم", "desc": "95 غرام" },
-    "kuzu_ciger_durum": { "name": "ساندوتش كبدة غنم", "desc": "95 غرام" },
-    "kofte_durum": { "name": "ساندوتش كفتة", "desc": "95 غرام" },
-    "cigkofte_durum": { "name": "ساندوتش تشي كفتة (نباتي)", "desc": "" },
-
-    "kasarli_pide": { "name": "بيدا بالجبنة", "desc": "" },
-    "kasarli_yumurtali_pide": { "name": "بيدا بالجبنة والبيض", "desc": "" },
-    "kasarli_sucuklu_pide": { "name": "بيدا بالجبنة والسجق التركي", "desc": "" },
-    "kasarli_sucuklu_yumurtali_pide": { "name": "بيدا بالجبنة والسجق والبيض", "desc": "" },
-    "kiymali_pide": { "name": "بيدا باللحم المفروم", "desc": "" },
-    "kiymali_kasarli_pide": { "name": "بيدا باللحم المفروم والجبنة", "desc": "" },
-    "kusbasili_pide": { "name": "بيدا بقطع اللحم", "desc": "" },
-    "kusbasili_kasarli_pide": { "name": "بيدا بقطع اللحم والجبنة", "desc": "" },
-    "kavurmali_pide": { "name": "بيدا بالكاورما (لحم محمّر)", "desc": "" },
-    "kavurmali_kasarli_pide": { "name": "بيدا بالكاورما والجبنة", "desc": "" },
-    "beyaz_peynirli_pide": { "name": "بيدا بالجبنة البيضاء", "desc": "" },
-    "kasarli_mantarli_sebzeli_pide": { "name": "بيدا بالجبنة والفطر والخضار", "desc": "" },
-    "pastirmali_kasarli_pide": { "name": "بيدا بالبسطرمة والجبنة", "desc": "" },
-    "tavuklu_kasarli_pide": { "name": "بيدا بالدجاج والجبنة", "desc": "" },
-
-    "etli_konya": { "name": "خبز باللحم على طريقة قونيا", "desc": "" },
-    "etli_etmek": { "name": "خبز باللحم (إتلي إكمك)", "desc": "" },
-    "lahmacun_item": { "name": "لحم بعجين", "desc": "رقيق ومقرمش" },
-    "ozel_lahmacun": { "name": "لحم بعجين خاص (سبيشال)", "desc": "" },
-
-    "semiz_otu": { "name": "سلطة رجلة (بقلة)", "desc": "" },
-    "kuru_cacik": { "name": "جاجيك سميك (زبادي بالخيار)", "desc": "" },
-    "mutebbel": { "name": "متبّل باذنجان", "desc": "" },
-    "otlu_yogurtlu_meze": { "name": "زبادي بالأعشاب", "desc": "" },
-    "havuc_tarator": { "name": "جزر بالزبادي", "desc": "" },
-    "koz_biberli_yogurt": { "name": "زبادي بالفلفل المشوي", "desc": "" },
-    "babagannush": { "name": "بابا غنوج", "desc": "" },
-    "ezme_salata": { "name": "سلطة حارة (إزمة)", "desc": "" },
-    "humus": { "name": "حمص", "desc": "" },
-
-    "mevsim_salatasi": { "name": "سلطة موسمية", "desc": "جزر، خيار، طماطم، خضار طازجة" },
-    "coban_salata": { "name": "سلطة راعي (تشوبان)", "desc": "طماطم، خيار، فلفل، بقدونس" },
-    "cig_kofte": { "name": "تشي كفتة (نباتي)", "desc": "" },
-    "icli_kofte": { "name": "كبّة مقلية بالجوز", "desc": "" },
-    "cacik": { "name": "جاجيك (زبادي بالخيار والنعناع)", "desc": "" },
-    "yogurt": { "name": "زبادي", "desc": "" },
-
-    "kunefe": { "name": "كنافة تركية", "desc": "على طريقة هاتاي - بالجبنة والقطر" },
-    "firin_sutlac": { "name": "سطلاج (أرز بالحليب بالفرن)", "desc": "" },
-    "kazandibi": { "name": "كازان ديبي (حلى حليب تركي)", "desc": "" },
-    "trilece": { "name": "تريليتشة (كيكة الحليب)", "desc": "" },
-
-    "cola": { "name": "كولا", "desc": "" },
-    "fanta": { "name": "فانتا", "desc": "" },
-    "sprite": { "name": "سبرايت", "desc": "" },
-    "camlica": { "name": "تشامليجا (مشروب غازي تركي)", "desc": "" },
-    "litrelik_cola": { "name": "كولا لتر", "desc": "" },
-    "ayran_kucuk": { "name": "عيران (صغير)", "desc": "" },
-    "ayran_litrelik": { "name": "عيران (لتر)", "desc": "" },
-    "salgam": { "name": "شلغم (عصير لفت حامض)", "desc": "" },
-    "meyve_sulari": { "name": "عصير فواكه", "desc": "" },
-    "ice_tea": { "name": "شاي مثلج", "desc": "" },
-    "sikma_portakal": { "name": "عصير برتقال طازج", "desc": "" },
-    "sikma_nar": { "name": "عصير رمان طازج", "desc": "" },
-    "limonata": { "name": "ليموناضة", "desc": "" },
-    "soda": { "name": "صودا (مياه غازية)", "desc": "" },
-    "su": { "name": "ماء", "desc": "" }
+    "serpme_kahvalti": {
+      "name": "Serpme Kahvaltı (2 Kişilik)",
+      "desc": "فطور تركي مشكّل (لشخصين) - تشكيلة فطور غنية ومتنوعة"
+    },
+    "pacanga_boregi": {
+      "name": "Paçanga Böreği",
+      "desc": "بوريك باتشانجا (فطيرة بالجبنة واللحم)"
+    },
+    "omlet": {
+      "name": "Omlet",
+      "desc": "أومليت"
+    },
+    "menemen": {
+      "name": "Menemen",
+      "desc": "منمن (بيض بالطماطم والفلفل)"
+    },
+    "sahanda_yumurta": {
+      "name": "Sahanda Yumurta",
+      "desc": "بيض مقلي"
+    },
+    "sucuklu_yumurta": {
+      "name": "Sucuklu Yumurta",
+      "desc": "بيض بالسجق التركي"
+    },
+    "kavurmali_yumurta": {
+      "name": "Kavurmalı Yumurta",
+      "desc": "بيض باللحم المحمّر (كاورما)"
+    },
+    "kuzu_gerdan_corba": {
+      "name": "Kuzu Gerdan Çorba",
+      "desc": "شوربة لحم غنم"
+    },
+    "sehriyeli_tavuk_corbasi": {
+      "name": "Şehriyeli Tavuk Çorbası",
+      "desc": "شوربة دجاج بالشعيرية"
+    },
+    "ezogelin_mercimek_corbasi": {
+      "name": "Ezogelin / Mercimek Çorbası",
+      "desc": "شوربة عدس"
+    },
+    "adana_urfa": {
+      "name": "Adana & Urfa Kebap",
+      "desc": "كباب أضنة وأورفا - 140 غرام - لحم مفروم مشوي على الفحم"
+    },
+    "mardin_kebap": {
+      "name": "Mardin Kebap",
+      "desc": "كباب ماردين - 180 غرام - كباب على طريقة ماردين"
+    },
+    "beyti_kebap": {
+      "name": "Beyti Kebap",
+      "desc": "كباب بيتي - 170 غرام - كباب لحم بالثوم ملفوف بالخبز"
+    },
+    "domatesli_kebap": {
+      "name": "Domatesli Kebap",
+      "desc": "كباب بالطماطم - 150 غرام - كباب مشوي مع طماطم"
+    },
+    "patlicanli_kebap": {
+      "name": "Patlıcanlı Kebap",
+      "desc": "كباب بالباذنجان - 160 غرام - كباب لحم مع باذنجان مشوي"
+    },
+    "kuzu_sis_kebap": {
+      "name": "Kuzu Şiş Kebap",
+      "desc": "شيش لحم غنم - 150 غرام - قطع غنم طرية مشوية على أسياخ"
+    },
+    "ali_nazik_kebap": {
+      "name": "Ali Nazik Kebap",
+      "desc": "علي نازك - 150 غرام - لحم غنم مشوي على باذنجان مدخّن بالزبادي والثوم"
+    },
+    "inegol_kofte": {
+      "name": "İnegöl Köfte",
+      "desc": "كفتة تركية مشوية - 150 غرام - كفتة على طريقة إينيغول"
+    },
+    "vali_kebabi": {
+      "name": "Vali Kebabı",
+      "desc": "كباب الوالي (مشكّل) - 220 غرام - دجاج وغنم ولحم بقري مع باذنجان وطماطم وفلفل وجبنة"
+    },
+    "tavuk_sis_izgara": {
+      "name": "Tavuk Şiş Izgara",
+      "desc": "شيش طاووق (دجاج مشوي) - 150 غرام - صدور دجاج متبلة مشوية على أسياخ"
+    },
+    "tavuk_kanat": {
+      "name": "Tavuk Kanat",
+      "desc": "أجنحة دجاج مشوية - 170 غرام"
+    },
+    "kuzu_lokum": {
+      "name": "Kuzu Lokum",
+      "desc": "لحم غنم لوقم (طري) - 220 غرام - قطع لحم غنم طرية مع برغل وسلطة"
+    },
+    "kuzu_pirzola": {
+      "name": "Kuzu Pirzola",
+      "desc": "ريش غنم مشوية - 320 غرام - ريش غنم على الفحم"
+    },
+    "kiremit_kebap": {
+      "name": "Kiremit Kebap",
+      "desc": "كباب بالصاج (كاسرول) - 160 غرام - كباب مطبوخ على صاج فخاري"
+    },
+    "iskender_kebap": {
+      "name": "İskender Kebap",
+      "desc": "إسكندر كباب - 140 غرام - شرائح لحم فوق خبز بصلصة الطماطم والزبدة"
+    },
+    "yogurtlu_kebap": {
+      "name": "Yoğurtlu Kebap",
+      "desc": "كباب بالزبادي - 140 غرام - كباب لحم مع زبادي"
+    },
+    "alti_ezmeli_kebap": {
+      "name": "Altı Ezmeli Kebap",
+      "desc": "كباب على صلصة طماطم مشوية - 140 غرام - كباب فوق طماطم مهروسة مشوية"
+    },
+    "dana_bonfile": {
+      "name": "Dana Bonfile",
+      "desc": "ستيك لحم بقري (فيليه) - 200 غرام - ستيك فيليه بقري مع برغل وسلطة"
+    },
+    "dana_cop_sis": {
+      "name": "Dana Çöp Şiş",
+      "desc": "شيش لحم بقري (قطع صغيرة) - 200 غرام - قطع لحم بقري مشوية مع برغل وسلطة"
+    },
+    "karisik_kebap_1": {
+      "name": "Karışık Kebap 1",
+      "desc": "مشويات مشكّلة 1 - 350 غرام - تشكيلة: دجاج، غنم، كفتة، كباب بالطماطم، لحم مفروم مع برغل"
+    },
+    "karisik_kebap_2": {
+      "name": "Karışık Kebap 2",
+      "desc": "مشويات مشكّلة 2 (فاخرة) - 550 غرام - تشكيلة فاخرة: شيش غنم، كفتة، ريش، ستيك، لحم مفروم مع مقبلات"
+    },
+    "mardin_kebap_menu": {
+      "name": "Mardin Kebap Menü",
+      "desc": "وجبة كباب ماردين - 180 غرام - وجبة كاملة مع مقبلات ومشروب"
+    },
+    "tavuk_kanat_menu": {
+      "name": "Tavuk Kanat Menü",
+      "desc": "وجبة أجنحة دجاج - 160 غرام - وجبة كاملة مع مقبلات ومشروب"
+    },
+    "kuzu_ciger_menu": {
+      "name": "Kuzu Ciğer Menü",
+      "desc": "وجبة كبدة غنم - 170 غرام - وجبة كاملة مع مقبلات ومشروب"
+    },
+    "kuzu_sis_menu": {
+      "name": "Kuzu Şiş Kebap Menü",
+      "desc": "وجبة شيش غنم - 140 غرام - وجبة كاملة مع مقبلات ومشروب"
+    },
+    "mezeli_adana_urfa": {
+      "name": "Mezeli Adana & Urfa Kebap",
+      "desc": "كباب أضنة وأورفا مع مقبلات - 140 غرام - كباب لحم مع تشكيلة مقبلات"
+    },
+    "mezeli_dana_cop_sis": {
+      "name": "Mezeli Dana Çöp Şiş",
+      "desc": "شيش لحم بقري مع مقبلات - 200 غرام"
+    },
+    "mezeli_kuzu_pirzola": {
+      "name": "Mezeli Kuzu Pirzola",
+      "desc": "ريش غنم مع مقبلات - 320 غرام"
+    },
+    "mezeli_kuzu_lokum": {
+      "name": "Mezeli Kuzu Lokum",
+      "desc": "لحم غنم لوقم مع مقبلات - 220 غرام"
+    },
+    "mezeli_inegol_kofte": {
+      "name": "Mezeli İnegöl Köfte",
+      "desc": "كفتة تركية مع مقبلات - 150 غرام"
+    },
+    "mezeli_kuzu_sis": {
+      "name": "Mezeli Kuzu Şiş",
+      "desc": "شيش غنم مع مقبلات - 150 غرام"
+    },
+    "mezeli_dana_bonfile": {
+      "name": "Mezeli Dana Bonfile",
+      "desc": "ستيك بقري مع مقبلات - 200 غرام"
+    },
+    "mezeli_durum": {
+      "name": "Mezeli Dürüm",
+      "desc": "ساندوتش دورم مع مقبلات - 90 غرام"
+    },
+    "mezeli_tavuk_kanat": {
+      "name": "Mezeli Tavuk Kanat",
+      "desc": "أجنحة دجاج مع مقبلات - 150 غرام"
+    },
+    "mezeli_tavuk_sis": {
+      "name": "Mezeli Tavuk Şiş",
+      "desc": "شيش طاووق مع مقبلات - 150 غرام"
+    },
+    "karisik_meze_tabagi": {
+      "name": "Karışık Meze Tabağı",
+      "desc": "طبق مقبلات مشكّل"
+    },
+    "adana_durum": {
+      "name": "Adana Dürüm",
+      "desc": "ساندوتش كباب أضنة - 95 غرام - كباب أضنة في خبز رقيق"
+    },
+    "urfa_durum": {
+      "name": "Urfa Dürüm",
+      "desc": "ساندوتش كباب أورفا - 95 غرام - كباب أورفا في خبز رقيق"
+    },
+    "dana_cop_sis_durum": {
+      "name": "Dana Çöp Şiş Dürüm",
+      "desc": "ساندوتش شيش لحم بقري - 95 غرام"
+    },
+    "tavuk_sis_durum": {
+      "name": "Tavuk Şiş Dürüm",
+      "desc": "ساندوتش شيش طاووق - 95 غرام - دجاج مشوي في خبز رقيق"
+    },
+    "kuzu_sis_durum": {
+      "name": "Kuzu Şiş Dürüm",
+      "desc": "ساندوتش شيش غنم - 95 غرام"
+    },
+    "kuzu_ciger_durum": {
+      "name": "Kuzu Ciğer Dürüm",
+      "desc": "ساندوتش كبدة غنم - 95 غرام"
+    },
+    "kofte_durum": {
+      "name": "Köfte Dürüm",
+      "desc": "ساندوتش كفتة - 95 غرام"
+    },
+    "cigkofte_durum": {
+      "name": "Çiğköfte Dürüm",
+      "desc": "ساندوتش تشي كفتة (نباتي)"
+    },
+    "kasarli_pide": {
+      "name": "Kaşarlı Pide",
+      "desc": "بيدا بالجبنة"
+    },
+    "kasarli_yumurtali_pide": {
+      "name": "Kaşarlı Yumurtalı Pide",
+      "desc": "بيدا بالجبنة والبيض"
+    },
+    "kasarli_sucuklu_pide": {
+      "name": "Kaşarlı Sucuklu Pide",
+      "desc": "بيدا بالجبنة والسجق التركي"
+    },
+    "kasarli_sucuklu_yumurtali_pide": {
+      "name": "Kaşarlı Sucuklu Yumurtalı Pide",
+      "desc": "بيدا بالجبنة والسجق والبيض"
+    },
+    "kiymali_pide": {
+      "name": "Kıymalı Pide",
+      "desc": "بيدا باللحم المفروم"
+    },
+    "kiymali_kasarli_pide": {
+      "name": "Kıymalı Kaşarlı Pide",
+      "desc": "بيدا باللحم المفروم والجبنة"
+    },
+    "kusbasili_pide": {
+      "name": "Kuşbaşılı Pide",
+      "desc": "بيدا بقطع اللحم"
+    },
+    "kusbasili_kasarli_pide": {
+      "name": "Kuşbaşılı Kaşarlı Pide",
+      "desc": "بيدا بقطع اللحم والجبنة"
+    },
+    "kavurmali_pide": {
+      "name": "Kavurmalı Pide",
+      "desc": "بيدا بالكاورما (لحم محمّر)"
+    },
+    "kavurmali_kasarli_pide": {
+      "name": "Kavurmalı Kaşarlı Pide",
+      "desc": "بيدا بالكاورما والجبنة"
+    },
+    "beyaz_peynirli_pide": {
+      "name": "Beyaz Peynirli Pide",
+      "desc": "بيدا بالجبنة البيضاء"
+    },
+    "kasarli_mantarli_sebzeli_pide": {
+      "name": "Kaşarlı Mantarlı Sebzeli Pide",
+      "desc": "بيدا بالجبنة والفطر والخضار"
+    },
+    "pastirmali_kasarli_pide": {
+      "name": "Pastırmalı Kaşarlı Pide",
+      "desc": "بيدا بالبسطرمة والجبنة"
+    },
+    "tavuklu_kasarli_pide": {
+      "name": "Tavuklu Kaşarlı Pide",
+      "desc": "بيدا بالدجاج والجبنة"
+    },
+    "etli_konya": {
+      "name": "Etli Konya",
+      "desc": "خبز باللحم على طريقة قونيا"
+    },
+    "etli_etmek": {
+      "name": "Etli Etmek",
+      "desc": "خبز باللحم (إتلي إكمك)"
+    },
+    "lahmacun_item": {
+      "name": "Lahmacun",
+      "desc": "لحم بعجين - رقيق ومقرمش"
+    },
+    "ozel_lahmacun": {
+      "name": "Özel Lahmacun",
+      "desc": "لحم بعجين خاص (سبيشال)"
+    },
+    "semiz_otu": {
+      "name": "Semiz Otu",
+      "desc": "سلطة رجلة (بقلة)"
+    },
+    "kuru_cacik": {
+      "name": "Kuru Cacık",
+      "desc": "جاجيك سميك (زبادي بالخيار)"
+    },
+    "mutebbel": {
+      "name": "Mütebbel",
+      "desc": "متبّل باذنجان"
+    },
+    "otlu_yogurtlu_meze": {
+      "name": "Otlu Yoğurtlu Meze",
+      "desc": "زبادي بالأعشاب"
+    },
+    "havuc_tarator": {
+      "name": "Havuç Taratör",
+      "desc": "جزر بالزبادي"
+    },
+    "koz_biberli_yogurt": {
+      "name": "Köz Biberli Yoğurt",
+      "desc": "زبادي بالفلفل المشوي"
+    },
+    "babagannush": {
+      "name": "Babagannuş",
+      "desc": "بابا غنوج"
+    },
+    "ezme_salata": {
+      "name": "Ezme Salata",
+      "desc": "سلطة حارة (إزمة)"
+    },
+    "humus": {
+      "name": "Humus",
+      "desc": "حمص"
+    },
+    "mevsim_salatasi": {
+      "name": "Mevsim Salatası",
+      "desc": "سلطة موسمية - جزر، خيار، طماطم، خضار طازجة"
+    },
+    "coban_salata": {
+      "name": "Çoban Salata",
+      "desc": "سلطة راعي (تشوبان) - طماطم، خيار، فلفل، بقدونس"
+    },
+    "cig_kofte": {
+      "name": "Çiğ Köfte",
+      "desc": "تشي كفتة (نباتي)"
+    },
+    "icli_kofte": {
+      "name": "İçli Köfte",
+      "desc": "كبّة مقلية بالجوز"
+    },
+    "cacik": {
+      "name": "Cacık",
+      "desc": "جاجيك (زبادي بالخيار والنعناع)"
+    },
+    "yogurt": {
+      "name": "Yoğurt",
+      "desc": "زبادي"
+    },
+    "kunefe": {
+      "name": "Künefe",
+      "desc": "كنافة تركية - على طريقة هاتاي - بالجبنة والقطر"
+    },
+    "firin_sutlac": {
+      "name": "Fırın Sütlaç",
+      "desc": "سطلاج (أرز بالحليب بالفرن)"
+    },
+    "kazandibi": {
+      "name": "Kazandibi",
+      "desc": "كازان ديبي (حلى حليب تركي)"
+    },
+    "trilece": {
+      "name": "Trileçe",
+      "desc": "تريليتشة (كيكة الحليب)"
+    },
+    "cola": {
+      "name": "Cola",
+      "desc": "كولا"
+    },
+    "fanta": {
+      "name": "Fanta",
+      "desc": "فانتا"
+    },
+    "sprite": {
+      "name": "Sprite",
+      "desc": "سبرايت"
+    },
+    "camlica": {
+      "name": "Çamlıca",
+      "desc": "تشامليجا (مشروب غازي تركي)"
+    },
+    "litrelik_cola": {
+      "name": "Litrelik Cola",
+      "desc": "كولا لتر"
+    },
+    "ayran_kucuk": {
+      "name": "Ayran (Küçük)",
+      "desc": "عيران (صغير)"
+    },
+    "ayran_litrelik": {
+      "name": "Ayran (Litrelik)",
+      "desc": "عيران (لتر)"
+    },
+    "salgam": {
+      "name": "Şalgam",
+      "desc": "شلغم (عصير لفت حامض)"
+    },
+    "meyve_sulari": {
+      "name": "Meyve Suları",
+      "desc": "عصير فواكه"
+    },
+    "ice_tea": {
+      "name": "Ice Tea",
+      "desc": "شاي مثلج"
+    },
+    "sikma_portakal": {
+      "name": "Sıkma Portakal",
+      "desc": "عصير برتقال طازج"
+    },
+    "sikma_nar": {
+      "name": "Sıkma Nar",
+      "desc": "عصير رمان طازج"
+    },
+    "limonata": {
+      "name": "Limonata",
+      "desc": "ليموناضة"
+    },
+    "soda": {
+      "name": "Soda",
+      "desc": "صودا (مياه غازية)"
+    },
+    "su": {
+      "name": "Su",
+      "desc": "ماء"
+    }
   }
 }

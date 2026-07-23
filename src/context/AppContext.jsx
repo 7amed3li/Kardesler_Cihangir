@@ -123,8 +123,22 @@ export function AppProvider({ children }) {
     return rateData.symbol;
   };
 
-  const t = translations[lang] || translations["en"];
-  const menuT = menuTranslations[lang] || menuTranslations["en"];
+  const createDeepProxy = (target, fallback) => {
+    return new Proxy(target || {}, {
+      get(obj, prop) {
+        if (prop in obj) {
+          if (typeof obj[prop] === 'object' && obj[prop] !== null) {
+            return createDeepProxy(obj[prop], fallback?.[prop]);
+          }
+          return obj[prop];
+        }
+        return fallback?.[prop];
+      }
+    });
+  };
+
+  const t = createDeepProxy(translations[lang], translations["en"]);
+  const menuT = createDeepProxy(menuTranslations[lang], menuTranslations["en"]);
   const isRtl = lang === "ar";
 
   // Context Value

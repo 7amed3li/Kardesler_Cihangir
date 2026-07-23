@@ -35,7 +35,7 @@ export default function SmartFilters({ activeFilter, setActiveFilter }) {
             }`}
           >
             <span>{f.label}</span>
-            {isActive && <X size={12} className="ml-1 opacity-60" />}
+            {isActive && <X size={12} className="ms- opacity-60" />}
           </button>
         );
       })}

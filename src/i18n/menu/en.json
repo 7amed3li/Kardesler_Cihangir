@@ -13,111 +13,429 @@
     "soguk_icecek": "Cold Drink"
   },
   "items": {
-    "serpme_kahvalti": { "name": "Mixed Breakfast (2 Person)", "desc": "Rich breakfast platter" },
-    "pacanga_boregi": { "name": "Pachanga Pastry", "desc": "" },
-    "omlet": { "name": "Omlette", "desc": "" },
-    "menemen": { "name": "Tomatoes, Pepper with Egg", "desc": "" },
-    "sahanda_yumurta": { "name": "Fried Egg", "desc": "" },
-    "sucuklu_yumurta": { "name": "Saussage with Egg", "desc": "" },
-    "kavurmali_yumurta": { "name": "Beaf Roasted Meat with Egg", "desc": "" },
-    "kuzu_gerdan_corba": { "name": "Lamb Soup", "desc": "" },
-    "sehriyeli_tavuk_corbasi": { "name": "Chicken Soup", "desc": "" },
-    "ezogelin_mercimek_corbasi": { "name": "Lentil Soup", "desc": "" },
-    "adana_urfa": { "name": "Adana & Urfa Kebab", "desc": "140 gr. Grill Minced Beaf Meat" },
-    "mardin_kebap": { "name": "Mardin Kebab", "desc": "180 gr. Mardin Kebab" },
-    "beyti_kebap": { "name": "Beyti Kebab", "desc": "170 gr. Grill Minced Beaf Meat with Garlicky" },
-    "domatesli_kebap": { "name": "Tomatoes Kebab", "desc": "150 gr. Grill Tomatoes, Beaf Meat" },
-    "patlicanli_kebap": { "name": "Eggplant Kebab", "desc": "160 gr. Grill Eggplant, Minced Beaf Meat" },
-    "kuzu_sis_kebap": { "name": "Lamb Shish Kebab", "desc": "150 gr. Lamb Shish Kebab" },
-    "ali_nazik_kebap": { "name": "Ali Nazik Kebab", "desc": "150 gr. Grill Lamb Meat and Eggplant with Garlicky Yogurt" },
-    "inegol_kofte": { "name": "Grill Meatball", "desc": "150 gr. Grill Meatball" },
-    "vali_kebabi": { "name": "Vali Kebab", "desc": "220 gr. Grill Chicken, Lamb, Mince Beaf Meat with Eggplant, Tomatoes and Pepper with Cheese" },
-    "tavuk_sis_izgara": { "name": "Chicken Shish", "desc": "150 gr. Chicken Shish" },
-    "tavuk_kanat": { "name": "Chicken Wings", "desc": "170 gr. Chicken Wings" },
-    "kuzu_lokum": { "name": "Lamb Loin", "desc": "220 gr. Lamb Loin with Bulgur Rice and with Salad" },
-    "kuzu_pirzola": { "name": "Lamb Chops", "desc": "320 gr. Lamb Chops" },
-    "kiremit_kebap": { "name": "Casserole Kebab", "desc": "160 gr. Casserole Kebab" },
-    "iskender_kebap": { "name": "Iskender Kebab", "desc": "140 gr. Iskender Kebab" },
-    "yogurtlu_kebap": { "name": "Kebab with Yogurt", "desc": "140 gr. Grill Minced Beaf Meat with Yogurt" },
-    "alti_ezmeli_kebap": { "name": "Mashed Tomatoes Kebab", "desc": "140 gr. Mashed Tomatoes Kebab" },
-    "dana_bonfile": { "name": "Beaf Veal Steak Sish", "desc": "200 gr. Beaf Veal Steak Sish with Bulgur Rice and Salad" },
-    "dana_cop_sis": { "name": "Beaf Sish Kebab", "desc": "200 gr. Beaf Sish Kebap with Bulgur Rice and Salad" },
-    "karisik_kebap_1": { "name": "Mixed Kebab 1", "desc": "350 gr. Grilled chicken, lamb, meatball, tomatoes kebab, mince beaf meat salad with bulgur rice" },
-    "karisik_kebap_2": { "name": "Mixed Kebab 2", "desc": "550 gr. Grill lamb sish, meatball, lamb chops, beaf steak meat, mince beaf meat and Appetizers" },
-    "mardin_kebap_menu": { "name": "Special Mardin Kebab", "desc": "180 gr. Special Mardin Kebab" },
-    "tavuk_kanat_menu": { "name": "Special Chicken Wings", "desc": "160 gr. Special Chicken Wings" },
-    "kuzu_ciger_menu": { "name": "Special Lamb Liver", "desc": "170 gr. Special Lamb Liver" },
-    "kuzu_sis_menu": { "name": "Special Lamb Shish Kebab", "desc": "140 gr. Special Lamb Shish Kebab" },
-    "mezeli_adana_urfa": { "name": "Adana & Urfa with Appetizers", "desc": "140 gr. Grill Minced Beaf Meat with Appetizers" },
-    "mezeli_dana_cop_sis": { "name": "Beaf Shish Kebab with Appetizers", "desc": "200 gr. Beaf Shish Kebab with Appetizers" },
-    "mezeli_kuzu_pirzola": { "name": "Lamb Chops with Appetizer", "desc": "320 gr. Lamb Chops with Appetizer" },
-    "mezeli_kuzu_lokum": { "name": "Lamb Delight with Appetizers", "desc": "220 gr. Lamb Delight with Appetizers" },
-    "mezeli_inegol_kofte": { "name": "İnegöl Meatballs with Appetizers", "desc": "150 gr. İnegöl Meatballs with Appetizers" },
-    "mezeli_kuzu_sis": { "name": "Lamb Shish with Appetizers", "desc": "150 gr. Lamb Shish with Appetizers" },
-    "mezeli_dana_bonfile": { "name": "Beaf Tenderloin with Appetizers", "desc": "200 gr. Beaf Tenderloin with Appetizers" },
-    "mezeli_durum": { "name": "Appetizer Wrap", "desc": "90 gr. Appetizer Wrap" },
-    "mezeli_tavuk_kanat": { "name": "Chicken Wings with Appetizers", "desc": "150 gr. Chicken Wings with Appetizers" },
-    "mezeli_tavuk_sis": { "name": "Chicken Shish with Appetizers", "desc": "150 gr. Chicken Shish with Appetizers" },
-    "karisik_meze_tabagi": { "name": "Mixed Appetizer Platter", "desc": "" },
-    "adana_durum": { "name": "Adana Kebab Wrap", "desc": "95 gr. Adana Kebab Wrap" },
-    "urfa_durum": { "name": "Urfa Kebab Wrap", "desc": "95 gr. Urfa Kebab Wrap" },
-    "dana_cop_sis_durum": { "name": "Beef Shish Kebab Wrap", "desc": "95 gr. Beef Shish Kebab Wrap" },
-    "tavuk_sis_durum": { "name": "Chicken Shish Wrap", "desc": "95 gr. Chicken Shish Wrap" },
-    "kuzu_sis_durum": { "name": "Lamb Shish Kebab Wrap", "desc": "95 gr. Lamb Shish Kebab Wrap" },
-    "kuzu_ciger_durum": { "name": "Lamb Liver Wrap", "desc": "95 gr. Lamb Liver Wrap" },
-    "kofte_durum": { "name": "Meatball Wrap", "desc": "95 gr. Meatball Wrap" },
-    "cigkofte_durum": { "name": "Vegetarian Raw Wrap", "desc": "" },
-    "kasarli_pide": { "name": "Pita with Cheddar Cheese", "desc": "" },
-    "kasarli_yumurtali_pide": { "name": "Pita with Cheddar Cheese, Egg", "desc": "" },
-    "kasarli_sucuklu_pide": { "name": "Pita with Cheddar Cheese, Sausage", "desc": "" },
-    "kasarli_sucuklu_yumurtali_pide": { "name": "Pita with Cheddar Cheese Sausage, Egg", "desc": "" },
-    "kiymali_pide": { "name": "Pita with Minced Meat", "desc": "" },
-    "kiymali_kasarli_pide": { "name": "Pita with Mince, Cheddar Cheese", "desc": "" },
-    "kusbasili_pide": { "name": "Pita with Chopped Meat", "desc": "" },
-    "kusbasili_kasarli_pide": { "name": "Pita with Chopped Meat, Cheddar Cheese", "desc": "" },
-    "kavurmali_pide": { "name": "Pita with Minced Lamb Meat", "desc": "" },
-    "kavurmali_kasarli_pide": { "name": "Pita with Minced Lamb Meat, Cheddar Cheese", "desc": "" },
-    "beyaz_peynirli_pide": { "name": "Pita with Feta Cheese", "desc": "" },
-    "kasarli_mantarli_sebzeli_pide": { "name": "Pita with Cheese, Mushrooms and Vegetables", "desc": "" },
-    "pastirmali_kasarli_pide": { "name": "Pita with Pastrami and Cheddar Cheese", "desc": "" },
-    "tavuklu_kasarli_pide": { "name": "Chicken and Cheddar Pita", "desc": "" },
-    "etli_konya": { "name": "Pita with Konya Meat", "desc": "" },
-    "etli_etmek": { "name": "Pita with Chopped Meat", "desc": "" },
-    "lahmacun_item": { "name": "Turkish Pizza Covered with Mince", "desc": "Crispy" },
-    "ozel_lahmacun": { "name": "Special Turkish Pizza", "desc": "" },
-    "semiz_otu": { "name": "Purslane", "desc": "" },
-    "kuru_cacik": { "name": "Dry Tzatziki", "desc": "" },
-    "mutebbel": { "name": "Eggplant with Tahin", "desc": "" },
-    "otlu_yogurtlu_meze": { "name": "Basil and Yogurt", "desc": "" },
-    "havuc_tarator": { "name": "Carrot with Yogurt", "desc": "" },
-    "koz_biberli_yogurt": { "name": "Roasted Pepper Yogurt", "desc": "" },
-    "babagannush": { "name": "Eggplant, Tomatoes and Pepper", "desc": "" },
-    "ezme_salata": { "name": "Spicy Salad", "desc": "" },
-    "humus": { "name": "Hummus", "desc": "" },
-    "mevsim_salatasi": { "name": "Season Salad", "desc": "Carrot, Cucumber, Tomatoes, Vegatable" },
-    "coban_salata": { "name": "Shepherd Salad", "desc": "Tomatoes, Cucumber, Pepper, Vegatable" },
-    "cig_kofte": { "name": "Vegeterian Raw Meatball", "desc": "" },
-    "icli_kofte": { "name": "Friese Meatball with Walnut", "desc": "" },
-    "cacik": { "name": "Cucumber Yogurt", "desc": "" },
-    "yogurt": { "name": "Yoghurt", "desc": "" },
-    "kunefe": { "name": "Kunefah", "desc": "Hatay style" },
-    "firin_sutlac": { "name": "Rice Pudding", "desc": "" },
-    "kazandibi": { "name": "Kazandibi Sweet", "desc": "" },
-    "trilece": { "name": "Trilece", "desc": "" },
-    "cola": { "name": "Cola", "desc": "" },
-    "fanta": { "name": "Fanta", "desc": "" },
-    "sprite": { "name": "Sprite", "desc": "" },
-    "camlica": { "name": "Flavored Soft Drink", "desc": "" },
-    "litrelik_cola": { "name": "Liter of Coke", "desc": "" },
-    "ayran_kucuk": { "name": "Yoghurt Drink (Small)", "desc": "" },
-    "ayran_litrelik": { "name": "Yoghurt Drink (Liter)", "desc": "" },
-    "salgam": { "name": "Turnip Juice", "desc": "" },
-    "meyve_sulari": { "name": "Fruit Juice", "desc": "" },
-    "ice_tea": { "name": "Ice Tea", "desc": "" },
-    "sikma_portakal": { "name": "Fresh Orange Juice", "desc": "" },
-    "sikma_nar": { "name": "Fresh Pomegranate Juice", "desc": "" },
-    "limonata": { "name": "Lemonade", "desc": "" },
-    "soda": { "name": "Sparkling Water", "desc": "" },
-    "su": { "name": "Water", "desc": "" }
+    "serpme_kahvalti": {
+      "name": "Serpme Kahvaltı (2 Kişilik)",
+      "desc": "Mixed Breakfast (2 Person) - Rich breakfast platter"
+    },
+    "pacanga_boregi": {
+      "name": "Paçanga Böreği",
+      "desc": "Pachanga Pastry"
+    },
+    "omlet": {
+      "name": "Omlet",
+      "desc": "Omlette"
+    },
+    "menemen": {
+      "name": "Menemen",
+      "desc": "Tomatoes, Pepper with Egg"
+    },
+    "sahanda_yumurta": {
+      "name": "Sahanda Yumurta",
+      "desc": "Fried Egg"
+    },
+    "sucuklu_yumurta": {
+      "name": "Sucuklu Yumurta",
+      "desc": "Saussage with Egg"
+    },
+    "kavurmali_yumurta": {
+      "name": "Kavurmalı Yumurta",
+      "desc": "Beaf Roasted Meat with Egg"
+    },
+    "kuzu_gerdan_corba": {
+      "name": "Kuzu Gerdan Çorba",
+      "desc": "Lamb Soup"
+    },
+    "sehriyeli_tavuk_corbasi": {
+      "name": "Şehriyeli Tavuk Çorbası",
+      "desc": "Chicken Soup"
+    },
+    "ezogelin_mercimek_corbasi": {
+      "name": "Ezogelin / Mercimek Çorbası",
+      "desc": "Lentil Soup"
+    },
+    "adana_urfa": {
+      "name": "Adana & Urfa Kebap",
+      "desc": "Adana & Urfa Kebab - 140 gr. Grill Minced Beaf Meat"
+    },
+    "mardin_kebap": {
+      "name": "Mardin Kebap",
+      "desc": "Mardin Kebab - 180 gr. Mardin Kebab"
+    },
+    "beyti_kebap": {
+      "name": "Beyti Kebap",
+      "desc": "Beyti Kebab - 170 gr. Grill Minced Beaf Meat with Garlicky"
+    },
+    "domatesli_kebap": {
+      "name": "Domatesli Kebap",
+      "desc": "Tomatoes Kebab - 150 gr. Grill Tomatoes, Beaf Meat"
+    },
+    "patlicanli_kebap": {
+      "name": "Patlıcanlı Kebap",
+      "desc": "Eggplant Kebab - 160 gr. Grill Eggplant, Minced Beaf Meat"
+    },
+    "kuzu_sis_kebap": {
+      "name": "Kuzu Şiş Kebap",
+      "desc": "Lamb Shish Kebab - 150 gr. Lamb Shish Kebab"
+    },
+    "ali_nazik_kebap": {
+      "name": "Ali Nazik Kebap",
+      "desc": "Ali Nazik Kebab - 150 gr. Grill Lamb Meat and Eggplant with Garlicky Yogurt"
+    },
+    "inegol_kofte": {
+      "name": "İnegöl Köfte",
+      "desc": "Grill Meatball - 150 gr. Grill Meatball"
+    },
+    "vali_kebabi": {
+      "name": "Vali Kebabı",
+      "desc": "Vali Kebab - 220 gr. Grill Chicken, Lamb, Mince Beaf Meat with Eggplant, Tomatoes and Pepper with Cheese"
+    },
+    "tavuk_sis_izgara": {
+      "name": "Tavuk Şiş Izgara",
+      "desc": "Chicken Shish - 150 gr. Chicken Shish"
+    },
+    "tavuk_kanat": {
+      "name": "Tavuk Kanat",
+      "desc": "Chicken Wings - 170 gr. Chicken Wings"
+    },
+    "kuzu_lokum": {
+      "name": "Kuzu Lokum",
+      "desc": "Lamb Loin - 220 gr. Lamb Loin with Bulgur Rice and with Salad"
+    },
+    "kuzu_pirzola": {
+      "name": "Kuzu Pirzola",
+      "desc": "Lamb Chops - 320 gr. Lamb Chops"
+    },
+    "kiremit_kebap": {
+      "name": "Kiremit Kebap",
+      "desc": "Casserole Kebab - 160 gr. Casserole Kebab"
+    },
+    "iskender_kebap": {
+      "name": "İskender Kebap",
+      "desc": "Iskender Kebab - 140 gr. Iskender Kebab"
+    },
+    "yogurtlu_kebap": {
+      "name": "Yoğurtlu Kebap",
+      "desc": "Kebab with Yogurt - 140 gr. Grill Minced Beaf Meat with Yogurt"
+    },
+    "alti_ezmeli_kebap": {
+      "name": "Altı Ezmeli Kebap",
+      "desc": "Mashed Tomatoes Kebab - 140 gr. Mashed Tomatoes Kebab"
+    },
+    "dana_bonfile": {
+      "name": "Dana Bonfile",
+      "desc": "Beaf Veal Steak Sish - 200 gr. Beaf Veal Steak Sish with Bulgur Rice and Salad"
+    },
+    "dana_cop_sis": {
+      "name": "Dana Çöp Şiş",
+      "desc": "Beaf Sish Kebab - 200 gr. Beaf Sish Kebap with Bulgur Rice and Salad"
+    },
+    "karisik_kebap_1": {
+      "name": "Karışık Kebap 1",
+      "desc": "Mixed Kebab 1 - 350 gr. Grilled chicken, lamb, meatball, tomatoes kebab, mince beaf meat salad with bulgur rice"
+    },
+    "karisik_kebap_2": {
+      "name": "Karışık Kebap 2",
+      "desc": "Mixed Kebab 2 - 550 gr. Grill lamb sish, meatball, lamb chops, beaf steak meat, mince beaf meat and Appetizers"
+    },
+    "mardin_kebap_menu": {
+      "name": "Mardin Kebap Menü",
+      "desc": "Special Mardin Kebab - 180 gr. Special Mardin Kebab"
+    },
+    "tavuk_kanat_menu": {
+      "name": "Tavuk Kanat Menü",
+      "desc": "Special Chicken Wings - 160 gr. Special Chicken Wings"
+    },
+    "kuzu_ciger_menu": {
+      "name": "Kuzu Ciğer Menü",
+      "desc": "Special Lamb Liver - 170 gr. Special Lamb Liver"
+    },
+    "kuzu_sis_menu": {
+      "name": "Kuzu Şiş Kebap Menü",
+      "desc": "Special Lamb Shish Kebab - 140 gr. Special Lamb Shish Kebab"
+    },
+    "mezeli_adana_urfa": {
+      "name": "Mezeli Adana & Urfa Kebap",
+      "desc": "Adana & Urfa with Appetizers - 140 gr. Grill Minced Beaf Meat with Appetizers"
+    },
+    "mezeli_dana_cop_sis": {
+      "name": "Mezeli Dana Çöp Şiş",
+      "desc": "Beaf Shish Kebab with Appetizers - 200 gr. Beaf Shish Kebab with Appetizers"
+    },
+    "mezeli_kuzu_pirzola": {
+      "name": "Mezeli Kuzu Pirzola",
+      "desc": "Lamb Chops with Appetizer - 320 gr. Lamb Chops with Appetizer"
+    },
+    "mezeli_kuzu_lokum": {
+      "name": "Mezeli Kuzu Lokum",
+      "desc": "Lamb Delight with Appetizers - 220 gr. Lamb Delight with Appetizers"
+    },
+    "mezeli_inegol_kofte": {
+      "name": "Mezeli İnegöl Köfte",
+      "desc": "İnegöl Meatballs with Appetizers - 150 gr. İnegöl Meatballs with Appetizers"
+    },
+    "mezeli_kuzu_sis": {
+      "name": "Mezeli Kuzu Şiş",
+      "desc": "Lamb Shish with Appetizers - 150 gr. Lamb Shish with Appetizers"
+    },
+    "mezeli_dana_bonfile": {
+      "name": "Mezeli Dana Bonfile",
+      "desc": "Beaf Tenderloin with Appetizers - 200 gr. Beaf Tenderloin with Appetizers"
+    },
+    "mezeli_durum": {
+      "name": "Mezeli Dürüm",
+      "desc": "Appetizer Wrap - 90 gr. Appetizer Wrap"
+    },
+    "mezeli_tavuk_kanat": {
+      "name": "Mezeli Tavuk Kanat",
+      "desc": "Chicken Wings with Appetizers - 150 gr. Chicken Wings with Appetizers"
+    },
+    "mezeli_tavuk_sis": {
+      "name": "Mezeli Tavuk Şiş",
+      "desc": "Chicken Shish with Appetizers - 150 gr. Chicken Shish with Appetizers"
+    },
+    "karisik_meze_tabagi": {
+      "name": "Karışık Meze Tabağı",
+      "desc": "Mixed Appetizer Platter"
+    },
+    "adana_durum": {
+      "name": "Adana Dürüm",
+      "desc": "Adana Kebab Wrap - 95 gr. Adana Kebab Wrap"
+    },
+    "urfa_durum": {
+      "name": "Urfa Dürüm",
+      "desc": "Urfa Kebab Wrap - 95 gr. Urfa Kebab Wrap"
+    },
+    "dana_cop_sis_durum": {
+      "name": "Dana Çöp Şiş Dürüm",
+      "desc": "Beef Shish Kebab Wrap - 95 gr. Beef Shish Kebab Wrap"
+    },
+    "tavuk_sis_durum": {
+      "name": "Tavuk Şiş Dürüm",
+      "desc": "Chicken Shish Wrap - 95 gr. Chicken Shish Wrap"
+    },
+    "kuzu_sis_durum": {
+      "name": "Kuzu Şiş Dürüm",
+      "desc": "Lamb Shish Kebab Wrap - 95 gr. Lamb Shish Kebab Wrap"
+    },
+    "kuzu_ciger_durum": {
+      "name": "Kuzu Ciğer Dürüm",
+      "desc": "Lamb Liver Wrap - 95 gr. Lamb Liver Wrap"
+    },
+    "kofte_durum": {
+      "name": "Köfte Dürüm",
+      "desc": "Meatball Wrap - 95 gr. Meatball Wrap"
+    },
+    "cigkofte_durum": {
+      "name": "Çiğköfte Dürüm",
+      "desc": "Vegetarian Raw Wrap"
+    },
+    "kasarli_pide": {
+      "name": "Kaşarlı Pide",
+      "desc": "Pita with Cheddar Cheese"
+    },
+    "kasarli_yumurtali_pide": {
+      "name": "Kaşarlı Yumurtalı Pide",
+      "desc": "Pita with Cheddar Cheese, Egg"
+    },
+    "kasarli_sucuklu_pide": {
+      "name": "Kaşarlı Sucuklu Pide",
+      "desc": "Pita with Cheddar Cheese, Sausage"
+    },
+    "kasarli_sucuklu_yumurtali_pide": {
+      "name": "Kaşarlı Sucuklu Yumurtalı Pide",
+      "desc": "Pita with Cheddar Cheese Sausage, Egg"
+    },
+    "kiymali_pide": {
+      "name": "Kıymalı Pide",
+      "desc": "Pita with Minced Meat"
+    },
+    "kiymali_kasarli_pide": {
+      "name": "Kıymalı Kaşarlı Pide",
+      "desc": "Pita with Mince, Cheddar Cheese"
+    },
+    "kusbasili_pide": {
+      "name": "Kuşbaşılı Pide",
+      "desc": "Pita with Chopped Meat"
+    },
+    "kusbasili_kasarli_pide": {
+      "name": "Kuşbaşılı Kaşarlı Pide",
+      "desc": "Pita with Chopped Meat, Cheddar Cheese"
+    },
+    "kavurmali_pide": {
+      "name": "Kavurmalı Pide",
+      "desc": "Pita with Minced Lamb Meat"
+    },
+    "kavurmali_kasarli_pide": {
+      "name": "Kavurmalı Kaşarlı Pide",
+      "desc": "Pita with Minced Lamb Meat, Cheddar Cheese"
+    },
+    "beyaz_peynirli_pide": {
+      "name": "Beyaz Peynirli Pide",
+      "desc": "Pita with Feta Cheese"
+    },
+    "kasarli_mantarli_sebzeli_pide": {
+      "name": "Kaşarlı Mantarlı Sebzeli Pide",
+      "desc": "Pita with Cheese, Mushrooms and Vegetables"
+    },
+    "pastirmali_kasarli_pide": {
+      "name": "Pastırmalı Kaşarlı Pide",
+      "desc": "Pita with Pastrami and Cheddar Cheese"
+    },
+    "tavuklu_kasarli_pide": {
+      "name": "Tavuklu Kaşarlı Pide",
+      "desc": "Chicken and Cheddar Pita"
+    },
+    "etli_konya": {
+      "name": "Etli Konya",
+      "desc": "Pita with Konya Meat"
+    },
+    "etli_etmek": {
+      "name": "Etli Etmek",
+      "desc": "Pita with Chopped Meat"
+    },
+    "lahmacun_item": {
+      "name": "Lahmacun",
+      "desc": "Turkish Pizza Covered with Mince - Crispy"
+    },
+    "ozel_lahmacun": {
+      "name": "Özel Lahmacun",
+      "desc": "Special Turkish Pizza"
+    },
+    "semiz_otu": {
+      "name": "Semiz Otu",
+      "desc": "Purslane"
+    },
+    "kuru_cacik": {
+      "name": "Kuru Cacık",
+      "desc": "Dry Tzatziki"
+    },
+    "mutebbel": {
+      "name": "Mütebbel",
+      "desc": "Eggplant with Tahin"
+    },
+    "otlu_yogurtlu_meze": {
+      "name": "Otlu Yoğurtlu Meze",
+      "desc": "Basil and Yogurt"
+    },
+    "havuc_tarator": {
+      "name": "Havuç Taratör",
+      "desc": "Carrot with Yogurt"
+    },
+    "koz_biberli_yogurt": {
+      "name": "Köz Biberli Yoğurt",
+      "desc": "Roasted Pepper Yogurt"
+    },
+    "babagannush": {
+      "name": "Babagannuş",
+      "desc": "Eggplant, Tomatoes and Pepper"
+    },
+    "ezme_salata": {
+      "name": "Ezme Salata",
+      "desc": "Spicy Salad"
+    },
+    "humus": {
+      "name": "Humus",
+      "desc": "Hummus"
+    },
+    "mevsim_salatasi": {
+      "name": "Mevsim Salatası",
+      "desc": "Season Salad - Carrot, Cucumber, Tomatoes, Vegatable"
+    },
+    "coban_salata": {
+      "name": "Çoban Salata",
+      "desc": "Shepherd Salad - Tomatoes, Cucumber, Pepper, Vegatable"
+    },
+    "cig_kofte": {
+      "name": "Çiğ Köfte",
+      "desc": "Vegeterian Raw Meatball"
+    },
+    "icli_kofte": {
+      "name": "İçli Köfte",
+      "desc": "Friese Meatball with Walnut"
+    },
+    "cacik": {
+      "name": "Cacık",
+      "desc": "Cucumber Yogurt"
+    },
+    "yogurt": {
+      "name": "Yoğurt",
+      "desc": "Yoghurt"
+    },
+    "kunefe": {
+      "name": "Künefe",
+      "desc": "Kunefah - Hatay style"
+    },
+    "firin_sutlac": {
+      "name": "Fırın Sütlaç",
+      "desc": "Rice Pudding"
+    },
+    "kazandibi": {
+      "name": "Kazandibi",
+      "desc": "Kazandibi Sweet"
+    },
+    "trilece": {
+      "name": "Trileçe",
+      "desc": "Trilece"
+    },
+    "cola": {
+      "name": "Cola",
+      "desc": ""
+    },
+    "fanta": {
+      "name": "Fanta",
+      "desc": ""
+    },
+    "sprite": {
+      "name": "Sprite",
+      "desc": ""
+    },
+    "camlica": {
+      "name": "Çamlıca",
+      "desc": "Flavored Soft Drink"
+    },
+    "litrelik_cola": {
+      "name": "Litrelik Cola",
+      "desc": "Liter of Coke"
+    },
+    "ayran_kucuk": {
+      "name": "Ayran (Küçük)",
+      "desc": "Yoghurt Drink (Small)"
+    },
+    "ayran_litrelik": {
+      "name": "Ayran (Litrelik)",
+      "desc": "Yoghurt Drink (Liter)"
+    },
+    "salgam": {
+      "name": "Şalgam",
+      "desc": "Turnip Juice"
+    },
+    "meyve_sulari": {
+      "name": "Meyve Suları",
+      "desc": "Fruit Juice"
+    },
+    "ice_tea": {
+      "name": "Ice Tea",
+      "desc": ""
+    },
+    "sikma_portakal": {
+      "name": "Sıkma Portakal",
+      "desc": "Fresh Orange Juice"
+    },
+    "sikma_nar": {
+      "name": "Sıkma Nar",
+      "desc": "Fresh Pomegranate Juice"
+    },
+    "limonata": {
+      "name": "Limonata",
+      "desc": "Lemonade"
+    },
+    "soda": {
+      "name": "Soda",
+      "desc": "Sparkling Water"
+    },
+    "su": {
+      "name": "Su",
+      "desc": "Water"
+    }
   }
 }

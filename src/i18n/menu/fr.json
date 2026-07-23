@@ -13,111 +13,429 @@
     "soguk_icecek": "Boissons Froides"
   },
   "items": {
-    "serpme_kahvalti": { "name": "Petit-déjeuner mixte (2 pers.)", "desc": "Assiette petit-déjeuner riche" },
-    "pacanga_boregi": { "name": "Pâtisserie Pachanga", "desc": "" },
-    "omlet": { "name": "Omelette", "desc": "" },
-    "menemen": { "name": "Menemen", "desc": "" },
-    "sahanda_yumurta": { "name": "Œuf sur le plat", "desc": "" },
-    "sucuklu_yumurta": { "name": "Œufs à la saucisse", "desc": "" },
-    "kavurmali_yumurta": { "name": "Œuf à la viande rôtie", "desc": "" },
-    "kuzu_gerdan_corba": { "name": "Soupe d'agneau", "desc": "" },
-    "sehriyeli_tavuk_corbasi": { "name": "Soupe de poulet", "desc": "" },
-    "ezogelin_mercimek_corbasi": { "name": "Soupe aux lentilles", "desc": "" },
-    "adana_urfa": { "name": "Kebab Adana & Urfa", "desc": "140 gr. Viande hachée grillée" },
-    "mardin_kebap": { "name": "Kebab Mardin", "desc": "180 gr. Kebab Mardin" },
-    "beyti_kebap": { "name": "Kebab Beyti", "desc": "170 gr. Kebab à l'ail" },
-    "domatesli_kebap": { "name": "Kebab aux tomates", "desc": "150 gr. Tomates et viande grillées" },
-    "patlicanli_kebap": { "name": "Kebab aux aubergines", "desc": "160 gr. Kebab d'aubergines" },
-    "kuzu_sis_kebap": { "name": "Brochette d'agneau", "desc": "150 gr. Brochette d'agneau" },
-    "ali_nazik_kebap": { "name": "Kebab Ali Nazik", "desc": "150 gr. Agneau, aubergine et yaourt à l'ail" },
-    "inegol_kofte": { "name": "Boulettes grillées", "desc": "150 gr. Boulettes grillées" },
-    "vali_kebabi": { "name": "Kebab Vali", "desc": "220 gr. Poulet, agneau, viande hachée avec aubergine et fromage" },
-    "tavuk_sis_izgara": { "name": "Brochette de poulet", "desc": "150 gr. Brochette de poulet" },
-    "tavuk_kanat": { "name": "Ailes de poulet", "desc": "170 gr. Ailes de poulet" },
-    "kuzu_lokum": { "name": "Filet d'agneau", "desc": "220 gr. Filet d'agneau avec boulgour et salade" },
-    "kuzu_pirzola": { "name": "Côtelettes d'agneau", "desc": "320 gr. Côtelettes d'agneau" },
-    "kiremit_kebap": { "name": "Kebab en casserole", "desc": "160 gr. Kebab en casserole" },
-    "iskender_kebap": { "name": "Kebab Iskender", "desc": "140 gr. Kebab Iskender" },
-    "yogurtlu_kebap": { "name": "Kebab au yaourt", "desc": "140 gr. Viande hachée grillée au yaourt" },
-    "alti_ezmeli_kebap": { "name": "Kebab aux tomates écrasées", "desc": "140 gr. Kebab aux tomates écrasées" },
-    "dana_bonfile": { "name": "Steak de veau", "desc": "200 gr. Steak de veau avec boulgour et salade" },
-    "dana_cop_sis": { "name": "Brochette de bœuf", "desc": "200 gr. Brochette de bœuf avec boulgour et salade" },
-    "karisik_kebap_1": { "name": "Kebab Mixte 1", "desc": "350 gr. Mixte de viandes grillées avec boulgour" },
-    "karisik_kebap_2": { "name": "Kebab Mixte 2", "desc": "550 gr. Assortiment de grillades avec entrées" },
-    "mardin_kebap_menu": { "name": "Menu Kebab Mardin", "desc": "180 gr. Kebab Mardin spécial" },
-    "tavuk_kanat_menu": { "name": "Menu Ailes de poulet", "desc": "160 gr. Ailes de poulet spéciales" },
-    "kuzu_ciger_menu": { "name": "Menu Foie d'agneau", "desc": "170 gr. Foie d'agneau spécial" },
-    "kuzu_sis_menu": { "name": "Menu Brochette d'agneau", "desc": "140 gr. Brochette d'agneau spéciale" },
-    "mezeli_adana_urfa": { "name": "Adana & Urfa avec entrées", "desc": "140 gr. Viande hachée grillée avec entrées" },
-    "mezeli_dana_cop_sis": { "name": "Brochette bœuf avec entrées", "desc": "200 gr. Brochette de bœuf avec entrées" },
-    "mezeli_kuzu_pirzola": { "name": "Côtelettes d'agneau avec entrées", "desc": "320 gr. Côtelettes d'agneau avec entrées" },
-    "mezeli_kuzu_lokum": { "name": "Filet d'agneau avec entrées", "desc": "220 gr. Filet d'agneau avec entrées" },
-    "mezeli_inegol_kofte": { "name": "Boulettes İnegöl avec entrées", "desc": "150 gr. Boulettes İnegöl avec entrées" },
-    "mezeli_kuzu_sis": { "name": "Brochette d'agneau avec entrées", "desc": "150 gr. Brochette d'agneau avec entrées" },
-    "mezeli_dana_bonfile": { "name": "Filet de bœuf avec entrées", "desc": "200 gr. Filet de bœuf avec entrées" },
-    "mezeli_durum": { "name": "Wrap avec entrées", "desc": "90 gr. Wrap avec entrées" },
-    "mezeli_tavuk_kanat": { "name": "Ailes de poulet avec entrées", "desc": "150 gr. Ailes de poulet avec entrées" },
-    "mezeli_tavuk_sis": { "name": "Brochette de poulet avec entrées", "desc": "150 gr. Brochette de poulet avec entrées" },
-    "karisik_meze_tabagi": { "name": "Plateau d'entrées mixtes", "desc": "" },
-    "adana_durum": { "name": "Wrap Adana", "desc": "95 gr. Wrap Adana" },
-    "urfa_durum": { "name": "Wrap Urfa", "desc": "95 gr. Wrap Urfa" },
-    "dana_cop_sis_durum": { "name": "Wrap brochette de bœuf", "desc": "95 gr. Wrap brochette de bœuf" },
-    "tavuk_sis_durum": { "name": "Wrap brochette poulet", "desc": "95 gr. Wrap brochette de poulet" },
-    "kuzu_sis_durum": { "name": "Wrap brochette d'agneau", "desc": "95 gr. Wrap brochette d'agneau" },
-    "kuzu_ciger_durum": { "name": "Wrap foie d'agneau", "desc": "95 gr. Wrap foie d'agneau" },
-    "kofte_durum": { "name": "Wrap boulettes", "desc": "95 gr. Wrap boulettes" },
-    "cigkofte_durum": { "name": "Wrap cru végétarien", "desc": "" },
-    "kasarli_pide": { "name": "Pita au fromage", "desc": "" },
-    "kasarli_yumurtali_pide": { "name": "Pita fromage et œuf", "desc": "" },
-    "kasarli_sucuklu_pide": { "name": "Pita fromage et saucisse", "desc": "" },
-    "kasarli_sucuklu_yumurtali_pide": { "name": "Pita fromage, saucisse et œuf", "desc": "" },
-    "kiymali_pide": { "name": "Pita à la viande hachée", "desc": "" },
-    "kiymali_kasarli_pide": { "name": "Pita viande hachée et fromage", "desc": "" },
-    "kusbasili_pide": { "name": "Pita aux morceaux de viande", "desc": "" },
-    "kusbasili_kasarli_pide": { "name": "Pita morceaux de viande et fromage", "desc": "" },
-    "kavurmali_pide": { "name": "Pita à la viande d'agneau", "desc": "" },
-    "kavurmali_kasarli_pide": { "name": "Pita viande d'agneau et fromage", "desc": "" },
-    "beyaz_peynirli_pide": { "name": "Pita au fromage feta", "desc": "" },
-    "kasarli_mantarli_sebzeli_pide": { "name": "Pita fromage, champignons et légumes", "desc": "" },
-    "pastirmali_kasarli_pide": { "name": "Pita pastrami et fromage", "desc": "" },
-    "tavuklu_kasarli_pide": { "name": "Pita poulet et fromage", "desc": "" },
-    "etli_konya": { "name": "Pita viande de Konya", "desc": "" },
-    "etli_etmek": { "name": "Pain à la viande", "desc": "" },
-    "lahmacun_item": { "name": "Lahmacun", "desc": "Croustillant" },
-    "ozel_lahmacun": { "name": "Lahmacun Spécial", "desc": "" },
-    "semiz_otu": { "name": "Pourpier", "desc": "" },
-    "kuru_cacik": { "name": "Tzatziki sec", "desc": "" },
-    "mutebbel": { "name": "Aubergine au tahini", "desc": "" },
-    "otlu_yogurtlu_meze": { "name": "Yaourt aux herbes", "desc": "" },
-    "havuc_tarator": { "name": "Carottes au yaourt", "desc": "" },
-    "koz_biberli_yogurt": { "name": "Yaourt au poivron grillé", "desc": "" },
-    "babagannush": { "name": "Baba ganoush", "desc": "" },
-    "ezme_salata": { "name": "Salade épicée", "desc": "" },
-    "humus": { "name": "Houmous", "desc": "" },
-    "mevsim_salatasi": { "name": "Salade de saison", "desc": "Carotte, concombre, tomates, légumes" },
-    "coban_salata": { "name": "Salade du berger", "desc": "Tomates, concombre, poivron, légumes" },
-    "cig_kofte": { "name": "Boulettes crues végétariennes", "desc": "" },
-    "icli_kofte": { "name": "Boulettes farcies aux noix", "desc": "" },
-    "cacik": { "name": "Tzatziki", "desc": "" },
-    "yogurt": { "name": "Yaourt", "desc": "" },
-    "kunefe": { "name": "Kunefe", "desc": "Style Hatay" },
-    "firin_sutlac": { "name": "Riz au lait", "desc": "" },
-    "kazandibi": { "name": "Kazandibi", "desc": "" },
-    "trilece": { "name": "Trilece", "desc": "" },
-    "cola": { "name": "Cola", "desc": "" },
-    "fanta": { "name": "Fanta", "desc": "" },
-    "sprite": { "name": "Sprite", "desc": "" },
-    "camlica": { "name": "Boisson gazeuse aromatisée", "desc": "" },
-    "litrelik_cola": { "name": "Cola 1L", "desc": "" },
-    "ayran_kucuk": { "name": "Ayran (Petit)", "desc": "" },
-    "ayran_litrelik": { "name": "Ayran (1L)", "desc": "" },
-    "salgam": { "name": "Jus de navet", "desc": "" },
-    "meyve_sulari": { "name": "Jus de fruits", "desc": "" },
-    "ice_tea": { "name": "Thé glacé", "desc": "" },
-    "sikma_portakal": { "name": "Jus d'orange frais", "desc": "" },
-    "sikma_nar": { "name": "Jus de grenade frais", "desc": "" },
-    "limonata": { "name": "Limonade", "desc": "" },
-    "soda": { "name": "Eau gazeuse", "desc": "" },
-    "su": { "name": "Eau", "desc": "" }
+    "serpme_kahvalti": {
+      "name": "Serpme Kahvaltı (2 Kişilik)",
+      "desc": "Petit-déjeuner mixte (2 pers.) - Assiette petit-déjeuner riche"
+    },
+    "pacanga_boregi": {
+      "name": "Paçanga Böreği",
+      "desc": "Pâtisserie Pachanga"
+    },
+    "omlet": {
+      "name": "Omlet",
+      "desc": "Omelette"
+    },
+    "menemen": {
+      "name": "Menemen",
+      "desc": ""
+    },
+    "sahanda_yumurta": {
+      "name": "Sahanda Yumurta",
+      "desc": "Œuf sur le plat"
+    },
+    "sucuklu_yumurta": {
+      "name": "Sucuklu Yumurta",
+      "desc": "Œufs à la saucisse"
+    },
+    "kavurmali_yumurta": {
+      "name": "Kavurmalı Yumurta",
+      "desc": "Œuf à la viande rôtie"
+    },
+    "kuzu_gerdan_corba": {
+      "name": "Kuzu Gerdan Çorba",
+      "desc": "Soupe d'agneau"
+    },
+    "sehriyeli_tavuk_corbasi": {
+      "name": "Şehriyeli Tavuk Çorbası",
+      "desc": "Soupe de poulet"
+    },
+    "ezogelin_mercimek_corbasi": {
+      "name": "Ezogelin / Mercimek Çorbası",
+      "desc": "Soupe aux lentilles"
+    },
+    "adana_urfa": {
+      "name": "Adana & Urfa Kebap",
+      "desc": "Kebab Adana & Urfa - 140 gr. Viande hachée grillée"
+    },
+    "mardin_kebap": {
+      "name": "Mardin Kebap",
+      "desc": "Kebab Mardin - 180 gr. Kebab Mardin"
+    },
+    "beyti_kebap": {
+      "name": "Beyti Kebap",
+      "desc": "Kebab Beyti - 170 gr. Kebab à l'ail"
+    },
+    "domatesli_kebap": {
+      "name": "Domatesli Kebap",
+      "desc": "Kebab aux tomates - 150 gr. Tomates et viande grillées"
+    },
+    "patlicanli_kebap": {
+      "name": "Patlıcanlı Kebap",
+      "desc": "Kebab aux aubergines - 160 gr. Kebab d'aubergines"
+    },
+    "kuzu_sis_kebap": {
+      "name": "Kuzu Şiş Kebap",
+      "desc": "Brochette d'agneau - 150 gr. Brochette d'agneau"
+    },
+    "ali_nazik_kebap": {
+      "name": "Ali Nazik Kebap",
+      "desc": "Kebab Ali Nazik - 150 gr. Agneau, aubergine et yaourt à l'ail"
+    },
+    "inegol_kofte": {
+      "name": "İnegöl Köfte",
+      "desc": "Boulettes grillées - 150 gr. Boulettes grillées"
+    },
+    "vali_kebabi": {
+      "name": "Vali Kebabı",
+      "desc": "Kebab Vali - 220 gr. Poulet, agneau, viande hachée avec aubergine et fromage"
+    },
+    "tavuk_sis_izgara": {
+      "name": "Tavuk Şiş Izgara",
+      "desc": "Brochette de poulet - 150 gr. Brochette de poulet"
+    },
+    "tavuk_kanat": {
+      "name": "Tavuk Kanat",
+      "desc": "Ailes de poulet - 170 gr. Ailes de poulet"
+    },
+    "kuzu_lokum": {
+      "name": "Kuzu Lokum",
+      "desc": "Filet d'agneau - 220 gr. Filet d'agneau avec boulgour et salade"
+    },
+    "kuzu_pirzola": {
+      "name": "Kuzu Pirzola",
+      "desc": "Côtelettes d'agneau - 320 gr. Côtelettes d'agneau"
+    },
+    "kiremit_kebap": {
+      "name": "Kiremit Kebap",
+      "desc": "Kebab en casserole - 160 gr. Kebab en casserole"
+    },
+    "iskender_kebap": {
+      "name": "İskender Kebap",
+      "desc": "Kebab Iskender - 140 gr. Kebab Iskender"
+    },
+    "yogurtlu_kebap": {
+      "name": "Yoğurtlu Kebap",
+      "desc": "Kebab au yaourt - 140 gr. Viande hachée grillée au yaourt"
+    },
+    "alti_ezmeli_kebap": {
+      "name": "Altı Ezmeli Kebap",
+      "desc": "Kebab aux tomates écrasées - 140 gr. Kebab aux tomates écrasées"
+    },
+    "dana_bonfile": {
+      "name": "Dana Bonfile",
+      "desc": "Steak de veau - 200 gr. Steak de veau avec boulgour et salade"
+    },
+    "dana_cop_sis": {
+      "name": "Dana Çöp Şiş",
+      "desc": "Brochette de bœuf - 200 gr. Brochette de bœuf avec boulgour et salade"
+    },
+    "karisik_kebap_1": {
+      "name": "Karışık Kebap 1",
+      "desc": "Kebab Mixte 1 - 350 gr. Mixte de viandes grillées avec boulgour"
+    },
+    "karisik_kebap_2": {
+      "name": "Karışık Kebap 2",
+      "desc": "Kebab Mixte 2 - 550 gr. Assortiment de grillades avec entrées"
+    },
+    "mardin_kebap_menu": {
+      "name": "Mardin Kebap Menü",
+      "desc": "Menu Kebab Mardin - 180 gr. Kebab Mardin spécial"
+    },
+    "tavuk_kanat_menu": {
+      "name": "Tavuk Kanat Menü",
+      "desc": "Menu Ailes de poulet - 160 gr. Ailes de poulet spéciales"
+    },
+    "kuzu_ciger_menu": {
+      "name": "Kuzu Ciğer Menü",
+      "desc": "Menu Foie d'agneau - 170 gr. Foie d'agneau spécial"
+    },
+    "kuzu_sis_menu": {
+      "name": "Kuzu Şiş Kebap Menü",
+      "desc": "Menu Brochette d'agneau - 140 gr. Brochette d'agneau spéciale"
+    },
+    "mezeli_adana_urfa": {
+      "name": "Mezeli Adana & Urfa Kebap",
+      "desc": "Adana & Urfa avec entrées - 140 gr. Viande hachée grillée avec entrées"
+    },
+    "mezeli_dana_cop_sis": {
+      "name": "Mezeli Dana Çöp Şiş",
+      "desc": "Brochette bœuf avec entrées - 200 gr. Brochette de bœuf avec entrées"
+    },
+    "mezeli_kuzu_pirzola": {
+      "name": "Mezeli Kuzu Pirzola",
+      "desc": "Côtelettes d'agneau avec entrées - 320 gr. Côtelettes d'agneau avec entrées"
+    },
+    "mezeli_kuzu_lokum": {
+      "name": "Mezeli Kuzu Lokum",
+      "desc": "Filet d'agneau avec entrées - 220 gr. Filet d'agneau avec entrées"
+    },
+    "mezeli_inegol_kofte": {
+      "name": "Mezeli İnegöl Köfte",
+      "desc": "Boulettes İnegöl avec entrées - 150 gr. Boulettes İnegöl avec entrées"
+    },
+    "mezeli_kuzu_sis": {
+      "name": "Mezeli Kuzu Şiş",
+      "desc": "Brochette d'agneau avec entrées - 150 gr. Brochette d'agneau avec entrées"
+    },
+    "mezeli_dana_bonfile": {
+      "name": "Mezeli Dana Bonfile",
+      "desc": "Filet de bœuf avec entrées - 200 gr. Filet de bœuf avec entrées"
+    },
+    "mezeli_durum": {
+      "name": "Mezeli Dürüm",
+      "desc": "Wrap avec entrées - 90 gr. Wrap avec entrées"
+    },
+    "mezeli_tavuk_kanat": {
+      "name": "Mezeli Tavuk Kanat",
+      "desc": "Ailes de poulet avec entrées - 150 gr. Ailes de poulet avec entrées"
+    },
+    "mezeli_tavuk_sis": {
+      "name": "Mezeli Tavuk Şiş",
+      "desc": "Brochette de poulet avec entrées - 150 gr. Brochette de poulet avec entrées"
+    },
+    "karisik_meze_tabagi": {
+      "name": "Karışık Meze Tabağı",
+      "desc": "Plateau d'entrées mixtes"
+    },
+    "adana_durum": {
+      "name": "Adana Dürüm",
+      "desc": "Wrap Adana - 95 gr. Wrap Adana"
+    },
+    "urfa_durum": {
+      "name": "Urfa Dürüm",
+      "desc": "Wrap Urfa - 95 gr. Wrap Urfa"
+    },
+    "dana_cop_sis_durum": {
+      "name": "Dana Çöp Şiş Dürüm",
+      "desc": "Wrap brochette de bœuf - 95 gr. Wrap brochette de bœuf"
+    },
+    "tavuk_sis_durum": {
+      "name": "Tavuk Şiş Dürüm",
+      "desc": "Wrap brochette poulet - 95 gr. Wrap brochette de poulet"
+    },
+    "kuzu_sis_durum": {
+      "name": "Kuzu Şiş Dürüm",
+      "desc": "Wrap brochette d'agneau - 95 gr. Wrap brochette d'agneau"
+    },
+    "kuzu_ciger_durum": {
+      "name": "Kuzu Ciğer Dürüm",
+      "desc": "Wrap foie d'agneau - 95 gr. Wrap foie d'agneau"
+    },
+    "kofte_durum": {
+      "name": "Köfte Dürüm",
+      "desc": "Wrap boulettes - 95 gr. Wrap boulettes"
+    },
+    "cigkofte_durum": {
+      "name": "Çiğköfte Dürüm",
+      "desc": "Wrap cru végétarien"
+    },
+    "kasarli_pide": {
+      "name": "Kaşarlı Pide",
+      "desc": "Pita au fromage"
+    },
+    "kasarli_yumurtali_pide": {
+      "name": "Kaşarlı Yumurtalı Pide",
+      "desc": "Pita fromage et œuf"
+    },
+    "kasarli_sucuklu_pide": {
+      "name": "Kaşarlı Sucuklu Pide",
+      "desc": "Pita fromage et saucisse"
+    },
+    "kasarli_sucuklu_yumurtali_pide": {
+      "name": "Kaşarlı Sucuklu Yumurtalı Pide",
+      "desc": "Pita fromage, saucisse et œuf"
+    },
+    "kiymali_pide": {
+      "name": "Kıymalı Pide",
+      "desc": "Pita à la viande hachée"
+    },
+    "kiymali_kasarli_pide": {
+      "name": "Kıymalı Kaşarlı Pide",
+      "desc": "Pita viande hachée et fromage"
+    },
+    "kusbasili_pide": {
+      "name": "Kuşbaşılı Pide",
+      "desc": "Pita aux morceaux de viande"
+    },
+    "kusbasili_kasarli_pide": {
+      "name": "Kuşbaşılı Kaşarlı Pide",
+      "desc": "Pita morceaux de viande et fromage"
+    },
+    "kavurmali_pide": {
+      "name": "Kavurmalı Pide",
+      "desc": "Pita à la viande d'agneau"
+    },
+    "kavurmali_kasarli_pide": {
+      "name": "Kavurmalı Kaşarlı Pide",
+      "desc": "Pita viande d'agneau et fromage"
+    },
+    "beyaz_peynirli_pide": {
+      "name": "Beyaz Peynirli Pide",
+      "desc": "Pita au fromage feta"
+    },
+    "kasarli_mantarli_sebzeli_pide": {
+      "name": "Kaşarlı Mantarlı Sebzeli Pide",
+      "desc": "Pita fromage, champignons et légumes"
+    },
+    "pastirmali_kasarli_pide": {
+      "name": "Pastırmalı Kaşarlı Pide",
+      "desc": "Pita pastrami et fromage"
+    },
+    "tavuklu_kasarli_pide": {
+      "name": "Tavuklu Kaşarlı Pide",
+      "desc": "Pita poulet et fromage"
+    },
+    "etli_konya": {
+      "name": "Etli Konya",
+      "desc": "Pita viande de Konya"
+    },
+    "etli_etmek": {
+      "name": "Etli Etmek",
+      "desc": "Pain à la viande"
+    },
+    "lahmacun_item": {
+      "name": "Lahmacun",
+      "desc": "Croustillant"
+    },
+    "ozel_lahmacun": {
+      "name": "Özel Lahmacun",
+      "desc": "Lahmacun Spécial"
+    },
+    "semiz_otu": {
+      "name": "Semiz Otu",
+      "desc": "Pourpier"
+    },
+    "kuru_cacik": {
+      "name": "Kuru Cacık",
+      "desc": "Tzatziki sec"
+    },
+    "mutebbel": {
+      "name": "Mütebbel",
+      "desc": "Aubergine au tahini"
+    },
+    "otlu_yogurtlu_meze": {
+      "name": "Otlu Yoğurtlu Meze",
+      "desc": "Yaourt aux herbes"
+    },
+    "havuc_tarator": {
+      "name": "Havuç Taratör",
+      "desc": "Carottes au yaourt"
+    },
+    "koz_biberli_yogurt": {
+      "name": "Köz Biberli Yoğurt",
+      "desc": "Yaourt au poivron grillé"
+    },
+    "babagannush": {
+      "name": "Babagannuş",
+      "desc": "Baba ganoush"
+    },
+    "ezme_salata": {
+      "name": "Ezme Salata",
+      "desc": "Salade épicée"
+    },
+    "humus": {
+      "name": "Humus",
+      "desc": "Houmous"
+    },
+    "mevsim_salatasi": {
+      "name": "Mevsim Salatası",
+      "desc": "Salade de saison - Carotte, concombre, tomates, légumes"
+    },
+    "coban_salata": {
+      "name": "Çoban Salata",
+      "desc": "Salade du berger - Tomates, concombre, poivron, légumes"
+    },
+    "cig_kofte": {
+      "name": "Çiğ Köfte",
+      "desc": "Boulettes crues végétariennes"
+    },
+    "icli_kofte": {
+      "name": "İçli Köfte",
+      "desc": "Boulettes farcies aux noix"
+    },
+    "cacik": {
+      "name": "Cacık",
+      "desc": "Tzatziki"
+    },
+    "yogurt": {
+      "name": "Yoğurt",
+      "desc": "Yaourt"
+    },
+    "kunefe": {
+      "name": "Künefe",
+      "desc": "Kunefe - Style Hatay"
+    },
+    "firin_sutlac": {
+      "name": "Fırın Sütlaç",
+      "desc": "Riz au lait"
+    },
+    "kazandibi": {
+      "name": "Kazandibi",
+      "desc": ""
+    },
+    "trilece": {
+      "name": "Trileçe",
+      "desc": "Trilece"
+    },
+    "cola": {
+      "name": "Cola",
+      "desc": ""
+    },
+    "fanta": {
+      "name": "Fanta",
+      "desc": ""
+    },
+    "sprite": {
+      "name": "Sprite",
+      "desc": ""
+    },
+    "camlica": {
+      "name": "Çamlıca",
+      "desc": "Boisson gazeuse aromatisée"
+    },
+    "litrelik_cola": {
+      "name": "Litrelik Cola",
+      "desc": "Cola 1L"
+    },
+    "ayran_kucuk": {
+      "name": "Ayran (Küçük)",
+      "desc": "Ayran (Petit)"
+    },
+    "ayran_litrelik": {
+      "name": "Ayran (Litrelik)",
+      "desc": "Ayran (1L)"
+    },
+    "salgam": {
+      "name": "Şalgam",
+      "desc": "Jus de navet"
+    },
+    "meyve_sulari": {
+      "name": "Meyve Suları",
+      "desc": "Jus de fruits"
+    },
+    "ice_tea": {
+      "name": "Ice Tea",
+      "desc": "Thé glacé"
+    },
+    "sikma_portakal": {
+      "name": "Sıkma Portakal",
+      "desc": "Jus d'orange frais"
+    },
+    "sikma_nar": {
+      "name": "Sıkma Nar",
+      "desc": "Jus de grenade frais"
+    },
+    "limonata": {
+      "name": "Limonata",
+      "desc": "Limonade"
+    },
+    "soda": {
+      "name": "Soda",
+      "desc": "Eau gazeuse"
+    },
+    "su": {
+      "name": "Su",
+      "desc": "Eau"
+    }
   }
 }

@@ -52,14 +52,14 @@ export default function FoodCard({ item, index, isVertical = false }) {
             </div>
 
             {/* Price Tag — Glassmorphism */}
-            <div className="absolute top-3 left-3 z-20 flex items-center gap-2 pointer-events-none">
+            <div className="absolute top-3 start- z-20 flex items-center gap-2 pointer-events-none">
               <span className="flex items-center px-3 py-1 rounded-lg glass-card-strong text-copper border-copper/20 shadow-lg font-bold text-sm tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
                 {displayPrice} {symbol}
               </span>
             </div>
 
             {/* Text Badges */}
-            <div className="absolute bottom-3 left-3 z-20 flex flex-wrap gap-1.5 pointer-events-none">
+            <div className="absolute bottom-3 start- z-20 flex flex-wrap gap-1.5 pointer-events-none">
               {item.tags?.includes("signature") && (
                 <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-gold border border-gold/30 bg-gold/10 backdrop-blur-md rounded-sm font-bold">
                   {t.signature || "Signature"}

@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full glass-card-strong border-b border-teal-dim/20 overflow-visible animate-fadeInDown">
       {/* Subtle glow line under header */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal/30 to-transparent"></div>
+      <div className="absolute bottom-0 start- end- h-px bg-gradient-to-r from-transparent via-teal/30 to-transparent"></div>
 
       <div className="max-w-5xl mx-auto px-3 sm:px-4 h-14 flex items-center justify-between">
         {/* Logo */}
@@ -66,7 +66,7 @@ export default function Header() {
 
             {/* Dropdown */}
             {isMenuOpen && (
-              <div className="absolute right-0 mt-2 w-48 rounded-xl bg-ink border border-teal-dim/30 shadow-xl overflow-hidden animate-fadeInUp z-50">
+              <div className="absolute end- mt-2 w-48 rounded-xl bg-ink border border-teal-dim/30 shadow-xl overflow-hidden animate-fadeInUp z-50">
                 <div className="py-2 flex flex-col">
                   <Link 
                     href="/" 

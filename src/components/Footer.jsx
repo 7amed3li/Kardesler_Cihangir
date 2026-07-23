@@ -37,7 +37,7 @@ export default function Footer() {
         {/* Ottoman Divider */}
         <div className="ottoman-divider max-w-md mx-auto mb-12"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-start">
           
           {/* Brand & Story */}
           <div className="flex flex-col items-center md:items-start">
@@ -57,7 +57,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold text-cream tracking-widest uppercase mb-6">
               {fc.contact}
             </h3>
-            <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 mb-4 text-left group hover:opacity-100 transition-all duration-300">
+            <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 mb-4 text-start group hover:opacity-100 transition-all duration-300">
               <MapPin size={16} className="text-teal mt-0.5 shrink-0 group-hover:animate-bounce" />
               <p className="text-cream-dim/80 text-sm font-light leading-relaxed max-w-xs group-hover:text-cream transition-colors underline-offset-2 group-hover:underline decoration-teal/40" style={{ fontFamily: "var(--font-inter)" }}>
                 Firuzağa Mah. Firuzağa Camii Sok.<br/> No:1A, Cihangir, Beyoğlu, İstanbul
@@ -141,7 +141,7 @@ export default function Footer() {
               href="https://www.hamedmohamed.dev/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-teal hover:text-copper transition-colors font-bold ml-1"
+              className="text-teal hover:text-copper transition-colors font-bold ms-"
             >
               HAMED MOHAMED
             </a>
