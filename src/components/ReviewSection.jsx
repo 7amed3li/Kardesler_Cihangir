@@ -25,6 +25,28 @@ export default function ReviewSection() {
   const { t } = useAppContext();
   const [isPaused, setIsPaused] = useState(false);
   const [revealRef, isVisible] = useReveal();
+  const scrollRef = useRef(null);
+
+  // Auto-scroll logic without duplicating array
+  useEffect(() => {
+    if (isPaused || !scrollRef.current) return;
+    
+    const interval = setInterval(() => {
+      const el = scrollRef.current;
+      if (!el) return;
+      
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (el.scrollLeft >= maxScroll - 10) {
+        // Reached end, rewind to start
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        // Scroll to next card (approx width of one card + gap)
+        el.scrollBy({ left: 320, behavior: "smooth" });
+      }
+    }, 2000); // 2 seconds per slide
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const reviews = [
     {
@@ -144,7 +166,10 @@ export default function ReviewSection() {
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
 
-        <div className="flex gap-6 pl-6 w-full overflow-x-auto snap-x no-scrollbar pb-6 pt-2">
+        <div 
+          ref={scrollRef}
+          className="flex gap-6 pl-6 w-full overflow-x-auto snap-x no-scrollbar pb-6 pt-2 scroll-smooth"
+        >
           {marqueeItems.map((comment, idx) => (
             <a
               key={`marquee-${comment.id}-${idx}`}
