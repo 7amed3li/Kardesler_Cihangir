@@ -1,6 +1,7 @@
 import { AppProvider } from "@/context/AppContext";
 import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 export const metadata = {
@@ -155,6 +156,7 @@ export default function RootLayout({ children }) {
           <main className="flex-grow w-full max-w-5xl mx-auto flex flex-col relative">
             {children}
           </main>
+          <ChatWidget />
         </AppProvider>
       </body>
     </html>
