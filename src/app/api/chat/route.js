@@ -5,6 +5,13 @@ export const runtime = "nodejs";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
+// Models to try in order — if one hits quota, fall back to the next
+const MODELS = [
+  "gemini-2.0-flash-lite",
+  "gemini-2.0-flash",
+  "gemini-1.5-flash",
+];
+
 // Simple in-memory rate limiting (10 requests/minute per IP)
 const rateLimitMap = new Map();
 const RATE_LIMIT_MAX = 10;
@@ -42,26 +49,65 @@ setInterval(() => {
 }, RATE_LIMIT_WINDOW_MS * 5);
 
 
-async function withRetry(fn, retries = 3) {
-  for (let attempt = 0; attempt < retries; attempt++) {
-    try {
-      return await fn();
-    } catch (err) {
-      const isRateLimit = err?.status === 429;
-      if (isRateLimit && attempt < retries - 1) {
-        await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt));
-        continue;
+/**
+ * Try calling Gemini with fallback models.
+ * If a model returns 429 (quota) or 404 (not found), try the next model.
+ * For network errors, retry up to 2 times with the same model.
+ */
+async function callWithFallback(contents, systemInstruction) {
+  let lastError = null;
+
+  for (const model of MODELS) {
+    // Try each model with up to 2 retries for network errors
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const result = await ai.models.generateContent({
+          model,
+          contents,
+          config: {
+            systemInstruction,
+            temperature: 0.4,
+            maxOutputTokens: 300,
+          },
+        });
+        return result;
+      } catch (err) {
+        lastError = err;
+        const status = err?.status;
+        
+        // Quota exhausted or model not found → skip to next model
+        if (status === 429 || status === 404) {
+          console.warn(`Model ${model} returned ${status}, trying next model...`);
+          break; // break retry loop, continue to next model
+        }
+        
+        // Network error → retry same model
+        const isNetworkError = 
+          err?.code === 'UND_ERR_CONNECT_TIMEOUT' ||
+          err?.code === 'ECONNRESET' ||
+          err?.code === 'UND_ERR_SOCKET' ||
+          err?.message?.includes('fetch failed');
+        
+        if (isNetworkError && attempt < 1) {
+          console.warn(`Network error on ${model}, retrying (attempt ${attempt + 1})...`);
+          await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+          continue;
+        }
+        
+        // Other errors → throw immediately
+        throw err;
       }
-      throw err;
     }
   }
-  throw new Error("Retry attempts exhausted");
+
+  // All models exhausted
+  throw lastError || new Error("All models failed");
 }
+
 
 export async function POST(req) {
   try {
     // Determine IP for rate limiting
-    // Fallback order: X-Forwarded-For -> Remote address
     const ip = req.headers.get("x-forwarded-for") || req.ip || "unknown-ip";
     
     if (!checkRateLimit(ip)) {
@@ -77,17 +123,10 @@ export async function POST(req) {
       return Response.json({ error: "Invalid message" }, { status: 400 });
     }
 
-    const result = await withRetry(() =>
-      ai.models.generateContent({
-        model: "gemini-2.0-flash-lite",
-        contents: [...history, { role: "user", parts: [{ text: message }] }],
-        config: {
-          systemInstruction: buildSystemInstruction(),
-          temperature: 0.4,
-          maxOutputTokens: 300,
-        },
-      })
-    );
+    const systemInstruction = buildSystemInstruction();
+    const contents = [...history, { role: "user", parts: [{ text: message }] }];
+
+    const result = await callWithFallback(contents, systemInstruction);
 
     return Response.json({ reply: result.text });
   } catch (err) {
@@ -96,7 +135,7 @@ export async function POST(req) {
       {
         reply: "Sorry, I'm having trouble right now. Please reach us directly on WhatsApp and our team will be happy to help!\n\nwa.me/905060453906",
       },
-      { status: 200 } // 200 so the widget renders the fallback text gracefully instead of a generic error state
+      { status: 200 } // 200 so the widget renders the fallback text gracefully
     );
   }
 }
