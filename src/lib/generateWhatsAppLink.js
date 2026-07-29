@@ -12,7 +12,7 @@ export function generateWhatsAppLink(cart, lang = "tr") {
       menuTFallback.items?.[item.id]?.name ||
       item.id;
     const subtotal = Math.round(item.price * item.qty);
-    return `- ${item.qty}x *${name}* (${subtotal} TL)`;
+    return `${item.qty}x *${name}* (${subtotal} TL)`;
   });
 
   const total = Math.round(
