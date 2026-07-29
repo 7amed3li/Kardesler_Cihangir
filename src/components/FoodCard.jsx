@@ -3,11 +3,88 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppContext } from "../context/AppContext";
-import { X, ZoomIn } from "lucide-react";
+import { X, ZoomIn, Plus, Minus, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 
+/**
+ * Inline cart counter — shows (+) when qty is 0, or (- N +) when qty > 0.
+ * Used both on the card and inside the modal.
+ * `compact` mode is for the card itself (smaller).
+ */
+function CartCounter({ item, compact = false }) {
+  const { addToCart, removeFromCart, getItemQuantity } = useAppContext();
+  const qty = getItemQuantity(item.id);
+
+  const handleAdd = (e) => {
+    e.stopPropagation();
+    addToCart(item);
+  };
+
+  const handleRemove = (e) => {
+    e.stopPropagation();
+    removeFromCart(item.id);
+  };
+
+  if (qty === 0) {
+    return (
+      <button
+        onClick={handleAdd}
+        aria-label="Add to cart"
+        className={`flex items-center justify-center gap-1.5 rounded-full bg-copper/90 hover:bg-copper text-cream transition-all duration-200 hover:scale-105 active:scale-95 ${
+          compact
+            ? "w-8 h-8"
+            : "px-5 py-2.5"
+        }`}
+      >
+        <Plus size={compact ? 16 : 18} strokeWidth={2.5} />
+        {!compact && (
+          <span className="text-sm font-bold tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
+            {/* No text needed — the + icon is clear enough on compact */}
+          </span>
+        )}
+      </button>
+    );
+  }
+
+  return (
+    <div
+      className={`flex items-center rounded-full border border-teal-dim/40 bg-ink/80 backdrop-blur-sm ${
+        compact ? "gap-1 px-1 py-0.5" : "gap-2 px-2 py-1"
+      }`}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={handleRemove}
+        aria-label="Decrease quantity"
+        className={`flex items-center justify-center rounded-full text-cream-dim hover:text-brick hover:bg-brick/10 transition-colors ${
+          compact ? "w-6 h-6" : "w-8 h-8"
+        }`}
+      >
+        <Minus size={compact ? 12 : 14} strokeWidth={2.5} />
+      </button>
+      <span
+        key={qty}
+        className={`text-center font-bold text-cream animate-counterPop ${
+          compact ? "w-5 text-xs" : "w-6 text-sm"
+        }`}
+      >
+        {qty}
+      </span>
+      <button
+        onClick={handleAdd}
+        aria-label="Increase quantity"
+        className={`flex items-center justify-center rounded-full text-cream-dim hover:text-teal hover:bg-teal/10 transition-colors ${
+          compact ? "w-6 h-6" : "w-8 h-8"
+        }`}
+      >
+        <Plus size={compact ? 12 : 14} strokeWidth={2.5} />
+      </button>
+    </div>
+  );
+}
+
 export default function FoodCard({ item, index, isVertical = false }) {
-  const { menuT, t, convertPrice, getCurrencySymbol } = useAppContext();
+  const { menuT, t, convertPrice, getCurrencySymbol, getItemQuantity } = useAppContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -22,6 +99,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
 
   const displayPrice = convertPrice(item.price);
   const symbol = getCurrencySymbol();
+  const qty = getItemQuantity(item.id);
 
   // Stagger animation delay
   const staggerDelay = `${(index % 9) * 60}ms`;
@@ -81,21 +159,49 @@ export default function FoodCard({ item, index, isVertical = false }) {
 
         {/* Content Section */}
         <div 
-          className={`flex flex-col flex-grow ${isVertical ? "p-4 sm:p-5" : "p-3 sm:p-5"} justify-center relative z-10 w-full min-w-0 bg-ink-2 cursor-pointer`}
-          onClick={() => setIsModalOpen(true)}
+          className={`flex flex-col flex-grow ${isVertical ? "p-4 sm:p-5" : "p-3 sm:p-5"} justify-between relative z-10 w-full min-w-0 bg-ink-2`}
         >
-          <h3 className="font-normal text-lg md:text-xl text-cream leading-tight mb-1 truncate md:whitespace-normal group-hover:text-gold transition-colors duration-300">
-            {name}
-          </h3>
-          {description && (
-            <p className="text-xs md:text-sm text-cream-dim mt-2 line-clamp-2 leading-relaxed font-light opacity-90" style={{ fontFamily: "var(--font-inter)" }}>
-              {description}
-            </p>
-          )}
+          {/* Top part — clickable for modal */}
+          <div 
+            className="cursor-pointer flex-1"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <h3 className="font-normal text-lg md:text-xl text-cream leading-tight mb-1 truncate md:whitespace-normal group-hover:text-gold transition-colors duration-300">
+              {name}
+            </h3>
+            {description && (
+              <p className="text-xs md:text-sm text-cream-dim mt-1 line-clamp-2 leading-relaxed font-light opacity-90" style={{ fontFamily: "var(--font-inter)" }}>
+                {description}
+              </p>
+            )}
+          </div>
+
+          {/* Bottom part — cart controls (non-clickable for modal) */}
+          <div className={`flex items-center justify-between ${isVertical ? "mt-3" : "mt-2"}`}>
+            {/* Price on cards without images */}
+            {!item.image && (
+              <span className="text-copper font-bold text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+                {displayPrice} {symbol}
+              </span>
+            )}
+            {item.image && <div />}
+            
+            {/* Cart counter */}
+            <CartCounter item={item} compact={!isVertical} />
+          </div>
         </div>
+
+        {/* Quantity badge overlay on image — visual indicator */}
+        {qty > 0 && item.image && (
+          <div className="absolute top-3 end-3 z-20 w-6 h-6 rounded-full bg-teal text-cream text-xs font-bold flex items-center justify-center border-2 border-ink animate-scaleIn pointer-events-none">
+            {qty}
+          </div>
+        )}
       </div>
 
-      {/* Modal — Glassmorphism */}
+      {/* ═══════════════════════════════════════════
+          MODAL — Item Details + Cart Action
+          ═══════════════════════════════════════════ */}
       {mounted && isModalOpen && createPortal(
         <div
           className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 backdrop-blur-lg p-4 modal-overlay"
@@ -165,10 +271,15 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 </div>
               )}
               
+              {/* Modal Cart Action — large counter or Add button */}
+              <div className="mt-4 flex items-center justify-center">
+                <CartCounter item={item} compact={false} />
+              </div>
+
               <button
                 onClick={() => setIsModalOpen(false)}
                 aria-label="Close modal"
-                className="mt-6 w-full py-4 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors duration-300 border border-teal-dim/50"
+                className="mt-2 w-full py-3 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors duration-300 border border-teal-dim/50 text-sm"
               >
                 {t.close || "Close"}
               </button>

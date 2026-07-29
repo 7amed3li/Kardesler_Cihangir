@@ -54,7 +54,10 @@
     "error": "Échec de l'envoi",
     "errorHint": "Veuillez réessayer",
     "clear": "Effacer",
-    "table": "Table"
+    "table": "Table",
+    "sendWhatsApp": "Commander via WhatsApp",
+    "whatsappRedirect": "Redirection vers WhatsApp...",
+    "subtotal": "Sous-total"
   },
   "footer": {
     "contact": "Contact",

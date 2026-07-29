@@ -7,9 +7,9 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // Models to try in order — if one hits quota, fall back to the next
 const MODELS = [
+  "gemini-2.5-flash",
   "gemini-2.0-flash-lite",
   "gemini-2.0-flash",
-  "gemini-1.5-flash",
 ];
 
 // Simple in-memory rate limiting (10 requests/minute per IP)

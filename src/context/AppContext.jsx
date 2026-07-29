@@ -1,7 +1,8 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
 import { translations, menuTranslations } from "../i18n/translations";
+import { generateWhatsAppLink } from "../lib/generateWhatsAppLink";
 
 const AppContext = createContext();
 
@@ -15,6 +16,7 @@ const HARDCODED_FALLBACK = {
 };
 
 const RATES_STORAGE_KEY = "app_last_rates";
+const CART_STORAGE_KEY = "kardesler_cart";
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000; // Refresh every 5 minutes
 
 // Load the last successfully fetched rates from localStorage
@@ -49,6 +51,16 @@ export function AppProvider({ children }) {
   const [exchangeRates, setExchangeRates] = useState(HARDCODED_FALLBACK);
   const [ratesSource, setRatesSource] = useState("fallback");
   const [ratesLastUpdated, setRatesLastUpdated] = useState(null);
+
+  // ═══════════════════════════════════════════
+  // CART STATE
+  // ═══════════════════════════════════════════
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartPulse, setCartPulse] = useState(false);
+  const [orderStatus, setOrderStatus] = useState("idle"); // "idle" | "sent"
+  const pulseTimeoutRef = useRef(null);
+  const orderTimeoutRef = useRef(null);
 
   // ═══════════════════════════════════════════
   // EXCHANGE RATES
@@ -86,6 +98,18 @@ export function AppProvider({ children }) {
       setCurrency(savedCurrency);
     }
 
+    // Load cart from localStorage
+    try {
+      const savedCart = localStorage.getItem(CART_STORAGE_KEY);
+      if (savedCart) {
+        const parsed = JSON.parse(savedCart);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect
+          setCart(parsed);
+        }
+      }
+    } catch (_) { /* ignore parse errors */ }
+
     // Load last known rates from localStorage immediately (instant, no network)
     const lastKnown = getLastKnownRates();
     if (lastKnown) {
@@ -99,7 +123,12 @@ export function AppProvider({ children }) {
 
     // Refresh every 5 minutes
     const interval = setInterval(fetchRates, REFRESH_INTERVAL_MS);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      // Cleanup cart-related timeouts
+      if (pulseTimeoutRef.current) clearTimeout(pulseTimeoutRef.current);
+      if (orderTimeoutRef.current) clearTimeout(orderTimeoutRef.current);
+    };
   }, [fetchRates]);
 
   const changeLang = (newLang) => {
@@ -122,6 +151,78 @@ export function AppProvider({ children }) {
     const rateData = exchangeRates[currency] || HARDCODED_FALLBACK[currency];
     return rateData.symbol;
   };
+
+  // ═══════════════════════════════════════════
+  // CART OPERATIONS
+  // ═══════════════════════════════════════════
+
+  // Persist cart to localStorage on every change
+  useEffect(() => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+    } catch (_) { /* ignore storage errors */ }
+  }, [cart]);
+
+  const addToCart = useCallback((item) => {
+    setCart((prev) => {
+      const existing = prev.find((i) => i.id === item.id);
+      if (existing) {
+        return prev.map((i) =>
+          i.id === item.id ? { ...i, qty: i.qty + 1 } : i
+        );
+      }
+      return [...prev, { id: item.id, price: item.price, image: item.image, qty: 1 }];
+    });
+
+    // Trigger FAB pulse animation
+    setCartPulse(true);
+    if (pulseTimeoutRef.current) clearTimeout(pulseTimeoutRef.current);
+    pulseTimeoutRef.current = setTimeout(() => setCartPulse(false), 600);
+  }, []);
+
+  const removeFromCart = useCallback((itemId) => {
+    setCart((prev) => {
+      const existing = prev.find((i) => i.id === itemId);
+      if (!existing) return prev;
+      if (existing.qty === 1) {
+        return prev.filter((i) => i.id !== itemId);
+      }
+      return prev.map((i) =>
+        i.id === itemId ? { ...i, qty: i.qty - 1 } : i
+      );
+    });
+  }, []);
+
+  const clearCart = useCallback(() => {
+    setCart([]);
+    try {
+      localStorage.removeItem(CART_STORAGE_KEY);
+    } catch (_) { /* ignore */ }
+  }, []);
+
+  const getItemQuantity = useCallback((itemId) => {
+    return cart.find((i) => i.id === itemId)?.qty ?? 0;
+  }, [cart]);
+
+  // Derived values
+  const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  const cartTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+  // Submit order via WhatsApp
+  const submitOrder = useCallback(() => {
+    if (cart.length === 0) return;
+    const link = generateWhatsAppLink(cart, lang);
+    window.open(link, "_blank");
+    setOrderStatus("sent");
+
+    // After 3 seconds: clear cart, close drawer, reset status
+    if (orderTimeoutRef.current) clearTimeout(orderTimeoutRef.current);
+    orderTimeoutRef.current = setTimeout(() => {
+      clearCart();
+      setIsCartOpen(false);
+      setOrderStatus("idle");
+    }, 3000);
+  }, [cart, lang, clearCart]);
 
   const createDeepProxy = (target, fallback) => {
     return new Proxy(target || {}, {
@@ -158,6 +259,19 @@ export function AppProvider({ children }) {
     ratesLastUpdated,
     getCurrencySymbol,
     convertPrice,
+    // Cart
+    cart,
+    isCartOpen,
+    setIsCartOpen,
+    cartCount,
+    cartTotal,
+    cartPulse,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    getItemQuantity,
+    submitOrder,
+    orderStatus,
   };
 
   return (

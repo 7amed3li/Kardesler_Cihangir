@@ -54,7 +54,10 @@
     "error": "Не удалось отправить",
     "errorHint": "Пожалуйста, попробуйте еще раз",
     "clear": "Очистить",
-    "table": "Стол"
+    "table": "Стол",
+    "sendWhatsApp": "Заказать через WhatsApp",
+    "whatsappRedirect": "Перенаправление в WhatsApp...",
+    "subtotal": "Промежуточный итог"
   },
   "footer": {
     "contact": "Контакты",

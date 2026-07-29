@@ -54,7 +54,10 @@
     "error": "Failed to Send",
     "errorHint": "Please try again",
     "clear": "Clear",
-    "table": "Table"
+    "table": "Table",
+    "sendWhatsApp": "Order via WhatsApp",
+    "whatsappRedirect": "Redirecting to WhatsApp...",
+    "subtotal": "Subtotal"
   },
   "footer": {
     "contact": "Contact",

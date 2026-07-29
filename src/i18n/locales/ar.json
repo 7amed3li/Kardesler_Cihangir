@@ -54,7 +54,10 @@
     "error": "فشل الإرسال",
     "errorHint": "يرجى المحاولة مرة أخرى",
     "clear": "مسح",
-    "table": "طاولة"
+    "table": "طاولة",
+    "sendWhatsApp": "اطلب عبر واتساب",
+    "whatsappRedirect": "جاري التحويل إلى واتساب...",
+    "subtotal": "المجموع الفرعي"
   },
   "footer": {
     "contact": "التواصل",

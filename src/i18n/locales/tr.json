@@ -54,7 +54,10 @@
     "error": "Gönderilemedi",
     "errorHint": "Tekrar deneyin",
     "clear": "Temizle",
-    "table": "Masa"
+    "table": "Masa",
+    "sendWhatsApp": "WhatsApp ile Sipariş Ver",
+    "whatsappRedirect": "WhatsApp'a yönlendiriliyorsunuz...",
+    "subtotal": "Ara Toplam"
   },
   "footer": {
     "contact": "İletişim",
