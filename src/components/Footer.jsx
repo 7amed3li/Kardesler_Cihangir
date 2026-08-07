@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useAppContext } from "../context/AppContext";
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import PaymentMethods from "./PaymentMethods";
 
 export default function Footer() {
   const { t } = useAppContext();
@@ -126,6 +127,9 @@ export default function Footer() {
               ></iframe>
             )}
           </a>
+
+        {/* ── Accepted Payment Methods Section ── */}
+        <PaymentMethods />
 
         {/* Ottoman Divider */}
         <div className="ottoman-divider max-w-sm mx-auto mb-6"></div>

@@ -65,6 +65,9 @@
     "hours": "Working Hours",
     "hoursValue": "Everyday: 09:00 AM - 02:00 AM",
     "whatsapp": "WhatsApp Order",
+    "paymentMethods": "Accepted Payment Methods",
+    "paymentSubtitle": "All bank cards, contactless İstanbulkart, and corporate meal cards accepted",
+    "paymentNote": "We accept Cash, Credit Cards (Visa, Mastercard, Troy), Contactless İstanbulkart, and all Turkish corporate meal cards (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
     "rights": "All rights reserved.",
     "madeBy": "Designed & Developed by"
   },

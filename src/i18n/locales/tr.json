@@ -65,6 +65,9 @@
     "hours": "Çalışma Saatleri",
     "hoursValue": "Her gün: 09:00 - 02:00",
     "whatsapp": "WhatsApp Sipariş",
+    "paymentMethods": "Kabul Edilen Ödeme Yöntemleri",
+    "paymentSubtitle": "Tüm kredi kartları, temassız İstanbulkart ve kurumsal yemek kartları geçerlidir",
+    "paymentNote": "Masada nakit, kredi kartı, temassız İstanbulkart ve tüm kurumsal yemek kartları ile ödeme yapabilirsiniz.",
     "rights": "Tüm hakları saklıdır.",
     "madeBy": "Tasarım ve Geliştirme:"
   },

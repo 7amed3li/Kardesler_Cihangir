@@ -4,6 +4,7 @@ import React from "react";
 import { useAppContext } from "../context/AppContext";
 import Image from "next/image";
 import { ShoppingBag, X, Plus, Minus, Trash2, MessageCircle, CheckCircle } from "lucide-react";
+import PaymentMethods from "./PaymentMethods";
 
 export default function OrderFlow() {
   const {
@@ -206,6 +207,11 @@ export default function OrderFlow() {
                     </button>
                   </div>
                 )}
+
+                {/* Accepted Payments Strip */}
+                <div className="pt-3 border-t border-teal-dim/15">
+                  <PaymentMethods variant="compact" />
+                </div>
               </div>
             )}
           </div>
