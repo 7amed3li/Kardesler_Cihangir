@@ -105,8 +105,8 @@ const restaurantSchema = {
   priceRange: "$$",
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.7",
-    reviewCount: "1200",
+    ratingValue: "4.6",
+    reviewCount: "1280",
     bestRating: "5",
   },
   menu: siteUrl,

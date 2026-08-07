@@ -43,12 +43,41 @@ export default function ReviewSection() {
   const { lang, t, isRtl } = useAppContext();
   const [selectedPlatform, setSelectedPlatform] = useState("all");
   const [isPaused, setIsPaused] = useState(false);
+  const [livePlatformsData, setLivePlatformsData] = useState(platforms);
+  const [liveReviewsData, setLiveReviewsData] = useState(reviewsList);
+  const [isLiveSynced, setIsLiveSynced] = useState(false);
   const scrollContainerRef = useRef(null);
+
+  // Dynamic fetch from live /api/reviews endpoint
+  useEffect(() => {
+    let isMounted = true;
+    async function fetchLiveReviews() {
+      try {
+        const res = await fetch("/api/reviews");
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted) {
+            if (data.platforms && data.platforms.length > 0) {
+              setLivePlatformsData(data.platforms);
+            }
+            if (data.reviews && data.reviews.length > 0) {
+              setLiveReviewsData(data.reviews);
+            }
+            setIsLiveSynced(true);
+          }
+        }
+      } catch (err) {
+        console.warn("Using cached reviews data:", err.message);
+      }
+    }
+    fetchLiveReviews();
+    return () => { isMounted = false; };
+  }, []);
 
   // Filter reviews
   const filteredReviews = selectedPlatform === "all"
-    ? reviewsList
-    : reviewsList.filter((r) => r.platform === selectedPlatform);
+    ? liveReviewsData
+    : liveReviewsData.filter((r) => r.platform === selectedPlatform);
 
   // Duplicate for smooth seamless continuous loop
   const displayItems = [...filteredReviews, ...filteredReviews, ...filteredReviews];
@@ -176,7 +205,7 @@ export default function ReviewSection() {
 
         {/* Platform Overview Cards (Google Maps, Yemeksepeti, Yandex) */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
-          {platforms.map((p) => (
+          {livePlatformsData.map((p) => (
             <a
               key={p.id}
               href={p.link}
@@ -221,10 +250,10 @@ export default function ReviewSection() {
               }`}
             >
               <span>{labels.all[lang] || labels.all.en}</span>
-              <span className="text-[10px] px-1.5 py-0.2 bg-black/20 rounded-full">{reviewsList.length}</span>
+              <span className="text-[10px] px-1.5 py-0.2 bg-black/20 rounded-full">{liveReviewsData.length}</span>
             </button>
 
-            {platforms.map((p) => (
+            {livePlatformsData.map((p) => (
               <button
                 key={p.id}
                 onClick={() => setSelectedPlatform(p.id)}
@@ -283,7 +312,7 @@ export default function ReviewSection() {
           style={{ cursor: isPaused ? "grab" : "default" }}
         >
           {displayItems.map((item, index) => {
-            const currentPlatform = platforms.find((p) => p.id === item.platform);
+            const currentPlatform = livePlatformsData.find((p) => p.id === item.platform);
             const reviewText = item.text[lang] || item.text.en || item.text.tr;
             const reviewDate = item.date[lang] || item.date.en || item.date.tr;
             const reviewTag = item.tag[lang] || item.tag.en || item.tag.tr;
@@ -366,7 +395,7 @@ export default function ReviewSection() {
         </div>
 
         <div className="flex items-center gap-2">
-          {platforms.map((p) => (
+          {livePlatformsData.map((p) => (
             <a
               key={p.id}
               href={p.link}

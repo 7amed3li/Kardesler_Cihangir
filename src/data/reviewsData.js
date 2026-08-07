@@ -2,8 +2,8 @@ export const platforms = [
   {
     id: "google",
     name: "Google Maps",
-    rating: "4.8",
-    reviewsCount: "1,450+",
+    rating: "4.6",
+    reviewsCount: "1,280+",
     link: "https://www.google.com/maps/search/Kardeşler+Kebap+Cihangir+Firuzağa",
     color: "#4285F4",
     badgeBg: "rgba(66, 133, 244, 0.12)",
@@ -12,8 +12,8 @@ export const platforms = [
   {
     id: "yemeksepeti",
     name: "Yemeksepeti",
-    rating: "4.6",
-    reviewsCount: "2,800+",
+    rating: "4.5",
+    reviewsCount: "2,450+",
     link: "https://www.yemeksepeti.com/restaurant/v8xk/kardesler-kebap",
     color: "#EA004B",
     badgeBg: "rgba(234, 0, 75, 0.12)",
@@ -22,8 +22,8 @@ export const platforms = [
   {
     id: "yandex",
     name: "Yandex Maps",
-    rating: "4.8",
-    reviewsCount: "950+",
+    rating: "4.7",
+    reviewsCount: "820+",
     link: "https://yandex.com.tr/harita/org/kardesler_kebap_cafe/1044439169/",
     color: "#FF0000",
     badgeBg: "rgba(255, 0, 0, 0.12)",
