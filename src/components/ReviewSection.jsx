@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useAppContext } from "../context/AppContext";
-import { Star, ExternalLink, ChevronLeft, ChevronRight, CheckCircle2, MessageSquarePlus } from "lucide-react";
+import { Star, ExternalLink, CheckCircle2, MessageSquarePlus } from "lucide-react";
 import { platforms, reviewsList } from "../data/reviewsData";
 
 // Platform brand icons
@@ -114,17 +114,7 @@ export default function ReviewSection() {
     return () => cancelAnimationFrame(animationFrameId);
   }, [isPaused, isRtl, selectedPlatform]);
 
-  // Manual scroll controls
-  const handleScroll = (direction) => {
-    const el = scrollContainerRef.current;
-    if (!el) return;
-    const scrollAmount = 340;
-    const offset = direction === "next" 
-      ? (isRtl ? -scrollAmount : scrollAmount) 
-      : (isRtl ? scrollAmount : -scrollAmount);
-    
-    el.scrollBy({ left: offset, behavior: "smooth" });
-  };
+
 
   const getPlatformName = (platformId) => {
     if (platformId === "google") return "Google Maps";
@@ -238,59 +228,34 @@ export default function ReviewSection() {
           ))}
         </div>
 
-        {/* Interactive Platform Filter Tabs & Navigation Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-          <div className="flex flex-wrap items-center gap-2">
+        {/* Interactive Platform Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+          <button
+            onClick={() => setSelectedPlatform("all")}
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              selectedPlatform === "all"
+                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)]"
+                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+            }`}
+          >
+            <span>{labels.all[lang] || labels.all.en}</span>
+            <span className="text-[10px] px-1.5 py-0.2 bg-black/20 rounded-full">{liveReviewsData.length}</span>
+          </button>
+
+          {livePlatformsData.map((p) => (
             <button
-              onClick={() => setSelectedPlatform("all")}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
-                selectedPlatform === "all"
+              key={p.id}
+              onClick={() => setSelectedPlatform(p.id)}
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 ${
+                selectedPlatform === p.id
                   ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)]"
                   : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
               }`}
             >
-              <span>{labels.all[lang] || labels.all.en}</span>
-              <span className="text-[10px] px-1.5 py-0.2 bg-black/20 rounded-full">{liveReviewsData.length}</span>
+              <PlatformIcon id={p.id} size="sm" />
+              <span>{p.name}</span>
             </button>
-
-            {livePlatformsData.map((p) => (
-              <button
-                key={p.id}
-                onClick={() => setSelectedPlatform(p.id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 ${
-                  selectedPlatform === p.id
-                    ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)]"
-                    : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
-                }`}
-              >
-                <PlatformIcon id={p.id} size="sm" />
-                <span>{p.name}</span>
-              </button>
-            ))}
-          </div>
-
-          {/* Pause Indicator & Arrow Controls */}
-          <div className="flex items-center gap-2 ms-auto">
-            <span className="text-[11px] text-cream-dim/50 hidden sm:inline-block">
-              {isPaused ? "⏸️ Paused" : "▶️ Auto-sliding"}
-            </span>
-
-            <button
-              onClick={() => handleScroll("prev")}
-              aria-label="Previous reviews"
-              className="w-8 h-8 rounded-full bg-ink-2 border border-teal-dim/30 flex items-center justify-center text-cream hover:text-gold hover:border-gold/50 transition-colors"
-            >
-              <ChevronLeft size={16} className={isRtl ? "rotate-180" : ""} />
-            </button>
-
-            <button
-              onClick={() => handleScroll("next")}
-              aria-label="Next reviews"
-              className="w-8 h-8 rounded-full bg-ink-2 border border-teal-dim/30 flex items-center justify-center text-cream hover:text-gold hover:border-gold/50 transition-colors"
-            >
-              <ChevronRight size={16} className={isRtl ? "rotate-180" : ""} />
-            </button>
-          </div>
+          ))}
         </div>
       </div>
 
