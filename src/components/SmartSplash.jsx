@@ -1,13 +1,20 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function SmartSplash() {
+  const pathname = usePathname();
   const [show, setShow] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
+    // Skip splash entirely on /menu — QR code users need instant menu access
+    if (pathname === "/menu") {
+      setShow(false);
+      return;
+    }
     
     // Start fade out after 1.2 seconds
     const fadeOutTimer = setTimeout(() => {
@@ -18,12 +25,18 @@ export default function SmartSplash() {
     const unmountTimer = setTimeout(() => {
       setShow(false);
     }, 1500);
+
+    // Safety fallback — always hide after 3 seconds no matter what
+    const safetyTimer = setTimeout(() => {
+      setShow(false);
+    }, 3000);
     
     return () => {
       clearTimeout(fadeOutTimer);
       clearTimeout(unmountTimer);
+      clearTimeout(safetyTimer);
     };
-  }, []);
+  }, [pathname]);
 
   if (!show) return null;
 

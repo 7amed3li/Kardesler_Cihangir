@@ -6,7 +6,7 @@ import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
 import { useAppContext } from "../context/AppContext";
-import { Menu, Home, Info, Phone } from "lucide-react";
+import { Menu, Home, Info, Phone, UtensilsCrossed } from "lucide-react";
 
 export default function Header() {
   const { t } = useAppContext();
@@ -74,7 +74,15 @@ export default function Header() {
                     className="px-4 py-2.5 flex items-center gap-3 text-sm text-cream hover:bg-teal-dim/20 transition-colors"
                   >
                     <Home size={16} className="text-teal" />
-                    <span style={{ fontFamily: "var(--font-inter)" }}>{t.menu || "Ana Sayfa"}</span>
+                    <span style={{ fontFamily: "var(--font-inter)" }}>{t.home || "Ana Sayfa"}</span>
+                  </Link>
+                  <Link 
+                    href="/menu" 
+                    onClick={() => setIsMenuOpen(false)}
+                    className="px-4 py-2.5 flex items-center gap-3 text-sm text-cream hover:bg-teal-dim/20 transition-colors"
+                  >
+                    <UtensilsCrossed size={16} className="text-copper" />
+                    <span style={{ fontFamily: "var(--font-inter)" }}>{t.menuLink || "Menü"}</span>
                   </Link>
                   <Link 
                     href="/about" 
