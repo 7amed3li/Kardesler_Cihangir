@@ -198,7 +198,7 @@ export default function ReviewSection() {
           {livePlatformsData.map((p) => (
             <a
               key={p.id}
-              href={p.link}
+              href={p.writeReviewUrl || p.link}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center justify-between p-4 rounded-2xl glass-card border-teal-dim/20 hover:border-gold/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_10px_25px_rgba(212,162,76,0.15)] cursor-pointer"
@@ -285,7 +285,7 @@ export default function ReviewSection() {
             return (
               <a
                 key={`${item.id}-${index}`}
-                href={item.link}
+                href={currentPlatform?.writeReviewUrl || currentPlatform?.link || "https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir+Firuza%C4%9Fa"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-[300px] sm:w-[360px] shrink-0 p-6 rounded-2xl glass-card-strong border-teal-dim/20 hover:border-gold/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_35px_rgba(212,162,76,0.15)] flex flex-col justify-between"
@@ -363,13 +363,13 @@ export default function ReviewSection() {
           {livePlatformsData.map((p) => (
             <a
               key={p.id}
-              href={p.link}
+              href={p.writeReviewUrl || p.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg glass-card hover:border-gold/50 text-xs font-semibold text-cream flex items-center gap-1.5 transition-all hover:scale-105"
+              className="px-3.5 py-2 rounded-xl glass-card border border-teal-dim/30 hover:border-gold/60 text-xs font-semibold text-cream flex items-center gap-2 transition-all hover:scale-105 shadow-sm hover:shadow-[0_0_15px_rgba(212,162,76,0.2)]"
             >
               <PlatformIcon id={p.id} size="sm" />
-              <span className="hidden md:inline">{p.name}</span>
+              <span>{p.name}</span>
             </a>
           ))}
         </div>
