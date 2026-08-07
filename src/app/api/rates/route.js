@@ -38,6 +38,7 @@ export async function GET() {
         EUR: { symbol: "€", rate: data.rates.EUR },
         GBP: { symbol: "£", rate: data.rates.GBP },
         RUB: { symbol: "₽", rate: data.rates.RUB },
+        SAR: { symbol: "﷼", rate: data.rates.SAR || (data.rates.USD ? Number((data.rates.USD * 3.75).toFixed(5)) : 0.098) },
       },
       source: "exchangerate-api.com",
       lastUpdated: data.date,
@@ -54,7 +55,8 @@ export async function GET() {
         USD: { symbol: "$", rate: 0.02121 },
         EUR: { symbol: "€", rate: 0.01855 },
         GBP: { symbol: "£", rate: 0.01579 },
-        RUB: { symbol: "₽", rate: 2.65 }, // Fallback for RUB
+        RUB: { symbol: "₽", rate: 2.65 },
+        SAR: { symbol: "﷼", rate: 0.0795 },
       },
       source: "fallback",
       lastUpdated: new Date().toISOString().split("T")[0],

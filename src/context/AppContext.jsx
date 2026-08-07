@@ -13,6 +13,7 @@ const HARDCODED_FALLBACK = {
   EUR: { symbol: "€", rate: 0.01855 },
   GBP: { symbol: "£", rate: 0.01579 },
   RUB: { symbol: "₽", rate: 2.65 },
+  SAR: { symbol: "﷼", rate: 0.0795 },
 };
 
 const RATES_STORAGE_KEY = "app_last_rates";
