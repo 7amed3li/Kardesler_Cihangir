@@ -241,7 +241,7 @@ export function AppProvider({ children }) {
 
   const t = createDeepProxy(translations[lang], translations["en"]);
   const menuT = createDeepProxy(menuTranslations[lang], menuTranslations["en"]);
-  const isRtl = lang === "ar";
+  const isRtl = lang === "ar" || lang === "fa";
 
   // Context Value
   // ═══════════════════════════════════════════

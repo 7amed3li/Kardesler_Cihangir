@@ -41,6 +41,18 @@ const contactContent = {
     directions: "احصل على الاتجاهات",
     findUs: "موقعنا",
   },
+  fa: {
+    title: "تماس با ما",
+    subtitle: "برای رزرو میز، سفارش یا هرگونه سوال با ما در ارتباط باشید",
+    address: "استانبول، بی اوغلو، جهانگیر، محله فیروزآقا، کوچه مسجد فیروزآقا، پلاک ۱A",
+    addressLabel: "آدرس",
+    phoneLabel: "تلفن تماس و سفارش",
+    hoursLabel: "ساعات کاری",
+    hours: "همه‌روزه: ۱۰:۰۰ صبح تا ۰۲:۰۰ بامداد",
+    whatsapp: "سفارش واتس‌اپ",
+    directions: "مسیریابی روی نقشه",
+    findUs: "ما را پیدا کنید",
+  },
   fr: {
     title: "Contact",
     subtitle: "Contactez-nous, réservez ou passez commande",
