@@ -1,9 +1,47 @@
 export default function robots() {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: 'https://kardeslercihangir.com/sitemap.xml',
-  }
+    rules: [
+      {
+        userAgent: "*",
+        allow: [
+          "/",
+          "/menu",
+          "/about",
+          "/contact",
+          "/best-kebab-taksim",
+          "/ar/best-kebab-taksim",
+          "/tr/best-kebab-taksim",
+          "/ru/best-kebab-taksim",
+          "/fa/best-kebab-taksim",
+          "/fr/best-kebab-taksim",
+          "/images/",
+          "/logo.webp",
+          "/sitemap.xml",
+          "/manifest.webmanifest",
+        ],
+        disallow: [
+          "/wp-admin/",
+          "/wp-includes/",
+          "/wp-content/",
+          "/xmlrpc.php",
+          "/feed/",
+          "/author/",
+          "/tag/",
+          "/urun/",
+          "/urun-kategori/",
+          "/product/",
+          "/product-category/",
+          "/shop/",
+          "/cart/",
+          "/checkout/",
+          "/my-account/",
+          "/https:/",
+          "/http:/",
+          "/api/",
+        ],
+      },
+    ],
+    sitemap: "https://kardeslercihangir.com/sitemap.xml",
+    host: "https://kardeslercihangir.com",
+  };
 }
