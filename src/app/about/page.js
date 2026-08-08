@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { MapPin, Phone, Clock, MessageCircle, Globe } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
+import RestaurantMap from "@/components/RestaurantMap";
 
 const aboutContent = {
   tr: {
@@ -14,7 +15,7 @@ const aboutContent = {
     address: "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul",
     orderLine: "Sipariş Hattı",
     workHoursLabel: "Çalışma Saatleri",
-    workHours: "Her gün: 10:00 - 02:00",
+    workHours: "Her gün: 09:00 - 02:00",
     followUs: "Bizi Takip Edin",
     whatsapp: "WhatsApp Sipariş",
     findUs: "Bizi Bulun",
@@ -27,7 +28,7 @@ const aboutContent = {
     address: "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
     orderLine: "Order Line",
     workHoursLabel: "Working Hours",
-    workHours: "Everyday: 10:00 AM - 02:00 AM",
+    workHours: "Everyday: 09:00 AM - 02:00 AM",
     followUs: "Follow Us",
     whatsapp: "WhatsApp Order",
     findUs: "Find Us",
@@ -40,7 +41,7 @@ const aboutContent = {
     address: "فيروز آغا مح. فيروز آغا جامع سوك. رقم: 1A، جيهانكير، بيوغلو، إسطنبول",
     orderLine: "خط الطلبات",
     workHoursLabel: "ساعات العمل",
-    workHours: "يومياً: 10:00 صباحاً - 02:00 ليلاً",
+    workHours: "يومياً: 09:00 صباحاً - 02:00 ليلاً",
     followUs: "تابعنا",
     whatsapp: "اطلب عبر واتساب",
     findUs: "موقعنا",
@@ -53,7 +54,7 @@ const aboutContent = {
     address: "استانبول، بی اوغلو، جهانگیر، محله فیروزآقا، کوچه مسجد فیروزآقا، پلاک ۱A",
     orderLine: "خط سفارشات",
     workHoursLabel: "ساعات کاری",
-    workHours: "همه‌روزه: ۱۰:۰۰ صبح تا ۰۲:۰۰ بامداد",
+    workHours: "همه‌روزه: ۰۹:۰۰ صبح تا ۰۲:۰۰ بامداد",
     followUs: "ما را دنبال کنید",
     whatsapp: "سفارش واتس‌اپ",
     findUs: "مسیریابی به رستوران",
@@ -66,7 +67,7 @@ const aboutContent = {
     address: "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
     orderLine: "Ligne de commande",
     workHoursLabel: "Horaires d'ouverture",
-    workHours: "Tous les jours : 10h00 - 02h00",
+    workHours: "Tous les jours : 09h00 - 02h00",
     followUs: "Suivez-nous",
     whatsapp: "Commande WhatsApp",
     findUs: "Trouvez-nous",
@@ -79,7 +80,7 @@ const aboutContent = {
     address: "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
     orderLine: "Линия заказов",
     workHoursLabel: "Часы работы",
-    workHours: "Ежедневно: 10:00 - 02:00",
+    workHours: "Ежедневно: 09:00 - 02:00",
     followUs: "Следите за нами",
     whatsapp: "Заказ по WhatsApp",
     findUs: "Как нас найти",
@@ -170,7 +171,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="font-medium text-cream text-sm mb-1">{content.orderLine}</h3>
-                <a href="tel:+905348662715" className="text-cream-dim/60 text-sm hover:text-copper transition-colors">+90 534 866 27 15</a>
+                <a href="tel:+905060453906" className="text-cream-dim/60 text-sm hover:text-copper transition-colors">+90 506 045 39 06</a>
               </div>
             </div>
 
@@ -188,7 +189,7 @@ export default function AboutPage() {
 
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/905348662715"
+            href="https://wa.me/905060453906"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 mt-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-all duration-300"
@@ -203,15 +204,7 @@ export default function AboutPage() {
           <h2 className="text-xl sm:text-2xl font-bold text-gold mb-5" style={{ fontFamily: "var(--font-cairo)" }}>
             {content.findUs}
           </h2>
-          <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="map-dark-container block w-full h-56 sm:h-72 rounded-2xl group cursor-pointer hover:border-teal/50 transition-colors">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.9142835848525!2d28.97746737659556!3d41.0296766713437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab769b7b9abf5%3A0x86131481b4f4201e!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1721648880000!5m2!1str!2str"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Kardeşler Cihangir Location"
-              allowFullScreen
-            ></iframe>
-          </a>
+          <RestaurantMap heightClass="h-56 sm:h-72" className="mb-0" showDirectionsButton={true} />
         </section>
 
         {/* Social Media */}

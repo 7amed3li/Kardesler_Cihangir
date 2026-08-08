@@ -94,7 +94,7 @@ export function AppProvider({ children }) {
     }
     
     const savedCurrency = localStorage.getItem("app_currency");
-    if (savedCurrency && ["TRY", "USD", "EUR", "GBP", "RUB"].includes(savedCurrency)) {
+    if (savedCurrency && ["TRY", "USD", "EUR", "GBP", "RUB", "SAR"].includes(savedCurrency)) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrency(savedCurrency);
     }

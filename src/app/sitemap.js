@@ -1,28 +1,92 @@
 export default function sitemap() {
+  const baseUrl = 'https://kardeslercihangir.com';
+  const currentDate = new Date();
+
+  const landingAlternates = {
+    en: `${baseUrl}/best-kebab-taksim`,
+    ar: `${baseUrl}/ar/best-kebab-taksim`,
+    tr: `${baseUrl}/tr/best-kebab-taksim`,
+    ru: `${baseUrl}/ru/best-kebab-taksim`,
+    fa: `${baseUrl}/fa/best-kebab-taksim`,
+    fr: `${baseUrl}/fr/best-kebab-taksim`,
+  };
+
   return [
     {
-      url: 'https://kardeslercihangir.com',
-      lastModified: new Date(),
+      url: baseUrl,
+      lastModified: currentDate,
       changeFrequency: 'daily',
-      priority: 1,
+      priority: 1.0,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/`,
+          en: `${baseUrl}/`,
+          ar: `${baseUrl}/`,
+          ru: `${baseUrl}/`,
+          fa: `${baseUrl}/`,
+          fr: `${baseUrl}/`,
+        },
+      },
     },
     {
-      url: 'https://kardeslercihangir.com/menu',
-      lastModified: new Date(),
+      url: `${baseUrl}/menu`,
+      lastModified: currentDate,
       changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/best-kebab-taksim`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
       priority: 0.9,
+      alternates: { languages: landingAlternates },
     },
     {
-      url: 'https://kardeslercihangir.com/about',
-      lastModified: new Date(),
+      url: `${baseUrl}/ar/best-kebab-taksim`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: { languages: landingAlternates },
+    },
+    {
+      url: `${baseUrl}/tr/best-kebab-taksim`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: { languages: landingAlternates },
+    },
+    {
+      url: `${baseUrl}/ru/best-kebab-taksim`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: { languages: landingAlternates },
+    },
+    {
+      url: `${baseUrl}/fa/best-kebab-taksim`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: { languages: landingAlternates },
+    },
+    {
+      url: `${baseUrl}/fr/best-kebab-taksim`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: { languages: landingAlternates },
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://kardeslercihangir.com/contact',
-      lastModified: new Date(),
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-  ]
+  ];
 }

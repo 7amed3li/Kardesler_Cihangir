@@ -60,6 +60,11 @@
     "subtotal": "Ara Toplam"
   },
   "footer": {
+    "quickLinks": "Hızlı Bağlantılar",
+    "home": "Ana Sayfa",
+    "menu": "Menü",
+    "taksimGuide": "Taksim Kebap Rehberi",
+    "about": "Hakkımızda",
     "contact": "İletişim",
     "social": "Sosyal Medya",
     "hours": "Çalışma Saatleri",

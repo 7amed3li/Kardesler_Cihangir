@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { useAppContext } from "../context/AppContext";
-import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Clock, MessageCircle, ChevronRight, ChevronLeft, Flame } from "lucide-react";
 import PaymentMethods from "./PaymentMethods";
+import RestaurantMap from "./RestaurantMap";
 
 export default function Footer() {
-  const { t } = useAppContext();
+  const { t, lang } = useAppContext();
   const currentYear = new Date().getFullYear();
   const fc = t.footer || {};
 
@@ -31,6 +33,15 @@ export default function Footer() {
     return () => observer.disconnect();
   }, []);
 
+  const guideHref = lang === "ar" 
+    ? "/ar/best-kebab-taksim" 
+    : lang === "ru" 
+    ? "/ru/best-kebab-taksim" 
+    : "/best-kebab-taksim";
+
+  const isRTL = lang === "ar" || lang === "fa";
+  const ArrowIcon = isRTL ? ChevronLeft : ChevronRight;
+
   return (
     <footer className="bg-ink-2 border-t border-teal-dim/20 pt-12 pb-6 px-4">
       <div className="max-w-6xl mx-auto">
@@ -38,95 +49,131 @@ export default function Footer() {
         {/* Ottoman Divider */}
         <div className="ottoman-divider max-w-md mx-auto mb-12"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 text-center sm:text-start">
           
-          {/* Brand & Story */}
-          <div className="flex flex-col items-center md:items-start">
-            <h2 className="text-3xl font-black text-cream mb-2 tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
+          {/* 1. Brand & Story */}
+          <div className="flex flex-col items-center sm:items-start">
+            <h2 className="text-2xl sm:text-3xl font-black text-cream mb-2 tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.welcome || "Kardeşler"}
             </h2>
-            <p className="text-copper text-xs font-medium tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-inter)" }}>
-              {t.heroTagline || "Kebap & Pide"}
+            <p className="text-copper text-xs font-semibold tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "var(--font-inter)" }}>
+              {t.heroTagline || "Kebap & Pide • Est. 1998"}
             </p>
-            <p className="text-cream-dim/60 text-sm font-light leading-relaxed max-w-xs" style={{ fontFamily: "var(--font-inter)" }}>
-              {t.subtitle || "Where tradition meets taste in the heart of Cihangir."}
+            <p className="text-cream-dim/70 text-xs sm:text-sm font-light leading-relaxed max-w-xs" style={{ fontFamily: "var(--font-inter)" }}>
+              {t.subtitle || "Where tradition meets authentic oak charcoal taste in the heart of Cihangir."}
             </p>
           </div>
 
-          {/* Contact Info */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-sm font-bold text-cream tracking-widest uppercase mb-6">
+          {/* 2. Quick Links (الوصول السريع) */}
+          <div className="flex flex-col items-center sm:items-start">
+            <h3 className="text-xs sm:text-sm font-bold text-gold tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+              <span>{fc.quickLinks || "Quick Links"}</span>
+            </h3>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link 
+                  href="/" 
+                  className="text-cream-dim/80 hover:text-gold transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  <ArrowIcon size={13} className="text-copper group-hover:translate-x-0.5 transition-transform" />
+                  <span>{fc.home || "Home"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/menu" 
+                  className="text-cream-dim/80 hover:text-gold transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  <ArrowIcon size={13} className="text-copper group-hover:translate-x-0.5 transition-transform" />
+                  <span>{fc.menu || "Full Menu"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href={guideHref} 
+                  className="text-gold font-medium hover:text-cream transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  <Flame size={13} className="text-copper animate-pulse shrink-0" />
+                  <span className="underline underline-offset-4 decoration-gold/50 group-hover:decoration-cream">
+                    {fc.taksimGuide || "Best Kebab Taksim Guide"}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/about" 
+                  className="text-cream-dim/80 hover:text-gold transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  <ArrowIcon size={13} className="text-copper group-hover:translate-x-0.5 transition-transform" />
+                  <span>{fc.about || "About Us"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="text-cream-dim/80 hover:text-gold transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  <ArrowIcon size={13} className="text-copper group-hover:translate-x-0.5 transition-transform" />
+                  <span>{fc.contact || "Contact & Reservation"}</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 3. Contact Info */}
+          <div className="flex flex-col items-center sm:items-start">
+            <h3 className="text-xs sm:text-sm font-bold text-cream tracking-widest uppercase mb-4 sm:mb-6">
               {fc.contact}
             </h3>
-            <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 mb-4 text-start group hover:opacity-100 transition-all duration-300">
-              <MapPin size={16} className="text-teal mt-0.5 shrink-0 group-hover:animate-bounce" />
-              <p className="text-cream-dim/80 text-sm font-light leading-relaxed max-w-xs group-hover:text-cream transition-colors underline-offset-2 group-hover:underline decoration-teal/40" style={{ fontFamily: "var(--font-inter)" }}>
+            <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 mb-3 text-start group hover:opacity-100 transition-all duration-300">
+              <MapPin size={15} className="text-teal mt-0.5 shrink-0 group-hover:animate-bounce" />
+              <p className="text-cream-dim/80 text-xs sm:text-sm font-light leading-relaxed max-w-xs group-hover:text-cream transition-colors underline-offset-2 group-hover:underline decoration-teal/40" style={{ fontFamily: "var(--font-inter)" }}>
                 Firuzağa Mah. Firuzağa Camii Sok.<br/> No:1A, Cihangir, Beyoğlu, İstanbul
               </p>
             </a>
-            <div className="flex items-center gap-3 mb-3">
-              <Phone size={16} className="text-teal shrink-0" />
-              <a href="tel:+902122432822" className="text-cream-dim/80 text-sm font-light hover:text-copper transition-colors">
-                +90 212 243 28 22
+            <div className="flex items-center gap-2.5 mb-2.5">
+              <Phone size={15} className="text-teal shrink-0" />
+              <a href="tel:+902122513696" className="text-cream-dim/80 text-xs sm:text-sm font-light hover:text-copper transition-colors">
+                +90 212 251 36 96
               </a>
             </div>
-            <div className="flex items-center gap-3">
-              <Clock size={16} className="text-teal shrink-0" />
-              <span className="text-cream-dim/80 text-sm font-light">{fc.hoursValue}</span>
+            <div className="flex items-center gap-2.5">
+              <Clock size={15} className="text-teal shrink-0" />
+              <span className="text-cream-dim/80 text-xs sm:text-sm font-light">{fc.hoursValue}</span>
             </div>
           </div>
 
-          {/* Socials & WhatsApp */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-sm font-bold text-cream tracking-widest uppercase mb-6">
+          {/* 4. Socials & WhatsApp */}
+          <div className="flex flex-col items-center sm:items-start">
+            <h3 className="text-xs sm:text-sm font-bold text-cream tracking-widest uppercase mb-4 sm:mb-6">
               {fc.social}
             </h3>
-            <div className="flex items-center gap-4 mb-6">
-              <a href="https://www.instagram.com/kardeslerkebapcihangir/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-cream-dim hover:text-copper hover:border-copper/50 transition-all duration-300">
-                <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <div className="flex items-center gap-3 mb-5">
+              <a href="https://www.instagram.com/kardeslerkebapcihangir/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full glass-card flex items-center justify-center text-cream-dim hover:text-copper hover:border-copper/50 transition-all duration-300">
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </a>
-              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-cream-dim hover:text-copper hover:border-copper/50 transition-all duration-300">
-                <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </a>
             </div>
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/905348662715"
+              href="https://wa.me/905060453906"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-all duration-300 group"
             >
               <MessageCircle size={16} className="text-[#25D366]" />
-              <span className="text-[#25D366] font-medium text-sm">{fc.whatsapp}</span>
+              <span className="text-[#25D366] font-medium text-xs sm:text-sm">{fc.whatsapp}</span>
             </a>
           </div>
         </div>
 
-          {/* Dark-themed Google Maps Embed */}
-          <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" ref={mapRef} className="map-dark-container block w-full h-48 sm:h-56 mb-8 rounded-2xl relative bg-ink/50 overflow-hidden flex items-center justify-center group cursor-pointer hover:border-teal/50 transition-colors">
-            {!isMapVisible && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-teal-dim/50">
-                <MapPin className="w-8 h-8 mb-2 animate-pulse" />
-                <span className="text-xs uppercase tracking-widest">Loading Map...</span>
-              </div>
-            )}
-            {isMapVisible && (
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.9142835848525!2d28.97746737659556!3d41.0296766713437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab769b7b9abf5%3A0x86131481b4f4201e!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1721648880000!5m2!1str!2str"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Kardeşler Cihangir Location"
-                allowFullScreen
-              ></iframe>
-            )}
-          </a>
+        {/* Dark-themed Google Maps Embed with Restaurant Pin Marker */}
+        <RestaurantMap heightClass="h-48 sm:h-56" className="mb-8" />
 
         {/* ── Accepted Payment Methods Section ── */}
         <PaymentMethods />
@@ -145,12 +192,13 @@ export default function Footer() {
               href="https://www.hamedmohamed.dev/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-teal hover:text-copper transition-colors font-bold ms-1"
+              className="text-copper hover:text-gold transition-colors underline underline-offset-2"
             >
-              HAMED MOHAMED
+              Hamed Mohamed
             </a>
           </p>
         </div>
+
       </div>
     </footer>
   );

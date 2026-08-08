@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Globe } from "lucide-react";
 import { useAppContext } from "../context/AppContext";
 import { translations } from "../i18n/translations";
@@ -9,12 +10,34 @@ export default function LanguageSwitcher() {
   const { lang, changeLang } = useAppContext();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const isLandingPage = pathname && (
+    pathname === "/best-kebab-taksim" ||
+    pathname.endsWith("/best-kebab-taksim")
+  );
 
   const selectLang = (code) => {
     changeLang(code);
     setIsOpen(false);
+
+    if (isLandingPage) {
+      const targetRoutes = {
+        tr: "/tr/best-kebab-taksim",
+        en: "/best-kebab-taksim",
+        ar: "/ar/best-kebab-taksim",
+        ru: "/ru/best-kebab-taksim",
+        fa: "/fa/best-kebab-taksim",
+        fr: "/fr/best-kebab-taksim",
+      };
+      const targetUrl = targetRoutes[code] || "/best-kebab-taksim";
+      if (pathname !== targetUrl) {
+        router.push(targetUrl);
+      }
+    }
   };
 
   // Close dropdown when clicking outside

@@ -60,6 +60,11 @@
     "subtotal": "Subtotal"
   },
   "footer": {
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "menu": "Full Menu",
+    "taksimGuide": "Best Kebab Near Taksim",
+    "about": "About Us",
     "contact": "Contact",
     "social": "Social Media",
     "hours": "Working Hours",

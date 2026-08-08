@@ -77,13 +77,14 @@ export default function Home() {
         {/* Cinematic Background Image */}
         <div className="hero-bg">
           <Image
-            src="/images/hero-bg.png"
-            alt=""
+            src="/images/hero-bg.webp"
+            alt="Kardeşler Kebap — Authentic Turkish Restaurant in Cihangir, Istanbul"
             aria-hidden="true"
             priority={true}
             fill
             style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
             sizes="100vw"
+            quality={80}
           />
         </div>
 

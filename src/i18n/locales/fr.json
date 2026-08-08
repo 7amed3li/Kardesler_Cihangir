@@ -60,6 +60,11 @@
     "subtotal": "Sous-total"
   },
   "footer": {
+    "quickLinks": "Accès Rapide",
+    "home": "Accueil",
+    "menu": "Menu Complet",
+    "taksimGuide": "Guide Kebab Taksim",
+    "about": "À Propos",
     "contact": "Contact",
     "social": "Réseaux Sociaux",
     "hours": "Horaires",

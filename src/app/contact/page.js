@@ -3,6 +3,7 @@
 import React from "react";
 import { MapPin, Phone, Clock, MessageCircle, Mail, Navigation } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
+import RestaurantMap from "@/components/RestaurantMap";
 
 const contactContent = {
   tr: {
@@ -12,7 +13,7 @@ const contactContent = {
     addressLabel: "Adres",
     phoneLabel: "Sipariş Hattı",
     hoursLabel: "Çalışma Saatleri",
-    hours: "Her gün: 10:00 - 02:00",
+    hours: "Her gün: 09:00 - 02:00",
     whatsapp: "WhatsApp Sipariş",
     directions: "Yol Tarifi Al",
     findUs: "Bizi Bulun",
@@ -24,7 +25,7 @@ const contactContent = {
     addressLabel: "Address",
     phoneLabel: "Order Line",
     hoursLabel: "Working Hours",
-    hours: "Everyday: 10:00 AM - 02:00 AM",
+    hours: "Everyday: 09:00 AM - 02:00 AM",
     whatsapp: "WhatsApp Order",
     directions: "Get Directions",
     findUs: "Find Us",
@@ -36,7 +37,7 @@ const contactContent = {
     addressLabel: "العنوان",
     phoneLabel: "خط الطلبات",
     hoursLabel: "ساعات العمل",
-    hours: "يومياً: 10:00 صباحاً - 02:00 ليلاً",
+    hours: "يومياً: 09:00 صباحاً - 02:00 ليلاً",
     whatsapp: "اطلب عبر واتساب",
     directions: "احصل على الاتجاهات",
     findUs: "موقعنا",
@@ -48,7 +49,7 @@ const contactContent = {
     addressLabel: "آدرس",
     phoneLabel: "تلفن تماس و سفارش",
     hoursLabel: "ساعات کاری",
-    hours: "همه‌روزه: ۱۰:۰۰ صبح تا ۰۲:۰۰ بامداد",
+    hours: "همه‌روزه: ۰۹:۰۰ صبح تا ۰۲:۰۰ بامداد",
     whatsapp: "سفارش واتس‌اپ",
     directions: "مسیریابی روی نقشه",
     findUs: "ما را پیدا کنید",
@@ -60,7 +61,7 @@ const contactContent = {
     addressLabel: "Adresse",
     phoneLabel: "Ligne de commande",
     hoursLabel: "Horaires d'ouverture",
-    hours: "Tous les jours : 10h00 - 02h00",
+    hours: "Tous les jours : 09h00 - 02h00",
     whatsapp: "Commande WhatsApp",
     directions: "Itinéraire",
     findUs: "Trouvez-nous",
@@ -108,7 +109,7 @@ export default function ContactPage() {
 
           {/* Phone */}
           <a
-            href="tel:+905348662715"
+            href="tel:+905060453906"
             className="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-copper/40 transition-all duration-300 group animate-fadeInUp"
             style={{ animationDelay: "150ms" }}
           >
@@ -118,9 +119,9 @@ export default function ContactPage() {
             <div>
               <h3 className="font-medium text-cream text-sm mb-1">{c.phoneLabel}</h3>
               <p className="text-cream-dim/60 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
-                +90 534 866 27 15
+                +90 506 045 39 06
               </p>
-              <p className="text-cream-dim/40 text-xs mt-1">+90 212 243 28 22</p>
+              <p className="text-cream-dim/40 text-xs mt-1">+90 212 251 36 96</p>
             </div>
           </a>
 
@@ -142,7 +143,7 @@ export default function ContactPage() {
 
           {/* WhatsApp */}
           <a
-            href="https://wa.me/905348662715"
+            href="https://wa.me/905060453906"
             target="_blank"
             rel="noopener noreferrer"
             className="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-[#25D366]/40 transition-all duration-300 group animate-fadeInUp"
@@ -165,24 +166,7 @@ export default function ContactPage() {
           <h2 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "var(--font-cairo)" }}>
             {c.findUs}
           </h2>
-          <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="map-dark-container block w-full h-64 sm:h-80 rounded-2xl mb-4 group cursor-pointer hover:border-teal/50 transition-colors">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.9142835848525!2d28.97746737659556!3d41.0296766713437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab769b7b9abf5%3A0x86131481b4f4201e!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1721648880000!5m2!1str!2str"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Kardeşler Cihangir Location"
-              allowFullScreen
-            ></iframe>
-          </a>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-copper/15 border border-copper/30 text-copper font-bold text-sm hover:bg-copper hover:text-cream transition-all duration-300"
-          >
-            <Navigation size={16} />
-            <span>{c.directions}</span>
-          </a>
+          <RestaurantMap heightClass="h-64 sm:h-80" className="mb-4" showDirectionsButton={true} />
         </section>
       </div>
     </div>

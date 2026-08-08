@@ -19,11 +19,11 @@
     },
     "pacanga_boregi": {
       "name": "Paçanga Böreği",
-      "desc": "Pachanga Pastry"
+      "desc": "Paçanga Pastry"
     },
     "omlet": {
       "name": "Omlet",
-      "desc": "Omlette"
+      "desc": "Omelette"
     },
     "menemen": {
       "name": "Menemen",
@@ -35,11 +35,11 @@
     },
     "sucuklu_yumurta": {
       "name": "Sucuklu Yumurta",
-      "desc": "Saussage with Egg"
+      "desc": "Sausage with Egg"
     },
     "kavurmali_yumurta": {
       "name": "Kavurmalı Yumurta",
-      "desc": "Beaf Roasted Meat with Egg"
+      "desc": "Beef Roasted Meat with Egg"
     },
     "kuzu_gerdan_corba": {
       "name": "Kuzu Gerdan Çorba",
@@ -55,7 +55,7 @@
     },
     "adana_urfa": {
       "name": "Adana & Urfa Kebap",
-      "desc": "Adana & Urfa Kebab - 140 gr. Grill Minced Beaf Meat"
+      "desc": "Adana & Urfa Kebab - 140 gr. Grill Minced Beef Meat"
     },
     "mardin_kebap": {
       "name": "Mardin Kebap",
@@ -63,15 +63,15 @@
     },
     "beyti_kebap": {
       "name": "Beyti Kebap",
-      "desc": "Beyti Kebab - 170 gr. Grill Minced Beaf Meat with Garlicky"
+      "desc": "Beyti Kebab - 170 gr. Grill Minced Beef Meat with Garlicky"
     },
     "domatesli_kebap": {
       "name": "Domatesli Kebap",
-      "desc": "Tomatoes Kebab - 150 gr. Grill Tomatoes, Beaf Meat"
+      "desc": "Tomatoes Kebab - 150 gr. Grill Tomatoes, Beef Meat"
     },
     "patlicanli_kebap": {
       "name": "Patlıcanlı Kebap",
-      "desc": "Eggplant Kebab - 160 gr. Grill Eggplant, Minced Beaf Meat"
+      "desc": "Eggplant Kebab - 160 gr. Grill Eggplant, Minced Beef Meat"
     },
     "kuzu_sis_kebap": {
       "name": "Kuzu Şiş Kebap",
@@ -87,7 +87,7 @@
     },
     "vali_kebabi": {
       "name": "Vali Kebabı",
-      "desc": "Vali Kebab - 220 gr. Grill Chicken, Lamb, Mince Beaf Meat with Eggplant, Tomatoes and Pepper with Cheese"
+      "desc": "Vali Kebab - 220 gr. Grill Chicken, Lamb, Mince Beef Meat with Eggplant, Tomatoes and Pepper with Cheese"
     },
     "tavuk_sis_izgara": {
       "name": "Tavuk Şiş Izgara",
@@ -115,7 +115,7 @@
     },
     "yogurtlu_kebap": {
       "name": "Yoğurtlu Kebap",
-      "desc": "Kebab with Yogurt - 140 gr. Grill Minced Beaf Meat with Yogurt"
+      "desc": "Kebab with Yogurt - 140 gr. Grill Minced Beef Meat with Yogurt"
     },
     "alti_ezmeli_kebap": {
       "name": "Altı Ezmeli Kebap",
@@ -123,19 +123,19 @@
     },
     "dana_bonfile": {
       "name": "Dana Bonfile",
-      "desc": "Beaf Veal Steak Sish - 200 gr. Beaf Veal Steak Sish with Bulgur Rice and Salad"
+      "desc": "Beef Veal Steak Shish - 200 gr. Beef Veal Steak Shish with Bulgur Rice and Salad"
     },
     "dana_cop_sis": {
       "name": "Dana Çöp Şiş",
-      "desc": "Beaf Sish Kebab - 200 gr. Beaf Sish Kebap with Bulgur Rice and Salad"
+      "desc": "Beef Shish Kebab - 200 gr. Beef Shish Kebab with Bulgur Rice and Salad"
     },
     "karisik_kebap_1": {
       "name": "Karışık Kebap 1",
-      "desc": "Mixed Kebab 1 - 350 gr. Grilled chicken, lamb, meatball, tomatoes kebab, mince beaf meat salad with bulgur rice"
+      "desc": "Mixed Kebab 1 - 350 gr. Grilled chicken, lamb, meatball, tomatoes kebab, mince beef meat salad with bulgur rice"
     },
     "karisik_kebap_2": {
       "name": "Karışık Kebap 2",
-      "desc": "Mixed Kebab 2 - 550 gr. Grill lamb sish, meatball, lamb chops, beaf steak meat, mince beaf meat and Appetizers"
+      "desc": "Mixed Kebab 2 - 550 gr. Grill lamb shish, meatball, lamb chops, beef steak meat, mince beef meat and Appetizers"
     },
     "mardin_kebap_menu": {
       "name": "Mardin Kebap Menü",
@@ -155,11 +155,11 @@
     },
     "mezeli_adana_urfa": {
       "name": "Mezeli Adana & Urfa Kebap",
-      "desc": "Adana & Urfa with Appetizers - 140 gr. Grill Minced Beaf Meat with Appetizers"
+      "desc": "Adana & Urfa with Appetizers - 140 gr. Grill Minced Beef Meat with Appetizers"
     },
     "mezeli_dana_cop_sis": {
       "name": "Mezeli Dana Çöp Şiş",
-      "desc": "Beaf Shish Kebab with Appetizers - 200 gr. Beaf Shish Kebab with Appetizers"
+      "desc": "Beef Shish Kebab with Appetizers - 200 gr. Beef Shish Kebab with Appetizers"
     },
     "mezeli_kuzu_pirzola": {
       "name": "Mezeli Kuzu Pirzola",
@@ -179,7 +179,7 @@
     },
     "mezeli_dana_bonfile": {
       "name": "Mezeli Dana Bonfile",
-      "desc": "Beaf Tenderloin with Appetizers - 200 gr. Beaf Tenderloin with Appetizers"
+      "desc": "Beef Tenderloin with Appetizers - 200 gr. Beef Tenderloin with Appetizers"
     },
     "mezeli_durum": {
       "name": "Mezeli Dürüm",

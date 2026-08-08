@@ -6,23 +6,25 @@ import "./globals.css";
 
 export const metadata = {
   metadataBase: new URL("https://kardeslercihangir.com"),
-  title: "Kardeşler Cihangir | Kebap & Pide — Digital Menu",
+  title: "Kardeşler Cihangir | Kebap & Pide — Geleneksel Türk Mutfağı",
   description:
-    "Experience authentic Turkish cuisine at Kardeşler Kebap & Pide in Cihangir, Beyoğlu, İstanbul. Explore our digital menu with 100+ dishes — kebabs, pide, lahmacun, mezes and more.",
+    "Authentic Turkish cuisine in the heart of Cihangir, 5 min from Taksim Square. 100+ dishes — Adana kebab, pide, lahmacun, mezes & more. Open daily 09:00-02:00.",
   keywords: [
     "Kardeşler Cihangir",
     "kebab Istanbul",
     "pide Cihangir",
     "Turkish restaurant",
-    "digital menu",
+    "best kebab taksim",
     "Beyoğlu restaurant",
     "Adana kebab",
     "lahmacun",
     "Firuzağa",
+    "halal restaurant istanbul",
+    "أفضل كباب تقسيم",
+    "лучший кебаб Таксим",
   ],
   icons: {
     icon: "/logo.webp",
-    shortcut: "/logo.webp",
     apple: "/logo.webp",
   },
   authors: [{ name: "Kardeşler Kebap Cihangir" }],
@@ -37,7 +39,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero-bg.png",
+        url: "/images/hero-bg.webp",
         width: 1200,
         height: 630,
         alt: "Kardeşler Kebap & Pide — Turkish Restaurant in Cihangir",
@@ -49,7 +51,7 @@ export const metadata = {
     title: "Kardeşler Cihangir | Kebap & Pide",
     description:
       "Authentic Turkish cuisine in the heart of Cihangir. Explore our digital menu.",
-    images: ["/images/hero-bg.png"],
+    images: ["/images/hero-bg.webp"],
   },
   robots: {
     index: true,
@@ -69,14 +71,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kardeslercihangir.c
 const restaurantSchema = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  name: "Kardeşler Kebap & Pide",
+  name: "Kardeşler Kebap & Cafe Cihangir",
   alternateName: "Kardeşler Cihangir",
-  image: "/images/hero-bg.png",
+  image: `${siteUrl}/images/hero-bg.webp`,
   url: siteUrl,
-  telephone: "+902122432822",
+  telephone: "+902122513696",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Firuzağa Mah. Firuzağa Camii Sok. No:1A",
+    streetAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
     addressLocality: "Cihangir, Beyoğlu",
     addressRegion: "İstanbul",
     postalCode: "34425",
@@ -84,8 +86,8 @@ const restaurantSchema = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 41.03,
-    longitude: 28.98,
+    latitude: 41.0310944,
+    longitude: 28.9824818,
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -98,23 +100,17 @@ const restaurantSchema = {
       "Saturday",
       "Sunday",
     ],
-    opens: "10:00",
+    opens: "09:00",
     closes: "02:00",
   },
   servesCuisine: ["Turkish", "Kebab", "Mediterranean"],
-  priceRange: "$$",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.6",
-    reviewCount: "1280",
-    bestRating: "5",
-  },
-  menu: siteUrl,
+  priceRange: "₺₺",
+  menu: `${siteUrl}/menu`,
   acceptsReservations: "True",
   hasMenu: {
     "@type": "Menu",
-    name: "Digital Menu",
-    url: siteUrl,
+    name: "Kardeşler Cihangir Menu",
+    url: `${siteUrl}/menu`,
     hasMenuSection: [
       { "@type": "MenuSection", name: "Kahvaltı" },
       { "@type": "MenuSection", name: "Kebap" },
@@ -134,7 +130,7 @@ const restaurantSchema = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="tr"
       suppressHydrationWarning
       className="h-full antialiased"
     >
@@ -149,7 +145,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-ink text-cream font-[var(--font-inter)]">
+      <body className="min-h-full flex flex-col bg-ink text-cream font-[var(--font-inter)]" suppressHydrationWarning>
         <AppProvider>
           <SmartSplash />
           <Header />

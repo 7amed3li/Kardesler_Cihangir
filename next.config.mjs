@@ -1,14 +1,24 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {
+    root: __dirname,
+  },
   // Image optimization
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [60, 70, 75, 80, 85, 90, 100],
     deviceSizes: [375, 640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   },
 
-  // Security & performance headers
+  // Security & static asset performance headers
   async headers() {
     return [
       {
@@ -30,14 +40,10 @@ const nextConfig = {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=3600, stale-while-revalidate=86400",
-          },
         ],
       },
       {
-        // Cache static assets aggressively
+        // Cache static media assets aggressively
         source: "/images/:path*",
         headers: [
           {
