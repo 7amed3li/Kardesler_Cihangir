@@ -189,28 +189,33 @@ body {
 
 .ottoman-divider {
   position: relative;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(212, 162, 76, 0.15) 15%,
-    rgba(212, 162, 76, 0.4) 50%,
-    rgba(212, 162, 76, 0.15) 85%,
+    rgba(212, 162, 76, 0.1) 15%,
+    rgba(212, 162, 76, 0.5) 40%,
+    transparent 40%,
+    transparent 60%,
+    rgba(212, 162, 76, 0.5) 60%,
+    rgba(212, 162, 76, 0.1) 85%,
     transparent
   );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ottoman-divider::before {
-  content: "✦";
+  content: "❦"; /* Traditional floral heart/leaf symbol, human & classic */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 10px;
+  font-size: 16px;
   color: var(--gold);
-  background: var(--ink);
-  padding: 0 12px;
-  letter-spacing: 8px;
+  background: transparent;
+  text-shadow: 0 0 15px rgba(212, 162, 76, 0.6);
 }
 
 .ottoman-corner {

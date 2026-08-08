@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
 import { translations, menuTranslations } from "../i18n/translations";
 import { generateWhatsAppLink } from "../lib/generateWhatsAppLink";
+import SaudiRiyalIcon from "../components/SaudiRiyalIcon";
 
 const AppContext = createContext();
 
@@ -149,6 +150,9 @@ export function AppProvider({ children }) {
   };
 
   const getCurrencySymbol = () => {
+    if (currency === "SAR") {
+      return <SaudiRiyalIcon className="h-[0.9em] w-auto inline-block fill-current" />;
+    }
     const rateData = exchangeRates[currency] || HARDCODED_FALLBACK[currency];
     return rateData.symbol;
   };

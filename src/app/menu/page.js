@@ -136,11 +136,11 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
   const currentDish = featuredDishes[activeIndex];
   const totalItemsCount = menuData.reduce((acc, cat) => acc + (cat.items ? cat.items.length : 0), 0);
 
-  // Safe Price Formatter
+  // Safe Price Formatter returning JSX
   const formatItemPrice = (priceVal) => {
     const symbol = getCurrencySymbol ? getCurrencySymbol() : "₺";
     const formatted = convertPrice ? convertPrice(priceVal) : priceVal;
-    return `${symbol}${formatted}`;
+    return <span className="flex items-center gap-1">{formatted} {symbol}</span>;
   };
 
   // Auto-play timer (pauses on interaction)

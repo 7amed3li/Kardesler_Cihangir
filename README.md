@@ -9,12 +9,12 @@ Welcome to the **Kardeşler Cihangir** Digital Menu repository. This project is 
 
 ## ✨ Key Features
 
-- **Premium Minimalist Design:** A sleek, dark-themed UI that exudes elegance, focusing on high-quality typography and subtle interactions (no overpowering glows or neon colors).
-- **Multi-Language Support (i18n):** Instantly switch between Turkish, English, Arabic, and French without reloading the page.
-- **Live Currency Converter:** Real-time price conversion for tourists (TRY, USD, EUR, GBP) via a sleek top-bar toggle.
-- **Smart Dietary Filters:** Filter menu items instantly by *Chef's Recommendations*, *Vegetarian*, and *Spicy*.
-- **Interactive 3D Cards:** Subtle Parallax Tilt effects on food cards for an engaging but professional user experience.
-- **Smart Loyalty & Review System:** Built-in modal components to capture user feedback and track loyalty points.
+- **Premium Minimalist Design:** A sleek, dark-themed UI that exudes elegance, focusing on high-quality typography, authentic human touches, and subtle interactions (completely free of AI-generated aesthetics).
+- **Global Audience Ready (6 Languages):** Instantly switch between Turkish, English, Arabic, Russian, French, and Persian, tailored specifically for the diverse tourist demographic in Cihangir.
+- **Live Currency Converter:** Real-time price conversion for tourists (TRY, USD, EUR, GBP, RUB, SAR) with exact currency symbols (like the authentic Saudi Riyal icon) via a sleek top-bar toggle.
+- **Authentic Reviews System:** 100% genuine user reviews imported directly from Google Maps, Yemeksepeti, and Yandex Maps with smart verified badges and zero stock photos to maximize trust and Local SEO.
+- **Direct WhatsApp Ordering:** Seamless ordering flow that routes the user's cart directly to the restaurant's WhatsApp with localized templates in the user's language.
+- **Smart Dietary Filters & Cart:** Filter menu items instantly, add to cart with a beautiful floating action button, and experience a friction-free checkout.
 
 ## 🚀 Getting Started
 

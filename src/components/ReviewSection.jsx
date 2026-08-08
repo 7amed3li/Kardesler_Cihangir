@@ -12,8 +12,7 @@ import {
   ChevronLeft, 
   ChevronRight, 
   X, 
-  Flame,
-  Sparkles
+  Flame
 } from "lucide-react";
 import { platforms as fallbackPlatforms, reviewsList as fallbackReviews } from "../data/reviewsData";
 
@@ -208,7 +207,7 @@ export default function ReviewSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(212,162,76,0.15)]">
-            <Sparkles size={13} className="text-gold animate-spin-slow" />
+            <Star size={13} className="text-gold fill-gold" />
             <span>{labels.badge[lang] || labels.badge.en}</span>
           </div>
           
