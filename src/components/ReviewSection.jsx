@@ -271,18 +271,7 @@ export default function ReviewSection() {
             <span className="text-[10px] px-1.5 py-0.5 bg-black/20 rounded-full font-bold">4,550+</span>
           </button>
 
-          {/* 2. Reviews With Food Photos */}
-          <button
-            onClick={() => setSelectedFilter("with-photos")}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
-              selectedFilter === "with-photos"
-                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
-                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
-            }`}
-          >
-            <Camera size={13} />
-            <span>{labels.filterPhotos[lang] || labels.filterPhotos.en}</span>
-          </button>
+          {/* 2. Reviews With Food Photos (REMOVED due to authenticity strict rules) */}
 
           {/* 3. Google Maps Filter */}
           <button
