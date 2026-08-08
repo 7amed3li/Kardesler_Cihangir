@@ -42,6 +42,13 @@ export default function sitemap() {
       alternates: { languages: landingAlternates },
     },
     {
+      url: `${baseUrl}/en/best-kebab-taksim`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+      alternates: { languages: landingAlternates },
+    },
+    {
       url: `${baseUrl}/ar/best-kebab-taksim`,
       lastModified: currentDate,
       changeFrequency: 'weekly',

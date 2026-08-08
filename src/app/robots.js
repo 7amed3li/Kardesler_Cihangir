@@ -9,6 +9,7 @@ export default function robots() {
           "/about",
           "/contact",
           "/best-kebab-taksim",
+          "/en/best-kebab-taksim",
           "/ar/best-kebab-taksim",
           "/tr/best-kebab-taksim",
           "/ru/best-kebab-taksim",
