@@ -5,8 +5,8 @@ export const platforms = [
     rating: "4.6",
     reviewsCount: "1,280+",
     totalCountNumber: 1280,
-    link: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Firuzağa+Cihangir+Beyoğlu",
-    writeReviewUrl: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Firuzağa+Cihangir+Beyoğlu",
+    link: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
+    writeReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
     color: "#4285F4",
     badgeBg: "rgba(66, 133, 244, 0.12)",
     badgeBorder: "rgba(66, 133, 244, 0.3)",
@@ -71,7 +71,7 @@ export const reviewsList = [
       fr: "Le meilleur kebab d'Adana à Cihangir ! Mezzés frais, lavash tout chaud sorti du four. Accueil chaleureux et goût exceptionnel 5 étoiles.",
       ru: "Лучший Адана кебаб в Джихангире! Свежие мезе, горячий лаваш прямо из печи. Настоящее турецкое гостеприимство и вкус на 5 звезд.",
     },
-    link: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Cihangir",
+    link: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
   },
   {
     id: "gm-2",
@@ -105,7 +105,7 @@ export const reviewsList = [
       fr: "L'étape la plus délicieuse de notre séjour à Istanbul ! Le Beyti kebab et le riz au lait au four étaient tout simplement magnifiques.",
       ru: "Самая вкусная остановка нашей поездки в Стамбул! Бейти кебаб и запеченный сютлач просто великолепны. Всем рекомендую!",
     },
-    link: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Cihangir",
+    link: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
   },
   {
     id: "gm-3",
@@ -139,7 +139,7 @@ export const reviewsList = [
       fr: "Le plateau de kebabs mixtes était incroyablement copieux et savoureux. Les côtelettes d'agneau fondaient en bouche. Prix très abordables.",
       ru: "Порция ассорти кебаб невероятно богатая и вкусная. Бараньи ребрышки тают во рту. Цены очень разумные для Таксима.",
     },
-    link: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Cihangir",
+    link: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
   },
   {
     id: "gm-4",
@@ -173,7 +173,7 @@ export const reviewsList = [
       fr: "Un véritable joyau culinaire qui ne fait aucun compromis sur la qualité. Le petit-déjeuner traditionnel et les kebabs au feu de bois sont inégalés.",
       ru: "Настоящая жемчужина традиционной кухни. Богатый турецкий завтрак и кебабы на дровах — лучшие в районе Джихангир.",
     },
-    link: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Cihangir",
+    link: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
   },
   {
     id: "gm-5",
@@ -207,7 +207,7 @@ export const reviewsList = [
       fr: "Le künefe brûlant après le kebab était un pur délice ! Le fromage est bien filant et le sirop parfaitement dosé. Service impeccable.",
       ru: "Горячий кюнефе после кебаба был верхом совершенства! Сыр отлично тянется, сироп в меру сладкий. Превосходный сервис.",
     },
-    link: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Cihangir",
+    link: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
   },
 
   // ─── YEMEKSEPETİ 5-STAR REVIEWS ───
