@@ -1,13 +1,25 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
+import Image from "next/image";
 import { useAppContext } from "../context/AppContext";
-import { Star, ExternalLink, CheckCircle2, MessageSquarePlus } from "lucide-react";
-import { platforms, reviewsList } from "../data/reviewsData";
+import { 
+  Star, 
+  ExternalLink, 
+  CheckCircle2, 
+  MessageSquarePlus, 
+  Camera, 
+  ChevronLeft, 
+  ChevronRight, 
+  X, 
+  Flame,
+  Sparkles
+} from "lucide-react";
+import { platforms as fallbackPlatforms, reviewsList as fallbackReviews } from "../data/reviewsData";
 
 // Platform brand icons
 const PlatformIcon = ({ id, size = "md" }) => {
-  const sizeClass = size === "sm" ? "w-5 h-5" : size === "lg" ? "w-7 h-7" : "w-6 h-6";
+  const sizeClass = size === "sm" ? "w-4 h-4" : size === "lg" ? "w-6 h-6" : "w-5 h-5";
   
   if (id === "google") {
     return (
@@ -22,7 +34,7 @@ const PlatformIcon = ({ id, size = "md" }) => {
   
   if (id === "yemeksepeti") {
     return (
-      <div className={`${sizeClass} bg-[#EA004B] rounded-full flex items-center justify-center text-white font-black text-[10px] shadow-sm tracking-tighter`}>
+      <div className={`${sizeClass} bg-[#EA004B] rounded-full flex items-center justify-center text-white font-black text-[9px] shadow-sm tracking-tighter shrink-0`}>
         ys
       </div>
     );
@@ -30,7 +42,7 @@ const PlatformIcon = ({ id, size = "md" }) => {
 
   if (id === "yandex") {
     return (
-      <div className={`${sizeClass} bg-[#FF0000] rounded-full flex items-center justify-center text-white font-black text-[11px] shadow-sm`}>
+      <div className={`${sizeClass} bg-[#FF0000] rounded-full flex items-center justify-center text-white font-black text-[10px] shadow-sm shrink-0`}>
         Y
       </div>
     );
@@ -41,11 +53,11 @@ const PlatformIcon = ({ id, size = "md" }) => {
 
 export default function ReviewSection() {
   const { lang, t, isRtl } = useAppContext();
-  const [selectedPlatform, setSelectedPlatform] = useState("all");
+  const [selectedFilter, setSelectedFilter] = useState("five-star"); // default: all 5-star reviews
   const [isPaused, setIsPaused] = useState(false);
-  const [livePlatformsData, setLivePlatformsData] = useState(platforms);
-  const [liveReviewsData, setLiveReviewsData] = useState(reviewsList);
-  const [isLiveSynced, setIsLiveSynced] = useState(false);
+  const [livePlatformsData, setLivePlatformsData] = useState(fallbackPlatforms);
+  const [liveReviewsData, setLiveReviewsData] = useState(fallbackReviews);
+  const [activePhotoModal, setActivePhotoModal] = useState(null);
   const scrollContainerRef = useRef(null);
 
   // Dynamic fetch from live /api/reviews endpoint
@@ -63,7 +75,6 @@ export default function ReviewSection() {
             if (data.reviews && data.reviews.length > 0) {
               setLiveReviewsData(data.reviews);
             }
-            setIsLiveSynced(true);
           }
         }
       } catch (err) {
@@ -74,13 +85,25 @@ export default function ReviewSection() {
     return () => { isMounted = false; };
   }, []);
 
-  // Filter reviews
-  const filteredReviews = selectedPlatform === "all"
-    ? liveReviewsData
-    : liveReviewsData.filter((r) => r.platform === selectedPlatform);
+  // Filter reviews based on selected filter
+  const filteredReviews = useMemo(() => {
+    if (selectedFilter === "five-star") {
+      return liveReviewsData.filter((r) => r.rating === 5);
+    }
+    if (selectedFilter === "with-photos") {
+      return liveReviewsData.filter((r) => !!r.photo);
+    }
+    if (selectedFilter === "google" || selectedFilter === "yemeksepeti" || selectedFilter === "yandex") {
+      return liveReviewsData.filter((r) => r.platform === selectedFilter);
+    }
+    return liveReviewsData;
+  }, [liveReviewsData, selectedFilter]);
 
-  // Duplicate for smooth seamless continuous loop
-  const displayItems = [...filteredReviews, ...filteredReviews, ...filteredReviews];
+  // Duplicate for smooth seamless continuous marquee loop
+  const displayItems = useMemo(() => {
+    if (filteredReviews.length === 0) return [];
+    return [...filteredReviews, ...filteredReviews, ...filteredReviews];
+  }, [filteredReviews]);
 
   // Auto-scroll loop
   useEffect(() => {
@@ -94,13 +117,11 @@ export default function ReviewSection() {
       if (!isPaused && el) {
         if (isRtl) {
           el.scrollLeft -= speed;
-          // Loop reset for RTL
           if (Math.abs(el.scrollLeft) >= (el.scrollWidth - el.clientWidth) / 2) {
             el.scrollLeft = 0;
           }
         } else {
           el.scrollLeft += speed;
-          // Loop reset for LTR
           if (el.scrollLeft >= (el.scrollWidth - el.clientWidth) / 2) {
             el.scrollLeft = 0;
           }
@@ -110,67 +131,74 @@ export default function ReviewSection() {
     };
 
     animationFrameId = requestAnimationFrame(scrollStep);
-
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isPaused, isRtl, selectedPlatform]);
+  }, [isPaused, isRtl, filteredReviews]);
 
-
-
-  const getPlatformName = (platformId) => {
-    if (platformId === "google") return "Google Maps";
-    if (platformId === "yemeksepeti") return "Yemeksepeti";
-    if (platformId === "yandex") return "Yandex Maps";
-    return platformId;
+  // Manual scroll controls
+  const handleScrollManual = (direction) => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const scrollAmount = 380;
+    const modifier = (isRtl ? -1 : 1) * (direction === "left" ? -1 : 1);
+    el.scrollBy({ left: scrollAmount * modifier, behavior: "smooth" });
   };
 
   // Section UI labels
   const labels = {
-    all: {
-      tr: "Tüm Platformlar",
-      en: "All Platforms",
-      ar: "جميع المنصات",
-      fa: "همه پلتفرم‌ها",
-      fr: "Toutes les plateformes",
-      ru: "Все платформы",
+    badge: {
+      tr: "Canlı 5 Yıldızlı Müşteri Değerlendirmeleri",
+      en: "Live 5-Star Verified Customer Reviews",
+      ar: "تقييمات 5 نجوم حية وموثقة من الضيوف",
+      fa: "نظرات زنده و تایید شده ۵ ستاره مشتریان",
+      fr: "Avis clients 5 étoiles vérifiés en direct",
+      ru: "Живые проверенные отзывы 5 звезд",
     },
-    verified: {
-      tr: "Doğrulanmış Misafir",
-      en: "Verified Guest",
-      ar: "عميل موثّق",
-      fa: "مهمان تایید شده",
-      fr: "Avis vérifié",
-      ru: "Проверенный отзыв",
+    filter5Star: {
+      tr: "⭐ 5 Yıldızlı Yorumlar",
+      en: "⭐ 5-Star Reviews",
+      ar: "⭐ تقييمات 5 نجوم",
+      fa: "⭐ نظرات ۵ ستاره",
+      fr: "⭐ Avis 5 Étoiles",
+      ru: "⭐ Отзывы 5 звезд",
     },
-    verifyOn: {
-      tr: "Platformda İncele",
-      en: "Verify on",
-      ar: "عرض على",
-      fa: "مشاهده در",
-      fr: "Vérifier sur",
-      ru: "Смотреть на",
+    filterPhotos: {
+      tr: "📷 Fotoğraflı Yorumlar",
+      en: "📷 With Food Photos",
+      ar: "📷 تجارب مصورة",
+      fa: "📷 همراه با عکس غذا",
+      fr: "📷 Avec photos des plats",
+      ru: "📷 С фото блюд",
     },
-    liveStream: {
-      tr: "Canlı Müşteri Değerlendirmeleri",
-      en: "Live Customer Reviews",
-      ar: "بث حي لتقييمات الضيوف",
-      fa: "نظرات زنده و واقعی مشتریان",
-      fr: "Avis clients en direct",
-      ru: "Живые отзывы гостей",
+    verifiedGuest: {
+      tr: "Doğrulanmış 5★ Deneyim",
+      en: "Verified 5★ Guest",
+      ar: "تجربة 5★ موثقة",
+      fa: "تجربه ۵★ تایید شده",
+      fr: "Expérience 5★ vérifiée",
+      ru: "Проверенный отзыв 5★",
     },
-    writeReview: {
-      tr: "Siz de Yorum Yapın",
-      en: "Write a Review",
-      ar: "شاركنا تقييمك",
-      fa: "شما هم نظر دهید",
-      fr: "Laisser un avis",
-      ru: "Оставить отзыв",
+    verifyLink: {
+      tr: "Orijinal Yorumu İncele",
+      en: "View Original Review",
+      ar: "عرض التقييم الأصلي",
+      fa: "مشاهده نظر اصلی",
+      fr: "Voir l'avis original",
+      ru: "Посмотреть оригинал",
+    },
+    totalStats: {
+      tr: "Toplam 4,550+ Doğrulanmış Yorum",
+      en: "Over 4,550+ Verified Reviews Across Platforms",
+      ar: "أكثر من 4,550+ تقييم حقيقي وموثق عبر المنصات",
+      fa: "بیش از ۴,۵۵۰+ نظر واقعی در پلتفرم‌ها",
+      fr: "Plus de 4 550+ avis vérifiés",
+      ru: "Более 4 550+ проверенных отзывов",
     }
   };
 
   return (
-    <section className="py-16 bg-ink border-t border-teal-dim/20 overflow-hidden relative">
+    <section className="py-16 bg-ink border-t border-teal-dim/20 overflow-hidden relative" id="reviews">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold/5 blur-[120px] pointer-events-none rounded-full"></div>
+      <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gold/5 blur-[140px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         
@@ -179,21 +207,21 @@ export default function ReviewSection() {
 
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-bold uppercase tracking-widest mb-3">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            {labels.liveStream[lang] || labels.liveStream.en}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(212,162,76,0.15)]">
+            <Sparkles size={13} className="text-gold animate-spin-slow" />
+            <span>{labels.badge[lang] || labels.badge.en}</span>
           </div>
           
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-cream tracking-wide mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
             {t.reviewsTitle || "Misafirlerimiz Ne Diyor?"}
           </h3>
           
-          <p className="text-cream-dim/70 text-sm max-w-lg mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
-            {t.reviewsSubtitle || "Google Maps, Yemeksepeti ve Yandex üzerinden gelen gerçek misafir deneyimleri"}
+          <p className="text-cream-dim/80 text-sm max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+            {labels.totalStats[lang] || labels.totalStats.en}
           </p>
         </div>
 
-        {/* Platform Overview Cards (Google Maps, Yemeksepeti, Yandex) */}
+        {/* Platform Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
           {livePlatformsData.map((p) => (
             <a
@@ -204,7 +232,7 @@ export default function ReviewSection() {
               className="group relative flex items-center justify-between p-4 rounded-2xl glass-card border-teal-dim/20 hover:border-gold/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_10px_25px_rgba(212,162,76,0.15)] cursor-pointer"
             >
               <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-xl bg-ink flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
+                <div className="w-11 h-11 rounded-xl bg-ink flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
                   <PlatformIcon id={p.id} size="lg" />
                 </div>
                 <div>
@@ -217,49 +245,108 @@ export default function ReviewSection() {
                     </div>
                   </div>
                   <h4 className="text-sm font-bold text-cream-dim group-hover:text-gold transition-colors">{p.name}</h4>
-                  <span className="text-[11px] text-cream-dim/50 font-medium">{p.reviewsCount} {t.reviewsCountText || "reviews"}</span>
+                  <span className="text-[11px] text-cream-dim/60 font-medium">{p.reviewsCount} {t.reviewsCountText || "reviews"}</span>
                 </div>
               </div>
 
               <div className="w-8 h-8 rounded-full bg-teal-dim/20 flex items-center justify-center text-cream-dim group-hover:text-gold group-hover:bg-gold/20 transition-all">
-                <ExternalLink size={14} />
+                <ExternalLink size={13} />
               </div>
             </a>
           ))}
         </div>
 
-        {/* Interactive Platform Filter Tabs */}
+        {/* Interactive Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+          {/* 1. All 5-Star Reviews */}
           <button
-            onClick={() => setSelectedPlatform("all")}
+            onClick={() => setSelectedFilter("five-star")}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
-              selectedPlatform === "all"
-                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)]"
+              selectedFilter === "five-star"
+                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
                 : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
             }`}
           >
-            <span>{labels.all[lang] || labels.all.en}</span>
-            <span className="text-[10px] px-1.5 py-0.2 bg-black/20 rounded-full">{liveReviewsData.length}</span>
+            <span>{labels.filter5Star[lang] || labels.filter5Star.en}</span>
+            <span className="text-[10px] px-1.5 py-0.5 bg-black/20 rounded-full font-bold">4,550+</span>
           </button>
 
-          {livePlatformsData.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => setSelectedPlatform(p.id)}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 ${
-                selectedPlatform === p.id
-                  ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)]"
-                  : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
-              }`}
-            >
-              <PlatformIcon id={p.id} size="sm" />
-              <span>{p.name}</span>
-            </button>
-          ))}
+          {/* 2. Reviews With Food Photos */}
+          <button
+            onClick={() => setSelectedFilter("with-photos")}
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              selectedFilter === "with-photos"
+                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
+                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+            }`}
+          >
+            <Camera size={13} />
+            <span>{labels.filterPhotos[lang] || labels.filterPhotos.en}</span>
+          </button>
+
+          {/* 3. Google Maps Filter */}
+          <button
+            onClick={() => setSelectedFilter("google")}
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              selectedFilter === "google"
+                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
+                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+            }`}
+          >
+            <PlatformIcon id="google" size="sm" />
+            <span>Google Maps</span>
+            <span className="text-[10px] opacity-70">1,280+</span>
+          </button>
+
+          {/* 4. Yemeksepeti Filter */}
+          <button
+            onClick={() => setSelectedFilter("yemeksepeti")}
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              selectedFilter === "yemeksepeti"
+                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
+                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+            }`}
+          >
+            <PlatformIcon id="yemeksepeti" size="sm" />
+            <span>Yemeksepeti</span>
+            <span className="text-[10px] opacity-70">2,450+</span>
+          </button>
+
+          {/* 5. Yandex Maps Filter */}
+          <button
+            onClick={() => setSelectedFilter("yandex")}
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              selectedFilter === "yandex"
+                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
+                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+            }`}
+          >
+            <PlatformIcon id="yandex" size="sm" />
+            <span>Yandex Maps</span>
+            <span className="text-[10px] opacity-70">820+</span>
+          </button>
+        </div>
+
+        {/* Carousel Navigation Arrow Controls */}
+        <div className="flex items-center justify-end gap-2 mb-3 px-2">
+          <button
+            onClick={() => handleScrollManual("left")}
+            aria-label="Previous Reviews"
+            className="w-8 h-8 rounded-full bg-ink-2 border border-gold/30 flex items-center justify-center text-cream hover:text-gold hover:border-gold transition-all"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            onClick={() => handleScrollManual("right")}
+            aria-label="Next Reviews"
+            className="w-8 h-8 rounded-full bg-ink-2 border border-gold/30 flex items-center justify-center text-cream hover:text-gold hover:border-gold transition-all"
+          >
+            <ChevronRight size={16} />
+          </button>
         </div>
       </div>
 
-      {/* Auto-moving Infinite Carousel (بيتحرك تلقائي) */}
+      {/* Auto-moving Infinite Carousel with Photos & Verified Details */}
       <div
         className="relative w-full overflow-hidden py-3"
         onMouseEnter={() => setIsPaused(true)}
@@ -268,8 +355,8 @@ export default function ReviewSection() {
         onTouchEnd={() => setIsPaused(false)}
       >
         {/* Soft edge gradient fades */}
-        <div className="absolute start-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute end-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute start-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute end-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
 
         <div
           ref={scrollContainerRef}
@@ -281,17 +368,15 @@ export default function ReviewSection() {
             const reviewText = item.text[lang] || item.text.en || item.text.tr;
             const reviewDate = item.date[lang] || item.date.en || item.date.tr;
             const reviewTag = item.tag[lang] || item.tag.en || item.tag.tr;
+            const photoCaptionText = item.photoCaption ? (item.photoCaption[lang] || item.photoCaption.en || item.photoCaption.tr) : item.dish;
 
             return (
-              <a
+              <div
                 key={`${item.id}-${index}`}
-                href={currentPlatform?.writeReviewUrl || currentPlatform?.link || "https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir+Firuza%C4%9Fa"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-[300px] sm:w-[360px] shrink-0 p-6 rounded-2xl glass-card-strong border-teal-dim/20 hover:border-gold/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_35px_rgba(212,162,76,0.15)] flex flex-col justify-between"
+                className="group w-[310px] sm:w-[380px] shrink-0 p-5 rounded-2xl glass-card-strong border-teal-dim/20 hover:border-gold/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_35px_rgba(212,162,76,0.15)] flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Bar: Platform Badge & Rating */}
+                  {/* Top Bar: Platform Badge, 5 Stars & Exact Date */}
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <div 
                       className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold text-cream"
@@ -308,42 +393,145 @@ export default function ReviewSection() {
                     </div>
                   </div>
 
+                  {/* Customer Food Photo (if attached) */}
+                  {item.photo && (
+                    <div 
+                      onClick={() => setActivePhotoModal(item)}
+                      className="relative w-full h-36 rounded-xl overflow-hidden mb-3.5 border border-gold/20 cursor-zoom-in group/photo"
+                    >
+                      <Image
+                        src={item.photo}
+                        alt={photoCaptionText || item.dish || "Delicious food"}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover/photo:scale-105"
+                        sizes="(max-width: 768px) 300px, 380px"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
+                        <div className="flex items-center justify-between w-full">
+                          <span className="text-xs font-bold text-cream drop-shadow-md flex items-center gap-1">
+                            <Flame size={12} className="text-copper shrink-0" />
+                            {photoCaptionText}
+                          </span>
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-gold font-bold flex items-center gap-1 border border-gold/30">
+                            <Camera size={10} />
+                            Fotoğraf
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Review Text */}
                   <p className="text-[13.5px] sm:text-[14px] text-cream-dim/95 leading-relaxed mb-4 line-clamp-4 italic" style={{ fontFamily: "var(--font-inter)" }}>
                     &ldquo;{reviewText}&rdquo;
                   </p>
                 </div>
 
-                {/* Bottom Reviewer Info */}
+                {/* Bottom Reviewer Info & Direct Platform Verification Link */}
                 <div className="pt-3.5 border-t border-teal-dim/15 flex items-center justify-between mt-auto">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-teal-dim to-ink flex items-center justify-center text-gold font-bold text-sm border border-gold/30 shadow-sm">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-teal-dim to-ink flex items-center justify-center text-gold font-bold text-sm border border-gold/30 shadow-sm shrink-0">
                       {item.initial}
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5">
                         <span className="text-xs sm:text-sm font-bold text-cream group-hover:text-gold transition-colors">{item.author}</span>
-                        <CheckCircle2 size={12} className="text-emerald-400 shrink-0" title={labels.verified[lang] || labels.verified.en} />
+                        <CheckCircle2 size={12} className="text-emerald-400 shrink-0" title={labels.verifiedGuest[lang] || labels.verifiedGuest.en} />
                       </div>
-                      <div className="flex items-center gap-2 text-[10px] text-cream-dim/50">
-                        <span>{reviewTag}</span>
+                      <div className="flex items-center gap-2 text-[10px] text-cream-dim/60">
+                        <span className="font-semibold text-gold/80">{reviewTag}</span>
                         <span>•</span>
                         <span>{reviewDate}</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity text-gold">
+                  <a
+                    href={item.link || currentPlatform?.writeReviewUrl || currentPlatform?.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Verify ${item.author}'s review on ${currentPlatform?.name}`}
+                    className="p-1.5 rounded-lg bg-teal-dim/10 hover:bg-gold/20 text-cream-dim hover:text-gold transition-all"
+                    title={labels.verifyLink[lang] || labels.verifyLink.en}
+                  >
                     <ExternalLink size={14} />
-                  </div>
+                  </a>
                 </div>
-              </a>
+              </div>
             );
           })}
         </div>
       </div>
 
-      {/* Write a Review Callout */}
+      {/* Lightbox Modal for Customer Food Photo */}
+      {activePhotoModal && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
+          onClick={() => setActivePhotoModal(null)}
+        >
+          <div 
+            className="relative max-w-2xl w-full bg-ink-2 border border-gold/30 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.9)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="p-4 flex items-center justify-between border-b border-gold/20">
+              <div className="flex items-center gap-2.5">
+                <PlatformIcon id={activePhotoModal.platform} size="md" />
+                <div>
+                  <h4 className="text-sm font-bold text-cream">{activePhotoModal.author}</h4>
+                  <div className="flex items-center gap-1 text-[11px] text-gold">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={11} className="fill-gold" />
+                    ))}
+                    <span className="text-cream-dim/60 ms-1">
+                      {activePhotoModal.date[lang] || activePhotoModal.date.en || activePhotoModal.date.tr}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => setActivePhotoModal(null)}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-cream flex items-center justify-center transition-all"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* High-res Image */}
+            <div className="relative w-full h-[320px] sm:h-[420px] bg-black">
+              <Image
+                src={activePhotoModal.photo}
+                alt={activePhotoModal.dish || "Dish photo"}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
+            </div>
+
+            {/* Modal Footer Caption & Quote */}
+            <div className="p-4 bg-ink">
+              <p className="text-xs sm:text-sm text-cream/90 italic leading-relaxed mb-2">
+                &ldquo;{activePhotoModal.text[lang] || activePhotoModal.text.en || activePhotoModal.text.tr}&rdquo;
+              </p>
+              <div className="flex items-center justify-between text-xs text-gold font-bold pt-2 border-t border-teal-dim/20">
+                <span>{activePhotoModal.photoCaption ? (activePhotoModal.photoCaption[lang] || activePhotoModal.photoCaption.en || activePhotoModal.photoCaption.tr) : activePhotoModal.dish}</span>
+                <a
+                  href={activePhotoModal.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs text-cream-dim hover:text-gold transition-colors"
+                >
+                  <span>{labels.verifyLink[lang] || labels.verifyLink.en}</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Write a Review Callout Section */}
       <div className="max-w-4xl mx-auto px-4 mt-8 pt-6 border-t border-teal-dim/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-start">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shrink-0">
