@@ -1,8 +1,25 @@
+import { Cairo, Inter } from "next/font/google";
 import { AppProvider } from "@/context/AppContext";
 import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
 import OrderFlowWrapper from "@/components/OrderFlowWrapper";
 import "./globals.css";
+
+const cairo = Cairo({
+  subsets: ["latin", "arabic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-cairo",
+  preload: true,
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+});
 
 export const metadata = {
   metadataBase: new URL("https://kardeslercihangir.com"),
@@ -122,8 +139,8 @@ const restaurantSchema = {
       { "@type": "MenuSection", name: "Meze" },
       { "@type": "MenuSection", name: "Salata" },
       { "@type": "MenuSection", name: "Tatlı" },
-      { "@type": "MenuSection", name: "Soğuk İçecek" }
-    ]
+      { "@type": "MenuSection", name: "Soğuk İçecek" },
+    ],
   },
 };
 
@@ -132,12 +149,9 @@ export default function RootLayout({ children }) {
     <html
       lang="tr"
       suppressHydrationWarning
-      className="h-full antialiased"
+      className={`h-full antialiased ${cairo.variable} ${inter.variable}`}
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
