@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import LandingDishesSection from "../../components/LandingDishesSection";
 import LandingVerifiedReviews from "../../components/LandingVerifiedReviews";
+import HeroImageWithModal from "./HeroImageWithModal";
 
 export const metadata = {
   title: "Authentic Wood-Fired Kebab Near Taksim Square (Since 1998) | Kardeşler Cihangir",
@@ -249,29 +250,11 @@ export default function BestKebabTaksimPage() {
             </div>
           </div>
 
-          {/* Sizzling Photo Showcase */}
-          <div className="relative h-[280px] sm:h-[380px] rounded-2xl sm:rounded-3xl overflow-hidden border border-gold/30 shadow-xl group">
-            <Image
-              src="/images/27-Karisik-Kebap_1.webp"
-              alt="Sultan Mixed Grill Platter Kardeşler Cihangir"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0E0804] via-transparent to-transparent"></div>
-            
-            <div className="absolute bottom-4 start-4 end-4 p-3.5 sm:p-4 rounded-xl glass-card border border-gold/30 backdrop-blur-md">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-cream font-bold text-sm sm:text-base">Sultan’s Mixed Charcoal Feast</h4>
-                  <p className="text-cream-dim/70 text-xs">Selection of artisan kebabs & fresh home mezes</p>
-                </div>
-                <span className="text-gold font-black text-base sm:text-lg">1600 ₺</span>
-              </div>
-            </div>
-          </div>
+          {/* Sizzling Photo Showcase — clickable with fullscreen zoom */}
+          <HeroImageWithModal />
         </div>
       </section>
+
 
       {/* ── 4. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
       <LandingDishesSection currentLocale="en" />

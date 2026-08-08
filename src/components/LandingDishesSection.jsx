@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Flame, Utensils, ArrowUpRight, ArrowUpLeft, ChevronRight, ChevronLeft, Coins, Check } from "lucide-react";
+import { Flame, Utensils, ArrowUpRight, ArrowUpLeft, ChevronRight, ChevronLeft, Coins, Check, ZoomIn } from "lucide-react";
 import { useAppContext } from "../context/AppContext";
 import SaudiRiyalIcon from "./SaudiRiyalIcon";
+import DishModal from "./DishModal";
 
 export const landingDishesData = {
   ar: [
@@ -378,6 +379,7 @@ const uiLabels = {
 
 export default function LandingDishesSection({ currentLocale = "ar" }) {
   const { currency, changeCurrency, convertPrice, getCurrencySymbol } = useAppContext();
+  const [modalDish, setModalDish] = useState(null);
 
   const dishes = landingDishesData[currentLocale] || landingDishesData.en;
   const labels = uiLabels[currentLocale] || uiLabels.en;
@@ -468,7 +470,13 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                 key={dish.id}
                 className="glass-card rounded-2xl overflow-hidden border border-teal-dim/30 hover:border-gold/40 transition-all duration-300 flex flex-col group hover:-translate-y-1"
               >
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden">
+                {/* Clickable Image Area */}
+                <div
+                  className="relative h-48 sm:h-52 w-full overflow-hidden cursor-pointer"
+                  onClick={() => setModalDish(dish)}
+                  role="button"
+                  aria-label={`View details for ${dish.name}`}
+                >
                   <Image
                     src={dish.image}
                     alt={dish.name}
@@ -476,6 +484,13 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  {/* Hover zoom hint overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-12 h-12 rounded-full glass-card-strong flex items-center justify-center border border-white/30">
+                      <ZoomIn size={20} className="text-cream" />
+                    </div>
+                  </div>
+
                   <div className="absolute top-3 start-3 px-2.5 py-1 rounded-md bg-[#0E0804]/80 backdrop-blur-md border border-copper/40 text-copper text-[11px] font-bold uppercase tracking-wider">
                     {dish.tag}
                   </div>
@@ -504,7 +519,10 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                 </div>
 
                 <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
-                  <div>
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => setModalDish(dish)}
+                  >
                     <h3 className="text-base sm:text-lg font-bold text-cream group-hover:text-gold transition-colors">
                       {dish.name}
                     </h3>
@@ -522,6 +540,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3.5 py-1.5 rounded-lg bg-gold/10 hover:bg-gold text-gold hover:text-[#0E0804] border border-gold/30 text-xs font-bold transition-all inline-flex items-center gap-1"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <span>{labels.orderNow}</span>
                       {isRtl ? <ArrowUpLeft size={13} /> : <ArrowUpRight size={13} />}
@@ -545,6 +564,20 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
           </Link>
         </div>
       </div>
+
+      {/* Dish Detail Modal */}
+      {modalDish && (
+        <DishModal
+          isOpen={!!modalDish}
+          setIsOpen={(open) => { if (!open) setModalDish(null); }}
+          customName={modalDish.name}
+          customDesc={modalDish.desc}
+          customPrice={modalDish.priceTRY}
+          customImage={modalDish.image}
+          customTags={["signature"]}
+          hideCart={true}
+        />
+      )}
     </section>
   );
 }
