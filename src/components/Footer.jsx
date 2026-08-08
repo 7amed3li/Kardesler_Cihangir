@@ -235,14 +235,13 @@ export default function Footer() {
           </div>
           <p className="text-cream-dim/50 text-[10px] tracking-widest uppercase flex items-center gap-1">
             {fc.madeBy}
-            <a 
-              href="https://www.hamedmohamed.dev/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-copper hover:text-gold transition-colors underline underline-offset-2"
+            <Link
+              href="/tasarim-gelistirme"
+              className="text-copper hover:text-gold transition-colors underline underline-offset-2 font-medium"
+              title="Tasarım ve Geliştirme: Hamed Mohamed"
             >
               Hamed Mohamed
-            </a>
+            </Link>
           </p>
         </div>
 

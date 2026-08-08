@@ -84,64 +84,86 @@ export const metadata = {
 // Dynamic URL for Schema
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kardeslercihangir.com";
 
-// Restaurant Schema.org JSON-LD
-const restaurantSchema = {
+// Comprehensive Schema.org JSON-LD Graph (Restaurant + WebSite + Person Creator)
+const globalSchemaGraph = {
   "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: "Kardeşler Kebap & Cafe Cihangir",
-  alternateName: "Kardeşler Cihangir",
-  image: `${siteUrl}/images/hero-bg.webp`,
-  url: siteUrl,
-  telephone: "+902122513696",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
-    addressLocality: "Cihangir, Beyoğlu",
-    addressRegion: "İstanbul",
-    postalCode: "34425",
-    addressCountry: "TR",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 41.0310944,
-    longitude: 28.9824818,
-  },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    opens: "09:00",
-    closes: "02:00",
-  },
-  servesCuisine: ["Turkish", "Kebab", "Mediterranean"],
-  priceRange: "₺₺",
-  menu: `${siteUrl}/menu`,
-  acceptsReservations: "True",
-  hasMenu: {
-    "@type": "Menu",
-    name: "Kardeşler Cihangir Menu",
-    url: `${siteUrl}/menu`,
-    hasMenuSection: [
-      { "@type": "MenuSection", name: "Kahvaltı" },
-      { "@type": "MenuSection", name: "Kebap" },
-      { "@type": "MenuSection", name: "Özel Menü" },
-      { "@type": "MenuSection", name: "Mezeli Kebaplar" },
-      { "@type": "MenuSection", name: "Dürümler" },
-      { "@type": "MenuSection", name: "Pide" },
-      { "@type": "MenuSection", name: "Lahmacun" },
-      { "@type": "MenuSection", name: "Meze" },
-      { "@type": "MenuSection", name: "Salata" },
-      { "@type": "MenuSection", name: "Tatlı" },
-      { "@type": "MenuSection", name: "Soğuk İçecek" },
-    ],
-  },
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "@id": `${siteUrl}/#restaurant`,
+      name: "Kardeşler Kebap & Cafe Cihangir",
+      alternateName: "Kardeşler Cihangir",
+      image: `${siteUrl}/images/hero-bg.webp`,
+      url: siteUrl,
+      telephone: "+902122513696",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
+        addressLocality: "Cihangir, Beyoğlu",
+        addressRegion: "İstanbul",
+        postalCode: "34425",
+        addressCountry: "TR",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 41.0310944,
+        longitude: 28.9824818,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "09:00",
+        closes: "02:00",
+      },
+      servesCuisine: ["Turkish", "Kebab", "Mediterranean"],
+      priceRange: "₺₺",
+      menu: `${siteUrl}/menu`,
+      acceptsReservations: "True",
+      hasMenu: {
+        "@type": "Menu",
+        name: "Kardeşler Cihangir Menu",
+        url: `${siteUrl}/menu`,
+        hasMenuSection: [
+          { "@type": "MenuSection", name: "Kahvaltı" },
+          { "@type": "MenuSection", name: "Kebap" },
+          { "@type": "MenuSection", name: "Özel Menü" },
+          { "@type": "MenuSection", name: "Mezeli Kebaplar" },
+          { "@type": "MenuSection", name: "Dürümler" },
+          { "@type": "MenuSection", name: "Pide" },
+          { "@type": "MenuSection", name: "Lahmacun" },
+          { "@type": "MenuSection", name: "Meze" },
+          { "@type": "MenuSection", name: "Salata" },
+          { "@type": "MenuSection", name: "Tatlı" },
+          { "@type": "MenuSection", name: "Soğuk İçecek" },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Kardeşler Cihangir",
+      publisher: {
+        "@id": `${siteUrl}/#restaurant`,
+      },
+      creator: {
+        "@type": "Person",
+        "@id": `${siteUrl}/tasarim-gelistirme#hamed-mohamed`,
+        name: "Hamed Mohamed",
+        jobTitle: "Web Designer & Developer",
+        url: "https://www.hamedmohamed.dev/",
+        sameAs: ["https://www.hamedmohamed.dev/"],
+      },
+    },
+  ],
 };
 
 import Footer from "@/components/Footer";
@@ -157,7 +179,7 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(restaurantSchema),
+            __html: JSON.stringify(globalSchemaGraph),
           }}
         />
       </head>

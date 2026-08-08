@@ -8,6 +8,8 @@ export default function robots() {
           "/menu",
           "/about",
           "/contact",
+          "/tasarim-gelistirme",
+          "/en/design-development",
           "/best-kebab-taksim",
           "/en/best-kebab-taksim",
           "/ar/best-kebab-taksim",

@@ -95,5 +95,29 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/tasarim-gelistirme`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/tasarim-gelistirme`,
+          en: `${baseUrl}/en/design-development`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/design-development`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/tasarim-gelistirme`,
+          en: `${baseUrl}/en/design-development`,
+        },
+      },
+    },
   ];
 }
