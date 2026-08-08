@@ -33,11 +33,14 @@ export default function Footer() {
     return () => observer.disconnect();
   }, []);
 
-  const guideHref = lang === "ar" 
-    ? "/ar/best-kebab-taksim" 
-    : lang === "ru" 
-    ? "/ru/best-kebab-taksim" 
-    : "/best-kebab-taksim";
+  const guideHref = {
+    tr: "/tr/best-kebab-taksim",
+    ar: "/ar/best-kebab-taksim",
+    ru: "/ru/best-kebab-taksim",
+    fa: "/fa/best-kebab-taksim",
+    fr: "/fr/best-kebab-taksim",
+    en: "/best-kebab-taksim",
+  }[lang] || "/best-kebab-taksim";
 
   const isRTL = lang === "ar" || lang === "fa";
   const ArrowIcon = isRTL ? ChevronLeft : ChevronRight;

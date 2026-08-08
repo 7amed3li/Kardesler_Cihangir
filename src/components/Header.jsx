@@ -15,11 +15,14 @@ export default function Header() {
   const [isReservationOpen, setIsReservationOpen] = useState(false);
   const menuRef = useRef(null);
 
-  const guideHref = lang === "ar" 
-    ? "/ar/best-kebab-taksim" 
-    : lang === "ru" 
-    ? "/ru/best-kebab-taksim" 
-    : "/best-kebab-taksim";
+  const guideHref = {
+    tr: "/tr/best-kebab-taksim",
+    ar: "/ar/best-kebab-taksim",
+    ru: "/ru/best-kebab-taksim",
+    fa: "/fa/best-kebab-taksim",
+    fr: "/fr/best-kebab-taksim",
+    en: "/best-kebab-taksim",
+  }[lang] || "/best-kebab-taksim";
 
   const reserveText = {
     tr: "Rezervasyon",
@@ -139,6 +142,24 @@ export default function Header() {
                     >
                       <Phone size={16} className="text-teal" />
                       <span style={{ fontFamily: "var(--font-inter)" }}>{(t.footer && t.footer.contact) ? t.footer.contact : "İletişim"}</span>
+                    </Link>
+                    <div className="h-px bg-teal-dim/20 my-1"></div>
+                    <Link 
+                      href={guideHref} 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="px-4 py-2.5 flex items-center gap-3 text-sm text-gold hover:bg-teal-dim/20 transition-colors font-medium"
+                    >
+                      <Flame size={16} className="text-gold" />
+                      <span style={{ fontFamily: "var(--font-inter)" }}>
+                        {{
+                          ar: "أفضل كباب في تقسيم",
+                          en: "Best Kebab Taksim",
+                          tr: "Taksim En İyi Kebap",
+                          ru: "Лучший кебаб Таксим",
+                          fa: "بهترین کباب تقسیم",
+                          fr: "Meilleur Kebab Taksim",
+                        }[lang] || "Best Kebab Taksim"}
+                      </span>
                     </Link>
                   </div>
                 </div>
