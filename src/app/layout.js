@@ -144,6 +144,8 @@ const restaurantSchema = {
   },
 };
 
+import Footer from "@/components/Footer";
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -166,6 +168,7 @@ export default function RootLayout({ children }) {
           <main className="flex-grow w-full max-w-5xl mx-auto flex flex-col relative">
             {children}
           </main>
+          <Footer />
           <OrderFlowWrapper />
         </AppProvider>
       </body>

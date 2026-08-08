@@ -121,6 +121,28 @@ export default function Footer() {
                   <span>{fc.contact || "Contact & Reservation"}</span>
                 </Link>
               </li>
+              <li>
+                <a 
+                  href="/sitemap.xml" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cream-dim/60 hover:text-gold transition-colors inline-flex items-center gap-1.5 group text-xs"
+                >
+                  <ArrowIcon size={11} className="text-teal group-hover:translate-x-0.5 transition-transform" />
+                  <span>Sitemap.xml</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/robots.txt" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cream-dim/60 hover:text-gold transition-colors inline-flex items-center gap-1.5 group text-xs"
+                >
+                  <ArrowIcon size={11} className="text-teal group-hover:translate-x-0.5 transition-transform" />
+                  <span>Robots.txt</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -141,13 +163,25 @@ export default function Footer() {
                 +90 212 251 36 96
               </a>
             </div>
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 mb-4">
               <Clock size={15} className="text-teal shrink-0" />
-              <span className="text-cream-dim/80 text-xs sm:text-sm font-light">{fc.hoursValue}</span>
+              <p className="text-cream-dim/80 text-xs sm:text-sm font-light" style={{ fontFamily: "var(--font-inter)" }}>
+                {fc.hours}
+              </p>
             </div>
+            {/* WhatsApp Quick Link */}
+            <a
+              href="https://wa.me/905060453906"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-all duration-300 group"
+            >
+              <MessageCircle size={16} className="text-[#25D366]" />
+              <span className="text-[#25D366] font-medium text-xs sm:text-sm">{fc.whatsapp}</span>
+            </a>
           </div>
 
-          {/* 4. Socials & WhatsApp */}
+          {/* 4. Socials */}
           <div className="flex flex-col items-center sm:items-start">
             <h3 className="text-xs sm:text-sm font-bold text-cream tracking-widest uppercase mb-4 sm:mb-6">
               {fc.social}
@@ -161,17 +195,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-
-            {/* WhatsApp CTA */}
-            <a
-              href="https://wa.me/905060453906"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-all duration-300 group"
-            >
-              <MessageCircle size={16} className="text-[#25D366]" />
-              <span className="text-[#25D366] font-medium text-xs sm:text-sm">{fc.whatsapp}</span>
-            </a>
           </div>
         </div>
 
@@ -186,15 +209,36 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-cream-dim/40 text-xs tracking-wider" style={{ fontFamily: "var(--font-inter)" }}>
-            &copy; {currentYear} Kardeşler Kebap Cihangir. {fc.rights}
-          </p>
-          <p className="text-cream-dim/30 text-[10px] tracking-widest uppercase flex items-center gap-1">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-start">
+            <p className="text-cream-dim/60 text-xs tracking-wider" style={{ fontFamily: "var(--font-inter)" }}>
+              &copy; {currentYear} Kardeşler Kebap Cihangir. {fc.rights}
+            </p>
+            <div className="flex items-center gap-3 text-xs text-cream-dim/50">
+              <a 
+                href="/sitemap.xml" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-gold transition-colors underline-offset-2 hover:underline"
+              >
+                Sitemap (XML)
+              </a>
+              <span>&bull;</span>
+              <a 
+                href="/robots.txt" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-gold transition-colors underline-offset-2 hover:underline"
+              >
+                Robots.txt
+              </a>
+            </div>
+          </div>
+          <p className="text-cream-dim/50 text-[10px] tracking-widest uppercase flex items-center gap-1">
             {fc.madeBy}
             <a 
               href="https://www.hamedmohamed.dev/" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" 
               className="text-copper hover:text-gold transition-colors underline underline-offset-2"
             >
               Hamed Mohamed
