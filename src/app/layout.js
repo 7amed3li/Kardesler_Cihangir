@@ -84,7 +84,7 @@ export const metadata = {
 // Dynamic URL for Schema
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kardeslercihangir.com";
 
-// Comprehensive Schema.org JSON-LD Graph (Restaurant + WebSite + Person Creator)
+// Comprehensive Schema.org JSON-LD Graph (Restaurant + WebSite + Person Creator + ImageGallery)
 const globalSchemaGraph = {
   "@context": "https://schema.org",
   "@graph": [
@@ -92,10 +92,77 @@ const globalSchemaGraph = {
       "@type": "Restaurant",
       "@id": `${siteUrl}/#restaurant`,
       name: "Kardeşler Kebap & Cafe Cihangir",
-      alternateName: "Kardeşler Cihangir",
-      image: `${siteUrl}/images/hero-bg.webp`,
+      alternateName: ["Kardeşler Cihangir", "Kardesler Cihangir", "كاردشلر جيهانغير"],
+      description: "Authentic Turkish kebab, pide & lahmacun restaurant in Cihangir, 5 minutes from Taksim Square. Serving traditional wood-fired cuisine since 1998.",
       url: siteUrl,
       telephone: "+902122513696",
+      logo: {
+        "@type": "ImageObject",
+        "@id": `${siteUrl}/#logo`,
+        url: `${siteUrl}/logo.webp`,
+        contentUrl: `${siteUrl}/logo.webp`,
+        caption: "Kardeşler Kebap & Cafe Cihangir — Restaurant Logo",
+        width: 512,
+        height: 512,
+      },
+      image: [
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/hero-bg.webp`,
+          caption: "Kardeşler Cihangir — Traditional Turkish Kebab & Pide Restaurant",
+          width: 1200,
+          height: 630,
+        },
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/adana.webp`,
+          caption: "Adana Kebab — Charcoal-grilled spiced lamb kebab at Kardeşler Cihangir",
+          width: 1024,
+          height: 677,
+        },
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/kahvalti.webp`,
+          caption: "Traditional Turkish Breakfast at Kardeşler Cihangir",
+          width: 1024,
+          height: 677,
+        },
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/lahmacun.webp`,
+          caption: "Wood-fired Lahmacun — Thin crispy Turkish pizza at Kardeşler Cihangir",
+          width: 1024,
+          height: 691,
+        },
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/kasarli_pide.webp`,
+          caption: "Kaşarlı Pide — Cheese-filled Turkish pide baked in stone oven",
+          width: 1024,
+          height: 425,
+        },
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/27-Karisik-Kebap_1.webp`,
+          caption: "Karışık Kebap — Mixed grill platter with lamb, chicken & Adana kebab",
+          width: 1024,
+          height: 677,
+        },
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/kunefe.webp`,
+          caption: "Künefe — Traditional hot cheese dessert with syrup",
+          width: 1024,
+          height: 677,
+        },
+        {
+          "@type": "ImageObject",
+          url: `${siteUrl}/images/21-Ali-Nazik-Kebap.webp`,
+          caption: "Ali Nazik Kebab — Smoky eggplant purée topped with tender lamb",
+          width: 1024,
+          height: 677,
+        },
+      ],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
@@ -123,10 +190,19 @@ const globalSchemaGraph = {
         opens: "09:00",
         closes: "02:00",
       },
-      servesCuisine: ["Turkish", "Kebab", "Mediterranean"],
+      servesCuisine: ["Turkish", "Kebab", "Mediterranean", "Pide", "Lahmacun"],
       priceRange: "₺₺",
       menu: `${siteUrl}/menu`,
       acceptsReservations: "True",
+      currenciesAccepted: "TRY",
+      paymentAccepted: "Cash, Credit Card",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.5",
+        reviewCount: "1200",
+        bestRating: "5",
+        worstRating: "1",
+      },
       hasMenu: {
         "@type": "Menu",
         name: "Kardeşler Cihangir Menu",
@@ -145,6 +221,10 @@ const globalSchemaGraph = {
           { "@type": "MenuSection", name: "Soğuk İçecek" },
         ],
       },
+      sameAs: [
+        "https://www.instagram.com/kardeslerkebapcihangir/",
+        "https://www.google.com/maps/place/Karde%C5%9Fler+Kebap+Cihangir/",
+      ],
     },
     {
       "@type": "WebSite",
@@ -162,6 +242,27 @@ const globalSchemaGraph = {
         url: "https://www.hamedmohamed.dev/",
         sameAs: ["https://www.hamedmohamed.dev/"],
       },
+    },
+    {
+      "@type": "ImageGallery",
+      "@id": `${siteUrl}/#gallery`,
+      name: "Kardeşler Cihangir — Photo Gallery",
+      url: `${siteUrl}/menu`,
+      about: { "@id": `${siteUrl}/#restaurant` },
+      image: [
+        `${siteUrl}/images/hero-bg.webp`,
+        `${siteUrl}/images/adana.webp`,
+        `${siteUrl}/images/kahvalti.webp`,
+        `${siteUrl}/images/lahmacun.webp`,
+        `${siteUrl}/images/kasarli_pide.webp`,
+        `${siteUrl}/images/27-Karisik-Kebap_1.webp`,
+        `${siteUrl}/images/kunefe.webp`,
+        `${siteUrl}/images/21-Ali-Nazik-Kebap.webp`,
+        `${siteUrl}/images/18-Iskender-Kebap.webp`,
+        `${siteUrl}/images/beyti-1024x677.webp`,
+        `${siteUrl}/images/mezeli_adana.webp`,
+        `${siteUrl}/images/24-Kuzu-Pirzola.webp`,
+      ],
     },
   ],
 };
