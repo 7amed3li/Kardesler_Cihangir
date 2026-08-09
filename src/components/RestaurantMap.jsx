@@ -13,7 +13,7 @@ export default function RestaurantMap({
   const [isMapVisible, setIsMapVisible] = useState(false);
   const mapRef = useRef(null);
 
-  const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir";
+  const googleMapsUrl = "https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g";
   
   // High-accuracy Google Maps embed with place marker
   const mapEmbedUrl = "https://maps.google.com/maps?q=Karde%C5%9Fler+Kebap,+Firuza%C4%9Fa+Camii+Sok.+No:1A,+Cihangir,+Beyo%C4%9Flu,+%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed";

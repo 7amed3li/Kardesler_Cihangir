@@ -131,7 +131,7 @@ export default function FrenchLandingPage() {
               <span>Réservation VIP via WhatsApp</span>
             </a>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir"
+              href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-card border border-teal-dim/40 text-cream font-medium text-sm hover:border-gold/50 hover:bg-gold/5 transition-all"

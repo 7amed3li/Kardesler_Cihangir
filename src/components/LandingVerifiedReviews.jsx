@@ -62,7 +62,7 @@ export default function LandingVerifiedReviews({ currentLocale = "ar" }) {
   // Pick top 3 verified google reviews from reviewsList
   const googleReviews = reviewsList.filter((r) => r.platform === "google").slice(0, 3);
   const googlePlatform = platforms.find((p) => p.id === "google") || {
-    link: "https://www.google.com/maps/search/?api=1&query=Kardeşler+Kebap+Firuzağa+Cihangir+Beyoğlu",
+    link: "https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g",
     rating: "4.6",
     reviewsCount: "1,280+",
   };

@@ -151,7 +151,7 @@ export default function Footer() {
             <h3 className="text-xs sm:text-sm font-bold text-cream tracking-widest uppercase mb-4 sm:mb-6">
               {fc.contact}
             </h3>
-            <a href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 mb-3 text-start group hover:opacity-100 transition-all duration-300">
+            <a href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 mb-3 text-start group hover:opacity-100 transition-all duration-300">
               <MapPin size={15} className="text-teal mt-0.5 shrink-0 group-hover:animate-bounce" />
               <p className="text-cream-dim/80 text-xs sm:text-sm font-light leading-relaxed max-w-xs group-hover:text-cream transition-colors underline-offset-2 group-hover:underline decoration-teal/40" style={{ fontFamily: "var(--font-inter)" }}>
                 Firuzağa Mah. Firuzağa Camii Sok.<br/> No:1A, Cihangir, Beyoğlu, İstanbul

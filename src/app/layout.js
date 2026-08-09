@@ -3,6 +3,7 @@ import { AppProvider } from "@/context/AppContext";
 import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
 import OrderFlowWrapper from "@/components/OrderFlowWrapper";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -287,6 +288,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col bg-ink text-cream font-[var(--font-inter)]" suppressHydrationWarning>
         <AppProvider>
           <SmartSplash />
+          <Analytics />
           <Header />
           <main className="flex-grow w-full max-w-5xl mx-auto flex flex-col relative">
             {children}

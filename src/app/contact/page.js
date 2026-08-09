@@ -90,7 +90,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Address */}
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir"
+            href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
             target="_blank"
             rel="noopener noreferrer"
             className="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-copper/40 transition-all duration-300 group animate-fadeInUp"

@@ -140,7 +140,7 @@ export default function RussianLandingPage() {
               <span>VIP Бронь столика в WhatsApp</span>
             </a>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir"
+              href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-card border border-teal-dim/40 text-cream font-medium text-sm hover:border-gold/50 hover:bg-gold/5 transition-all"
@@ -173,6 +173,141 @@ export default function RussianLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ── NEW SEO CONTENT SECTION (RUSSIAN) ── */}
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#0E0804]">
+        <article className="max-w-4xl mx-auto space-y-16">
+          
+          {/* Section A: The Story */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider mb-2">
+              <Compass size={14} />
+              <span>Наше Наследие</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              История Kardeşler Cihangir — С 1998 года
+            </h2>
+            <div className="space-y-4 text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
+              <p>
+                Всего в 5 минутах ходьбы от шумного центра площади Таксим находится Джихангир, самый исторический и богемный район Бейоглу. Именно здесь, среди извилистых улочек, любимых художниками, писателями и ценителями аутентичной еды, в 1998 году был основан ресторан Kardeşler Kebap.
+              </p>
+              <p>
+                Уже более двух десятилетий мы остаемся верны основным принципам настоящей турецкой кухни. В то время как в окрестностях Таксима и на улице Истикляль открывалось и закрывалось бесчисленное множество ресторанов, ориентированных на туристов, Kardeşler Cihangir оставался оплотом истинного местного вкуса. Мы — не просто ресторан; мы — семейная традиция, посвященная сохранению богатого наследия анатолийского гриля и выпечки в каменной печи в самом сердце Стамбула.
+              </p>
+              <p>
+                Когда вы ищете лучший кебаб в Таксиме, вы, вероятно, ищете нечто большее, чем просто еда — вы ищете опыт, укоренившийся в подлинности. Наша приверженность качественным ингредиентам, традиционным методам приготовления и теплому турецкому гостеприимству сделала нас излюбленным местом как для местных жителей Джихангира, так и для взыскательных путешественников со всего мира.
+              </p>
+            </div>
+          </div>
+
+          {/* Section B: The Craft */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider mb-2">
+              <Flame size={14} />
+              <span>Ремесло Приготовления</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              Наше Ремесло: Дубовый Уголь и Каменная Печь 450°C
+            </h2>
+            <div className="space-y-4 text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
+              <p>
+                Секрет незабываемого турецкого кебаба кроется исключительно в приготовлении. В Kardeşler Cihangir мы не идем на компромиссы. Мы используем только 100% свежее, ежедневное халяльное мясо, полностью отвергая использование замороженных продуктов.
+              </p>
+              <p>
+                Наши шеф-повара (уста) продолжают использовать традиционный тяжелый нож в форме полумесяца, известный как "Zırh", для ручной рубки мяса. Эта трудоемкая анатолийская техника сохраняет текстуру и соки мяса так, как не могут сравниться современные коммерческие мясорубки. После приготовления кебабы медленно обжариваются на настоящих дубовых углях, пропитываясь тем самым фирменным, неотразимым ароматом дымка.
+              </p>
+              <p>
+                Столь же важно наше мастерство в работе с тестом. Наша традиционная каменная печь, раскаленная до 450°C, — это сердце нашей пекарни. Будь то тонкая хрустящая основа нашего лахмаджуна или мягкая корочка пиде, выпеченного на дровах, каждый продукт выпекается свежим на заказ. Интенсивный жар каменной печи создает идеальный баланс хрустящей корочки снаружи и мягкой, ароматной начинки внутри.
+              </p>
+            </div>
+          </div>
+
+          {/* Section C: What to Try */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider mb-2">
+              <Utensils size={14} />
+              <span>Фирменные Блюда</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              Что Попробовать: Самые Популярные Анатолийские Классические Блюда
+            </h2>
+            <div className="space-y-4 text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
+              <p>
+                В меню, состоящем из более чем 100 тщательно приготовленных блюд, Kardeşler Cihangir предлагает комплексное путешествие по турецкой кухне. Однако несколько наших фирменных блюд приобрели легендарный статус среди наших гостей:
+              </p>
+              <ul className="space-y-3 pl-2 mt-4">
+                <li className="flex gap-3">
+                  <Star size={18} className="text-gold shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-cream block">Классический Адана Кебаб (Adana Kebab)</strong>
+                    <span>Наша абсолютная икона. Рубленое вручную мясо ягненка и говядины, идеально приправленное хлопьями красного перца и обжаренное на широком шампуре над дубовыми углями. Подается с лавашом, испеченным на дровах.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <Star size={18} className="text-gold shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-cream block">Пиде из Каменной Печи (Турецкая Пицца)</strong>
+                    <span>Доступна в более чем 15 вариантах, от классического с мясным фаршем (Kıymalı) до плавящихся местных сыров (Kaşarlı) и традиционной вяленой говядины (Pastırmalı), и все они выпекаются на горячих каменных плитах.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <Star size={18} className="text-gold shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-cream block">Кебаб Али Назик (Ali Nazik Kebab)</strong>
+                    <span>Королевский османский деликатес, состоящий из нежных маринованных кусочков баранины, подаваемых на бархатистой подушке из пюре из копченых, запеченных на углях баклажанов, смешанных с чесночным йогуртом.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <Star size={18} className="text-gold shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-cream block">Хрустящий Лахмаджун (Lahmacun)</strong>
+                    <span>Тонкое хрустящее тесто, покрытое мелко нарезанной смесью из мясного фарша, свежих помидоров, лука и петрушки, выпекается за считанные секунды в нашей высокотемпературной печи.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Section D: Visit Us */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider mb-2">
+              <MapPin size={14} />
+              <span>Расположение и Часы Работы</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              Посетите Нас: Как Добраться от Площади Таксим
+            </h2>
+            <div className="space-y-4 text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
+              <p>
+                Найти аутентичную, нетуристическую еду рядом с Таксимом бывает непросто, но добраться до Kardeşler Cihangir исключительно легко. Мы находимся всего в 450 метрах от площади Таксим. Короткая и приятная 5-минутная прогулка вниз по Defterdar Yokuşu (в сторону исторической мечети Фирузага) приведет вас прямо к нашим дверям.
+              </p>
+              <div className="bg-[#140D07] p-5 rounded-xl border border-teal-dim/20 mt-4">
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <MapPin size={18} className="text-copper shrink-0" />
+                    <span><strong>Адрес:</strong> Firuzağa Mah. Defterdar Yokuşu No:1/A, Cihangir, Beyoğlu, İstanbul</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Clock size={18} className="text-teal shrink-0" />
+                    <span><strong>Часы Работы:</strong> Открыты ежедневно с 09:00 до 02:00 ночи</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Phone size={18} className="text-gold shrink-0" />
+                    <span><strong>Бронирование и Доставка:</strong> +90 212 251 36 96</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <MessageCircle size={18} className="text-[#25D366] shrink-0" />
+                    <span><strong>WhatsApp:</strong> +90 506 045 39 06</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </article>
+      </section>
+
+
 
       {/* ── 3. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
       <LandingDishesSection currentLocale="ru" />

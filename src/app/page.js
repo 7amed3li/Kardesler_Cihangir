@@ -113,7 +113,7 @@ export default function Home() {
             style={{ transitionDelay: "100ms" }}
           >
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Karde%C5%9Fler+Kebap+Cihangir" 
+              href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-teal-dim/40 glass-card text-xs tracking-widest hover:border-teal hover:bg-teal-dim/20 transition-all duration-300 cursor-pointer group"
