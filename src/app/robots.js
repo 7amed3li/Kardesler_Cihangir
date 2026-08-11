@@ -22,7 +22,6 @@ export default function robots() {
     "/manifest.webmanifest",
   ];
 
-  // Pages that should never be crawled
   const blockedPages = [
     "/wp-admin/",
     "/wp-includes/",
@@ -31,16 +30,6 @@ export default function robots() {
     "/feed/",
     "/author/",
     "/tag/",
-    "/urun/",
-    "/urun-kategori/",
-    "/product/",
-    "/product-category/",
-    "/shop/",
-    "/cart/",
-    "/checkout/",
-    "/my-account/",
-    "/https:/",
-    "/http:/",
     "/api/",
   ];
 
