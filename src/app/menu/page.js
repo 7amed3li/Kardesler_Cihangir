@@ -121,11 +121,39 @@ const featuredDishes = [
       ar: "كنافة مقرمشة على الجمر محشوة بجبنة هاتاي الذائبة ومغطاة بالفستق العنتابي الفاخر والقطر الساخن.",
       en: "Golden crispy shredded pastry layered with stretchy Hatay cheese, pure butter, warm syrup and crushed Gaziantep pistachios."
     }
+  },
+  {
+    id: "iskender_kebap",
+    menuItemId: "iskender_kebap",
+    categoryId: "kebap",
+    price: 360.0,
+    image: "/images/18-Iskender-Kebap.webp",
+    badge: { tr: "🔥 EN ÇOK SATAN", ar: "🔥 الأكثر مبيعاً", en: "🔥 BEST SELLER" },
+    title: { tr: "İskender Kebap", ar: "إسكندر كباب الأصلي", en: "Traditional Iskender Kebab" },
+    desc: {
+      tr: "Özel pide üzerinde döner, sıcak tereyağı ve taze yoğurt.",
+      ar: "شرائح اللحم على قطع الخبز مع زبدة ساخنة وصلصة الطماطم والزبادي.",
+      en: "Thinly cut grilled meat on pita with hot tomato sauce over pieces of pita bread and generously slathered with melted sheep butter and yogurt."
+    }
+  },
+  {
+    id: "adana_urfa",
+    menuItemId: "adana_urfa",
+    categoryId: "kebap",
+    price: 300.0,
+    image: "/images/adana.webp",
+    badge: { tr: "⭐ MÜŞTERİ FAVORİSİ", ar: "⭐ المفضل للزبائن", en: "⭐ CUSTOMER FAVORITE" },
+    title: { tr: "Adana / Urfa Kebap", ar: "أضنة / أورفا كباب", en: "Adana / Urfa Kebab" },
+    desc: {
+      tr: "Zırh kıymasından efsane Adana kebap.",
+      ar: "كباب أضنة الحار أو أورفا العادي المفروم يدوياً.",
+      en: "Hand-minced meat kebab mounted on a wide iron skewer and grilled on an open mangal filled with burning charcoal."
+    }
   }
 ];
 
 /**
- * Appetite-Inducing Featured Specials Showcase (Stories Style)
+ * Appetite-Inducing Featured Specials Showcase (Portrait Cards Style)
  */
 function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
   const { lang, menuData: contextMenuData } = useAppContext();
@@ -133,35 +161,49 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
   const [selectedDish, setSelectedDish] = useState(null);
 
   return (
-    <section className="relative w-full overflow-hidden bg-ink-2 pt-6 pb-4 border-b border-teal-dim/15">
+    <section className="relative w-full overflow-hidden bg-ink pt-6 pb-4 border-b border-teal-dim/15">
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-lg font-bold text-cream mb-4 flex items-center gap-2" style={{ fontFamily: "var(--font-cairo)" }}>
-          <span className="text-gold text-xl">★</span> 
-          {activeLang === "ar" ? "مختارات الشيف" : activeLang === "en" ? "Chef's Specials" : "Şefin Seçimleri"}
+        <h2 className="text-xl sm:text-2xl font-black text-cream mb-4 flex items-center gap-2" style={{ fontFamily: "var(--font-cairo)" }}>
+          <span className="text-gold text-2xl">🌟</span> 
+          {activeLang === "ar" ? "الأكثر مبيعاً" : activeLang === "en" ? "Best Sellers" : "Çok Satanlar"}
         </h2>
         
-        <div className="flex overflow-x-auto gap-4 sm:gap-6 no-scrollbar pb-2 px-1">
+        <div className="flex overflow-x-auto gap-3 sm:gap-4 no-scrollbar pb-3 px-1 snap-x snap-mandatory">
           {featuredDishes.map((dish) => (
              <div 
                 key={dish.id} 
-                className="flex flex-col items-center gap-2 shrink-0 cursor-pointer group" 
+                className="relative flex-none w-[140px] sm:w-[180px] h-[220px] sm:h-[280px] rounded-2xl overflow-hidden cursor-pointer group shadow-xl snap-center" 
                 onClick={() => setSelectedDish(dish)}
              >
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-[3px] border-gold/40 group-hover:border-gold transition-colors shadow-lg">
-                   <Image 
-                      src={dish.image} 
-                      alt={dish.title[activeLang] || dish.title.en} 
-                      fill 
-                      style={{objectFit:"cover"}} 
-                      sizes="96px"
-                   />
+                {/* Background Image */}
+                <Image 
+                   src={dish.image} 
+                   alt={dish.title[activeLang] || dish.title.en} 
+                   fill 
+                   style={{objectFit:"cover"}} 
+                   sizes="(max-width: 640px) 140px, 180px"
+                   className="transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Gradient Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                
+                {/* Top Badge */}
+                <div className="absolute top-2 start-2 end-2">
+                   <span className="inline-block px-2 py-1 bg-black/60 backdrop-blur-md rounded-md border border-gold/40 text-[9px] sm:text-[10px] font-bold text-gold tracking-wide truncate max-w-full">
+                     {dish.badge[activeLang] || dish.badge.tr}
+                   </span>
                 </div>
-                <span 
-                   className="text-[10px] sm:text-[11px] text-center font-bold text-cream-dim group-hover:text-gold transition-colors max-w-[80px] sm:max-w-[96px] leading-tight line-clamp-2"
-                   style={{ fontFamily: "var(--font-inter)" }}
-                >
-                   {dish.title[activeLang] || dish.title.en}
-                </span>
+
+                {/* Bottom Title */}
+                <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4">
+                   <h3 
+                     className="text-sm sm:text-base font-bold text-cream leading-tight shadow-black drop-shadow-md line-clamp-2"
+                     style={{ fontFamily: "var(--font-cairo)" }}
+                   >
+                     {dish.title[activeLang] || dish.title.en}
+                   </h3>
+                </div>
              </div>
           ))}
         </div>
