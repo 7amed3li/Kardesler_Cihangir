@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { menuData } from "@/data/menuData";
 import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
+import DishModal from "@/components/DishModal";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
@@ -124,314 +125,84 @@ const featuredDishes = [
 ];
 
 /**
- * Appetite-Inducing Featured Specials Showcase
+ * Appetite-Inducing Featured Specials Showcase (Stories Style)
  */
 function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
-  const { lang, convertPrice, getCurrencySymbol, addToCart, removeFromCart, getItemQuantity } = useAppContext();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
-
+  const { lang, menuData: contextMenuData } = useAppContext();
   const activeLang = lang || "tr";
-  const currentDish = featuredDishes[activeIndex];
-  const totalItemsCount = menuData.reduce((acc, cat) => acc + (cat.items ? cat.items.length : 0), 0);
-
-  // Safe Price Formatter returning JSX
-  const formatItemPrice = (priceVal) => {
-    const symbol = getCurrencySymbol ? getCurrencySymbol() : "₺";
-    const formatted = convertPrice ? convertPrice(priceVal) : priceVal;
-    return <span className="flex items-center gap-1">{formatted} {symbol}</span>;
-  };
-
-  // Auto-play timer (pauses on interaction)
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % featuredDishes.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [isPaused]);
-
-  const handleNext = (e) => {
-    if (e) e.stopPropagation();
-    setIsPaused(true);
-    setActiveIndex((prev) => (prev + 1) % featuredDishes.length);
-  };
-
-  const handlePrev = (e) => {
-    if (e) e.stopPropagation();
-    setIsPaused(true);
-    setActiveIndex((prev) => (prev - 1 + featuredDishes.length) % featuredDishes.length);
-  };
-
-  // Touch Swipe for mobile
-  const handleTouchStart = (e) => {
-    setTouchStart(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e) => {
-    if (!touchStart) return;
-    const diff = touchStart - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 45) {
-      if (diff > 0) handleNext();
-      else handlePrev();
-    }
-    setTouchStart(null);
-  };
-
-  // Find exact menu item object to support 1-tap cart actions
-  const matchedMenuItem = menuData
-    .flatMap((c) => c.items || [])
-    .find((it) => it.id === currentDish.menuItemId) || {
-    id: currentDish.menuItemId,
-    price: currentDish.price,
-    image: currentDish.image,
-  };
-
-  const qty = getItemQuantity(matchedMenuItem.id);
-
-  // Get 3 circular items for bottom orbit
-  const len = featuredDishes.length;
-  const prevDishIndex = (activeIndex - 1 + len) % len;
-  const nextDishIndex = (activeIndex + 1) % len;
+  const [selectedDish, setSelectedDish] = useState(null);
 
   return (
-    <section 
-      className="relative w-full overflow-hidden bg-gradient-to-b from-ink via-ink-2 to-ink border-b border-teal-dim/15"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      {/* ── Background Subtle Warmth ── */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 start-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-copper/10 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 pt-5 pb-6">
+    <section className="relative w-full overflow-hidden bg-ink-2 pt-6 pb-4 border-b border-teal-dim/15">
+      <div className="max-w-5xl mx-auto px-4">
+        <h2 className="text-lg font-bold text-cream mb-4 flex items-center gap-2" style={{ fontFamily: "var(--font-cairo)" }}>
+          <span className="text-gold text-xl">★</span> 
+          {activeLang === "ar" ? "مختارات الشيف" : activeLang === "en" ? "Chef's Specials" : "Şefin Seçimleri"}
+        </h2>
         
-        {/* ── Brand Header ── */}
-        <div className="text-center mb-4">
-          <div className="inline-flex items-center justify-center gap-2 mb-1.5">
-            <span className="h-px w-8 bg-gold/40" />
-            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.3em] text-gold" style={{ fontFamily: "var(--font-inter)" }}>
-              Kardeşler Cihangir
-            </span>
-            <span className="h-px w-8 bg-gold/40" />
-          </div>
-          <h1 
-            className="text-2xl sm:text-3xl font-black text-cream tracking-tight"
-            style={{ fontFamily: "var(--font-cairo)" }}
-          >
-            {activeLang === "ar" ? "قائمة المأكولات والمشويات" : activeLang === "en" ? "Digital Dining Menu" : "Lezzet Menüsü"}
-          </h1>
-          <p className="text-cream-dim/60 text-xs mt-0.5">
-            {totalItemsCount} {activeLang === "ar" ? "صنف محضر على الفحم والحطب" : activeLang === "en" ? "Handcrafted wood-fired dishes" : "Közde ve taş fırında pişen lezzet"}
-          </p>
-        </div>
-
-        {/* ── Hero Dish Spotlight Card ── */}
-        <div className="relative rounded-2xl overflow-hidden border border-gold/25 bg-ink-2/90 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-md">
-          
-          <div className="grid grid-cols-1 md:grid-cols-12 items-center">
-            
-            {/* Dish High-Res Image with Badge & Fixed LTR Arrow Controls */}
-            <div className="relative md:col-span-7 h-[230px] sm:h-[290px] w-full overflow-hidden bg-ink">
-              <Image
-                key={currentDish.id}
-                src={currentDish.image}
-                alt={currentDish.title[activeLang] || currentDish.title.tr}
-                fill
-                priority
-                style={{ objectFit: "cover" }}
-                sizes="(max-width: 768px) 100vw, 600px"
-                className="transition-transform duration-700 hover:scale-105"
-              />
-              
-              {/* Image Gradient Edge */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-ink-2" />
-
-              {/* Quality Badge */}
-              <div className="absolute top-3 start-3">
-                <span className="px-3 py-1 rounded-full bg-ink/85 border border-gold/40 backdrop-blur-md text-[10px] sm:text-xs font-bold text-gold tracking-widest uppercase shadow-md">
-                  {currentDish.badge[activeLang] || currentDish.badge.tr}
-                </span>
-              </div>
-
-              {/* Price Tag Overlay on Mobile */}
-              <div className="absolute bottom-3 end-3 md:hidden">
-                <span className="px-3 py-1 rounded-lg bg-ink/90 border border-copper/50 backdrop-blur-md text-sm font-black text-copper tracking-wide shadow-lg">
-                  {formatItemPrice(currentDish.price)}
-                </span>
-              </div>
-
-              {/* Carousel Arrows on Image - Locked LTR to avoid RTL inversion */}
-              <div dir="ltr" className="absolute inset-x-2 top-1/2 -translate-y-1/2 flex items-center justify-between pointer-events-none z-10">
-                <button
-                  type="button"
-                  onClick={handlePrev}
-                  aria-label="Previous dish"
-                  className="pointer-events-auto w-8 h-8 rounded-full bg-ink/80 hover:bg-copper text-cream border border-gold/30 flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 active:scale-95"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  aria-label="Next dish"
-                  className="pointer-events-auto w-8 h-8 rounded-full bg-ink/80 hover:bg-copper text-cream border border-gold/30 flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 active:scale-95"
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
-            </div>
-
-            {/* Dish Story, Details & Action */}
-            <div className="md:col-span-5 p-4 sm:p-6 flex flex-col justify-between text-start">
-              <div>
-                
-                {/* Desktop Price */}
-                <div className="hidden md:flex items-center justify-between mb-2">
-                  <span className="text-[11px] font-bold text-gold uppercase tracking-wider">
-                    {activeLang === "ar" ? "مختارات الشيف" : activeLang === "en" ? "Chef's Special" : "Şefin Seçimi"}
-                  </span>
-                  <span className="text-lg font-black text-copper tracking-wide">
-                    {formatItemPrice(currentDish.price)}
-                  </span>
+        <div className="flex overflow-x-auto gap-4 sm:gap-6 no-scrollbar pb-2 px-1">
+          {featuredDishes.map((dish) => (
+             <div 
+                key={dish.id} 
+                className="flex flex-col items-center gap-2 shrink-0 cursor-pointer group" 
+                onClick={() => setSelectedDish(dish)}
+             >
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-[3px] border-gold/40 group-hover:border-gold transition-colors shadow-lg">
+                   <Image 
+                      src={dish.image} 
+                      alt={dish.title[activeLang] || dish.title.en} 
+                      fill 
+                      style={{objectFit:"cover"}} 
+                      sizes="96px"
+                   />
                 </div>
-
-                {/* Dish Title */}
-                <h2 
-                  className="text-lg sm:text-xl font-bold text-cream mb-2 leading-tight"
-                  style={{ fontFamily: "var(--font-cairo)" }}
+                <span 
+                   className="text-[10px] sm:text-[11px] text-center font-bold text-cream-dim group-hover:text-gold transition-colors max-w-[80px] sm:max-w-[96px] leading-tight line-clamp-2"
+                   style={{ fontFamily: "var(--font-inter)" }}
                 >
-                  {currentDish.title[activeLang] || currentDish.title.tr}
-                </h2>
-
-                {/* Dish Appetizing Description */}
-                <p className="text-cream-dim/75 text-xs sm:text-sm leading-relaxed mb-4 font-normal">
-                  {currentDish.desc[activeLang] || currentDish.desc.tr}
-                </p>
-              </div>
-
-              {/* Action Buttons: Add to Cart + Jump to Category */}
-              <div className="flex items-center gap-2.5 pt-2 border-t border-teal-dim/15">
-                {qty === 0 ? (
-                  <button
-                    onClick={() => addToCart(matchedMenuItem)}
-                    className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-copper to-brick hover:brightness-110 text-cream text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-[0_4px_15px_rgba(217,116,60,0.35)] active:scale-95"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    <Plus size={16} strokeWidth={2.5} />
-                    <span>{activeLang === "ar" ? "أضف للطلب" : activeLang === "en" ? "Add to Order" : "Sepete Ekle"}</span>
-                  </button>
-                ) : (
-                  <div className="flex-1 flex items-center justify-between bg-ink border border-copper/50 rounded-xl px-3 py-1.5 shadow-md">
-                    <span className="text-xs font-bold text-gold flex items-center gap-1">
-                      <Check size={14} className="text-teal" />
-                      {activeLang === "ar" ? "تمت الإضافة" : activeLang === "en" ? "In Order" : "Eklendi"} ({qty})
-                    </span>
-                    <div className="flex items-center gap-2" dir="ltr">
-                      <button
-                        onClick={() => removeFromCart(matchedMenuItem.id)}
-                        className="w-7 h-7 rounded-lg bg-ink-2 hover:bg-brick/30 text-cream flex items-center justify-center transition-colors"
-                      >
-                        <Minus size={14} />
-                      </button>
-                      <span className="text-sm font-bold text-cream w-4 text-center">{qty}</span>
-                      <button
-                        onClick={() => addToCart(matchedMenuItem)}
-                        className="w-7 h-7 rounded-lg bg-copper hover:bg-copper/80 text-cream flex items-center justify-center transition-colors"
-                      >
-                        <Plus size={14} />
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                <button
-                  onClick={() => onSelectCategory(currentDish.categoryId)}
-                  className="px-3.5 py-2.5 rounded-xl border border-gold/30 hover:border-gold hover:bg-gold/10 text-cream-dim hover:text-cream text-xs font-semibold tracking-wider transition-all duration-200"
-                >
-                  {activeLang === "ar" ? "القسم" : activeLang === "en" ? "Category" : "Kategori"}
-                </button>
-              </div>
-
-            </div>
-
-          </div>
-
+                   {dish.title[activeLang] || dish.title.en}
+                </span>
+             </div>
+          ))}
         </div>
-
-        {/* ── 3 Circular Dishes Orbit at Bottom (Fixed LTR arrows) ── */}
-        <div dir="ltr" className="mt-4 flex items-center justify-center gap-3 sm:gap-4 py-1">
-          <button
-            type="button"
-            onClick={handlePrev}
-            aria-label="Previous Featured Dish"
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-ink/80 hover:bg-copper border border-gold/30 text-cream flex items-center justify-center transition-all duration-200 shadow-md hover:scale-110 active:scale-90"
-          >
-            <ChevronLeft size={16} />
-          </button>
-
-          <div className="flex items-center gap-2.5 sm:gap-3">
-            {[prevDishIndex, activeIndex, nextDishIndex].map((dishIdx, i) => {
-              const dish = featuredDishes[dishIdx];
-              const isCenter = i === 1;
-              return (
-                <button
-                  key={dish.id + i}
-                  onClick={() => {
-                    setIsPaused(true);
-                    setActiveIndex(dishIdx);
-                  }}
-                  className={`group relative rounded-full transition-all duration-400 flex items-center justify-center ${
-                    isCenter
-                      ? "w-[64px] h-[64px] sm:w-[72px] sm:h-[72px] scale-105"
-                      : "w-[48px] h-[48px] sm:w-[54px] sm:h-[54px] opacity-60 hover:opacity-100"
-                  }`}
-                >
-                  <div
-                    className={`absolute -inset-1 rounded-full transition-all duration-300 ${
-                      isCenter
-                        ? "border-2 border-gold shadow-[0_0_15px_rgba(212,162,76,0.5)]"
-                        : "border border-gold/30 group-hover:border-gold/60"
-                    }`}
-                  />
-                  <div className="relative w-full h-full rounded-full overflow-hidden border border-ink bg-ink-2">
-                    <Image
-                      src={dish.image}
-                      alt=""
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="80px"
-                    />
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          <button
-            type="button"
-            onClick={handleNext}
-            aria-label="Next Featured Dish"
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-ink/80 hover:bg-copper border border-gold/30 text-cream flex items-center justify-center transition-all duration-200 shadow-md hover:scale-110 active:scale-90"
-          >
-            <ChevronRight size={16} />
-          </button>
-        </div>
-
       </div>
+      
+      {/* Modal for Featured Dish */}
+      {selectedDish && (
+         <DishModal 
+           isOpen={true} 
+           setIsOpen={() => setSelectedDish(null)} 
+           item={menuData.flatMap(c => c.items || []).find(i => i.id === selectedDish.menuItemId) || { id: selectedDish.menuItemId, price: selectedDish.price, image: selectedDish.image }}
+           customName={selectedDish.title[activeLang] || selectedDish.title.tr}
+           customDesc={selectedDish.desc[activeLang] || selectedDish.desc.tr}
+           customImage={selectedDish.image}
+         />
+      )}
     </section>
   );
 }
 
+// ─── CATEGORY ICONS MAPPING ───
+const categoryIcons = {
+  kahvalti: "🍳",
+  kebap: "🍢",
+  ozel_menu: "🔥",
+  mezeli_kebaplar: "🍽️",
+  durumler: "🌯",
+  pide: "🍕",
+  lahmacun: "🥙",
+  meze: "🥗",
+  salata: "🥬",
+  tatli: "🍰",
+  soguk_icecek: "🥤"
+};
+
 /**
- * Sticky Category Navigation Bar
+ * Sticky Category Navigation Bar (Tab Style)
  */
 function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
-  const { menuT } = useAppContext();
+  const { menuT, lang } = useAppContext();
+  const activeLang = lang || "tr";
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -464,53 +235,62 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
   }, [activeCategory]);
 
   const scroll = (dir) => {
-    scrollRef.current?.scrollBy({ left: dir * 160, behavior: "smooth" });
+    scrollRef.current?.scrollBy({ left: dir * 180, behavior: "smooth" });
   };
 
   return (
-    <div className="relative w-full bg-ink-2/95 backdrop-blur-xl border-b border-teal-dim/15">
-      {canScrollLeft && (
-        <button 
-          onClick={() => scroll(-1)} 
-          aria-label="Scroll left"
-          className="absolute start-0 top-0 bottom-0 z-10 w-9 flex items-center justify-center bg-gradient-to-r from-ink-2 via-ink-2/90 to-transparent"
-        >
-          <ChevronLeft size={16} className="text-cream-dim" />
-        </button>
-      )}
-      {canScrollRight && (
-        <button 
-          onClick={() => scroll(1)} 
-          aria-label="Scroll right"
-          className="absolute end-0 top-0 bottom-0 z-10 w-9 flex items-center justify-center bg-gradient-to-l from-ink-2 via-ink-2/90 to-transparent"
-        >
-          <ChevronRight size={16} className="text-cream-dim" />
-        </button>
-      )}
+    <div className="relative w-full bg-ink/95 backdrop-blur-xl border-b border-teal-dim/15 pt-3 pb-2">
+      <div className="px-4 mb-2 max-w-5xl mx-auto">
+        <h3 className="text-sm font-bold text-cream-dim tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
+           {activeLang === "ar" ? "تصفح القائمة" : activeLang === "en" ? "Browse Menu" : "Menüyü İncele"}
+        </h3>
+      </div>
+      
+      <div className="relative max-w-5xl mx-auto">
+        {canScrollLeft && (
+          <button 
+            onClick={() => scroll(-1)} 
+            aria-label="Scroll left"
+            className="absolute start-0 top-0 bottom-0 z-10 w-8 sm:w-12 flex items-center justify-center bg-gradient-to-r from-ink via-ink/90 to-transparent"
+          >
+            <ChevronLeft size={20} className="text-cream" />
+          </button>
+        )}
+        {canScrollRight && (
+          <button 
+            onClick={() => scroll(1)} 
+            aria-label="Scroll right"
+            className="absolute end-0 top-0 bottom-0 z-10 w-8 sm:w-12 flex items-center justify-center bg-gradient-to-l from-ink via-ink/90 to-transparent"
+          >
+            <ChevronRight size={20} className="text-cream" />
+          </button>
+        )}
 
-      <div 
-        ref={scrollRef}
-        className="flex items-center gap-2 px-3.5 py-2.5 overflow-x-auto no-scrollbar"
-      >
-        {categories.map((cat) => {
-          const isActive = activeCategory === cat.id;
-          return (
-            <button
-              key={cat.id}
-              data-cat={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`relative shrink-0 px-4 py-2 rounded-full border transition-all duration-300 ${
-                isActive 
-                  ? "bg-gradient-to-r from-copper/25 to-gold/20 border-copper text-cream shadow-[0_0_15px_rgba(217,116,60,0.25)] scale-105" 
-                  : "bg-ink/50 border-teal-dim/20 text-cream-dim/65 hover:border-teal-dim/40 hover:text-cream-dim"
-              }`}
-            >
-              <span className="relative z-10 block text-[11px] font-bold tracking-wider uppercase whitespace-nowrap">
-                {menuT?.categories?.[cat.id] || cat.category.en}
-              </span>
-            </button>
-          );
-        })}
+        <div 
+          ref={scrollRef}
+          className="flex items-center gap-3 px-4 overflow-x-auto no-scrollbar pb-1"
+        >
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                data-cat={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`relative shrink-0 flex flex-col items-center justify-center gap-1.5 w-[75px] h-[75px] sm:w-[90px] sm:h-[90px] rounded-2xl transition-all duration-300 ${
+                  isActive 
+                    ? "bg-gradient-to-b from-copper/20 to-copper/5 border-2 border-copper text-cream shadow-[0_0_15px_rgba(217,116,60,0.15)] scale-[1.02]" 
+                    : "bg-ink-2 border border-teal-dim/15 text-cream-dim hover:border-teal-dim/40 hover:bg-ink-2/80"
+                }`}
+              >
+                <span className="text-2xl sm:text-3xl">{categoryIcons[cat.id] || "🍽️"}</span>
+                <span className="text-[10px] sm:text-xs font-bold text-center leading-tight px-1">
+                  {menuT?.categories?.[cat.id] || cat.category.en}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

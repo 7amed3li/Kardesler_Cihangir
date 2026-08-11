@@ -424,9 +424,9 @@ export const menuData = [
         tags: [],
       },
       {
-        id: "beyez_peynirli_pide",
+        id: "beyaz_peynirli_pide",
         price: 390.00,
-        image: "/images/beyez_peynirli_pide.webp",
+        image: "/images/beyaz_peynirli_pide.webp",
         tags: ["vegetarian"],
       },
       {
