@@ -167,43 +167,42 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
           <span className="text-gold text-2xl">🌟</span> 
           {activeLang === "ar" ? "الأكثر مبيعاً" : activeLang === "en" ? "Best Sellers" : "Çok Satanlar"}
         </h2>
-        
-        <div className="flex overflow-x-auto gap-3 sm:gap-4 no-scrollbar pb-3 px-1 snap-x snap-mandatory">
+        <div className="flex overflow-x-auto gap-4 sm:gap-6 no-scrollbar pb-3 px-1 snap-x snap-mandatory">
           {featuredDishes.map((dish) => (
              <div 
                 key={dish.id} 
-                className="relative flex-none w-[140px] sm:w-[180px] h-[220px] sm:h-[280px] rounded-2xl overflow-hidden cursor-pointer group shadow-xl snap-center" 
+                className="relative flex flex-col items-center gap-3 shrink-0 cursor-pointer group w-[100px] sm:w-[130px] snap-center" 
                 onClick={() => setSelectedDish(dish)}
              >
-                {/* Background Image */}
-                <Image 
-                   src={dish.image} 
-                   alt={dish.title[activeLang] || dish.title.en} 
-                   fill 
-                   style={{objectFit:"cover"}} 
-                   sizes="(max-width: 640px) 140px, 180px"
-                   className="transition-transform duration-700 group-hover:scale-110"
-                />
-                
-                {/* Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                
-                {/* Top Badge */}
-                <div className="absolute top-2 start-2 end-2">
-                   <span className="inline-block px-2 py-1 bg-black/60 backdrop-blur-md rounded-md border border-gold/40 text-[9px] sm:text-[10px] font-bold text-gold tracking-wide truncate max-w-full">
-                     {dish.badge[activeLang] || dish.badge.tr}
-                   </span>
+                {/* Premium Circular Wrapper with Gradient Ring */}
+                <div className="relative w-[90px] h-[90px] sm:w-[120px] sm:h-[120px] rounded-full p-[3px] bg-gradient-to-tr from-gold via-copper to-gold/50 group-hover:from-gold group-hover:via-gold group-hover:to-copper group-hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(217,116,60,0.3)]">
+                   {/* Inner Circle (The Image) */}
+                   <div className="relative w-full h-full rounded-full overflow-hidden bg-ink border-2 border-ink">
+                     <Image 
+                        src={dish.image} 
+                        alt={dish.title[activeLang] || dish.title.en} 
+                        fill 
+                        style={{objectFit:"cover"}} 
+                        sizes="(max-width: 640px) 90px, 120px"
+                        className="transition-transform duration-700 group-hover:scale-110"
+                     />
+                   </div>
+                   
+                   {/* Badge Overlapping Bottom Center */}
+                   <div className="absolute -bottom-2 inset-x-0 flex justify-center z-10">
+                     <span className="px-2 py-0.5 bg-ink text-gold border border-gold/50 rounded-full text-[9px] sm:text-[10px] font-bold whitespace-nowrap shadow-lg">
+                       {dish.badge[activeLang] || dish.badge.tr}
+                     </span>
+                   </div>
                 </div>
 
-                {/* Bottom Title */}
-                <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4">
-                   <h3 
-                     className="text-sm sm:text-base font-bold text-cream leading-tight shadow-black drop-shadow-md line-clamp-2"
-                     style={{ fontFamily: "var(--font-cairo)" }}
-                   >
-                     {dish.title[activeLang] || dish.title.en}
-                   </h3>
-                </div>
+                {/* Title */}
+                <span 
+                   className="text-[11px] sm:text-xs text-center font-bold text-cream leading-tight mt-1 group-hover:text-gold transition-colors line-clamp-2 px-1"
+                   style={{ fontFamily: "var(--font-cairo)" }}
+                >
+                   {dish.title[activeLang] || dish.title.en}
+                </span>
              </div>
           ))}
         </div>
