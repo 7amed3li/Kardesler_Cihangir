@@ -8,7 +8,7 @@ import DishModal from "@/components/DishModal";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
-import { ChevronLeft, ChevronRight, ChevronDown, Plus, Minus, Check } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown, Plus, Minus, Check, UtensilsCrossed } from "lucide-react";
 
 // ─── 5 Real Signature Dishes with Authentic Photos & Official Prices ───
 const featuredDishes = [
@@ -275,7 +275,7 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                     : "border-[2px] border-ink-2 shadow-md group-hover:border-copper/50"
                 }`}>
                   <div className="absolute inset-0 bg-ink-2" />
-                  {firstItemImage && (
+                  {firstItemImage ? (
                     <Image
                       src={firstItemImage}
                       alt=""
@@ -284,6 +284,10 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                       sizes="72px"
                       className="transition-transform duration-500 group-hover:scale-110"
                     />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-copper/50 group-hover:text-copper transition-colors">
+                      <UtensilsCrossed size={24} strokeWidth={1.5} />
+                    </div>
                   )}
                   {isActive && <div className="absolute inset-0 bg-copper/10 mix-blend-overlay" />}
                 </div>
