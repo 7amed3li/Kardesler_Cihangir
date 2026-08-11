@@ -64,13 +64,47 @@ export default function MenuLayout({ children }) {
           "@type": "MenuItem",
           name: itemName,
           description: `${trItem.name || ""} - ${arItem.desc || ""}. Freshly prepared with traditional Turkish ingredients.`,
-          image: item.image ? `${siteUrl}${item.image}` : `${siteUrl}/logo.webp`,
+          image: [
+            item.image ? `${siteUrl}${item.image}` : `${siteUrl}/logo.webp`
+          ],
+          brand: {
+            "@type": "Brand",
+            name: "Kardeşler Cihangir"
+          },
           offers: {
             "@type": "Offer",
             price: item.price,
             priceCurrency: "TRY",
             availability: "https://schema.org/InStock",
             url: `${siteUrl}/menu#${cat.id}`,
+            validFrom: "2024-01-01T00:00:00Z",
+            hasMerchantReturnPolicy: {
+              "@type": "MerchantReturnPolicy",
+              returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted"
+            },
+            shippingDetails: {
+              "@type": "OfferShippingDetails",
+              shippingRate: {
+                "@type": "MonetaryAmount",
+                value: 0,
+                currency: "TRY"
+              },
+              deliveryTime: {
+                "@type": "ShippingDeliveryTime",
+                handlingTime: {
+                  "@type": "QuantitativeValue",
+                  minValue: 0,
+                  maxValue: 1,
+                  unitCode: "d"
+                },
+                transitTime: {
+                  "@type": "QuantitativeValue",
+                  minValue: 0,
+                  maxValue: 1,
+                  unitCode: "d"
+                }
+              }
+            }
           },
           suitableForDiet: "https://schema.org/HalalDiet",
         };

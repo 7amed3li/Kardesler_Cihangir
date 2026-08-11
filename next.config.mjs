@@ -139,6 +139,27 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Fix for malformed /https:// or /http:// URLs indexed by Google
+      {
+        source: "/https\\://kardeslercihangir.com/:path*",
+        destination: "/:path*",
+        permanent: true,
+      },
+      {
+        source: "/http\\://kardeslercihangir.com/:path*",
+        destination: "/:path*",
+        permanent: true,
+      },
+      {
+        source: "/https\\://www.kardeslercihangir.com/:path*",
+        destination: "/:path*",
+        permanent: true,
+      },
+      {
+        source: "/http\\://www.kardeslercihangir.com/:path*",
+        destination: "/:path*",
+        permanent: true,
+      },
     ];
   },
 
