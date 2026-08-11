@@ -130,6 +130,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/wp-content/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/wp-login.php",
         destination: "/",
         permanent: true,
