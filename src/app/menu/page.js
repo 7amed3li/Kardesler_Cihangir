@@ -182,23 +182,8 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
   );
 }
 
-// ─── CATEGORY ICONS MAPPING ───
-const categoryIcons = {
-  kahvalti: "🍳",
-  kebap: "🍢",
-  ozel_menu: "🔥",
-  mezeli_kebaplar: "🍽️",
-  durumler: "🌯",
-  pide: "🍕",
-  lahmacun: "🥙",
-  meze: "🥗",
-  salata: "🥬",
-  tatli: "🍰",
-  soguk_icecek: "🥤"
-};
-
 /**
- * Sticky Category Navigation Bar (Tab Style)
+ * Sticky Category Navigation Bar (Premium Thumbnail Style)
  */
 function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
   const { menuT, lang } = useAppContext();
@@ -268,23 +253,44 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
 
         <div 
           ref={scrollRef}
-          className="flex items-center gap-3 px-4 overflow-x-auto no-scrollbar pb-1"
+          className="flex items-start gap-3 px-4 overflow-x-auto no-scrollbar pb-1 pt-1"
         >
           {categories.map((cat) => {
             const isActive = activeCategory === cat.id;
+            const firstItemImage = cat.items && cat.items.length > 0 && cat.items[0].image ? cat.items[0].image : "";
+            
             return (
               <button
                 key={cat.id}
                 data-cat={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`relative shrink-0 flex flex-col items-center justify-center gap-1.5 w-[75px] h-[75px] sm:w-[90px] sm:h-[90px] rounded-2xl transition-all duration-300 ${
-                  isActive 
-                    ? "bg-gradient-to-b from-copper/20 to-copper/5 border-2 border-copper text-cream shadow-[0_0_15px_rgba(217,116,60,0.15)] scale-[1.02]" 
-                    : "bg-ink-2 border border-teal-dim/15 text-cream-dim hover:border-teal-dim/40 hover:bg-ink-2/80"
+                className={`relative shrink-0 flex flex-col items-center gap-1.5 w-[70px] sm:w-[84px] group transition-all duration-300 ${
+                  isActive ? "scale-105" : "hover:scale-105"
                 }`}
               >
-                <span className="text-2xl sm:text-3xl">{categoryIcons[cat.id] || "🍽️"}</span>
-                <span className="text-[10px] sm:text-xs font-bold text-center leading-tight px-1">
+                {/* Premium Image Thumbnail */}
+                <div className={`relative w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 ${
+                  isActive 
+                    ? "border-[2px] border-copper shadow-[0_0_15px_rgba(217,116,60,0.35)]" 
+                    : "border-[2px] border-ink-2 shadow-md group-hover:border-copper/50"
+                }`}>
+                  <div className="absolute inset-0 bg-ink-2" />
+                  {firstItemImage && (
+                    <Image
+                      src={firstItemImage}
+                      alt=""
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="72px"
+                      className="transition-transform duration-500 group-hover:scale-110"
+                    />
+                  )}
+                  {isActive && <div className="absolute inset-0 bg-copper/10 mix-blend-overlay" />}
+                </div>
+
+                <span className={`text-[10px] sm:text-[11px] font-bold text-center leading-tight px-1 transition-colors ${
+                  isActive ? "text-cream" : "text-cream-dim group-hover:text-cream"
+                }`}>
                   {menuT?.categories?.[cat.id] || cat.category.en}
                 </span>
               </button>
