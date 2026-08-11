@@ -173,6 +173,11 @@ export default function DishModal({
                       {t?.vegetarian || "Veg"}
                     </span>
                   )}
+                  {tags.includes("vegan") && (
+                    <span className="px-3 py-1 bg-[#4ade80]/10 text-[#4ade80] border border-[#4ade80]/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                      {t?.vegan || "Vegan"}
+                    </span>
+                  )}
                 </div>
               )}
 

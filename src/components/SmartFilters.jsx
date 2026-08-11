@@ -17,6 +17,7 @@ export default function SmartFilters({ activeFilter, setActiveFilter }) {
     { id: "signature", label: filterLabels.signature },
     { id: "vegetarian", label: filterLabels.vegetarian },
     { id: "spicy", label: filterLabels.spicy },
+    { id: "vegan", label: t.vegan || "Vegan" },
   ];
 
   return (

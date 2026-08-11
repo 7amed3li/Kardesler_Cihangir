@@ -355,7 +355,7 @@ export const menuData = [
         id: "cigkofte_durum",
         price: 250.00,
         image: "/images/durum.webp",
-        tags: ["vegetarian"],
+        tags: ["vegetarian", "vegan"],
       }
     ]
   },
@@ -530,13 +530,13 @@ export const menuData = [
         id: "ezme_salata",
         price: 180.00,
         image: "/images/ezme_salata.webp",
-        tags: ["vegetarian", "spicy"],
+        tags: ["vegetarian", "vegan", "spicy"],
       },
       {
         id: "humus",
         price: 180.00,
         image: "/images/humus.webp",
-        tags: ["vegetarian"],
+        tags: ["vegetarian", "vegan"],
       }
     ]
   },
@@ -548,19 +548,19 @@ export const menuData = [
         id: "mevsim_salatasi",
         price: 200.00,
         image: "/images/mevsim_salata.webp",
-        tags: ["vegetarian"],
+        tags: ["vegetarian", "vegan"],
       },
       {
         id: "coban_salata",
         price: 200.00,
         image: "/images/coban_salata.webp",
-        tags: ["vegetarian"],
+        tags: ["vegetarian", "vegan"],
       },
       {
         id: "cig_kofte",
         price: 300.00,
         image: "/images/cig_kofte.webp",
-        tags: ["vegetarian"],
+        tags: ["vegetarian", "vegan"],
       },
       {
         id: "icli_kofte",

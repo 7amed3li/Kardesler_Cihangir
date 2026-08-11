@@ -153,6 +153,11 @@ export default function FoodCard({ item, index, isVertical = false }) {
                   {t.vegetarian || "Veg"}
                 </span>
               )}
+              {item.tags?.includes("vegan") && (
+                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-[#4ade80] border border-[#4ade80]/30 bg-[#4ade80]/10 backdrop-blur-md rounded-sm font-bold">
+                  {t.vegan || "Vegan"}
+                </span>
+              )}
             </div>
           </div>
         )}
@@ -260,6 +265,11 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 {item.tags?.includes("vegetarian") && (
                   <span className="px-3 py-1 bg-teal/10 text-teal border border-teal/30 text-xs font-bold rounded-full uppercase tracking-wider">
                     {t.vegetarian || "Veg"}
+                  </span>
+                )}
+                {item.tags?.includes("vegan") && (
+                  <span className="px-3 py-1 bg-[#4ade80]/10 text-[#4ade80] border border-[#4ade80]/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    {t.vegan || "Vegan"}
                   </span>
                 )}
               </div>
