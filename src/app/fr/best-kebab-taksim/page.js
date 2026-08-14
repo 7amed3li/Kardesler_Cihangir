@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import LandingDishesSection from "../../../components/LandingDishesSection";
 import LandingVerifiedReviews from "../../../components/LandingVerifiedReviews";
+import SeoStorytelling from "../../../components/SeoStorytelling";
 
 export const metadata = {
   title: "Meilleur Kebab Traditionnel près de la Place Taksim (Depuis 1998) | Kardeşler Cihangir",
@@ -87,9 +88,12 @@ export default function FrenchLandingPage() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-[11px] sm:text-xs font-semibold uppercase tracking-[0.15em]">
-            <span className="w-1.5 h-1.5 rounded-full bg-copper"></span>
-            <span>FONDÉ EN 1998 • CIHANGIR HISTORIQUE, BEYOĞLU</span>
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-gold/10 to-copper/10 border border-gold/30 text-gold text-[11px] sm:text-xs font-bold uppercase tracking-[0.15em] shadow-[0_0_15px_rgba(217,119,6,0.15)] relative overflow-hidden group">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-copper opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-copper"></span>
+            </span>
+            <span className="relative z-10">FONDÉ EN 1998 • CIHANGIR HISTORIQUE</span>
           </div>
 
           <h1
@@ -164,6 +168,9 @@ export default function FrenchLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ── SEO STORYTELLING (MAGAZINE LAYOUT) ── */}
+      <SeoStorytelling locale="fr" />
 
       {/* ── 3. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
       <LandingDishesSection currentLocale="fr" />
