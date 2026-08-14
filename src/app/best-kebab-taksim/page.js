@@ -132,10 +132,8 @@ export default function BestKebabTaksimPage() {
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10">
           {/* Heritage Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-gold/10 to-copper/10 border border-gold/30 text-gold text-[11px] sm:text-xs font-bold uppercase tracking-[0.15em] shadow-[0_0_15px_rgba(217,119,6,0.15)] relative overflow-hidden group">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-copper opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-copper"></span>
-            </span>
+            <Award size={14} className="text-copper shrink-0" />
+
             <span className="relative z-10">ESTABLISHED 1998 • HISTORICAL CIHANGIR</span>
           </div>
 
@@ -145,7 +143,7 @@ export default function BestKebabTaksimPage() {
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             Authentic Wood-Fired Kebab <br className="hidden sm:inline" />
-            on <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-200 to-copper">Natural Oak Embers</span> Near Taksim
+            on <span className="text-gold">Natural Oak Embers</span> Near Taksim
           </h1>
 
           {/* Subtitle */}
