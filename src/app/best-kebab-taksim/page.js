@@ -16,6 +16,13 @@ export const metadata = {
   description:
     "Experience Istanbul's authentic oak-charcoal kebabs and stone-oven pides in historical Cihangir since 1998. Hand-minced meats, genuine local prices, 5-minute walk from Taksim.",
   keywords: [
+    "best kebab taksim",
+    "kebab near taksim square",
+    "kardesler cihangir 1998",
+    "authentic turkish kebab istanbul",
+    "adana kebab taksim",
+    "halal restaurant beyoglu",
+    "stone oven pide cihangir",
     "best kebab in taksim",
     "halal restaurant near taksim square",
     "authentic turkish food beyoglu",
