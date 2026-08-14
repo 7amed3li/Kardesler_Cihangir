@@ -14,14 +14,7 @@ export const metadata = {
   title: "بهترین کباب اصیل عثمانی نزدیک میدان تقسیم استانبول (از ۱۹۹۸) | رستوران کاردشلر جهانگیر",
   description:
     "تجربه کباب اصیل ترکی روی زغال طبیعی بلوط و پیده‌های تنوری در محله تاریخی جهانگیر از سال ۱۹۹۸. گوشت ۱۰۰٪ تازه حلال ساطوری. فقط ۵ دقیقه پیاده تا میدان تقسیم.",
-  keywords: [
-    "بهترین کباب تقسیم استانبول",
-    "رستوران حلال تقسیم",
-    "رستوران کاردشلر جهانگیر ۱۹۹۸",
-    "کباب آدانا زغالی استانبول",
-    "پیده تنوری بی اوغلو",
-    "رستوران های نزدیک خیابان استقلال",
-  ],
+  keywords: [\n    "best kebab in taksim",\n    "halal restaurant near taksim square",\n    "authentic turkish food beyoglu",\n    "best doner and kebab istanbul",\n    "top rated grills in cihangir",\n    "late night food taksim",\n    "best adana kebab istanbul",\n    "stone oven lahmacun taksim",\n    "turkish pide near istiklal",\n    "family friendly restaurant taksim",\n    "where to eat in taksim",\n    "best local restaurants in istanbul",\n    "kardesler cihangir 1998",\n    "charcoal grilled meat istanbul",\n    "best iskender kebab beyoglu",\n    "galataport nearby restaurants",\n    "best cheap eats in taksim",\n    "authentic anatolian cuisine",\n    "traditional turkish bbq",\n    "halal meat taksim",\n    "istanbul food guide taksim",\n    "best turkish pizza taksim",\n  ],
   alternates: {
     canonical: "https://kardeslercihangir.com/fa/best-kebab-taksim",
     languages: {

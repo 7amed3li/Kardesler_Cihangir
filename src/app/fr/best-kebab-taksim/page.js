@@ -14,13 +14,7 @@ export const metadata = {
   title: "Meilleur Kebab Traditionnel près de la Place Taksim (Depuis 1998) | Kardeşler Cihangir",
   description:
     "Découvrez les authentiques grillades turques au feu de bois et pides au four à pierre dans le quartier historique de Cihangir depuis 1998. Viandes fraîches 100% Halal hachées au couteau. À 5 minutes à pied de Taksim.",
-  keywords: [
-    "meilleur kebab taksim",
-    "kebab authentique istanbul",
-    "restaurant kardesler cihangir",
-    "grillades feu de bois taksim",
-    "pide four a pierre beyoglu",
-  ],
+  keywords: [\n    "best kebab in taksim",\n    "halal restaurant near taksim square",\n    "authentic turkish food beyoglu",\n    "best doner and kebab istanbul",\n    "top rated grills in cihangir",\n    "late night food taksim",\n    "best adana kebab istanbul",\n    "stone oven lahmacun taksim",\n    "turkish pide near istiklal",\n    "family friendly restaurant taksim",\n    "where to eat in taksim",\n    "best local restaurants in istanbul",\n    "kardesler cihangir 1998",\n    "charcoal grilled meat istanbul",\n    "best iskender kebab beyoglu",\n    "galataport nearby restaurants",\n    "best cheap eats in taksim",\n    "authentic anatolian cuisine",\n    "traditional turkish bbq",\n    "halal meat taksim",\n    "istanbul food guide taksim",\n    "best turkish pizza taksim",\n  ],
   alternates: {
     canonical: "https://kardeslercihangir.com/fr/best-kebab-taksim",
     languages: {

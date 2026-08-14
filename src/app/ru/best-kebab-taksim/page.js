@@ -14,14 +14,7 @@ export const metadata = {
   title: "Лучший кебаб на углях у площади Таксим (с 1998 года) | Ресторан Kardeşler Джихангир Стамбул",
   description:
     "Настоящий турецкий кебаб на углях из дуба и пиде из каменной печи в историческом районе Джихангир с 1998 года. 100% свежее халяльное мясо ручной рубки. 5 минут пешком от площади Таксим.",
-  keywords: [
-    "лучший кебаб таксим",
-    "ресторан кебаб таксим стамбул",
-    "kardesler cihangir 1998",
-    "турецкая кухня джихангир",
-    "халяль ресторан бейоглу",
-    "пиде каменная печь стамбул",
-  ],
+  keywords: [\n    "best kebab in taksim",\n    "halal restaurant near taksim square",\n    "authentic turkish food beyoglu",\n    "best doner and kebab istanbul",\n    "top rated grills in cihangir",\n    "late night food taksim",\n    "best adana kebab istanbul",\n    "stone oven lahmacun taksim",\n    "turkish pide near istiklal",\n    "family friendly restaurant taksim",\n    "where to eat in taksim",\n    "best local restaurants in istanbul",\n    "kardesler cihangir 1998",\n    "charcoal grilled meat istanbul",\n    "best iskender kebab beyoglu",\n    "galataport nearby restaurants",\n    "best cheap eats in taksim",\n    "authentic anatolian cuisine",\n    "traditional turkish bbq",\n    "halal meat taksim",\n    "istanbul food guide taksim",\n    "best turkish pizza taksim",\n  ],
   alternates: {
     canonical: "https://kardeslercihangir.com/ru/best-kebab-taksim",
     languages: {

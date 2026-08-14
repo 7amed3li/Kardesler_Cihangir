@@ -15,23 +15,7 @@ export const metadata = {
   title: "Authentic Wood-Fired Kebab Near Taksim Square (Since 1998) | Kardeşler Cihangir",
   description:
     "Experience Istanbul's authentic oak-charcoal kebabs and stone-oven pides in historical Cihangir since 1998. Hand-minced meats, genuine local prices, 5-minute walk from Taksim.",
-  keywords: [
-    "best kebab taksim",
-    "kebab near taksim square",
-    "kardesler cihangir 1998",
-    "authentic turkish kebab istanbul",
-    "adana kebab taksim",
-    "halal restaurant beyoglu",
-    "stone oven pide cihangir",
-    "best grills in taksim",
-    "restaurants near taksim square",
-    "restaurants near cihangir",
-    "top rated kebab galata",
-    "authentic turkish food istiklal",
-    "charcoal grilled kebab istanbul",
-    "halal meat restaurant taksim",
-    "places to eat near taksim",
-  ],
+  keywords: [\n    "best kebab in taksim",\n    "halal restaurant near taksim square",\n    "authentic turkish food beyoglu",\n    "best doner and kebab istanbul",\n    "top rated grills in cihangir",\n    "late night food taksim",\n    "best adana kebab istanbul",\n    "stone oven lahmacun taksim",\n    "turkish pide near istiklal",\n    "family friendly restaurant taksim",\n    "where to eat in taksim",\n    "best local restaurants in istanbul",\n    "kardesler cihangir 1998",\n    "charcoal grilled meat istanbul",\n    "best iskender kebab beyoglu",\n    "galataport nearby restaurants",\n    "best cheap eats in taksim",\n    "authentic anatolian cuisine",\n    "traditional turkish bbq",\n    "halal meat taksim",\n    "istanbul food guide taksim",\n    "best turkish pizza taksim",\n  ],
   alternates: {
     canonical: "https://kardeslercihangir.com/best-kebab-taksim",
     languages: {

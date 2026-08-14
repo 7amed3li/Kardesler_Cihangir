@@ -14,25 +14,7 @@ export const metadata = {
   title: "أفضل كباب تركي حلال قرب ميدان تقسيم (منذ 1998) | مطعم كارديشلر جيهانكير إسطنبول",
   description:
     "اكتشف سر المشاوي التركية الأصيلة على جمر السنديان وفطائر البيدا بالفرن الحجري في حي جيهانكير التاريخي منذ 1998. لحوم حلال طازجة 100% مفرومة بالساطور العثماني. 5 دقائق سيراً من ميدان تقسيم.",
-  keywords: [
-    "أفضل كباب تقسيم",
-    "مطعم كباب حلال تقسيم اسطنبول",
-    "مطعم كارديشلر جيهانكير 1998",
-    "مشويات عثمانية على الفحم تقسيم",
-    "فطائر بيدا فرن حجري بيوغلو",
-    "مطاعم قريبة من شارع الاستقلال",
-    "أفضل مطعم تركي في جيهانكير",
-    "أفضل مشويات في تقسيم",
-    "مطاعم قريبة من تقسيم",
-    "مطاعم تقسيم اسطنبول",
-    "قريب من جيهانكير",
-    "كباب حلال قرب ميدان تقسيم",
-    "مطاعم بيوغلو إسطنبول",
-    "غلطة بورت مطاعم قريبة",
-    "أفضل كباب تركي أصيل",
-    "مشاوي لحم حلال اسطنبول",
-    "لحمجون تركي في تقسيم",
-  ],
+  keywords: [\n    "best kebab in taksim",\n    "halal restaurant near taksim square",\n    "authentic turkish food beyoglu",\n    "best doner and kebab istanbul",\n    "top rated grills in cihangir",\n    "late night food taksim",\n    "best adana kebab istanbul",\n    "stone oven lahmacun taksim",\n    "turkish pide near istiklal",\n    "family friendly restaurant taksim",\n    "where to eat in taksim",\n    "best local restaurants in istanbul",\n    "kardesler cihangir 1998",\n    "charcoal grilled meat istanbul",\n    "best iskender kebab beyoglu",\n    "galataport nearby restaurants",\n    "best cheap eats in taksim",\n    "authentic anatolian cuisine",\n    "traditional turkish bbq",\n    "halal meat taksim",\n    "istanbul food guide taksim",\n    "best turkish pizza taksim",\n  ],
   alternates: {
     canonical: "https://kardeslercihangir.com/ar/best-kebab-taksim",
     languages: {

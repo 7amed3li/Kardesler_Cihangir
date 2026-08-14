@@ -14,14 +14,7 @@ export const metadata = {
   title: "Taksim'e En Yakın Meşe Kömüründe Hakiki Kebap & Taş Fırın Pide (1998'den Beri) | Kardeşler Cihangir",
   description:
     "Cihangir'in 28 yıllık lezzet durağı. Zırhta çekilmiş taze etler, meşe kömürü ateşi ve 450 derecelik taş fırından sıcacık pideler. Taksim Meydanı'na sadece 5 dakika yürüme mesafesinde.",
-  keywords: [
-    "taksim en iyi kebap",
-    "cihangir kebapçı",
-    "kardesler kebap cihangir 1998",
-    "taksim adana kebap",
-    "beyoglu tas firin pide",
-    "istiklal caddesi yakin kebap",
-  ],
+  keywords: [\n    "best kebab in taksim",\n    "halal restaurant near taksim square",\n    "authentic turkish food beyoglu",\n    "best doner and kebab istanbul",\n    "top rated grills in cihangir",\n    "late night food taksim",\n    "best adana kebab istanbul",\n    "stone oven lahmacun taksim",\n    "turkish pide near istiklal",\n    "family friendly restaurant taksim",\n    "where to eat in taksim",\n    "best local restaurants in istanbul",\n    "kardesler cihangir 1998",\n    "charcoal grilled meat istanbul",\n    "best iskender kebab beyoglu",\n    "galataport nearby restaurants",\n    "best cheap eats in taksim",\n    "authentic anatolian cuisine",\n    "traditional turkish bbq",\n    "halal meat taksim",\n    "istanbul food guide taksim",\n    "best turkish pizza taksim",\n  ],
   alternates: {
     canonical: "https://kardeslercihangir.com/tr/best-kebab-taksim",
     languages: {
