@@ -17,7 +17,13 @@ export default function SeoStorytelling({ locale = 'en' }) {
       craftText2: "Once prepared, the kebabs are slow-roasted over real oak charcoal embers. Equally important is our 450°C stone oven, the heart of our bakery, where every lahmacun and wood-fired pide is baked fresh to order to achieve the perfect crispy balance.",
       kebabDesc: "A luxurious mix of our finest kebabs, slowly charcoal-grilled to perfection.",
       lahmacunDesc: "Authentic Turkish Lahmacun baked in our 450°C stone oven for the perfect crispiness.",
-      viewDish: "View Dish"
+      viewDish: "View Dish",
+      hospitalityTitle: "A Warm Anatolian Welcome",
+      hospitalityText1: "Every guest at Kardeşler Kebap is treated like family. Our commitment goes beyond serving Istanbul's best kebab; it's about providing a traditional dining experience in a cozy, authentic atmosphere.",
+      hospitalityText2: "Whether you are a local artisan from Cihangir or a traveler exploring Beyoğlu, our doors are open until 2:00 AM, offering a safe, vibrant, and unforgettable taste of Turkey.",
+      qualityTitle: "100% Halal & Daily Freshness",
+      qualityText1: "The secret to our legendary flavor is uncompromised quality. We source our meat daily from trusted local farms, ensuring every cut is 100% Halal and entirely free from freezing or artificial preservatives.",
+      qualityText2: "Combined with hand-picked spices from Gaziantep and baked in our traditional stone oven using pure oak wood, every dish is a masterpiece of Anatolian culinary arts."
     },
     ar: {
       storyTitle: "من قلب جيهانكير.. وُلدت الحكاية",
@@ -28,7 +34,13 @@ export default function SeoStorytelling({ locale = 'en' }) {
       craftText2: "يتم شواء الكباب ببطء على جمر السنديان الحقيقي. وبنفس الأهمية يأتي فرننا الحجري بدرجة حرارة 450 مئوية، حيث تُخبز كل قطعة من اللحمجون وفطائر البيدا طازجة عند الطلب للوصول إلى القرمشة المثالية.",
       kebabDesc: "مزيج فاخر من أفضل أنواع الكباب لدينا، مشوي على الفحم ببطء للوصول إلى الطعم المثالي.",
       lahmacunDesc: "اللحمجون التركي الأصيل المحضر في فرننا الحجري على حرارة 450 مئوية.",
-      viewDish: "عرض التفاصيل"
+      viewDish: "عرض التفاصيل",
+      hospitalityTitle: "ترحيب الأناضول الدافئ",
+      hospitalityText1: "في كارديشلر كباب، نتعامل مع كل ضيف كفرد من العائلة. التزامنا يتجاوز مجرد تقديم أفضل كباب في إسطنبول؛ بل يمتد لتوفير تجربة طعام تقليدية في جو دافئ وأصيل يعكس كرم الضيافة التركية.",
+      hospitalityText2: "سواء كنت من سكان جيهانكير المحليين أو مسافراً تستكشف منطقة بيوغلو، أبوابنا مفتوحة حتى الساعة 2:00 صباحاً، لنقدم لك مذاقاً تركياً لا يُنسى في بيئة آمنة وحيوية.",
+      qualityTitle: "جودة حلال 100% وطازجة يومياً",
+      qualityText1: "سر نكهتنا الأسطورية يكمن في الجودة التي لا نساوم عليها. نستورد لحومنا يومياً من مزارع محلية موثوقة، مما يضمن أن كل قطعة حلال 100% وخالية تماماً من التجميد أو المواد الحافظة الاصطناعية.",
+      qualityText2: "ممزوجة بتوابل مختارة يدوياً من غازي عنتاب ومخبوزة في فرننا الحجري التقليدي باستخدام خشب البلوط الصافي، ليصبح كل طبق تحفة فنية من فنون الطهي الأناضولي."
     },
     ru: {
       storyTitle: "Наследие, рожденное в Джихангире",
@@ -39,7 +51,13 @@ export default function SeoStorytelling({ locale = 'en' }) {
       craftText2: "Кебабы медленно жарятся на углях из натурального дуба. Не менее важна наша каменная печь при 450°C, где каждый лахмаджун и пиде на дровах выпекаются на заказ до идеального хруста.",
       kebabDesc: "Роскошный микс наших лучших кебабов, медленно приготовленных на углях до совершенства.",
       lahmacunDesc: "Настоящий турецкий лахмаджун, запеченный в каменной печи при 450°C для идеального хруста.",
-      viewDish: "Смотреть Блюдо"
+      viewDish: "Смотреть Блюдо",
+      hospitalityTitle: "Теплый Анатолийский Прием",
+      hospitalityText1: "К каждому гостю в Kardeşler Kebap относятся как к члену семьи. Мы стремимся не просто подавать лучший кебаб в Стамбуле, но и обеспечивать традиционную трапезу в уютной, аутентичной атмосфере.",
+      hospitalityText2: "Будь вы местный ремесленник из Джихангира или путешественник, исследующий Бейоглу, наши двери открыты до 2:00 ночи, предлагая вам безопасный, яркий и незабываемый вкус Турции.",
+      qualityTitle: "100% Халяль и Ежедневная Свежесть",
+      qualityText1: "Секрет нашего легендарного вкуса заключается в бескомпромиссном качестве. Мы ежедневно закупаем мясо на проверенных местных фермах, гарантируя, что оно 100% халяльное и никогда не подвергалось заморозке.",
+      qualityText2: "В сочетании со специями ручной сборки из Газиантепа и выпечкой в традиционной каменной печи на чистых дубовых дровах, каждое блюдо становится шедевром анатолийского кулинарного искусства."
     },
     tr: {
       storyTitle: "Cihangir'de Doğan Bir Miras",
@@ -50,7 +68,13 @@ export default function SeoStorytelling({ locale = 'en' }) {
       craftText2: "Hazırlanan kebaplar, gerçek meşe kömürü ateşinde yavaşça közlenir. Aynı derecede önemli olan, her bir lahmacun ve odun ateşli pidenin mükemmel çıtırlığa ulaşmak için sipariş üzerine taze olarak pişirildiği 450°C'lik taş fırınımızdır.",
       kebabDesc: "En iyi kebaplarımızın mükemmel kıvamda meşe kömüründe pişirilmiş lüks karışımı.",
       lahmacunDesc: "Mükemmel çıtırlık için 450°C taş fırınımızda pişirilen otantik Türk Lahmacunu.",
-      viewDish: "Yemeği Gör"
+      viewDish: "Yemeği Gör",
+      hospitalityTitle: "Sıcak Bir Anadolu Karşılaması",
+      hospitalityText1: "Kardeşler Kebap'ta her misafirimiz ailemizden biri gibi ağırlanır. Amacımız sadece İstanbul'un en iyi kebabını sunmak değil; aynı zamanda samimi ve otantik bir atmosferde geleneksel bir yemek deneyimi yaşatmaktır.",
+      hospitalityText2: "İster Cihangir'in yerel bir esnafı olun, ister Beyoğlu'nu keşfeden bir gezgin; kapılarımız gece 2:00'ye kadar açık olup size güvenli, canlı ve unutulmaz bir Türkiye lezzeti sunmaktadır.",
+      qualityTitle: "%100 Helal ve Günlük Tazelik",
+      qualityText1: "Efsanevi lezzetimizin sırrı ödün vermediğimiz kalitemizdir. Etlerimizi her gün güvenilir yerel çiftliklerden temin ediyor, her parçanın %100 Helal olmasını ve dondurulmuş veya yapay koruyuculardan tamamen uzak olmasını sağlıyoruz.",
+      qualityText2: "Gaziantep'ten özenle seçilen baharatlarla harmanlanan ve saf meşe odunu kullanılarak geleneksel taş fırınımızda pişirilen her tabak, Anadolu mutfak sanatlarının bir başyapıtıdır."
     },
     fa: {
       storyTitle: "میراثی متولد شده در جهانگیر",
@@ -61,7 +85,13 @@ export default function SeoStorytelling({ locale = 'en' }) {
       craftText2: "کباب‌های آماده شده، روی زغال واقعی چوب بلوط به آرامی کباب می‌شوند. تنور سنگی ۴۵۰ درجه ما نیز به همان اندازه مهم است؛ قلب تپنده نانوایی ما که در آن هر لاهماجون و پیده هیزمی برای رسیدن به تردی کامل، تازه و به سفارش مشتری پخته می‌شود.",
       kebabDesc: "ترکیبی مجلل از بهترین کباب‌های ما که به آرامی روی زغال کباب شده‌اند.",
       lahmacunDesc: "لاهماجون اصیل ترکی که در تنور سنگی ۴۵۰ درجه ما برای تردی کامل پخته شده است.",
-      viewDish: "مشاهده غذا"
+      viewDish: "مشاهده غذا",
+      hospitalityTitle: "استقبال گرم آناتولی",
+      hospitalityText1: "در کاردشلر کباب، با هر مهمان مانند یکی از اعضای خانواده رفتار می‌شود. تعهد ما فراتر از سرو بهترین کباب استانبول است؛ هدف ما ارائه یک تجربه غذاخوری سنتی در فضایی دنج و اصیل است.",
+      hospitalityText2: "چه از اهالی جهانگیر باشید و چه مسافری در حال گشت و گذار در بی‌اوغلو، درهای ما تا ساعت ۲:۰۰ بامداد به روی شما باز است تا طعمی فراموش‌نشدنی، امن و پر جنب و جوش از ترکیه را به شما ارائه دهیم.",
+      qualityTitle: "۱۰۰٪ حلال و تازگی روزانه",
+      qualityText1: "راز طعم افسانه‌ای ما کیفیت بدون سازش است. ما گوشت خود را روزانه از مزارع محلی مورد اعتماد تهیه می‌کنیم و اطمینان می‌دهیم که هر قطعه ۱۰۰٪ حلال است و به هیچ وجه منجمد نمی‌شود.",
+      qualityText2: "ترکیب این گوشت با ادویه‌های دست‌چین شده از غازی‌عینتاب و پخت در تنور سنگی سنتی ما با استفاده از چوب بلوط خالص، هر غذا را به یک شاهکار از هنر آشپزی آناتولی تبدیل می‌کند."
     },
     fr: {
       storyTitle: "Un Héritage Né à Cihangir",
@@ -72,7 +102,13 @@ export default function SeoStorytelling({ locale = 'en' }) {
       craftText2: "Une fois préparés, les kebabs sont lentement rôtis sur de véritables braises de chêne. Tout aussi important est notre four en pierre à 450°C, où chaque lahmacun et pide au feu de bois est cuit à la commande pour obtenir un équilibre croustillant parfait.",
       kebabDesc: "Un mélange luxueux de nos meilleurs kebabs, lentement grillés au charbon de bois à la perfection.",
       lahmacunDesc: "Authentique Lahmacun turc cuit dans notre four en pierre à 450°C pour un croustillant parfait.",
-      viewDish: "Voir le Plat"
+      viewDish: "Voir le Plat",
+      hospitalityTitle: "Un Accueil Chaleureux Anatolien",
+      hospitalityText1: "Chaque invité chez Kardeşler Kebap est traité comme un membre de la famille. Notre engagement va au-delà de servir le meilleur kebab d'Istanbul ; il s'agit d'offrir une expérience culinaire traditionnelle dans une atmosphère chaleureuse.",
+      hospitalityText2: "Que vous soyez un artisan local de Cihangir ou un voyageur explorant Beyoğlu, nos portes sont ouvertes jusqu'à 2h00 du matin, offrant un goût de la Turquie sûr, vibrant et inoubliable.",
+      qualityTitle: "100% Halal et Fraîcheur Quotidienne",
+      qualityText1: "Le secret de notre saveur légendaire est une qualité sans compromis. Nous nous approvisionnons quotidiennement en viande auprès de fermes locales de confiance, garantissant que chaque coupe est 100% Halal et totalement exempte de congélation.",
+      qualityText2: "Combiné avec des épices cueillies à la main de Gaziantep et cuit dans notre four en pierre traditionnel en utilisant du bois de chêne pur, chaque plat est un chef-d'œuvre des arts culinaires anatoliens."
     }
   };
 
@@ -151,6 +187,34 @@ export default function SeoStorytelling({ locale = 'en' }) {
               <div className="space-y-3 text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
                 <p>{t.craftText1}</p>
                 <p>{t.craftText2}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* SEO Block 3 (Hospitality) */}
+          <div className="col-span-1 lg:col-span-6 bg-[#140D07] rounded-3xl p-6 sm:p-10 border border-teal-dim/20 relative overflow-hidden group hover:border-copper/30 transition-colors shadow-xl order-5">
+            <div className="relative z-10 space-y-4">
+              <div className="w-12 h-[2px] bg-copper/40 mb-4 rounded-full"></div>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-light text-cream luxury-title" style={{ fontFamily: "var(--font-cairo)" }}>
+                {t.hospitalityTitle}
+              </h3>
+              <div className="space-y-3 text-cream-dim/80 text-sm leading-relaxed font-light">
+                <p>{t.hospitalityText1}</p>
+                <p>{t.hospitalityText2}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* SEO Block 4 (Quality) */}
+          <div className="col-span-1 lg:col-span-6 bg-[#140D07] rounded-3xl p-6 sm:p-10 border border-teal-dim/20 relative overflow-hidden group hover:border-gold/30 transition-colors shadow-xl order-6">
+            <div className="relative z-10 space-y-4">
+              <div className="w-12 h-[2px] bg-gold/40 mb-4 rounded-full"></div>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-light text-cream luxury-title" style={{ fontFamily: "var(--font-cairo)" }}>
+                {t.qualityTitle}
+              </h3>
+              <div className="space-y-3 text-cream-dim/80 text-sm leading-relaxed font-light">
+                <p>{t.qualityText1}</p>
+                <p>{t.qualityText2}</p>
               </div>
             </div>
           </div>
