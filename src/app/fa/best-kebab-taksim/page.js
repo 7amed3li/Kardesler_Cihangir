@@ -96,11 +96,11 @@ export default function PersianLandingPage() {
           </div>
 
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.25] tracking-tight"
+            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.25] tracking-tight luxury-title"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             کباب اصیل عثمانی <br className="hidden sm:inline" />
-            روی <span className="text-gold">زغال طبیعی چوب بلوط</span> نزدیک تقسیم
+            روی <span className="luxury-gold-serif">زغال طبیعی چوب بلوط</span> نزدیک تقسیم
           </h1>
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-cream-dim/90 font-light leading-relaxed">

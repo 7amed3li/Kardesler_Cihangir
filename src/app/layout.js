@@ -1,4 +1,4 @@
-import { Cairo, Inter } from "next/font/google";
+import { Cairo, Inter, Playfair_Display } from "next/font/google";
 import { AppProvider } from "@/context/AppContext";
 import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
@@ -20,6 +20,14 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
   preload: true,
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-playfair",
 });
 
 export const metadata = {
@@ -275,7 +283,7 @@ export default function RootLayout({ children }) {
     <html
       lang="tr"
       suppressHydrationWarning
-      className={`h-full antialiased ${cairo.variable} ${inter.variable}`}
+      className={`h-full antialiased ${cairo.variable} ${inter.variable} ${playfair.variable}`}
     >
       <head>
         <script

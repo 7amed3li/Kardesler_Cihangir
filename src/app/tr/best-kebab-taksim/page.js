@@ -104,11 +104,11 @@ export default function TurkishLandingPage() {
           </div>
 
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.15] tracking-tight"
+            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.15] tracking-tight luxury-title"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             Meşe Kömüründe <br className="hidden sm:inline" />
-            <span className="text-gold">
+            <span className="luxury-gold-serif">
               Hakiki Zırh Kebabı
             </span>{" "}
             Taksim'in Yanında
@@ -182,66 +182,7 @@ export default function TurkishLandingPage() {
       {/* ── SEO STORYTELLING (MAGAZINE LAYOUT) ── */}
       <SeoStorytelling locale="tr" />
 
-      {/* ── 3. STORY OF CRAFTSMANSHIP & HERITAGE ── */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          <div className="space-y-4 sm:space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider">
-              <Flame size={13} />
-              <span>Ocakbaşı ve Fırın Ustalığı</span>
-            </div>
-
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-black text-cream leading-tight"
-              style={{ fontFamily: "var(--font-cairo)" }}
-            >
-              Cihangir'in 28 Yıllık Değişmeyen Lezzet Durağı
-            </h2>
-
-            <p className="text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
-              Taksim'in turistik kalabalığından sadece 450 metre uzaklaşarak Firuzağa Camii'nin tarihi sokağındaki <strong className="text-cream font-medium">Kardeşler Kebap</strong>'a ulaşırsınız.
-            </p>
-
-            <p className="text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
-              1998'den bu yana değişmeyen ilkemiz: Etleri her gün taze zırhla çekmek, yalnızca doğal meşe odunu kömüründe ağır ağır közlemek ve taş fırınımızda sipariş anında sıcacık pide ve lahmacun pişirmektir.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2.5 p-3 rounded-xl glass-card border border-teal-dim/20">
-                <Check size={16} className="text-teal shrink-0" />
-                <span className="text-xs sm:text-sm text-cream font-medium">Dondurulmamış günlük yerli et</span>
-              </div>
-              <div className="flex items-center gap-2.5 p-3 rounded-xl glass-card border border-teal-dim/20">
-                <Check size={16} className="text-teal shrink-0" />
-                <span className="text-xs sm:text-sm text-cream font-medium">Anında açılan taş fırın hamuru</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative h-[280px] sm:h-[380px] rounded-2xl sm:rounded-3xl overflow-hidden border border-gold/30 shadow-xl group">
-            <Image
-              src="/images/27-Karisik-Kebap_1.webp"
-              alt="Kardeşler Cihangir Karışık Kebap Ziyafet Tepsisi"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0E0804] via-transparent to-transparent"></div>
-            
-            <div className="absolute bottom-4 start-4 end-4 p-3.5 sm:p-4 rounded-xl glass-card border border-gold/30 backdrop-blur-md">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-cream font-bold text-sm sm:text-base">Ziyafet Karışık Izgara Tepsisi</h4>
-                  <p className="text-cream-dim/70 text-xs">Meşe közünde pişen karışık kebaplar ve mezeler</p>
-                </div>
-                <span className="text-gold font-black text-base sm:text-lg">1600 ₺</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
+      {/* ── 3. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
       <LandingDishesSection currentLocale="tr" />
 
       {/* ── 5. VERIFIED GOOGLE MAPS REVIEWS (DIRECT LINKS & AUTHENTIC SOURCE) ── */}

@@ -95,11 +95,11 @@ export default function FrenchLandingPage() {
           </div>
 
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.15] tracking-tight"
+            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.15] tracking-tight luxury-title"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             Authentique Kebab <br className="hidden sm:inline" />
-            sur <span className="text-gold">Braises de Chêne</span> près de Taksim
+            sur <span className="luxury-gold-serif">Braises de Chêne</span> près de Taksim
           </h1>
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-cream-dim/90 font-light leading-relaxed">

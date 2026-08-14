@@ -139,11 +139,11 @@ export default function BestKebabTaksimPage() {
 
           {/* Main Title */}
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.15] tracking-tight"
+            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.15] tracking-tight luxury-title"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             Authentic Wood-Fired Kebab <br className="hidden sm:inline" />
-            on <span className="text-gold">Natural Oak Embers</span> Near Taksim
+            on <span className="luxury-gold-serif">Natural Oak Embers</span> Near Taksim
           </h1>
 
           {/* Subtitle */}
@@ -217,51 +217,7 @@ export default function BestKebabTaksimPage() {
       {/* ── SEO STORYTELLING (MAGAZINE LAYOUT) ── */}
       <SeoStorytelling locale="en" />
 
-      {/* ── 3. STORY OF CRAFTSMANSHIP & HERITAGE ── */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          {/* Text & History */}
-          <div className="space-y-4 sm:space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider">
-              <Flame size={13} />
-              <span>Authentic Charcoal Craftsmanship</span>
-            </div>
-
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-black text-cream leading-tight"
-              style={{ fontFamily: "var(--font-cairo)" }}
-            >
-              Why Culinary Travelers Choose <span className="text-copper">Cihangir</span>
-            </h2>
-
-            <p className="text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
-              Just 450 meters away from the commercial hustle of Taksim Square lies <strong className="text-cream font-medium">Cihangir</strong> — Beyoğlu’s most charming historic neighborhood, home to artists, poets, and discerning food lovers.
-            </p>
-
-            <p className="text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
-              Since 1998, <strong className="text-cream font-medium">Kardeşler Kebap</strong> has upheld the true artisan tradition: meats hand-minced with heavy crescent Zırh knives, slow-roasted over real oak embers, and dough freshly baked upon order in a 450°C stone oven.
-            </p>
-
-            {/* Feature Bullets */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2.5 p-3 rounded-xl glass-card border border-teal-dim/20">
-                <Check size={16} className="text-teal shrink-0" />
-                <span className="text-xs sm:text-sm text-cream font-medium">Daily fresh butchery (never frozen)</span>
-              </div>
-              <div className="flex items-center gap-2.5 p-3 rounded-xl glass-card border border-teal-dim/20">
-                <Check size={16} className="text-teal shrink-0" />
-                <span className="text-xs sm:text-sm text-cream font-medium">Artisanal sourdough baked to order</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Sizzling Photo Showcase — clickable with fullscreen zoom */}
-          <HeroImageWithModal />
-        </div>
-      </section>
-
-
-      {/* ── 4. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
+      {/* ── 3. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
       <LandingDishesSection currentLocale="en" />
 
       {/* ── 5. THE FOUR PILLARS OF OUR KITCHEN ── */}

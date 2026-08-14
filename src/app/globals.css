@@ -432,6 +432,21 @@ body {
   box-shadow: 0 6px 28px rgba(37, 211, 102, 0.4);
   transform: translateY(-1px);
 }
+
+/* Premium Human-Crafted Text Effects */
+.luxury-title {
+  font-weight: 300 !important;
+  letter-spacing: -0.01em;
+}
+
+.luxury-gold-serif {
+  font-family: var(--font-playfair), Georgia, serif !important;
+  font-style: italic;
+  font-weight: 500;
+  color: #C6A87C;
+  letter-spacing: 0.02em;
+}
+
 .whatsapp-btn:active {
   transform: translateY(0);
 }

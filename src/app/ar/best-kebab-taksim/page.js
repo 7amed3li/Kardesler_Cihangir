@@ -173,11 +173,11 @@ export default function BestKebabTaksimArabicPage() {
 
           {/* Main Title */}
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.25] tracking-tight"
+            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.25] tracking-tight luxury-title"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             الكباب العثماني الأصيل <br className="hidden sm:inline" />
-            على <span className="text-gold">جمر السنديان الطبيعي</span> قرب تقسيم
+            على <span className="luxury-gold-serif">جمر السنديان الطبيعي</span> قرب تقسيم
           </h1>
 
           {/* Subtitle */}
@@ -250,68 +250,6 @@ export default function BestKebabTaksimArabicPage() {
 
       {/* ── SEO STORYTELLING (MAGAZINE LAYOUT) ── */}
       <SeoStorytelling locale="ar" />
-
-      {/* ── 3. STORY OF CRAFTSMANSHIP & HERITAGE ── */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          {/* Text & History */}
-          <div className="space-y-4 sm:space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider">
-              <Flame size={13} />
-              <span>أسرار الشواء العثماني الأصيل</span>
-            </div>
-
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-black text-cream leading-tight"
-              style={{ fontFamily: "var(--font-cairo)" }}
-            >
-              لماذا يفضل زوار إسطنبول القدوم إلى <span className="text-copper">جيهانكير</span>؟
-            </h2>
-
-            <p className="text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
-              على بعد 450 متراً فقط نزولاً من صخب وإعلانات ميدان تقسيم المزدحمة، يقع حي <strong className="text-cream font-medium">جيهانكير (Cihangir)</strong> — أرقى وأهدأ أحياء بيوغلو التاريخية، حيث يلتقي الفن والثقافة وأصالة الطهي.
-            </p>
-
-            <p className="text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
-              منذ عام 1998، حافظ مطعم <strong className="text-cream font-medium">كارديشلر (Kardeşler)</strong> على أصول الضيافة التركية الحقيقية: فرم اللحوم الطازجة يدوياً بساطور الزيرح، إشعال جمر خشب السنديان الطبيعي كل صباح، وخبز فطائر البيدا واللحم بعجين مباشرة في الفرن الحجري بحرارة 450 درجة.
-            </p>
-
-            {/* Feature Bullets */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2.5 p-3 rounded-xl glass-card border border-teal-dim/20">
-                <Check size={16} className="text-teal shrink-0" />
-                <span className="text-xs sm:text-sm text-cream font-medium">لحوم طازجة يومياً غير مجمدة</span>
-              </div>
-              <div className="flex items-center gap-2.5 p-3 rounded-xl glass-card border border-teal-dim/20">
-                <Check size={16} className="text-teal shrink-0" />
-                <span className="text-xs sm:text-sm text-cream font-medium">عجين مخمر ومخبوز على الحجر فوراً</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Sizzling Photo Showcase */}
-          <div className="relative h-[280px] sm:h-[380px] rounded-2xl sm:rounded-3xl overflow-hidden border border-gold/30 shadow-xl group">
-            <Image
-              src="/images/27-Karisik-Kebap_1.webp"
-              alt="وليمة المشاوي الملكية المشكلة مطعم كارديشلر جيهانكير"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0E0804] via-transparent to-transparent"></div>
-            
-            <div className="absolute bottom-4 start-4 end-4 p-3.5 sm:p-4 rounded-xl glass-card border border-gold/30 backdrop-blur-md">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-cream font-bold text-sm sm:text-base">وليمة المشاوي الملكية الخاصة</h4>
-                  <p className="text-cream-dim/70 text-xs">مشاوي على الفحم ومقبلات بيتية طازجة</p>
-                </div>
-                <span className="text-gold font-black text-base sm:text-lg">1600 ₺</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── 4. SIGNATURE SPECIALTIES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
       <LandingDishesSection currentLocale="ar" />
