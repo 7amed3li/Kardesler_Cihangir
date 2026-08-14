@@ -6,6 +6,7 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false,
   turbopack: {
     root: __dirname,
   },
@@ -191,6 +192,16 @@ const nextConfig = {
             value: "strict-origin-when-cross-origin",
           },
         ],
+      },
+      {
+        // Strict CSP only for Admin Routes to prevent XSS without breaking public site scripts
+        source: "/admin/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://evkcvnyahjxrsglythgt.supabase.co wss://evkcvnyahjxrsglythgt.supabase.co;"
+          }
+        ]
       },
       {
         // Cache static media assets aggressively

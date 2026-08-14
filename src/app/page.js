@@ -40,6 +40,7 @@ function useReveal() {
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState(menuData[0].id);
   const [activeFilter, setActiveFilter] = useState(null);
+  const [livePrices, setLivePrices] = useState({});
   const { t } = useAppContext();
   const menuRef = useRef(null);
   const [heroVisible, setHeroVisible] = useState(true);
@@ -56,6 +57,25 @@ export default function Home() {
   useEffect(() => {
     // Trigger hero animations after first paint
     requestAnimationFrame(() => setHeroVisible(true));
+    
+    // Fetch live prices from Supabase
+    async function fetchPrices() {
+      try {
+        const { createClient } = await import('@/lib/supabase/client');
+        const supabase = createClient();
+        const { data, error } = await supabase.from('items').select('id, price');
+        if (data && !error) {
+          const pricesMap = {};
+          data.forEach(item => {
+             pricesMap[item.id] = item.price;
+          });
+          setLivePrices(pricesMap);
+        }
+      } catch (e) {
+        console.error("Failed to load live prices", e);
+      }
+    }
+    fetchPrices();
   }, []);
 
   // Extract trending items
@@ -236,11 +256,15 @@ export default function Home() {
         </div>
         
         <div className="flex overflow-x-auto gap-5 pb-6 px-2 no-scrollbar snap-x">
-          {trendingItems.map((item, idx) => (
-            <div key={`trending-${item.id}`} className="min-w-[80vw] sm:min-w-[380px] md:min-w-[300px] snap-center">
-              <FoodCard item={item} index={idx} isVertical={true} />
-            </div>
-          ))}
+          {trendingItems.map((item, idx) => {
+            const livePrice = livePrices[item.id];
+            const displayItem = livePrice ? { ...item, price: livePrice } : item;
+            return (
+              <div key={`trending-${item.id}`} className="min-w-[80vw] sm:min-w-[380px] md:min-w-[300px] snap-center">
+                <FoodCard item={displayItem} index={idx} isVertical={true} />
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -282,9 +306,12 @@ export default function Home() {
               className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 animate-fadeIn"
             >
               {filteredItems.filter(item => item && item.id).length > 0 ? (
-                filteredItems.filter(item => item && item.id).map((item, index) => (
-                  <FoodCard key={item.id} item={item} index={index} />
-                ))
+                filteredItems.filter(item => item && item.id).map((item, index) => {
+                  // Merge live price if available
+                  const livePrice = livePrices[item.id];
+                  const displayItem = livePrice ? { ...item, price: livePrice } : item;
+                  return <FoodCard key={item.id} item={displayItem} index={index} />;
+                })
               ) : (
                 <div className="col-span-full py-16 text-center">
                   <p className="text-cream-dim font-light tracking-wide">No dishes match the selected filter.</p>
