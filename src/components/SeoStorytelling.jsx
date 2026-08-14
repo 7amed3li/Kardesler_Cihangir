@@ -88,11 +88,11 @@ export default function SeoStorytelling({ locale = 'en' }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8">
           
           {/* Main Story Block (Bento Large) */}
-          <div className="col-span-1 lg:col-span-7 bg-[#140D07] rounded-3xl p-6 sm:p-12 border border-copper/20 relative overflow-hidden group hover:border-copper/40 transition-colors shadow-2xl">
+          <div className="col-span-1 lg:col-span-7 bg-[#140D07] rounded-3xl p-6 sm:p-12 border border-copper/20 relative overflow-hidden group hover:border-copper/40 transition-colors shadow-2xl order-1">
             <div className="absolute top-0 right-0 w-64 h-64 bg-copper/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             <div className="relative z-10 space-y-4 sm:space-y-6">
-              <Compass size={32} className="text-copper mb-2" />
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              <div className="w-12 h-[2px] bg-copper/60 mb-4 rounded-full"></div>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-cream leading-tight luxury-title" style={{ fontFamily: "var(--font-cairo)" }}>
                 {t.storyTitle}
               </h2>
               <div className="space-y-4 text-cream-dim/90 text-sm sm:text-base leading-relaxed font-light">
@@ -110,7 +110,7 @@ export default function SeoStorytelling({ locale = 'en' }) {
           {/* Image Block 1 */}
           <button 
             onClick={() => setActiveModal('kebab')}
-            className="col-span-1 lg:col-span-5 relative min-h-[250px] sm:min-h-[320px] rounded-3xl overflow-hidden border border-teal-dim/30 shadow-2xl block w-full text-left cursor-zoom-in group"
+            className="col-span-1 lg:col-span-5 relative min-h-[250px] sm:min-h-[320px] rounded-3xl overflow-hidden border border-teal-dim/30 shadow-2xl block w-full text-left cursor-zoom-in group order-2"
           >
             <Image 
               src="/images/27-Karisik-Kebap_1.webp" 
@@ -127,7 +127,7 @@ export default function SeoStorytelling({ locale = 'en' }) {
           {/* Image Block 2 */}
           <button 
             onClick={() => setActiveModal('lahmacun')}
-            className="col-span-1 lg:col-span-4 relative min-h-[250px] sm:min-h-[300px] rounded-3xl overflow-hidden border border-gold/20 shadow-2xl block w-full text-left cursor-zoom-in group"
+            className="col-span-1 lg:col-span-4 relative min-h-[250px] sm:min-h-[300px] rounded-3xl overflow-hidden border border-gold/20 shadow-2xl block w-full text-left cursor-zoom-in group order-4 lg:order-3"
           >
             <Image 
               src="/images/lahmacun.webp" 
@@ -141,11 +141,11 @@ export default function SeoStorytelling({ locale = 'en' }) {
             </div>
           </button>
 
-          {/* Craft Block (Bento Medium) */}
-          <div className="col-span-1 lg:col-span-8 bg-gradient-to-br from-[#140D07] to-[#0a0603] rounded-3xl p-6 sm:p-10 border border-teal-dim/30 relative overflow-hidden group hover:border-gold/30 transition-colors shadow-2xl">
+          {/* Secondary Story Block */}
+          <div className="col-span-1 lg:col-span-8 bg-gradient-to-br from-[#140D07] to-[#0a0603] rounded-3xl p-6 sm:p-10 border border-teal-dim/30 relative overflow-hidden group hover:border-gold/30 transition-colors shadow-2xl order-3 lg:order-4">
             <div className="relative z-10 space-y-4 sm:space-y-5">
-              <Flame size={28} className="text-gold mb-1" />
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-cream" style={{ fontFamily: "var(--font-cairo)" }}>
+              <div className="w-12 h-[2px] bg-gold/60 mb-4 rounded-full"></div>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-light text-cream luxury-title" style={{ fontFamily: "var(--font-cairo)" }}>
                 {t.craftTitle}
               </h3>
               <div className="space-y-3 text-cream-dim/85 text-sm sm:text-base leading-relaxed font-light">
