@@ -7,7 +7,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
 import ReservationModal from "./ReservationModal";
 import { useAppContext } from "../context/AppContext";
-import { Menu, Home, Info, Phone, UtensilsCrossed, Calendar, Flame } from "lucide-react";
+import { Menu, Home, Info, Phone, UtensilsCrossed, Calendar } from "lucide-react";
 
 export default function Header() {
   const { t, lang } = useAppContext();
@@ -31,7 +31,75 @@ export default function Header() {
     ru: "Столик",
     fa: "رزرو میز",
     fr: "Réserver",
+    de: "Reservieren",
+    it: "Prenota",
+    es: "Reservar",
+    zh: "预订餐桌",
   }[lang] || "Reserve";
+
+  const getNavLabel = (key) => {
+    if (key === "home") {
+      if (lang === "ar") return "الرئيسية";
+      if (lang === "zh") return "首页";
+      if (lang === "de") return "Startseite";
+      if (lang === "it") return "Home";
+      if (lang === "es") return "Inicio";
+      if (lang === "tr") return "Ana Sayfa";
+      if (lang === "fa") return "صفحه اصلی";
+      if (lang === "fr") return "Accueil";
+      if (lang === "ru") return "Главная";
+      return t.home || "Home";
+    }
+    if (key === "menu") {
+      if (lang === "ar") return "القائمة الكاملة";
+      if (lang === "zh") return "完整菜单";
+      if (lang === "de") return "Speisekarte";
+      if (lang === "it") return "Menu";
+      if (lang === "es") return "Menú";
+      if (lang === "tr") return "Menü";
+      if (lang === "fa") return "منو";
+      if (lang === "fr") return "Menu";
+      if (lang === "ru") return "Меню";
+      return t.menu || "Menu";
+    }
+    if (key === "about") {
+      if (lang === "ar") return "من نحن";
+      if (lang === "zh") return "关于我们";
+      if (lang === "de") return "Über uns";
+      if (lang === "it") return "Chi Siamo";
+      if (lang === "es") return "Nosotros";
+      if (lang === "tr") return "Hakkımızda";
+      if (lang === "fa") return "درباره ما";
+      if (lang === "fr") return "À Propos";
+      if (lang === "ru") return "О нас";
+      return t.about || "About Us";
+    }
+    if (key === "contact") {
+      if (lang === "ar") return "التواصل والحجز";
+      if (lang === "zh") return "联系我们";
+      if (lang === "de") return "Kontakt";
+      if (lang === "it") return "Contatti";
+      if (lang === "es") return "Contacto";
+      if (lang === "tr") return "İletişim";
+      if (lang === "fa") return "تماس با ما";
+      if (lang === "fr") return "Contact";
+      if (lang === "ru") return "Контакты";
+      return t.contact || "Contact";
+    }
+    if (key === "taksimGuide") {
+      if (lang === "ar") return "دليل أفضل كباب في تقسيم";
+      if (lang === "zh") return "塔克西姆最佳烤肉指南";
+      if (lang === "de") return "Bester Kebab Taksim Guide";
+      if (lang === "it") return "Guida Miglior Kebab Taksim";
+      if (lang === "es") return "Guía Mejor Kebab en Taksim";
+      if (lang === "tr") return "Taksim En İyi Kebap Rehberi";
+      if (lang === "fa") return "راهنمای بهترین کباب تقسیم";
+      if (lang === "fr") return "Guide Meilleur Kebab Taksim";
+      if (lang === "ru") return "Гид по лучшему кебабу";
+      return "Best Kebab Taksim Guide";
+    }
+    return "";
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -93,7 +161,7 @@ export default function Header() {
 
               {/* Dropdown */}
               {isMenuOpen && (
-                <div className="absolute end-0 mt-2 w-52 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-lg overflow-hidden z-50 animate-fadeIn">
+                <div className="absolute end-0 mt-2 w-56 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-lg overflow-hidden z-50 animate-fadeIn">
                   <div className="py-2 flex flex-col">
                     <button
                       onClick={() => {
@@ -103,7 +171,7 @@ export default function Header() {
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-bold text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors text-start w-full uppercase tracking-wider"
                     >
                       <Calendar size={15} className="text-[#9C7A3F]" />
-                      <span style={{ fontFamily: "var(--font-inter)" }}>{reserveText}</span>
+                      <span style={{ fontFamily: "var(--font-cairo)" }}>{reserveText}</span>
                     </button>
 
                     <div className="h-px bg-[#9C7A3F]/20 my-1"></div>
@@ -114,7 +182,7 @@ export default function Header() {
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
                       <Home size={15} className="text-[#4E5F4C]" />
-                      <span style={{ fontFamily: "var(--font-inter)" }}>{t.home || "Ana Sayfa"}</span>
+                      <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("home")}</span>
                     </Link>
                     <Link 
                       href="/menu" 
@@ -122,7 +190,7 @@ export default function Header() {
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
                       <UtensilsCrossed size={15} className="text-[#4E5F4C]" />
-                      <span style={{ fontFamily: "var(--font-inter)" }}>{t.menuLink || "Menü"}</span>
+                      <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("menu")}</span>
                     </Link>
                     <Link 
                       href="/about" 
@@ -130,7 +198,7 @@ export default function Header() {
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
                       <Info size={15} className="text-[#4E5F4C]" />
-                      <span style={{ fontFamily: "var(--font-inter)" }}>{t.about || "Hakkımızda"}</span>
+                      <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("about")}</span>
                     </Link>
                     <Link 
                       href="/contact" 
@@ -138,7 +206,7 @@ export default function Header() {
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
                       <Phone size={15} className="text-[#4E5F4C]" />
-                      <span style={{ fontFamily: "var(--font-inter)" }}>{(t.footer && t.footer.contact) ? t.footer.contact : "İletişim"}</span>
+                      <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("contact")}</span>
                     </Link>
                     <div className="h-px bg-[#9C7A3F]/20 my-1"></div>
                     <Link 
@@ -147,16 +215,7 @@ export default function Header() {
                       className="px-4 py-2.5 flex items-center gap-3 text-xs text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors font-bold"
                     >
                       <span className="w-2 h-2 rounded-full bg-[#9C7A3F]"></span>
-                      <span style={{ fontFamily: "var(--font-inter)" }}>
-                        {{
-                          ar: "أفضل كباب في تقسيم",
-                          en: "Best Kebab Taksim",
-                          tr: "Taksim En İyi Kebap",
-                          ru: "Лучший кебаб Таксим",
-                          fa: "بهترین کباب تقسیم",
-                          fr: "Meilleur Kebab Taksim",
-                        }[lang] || "Best Kebab Taksim"}
-                      </span>
+                      <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("taksimGuide")}</span>
                     </Link>
                   </div>
                 </div>
