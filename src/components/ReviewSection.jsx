@@ -59,6 +59,10 @@ export default function ReviewSection() {
   const [activePhotoModal, setActivePhotoModal] = useState(null);
   const scrollContainerRef = useRef(null);
 
+  const googlePlatform = (livePlatformsData || []).find(p => p?.id === "google") || {};
+  const yemeksepetiPlatform = (livePlatformsData || []).find(p => p?.id === "yemeksepeti") || {};
+  const yandexPlatform = (livePlatformsData || []).find(p => p?.id === "yandex") || {};
+
   // Dynamic fetch from live /api/reviews endpoint
   useEffect(() => {
     let isMounted = true;

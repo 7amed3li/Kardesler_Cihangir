@@ -26,15 +26,7 @@ function CartCounter({ item, compact = false }) {
   };
 
   if (qty === 0) {
-    return (
-      <button
-        onClick={handleAdd}
-        aria-label="Add to cart"
-        className="min-w-[44px] min-h-[44px] px-3.5 py-2.5 rounded-lg bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shrink-0 shadow-xs"
-      >
-        <Plus size={16} strokeWidth={2.5} />
-      </button>
-    );
+    return null;
   }
 
   return (
