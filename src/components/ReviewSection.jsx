@@ -153,20 +153,20 @@ export default function ReviewSection() {
       ru: "Живые проверенные отзывы 5 звезд",
     },
     filter5Star: {
-      tr: "⭐ 5 Yıldızlı Yorumlar",
-      en: "⭐ 5-Star Reviews",
-      ar: "⭐ تقييمات 5 نجوم",
-      fa: "⭐ نظرات ۵ ستاره",
-      fr: "⭐ Avis 5 Étoiles",
-      ru: "⭐ Отзывы 5 звезд",
+      tr: "5 Yıldızlı Yorumlar",
+      en: "5-Star Reviews",
+      ar: "تقييمات 5 نجوم",
+      fa: "نظرات ۵ ستاره",
+      fr: "Avis 5 Étoiles",
+      ru: "Отзывы 5 звезд",
     },
     filterPhotos: {
-      tr: "📷 Fotoğraflı Yorumlar",
-      en: "📷 With Food Photos",
-      ar: "📷 تجارب مصورة",
-      fa: "📷 همراه با عکس غذا",
-      fr: "📷 Avec photos des plats",
-      ru: "📷 С фото блюд",
+      tr: "Fotoğraflı Yorumlar",
+      en: "With Food Photos",
+      ar: "تجارب مصورة",
+      fa: "همراه با عکس غذا",
+      fr: "Avec photos des plats",
+      ru: "С фото блюд",
     },
     verifiedGuest: {
       tr: "Doğrulanmış 5★ Deneyim",
@@ -195,10 +195,7 @@ export default function ReviewSection() {
   };
 
   return (
-    <section className="py-16 bg-ink border-t border-teal-dim/20 overflow-hidden relative" id="reviews">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gold/5 blur-[140px] pointer-events-none rounded-full"></div>
-
+    <section className="py-16 bg-[#EDE3CE] border-t border-[#9C7A3F]/20 overflow-hidden relative" id="reviews">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         
         {/* Ottoman Divider */}
@@ -206,16 +203,16 @@ export default function ReviewSection() {
 
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(212,162,76,0.15)]">
-            <Star size={13} className="text-gold fill-gold" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider mb-3">
+            <Star size={13} className="text-[#9C7A3F] fill-[#9C7A3F]" />
             <span>{labels.badge[lang] || labels.badge.en}</span>
           </div>
           
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-cream tracking-wide mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#2B2620] tracking-wide mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
             {t.reviewsTitle || "Misafirlerimiz Ne Diyor?"}
           </h3>
           
-          <p className="text-cream-dim/80 text-sm max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+          <p className="text-[#7A7364] text-sm max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
             {labels.totalStats[lang] || labels.totalStats.en}
           </p>
         </div>
@@ -228,23 +225,23 @@ export default function ReviewSection() {
               href={p.writeReviewUrl || p.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-between p-4 rounded-2xl glass-card border-teal-dim/20 hover:border-gold/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_10px_25px_rgba(212,162,76,0.15)] cursor-pointer"
+              className="group relative flex items-center justify-between p-4 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/20 hover:border-[#9C7A3F] transition-colors cursor-pointer"
             >
               <div className="flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-xl bg-ink flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
+                <div className="w-11 h-11 rounded-md bg-[#EDE3CE] flex items-center justify-center border border-[#9C7A3F]/20">
                   <PlatformIcon id={p.id} size="lg" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1">
-                    <span className="font-black text-lg text-cream">{p.rating}</span>
-                    <div className="flex text-gold">
+                    <span className="font-black text-lg text-[#2B2620]">{p.rating}</span>
+                    <div className="flex text-[#9C7A3F]">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={11} className="fill-gold" />
+                        <Star key={i} size={11} className="fill-[#9C7A3F]" />
                       ))}
                     </div>
                   </div>
-                  <h4 className="text-sm font-bold text-cream-dim group-hover:text-gold transition-colors">{p.name}</h4>
-                  <span className="text-[11px] text-cream-dim/60 font-medium">{p.reviewsCount} {t.reviewsCountText || "reviews"}</span>
+                  <h4 className="text-sm font-bold text-[#2B2620] group-hover:text-[#9C7A3F] transition-colors">{p.name}</h4>
+                  <span className="text-[11px] text-[#7A7364] font-medium">{p.reviewsCount} {t.reviewsCountText || "reviews"}</span>
                 </div>
               </div>
 
@@ -260,25 +257,23 @@ export default function ReviewSection() {
           {/* 1. All 5-Star Reviews */}
           <button
             onClick={() => setSelectedFilter("five-star")}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-4 py-2 rounded-md text-xs font-bold transition-colors flex items-center gap-1.5 ${
               selectedFilter === "five-star"
-                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
-                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+                ? "bg-[#4E5F4C] text-[#EAF0E6]"
+                : "bg-[#F7F2E7] text-[#2B2620] border border-[#9C7A3F]/30 hover:border-[#9C7A3F]"
             }`}
           >
             <span>{labels.filter5Star[lang] || labels.filter5Star.en}</span>
-            <span className="text-[10px] px-1.5 py-0.5 bg-black/20 rounded-full font-bold">4,550+</span>
+            <span className="text-[10px] px-1.5 py-0.5 bg-black/10 rounded-full font-bold">4,550+</span>
           </button>
-
-          {/* 2. Reviews With Food Photos (REMOVED due to authenticity strict rules) */}
 
           {/* 3. Google Maps Filter */}
           <button
             onClick={() => setSelectedFilter("google")}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-4 py-2 rounded-md text-xs font-bold transition-colors flex items-center gap-1.5 ${
               selectedFilter === "google"
-                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
-                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+                ? "bg-[#4E5F4C] text-[#EAF0E6]"
+                : "bg-[#F7F2E7] text-[#2B2620] border border-[#9C7A3F]/30 hover:border-[#9C7A3F]"
             }`}
           >
             <PlatformIcon id="google" size="sm" />
@@ -289,10 +284,10 @@ export default function ReviewSection() {
           {/* 4. Yemeksepeti Filter */}
           <button
             onClick={() => setSelectedFilter("yemeksepeti")}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-4 py-2 rounded-md text-xs font-bold transition-colors flex items-center gap-1.5 ${
               selectedFilter === "yemeksepeti"
-                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
-                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+                ? "bg-[#4E5F4C] text-[#EAF0E6]"
+                : "bg-[#F7F2E7] text-[#2B2620] border border-[#9C7A3F]/30 hover:border-[#9C7A3F]"
             }`}
           >
             <PlatformIcon id="yemeksepeti" size="sm" />
@@ -303,10 +298,10 @@ export default function ReviewSection() {
           {/* 5. Yandex Maps Filter */}
           <button
             onClick={() => setSelectedFilter("yandex")}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-4 py-2 rounded-md text-xs font-bold transition-colors flex items-center gap-1.5 ${
               selectedFilter === "yandex"
-                ? "bg-gold text-ink shadow-[0_0_15px_rgba(212,162,76,0.4)] scale-105"
-                : "bg-ink-2/80 text-cream-dim hover:text-cream border border-teal-dim/30 hover:bg-teal-dim/20"
+                ? "bg-[#4E5F4C] text-[#EAF0E6]"
+                : "bg-[#F7F2E7] text-[#2B2620] border border-[#9C7A3F]/30 hover:border-[#9C7A3F]"
             }`}
           >
             <PlatformIcon id="yandex" size="sm" />
@@ -320,14 +315,14 @@ export default function ReviewSection() {
           <button
             onClick={() => handleScrollManual("left")}
             aria-label="Previous Reviews"
-            className="w-8 h-8 rounded-full bg-ink-2 border border-gold/30 flex items-center justify-center text-cream hover:text-gold hover:border-gold transition-all"
+            className="w-8 h-8 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 flex items-center justify-center text-[#2B2620] hover:text-[#9C7A3F] transition-colors"
           >
             <ChevronLeft size={16} />
           </button>
           <button
             onClick={() => handleScrollManual("right")}
             aria-label="Next Reviews"
-            className="w-8 h-8 rounded-full bg-ink-2 border border-gold/30 flex items-center justify-center text-cream hover:text-gold hover:border-gold transition-all"
+            className="w-8 h-8 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 flex items-center justify-center text-[#2B2620] hover:text-[#9C7A3F] transition-colors"
           >
             <ChevronRight size={16} />
           </button>
@@ -342,13 +337,9 @@ export default function ReviewSection() {
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setIsPaused(false)}
       >
-        {/* Soft edge gradient fades */}
-        <div className="absolute start-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute end-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
-
         <div
           ref={scrollContainerRef}
-          className="flex gap-5 px-4 overflow-x-auto no-scrollbar scroll-smooth"
+          className="flex gap-4 px-4 overflow-x-auto no-scrollbar scroll-smooth"
           style={{ cursor: isPaused ? "grab" : "default" }}
         >
           {displayItems.map((item, index) => {
@@ -361,47 +352,46 @@ export default function ReviewSection() {
             return (
               <div
                 key={`${item.id}-${index}`}
-                className="group w-[310px] sm:w-[380px] shrink-0 p-5 rounded-2xl glass-card-strong border-teal-dim/20 hover:border-gold/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_35px_rgba(212,162,76,0.15)] flex flex-col justify-between"
+                className="group w-[310px] sm:w-[380px] shrink-0 p-5 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/20 hover:border-[#9C7A3F] transition-colors flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar: Platform Badge, 5 Stars & Exact Date */}
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <div 
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold text-cream"
-                      style={{ backgroundColor: currentPlatform?.badgeBg, border: `1px solid ${currentPlatform?.badgeBorder}` }}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold text-[#2B2620]"
+                      style={{ backgroundColor: "#EDE3CE", border: `1px solid rgba(156, 122, 63, 0.3)` }}
                     >
                       <PlatformIcon id={item.platform} size="sm" />
-                      <span className="text-[11px] font-semibold">{currentPlatform?.name}</span>
+                      <span className="text-[11px] font-bold">{currentPlatform?.name}</span>
                     </div>
 
                     <div className="flex items-center gap-1">
                       {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} size={13} className="text-gold fill-gold drop-shadow-[0_0_4px_rgba(212,162,76,0.6)]" />
+                        <Star key={i} size={13} className="text-[#9C7A3F] fill-[#9C7A3F]" />
                       ))}
                     </div>
                   </div>
 
-                  {/* Customer Food Photo (if attached) */}
+                  {/* Customer Food Photo */}
                   {item.photo && (
                     <div 
                       onClick={() => setActivePhotoModal(item)}
-                      className="relative w-full h-36 rounded-xl overflow-hidden mb-3.5 border border-gold/20 cursor-zoom-in group/photo"
+                      className="relative w-full h-36 rounded-md overflow-hidden mb-3.5 border border-[#9C7A3F]/20 cursor-zoom-in group/photo bg-[#EDE3CE]"
                     >
                       <Image
                         src={item.photo}
                         alt={photoCaptionText || item.dish || "Delicious food"}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover/photo:scale-105"
+                        className="object-cover transition-transform duration-300 group-hover/photo:scale-105"
                         sizes="(max-width: 768px) 300px, 380px"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
+                      <div className="absolute inset-0 bg-[#2B2620]/40 flex items-end p-2.5">
                         <div className="flex items-center justify-between w-full">
-                          <span className="text-xs font-bold text-cream drop-shadow-md flex items-center gap-1">
-                            <Flame size={12} className="text-copper shrink-0" />
+                          <span className="text-xs font-bold text-white flex items-center gap-1">
                             {photoCaptionText}
                           </span>
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-gold font-bold flex items-center gap-1 border border-gold/30">
+                          <span className="text-[10px] px-2 py-0.5 rounded-md bg-[#2B2620]/80 text-[#9C7A3F] font-bold flex items-center gap-1">
                             <Camera size={10} />
                             Fotoğraf
                           </span>
@@ -411,24 +401,24 @@ export default function ReviewSection() {
                   )}
 
                   {/* Review Text */}
-                  <p className="text-[13.5px] sm:text-[14px] text-cream-dim/95 leading-relaxed mb-4 line-clamp-4 italic" style={{ fontFamily: "var(--font-inter)" }}>
+                  <p className="text-[13.5px] sm:text-[14px] text-[#2B2620] leading-relaxed mb-4 line-clamp-4 italic font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                     &ldquo;{reviewText}&rdquo;
                   </p>
                 </div>
 
                 {/* Bottom Reviewer Info & Direct Platform Verification Link */}
-                <div className="pt-3.5 border-t border-teal-dim/15 flex items-center justify-between mt-auto">
+                <div className="pt-3 border-t border-[#9C7A3F]/20 flex items-center justify-between mt-auto">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-teal-dim to-ink flex items-center justify-center text-gold font-bold text-sm border border-gold/30 shadow-sm shrink-0">
+                    <div className="w-8 h-8 rounded-md bg-[#EDE3CE] flex items-center justify-center text-[#9C7A3F] font-bold text-sm border border-[#9C7A3F]/30 shrink-0">
                       {item.initial}
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs sm:text-sm font-bold text-cream group-hover:text-gold transition-colors">{item.author}</span>
-                        <CheckCircle2 size={12} className="text-emerald-400 shrink-0" title={labels.verifiedGuest[lang] || labels.verifiedGuest.en} />
+                        <span className="text-xs sm:text-sm font-bold text-[#2B2620]">{item.author}</span>
+                        <CheckCircle2 size={12} className="text-[#4E5F4C] shrink-0" title={labels.verifiedGuest[lang] || labels.verifiedGuest.en} />
                       </div>
-                      <div className="flex items-center gap-2 text-[10px] text-cream-dim/60">
-                        <span className="font-semibold text-gold/80">{reviewTag}</span>
+                      <div className="flex items-center gap-2 text-[10px] text-[#7A7364]">
+                        <span className="font-semibold text-[#9C7A3F]">{reviewTag}</span>
                         <span>•</span>
                         <span>{reviewDate}</span>
                       </div>
@@ -440,7 +430,7 @@ export default function ReviewSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Verify ${item.author}'s review on ${currentPlatform?.name}`}
-                    className="p-1.5 rounded-lg bg-teal-dim/10 hover:bg-gold/20 text-cream-dim hover:text-gold transition-all"
+                    className="p-1.5 rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-colors"
                     title={labels.verifyLink[lang] || labels.verifyLink.en}
                   >
                     <ExternalLink size={14} />
@@ -455,24 +445,24 @@ export default function ReviewSection() {
       {/* Lightbox Modal for Customer Food Photo */}
       {activePhotoModal && (
         <div 
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-[#2B2620]/80 flex items-center justify-center p-4 animate-fadeIn"
           onClick={() => setActivePhotoModal(null)}
         >
           <div 
-            className="relative max-w-2xl w-full bg-ink-2 border border-gold/30 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.9)]"
+            className="relative max-w-2xl w-full bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-2xl overflow-hidden shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="p-4 flex items-center justify-between border-b border-gold/20">
+            <div className="p-4 flex items-center justify-between border-b border-[#9C7A3F]/20">
               <div className="flex items-center gap-2.5">
                 <PlatformIcon id={activePhotoModal.platform} size="md" />
                 <div>
-                  <h4 className="text-sm font-bold text-cream">{activePhotoModal.author}</h4>
-                  <div className="flex items-center gap-1 text-[11px] text-gold">
+                  <h4 className="text-sm font-bold text-[#2B2620]">{activePhotoModal.author}</h4>
+                  <div className="flex items-center gap-1 text-[11px] text-[#9C7A3F]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={11} className="fill-gold" />
+                      <Star key={i} size={11} className="fill-[#9C7A3F]" />
                     ))}
-                    <span className="text-cream-dim/60 ms-1">
+                    <span className="text-[#7A7364] ms-1">
                       {activePhotoModal.date[lang] || activePhotoModal.date.en || activePhotoModal.date.tr}
                     </span>
                   </div>
@@ -480,14 +470,14 @@ export default function ReviewSection() {
               </div>
               <button
                 onClick={() => setActivePhotoModal(null)}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-cream flex items-center justify-center transition-all"
+                className="w-8 h-8 rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] flex items-center justify-center transition-colors"
               >
                 <X size={18} />
               </button>
             </div>
 
             {/* High-res Image */}
-            <div className="relative w-full h-[320px] sm:h-[420px] bg-black">
+            <div className="relative w-full h-[320px] sm:h-[420px] bg-[#EDE3CE]">
               <Image
                 src={activePhotoModal.photo}
                 alt={activePhotoModal.dish || "Dish photo"}
@@ -498,17 +488,17 @@ export default function ReviewSection() {
             </div>
 
             {/* Modal Footer Caption & Quote */}
-            <div className="p-4 bg-ink">
-              <p className="text-xs sm:text-sm text-cream/90 italic leading-relaxed mb-2">
+            <div className="p-4 bg-[#F7F2E7]">
+              <p className="text-xs sm:text-sm text-[#2B2620] italic font-medium leading-relaxed mb-2">
                 &ldquo;{activePhotoModal.text[lang] || activePhotoModal.text.en || activePhotoModal.text.tr}&rdquo;
               </p>
-              <div className="flex items-center justify-between text-xs text-gold font-bold pt-2 border-t border-teal-dim/20">
+              <div className="flex items-center justify-between text-xs text-[#9C7A3F] font-bold pt-2 border-t border-[#9C7A3F]/20">
                 <span>{activePhotoModal.photoCaption ? (activePhotoModal.photoCaption[lang] || activePhotoModal.photoCaption.en || activePhotoModal.photoCaption.tr) : activePhotoModal.dish}</span>
                 <a
                   href={activePhotoModal.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs text-cream-dim hover:text-gold transition-colors"
+                  className="flex items-center gap-1 text-xs text-[#7A7364] hover:text-[#2B2620] transition-colors"
                 >
                   <span>{labels.verifyLink[lang] || labels.verifyLink.en}</span>
                   <ExternalLink size={12} />
@@ -520,17 +510,39 @@ export default function ReviewSection() {
       )}
 
       {/* Write a Review Callout Section */}
-      <div className="max-w-4xl mx-auto px-4 mt-8 pt-6 border-t border-teal-dim/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-start">
+      <div className="max-w-4xl mx-auto px-4 mt-8 pt-6 border-t border-[#9C7A3F]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-start">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shrink-0">
+          <div className="w-10 h-10 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 flex items-center justify-center text-[#9C7A3F] shrink-0">
             <MessageSquarePlus size={18} />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-cream">
-              {lang === "ar" ? "هل قمت بزيارتنا مؤخراً؟" : lang === "fa" ? "آیا اخیراً مهمان ما بوده‌اید؟" : "Bizi yakın zamanda ziyaret ettiniz mi?"}
+            <h4 className="text-sm font-bold text-[#2B2620]">
+              {
+                lang === "ar" ? "هل قمت بزيارتنا مؤخراً؟" :
+                lang === "fa" ? "آیا اخیراً مهمان ما بوده‌اید؟" :
+                lang === "de" ? "Haben Sie uns kürzlich besucht?" :
+                lang === "it" ? "Ci hai visitato di recente?" :
+                lang === "es" ? "¿Nos has visitado recientemente?" :
+                lang === "zh" ? "您最近到访过我们店吗？" :
+                lang === "fr" ? "Nous avez-vous rendu visite récemment ?" :
+                lang === "ru" ? "Вы посещали нас в последнее время?" :
+                lang === "en" ? "Have you visited us recently?" :
+                "Bizi yakın zamanda ziyaret ettiniz mi?"
+              }
             </h4>
-            <p className="text-xs text-cream-dim/60">
-              {lang === "ar" ? "يسعدنا جداً مشاركتك لتجربتك على منصات التقييم" : lang === "fa" ? "خوشحال می‌شویم تجربه خود را در پلتفرم‌های بررسی ثبت کنید" : "Google, Yemeksepeti veya Yandex üzerinden deneyiminizi paylaşın"}
+            <p className="text-xs text-[#7A7364]">
+              {
+                lang === "ar" ? "يسعدنا جداً مشاركتك لتجربتك على منصات التقييم Google أو Yemeksepeti أو Yandex" :
+                lang === "fa" ? "خوشحال می‌شویم تجربه خود را در گوگل، یمکسپتی یا یاندکس ثبت کنید" :
+                lang === "de" ? "Teilen Sie Ihre Erfahrungen auf Google, Yemeksepeti oder Yandex" :
+                lang === "it" ? "Condividi la tua esperienza su Google, Yemeksepeti o Yandex" :
+                lang === "es" ? "Comparte tu experiencia en Google, Yemeksepeti o Yandex" :
+                lang === "zh" ? "在 Google、Yemeksepeti 或 Yandex 上分享您的就餐体验" :
+                lang === "fr" ? "Partagez votre expérience sur Google, Yemeksepeti ou Yandex" :
+                lang === "ru" ? "Поделитесь впечатлениями в Google, Yemeksepeti или Yandex" :
+                lang === "en" ? "Share your experience with us on Google, Yemeksepeti or Yandex" :
+                "Google, Yemeksepeti veya Yandex üzerinden deneyiminizi paylaşın"
+              }
             </p>
           </div>
         </div>
@@ -542,7 +554,7 @@ export default function ReviewSection() {
               href={p.writeReviewUrl || p.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-xl glass-card border border-teal-dim/30 hover:border-gold/60 text-xs font-semibold text-cream flex items-center gap-2 transition-all hover:scale-105 shadow-sm hover:shadow-[0_0_15px_rgba(212,162,76,0.2)]"
+              className="px-3.5 py-2 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 hover:border-[#9C7A3F] text-xs font-semibold text-[#2B2620] flex items-center gap-2 transition-colors"
             >
               <PlatformIcon id={p.id} size="sm" />
               <span>{p.name}</span>
