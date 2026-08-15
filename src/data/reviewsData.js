@@ -3,7 +3,7 @@ export const platforms = [
     id: "google",
     name: "Google Maps",
     rating: "4.6",
-    reviewsCount: "1,280+",
+    reviewsCount: "1,450+",
     totalCountNumber: 1280,
     link: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
     writeReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJMz3TWu23yhQRZJD_LzDM82g&source=g.page.m.ia._&utm_source=gbp&laa=nmx-review-solicitation-ia2",
