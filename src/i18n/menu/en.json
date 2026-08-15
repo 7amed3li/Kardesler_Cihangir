@@ -23,7 +23,7 @@
     "kuzu_gerdan_corba": { "name": "Lamb Neck Soup", "desc": "Healing soup made with tender lamb neck meat simmered for hours in marrow bone broth." },
     "sehriyeli_tavuk_corbasi": { "name": "Chicken Noodle Soup", "desc": "Shredded village chicken breast, vermicelli noodles, lemon and black pepper." },
     "ezogelin_mercimek_corbasi": { "name": "Traditional Lentil Soup", "desc": "Strained red lentil soup served with mint butter, chili flakes and fresh lemon." },
-    "adana_urfa": { "name": "Adana & Urfa Kebab", "desc": "140g. Hand-minced spicy (Adana) or mild (Urfa) meat grilled on charcoal. Served with roasted peppers, tomatoes & bulgur." },
+    "adana_urfa": { "name": "Adana Kebab (Spicy) or Urfa Kebab (Mild)", "desc": "Note: Adana Kebab is spicy, while Urfa Kebab is mild and non-spicy. 140g hand-minced lamb charcoal-grilled, served with roasted peppers, tomatoes, warm lavash, and bulgur." },
     "mardin_kebap": { "name": "Mardin Style Garlic Kebab", "desc": "180g. Hand-minced meat seasoned with garlic and regional herbs from Mardin." },
     "beyti_kebap": { "name": "Beyti Kebab Wrap", "desc": "170g. Charcoal grilled minced kebab wrapped in crispy lavash, baked with tomato sauce, melted butter and strained yogurt." },
     "domatesli_kebap": { "name": "Tomato Skewered Kebab", "desc": "150g. Skewered hand-minced meat grilled sequentially with juicy roasted tomato halves." },

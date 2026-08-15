@@ -114,18 +114,18 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-[#EDE3CE] border-b border-[#9C7A3F]/20 overflow-visible animate-fadeIn">
-        <div className="max-w-5xl mx-auto px-3 sm:px-4 h-14 flex items-center justify-between">
+      <header className="sticky top-0 z-40 w-full bg-[#F7F2E7] border-b-2 border-[#9C7A3F]/35 shadow-xs overflow-visible animate-fadeIn">
+        <div className="max-w-5xl mx-auto px-3 sm:px-4 h-15 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0 group">
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10 shrink-0">
-              <Image src="/logo.webp" alt="Kardeşler Cihangir Logo" fill priority sizes="40px" style={{ objectFit: 'contain' }} />
+          <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity shrink-0 group">
+            <div className="relative w-9 h-9 sm:w-11 sm:h-11 shrink-0 drop-shadow-xs">
+              <Image src="/logo.webp" alt="Kardeşler Cihangir Logo" fill priority sizes="80px" style={{ objectFit: 'contain' }} className="transition-transform group-hover:scale-105" />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-bold text-[#2B2620] leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              <span className="text-base sm:text-lg font-black text-[#2B2620] leading-none" style={{ fontFamily: "var(--font-cairo)" }}>
                 Kardeşler
               </span>
-              <span className="text-[9px] text-[#7A7364] uppercase tracking-widest" style={{ fontFamily: "var(--font-inter)" }}>
+              <span className="text-[10px] font-bold text-[#9C7A3F] uppercase tracking-widest mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
                 Kebap & Pide
               </span>
             </div>

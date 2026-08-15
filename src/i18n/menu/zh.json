@@ -23,7 +23,7 @@
     "kuzu_gerdan_corba": { "name": "羊颈骨浓汤", "desc": "羊骨髓浓汤慢炖数小时的鲜嫩羊颈肉汤。" },
     "sehriyeli_tavuk_corbasi": { "name": "鸡丝面线汤", "desc": "新鲜鸡胸肉配面线、柠檬与黑胡椒。" },
     "ezogelin_mercimek_corbasi": { "name": "传统红红豆浓汤", "desc": "传统红红豆浓汤配薄荷黄油与柠檬。" },
-    "adana_urfa": { "name": "阿达纳/乌尔法烤肉串", "desc": "140克。木炭烤手切牛肉末（辣味阿达纳/原味乌尔法），配烤辣椒、番茄与谷物饭。" },
+    "adana_urfa": { "name": "阿达纳烤肉 (辣味) / 乌尔法烤肉 (不辣)", "desc": "提示：阿达纳 Kebab 为香辣味，乌尔法 Kebab 为原味不辣。140克橡木炭火手剁羊肉串，配烤辣椒、西红柿、温热薄饼及香米饭。" },
     "mardin_kebap": { "name": "马尔丁蒜香烤肉", "desc": "180克。马尔丁风味蒜香调味肉末烤串。" },
     "beyti_kebap": { "name": "贝蒂烤肉卷饼", "desc": "170克。薄饼包裹烤肉烤制，浇上番茄酱、黄油与酸奶。" },
     "domatesli_kebap": { "name": "番茄烤肉串", "desc": "150克。肉末与番茄块交替炭烤。" },

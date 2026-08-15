@@ -20,8 +20,8 @@ const featuredDishes = [
     categoryId: "kebap",
     price: 2400.0,
     image: "/images/28-Karisik-Kebap_2.webp",
-    badgeKey: "spicy",
-    defaultBadge: "550 GR. AİLE ZİYAFETİ"
+    badgeKey: "signature",
+    defaultBadge: "ŞEFİN SEÇİMİ"
   },
   {
     id: "vali_kebabi",

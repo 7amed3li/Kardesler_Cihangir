@@ -23,7 +23,7 @@
     "kuzu_gerdan_corba": { "name": "Kuzu Gerdan Çorba", "desc": "Şifalı ilikli kemik suyunda saatlerce pişmiş lokum gibi kuzu gerdan eti çorbası." },
     "sehriyeli_tavuk_corbasi": { "name": "Şehriyeli Tavuk Çorbası", "desc": "Taze köy tavuğu göğüs eti, tel şehriye ve karabiber aromalı nefis sıcak çorba." },
     "ezogelin_mercimek_corbasi": { "name": "Ezogelin / Mercimek Çorbası", "desc": "Geleneksel usulde kırmızı mercimek, nane, tereyağı ve limon eşliğinde süzme çorba." },
-    "adana_urfa": { "name": "Adana & Urfa Kebap", "desc": "140 gr. Özel zırh kıyması, kömür ateşinde pişmiş kebap. Köz biber, domates ve bulgur pilavı ile." },
+    "adana_urfa": { "name": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)", "desc": "Bilgi: Adana Kebap acılı, Urfa Kebap acısız seçeneğidir. 140 gr. zırh kıyması meşe kömüründe pişirilir, közlenmiş biber, domates ve sıcak lavaş ile servis edilir" },
     "mardin_kebap": { "name": "Mardin Kebap", "desc": "180 gr. Mardin usulü sarımsak ve özel baharatlarla harmanlanmış zırh kıyması kebabı." },
     "beyti_kebap": { "name": "Beyti Kebap", "desc": "170 gr. Zırh kıymasının çıtır lavaşa sarılıp fırınlanması, domates sosu, tereyağı ve yoğurt ile." },
     "domatesli_kebap": { "name": "Domatesli Kebap", "desc": "150 gr. Zırh kıyması ve fırınlanmış sulu domates dilimlerinin kömür ateşinde buluşması." },
