@@ -110,14 +110,14 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#F7F2E7] pt-4 pb-2">
-      <div className="max-w-5xl mx-auto px-3 sm:px-6">
-        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-2xl p-4 sm:p-5 shadow-xs relative">
-          <h2 className="text-lg sm:text-xl font-black text-[#2B2620] mb-4 flex items-center gap-2" style={{ fontFamily: "var(--font-cairo)" }}>
-            <KebabSkewer size={18} className="text-[#9C7A3F]" />
+    <section className="relative w-full overflow-hidden bg-[#F7F2E7] pt-2.5 pb-1">
+      <div className="max-w-5xl mx-auto px-2.5 sm:px-5">
+        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-3 sm:p-4 shadow-xs relative">
+          <h2 className="text-base sm:text-lg font-black text-[#2B2620] mb-2.5 flex items-center gap-1.5" style={{ fontFamily: "var(--font-cairo)" }}>
+            <KebabSkewer size={16} className="text-[#9C7A3F]" />
             <span>{getBestSellersTitle()}</span>
           </h2>
-          <div className="flex overflow-x-auto gap-4 sm:gap-6 no-scrollbar pb-2 px-1 snap-x snap-mandatory">
+          <div className="flex overflow-x-auto gap-2.5 sm:gap-4 no-scrollbar pb-1 px-0.5 snap-x snap-mandatory">
             {featuredDishes.map((dish) => {
               const translatedName = menuT?.items?.[dish.menuItemId]?.name || dish.defaultTitle || "Special Dish";
               const translatedDesc = menuT?.items?.[dish.menuItemId]?.desc || "";
@@ -126,26 +126,26 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
               return (
                 <div 
                   key={dish.id} 
-                  className="relative flex flex-col items-center gap-2.5 shrink-0 cursor-pointer group w-[105px] sm:w-[135px] snap-center" 
+                  className="relative flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group w-[78px] sm:w-[96px] snap-center" 
                   onClick={() => setSelectedDish({ ...dish, translatedName, translatedDesc })}
                 >
                   {/* Flat Circular Wrapper */}
-                  <div className="relative w-[92px] h-[92px] sm:w-[120px] sm:h-[120px] rounded-full p-[2px] bg-[#9C7A3F]/30 group-hover:bg-[#9C7A3F] transition-colors shadow-xs">
+                  <div className="relative w-[68px] h-[68px] sm:w-[84px] sm:h-[84px] rounded-full p-[2px] bg-[#9C7A3F]/30 group-hover:bg-[#9C7A3F] transition-colors shadow-xs">
                      {/* Inner Circle (The Image) */}
-                     <div className="relative w-full h-full rounded-full overflow-hidden bg-[#EDE3CE] border-2 border-[#F7F2E7] p-1">
+                     <div className="relative w-full h-full rounded-full overflow-hidden bg-[#EDE3CE] border border-[#F7F2E7] p-0.5">
                        <Image 
                           src={dish.image} 
                           alt={translatedName} 
                           fill 
                           style={{ objectFit: "contain" }} 
-                          sizes="(max-width: 640px) 92px, 120px"
-                          className="transition-transform duration-500 group-hover:scale-105 p-1"
+                          sizes="(max-width: 640px) 68px, 84px"
+                          className="transition-transform duration-500 group-hover:scale-105 p-0.5"
                        />
                      </div>
                      
                      {/* Badge Overlapping Bottom Center */}
-                     <div className="absolute -bottom-2 inset-x-0 flex justify-center z-10">
-                       <span className="px-2 py-0.5 bg-[#4E5F4C] text-[#EAF0E6] rounded-md text-[9px] sm:text-[10px] font-bold whitespace-nowrap shadow-sm uppercase tracking-wide">
+                     <div className="absolute -bottom-1.5 inset-x-0 flex justify-center z-10">
+                       <span className="px-1.5 py-0.5 bg-[#4E5F4C] text-[#EAF0E6] rounded text-[8px] sm:text-[9px] font-bold whitespace-nowrap shadow-xs uppercase tracking-tight scale-90">
                          {translatedBadge}
                        </span>
                      </div>
@@ -153,7 +153,7 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
 
                   {/* Title */}
                   <span 
-                     className="text-[11px] sm:text-xs text-center font-bold text-[#2B2620] leading-tight mt-1 group-hover:text-[#9C7A3F] transition-colors line-clamp-2 px-1"
+                     className="text-[10px] sm:text-[11px] text-center font-bold text-[#2B2620] leading-tight mt-0.5 group-hover:text-[#9C7A3F] transition-colors line-clamp-2 px-0.5"
                      style={{ fontFamily: "var(--font-cairo)" }}
                   >
                      {translatedName}
@@ -218,22 +218,22 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
   }, [activeCategory]);
 
   const scroll = (dir) => {
-    scrollRef.current?.scrollBy({ left: dir * 180, behavior: "smooth" });
+    scrollRef.current?.scrollBy({ left: dir * 160, behavior: "smooth" });
   };
 
   return (
-    <div className="relative w-full bg-[#F7F2E7] pt-2 pb-4">
+    <div className="relative w-full bg-[#F7F2E7] pt-1 pb-2">
       {/* Ornamental Divider Line */}
-      <div className="max-w-5xl mx-auto px-4 my-2 flex items-center justify-center gap-3">
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#9C7A3F]/40 to-transparent flex-grow max-w-[140px]" />
-        <OttomanStar size={12} className="text-[#9C7A3F]/50 shrink-0" />
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#9C7A3F]/40 to-transparent flex-grow max-w-[140px]" />
+      <div className="max-w-5xl mx-auto px-4 my-1 flex items-center justify-center gap-2">
+        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#9C7A3F]/30 to-transparent flex-grow max-w-[120px]" />
+        <OttomanStar size={10} className="text-[#9C7A3F]/40 shrink-0" />
+        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#9C7A3F]/30 to-transparent flex-grow max-w-[120px]" />
       </div>
 
-      <div className="max-w-5xl mx-auto px-3 sm:px-6">
-        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-2xl p-4 sm:p-5 shadow-xs relative">
-          <div className="px-1 mb-3">
-            <h3 className="text-sm font-bold text-[#7A7364] tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
+      <div className="max-w-5xl mx-auto px-2.5 sm:px-5">
+        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2.5 sm:p-3.5 shadow-xs relative">
+          <div className="px-0.5 mb-2">
+            <h3 className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
                {t?.exploreMenu || "Menüyü İncele"}
             </h3>
           </div>
@@ -243,24 +243,24 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
               <button 
                 onClick={() => scroll(-1)} 
                 aria-label="Scroll left"
-                className="absolute start-0 top-0 bottom-0 z-10 w-8 sm:w-10 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
+                className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
               >
-                <ChevronLeft size={20} className="text-[#2B2620]" />
+                <ChevronLeft size={18} className="text-[#2B2620]" />
               </button>
             )}
             {canScrollRight && (
               <button 
                 onClick={() => scroll(1)} 
                 aria-label="Scroll right"
-                className="absolute end-0 top-0 bottom-0 z-10 w-8 sm:w-10 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
+                className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
               >
-                <ChevronRight size={20} className="text-[#2B2620]" />
+                <ChevronRight size={18} className="text-[#2B2620]" />
               </button>
             )}
 
             <div 
               ref={scrollRef}
-              className="flex items-start gap-3 px-1 pe-10 overflow-x-auto no-scrollbar pb-1 pt-1"
+              className="flex items-start gap-2 sm:gap-3 px-0.5 pe-8 overflow-x-auto no-scrollbar pb-0.5 pt-0.5"
             >
               {categories.map((cat) => {
                 const isActive = activeCategory === cat.id;
@@ -271,14 +271,14 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                     key={cat.id}
                     data-cat={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
-                    className={`relative shrink-0 flex flex-col items-center gap-1.5 w-[70px] sm:w-[84px] group transition-all duration-200 ${
+                    className={`relative shrink-0 flex flex-col items-center gap-1 w-[56px] sm:w-[68px] group transition-all duration-200 ${
                       isActive ? "scale-105" : "hover:scale-105"
                     }`}
                   >
                     {/* Image Thumbnail */}
-                    <div className={`relative w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-200 ${
+                    <div className={`relative w-[46px] h-[46px] sm:w-[56px] sm:h-[56px] rounded-lg sm:rounded-xl overflow-hidden transition-all duration-200 ${
                       isActive 
-                        ? "border-2 border-[#4E5F4C] shadow-sm" 
+                        ? "border-2 border-[#4E5F4C] shadow-xs" 
                         : "border border-[#9C7A3F]/30 group-hover:border-[#9C7A3F]"
                     }`}>
                       <div className="absolute inset-0 bg-[#EDE3CE]" />
@@ -288,21 +288,21 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                           alt=""
                           fill
                           style={{ objectFit: "cover" }}
-                          sizes="72px"
+                          sizes="56px"
                           className="transition-transform duration-300 group-hover:scale-105"
                         />
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center text-[#9C7A3F]">
                           {cat.id.includes("icecek") || cat.id.includes("kahve") ? (
-                            <Coffee size={24} strokeWidth={1.5} />
+                            <Coffee size={20} strokeWidth={1.5} />
                           ) : (
-                            <UtensilsCrossed size={24} strokeWidth={1.5} />
+                            <UtensilsCrossed size={20} strokeWidth={1.5} />
                           )}
                         </div>
                       )}
                     </div>
 
-                    <span className={`text-[10px] sm:text-[11px] font-bold text-center leading-tight px-1 transition-colors ${
+                    <span className={`text-[9.5px] sm:text-[10.5px] font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 ${
                       isActive ? "text-[#2B2620]" : "text-[#7A7364] group-hover:text-[#2B2620]"
                     }`}>
                       {menuT?.categories?.[cat.id] || cat.category.en}

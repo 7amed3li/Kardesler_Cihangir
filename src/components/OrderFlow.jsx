@@ -36,7 +36,7 @@ export default function OrderFlow() {
       {/* ═══════════════════════════════════════════
           STICKY BOTTOM BAR (Order Bar)
           ═══════════════════════════════════════════ */}
-      {!isCartOpen && (
+      {!isCartOpen && cartCount > 0 && (
         <div className="fixed bottom-0 start-0 end-0 z-50 bg-[#F7F2E7] border-t border-[#9C7A3F]/30 px-4 py-3 pb-[calc(12px+env(safe-area-inset-bottom))] shadow-lg flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative">
