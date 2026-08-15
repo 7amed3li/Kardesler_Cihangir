@@ -31,49 +31,6 @@ export default function OrderFlow() {
   return (
     <>
       {/* ═══════════════════════════════════════════
-          FLOATING CART BUTTON (FAB)
-          ═══════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════
-          STICKY BOTTOM BAR (Order Bar)
-          ═══════════════════════════════════════════ */}
-      {!isCartOpen && cartCount > 0 && (
-        <div className="fixed bottom-0 start-0 end-0 z-50 bg-[#F7F2E7] border-t border-[#9C7A3F]/30 px-4 py-3 pb-[calc(12px+env(safe-area-inset-bottom))] shadow-lg flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-md bg-[#4E5F4C] text-white flex items-center justify-center">
-                <ShoppingBag size={20} />
-              </div>
-              {cartCount > 0 && (
-                <span
-                  key={cartCount}
-                  className="absolute -top-1.5 -end-1.5 w-5 h-5 bg-[#9C7A3F] text-white text-xs font-bold flex items-center justify-center rounded-full border border-[#F7F2E7]"
-                >
-                  {cartCount}
-                </span>
-              )}
-            </div>
-            <div>
-              <p className="text-xs text-[#7A7364] font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                {labels.yourOrder || "Siparişiniz"}
-              </p>
-              <p className="text-sm font-bold text-[#2B2620]">
-                {convertPrice(cartTotal)} {symbol}
-              </p>
-            </div>
-          </div>
-
-          <button
-            onClick={() => setIsCartOpen(true)}
-            aria-label={labels.yourOrder || "Your Order"}
-            id="cart-fab"
-            className="px-5 py-2.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-semibold text-xs tracking-wider uppercase transition-colors"
-          >
-            {labels.viewCart || "Sepeti Gör"}
-          </button>
-        </div>
-      )}
-
-      {/* ═══════════════════════════════════════════
           CART DRAWER
           ═══════════════════════════════════════════ */}
       {isCartOpen && (
