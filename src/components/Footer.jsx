@@ -71,7 +71,17 @@ export default function Footer() {
           <div className="flex flex-col items-center sm:items-start">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
-              <span>{fc.quickLinks || "Quick Links"}</span>
+              <span>
+                {fc.quickLinks || (
+                  lang === "ar" ? "روابط سريعة" :
+                  lang === "zh" ? "快速链接" :
+                  lang === "de" ? "Schnellzugriff" :
+                  lang === "it" ? "Link Rapidi" :
+                  lang === "es" ? "Enlaces Rápidos" :
+                  lang === "tr" ? "Hızlı Bağlantılar" :
+                  "Quick Links"
+                )}
+              </span>
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
@@ -80,7 +90,17 @@ export default function Footer() {
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5 group"
                 >
                   <ArrowIcon size={13} className="text-[#9C7A3F]" />
-                  <span>{fc.home || "Home"}</span>
+                  <span>
+                    {fc.home || (
+                      lang === "ar" ? "الرئيسية" :
+                      lang === "zh" ? "首页" :
+                      lang === "de" ? "Startseite" :
+                      lang === "it" ? "Home" :
+                      lang === "es" ? "Inicio" :
+                      lang === "tr" ? "Ana Sayfa" :
+                      "Home"
+                    )}
+                  </span>
                 </Link>
               </li>
               <li>
@@ -89,7 +109,17 @@ export default function Footer() {
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5 group"
                 >
                   <ArrowIcon size={13} className="text-[#9C7A3F]" />
-                  <span>{fc.menu || "Full Menu"}</span>
+                  <span>
+                    {fc.menu || (
+                      lang === "ar" ? "القائمة الكاملة" :
+                      lang === "zh" ? "完整菜单" :
+                      lang === "de" ? "Gesamte Speisekarte" :
+                      lang === "it" ? "Menu Completo" :
+                      lang === "es" ? "Menú Completo" :
+                      lang === "tr" ? "Tüm Menü" :
+                      "Full Menu"
+                    )}
+                  </span>
                 </Link>
               </li>
               <li>
@@ -99,7 +129,15 @@ export default function Footer() {
                 >
                   <ArrowIcon size={13} className="text-[#9C7A3F]" />
                   <span className="underline underline-offset-4 decoration-[#9C7A3F]/50 group-hover:decoration-[#2B2620]">
-                    {fc.taksimGuide || "Best Kebab Taksim Guide"}
+                    {fc.taksimGuide || (
+                      lang === "ar" ? "دليل أفضل كباب في تقسيم" :
+                      lang === "zh" ? "塔克西姆最佳烤肉指南" :
+                      lang === "de" ? "Bester Kebab Taksim Guide" :
+                      lang === "it" ? "Guida Miglior Kebab Taksim" :
+                      lang === "es" ? "Guía Mejor Kebab en Taksim" :
+                      lang === "tr" ? "Taksim En İyi Kebap Rehberi" :
+                      "Best Kebab Near Taksim"
+                    )}
                   </span>
                 </Link>
               </li>
@@ -109,7 +147,17 @@ export default function Footer() {
                   className="text-[#7A7364] hover:text-[#2B2620] font-medium transition-colors inline-flex items-center gap-1.5 group"
                 >
                   <ArrowIcon size={13} className="text-[#9C7A3F]" />
-                  <span>{fc.about || "About Us"}</span>
+                  <span>
+                    {fc.about || (
+                      lang === "ar" ? "من نحن" :
+                      lang === "zh" ? "关于我们" :
+                      lang === "de" ? "Über uns" :
+                      lang === "it" ? "Chi Siamo" :
+                      lang === "es" ? "Nosotros" :
+                      lang === "tr" ? "Hakkımızda" :
+                      "About Us"
+                    )}
+                  </span>
                 </Link>
               </li>
               <li>
@@ -118,7 +166,17 @@ export default function Footer() {
                   className="text-[#7A7364] hover:text-[#2B2620] font-medium transition-colors inline-flex items-center gap-1.5 group"
                 >
                   <ArrowIcon size={13} className="text-[#9C7A3F]" />
-                  <span>{fc.contact || "Contact & Reservation"}</span>
+                  <span>
+                    {fc.contact || (
+                      lang === "ar" ? "التواصل والحجز" :
+                      lang === "zh" ? "联系与预订" :
+                      lang === "de" ? "Kontakt & Reservierung" :
+                      lang === "it" ? "Contatti e Prenotazioni" :
+                      lang === "es" ? "Contacto y Reserva" :
+                      lang === "tr" ? "İletişim & Rezervasyon" :
+                      "Contact & Reservation"
+                    )}
+                  </span>
                 </Link>
               </li>
               <li>
@@ -150,7 +208,17 @@ export default function Footer() {
           <div className="flex flex-col items-center sm:items-start">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
-              <span>{fc.contact || "İletişim"}</span>
+              <span>
+                {fc.contact || (
+                  lang === "ar" ? "التواصل" :
+                  lang === "zh" ? "联系方式" :
+                  lang === "de" ? "Kontakt" :
+                  lang === "it" ? "Contatti" :
+                  lang === "es" ? "Contacto" :
+                  lang === "tr" ? "İletişim" :
+                  "Contact"
+                )}
+              </span>
             </h3>
             <a href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 mb-3 text-start group">
               <MapPin size={15} className="text-[#4E5F4C] mt-0.5 shrink-0" />
@@ -167,7 +235,14 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 mb-4">
               <Clock size={15} className="text-[#4E5F4C] shrink-0" />
               <p className="text-[#7A7364] text-xs sm:text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                {fc.hours || "Her Gün: 09:00 - 02:00"}
+                {fc.hours || (
+                  lang === "ar" ? "يومياً: 09:00 - 02:00" :
+                  lang === "zh" ? "每日营业：09:00 - 02:00" :
+                  lang === "de" ? "Täglich: 09:00 - 02:00 Uhr" :
+                  lang === "it" ? "Tutti i giorni: 09:00 - 02:00" :
+                  lang === "es" ? "Todos los días: 09:00 - 02:00" :
+                  "Everyday: 09:00 - 02:00"
+                )}
               </p>
             </div>
             {/* WhatsApp Quick Link */}
@@ -178,7 +253,16 @@ export default function Footer() {
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-[#4E5F4C] text-white hover:bg-[#3D4B3B] transition-colors group"
             >
               <MessageCircle size={16} className="text-white" />
-              <span className="font-semibold text-xs sm:text-sm">{fc.whatsapp || "WhatsApp Sipariş"}</span>
+              <span className="font-semibold text-xs sm:text-sm">
+                {fc.whatsapp || (
+                  lang === "ar" ? "طلب عبر الواتساب" :
+                  lang === "zh" ? "WhatsApp 订餐" :
+                  lang === "de" ? "WhatsApp Bestellung" :
+                  lang === "it" ? "Ordine WhatsApp" :
+                  lang === "es" ? "Pedir por WhatsApp" :
+                  "WhatsApp Order"
+                )}
+              </span>
             </a>
           </div>
 
