@@ -46,21 +46,18 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full glass-card-strong border-b border-teal-dim/20 overflow-visible animate-fadeInDown">
-        {/* Subtle glow line under header */}
-        <div className="absolute bottom-0 start-0 end-0 h-px bg-gradient-to-r from-transparent via-teal/30 to-transparent"></div>
-
+      <header className="sticky top-0 z-40 w-full bg-[#EDE3CE] border-b border-[#9C7A3F]/20 overflow-visible animate-fadeIn">
         <div className="max-w-5xl mx-auto px-3 sm:px-4 h-14 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0 group">
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-105 transition-transform shrink-0">
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 shrink-0">
               <Image src="/logo.webp" alt="Kardeşler Cihangir Logo" fill priority sizes="40px" style={{ objectFit: 'contain' }} />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-bold text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              <span className="text-sm sm:text-base font-bold text-[#2B2620] leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
                 Kardeşler
               </span>
-              <span className="text-[9px] text-cream-dim uppercase tracking-widest opacity-80" style={{ fontFamily: "var(--font-inter)" }}>
+              <span className="text-[9px] text-[#7A7364] uppercase tracking-widest" style={{ fontFamily: "var(--font-inter)" }}>
                 Kebap & Pide
               </span>
             </div>
@@ -71,9 +68,9 @@ export default function Header() {
             {/* Quick Table Reservation Button (Desktop/Tablet) */}
             <button
               onClick={() => setIsReservationOpen(true)}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-copper/90 to-gold/90 hover:from-copper hover:to-gold text-cream font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-105 shadow-sm shadow-copper/20"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-semibold text-xs tracking-wider uppercase transition-colors"
             >
-              <Calendar size={13} className="text-cream" />
+              <Calendar size={13} className="text-white" />
               <span>{reserveText}</span>
             </button>
 
@@ -84,10 +81,10 @@ export default function Header() {
             <div className="relative" ref={menuRef}>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`w-11 h-11 flex items-center justify-center rounded-full border transition-all duration-300 ${
+                className={`w-10 h-10 flex items-center justify-center rounded-md border transition-colors ${
                   isMenuOpen 
-                    ? "bg-gold/20 border-gold text-gold" 
-                    : "bg-teal-dim/20 border-teal-dim/40 text-cream-dim hover:text-gold hover:border-gold hover:bg-gold/10"
+                    ? "bg-[#9C7A3F]/20 border-[#9C7A3F] text-[#9C7A3F]" 
+                    : "bg-[#F7F2E7] border-[#9C7A3F]/30 text-[#2B2620] hover:border-[#9C7A3F]"
                 }`}
                 aria-label="Menu"
               >
@@ -96,60 +93,60 @@ export default function Header() {
 
               {/* Dropdown */}
               {isMenuOpen && (
-                <div className="absolute end-0 mt-2 w-48 rounded-xl bg-ink border border-teal-dim/30 shadow-xl overflow-hidden animate-fadeInUp z-50">
+                <div className="absolute end-0 mt-2 w-52 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-lg overflow-hidden z-50 animate-fadeIn">
                   <div className="py-2 flex flex-col">
                     <button
                       onClick={() => {
                         setIsMenuOpen(false);
                         setIsReservationOpen(true);
                       }}
-                      className="px-4 py-2.5 flex items-center gap-3 text-sm text-copper font-medium hover:bg-teal-dim/20 transition-colors text-start w-full"
+                      className="px-4 py-2.5 flex items-center gap-3 text-xs font-bold text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors text-start w-full uppercase tracking-wider"
                     >
-                      <Calendar size={16} className="text-copper" />
+                      <Calendar size={15} className="text-[#9C7A3F]" />
                       <span style={{ fontFamily: "var(--font-inter)" }}>{reserveText}</span>
                     </button>
 
-                    <div className="h-px bg-teal-dim/20 my-1"></div>
+                    <div className="h-px bg-[#9C7A3F]/20 my-1"></div>
 
                     <Link 
                       href="/" 
                       onClick={() => setIsMenuOpen(false)}
-                      className="px-4 py-2.5 flex items-center gap-3 text-sm text-cream hover:bg-teal-dim/20 transition-colors"
+                      className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <Home size={16} className="text-teal" />
+                      <Home size={15} className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-inter)" }}>{t.home || "Ana Sayfa"}</span>
                     </Link>
                     <Link 
                       href="/menu" 
                       onClick={() => setIsMenuOpen(false)}
-                      className="px-4 py-2.5 flex items-center gap-3 text-sm text-cream hover:bg-teal-dim/20 transition-colors"
+                      className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <UtensilsCrossed size={16} className="text-copper" />
+                      <UtensilsCrossed size={15} className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-inter)" }}>{t.menuLink || "Menü"}</span>
                     </Link>
                     <Link 
                       href="/about" 
                       onClick={() => setIsMenuOpen(false)}
-                      className="px-4 py-2.5 flex items-center gap-3 text-sm text-cream hover:bg-teal-dim/20 transition-colors"
+                      className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <Info size={16} className="text-teal" />
+                      <Info size={15} className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-inter)" }}>{t.about || "Hakkımızda"}</span>
                     </Link>
                     <Link 
                       href="/contact" 
                       onClick={() => setIsMenuOpen(false)}
-                      className="px-4 py-2.5 flex items-center gap-3 text-sm text-cream hover:bg-teal-dim/20 transition-colors"
+                      className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <Phone size={16} className="text-teal" />
+                      <Phone size={15} className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-inter)" }}>{(t.footer && t.footer.contact) ? t.footer.contact : "İletişim"}</span>
                     </Link>
-                    <div className="h-px bg-teal-dim/20 my-1"></div>
+                    <div className="h-px bg-[#9C7A3F]/20 my-1"></div>
                     <Link 
                       href={guideHref} 
                       onClick={() => setIsMenuOpen(false)}
-                      className="px-4 py-2.5 flex items-center gap-3 text-sm text-gold hover:bg-teal-dim/20 transition-colors font-medium"
+                      className="px-4 py-2.5 flex items-center gap-3 text-xs text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors font-bold"
                     >
-                      <Flame size={16} className="text-gold" />
+                      <span className="w-2 h-2 rounded-full bg-[#9C7A3F]"></span>
                       <span style={{ fontFamily: "var(--font-inter)" }}>
                         {{
                           ar: "أفضل كباب في تقسيم",

@@ -159,27 +159,23 @@ export default function ChatWidget() {
   };
 
   return (
-    <div className={`fixed z-50 transition-all duration-300 ease-out ${isOpen ? "inset-0 flex flex-col sm:inset-auto sm:block sm:bottom-6 sm:right-6" : "bottom-6 right-6"}`}>
+    <div className={`fixed z-50 transition-all duration-300 ease-out ${isOpen ? "inset-0 flex flex-col sm:inset-auto sm:block sm:bottom-6 sm:right-6" : "bottom-[88px] right-4 sm:bottom-6 sm:right-6"}`}>
       
       {/* Floating Action Button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gold text-ink shadow-lg hover:scale-105 transition-transform animate-fadeIn focus:outline-none focus:ring-4 focus:ring-gold/50"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-[#4E5F4C] text-white shadow-md hover:bg-[#3D4B3B] transition-colors focus:outline-none"
           aria-label="Open AI Concierge"
         >
-          {/* Subtle pulse for first load attention */}
-          {!hasOpened && (
-            <span className="absolute inset-0 rounded-full bg-gold opacity-50 animate-ping" />
-          )}
-          <MessageCircle className="w-7 h-7" />
+          <MessageCircle className="w-6 h-6" />
         </button>
       )}
 
       {/* Chat Window */}
       <div 
         ref={chatWindowRef}
-        className={`flex flex-col bg-ink text-cream border border-gold/20 shadow-2xl overflow-hidden transition-all duration-200 ease-out origin-bottom-right
+        className={`flex flex-col bg-[#F7F2E7] text-[#2B2620] border border-[#9C7A3F]/30 shadow-xl overflow-hidden transition-all duration-200 ease-out origin-bottom-right
           ${isOpen ? "opacity-100 scale-100 w-full h-full flex-1 sm:flex-none sm:h-[500px]" : "opacity-0 scale-95 h-0 pointer-events-none"}
           sm:w-[380px] sm:rounded-2xl
         `}
@@ -189,14 +185,14 @@ export default function ChatWidget() {
         aria-label="AI Concierge Chat"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-gold/20 bg-ink-2">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-[#9C7A3F]/20 bg-[#EDE3CE]">
           <div className="flex items-center gap-2">
-            <UtensilsCrossed className="w-5 h-5 text-gold" />
-            <h3 className="font-semibold text-cream">AI Concierge</h3>
+            <UtensilsCrossed className="w-5 h-5 text-[#4E5F4C]" />
+            <h3 className="font-bold text-[#2B2620]">AI Concierge</h3>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-1 rounded-md text-cream/70 hover:text-gold hover:bg-gold/10 transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
+            className="p-1 rounded-md text-[#2B2620] hover:text-[#9C7A3F] transition-colors focus:outline-none"
             aria-label="Close chat"
           >
             <X className="w-5 h-5" />
@@ -204,15 +200,15 @@ export default function ChatWidget() {
         </div>
 
         {/* WhatsApp Fallback Link */}
-        <div className="px-4 py-2 bg-ink text-xs text-center border-b border-gold/10 text-cream/70">
-          <a href="https://wa.me/905060453906" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors underline decoration-gold/50 underline-offset-2">
+        <div className="px-4 py-2 bg-[#F7F2E7] text-xs text-center border-b border-[#9C7A3F]/10 text-[#7A7364]">
+          <a href="https://wa.me/905060453906" target="_blank" rel="noopener noreferrer" className="hover:text-[#2B2620] transition-colors underline decoration-[#9C7A3F]/50 underline-offset-2 font-medium">
             {strings.contact}
           </a>
         </div>
 
         {/* Messages Area */}
         <div 
-          className="flex-1 overflow-y-auto p-4 space-y-4 no-scrollbar scroll-smooth"
+          className="flex-1 overflow-y-auto p-4 space-y-4 no-scrollbar scroll-smooth bg-[#EDE3CE]"
           aria-live="polite"
         >
           {messages.map((msg, idx) => (
@@ -223,11 +219,11 @@ export default function ChatWidget() {
               <div 
                 className={`max-w-[85%] px-4 py-2 rounded-2xl ${
                   msg.role === "user" 
-                    ? "bg-gold text-ink rounded-tr-sm" 
-                    : "bg-ink-2 text-cream border border-gold/10 rounded-tl-sm"
+                    ? "bg-[#4E5F4C] text-[#EAF0E6] rounded-tr-sm" 
+                    : "bg-[#F7F2E7] text-[#2B2620] border border-[#9C7A3F]/20 rounded-tl-sm"
                 }`}
               >
-                <p className="text-sm leading-relaxed whitespace-pre-wrap">{renderMessageText(msg.text)}</p>
+                <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">{renderMessageText(msg.text)}</p>
               </div>
             </div>
           ))}

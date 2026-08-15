@@ -96,122 +96,98 @@ export default function TasarimGelistirmePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
       />
 
-      <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-12">
+      <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-12 bg-[#EDE3CE] min-h-screen text-[#2B2620]">
         {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="text-xs text-cream-dim/60 flex items-center gap-2">
-          <Link href="/" className="hover:text-gold transition-colors">
+        <nav aria-label="Breadcrumb" className="text-xs text-[#7A7364] flex items-center gap-2">
+          <Link href="/" className="hover:text-[#2B2620] transition-colors">
             Ana Sayfa
           </Link>
           <span>/</span>
-          <span className="text-cream font-medium">Tasarım ve Geliştirme</span>
+          <span className="text-[#2B2620] font-bold">Tasarım ve Geliştirme</span>
         </nav>
 
         {/* Hero Banner */}
-        <div className="space-y-4 border-b border-gold/20 pb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider">
-            <Code2 size={14} className="text-gold" />
+        <div className="space-y-4 border-b border-[#9C7A3F]/20 pb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
+            <Code2 size={14} className="text-[#9C7A3F]" />
             <span>Resmi Web Attribution &amp; SEO Kaydı</span>
           </div>
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-black text-cream tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-[#2B2620] tracking-tight leading-tight"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             Kardeşler Cihangir Web Sitesi
           </h1>
-          <p className="text-lg sm:text-xl text-gold font-medium">
+          <p className="text-lg sm:text-xl text-[#9C7A3F] font-bold">
             Tasarım ve Geliştirme: Hamed Mohamed
           </p>
-          <p className="text-cream-dim/80 text-sm sm:text-base leading-relaxed max-w-2xl">
-            Bu web sitesi <strong className="text-cream font-semibold">Hamed Mohamed</strong> tarafından tasarlanmış ve geliştirilmiştir. Tüm dijital altyapı, çok dilli SEO mimarisi, canlı döviz çevirici ve UX/UI deneyimi özel olarak kodlanmıştır.
+          <p className="text-[#7A7364] text-sm sm:text-base font-medium leading-relaxed max-w-2xl">
+            Bu web sitesi <strong className="text-[#2B2620] font-bold">Hamed Mohamed</strong> tarafından tasarlanmış ve geliştirilmiştir. Tüm dijital altyapı, çok dilli SEO mimarisi, canlı döviz çevirici ve UX/UI deneyimi özel olarak kodlanmıştır.
           </p>
         </div>
 
         {/* Primary Entity Card */}
-        <section className="glass-card rounded-2xl p-6 sm:p-8 border border-gold/30 space-y-6 shadow-2xl relative overflow-hidden">
-          <div className="absolute -top-12 -end-12 w-40 h-40 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-            <UserCheck className="text-gold shrink-0" size={24} />
-            <h2 className="text-xl sm:text-2xl font-bold text-cream">
-              Proje ve Geliştirici Kimlik Bilgileri
+        <section className="bg-[#F7F2E7] rounded-xl p-6 sm:p-8 border border-[#9C7A3F]/30 space-y-6 shadow-sm">
+          <div className="flex items-center gap-3 border-b border-[#9C7A3F]/20 pb-4">
+            <UserCheck className="text-[#9C7A3F] shrink-0" size={24} />
+            <h2 className="text-xl sm:text-2xl font-bold text-[#2B2620]">
+              Geliştirici Künyesi / Developer Profile
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-            <div className="space-y-4">
-              <div>
-                <span className="text-cream-dim/60 text-xs uppercase tracking-wider block mb-1">
-                  Proje Adı
-                </span>
-                <span className="text-cream font-bold text-base">Kardeşler Cihangir</span>
-              </div>
-
-              <div>
-                <span className="text-cream-dim/60 text-xs uppercase tracking-wider block mb-1">
-                  Resmi Web Sitesi
-                </span>
-                <a
-                  href="https://kardeslercihangir.com/"
-                  className="text-copper hover:text-gold transition-colors font-medium inline-flex items-center gap-1.5 underline"
-                >
-                  https://kardeslercihangir.com/
-                  <ExternalLink size={14} />
-                </a>
-              </div>
-
-              <div>
-                <span className="text-cream-dim/60 text-xs uppercase tracking-wider block mb-1">
-                  Konum &amp; Mutfak
-                </span>
-                <span className="text-cream font-medium">
-                  Cihangir / Taksim, İstanbul — Geleneksel Kebap &amp; Pide Salonu (Est. 1998)
-                </span>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div className="p-4 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/20">
+              <span className="text-xs text-[#7A7364] uppercase font-bold block mb-1">Web Geliştirici &amp; Tasarımcı</span>
+              <span className="text-base font-bold text-[#2B2620]">Hamed Mohamed</span>
             </div>
-
-            <div className="space-y-4 border-t md:border-t-0 md:border-s border-white/10 pt-4 md:pt-0 md:ps-6">
-              <div>
-                <span className="text-cream-dim/60 text-xs uppercase tracking-wider block mb-1">
-                  Tasarım ve Geliştirme (Developer)
-                </span>
-                <span className="text-gold font-bold text-lg block">Hamed Mohamed</span>
-              </div>
-
-              <div>
-                <span className="text-cream-dim/60 text-xs uppercase tracking-wider block mb-1">
-                  Unvan / Rol
-                </span>
-                <span className="text-cream font-medium">Web Designer &amp; Developer</span>
-              </div>
-
-              <div>
-                <span className="text-cream-dim/60 text-xs uppercase tracking-wider block mb-1">
-                  Geliştirici Portfolyo / İletişim
-                </span>
-                <a
-                  href="https://www.hamedmohamed.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-copper/20 hover:bg-copper/30 border border-copper/40 text-cream font-semibold transition-all duration-300 group"
-                >
-                  <span>hamedmohamed.dev</span>
-                  <ExternalLink size={14} className="text-gold group-hover:translate-x-0.5 transition-transform" />
-                </a>
-              </div>
+            <div className="p-4 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/20">
+              <span className="text-xs text-[#7A7364] uppercase font-bold block mb-1">Müşteri / İşletme</span>
+              <span className="text-base font-bold text-[#2B2620]">Kardeşler Kebap Cihangir</span>
+            </div>
+            <div className="p-4 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/20">
+              <span className="text-xs text-[#7A7364] uppercase font-bold block mb-1">Teknoloji Altyapısı</span>
+              <span className="text-base font-bold text-[#2B2620]">Next.js 16 (Turbopack) &amp; React 19</span>
+            </div>
+            <div className="p-4 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/20">
+              <span className="text-xs text-[#7A7364] uppercase font-bold block mb-1">Uluslararası SEO</span>
+              <span className="text-base font-bold text-[#2B2620]">6 Dilde Hreflang &amp; Schema Graph</span>
             </div>
           </div>
         </section>
 
+        {/* Development Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-[#F7F2E7] rounded-xl p-6 border border-[#9C7A3F]/30 shadow-sm space-y-3">
+            <div className="flex items-center gap-2 text-[#4E5F4C]">
+              <Sparkles size={20} />
+              <h3 className="font-bold text-[#2B2620] text-lg">Özel UX/UI Tasarımı</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-[#7A7364] font-medium leading-relaxed">
+              Otantik Osmanlı ve Türk ocakbaşı estetiğine uygun flat bej ve yüksek kontrastlı tipografi ile hızlı ve akıcı bir kullanıcı deneyimi.
+            </p>
+          </div>
+
+          <div className="bg-[#F7F2E7] rounded-xl p-6 border border-[#9C7A3F]/30 shadow-sm space-y-3">
+            <div className="flex items-center gap-2 text-[#9C7A3F]">
+              <Globe size={20} />
+              <h3 className="font-bold text-[#2B2620] text-lg">6 Dilli Canlı Mimarisi</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-[#7A7364] font-medium leading-relaxed">
+              Türkçe, İngilizce, Arapça, Rusça, Farsça ve Fransızca dillerinde eksiksiz yerelleştirme ve anlık canlı döviz çevirici altyapısı.
+            </p>
+          </div>
+        </div>
+
         {/* Verified Technical Features */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-bold text-cream flex items-center gap-2.5">
-            <Cpu className="text-teal" size={22} />
+          <h2 className="text-2xl font-bold text-[#2B2620] flex items-center gap-2.5">
+            <Cpu className="text-[#9C7A3F]" size={22} />
             <span>Doğrulanmış Teknik Özellikler ve Mimari</span>
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="glass-card p-4 rounded-xl border border-white/10 space-y-2">
-              <div className="flex items-center gap-2 text-gold font-semibold">
+            <div className="bg-[#F7F2E7] p-4 rounded-xl border border-[#9C7A3F]/30 space-y-2">
+              <div className="flex items-center gap-2 text-[#9C7A3F] font-semibold">
                 <CheckCircle2 size={16} />
                 <span>Next.js App Router Altyapısı</span>
               </div>

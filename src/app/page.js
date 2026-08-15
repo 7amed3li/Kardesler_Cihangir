@@ -1,17 +1,14 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { menuData } from "@/data/menuData";
-import MenuSelector from "@/components/MenuSelector";
-import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
 import Image from "next/image";
+import Link from "next/link";
 import { useAppContext } from "@/context/AppContext";
-import { MapPin, ChevronDown, Flame, UtensilsCrossed } from "lucide-react";
-
-import dynamic from "next/dynamic";
-const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: true });
-import Footer from "@/components/Footer";
+import { MapPin, ChevronDown, Utensils, ArrowRight, Sparkles, Award } from "lucide-react";
+import { OttomanStar, OttomanSeal, KebabSkewer, StoneOven } from "@/components/BrandIcons";
+import RestaurantMap from "@/components/RestaurantMap";
 
 // Hook: Intersection Observer for scroll-reveal animations
 function useReveal() {
@@ -38,16 +35,16 @@ function useReveal() {
 }
 
 export default function Home() {
-  const [activeCategory, setActiveCategory] = useState(menuData[0].id);
-  const [activeFilter, setActiveFilter] = useState(null);
   const [livePrices, setLivePrices] = useState({});
+  const [googleRating, setGoogleRating] = useState("4.6");
   const { t } = useAppContext();
   const menuRef = useRef(null);
   const [heroVisible, setHeroVisible] = useState(true);
 
   // Scroll-reveal refs for each section
   const [trendingRef, isTrendingVisible] = useReveal();
-  const [menuRevealRef, isMenuVisible] = useReveal();
+  const [storyRef, isStoryVisible] = useReveal();
+  const [infoRef, isInfoVisible] = useReveal();
 
   const handleTrendingRef = (el) => {
     menuRef.current = el;
@@ -55,7 +52,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Trigger hero animations after first paint
     requestAnimationFrame(() => setHeroVisible(true));
     
     // Fetch live prices from Supabase
@@ -75,26 +71,43 @@ export default function Home() {
         console.error("Failed to load live prices", e);
       }
     }
+
+    // Fetch live Google rating score dynamically from /api/reviews
+    async function fetchLiveRating() {
+      try {
+        const res = await fetch("/api/reviews");
+        if (res.ok) {
+          const data = await res.json();
+          const googleData = data.platforms?.find(p => p.id === "google");
+          if (googleData?.rating) {
+            setGoogleRating(googleData.rating);
+          }
+        }
+      } catch (e) {
+        console.warn("Failed to load live reviews rating", e);
+      }
+    }
+
     fetchPrices();
+    fetchLiveRating();
   }, []);
 
   // Extract trending items
   const trendingItems = menuData.flatMap(cat => cat.items || []).filter(item => item && item.trending);
-  const totalItems = menuData.reduce((acc, cat) => acc + (cat.items ? cat.items.length : 0), 0);
 
-  const scrollToMenu = () => {
+  const scrollToTrending = () => {
     menuRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="pb-8 bg-transparent min-h-screen text-cream font-sans selection:bg-copper selection:text-cream">
+    <div className="pb-8 bg-[#EDE3CE] min-h-screen text-[#2B2620] font-sans">
       
       {/* ═══════════════════════════════════════════
-          HERO SECTION — Cinematic First Impression
+          HERO SECTION — Mobile-First Turkish Heritage Lockup
           ═══════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[92vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+      <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col items-center justify-center text-center px-4 py-8 overflow-hidden bg-[#EDE3CE]">
         
-        {/* Cinematic Background Image */}
+        {/* Background Image */}
         <div className="hero-bg">
           <Image
             src="/images/hero-bg.webp"
@@ -108,119 +121,97 @@ export default function Home() {
           />
         </div>
 
-        {/* Animated decorative elements */}
-        <div className="absolute inset-0 z-[1] pointer-events-none">
-          {/* Top Ottoman border line */}
-          <div className="absolute top-[12%] start-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
-          {/* Bottom Ottoman border line */}
-          <div className="absolute bottom-[15%] start-0 w-full h-px bg-gradient-to-r from-transparent via-copper/15 to-transparent"></div>
+        <div className={`relative z-10 w-full max-w-xl mx-auto space-y-4 transition-opacity duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}>
           
-          {/* Corner accents */}
-          <div className="absolute top-8 start-8 w-12 h-12 border-t-2 border-s-2 border-gold/20 rounded-tl-sm hidden md:block"></div>
-          <div className="absolute top-8 end-8 w-12 h-12 border-t-2 border-e-2 border-gold/20 rounded-tr-sm hidden md:block"></div>
-          <div className="absolute bottom-24 start-8 w-12 h-12 border-b-2 border-s-2 border-gold/20 rounded-bl-sm hidden md:block"></div>
-          <div className="absolute bottom-24 end-8 w-12 h-12 border-b-2 border-e-2 border-gold/20 rounded-br-sm hidden md:block"></div>
-          
-          {/* Radial glows */}
-          <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/5 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute top-0 end-0 w-[300px] h-[300px] bg-copper/5 rounded-full blur-[100px]"></div>
-        </div>
-
-        <div className={`relative z-10 max-w-3xl mx-auto transition-opacity duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}>
-          {/* Location Badge */}
-          <div
-            className={`flex items-center justify-center gap-2 mb-8 transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}
-            style={{ transitionDelay: "100ms" }}
-          >
+          {/* 1. Address Bar Pill (44px min height, olive icon, crisp text) */}
+          <div className="flex items-center justify-center mb-1">
             <a 
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-teal-dim/40 glass-card text-xs tracking-widest hover:border-teal hover:bg-teal-dim/20 transition-all duration-300 cursor-pointer group"
+              className="flex items-center justify-center gap-2 min-h-[44px] px-4 py-2 rounded-full border border-[#9C7A3F]/30 bg-[#F7F2E7] text-xs font-semibold tracking-wide transition-colors cursor-pointer group shadow-xs hover:border-[#9C7A3F] max-w-full text-center"
             >
-              <MapPin size={12} className="text-teal group-hover:animate-bounce" />
-              <span className="text-cream-dim group-hover:text-cream transition-colors">{t.heroLocation || "Firuzağa Mah. Cihangir, Beyoğlu, İstanbul"}</span>
+              <MapPin size={14} className="text-[#4E5F4C] shrink-0" />
+              <span className="text-[#2B2620] truncate sm:whitespace-normal">
+                {t.heroLocation || "Firuzağa Mah. Firuzağa Camii Sok. No:1A, Cihangir, Beyoğlu"}
+              </span>
             </a>
           </div>
 
-          {/* Main Logo Name */}
-          <div
-            className={`transition-all duration-700 ${heroVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
-            style={{ transitionDelay: "200ms" }}
-          >
+          {/* 2. Top Heritage Divider (Thin line — OttomanSeal — Thin line) */}
+          <div className="flex items-center justify-center gap-3 my-2">
+            <div className="w-12 sm:w-16 h-px bg-[#9C7A3F]/40"></div>
+            <OttomanSeal size={18} className="text-[#9C7A3F]" />
+            <div className="w-12 sm:w-16 h-px bg-[#9C7A3F]/40"></div>
+          </div>
+
+          {/* 3. Restaurant Brand Lockup */}
+          <div className="space-y-1">
             <h1
-              className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-cream mb-2 tracking-tight leading-none"
+              className="text-5xl sm:text-6xl md:text-7xl font-black text-[#2B2620] tracking-tight leading-none"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
               {t.welcome || "Kardeşler"}
             </h1>
-            <p className="text-copper text-lg sm:text-xl md:text-2xl font-medium tracking-[0.4em] uppercase mb-6" style={{ fontFamily: "var(--font-inter)" }}>
-              {t.heroTagline || "Kebap & Pide"}
+            <p 
+              className="text-[#9C7A3F] text-xs sm:text-sm md:text-base font-bold tracking-[0.35em] uppercase"
+              style={{ fontFamily: "var(--font-inter)" }}
+            >
+              {t.heroTagline || "KEBAP & PİDE"}
             </p>
           </div>
 
-          {/* Ornamental Divider — Ottoman-inspired */}
-          <div
-            className={`flex items-center justify-center gap-3 mb-8 transition-all duration-600 ${heroVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
-            style={{ transitionDelay: "300ms" }}
-          >
-            <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-gold/60"></div>
-            <div className="relative">
-              <Flame size={16} className="text-gold" />
-              <div className="absolute inset-0 blur-md bg-gold/20 rounded-full"></div>
-            </div>
-            <div className="w-16 sm:w-24 h-px bg-gradient-to-l from-transparent to-gold/60"></div>
+          {/* 4. Ottoman Ornament Divider (────── ◈ ──────) */}
+          <div className="flex items-center justify-center gap-3 my-2">
+            <div className="w-14 sm:w-20 h-px bg-[#4E5F4C]/30"></div>
+            <OttomanStar size={16} className="text-[#9C7A3F]" />
+            <div className="w-14 sm:w-20 h-px bg-[#4E5F4C]/30"></div>
           </div>
 
-          {/* Subtitle */}
+          {/* 5. Short Brand Tagline */}
           <p
-            className={`text-cream-dim/80 text-sm sm:text-base md:text-lg font-light tracking-wide max-w-lg mx-auto leading-relaxed mb-10 transition-all duration-500 ${heroVisible ? "opacity-100" : "opacity-0"}`}
-            style={{ transitionDelay: "350ms", fontFamily: "var(--font-inter)" }}
+            className="text-[#7A7364] text-sm sm:text-base font-medium leading-relaxed max-w-sm sm:max-w-md mx-auto"
+            style={{ fontFamily: "var(--font-inter)" }}
           >
-            {t.subtitle || "Where tradition meets taste in the heart of Cihangir"}
+            {t.subtitle || "Cihangir'in kalbinde, geleneksel lezzetlerin buluşma noktası"}
           </p>
 
-          {/* Stats Row */}
-          <div
-            className={`flex items-center justify-center gap-8 sm:gap-12 mb-10 transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-            style={{ transitionDelay: "400ms" }}
-          >
-            <div className="flex flex-col items-center">
-              <div className="flex items-center gap-1.5 mb-1">
-                <UtensilsCrossed size={16} className="text-teal" />
-                <span className="text-3xl sm:text-4xl font-black text-cream">{totalItems}</span>
+          {/* 6. Premium Restaurant Statistics Block */}
+          <div className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-3 sm:p-4 my-4 max-w-xs sm:max-w-sm mx-auto shadow-xs">
+            <div className="flex items-center justify-around divide-x divide-[#9C7A3F]/30">
+              <div className="flex flex-col items-center px-4">
+                <div className="flex items-center gap-1.5 text-[#4E5F4C]">
+                  <KebabSkewer size={16} className="text-[#4E5F4C]" />
+                  <span className="text-2xl sm:text-3xl font-black text-[#2B2620]">106</span>
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#7A7364] uppercase tracking-wider mt-0.5">ÇEŞİT</span>
               </div>
-              <span className="text-[10px] sm:text-xs text-cream-dim/60 uppercase tracking-widest">{t.heroItemsText || "dishes"}</span>
-            </div>
-
-            <div className="w-px h-12 bg-gold/20"></div>
-
-            <div className="flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-black text-cream mb-1">{menuData.length}</span>
-              <span className="text-[10px] sm:text-xs text-cream-dim/60 uppercase tracking-widest">{t.categories || "categories"}</span>
+              <div className="flex flex-col items-center px-4">
+                <div className="flex items-center gap-1.5 text-[#9C7A3F]">
+                  <StoneOven size={16} className="text-[#9C7A3F]" />
+                  <span className="text-2xl sm:text-3xl font-black text-[#2B2620]">11</span>
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#7A7364] uppercase tracking-wider mt-0.5">KATEGORİ</span>
+              </div>
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div
-            className={`transition-all duration-500 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-            style={{ transitionDelay: "500ms" }}
-          >
-            <button
-              onClick={scrollToMenu}
-              className="group relative px-10 py-4 bg-gradient-to-r from-copper to-copper/80 text-cream font-bold text-sm tracking-widest uppercase rounded-xl hover:shadow-[0_0_40px_rgba(198,98,43,0.35)] transition-all duration-500 hover:scale-105 animate-pulseGlow"
+          {/* 7. Primary CTA — MENÜYÜ KEŞFET → */}
+          <div className="pt-1">
+            <Link
+              href="/menu"
+              className="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-8 bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs sm:text-sm tracking-widest uppercase rounded-lg transition-colors shadow-sm inline-flex items-center justify-center gap-3 group"
             >
-              <span style={{ fontFamily: "var(--font-inter)" }}>{t.heroCta || "Explore Menu"}</span>
-            </button>
+              <span>MENÜYÜ KEŞFET</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
+
         </div>
 
         {/* Scroll indicator */}
-        <div
-          className={`absolute bottom-6 start-1/2 -translate-x-1/2 z-10 transition-opacity duration-700 ${heroVisible ? "opacity-100" : "opacity-0"}`}
-          style={{ transitionDelay: "700ms" }}
-        >
-          <ChevronDown size={20} className="text-cream-dim/30 animate-bounce" />
+        <div className="absolute bottom-3 start-1/2 -translate-x-1/2 z-10">
+          <ChevronDown size={18} className="text-[#7A7364] animate-bounce" />
         </div>
       </section>
 
@@ -229,103 +220,122 @@ export default function Home() {
           ═══════════════════════════════════════════ */}
       <section
         ref={handleTrendingRef}
-        className={`relative py-16 px-4 bg-gradient-to-b from-ink-2 via-ink to-ink overflow-hidden transition-all duration-700 ${isTrendingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        className={`relative py-14 px-4 bg-[#EDE3CE] overflow-hidden transition-all duration-500 ${isTrendingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       >
-        {/* Background glow */}
-        <div className="absolute top-0 start-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-copper/5 rounded-full blur-[100px]"></div>
-        
-        {/* Ottoman Divider at top */}
-        <div className="ottoman-divider max-w-xl mx-auto mb-12"></div>
+        <div className="ottoman-divider max-w-xl mx-auto mb-10"></div>
 
-        <div className="relative z-10 flex flex-col items-center mb-10">
-          <div className="flex flex-col items-center ottoman-bracket">
-            {/* Decorative fire icon */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-gradient-to-r from-transparent to-copper/60"></div>
-              <Flame size={22} className="text-copper animate-float" />
-              <div className="w-8 h-px bg-gradient-to-l from-transparent to-copper/60"></div>
-            </div>
-            
-            <h2 className="text-2xl sm:text-3xl font-black text-cream tracking-wide uppercase mb-2" style={{ fontFamily: "var(--font-cairo)" }}>
-              {t.trending || "Most Loved by Our Guests"}
-            </h2>
-            <p className="text-cream-dim/50 text-xs tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-inter)" }}>
-              {t.heroTagline || "Kebap & Pide"}
-            </p>
-          </div>
+        <div className="relative z-10 flex flex-col items-center mb-8 text-center">
+          <span className="text-[#9C7A3F] text-xs font-bold uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
+            <KebabSkewer size={15} className="text-[#9C7A3F]" />
+            <span>{t.signatureDishes || "Özel Seçimlerimiz"}</span>
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-black text-[#2B2620] tracking-wide uppercase" style={{ fontFamily: "var(--font-cairo)" }}>
+            {t.trending || "En Çok Tercih Edilenler"}
+          </h2>
         </div>
         
-        <div className="flex overflow-x-auto gap-5 pb-6 px-2 no-scrollbar snap-x">
+        <div className="flex overflow-x-auto gap-4 pb-6 px-2 no-scrollbar snap-x max-w-6xl mx-auto">
           {trendingItems.map((item, idx) => {
             const livePrice = livePrices[item.id];
             const displayItem = livePrice ? { ...item, price: livePrice } : item;
             return (
-              <div key={`trending-${item.id}`} className="min-w-[80vw] sm:min-w-[380px] md:min-w-[300px] snap-center">
+              <div key={`trending-${item.id}`} className="min-w-[82vw] sm:min-w-[340px] md:min-w-[320px] snap-center">
                 <FoodCard item={displayItem} index={idx} isVertical={true} />
               </div>
             );
           })}
         </div>
+
+        <div className="text-center mt-6">
+          <Link
+            href="/menu"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#F7F2E7] hover:bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] font-bold text-xs uppercase tracking-wider transition-colors shadow-xs group"
+          >
+            <span>Tüm Menüyü İnceleyin</span>
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-[#9C7A3F]" />
+          </Link>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          CATEGORY SELECTOR
+          ABOUT & HERITAGE TEASER
           ═══════════════════════════════════════════ */}
-      <div className="bg-ink pt-4 border-b border-teal-dim/20">
-        <MenuSelector 
-          categories={menuData} 
-          activeCategory={activeCategory} 
-          setActiveCategory={setActiveCategory} 
-        />
-      </div>
-
-      {/* Smart Filters */}
-      <div className="sticky top-[56px] z-20 bg-ink/90 backdrop-blur-md border-b border-teal-dim/20 shadow-sm">
-        <SmartFilters activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
-      </div>
-
-      {/* ═══════════════════════════════════════════
-          MENU ITEMS LIST
-          ═══════════════════════════════════════════ */}
-      <section 
-        ref={menuRevealRef}
-        className={`px-4 py-8 min-h-[50vh] transition-all duration-700 ${isMenuVisible ? "opacity-100" : "opacity-0"}`}
+      <section
+        ref={storyRef}
+        className={`py-14 px-4 max-w-5xl mx-auto transition-all duration-700 ${isStoryVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       >
-        {menuData.map((category) => {
-          if (activeCategory !== category.id) return null;
-
-          // Apply smart filters
-          const filteredItems = category.items.filter(item => {
-            if (!activeFilter) return true;
-            return item.tags?.includes(activeFilter);
-          });
-
-          return (
-            <div 
-              key={category.id} 
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 animate-fadeIn"
-            >
-              {filteredItems.filter(item => item && item.id).length > 0 ? (
-                filteredItems.filter(item => item && item.id).map((item, index) => {
-                  // Merge live price if available
-                  const livePrice = livePrices[item.id];
-                  const displayItem = livePrice ? { ...item, price: livePrice } : item;
-                  return <FoodCard key={item.id} item={displayItem} index={index} />;
-                })
-              ) : (
-                <div className="col-span-full py-16 text-center">
-                  <p className="text-cream-dim font-light tracking-wide">No dishes match the selected filter.</p>
-                </div>
-              )}
+        <div className="bg-[#F7F2E7] rounded-xl p-6 sm:p-10 border border-[#9C7A3F]/30 shadow-sm relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            
+            <div className="md:col-span-2 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#9C7A3F]/15 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
+                <Award size={14} />
+                <span>{t.storyBadge || "Geleneksel Türk Mutfağı • Cihangir"}</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
+                {t.ourStoryTitle || "Kardeşler Kebap Cihangir Hikayemiz"}
+              </h3>
+              <p className="text-[#7A7364] text-xs sm:text-sm leading-relaxed font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                {t.ourStoryDesc || "İstanbul Beyoğlu'nun en otantik semtlerinden Cihangir'de, zırh kıyması Adana kebaptan odun ateşinde pide çeşitlerine kadar geleneksel lezzetleri 25 yılı aşkın süredir konuklarımıza sunuyoruz."}
+              </p>
+              <div className="pt-2">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#4E5F4C] hover:text-[#3D4B3B] uppercase tracking-wider underline underline-offset-4 decoration-[#4E5F4C]/40"
+                >
+                  <span>{t.learnMoreAboutUs || "Hakkımızda Detaylı Bilgi"}</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
-          )
-        })}
+
+            <div className="grid grid-cols-2 gap-3 text-center">
+              <div className="bg-[#EDE3CE] p-4 rounded-lg border border-[#9C7A3F]/20">
+                <span className="block text-2xl sm:text-3xl font-black text-[#2B2620]">100+</span>
+                <span className="text-[10px] text-[#7A7364] uppercase font-bold tracking-wider">{t.dishesCountText || "Çeşit Yemek"}</span>
+              </div>
+              <div className="bg-[#EDE3CE] p-4 rounded-lg border border-[#9C7A3F]/20">
+                <span className="block text-2xl sm:text-3xl font-black text-[#2B2620]">{googleRating}★</span>
+                <span className="text-[10px] text-[#7A7364] uppercase font-bold tracking-wider">{t.googleScore || "Google Puanı"}</span>
+              </div>
+              <div className="bg-[#EDE3CE] p-4 rounded-lg border border-[#9C7A3F]/20">
+                <span className="block text-2xl sm:text-3xl font-black text-[#2B2620]">09-02</span>
+                <span className="text-[10px] text-[#7A7364] uppercase font-bold tracking-wider">{t.openingHours || "Açık Saatler"}</span>
+              </div>
+              <div className="bg-[#EDE3CE] p-4 rounded-lg border border-[#9C7A3F]/20">
+                <span className="block text-2xl sm:text-3xl font-black text-[#2B2620]">10</span>
+                <span className="text-[10px] text-[#7A7364] uppercase font-bold tracking-wider">{t.languagesCountText || "Dilde Hizmet"}</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          REAL REVIEWS SECTION
+          LOCATION & CONTACT CARD
           ═══════════════════════════════════════════ */}
-      <ReviewSection />
+      <section
+        ref={infoRef}
+        className={`py-10 px-4 max-w-5xl mx-auto transition-all duration-700 ${isInfoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+      >
+        <div className="bg-[#F7F2E7] rounded-xl p-6 sm:p-8 border border-[#9C7A3F]/30 shadow-sm space-y-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-[#9C7A3F]/20 pb-4">
+            <div className="text-center sm:text-start">
+              <h3 className="text-xl font-bold text-[#2B2620]">{t.locationTitle || "Konum ve İletişim Bilgileri"}</h3>
+              <p className="text-xs text-[#7A7364] font-medium">{t.locationSubtitle || "Taksim Meydanı'na 5 Dakika Mesafede"}</p>
+            </div>
+            <Link
+              href="/contact"
+              className="px-4 py-2 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs uppercase tracking-wider transition-colors shrink-0"
+            >
+              {t.contactPageBtn || "İletişim Sayfası"}
+            </Link>
+          </div>
+
+          <RestaurantMap heightClass="h-52 sm:h-64" />
+        </div>
+      </section>
 
     </div>
   );

@@ -12,6 +12,10 @@ const languagesConfig = [
   { code: "ru", name: "Русский", short: "RU", flag: "🇷🇺" },
   { code: "fa", name: "فارسی", short: "FA", flag: "🇮🇷" },
   { code: "fr", name: "Français", short: "FR", flag: "🇫🇷" },
+  { code: "de", name: "Deutsch", short: "DE", flag: "🇩🇪" },
+  { code: "it", name: "Italiano", short: "IT", flag: "🇮🇹" },
+  { code: "es", name: "Español", short: "ES", flag: "🇪🇸" },
+  { code: "zh", name: "中文", short: "ZH", flag: "🇨🇳" },
 ];
 
 export default function LanguageSwitcher() {
@@ -66,10 +70,10 @@ export default function LanguageSwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label={`Selected Language: ${currentLangObj.name}`}
-        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all h-10 min-w-[40px] text-xs font-semibold ${
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border transition-colors h-9 text-xs font-semibold ${
           isOpen
-            ? "bg-gold/15 border-gold text-gold shadow-sm"
-            : "bg-teal-dim/15 border-teal-dim/35 text-cream hover:text-gold hover:border-gold/60 hover:bg-gold/10"
+            ? "bg-[#9C7A3F]/20 border-[#9C7A3F] text-[#9C7A3F]"
+            : "bg-[#F7F2E7] border-[#9C7A3F]/30 text-[#2B2620] hover:border-[#9C7A3F]"
         }`}
       >
         <span className="text-sm leading-none" role="img" aria-label={currentLangObj.name}>
@@ -78,21 +82,18 @@ export default function LanguageSwitcher() {
         <span className="tracking-wider">{currentLangObj.short}</span>
         <ChevronDown
           size={12}
-          className={`text-cream-dim transition-transform duration-200 ${
-            isOpen ? "rotate-180 text-gold" : ""
+          className={`text-[#7A7364] transition-transform duration-200 ${
+            isOpen ? "rotate-180 text-[#9C7A3F]" : ""
           }`}
         />
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 end-0 w-48 bg-[#140E0A] border border-gold/30 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.7)] overflow-hidden z-50 p-1.5 animate-fadeInUp">
-          <div className="px-3 py-1.5 flex items-center justify-between text-[10px] uppercase tracking-wider text-gold/80 font-bold border-b border-gold/10">
+        <div className="absolute mt-2 end-0 w-48 bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-md shadow-lg overflow-hidden z-50 p-1.5 animate-fadeIn">
+          <div className="px-3 py-1.5 flex items-center justify-between text-[10px] uppercase tracking-wider text-[#9C7A3F] font-bold border-b border-[#9C7A3F]/20">
             <span className="flex items-center gap-1">
-              <Globe size={11} className="text-gold" />
+              <Globe size={11} className="text-[#9C7A3F]" />
               Dil / Language
-            </span>
-            <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-gold/15 text-gold font-normal">
-              6 Languages
             </span>
           </div>
 
@@ -103,17 +104,17 @@ export default function LanguageSwitcher() {
                 <button
                   key={item.code}
                   onClick={() => selectLang(item.code)}
-                  className={`w-full px-3 py-2 text-xs rounded-xl font-medium transition-all flex items-center justify-between gap-2 text-start ${
+                  className={`w-full px-3 py-2 text-xs rounded-md font-medium transition-colors flex items-center justify-between gap-2 text-start ${
                     isSelected
-                      ? "bg-gradient-to-r from-copper/20 to-gold/20 text-gold font-bold border border-gold/30"
-                      : "text-cream-dim hover:bg-ink-2 hover:text-cream"
+                      ? "bg-[#4E5F4C] text-white font-bold"
+                      : "text-[#2B2620] hover:bg-[#EDE3CE]"
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="text-base leading-none">{item.flag}</span>
                     <span className="font-semibold">{item.name}</span>
                   </div>
-                  {isSelected && <Check size={14} className="text-gold shrink-0" />}
+                  {isSelected && <Check size={14} className="text-white shrink-0" />}
                 </button>
               );
             })}

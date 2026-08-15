@@ -193,7 +193,7 @@ export default function BestKebabTaksimArabicPage() {
   const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("مرحباً مطعم كارديشلر جيهانكير، أود حجز طاولة أو الاستفسار عن المنيو.");
 
   return (
-    <div className="min-h-screen bg-[#0E0804] text-cream selection:bg-copper selection:text-white" dir="rtl">
+    <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans" dir="rtl">
       {/* Schema Injection */}
       <script
         type="application/ld+json"

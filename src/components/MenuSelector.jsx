@@ -29,15 +29,15 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
   };
 
   return (
-    <div className="relative w-full bg-ink">
+    <div className="relative w-full bg-[#EDE3CE]">
       {/* Left fade + arrow */}
       {canScrollLeft && (
         <button 
           onClick={() => scroll(-1)} 
           aria-label="Scroll left"
-          className="absolute start-0 top-0 bottom-0 z-10 w-10 flex items-center justify-center bg-gradient-to-r from-ink via-ink/80 to-transparent"
+          className="absolute start-0 top-0 bottom-0 z-10 w-10 flex items-center justify-center bg-gradient-to-r from-[#EDE3CE] via-[#EDE3CE]/80 to-transparent"
         >
-          <ChevronLeft size={18} className="text-cream-dim" />
+          <ChevronLeft size={18} className="text-[#7A7364]" />
         </button>
       )}
 
@@ -46,9 +46,9 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
         <button 
           onClick={() => scroll(1)} 
           aria-label="Scroll right"
-          className="absolute end-0 top-0 bottom-0 z-10 w-10 flex items-center justify-center bg-gradient-to-l from-ink via-ink/80 to-transparent"
+          className="absolute end-0 top-0 bottom-0 z-10 w-10 flex items-center justify-center bg-gradient-to-l from-[#EDE3CE] via-[#EDE3CE]/80 to-transparent"
         >
-          <ChevronRight size={18} className="text-cream-dim" />
+          <ChevronRight size={18} className="text-[#7A7364]" />
         </button>
       )}
 
@@ -62,10 +62,10 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className="relative shrink-0 px-4 py-3"
+              className="relative shrink-0 px-3.5 py-2.5 my-1"
             >
-              <span className={`relative z-10 block text-[11px] sm:text-xs font-bold tracking-wider uppercase whitespace-nowrap transition-colors duration-300 ${
-                isActive ? "text-cream" : "text-cream-dim/60 hover:text-cream-dim"
+              <span className={`relative z-10 block text-[11px] sm:text-xs font-bold tracking-wider uppercase whitespace-nowrap transition-colors ${
+                isActive ? "text-white" : "text-[#7A7364] hover:text-[#2B2620]"
               }`}>
                 {menuT.categories[cat.id] || cat.category.en}
               </span>
@@ -73,7 +73,7 @@ export default function MenuSelector({ categories, activeCategory, setActiveCate
               {/* Active pill background */}
               {isActive && (
                 <div
-                  className="absolute inset-0 rounded-lg bg-teal-dim/30 border border-teal/30 animate-fadeIn"
+                  className="absolute inset-0 rounded-md bg-[#4E5F4C] animate-fadeIn"
                 />
               )}
             </button>

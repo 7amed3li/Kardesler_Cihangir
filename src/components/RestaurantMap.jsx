@@ -97,7 +97,7 @@ export default function RestaurantMap({
         target="_blank"
         rel="noopener noreferrer"
         ref={mapRef}
-        className={`map-dark-container block w-full ${heightClass} rounded-2xl relative bg-ink/70 overflow-hidden group cursor-pointer border border-teal-dim/30 hover:border-gold/60 transition-all duration-300 shadow-lg`}
+        className={`block w-full ${heightClass} rounded-xl relative bg-[#EDE3CE] overflow-hidden group cursor-pointer border border-[#9C7A3F]/30 hover:border-[#9C7A3F] transition-colors shadow-sm`}
         aria-label="Google Maps Location for Kardeşler Kebap Cihangir"
       >
         {!isMapVisible ? (
@@ -118,66 +118,56 @@ export default function RestaurantMap({
           />
         )}
 
-        {/* ── Overlay Dimmer for sleek look ── */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0E0804]/70 via-transparent to-[#0E0804]/40 pointer-events-none group-hover:from-[#0E0804]/50 transition-all duration-300" />
+        {/* ── Overlay for clean contrast ── */}
+        <div className="absolute inset-0 bg-[#EDE3CE]/20 pointer-events-none" />
 
-        {/* ── PROMINENT RESTAURANT PIN OVERLAY ── */}
+        {/* ── RESTAURANT PIN OVERLAY ── */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <div className="flex flex-col items-center -translate-y-4 group-hover:-translate-y-5 transition-transform duration-300">
+          <div className="flex flex-col items-center -translate-y-4">
             {/* Floating Info Pill */}
-            <div className="px-3 py-1.5 rounded-full bg-[#0E0804]/90 backdrop-blur-md border border-gold/50 shadow-xl shadow-black/80 flex items-center gap-2 mb-1.5 animate-fadeIn">
-              <span className="w-2 h-2 rounded-full bg-copper animate-pulse" />
-              <span className="text-xs font-bold text-cream tracking-tight whitespace-nowrap">
+            <div className="px-3 py-1.5 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-md flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#9C7A3F]" />
+              <span className="text-xs font-bold text-[#2B2620] tracking-tight whitespace-nowrap">
                 {currentLabels.restaurantName}
               </span>
-              <span className="text-[10px] text-gold font-medium hidden sm:inline-block">
+              <span className="text-[10px] text-[#9C7A3F] font-semibold hidden sm:inline-block">
                 (1998)
               </span>
             </div>
 
-            {/* Custom Glowing Map Pin */}
+            {/* Custom Clean Map Pin */}
             <div className="relative flex items-center justify-center">
-              {/* Pulse Ring */}
-              <div className="absolute w-8 h-8 rounded-full bg-copper/30 animate-ping" />
-              <div className="absolute w-5 h-5 rounded-full bg-gold/40 animate-pulse" />
-              
-              {/* Pin Icon with vibrant red-copper gradient */}
-              <div className="relative z-10 w-9 h-9 rounded-full bg-gradient-to-tr from-copper to-gold p-0.5 shadow-2xl flex items-center justify-center transform drop-shadow-[0_4px_10px_rgba(230,81,0,0.7)]">
-                <div className="w-full h-full bg-[#0E0804] rounded-full flex items-center justify-center">
-                  <MapPin size={18} className="text-gold fill-copper animate-bounce" />
-                </div>
+              <div className="relative z-10 w-9 h-9 rounded-full bg-[#4E5F4C] shadow-md flex items-center justify-center">
+                <MapPin size={18} className="text-[#EAF0E6] fill-[#4E5F4C]" />
               </div>
-
-              {/* Pin Base Shadow / Point */}
-              <div className="absolute -bottom-1 w-2 h-1 bg-black/60 rounded-full blur-[1px]" />
             </div>
           </div>
         </div>
 
         {/* ── Top Floating Action: Open in Maps ── */}
         <div className="absolute top-3 end-3 z-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0E0804]/80 backdrop-blur-md border border-gold/30 text-cream group-hover:text-gold group-hover:border-gold text-xs font-medium transition-all shadow-md">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 text-[#2B2620] text-xs font-bold shadow-sm">
             <span>{currentLabels.openMaps}</span>
-            <ExternalLink size={12} className="text-gold" />
+            <ExternalLink size={12} className="text-[#9C7A3F]" />
           </div>
         </div>
 
         {/* ── Bottom Floating Tag: Distance from Taksim ── */}
         <div className="absolute bottom-3 start-3 z-10">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0E0804]/85 backdrop-blur-md border border-copper/30 text-cream-dim text-[11px] font-normal shadow-md">
-            <Navigation size={11} className="text-copper" />
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 text-[#7A7364] text-[11px] font-semibold shadow-sm">
+            <Navigation size={11} className="text-[#4E5F4C]" />
             <span>{currentLabels.nearTaksim}</span>
           </div>
         </div>
       </a>
 
-      {/* Optional Directions CTA Button below the map */}
+      {/* Directions CTA Button below the map */}
       {showDirectionsButton && (
         <a
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-copper/15 border border-copper/30 text-copper font-bold text-sm hover:bg-copper hover:text-cream transition-all duration-300 shadow-sm hover:shadow-copper/20"
+          className="flex items-center justify-center gap-2 w-full py-3 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
         >
           <Navigation size={16} />
           <span>{currentLabels.getDirections}</span>

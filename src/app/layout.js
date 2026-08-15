@@ -1,4 +1,4 @@
-import { Cairo, Inter, Playfair_Display } from "next/font/google";
+import { Cairo, Inter } from "next/font/google";
 import { AppProvider } from "@/context/AppContext";
 import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
@@ -20,14 +20,6 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
   preload: true,
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-playfair",
 });
 
 export const metadata = {
@@ -84,9 +76,9 @@ export const metadata = {
     follow: true,
   },
   other: {
-    "theme-color": "#181009",
+    "theme-color": "#EDE3CE",
     "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-status-bar-style": "default",
   },
 };
 
@@ -283,7 +275,7 @@ export default function RootLayout({ children }) {
     <html
       lang="tr"
       suppressHydrationWarning
-      className={`h-full antialiased ${cairo.variable} ${inter.variable} ${playfair.variable}`}
+      className={`h-full antialiased ${cairo.variable} ${inter.variable}`}
     >
       <head>
         <script
@@ -293,7 +285,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-ink text-cream font-[var(--font-inter)]" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-[#EDE3CE] text-[#2B2620] font-[var(--font-inter)]" suppressHydrationWarning>
         <AppProvider>
           <SmartSplash />
           <Analytics />

@@ -30,67 +30,50 @@ function CartCounter({ item, compact = false }) {
       <button
         onClick={handleAdd}
         aria-label="Add to cart"
-        className={`flex items-center justify-center gap-1.5 rounded-full bg-copper/90 hover:bg-copper text-cream transition-all duration-200 hover:scale-105 active:scale-95 ${
-          compact
-            ? "w-8 h-8"
-            : "px-5 py-2.5"
-        }`}
+        className="min-w-[44px] min-h-[44px] px-3.5 py-2.5 rounded-lg bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shrink-0 shadow-xs"
       >
-        <Plus size={compact ? 16 : 18} strokeWidth={2.5} />
-        {!compact && (
-          <span className="text-sm font-bold tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
-            {/* No text needed — the + icon is clear enough on compact */}
-          </span>
-        )}
+        <Plus size={16} strokeWidth={2.5} />
       </button>
     );
   }
 
   return (
     <div
-      className={`flex items-center rounded-full border border-teal-dim/40 bg-ink/80 backdrop-blur-sm ${
-        compact ? "gap-1 px-1 py-0.5" : "gap-2 px-2 py-1"
-      }`}
+      className="flex items-center min-h-[44px] rounded-lg border border-[#9C7A3F]/30 bg-[#EDE3CE] px-1.5 py-1 gap-1 shrink-0"
       onClick={(e) => e.stopPropagation()}
     >
       <button
         onClick={handleRemove}
         aria-label="Decrease quantity"
-        className={`flex items-center justify-center rounded-full text-cream-dim hover:text-brick hover:bg-brick/10 transition-colors ${
-          compact ? "w-6 h-6" : "w-8 h-8"
-        }`}
+        className="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-md text-[#2B2620] hover:text-[#A0422E] transition-colors"
       >
-        <Minus size={compact ? 12 : 14} strokeWidth={2.5} />
+        <Minus size={14} strokeWidth={2.5} />
       </button>
       <span
         key={qty}
-        className={`text-center font-bold text-cream animate-counterPop ${
-          compact ? "w-5 text-xs" : "w-6 text-sm"
-        }`}
+        className="text-center font-bold text-[#2B2620] w-5 text-xs"
       >
         {qty}
       </span>
       <button
         onClick={handleAdd}
         aria-label="Increase quantity"
-        className={`flex items-center justify-center rounded-full text-cream-dim hover:text-teal hover:bg-teal/10 transition-colors ${
-          compact ? "w-6 h-6" : "w-8 h-8"
-        }`}
+        className="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-md text-[#2B2620] hover:text-[#4E5F4C] transition-colors"
       >
-        <Plus size={compact ? 12 : 14} strokeWidth={2.5} />
+        <Plus size={14} strokeWidth={2.5} />
       </button>
     </div>
   );
 }
 
 export default function FoodCard({ item, index, isVertical = false }) {
-  const { menuT, t, convertPrice, getCurrencySymbol, getItemQuantity } = useAppContext();
+  const { menuT, t, convertPrice, getCurrencySymbol, getItemQuantity, lang } = useAppContext();
+  const isRTL = lang === "ar" || lang === "fa";
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -100,25 +83,25 @@ export default function FoodCard({ item, index, isVertical = false }) {
   const displayPrice = convertPrice(item.price);
   const symbol = getCurrencySymbol();
   const qty = getItemQuantity(item.id);
-
-  // Stagger animation delay
-  const staggerDelay = `${(index % 9) * 60}ms`;
+  const isFeatured = item.tags?.includes("signature") || item.trending;
 
   return (
     <>
       <div
-        className={`group relative rounded-xl bg-ink-2 border border-teal-dim/20 hover:border-gold/50 overflow-hidden transition-all duration-300 flex ${isVertical ? "flex-col" : "flex-row"} items-stretch ${isVertical ? "h-auto" : "h-36 sm:h-40"} food-card-hover animate-fadeInUp`}
-        style={{ animationDelay: staggerDelay }}
+        dir={isRTL ? "rtl" : "ltr"}
+        className={`group relative rounded-xl bg-[#F7F2E7] ${
+          isFeatured
+            ? "border border-[#9C7A3F]/60 shadow-xs"
+            : "border border-[#9C7A3F]/20 hover:border-[#9C7A3F]/50"
+        } overflow-hidden transition-all duration-200 flex ${isVertical ? "flex-col" : "flex-row"} items-stretch ${isVertical ? "h-auto" : "h-36 sm:h-40"} text-start`}
       >
         {/* Image Section */}
         {item.image && (
           <div 
-            className={`${isVertical ? "w-full aspect-[4/3] sm:aspect-square" : "w-32 sm:w-40 h-full shrink-0"} relative overflow-hidden bg-ink z-10 cursor-pointer`}
+            className={`${isVertical ? "w-full aspect-[4/3] sm:aspect-square" : "w-32 sm:w-40 h-full shrink-0"} relative overflow-hidden bg-[#EDE3CE] z-10 cursor-pointer`}
             onClick={() => setIsModalOpen(true)}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent z-10 pointer-events-none"></div>
-            
-            <div className="absolute inset-0 bg-ink-2 group-hover:scale-105 transition-transform duration-700">
+            <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
               <Image 
                 src={item.image} 
                 alt={name} 
@@ -129,33 +112,28 @@ export default function FoodCard({ item, index, isVertical = false }) {
               />
             </div>
 
-            {/* Price Tag — Glassmorphism */}
-            <div className="absolute top-3 start-3 z-20 flex items-center gap-2 pointer-events-none">
-              <span className="flex items-center px-3 py-1 rounded-lg glass-card-strong text-copper border-copper/20 shadow-lg font-bold text-sm tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
+            {/* Price Tag — Compact flat badge */}
+            <div className="absolute top-2 start-2 z-20 flex items-center pointer-events-none">
+              <span className="flex items-center px-2.5 py-1 rounded-[4px] bg-[#9C7A3F] text-[#EAF0E6] font-bold text-xs tracking-wide shadow-xs" style={{ fontFamily: "var(--font-inter)" }}>
                 {displayPrice} {symbol}
               </span>
             </div>
 
             {/* Text Badges */}
-            <div className="absolute bottom-3 start-3 z-20 flex flex-wrap gap-1.5 pointer-events-none">
+            <div className="absolute bottom-2 start-2 z-20 flex flex-wrap gap-1 pointer-events-none">
               {item.tags?.includes("signature") && (
-                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-gold border border-gold/30 bg-gold/10 backdrop-blur-md rounded-sm font-bold">
+                <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#9C7A3F] rounded-[3px] font-bold">
                   {t.signature || "Signature"}
                 </span>
               )}
               {item.tags?.includes("spicy") && (
-                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-brick border border-brick/30 bg-brick/10 backdrop-blur-md rounded-sm font-bold">
+                <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#A0422E] rounded-[3px] font-bold">
                   {t.spicy || "Spicy"}
                 </span>
               )}
               {item.tags?.includes("vegetarian") && (
-                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-teal border border-teal/30 bg-teal/10 backdrop-blur-md rounded-sm font-bold">
+                <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#4E5F4C] rounded-[3px] font-bold">
                   {t.vegetarian || "Veg"}
-                </span>
-              )}
-              {item.tags?.includes("vegan") && (
-                <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-[#4ade80] border border-[#4ade80]/30 bg-[#4ade80]/10 backdrop-blur-md rounded-sm font-bold">
-                  {t.vegan || "Vegan"}
                 </span>
               )}
             </div>
@@ -164,80 +142,75 @@ export default function FoodCard({ item, index, isVertical = false }) {
 
         {/* Content Section */}
         <div 
-          className={`flex flex-col flex-grow ${isVertical ? "p-4 sm:p-5" : "p-3 sm:p-5"} justify-between relative z-10 w-full min-w-0 bg-ink-2`}
+          dir={isRTL ? "rtl" : "ltr"}
+          className={`flex flex-col flex-grow ${isVertical ? "p-4 sm:p-5" : "p-3 sm:p-5"} justify-between relative z-10 w-full min-w-0 bg-[#F7F2E7] text-start`}
         >
           {/* Top part — clickable for modal */}
           <div 
-            className="cursor-pointer flex-1"
+            className="cursor-pointer flex-1 text-start"
             onClick={() => setIsModalOpen(true)}
           >
-            <h3 className="font-normal text-lg md:text-xl text-cream leading-tight mb-1 truncate md:whitespace-normal group-hover:text-gold transition-colors duration-300">
+            <h3 className="font-bold text-base md:text-lg text-[#2B2620] leading-tight mb-1 truncate md:whitespace-normal group-hover:text-[#9C7A3F] transition-colors text-start" style={{ fontFamily: "var(--font-cairo)" }}>
               {name}
             </h3>
             {description && (
-              <p className="text-xs md:text-sm text-cream-dim mt-1 line-clamp-2 leading-relaxed font-light opacity-90" style={{ fontFamily: "var(--font-inter)" }}>
+              <p className="text-xs md:text-sm text-[#7A7364] mt-1 line-clamp-2 leading-relaxed font-medium text-start" style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}>
                 {description}
               </p>
             )}
           </div>
 
-          {/* Bottom part — cart controls (non-clickable for modal) */}
+          {/* Bottom part — cart controls */}
           <div className={`flex items-center justify-between ${isVertical ? "mt-3" : "mt-2"}`}>
-            {/* Price on cards without images */}
             {!item.image && (
-              <span className="text-copper font-bold text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+              <span className="text-[#9C7A3F] font-bold text-sm" style={{ fontFamily: "var(--font-inter)" }}>
                 {displayPrice} {symbol}
               </span>
             )}
             {item.image && <div />}
             
-            {/* Cart counter */}
             <CartCounter item={item} compact={!isVertical} />
           </div>
         </div>
 
-        {/* Quantity badge overlay on image — visual indicator */}
+        {/* Quantity badge overlay */}
         {qty > 0 && item.image && (
-          <div className="absolute top-3 end-3 z-20 w-6 h-6 rounded-full bg-teal text-cream text-xs font-bold flex items-center justify-center border-2 border-ink animate-scaleIn pointer-events-none">
+          <div className="absolute top-3 end-3 z-20 w-6 h-6 rounded-full bg-[#4E5F4C] text-[#EAF0E6] text-xs font-bold flex items-center justify-center border-2 border-[#F7F2E7] pointer-events-none">
             {qty}
           </div>
         )}
       </div>
 
-      {/* ═══════════════════════════════════════════
-          MODAL — Item Details + Cart Action
-          ═══════════════════════════════════════════ */}
+      {/* MODAL — Item Details + Cart Action */}
       {mounted && isModalOpen && createPortal(
         <div
-          className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 backdrop-blur-lg p-4 modal-overlay"
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#2B2620]/75 backdrop-blur-sm p-4"
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="glass-card-strong rounded-3xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative modal-content border-gold/20"
+            className="bg-[#F7F2E7] rounded-2xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-xl relative border border-[#9C7A3F]/30"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setIsModalOpen(false)}
               aria-label="Close modal"
-              className="absolute top-4 end-4 z-50 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold transition-colors border-white/10"
+              className="absolute top-4 end-4 z-50 w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-colors border border-[#9C7A3F]/20"
             >
-              <X size={20} />
+              <X size={18} />
             </button>
 
             {/* Modal Image */}
             {item.image && (
-              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-ink-2 group">
+              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-[#EDE3CE]">
                 <Image src={item.image} alt={name} fill style={{ objectFit: "contain" }} sizes="(max-width: 768px) 100vw, 400px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent pointer-events-none"></div>
                 
-                {/* Zoom Button */}
                 <button
                   onClick={() => setIsFullscreenImage(true)}
                   aria-label="View fullscreen image"
-                  className="absolute bottom-4 end-4 z-20 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold hover:scale-110 transition-all border-white/20 shadow-lg"
+                  className="absolute bottom-4 end-4 z-20 w-9 h-9 flex items-center justify-center rounded-md bg-[#2B2620] text-white hover:bg-[#9C7A3F] transition-colors shadow-md"
                 >
-                  <ZoomIn size={18} />
+                  <ZoomIn size={16} />
                 </button>
               </div>
             )}
@@ -245,8 +218,8 @@ export default function FoodCard({ item, index, isVertical = false }) {
             {/* Modal Details */}
             <div className="p-6 overflow-y-auto no-scrollbar flex flex-col gap-4">
               <div className="flex justify-between items-start gap-4">
-                <h2 className="text-2xl font-bold text-cream">{name}</h2>
-                <span className="shrink-0 text-xl font-bold text-copper glass-card px-3 py-1 rounded-lg border-copper/20" style={{ fontFamily: "var(--font-inter)" }}>
+                <h2 className="text-2xl font-bold text-[#2B2620]">{name}</h2>
+                <span className="shrink-0 text-lg font-bold text-[#9C7A3F] bg-[#EDE3CE] px-3 py-1 rounded-md border border-[#9C7A3F]/30" style={{ fontFamily: "var(--font-inter)" }}>
                   {displayPrice} {symbol}
                 </span>
               </div>

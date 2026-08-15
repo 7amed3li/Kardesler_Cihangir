@@ -51,13 +51,13 @@ const uiTexts = {
     subtitle: "Avis réels déposés sur Google Maps et plateformes officielles. Cliquez pour vérifier la source :",
     verifiedBadge: "Vérifié sur Google",
     viewAllReviews: "Lire tous les 1 280+ avis sur Google Maps",
+    viewAllGoogle: "Lire tous les avis",
     verifyReview: "Vérifier la source",
   },
 };
 
 export default function LandingVerifiedReviews({ currentLocale = "ar" }) {
   const texts = uiTexts[currentLocale] || uiTexts.en;
-  const isRtl = currentLocale === "ar" || currentLocale === "fa";
 
   // Pick top 3 verified google reviews from reviewsList
   const googleReviews = reviewsList.filter((r) => r.platform === "google").slice(0, 3);
@@ -70,18 +70,18 @@ export default function LandingVerifiedReviews({ currentLocale = "ar" }) {
   return (
     <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-10">
       <div className="text-center space-y-3 max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider">
-          <Star size={13} className="text-gold fill-gold" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
+          <Star size={13} className="text-[#9C7A3F] fill-[#9C7A3F]" />
           <span>{texts.badge}</span>
         </div>
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-black text-cream"
+          className="text-2xl sm:text-3xl md:text-4xl font-black text-[#2B2620]"
           style={{ fontFamily: "var(--font-cairo)" }}
         >
           {texts.title}
         </h2>
-        <div className="h-0.5 w-20 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
-        <p className="text-cream-dim/80 text-xs sm:text-sm leading-relaxed">
+        <div className="h-0.5 w-20 bg-[#9C7A3F]/30 mx-auto"></div>
+        <p className="text-[#7A7364] text-xs sm:text-sm font-medium leading-relaxed">
           {texts.subtitle}
         </p>
       </div>
@@ -95,34 +95,34 @@ export default function LandingVerifiedReviews({ currentLocale = "ar" }) {
           return (
             <div
               key={review.id}
-              className="p-5 sm:p-6 rounded-2xl glass-card border border-teal-dim/30 flex flex-col justify-between space-y-4 hover:border-gold/40 transition-all duration-300 group"
+              className="p-5 sm:p-6 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-sm flex flex-col justify-between space-y-4 hover:border-[#9C7A3F] transition-colors group"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 text-gold">
+                  <div className="flex items-center gap-1 text-[#9C7A3F]">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} size={14} className="fill-gold" />
+                      <Star key={i} size={14} className="fill-[#9C7A3F]" />
                     ))}
                   </div>
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-bold">
-                    <ShieldCheck size={11} />
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#EDE3CE] text-[#2B2620] border border-[#9C7A3F]/30 text-[10px] font-bold">
+                    <ShieldCheck size={11} className="text-[#4E5F4C]" />
                     <span>Google Maps</span>
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-sm text-cream-dim/90 italic leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#2B2620] italic font-medium leading-relaxed">
                   "{reviewText}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-teal-dim/20 flex items-center justify-between">
+              <div className="pt-4 border-t border-[#9C7A3F]/20 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gold/30 to-copper/30 border border-gold/40 text-gold flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#9C7A3F] flex items-center justify-center font-bold text-xs">
                     {review.initial}
                   </div>
                   <div>
-                    <h4 className="text-cream font-bold text-xs sm:text-sm">{review.author}</h4>
-                    <span className="text-[10px] text-cream-dim/60">
+                    <h4 className="text-[#2B2620] font-bold text-xs sm:text-sm">{review.author}</h4>
+                    <span className="text-[10px] text-[#7A7364] font-medium">
                       {reviewTag ? `${reviewTag} • ` : ""}{reviewDate}
                     </span>
                   </div>
@@ -132,7 +132,7 @@ export default function LandingVerifiedReviews({ currentLocale = "ar" }) {
                   href={googlePlatform.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[11px] text-gold hover:text-cream flex items-center gap-1 font-semibold group-hover:underline underline-offset-2 transition-colors"
+                  className="text-[11px] text-[#9C7A3F] hover:text-[#2B2620] flex items-center gap-1 font-semibold group-hover:underline underline-offset-2 transition-colors"
                 >
                   <span>{texts.verifyReview}</span>
                   <ExternalLink size={11} />
@@ -143,7 +143,6 @@ export default function LandingVerifiedReviews({ currentLocale = "ar" }) {
         })}
       </div>
 
-      {/* Verified Google Maps Overview Banner */}
       <div className="text-center pt-2">
         <a
           href={googlePlatform.link}

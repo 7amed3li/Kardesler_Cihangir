@@ -82,7 +82,7 @@ export default function FrenchLandingPage() {
   const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("Bonjour Kardeşler Cihangir, je souhaite réserver une table ou consulter le menu.");
 
   return (
-    <div className="min-h-screen bg-[#0E0804] text-cream selection:bg-copper selection:text-white">
+    <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaFr) }}

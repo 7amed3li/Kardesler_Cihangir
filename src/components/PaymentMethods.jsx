@@ -163,8 +163,8 @@ export default function PaymentMethods({ variant = "default" }) {
   if (variant === "compact") {
     return (
       <div className="space-y-2">
-        <div className="flex items-center justify-center gap-2 text-xs font-bold text-gold">
-          <span>💳</span>
+        <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#9C7A3F]">
+          <CreditCard size={14} className="text-[#9C7A3F]" />
           <span>{fc.paymentMethods || "Ödeme Seçenekleri"}</span>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
@@ -186,20 +186,20 @@ export default function PaymentMethods({ variant = "default" }) {
   }
 
   return (
-    <div className="my-8 p-5 sm:p-7 rounded-3xl bg-gradient-to-b from-ink-2/90 via-ink-2/60 to-ink/90 border border-gold/25 shadow-[0_12px_40px_rgba(0,0,0,0.55)] backdrop-blur-md text-center">
+    <div className="my-8 p-5 sm:p-7 rounded-2xl bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-sm text-center">
       {/* Header */}
       <div className="inline-flex items-center justify-center gap-3 mb-1.5">
-        <span className="h-px w-8 bg-gold/40" />
+        <span className="h-px w-8 bg-[#9C7A3F]/40" />
         <p 
-          className="text-xs sm:text-sm font-black uppercase tracking-[0.28em] text-gold" 
+          className="text-xs sm:text-sm font-black uppercase tracking-[0.28em] text-[#9C7A3F]" 
           style={{ fontFamily: "var(--font-inter)" }}
         >
           {fc.paymentMethods || "Kabul Edilen Ödeme Yöntemleri"}
         </p>
-        <span className="h-px w-8 bg-gold/40" />
+        <span className="h-px w-8 bg-[#9C7A3F]/40" />
       </div>
 
-      <p className="text-[11px] sm:text-xs text-cream-dim/60 mb-5 font-light" style={{ fontFamily: "var(--font-inter)" }}>
+      <p className="text-xs text-[#7A7364] mb-5 font-medium" style={{ fontFamily: "var(--font-inter)" }}>
         {fc.paymentSubtitle || "Tüm kredi kartları, temassız İstanbulkart ve kurumsal yemek kartları geçerlidir"}
       </p>
 
@@ -208,10 +208,10 @@ export default function PaymentMethods({ variant = "default" }) {
         {PAYMENT_METHODS.map((pm) => (
           <div
             key={pm.id}
-            className={`h-12 rounded-xl px-3 py-1 flex items-center justify-center border shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-default ${
+            className={`h-12 rounded-lg px-3 py-1 flex items-center justify-center border transition-transform hover:scale-102 cursor-default ${
               pm.isDark
-                ? "bg-ink-2 border-teal-dim/40 hover:border-teal"
-                : "bg-white border-slate-200/90 hover:border-gold/60"
+                ? "bg-[#2B2620] border-[#2B2620]"
+                : "bg-white border-slate-200"
             }`}
           >
             {pm.logo}
@@ -220,8 +220,8 @@ export default function PaymentMethods({ variant = "default" }) {
       </div>
 
       {/* Note */}
-      <div className="mt-5 pt-4 border-t border-teal-dim/15 max-w-2xl mx-auto">
-        <p className="text-xs text-cream-dim/75 leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+      <div className="mt-5 pt-4 border-t border-[#9C7A3F]/20 max-w-2xl mx-auto">
+        <p className="text-xs text-[#7A7364] font-medium leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
           {fc.paymentNote || "Masada nakit, kredi kartı, temassız İstanbulkart ve tüm kurumsal yemek kartları ile ödeme yapabilirsiniz."}
         </p>
       </div>

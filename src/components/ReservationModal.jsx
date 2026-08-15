@@ -200,16 +200,13 @@ export default function ReservationModal({ isOpen, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-fadeIn">
       <div 
-        className="relative w-full max-w-lg rounded-2xl bg-ink-2 border border-teal-dim/30 shadow-2xl p-6 sm:p-8 text-cream overflow-hidden max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-lg rounded-2xl bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-xl p-6 sm:p-8 text-[#2B2620] overflow-hidden max-h-[90vh] overflow-y-auto"
         dir={isRtl ? "rtl" : "ltr"}
       >
-        {/* Background glow & decorative header */}
-        <div className="absolute top-0 start-1/2 -translate-x-1/2 w-64 h-24 bg-copper/10 rounded-full blur-3xl pointer-events-none"></div>
-
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 end-4 w-9 h-9 rounded-full bg-ink/60 border border-teal-dim/30 flex items-center justify-center text-cream-dim hover:text-cream hover:border-gold/50 transition-colors"
+          className="absolute top-4 end-4 w-9 h-9 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/20 flex items-center justify-center text-[#2B2620] hover:text-[#9C7A3F] transition-colors"
           aria-label="Close"
         >
           <X size={18} />
@@ -217,14 +214,14 @@ export default function ReservationModal({ isOpen, onClose }) {
 
         {/* Header */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-copper/10 border border-copper/30 text-gold text-xs font-semibold uppercase tracking-wider mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-copper"></span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
             <span>VIP & Table Booking</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-black text-cream tracking-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+          <h3 className="text-2xl sm:text-3xl font-black text-[#2B2620] tracking-tight" style={{ fontFamily: "var(--font-cairo)" }}>
             {t.title}
           </h3>
-          <p className="text-cream-dim/70 text-xs sm:text-sm mt-1" style={{ fontFamily: "var(--font-inter)" }}>
+          <p className="text-[#7A7364] text-xs sm:text-sm mt-1" style={{ fontFamily: "var(--font-inter)" }}>
             {t.subtitle}
           </p>
         </div>
@@ -233,8 +230,8 @@ export default function ReservationModal({ isOpen, onClose }) {
         <form onSubmit={handleWhatsAppBooking} className="space-y-4">
           {/* Name */}
           <div>
-            <label className="block text-xs font-medium text-cream-dim mb-1 flex items-center gap-1.5">
-              <User size={14} className="text-teal" />
+            <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
+              <User size={14} className="text-[#4E5F4C]" />
               {t.nameLabel}
             </label>
             <input
@@ -243,7 +240,7 @@ export default function ReservationModal({ isOpen, onClose }) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder={t.namePlaceholder}
-              className="w-full px-4 py-3 rounded-xl bg-ink/80 border border-teal-dim/30 text-cream placeholder-cream-dim/30 focus:outline-none focus:border-copper transition-colors text-sm"
+              className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] placeholder-[#7A7364]/60 focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
             />
           </div>
 
@@ -251,17 +248,17 @@ export default function ReservationModal({ isOpen, onClose }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {/* Guests */}
             <div>
-              <label className="block text-xs font-medium text-cream-dim mb-1 flex items-center gap-1.5">
-                <Users size={14} className="text-teal" />
+              <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
+                <Users size={14} className="text-[#4E5F4C]" />
                 {t.guestsLabel}
               </label>
               <select
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-ink/80 border border-teal-dim/30 text-cream focus:outline-none focus:border-copper transition-colors text-sm"
+                className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
               >
                 {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20].map((num) => (
-                  <option key={num} value={num} className="bg-ink text-cream">
+                  <option key={num} value={num} className="bg-[#EDE3CE] text-[#2B2620]">
                     {num} {lang === "tr" ? "Kişi" : lang === "ar" ? "شخص" : lang === "ru" ? "чел." : "Guests"}
                   </option>
                 ))}
@@ -270,21 +267,21 @@ export default function ReservationModal({ isOpen, onClose }) {
 
             {/* Time */}
             <div>
-              <label className="block text-xs font-medium text-cream-dim mb-1 flex items-center gap-1.5">
-                <Clock size={14} className="text-teal" />
+              <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
+                <Clock size={14} className="text-[#4E5F4C]" />
                 {t.timeLabel}
               </label>
               <select
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-ink/80 border border-teal-dim/30 text-cream focus:outline-none focus:border-copper transition-colors text-sm"
+                className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
               >
                 {[
                   "10:00", "11:00", "12:00", "13:00", "14:00", "15:00",
                   "16:00", "17:00", "18:00", "18:30", "19:00", "19:30",
                   "20:00", "20:30", "21:00", "21:30", "22:00", "23:00", "00:00"
                 ].map((tStr) => (
-                  <option key={tStr} value={tStr} className="bg-ink text-cream">
+                  <option key={tStr} value={tStr} className="bg-[#EDE3CE] text-[#2B2620]">
                     {tStr}
                   </option>
                 ))}
@@ -294,8 +291,8 @@ export default function ReservationModal({ isOpen, onClose }) {
 
           {/* Date */}
           <div>
-            <label className="block text-xs font-medium text-cream-dim mb-1 flex items-center gap-1.5">
-              <Calendar size={14} className="text-teal" />
+            <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
+              <Calendar size={14} className="text-[#4E5F4C]" />
               {t.dateLabel}
             </label>
             <input
@@ -303,13 +300,13 @@ export default function ReservationModal({ isOpen, onClose }) {
               required
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-ink/80 border border-teal-dim/30 text-cream focus:outline-none focus:border-copper transition-colors text-sm"
+              className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
             />
           </div>
 
           {/* Notes */}
           <div>
-            <label className="block text-xs font-medium text-cream-dim mb-1">
+            <label className="block text-xs font-semibold text-[#7A7364] mb-1">
               {t.notesLabel}
             </label>
             <textarea
@@ -317,7 +314,7 @@ export default function ReservationModal({ isOpen, onClose }) {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder={t.notesPlaceholder}
-              className="w-full px-4 py-2.5 rounded-xl bg-ink/80 border border-teal-dim/30 text-cream placeholder-cream-dim/30 focus:outline-none focus:border-copper transition-colors text-sm resize-none"
+              className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] placeholder-[#7A7364]/60 focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm resize-none"
             />
           </div>
 
@@ -325,24 +322,24 @@ export default function ReservationModal({ isOpen, onClose }) {
           <div className="pt-2 space-y-2.5">
             <button
               type="submit"
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#25D366] to-[#1EBE5D] text-white font-bold text-sm tracking-wide flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-[1.02]"
+              className="w-full py-3 px-6 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors"
             >
-              <MessageCircle size={18} />
-              <span>{t.submitWhatsApp}</span>
+              <MessageCircle size={16} />
+              <span>{t.whatsappButton || "WhatsApp İle Rezerve Et"}</span>
             </button>
 
             <a
               href="tel:+902122513696"
-              className="w-full py-2.5 px-4 rounded-xl glass-card border border-teal-dim/30 text-cream-dim hover:text-cream text-xs font-medium flex items-center justify-center gap-2 hover:border-gold/40 transition-colors"
+              className="w-full py-2.5 px-4 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
             >
-              <Phone size={14} className="text-gold" />
+              <Phone size={14} className="text-[#9C7A3F]" />
               <span>{t.directCall}: +90 212 251 36 96</span>
             </a>
           </div>
         </form>
 
-        <p className="text-center text-[11px] text-cream-dim/40 mt-4">
-          📍 Firuzağa Mah., Cihangir, Beyoğlu • 09:00 - 02:00
+        <p className="text-center text-[11px] text-[#7A7364] mt-4 flex items-center justify-center gap-1">
+          <span>Firuzağa Mah., Cihangir, Beyoğlu • 09:00 - 02:00</span>
         </p>
       </div>
     </div>

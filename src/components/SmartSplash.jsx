@@ -55,9 +55,7 @@ export default function SmartSplash() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          background:
-            radial-gradient(ellipse 70% 55% at 50% 42%, rgba(232, 121, 47, 0.16), transparent 60%),
-            radial-gradient(ellipse 120% 90% at 50% 100%, #241512, #1a1211 70%);
+          background: #EDE3CE;
           overflow: hidden;
           font-family: var(--font-inter, sans-serif);
           transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);

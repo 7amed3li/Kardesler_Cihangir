@@ -83,7 +83,7 @@ export default function PersianLandingPage() {
   const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("سلام رستوران کاردشلر، قصد رزرو میز یا سفارش غذا دارم.");
 
   return (
-    <div className="min-h-screen bg-[#0E0804] text-cream selection:bg-copper selection:text-white" dir="rtl">
+    <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans" dir="rtl">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaFa) }}

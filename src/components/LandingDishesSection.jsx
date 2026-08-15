@@ -395,39 +395,39 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
   };
 
   return (
-    <section className="py-14 sm:py-20 bg-[#140D07]/70 border-y border-teal-dim/20 px-4 sm:px-6 lg:px-8">
+    <section className="py-14 sm:py-20 bg-[#EDE3CE] border-y border-[#9C7A3F]/20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-10 sm:space-y-12">
         {/* Header */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-copper/10 border border-copper/30 text-copper text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
             <Utensils size={13} />
             <span>{labels.badge}</span>
           </div>
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-black text-cream"
+            className="text-2xl sm:text-3xl md:text-4xl font-black text-[#2B2620]"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             {labels.title}
           </h2>
-          <div className="h-0.5 w-20 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
-          <p className="text-cream-dim/80 text-xs sm:text-sm md:text-base font-light">
+          <div className="h-0.5 w-20 bg-[#9C7A3F]/40 mx-auto"></div>
+          <p className="text-[#7A7364] text-xs sm:text-sm md:text-base font-medium">
             {labels.subtitle}
           </p>
         </div>
 
         {/* Currency Switcher Pill Bar */}
-        <div className="max-w-xl mx-auto p-2 sm:p-2.5 rounded-2xl glass-card border border-gold/30 backdrop-blur-md shadow-lg shadow-black/40">
-          <div className="flex items-center justify-between gap-2 px-2 pb-2 text-[11px] sm:text-xs text-gold font-medium">
+        <div className="max-w-xl mx-auto p-2 sm:p-2.5 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-sm">
+          <div className="flex items-center justify-between gap-2 px-2 pb-2 text-[11px] sm:text-xs text-[#9C7A3F] font-bold">
             <span className="flex items-center gap-1.5">
               <Coins size={13} />
               <span>{labels.currencyHint}</span>
             </span>
-            <span className="text-cream-dim/70 text-[10px] flex items-center gap-1">
+            <span className="text-[#7A7364] text-[10px] flex items-center gap-1">
               <span>{currency}</span>
               <span>
                 (
                 {currency === "SAR" ? (
-                  <SaudiRiyalIcon className="h-3 w-auto inline-block text-gold fill-current" />
+                  <SaudiRiyalIcon className="h-3 w-auto inline-block text-[#9C7A3F] fill-current" />
                 ) : (
                   getCurrencySymbol()
                 )}
@@ -444,10 +444,10 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                   key={c.code}
                   type="button"
                   onClick={() => changeCurrency(c.code)}
-                  className={`py-2 px-1.5 rounded-xl text-xs font-bold transition-all duration-200 flex items-center justify-center gap-1.5 ${
+                  className={`py-2 px-1.5 rounded-md text-xs font-bold transition-colors flex items-center justify-center gap-1.5 ${
                     isSelected
-                      ? "bg-gradient-to-r from-copper to-gold text-[#0E0804] shadow-md shadow-copper/20 scale-[1.02]"
-                      : "bg-ink/60 text-cream-dim hover:text-cream hover:bg-ink border border-teal-dim/30"
+                      ? "bg-[#4E5F4C] text-[#EAF0E6]"
+                      : "bg-[#EDE3CE] text-[#2B2620] border border-[#9C7A3F]/20 hover:border-[#9C7A3F]"
                   }`}
                 >
                   <span>{c.code}</span>
@@ -468,11 +468,11 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
             return (
               <div
                 key={dish.id}
-                className="glass-card rounded-2xl overflow-hidden border border-teal-dim/30 hover:border-gold/40 transition-all duration-300 flex flex-col group hover:-translate-y-1"
+                className="bg-[#F7F2E7] rounded-xl overflow-hidden border border-[#9C7A3F]/30 shadow-sm flex flex-col group transition-transform hover:scale-101"
               >
                 {/* Clickable Image Area */}
                 <div
-                  className="relative h-48 sm:h-52 w-full overflow-hidden cursor-pointer"
+                  className="relative h-48 sm:h-52 w-full overflow-hidden cursor-pointer bg-[#EDE3CE]"
                   onClick={() => setModalDish(dish)}
                   role="button"
                   aria-label={`View details for ${dish.name}`}
@@ -482,22 +482,22 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                     alt={dish.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Hover zoom hint overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-12 h-12 rounded-full glass-card-strong flex items-center justify-center border border-white/30">
-                      <ZoomIn size={20} className="text-cream" />
+                  <div className="absolute inset-0 bg-[#2B2620]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-md bg-[#4E5F4C] flex items-center justify-center text-white">
+                      <ZoomIn size={18} />
                     </div>
                   </div>
 
-                  <div className="absolute top-3 start-3 px-2.5 py-1 rounded-md bg-[#0E0804]/80 backdrop-blur-md border border-copper/40 text-copper text-[11px] font-bold uppercase tracking-wider">
+                  <div className="absolute top-3 start-3 px-2.5 py-1 rounded-md bg-[#2B2620] text-[#EDE3CE] text-[11px] font-bold uppercase tracking-wider">
                     {dish.tag}
                   </div>
 
                   {/* Dynamic Converted Price Badge */}
-                  <div className="absolute top-3 end-3 px-3 py-1.5 rounded-lg bg-gradient-to-r from-copper to-gold text-[#0E0804] shadow-lg flex flex-col items-end leading-tight">
-                    <span className="text-sm font-black tracking-tight flex items-center gap-1">
+                  <div className="absolute top-3 end-3 px-3 py-1.5 rounded-md bg-[#4E5F4C] text-[#EAF0E6] shadow-sm flex flex-col items-end leading-tight">
+                    <span className="text-xs font-black tracking-tight flex items-center gap-1">
                       {currency !== "TRY" && (
                         <>
                           <span>{converted}</span>
@@ -511,7 +511,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                       {currency === "TRY" && `${dish.priceTRY} ₺`}
                     </span>
                     {currency !== "TRY" && (
-                      <span className="text-[9px] font-bold opacity-80">
+                      <span className="text-[9px] font-bold opacity-90">
                         ({dish.priceTRY} ₺)
                       </span>
                     )}
@@ -523,23 +523,23 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                     className="cursor-pointer"
                     onClick={() => setModalDish(dish)}
                   >
-                    <h3 className="text-base sm:text-lg font-bold text-cream group-hover:text-gold transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-[#2B2620] group-hover:text-[#9C7A3F] transition-colors">
                       {dish.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-cream-dim/75 font-light leading-relaxed mt-1">
+                    <p className="text-xs sm:text-sm text-[#7A7364] font-medium leading-relaxed mt-1">
                       {dish.desc}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-teal-dim/20 flex items-center justify-between gap-2">
-                    <span className="text-xs text-copper font-medium flex items-center gap-1">
+                  <div className="pt-3 border-t border-[#9C7A3F]/20 flex items-center justify-between gap-2">
+                    <span className="text-xs text-[#9C7A3F] font-semibold flex items-center gap-1">
                       <Flame size={13} /> {labels.woodFired}
                     </span>
                     <a
                       href={waLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3.5 py-1.5 rounded-lg bg-gold/10 hover:bg-gold text-gold hover:text-[#0E0804] border border-gold/30 text-xs font-bold transition-all inline-flex items-center gap-1"
+                      className="px-3.5 py-1.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white text-xs font-bold transition-colors inline-flex items-center gap-1"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <span>{labels.orderNow}</span>
@@ -556,11 +556,10 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
         <div className="text-center pt-2">
           <Link
             href="/menu"
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-[#0E0804] font-bold text-sm tracking-wide hover:opacity-95 transition-all shadow-md hover:scale-[1.01]"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
           >
-            <Utensils size={16} />
             <span>{labels.viewFullMenu}</span>
-            {isRtl ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
+            {isRtl ? <ArrowUpLeft size={16} /> : <ArrowUpRight size={16} />}
           </Link>
         </div>
       </div>

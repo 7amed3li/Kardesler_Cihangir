@@ -83,30 +83,27 @@ export default function NotFound() {
   ];
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 py-16 text-center" dir={isRTL ? "rtl" : "ltr"}>
-      <div className="max-w-lg mx-auto space-y-6 glass-card p-8 sm:p-10 rounded-3xl border border-gold/30 shadow-2xl relative overflow-hidden">
-        {/* Glowing Background Accent */}
-        <div className="absolute -top-24 -end-24 w-48 h-48 bg-copper/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -start-24 w-48 h-48 bg-gold/15 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-[80vh] flex items-center justify-center px-4 py-16 text-center bg-[#EDE3CE]" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="max-w-lg mx-auto space-y-6 bg-[#F7F2E7] p-8 sm:p-10 rounded-xl border border-[#9C7A3F]/30 shadow-sm relative overflow-hidden">
 
         {/* 404 Badge & Language Selector */}
         <div className="flex items-center justify-between gap-2 flex-wrap">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-copper/15 border border-copper/40 text-copper text-xs font-bold tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold tracking-widest uppercase">
             <Compass size={14} className="animate-spin" style={{ animationDuration: "12s" }} />
             <span>{t.badge}</span>
           </div>
 
           {/* Inline Language Selector */}
-          <div className="inline-flex items-center gap-1 bg-ink/60 p-1 rounded-full border border-teal-dim/30">
-            <Globe size={13} className="text-teal-dim ms-1.5 me-0.5" />
+          <div className="inline-flex items-center gap-1 bg-[#EDE3CE] p-1 rounded-md border border-[#9C7A3F]/30">
+            <Globe size={13} className="text-[#9C7A3F] ms-1.5 me-0.5" />
             {languages.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setLang(l.code)}
-                className={`px-2 py-0.5 rounded-full text-[11px] font-semibold transition-all ${
+                className={`px-2 py-0.5 rounded-md text-[11px] font-bold transition-colors ${
                   lang === l.code
-                    ? "bg-gradient-to-r from-copper to-gold text-[#0E0804] shadow-sm"
-                    : "text-cream-dim/70 hover:text-cream"
+                    ? "bg-[#4E5F4C] text-[#EAF0E6]"
+                    : "text-[#7A7364] hover:text-[#2B2620]"
                 }`}
               >
                 {l.label}
@@ -118,15 +115,15 @@ export default function NotFound() {
         {/* Big Heading */}
         <div className="space-y-2 pt-2">
           <h1
-            className="text-3xl sm:text-4xl font-black text-cream"
+            className="text-3xl sm:text-4xl font-black text-[#2B2620]"
             style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
           >
             {t.title}
           </h1>
-          <p className="text-sm sm:text-base text-gold font-semibold">
+          <p className="text-sm sm:text-base text-[#9C7A3F] font-bold">
             {t.subtitle}
           </p>
-          <p className="text-xs sm:text-sm text-cream-dim/80 leading-relaxed font-light pt-2 max-w-md mx-auto">
+          <p className="text-xs sm:text-sm text-[#7A7364] leading-relaxed font-medium pt-2 max-w-md mx-auto">
             {t.desc}
           </p>
         </div>
@@ -135,7 +132,7 @@ export default function NotFound() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
           <Link
             href="/menu"
-            className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-[#0E0804] font-bold text-sm hover:opacity-95 transition-all shadow-md hover:scale-[1.02]"
+            className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
           >
             <Utensils size={17} />
             <span>{t.menuBtn}</span>
@@ -143,7 +140,7 @@ export default function NotFound() {
 
           <Link
             href="/"
-            className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-ink/80 hover:bg-ink border border-gold/30 hover:border-gold text-cream font-bold text-sm transition-all"
+            className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-md bg-[#F7F2E7] hover:bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] font-bold text-xs uppercase tracking-wider transition-colors"
           >
             <Home size={17} />
             <span>{t.homeBtn}</span>

@@ -73,14 +73,14 @@ export default function ContactPage() {
   const c = t.contactPage || {};
 
   return (
-    <div className="min-h-screen bg-transparent text-cream pb-16">
+    <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] pb-16">
       {/* Header */}
       <section className="pt-12 pb-8 px-4 text-center animate-fadeInUp">
-        <h1 className="text-3xl sm:text-4xl font-bold text-cream mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#2B2620] mb-3" style={{ fontFamily: "var(--font-cairo)" }}>
           {c.title}
         </h1>
         <div className="ottoman-divider max-w-xs mx-auto my-6"></div>
-        <p className="text-cream-dim/60 text-sm max-w-md mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+        <p className="text-[#7A7364] text-sm sm:text-base font-medium max-w-md mx-auto leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
           {c.subtitle}
         </p>
       </section>
@@ -93,15 +93,14 @@ export default function ContactPage() {
             href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-copper/40 transition-all duration-300 group animate-fadeInUp"
-            style={{ animationDelay: "100ms" }}
+            className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 hover:border-[#9C7A3F] transition-colors shadow-sm group"
           >
-            <div className="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0 group-hover:bg-gold/25 transition-colors">
+            <div className="w-12 h-12 rounded-md bg-[#EDE3CE] text-[#9C7A3F] flex items-center justify-center shrink-0 border border-[#9C7A3F]/20">
               <MapPin size={20} />
             </div>
             <div>
-              <h3 className="font-medium text-cream text-sm mb-1">{c.addressLabel}</h3>
-              <p className="text-cream-dim/60 text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+              <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.addressLabel}</h3>
+              <p className="text-[#7A7364] text-sm font-medium leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                 {c.address}
               </p>
             </div>
@@ -110,32 +109,30 @@ export default function ContactPage() {
           {/* Phone */}
           <a
             href="tel:+905060453906"
-            className="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-copper/40 transition-all duration-300 group animate-fadeInUp"
-            style={{ animationDelay: "150ms" }}
+            className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 hover:border-[#9C7A3F] transition-colors shadow-sm group"
           >
-            <div className="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0 group-hover:bg-gold/25 transition-colors">
+            <div className="w-12 h-12 rounded-md bg-[#EDE3CE] text-[#4E5F4C] flex items-center justify-center shrink-0 border border-[#9C7A3F]/20">
               <Phone size={20} />
             </div>
             <div>
-              <h3 className="font-medium text-cream text-sm mb-1">{c.phoneLabel}</h3>
-              <p className="text-cream-dim/60 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+              <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.phoneLabel}</h3>
+              <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                 +90 506 045 39 06
               </p>
-              <p className="text-cream-dim/40 text-xs mt-1">+90 212 251 36 96</p>
+              <p className="text-[#7A7364]/70 text-xs font-medium mt-1">+90 212 251 36 96</p>
             </div>
           </a>
 
           {/* Hours */}
           <div
-            className="glass-card rounded-2xl p-6 flex items-start gap-4 animate-fadeInUp"
-            style={{ animationDelay: "200ms" }}
+            className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 shadow-sm"
           >
-            <div className="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-md bg-[#EDE3CE] text-[#9C7A3F] flex items-center justify-center shrink-0 border border-[#9C7A3F]/20">
               <Clock size={20} />
             </div>
             <div>
-              <h3 className="font-medium text-cream text-sm mb-1">{c.hoursLabel}</h3>
-              <p className="text-cream-dim/60 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+              <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.hoursLabel}</h3>
+              <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                 {c.hours}
               </p>
             </div>
@@ -146,28 +143,29 @@ export default function ContactPage() {
             href="https://wa.me/905060453906"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card rounded-2xl p-6 flex items-start gap-4 hover:border-[#25D366]/40 transition-all duration-300 group animate-fadeInUp"
-            style={{ animationDelay: "250ms" }}
+            className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 hover:border-[#4E5F4C] transition-colors shadow-sm group"
           >
-            <div className="w-12 h-12 rounded-full bg-[#25D366]/15 text-[#25D366] flex items-center justify-center shrink-0 group-hover:bg-[#25D366]/25 transition-colors">
+            <div className="w-12 h-12 rounded-md bg-[#EDE3CE] text-[#4E5F4C] flex items-center justify-center shrink-0 border border-[#9C7A3F]/20">
               <MessageCircle size={20} />
             </div>
             <div>
-              <h3 className="font-medium text-cream text-sm mb-1">{c.whatsapp}</h3>
-              <p className="text-cream-dim/60 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+              <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.whatsapp}</h3>
+              <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                 +90 534 866 27 15
               </p>
             </div>
           </a>
         </div>
 
-        {/* Map Section */}
-        <section className="glass-card rounded-2xl p-6 animate-fadeInUp" style={{ animationDelay: "300ms" }}>
-          <h2 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "var(--font-cairo)" }}>
+        {/* Map */}
+        <div className="pt-4">
+          <h2 className="text-xl font-bold text-[#2B2620] mb-4 text-center" style={{ fontFamily: "var(--font-cairo)" }}>
             {c.findUs}
           </h2>
-          <RestaurantMap heightClass="h-64 sm:h-80" className="mb-4" showDirectionsButton={true} />
-        </section>
+          <div className="rounded-xl overflow-hidden shadow-sm border border-[#9C7A3F]/30">
+            <RestaurantMap showDirectionsButton={true} />
+          </div>
+        </div>
       </div>
     </div>
   );

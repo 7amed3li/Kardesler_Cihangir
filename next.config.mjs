@@ -204,6 +204,16 @@ const nextConfig = {
         ]
       },
       {
+        // Cache static font assets aggressively (1 year immutable)
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
         // Cache static media assets aggressively
         source: "/images/:path*",
         headers: [

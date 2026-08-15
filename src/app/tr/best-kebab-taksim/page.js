@@ -97,62 +97,48 @@ export default function TurkishLandingPage() {
   const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("Merhaba Kardeşler Kebap Cihangir, masa rezervasyonu yaptırmak veya sipariş vermek istiyorum.");
 
   return (
-    <div className="min-h-screen bg-[#0E0804] text-cream selection:bg-copper selection:text-white">
+    <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaTr) }}
       />
 
-      {/* ── 1. CINEMATIC HERO SECTION ── */}
-      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center pt-24 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/images/hero-bg.webp"
-            alt="Kardeşler Kebap Cihangir Taksim İstanbul 1998'den Beri"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center brightness-[0.32]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0E0804]/90 via-[#0E0804]/60 to-[#0E0804]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(217,119,6,0.12)_0%,transparent_70%)]"></div>
-        </div>
-
+      {/* ── 1. HERO SECTION ── */}
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center pt-16 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#EDE3CE]">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-gold/10 to-copper/10 border border-gold/30 text-gold text-[11px] sm:text-xs font-bold uppercase tracking-[0.15em] shadow-[0_0_15px_rgba(217,119,6,0.15)] relative overflow-hidden group">
-            <Award size={14} className="text-copper shrink-0" />
-
-            <span className="relative z-10">1998'DEN BERİ • TARİHİ CİHANGİR</span>
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+            <Award size={14} className="text-[#9C7A3F] shrink-0" />
+            <span>1998'DEN BERİ • TARİHİ CİHANGİR</span>
           </div>
 
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.15] tracking-tight luxury-title"
+            className="text-3xl sm:text-5xl md:text-6xl font-black text-[#2B2620] leading-[1.15] tracking-tight"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
             Meşe Kömüründe <br className="hidden sm:inline" />
-            <span className="luxury-gold-serif">
+            <span className="text-[#9C7A3F]">
               Hakiki Zırh Kebabı
             </span>{" "}
             Taksim'in Yanında
           </h1>
 
-          <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-cream-dim/90 font-light leading-relaxed">
+          <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-[#7A7364] font-medium leading-relaxed">
             28 yıldır Cihangir'de geleneksel ocakbaşı kültürünü yaşatıyoruz: zırhla çekilen günlük etler, meşe kömürü ateşi ve 450 derecelik taş fırından sıcacık çıkan pideler.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-2 text-xs sm:text-sm text-cream-dim">
-            <div className="flex items-center gap-1.5 bg-ink/70 px-3.5 py-1.5 rounded-full border border-teal-dim/40 backdrop-blur-sm">
-              <Star size={14} className="text-gold fill-gold" />
-              <span className="font-bold text-cream">4.6 / 5</span>
-              <span className="text-cream-dim/70">(1.280+ Google Yorumu)</span>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2 text-xs sm:text-sm text-[#7A7364]">
+            <div className="flex items-center gap-1.5 bg-[#F7F2E7] px-3.5 py-1.5 rounded-md border border-[#9C7A3F]/30">
+              <Star size={14} className="text-[#9C7A3F] fill-[#9C7A3F]" />
+              <span className="font-bold text-[#2B2620]">4.6 / 5</span>
+              <span className="text-[#7A7364]">(1.280+ Google Yorumu)</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-ink/70 px-3.5 py-1.5 rounded-full border border-teal-dim/40 backdrop-blur-sm">
-              <MapPin size={14} className="text-copper" />
-              <span>Taksim Meydanı'na 5 Dk Yürüme (450m)</span>
+            <div className="flex items-center gap-1.5 bg-[#F7F2E7] px-3.5 py-1.5 rounded-md border border-[#9C7A3F]/30">
+              <MapPin size={14} className="text-[#4E5F4C]" />
+              <span className="font-medium text-[#2B2620]">Taksim Meydanı'na 5 Dk Yürüme (450m)</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-ink/70 px-3.5 py-1.5 rounded-full border border-teal-dim/40 backdrop-blur-sm">
-              <ShieldCheck size={14} className="text-teal" />
-              <span>%100 Günlük Taze Yerli Et</span>
+            <div className="flex items-center gap-1.5 bg-[#F7F2E7] px-3.5 py-1.5 rounded-md border border-[#9C7A3F]/30">
+              <ShieldCheck size={14} className="text-[#4E5F4C]" />
+              <span className="font-medium text-[#2B2620]">%100 Günlük Taze Yerli Et</span>
             </div>
           </div>
 
@@ -161,7 +147,7 @@ export default function TurkishLandingPage() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-[#0E0804] font-bold text-sm tracking-wide uppercase hover:opacity-95 transition-all shadow-lg shadow-copper/20 hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs tracking-wider uppercase transition-colors shadow-sm"
             >
               <MessageCircle size={18} />
               <span>WhatsApp ile Masa Ayırt / Sipariş Ver</span>
@@ -170,9 +156,9 @@ export default function TurkishLandingPage() {
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-card border border-teal-dim/40 text-cream font-medium text-sm hover:border-gold/50 hover:bg-gold/5 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 text-[#2B2620] hover:bg-[#EDE3CE] font-semibold text-xs transition-colors"
             >
-              <Navigation size={16} className="text-copper" />
+              <Navigation size={16} className="text-[#9C7A3F]" />
               <span>Google Haritalar Yol Tarifi</span>
             </a>
           </div>
@@ -180,23 +166,23 @@ export default function TurkishLandingPage() {
       </section>
 
       {/* ── 2. TRUST STATS STRIP ── */}
-      <section className="border-y border-teal-dim/30 bg-[#140D07]/90 py-6 px-4">
+      <section className="border-y border-[#9C7A3F]/20 bg-[#F7F2E7] py-6 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-          <div className="p-3 border-r border-teal-dim/20">
-            <div className="text-2xl sm:text-3xl font-black text-gold">1998</div>
-            <div className="text-[11px] sm:text-xs text-cream-dim/80 mt-1 uppercase tracking-wider">Cihangir'de Kuruluş</div>
+          <div className="p-3 border-r border-[#9C7A3F]/20">
+            <div className="text-2xl sm:text-3xl font-black text-[#9C7A3F]">1998</div>
+            <div className="text-[11px] sm:text-xs text-[#7A7364] mt-1 font-semibold uppercase tracking-wider">Cihangir'de Kuruluş</div>
           </div>
-          <div className="p-3 border-r border-teal-dim/20">
-            <div className="text-2xl sm:text-3xl font-black text-cream">%100</div>
-            <div className="text-[11px] sm:text-xs text-cream-dim/80 mt-1 uppercase tracking-wider">Zırh Kıyımı Taze Et</div>
+          <div className="p-3 border-r border-[#9C7A3F]/20">
+            <div className="text-2xl sm:text-3xl font-black text-[#2B2620]">%100</div>
+            <div className="text-[11px] sm:text-xs text-[#7A7364] mt-1 font-semibold uppercase tracking-wider">Zırh Kıyımı Taze Et</div>
           </div>
-          <div className="p-3 border-r border-teal-dim/20">
-            <div className="text-2xl sm:text-3xl font-black text-gold">4.6★</div>
-            <div className="text-[11px] sm:text-xs text-cream-dim/80 mt-1 uppercase tracking-wider">1.280+ Gerçek Yorum</div>
+          <div className="p-3 border-r border-[#9C7A3F]/20">
+            <div className="text-2xl sm:text-3xl font-black text-[#9C7A3F]">4.6★</div>
+            <div className="text-[11px] sm:text-xs text-[#7A7364] mt-1 font-semibold uppercase tracking-wider">1.280+ Gerçek Yorum</div>
           </div>
           <div className="p-3">
-            <div className="text-2xl sm:text-3xl font-black text-cream">450°C</div>
-            <div className="text-[11px] sm:text-xs text-cream-dim/80 mt-1 uppercase tracking-wider">Odun Ateşli Taş Fırın</div>
+            <div className="text-2xl sm:text-3xl font-black text-[#2B2620]">450°C</div>
+            <div className="text-[11px] sm:text-xs text-[#7A7364] mt-1 font-semibold uppercase tracking-wider">Odun Ateşli Taş Fırın</div>
           </div>
         </div>
       </section>
@@ -207,13 +193,13 @@ export default function TurkishLandingPage() {
       {/* ── 3. SIGNATURE DISHES WITH LIVE MULTI-CURRENCY CONVERTER ── */}
       <LandingDishesSection currentLocale="tr" />
 
-      {/* ── 5. VERIFIED GOOGLE MAPS REVIEWS (DIRECT LINKS & AUTHENTIC SOURCE) ── */}
+      {/* ── 5. VERIFIED GOOGLE MAPS REVIEWS ── */}
       <LandingVerifiedReviews currentLocale="tr" />
 
       {/* ── 6. FINAL VIP CALLOUT ── */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#140D07] to-[#0E0804] border-t border-teal-dim/30 text-center">
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#EDE3CE] border-t border-[#9C7A3F]/20 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-copper/20 border border-copper/40 text-gold text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
             <span>Rezervasyon ve Paket Servis</span>
           </div>
 

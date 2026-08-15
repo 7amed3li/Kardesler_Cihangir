@@ -39,25 +39,25 @@ export default function CurrencySwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label={`Current Currency: ${currency}`}
-        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all h-10 min-w-[40px] text-xs font-semibold ${
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border transition-colors h-9 text-xs font-semibold ${
           isOpen
-            ? "bg-gold/15 border-gold text-gold shadow-sm"
-            : "bg-teal-dim/15 border-teal-dim/35 text-cream hover:text-gold hover:border-gold/60 hover:bg-gold/10"
+            ? "bg-[#9C7A3F]/20 border-[#9C7A3F] text-[#9C7A3F]"
+            : "bg-[#F7F2E7] border-[#9C7A3F]/30 text-[#2B2620] hover:border-[#9C7A3F]"
         }`}
       >
-        <span className="text-gold font-bold">{currentCurrencyObj.symbol}</span>
+        <span className="text-[#9C7A3F] font-bold">{currentCurrencyObj.symbol}</span>
         <span className="tracking-wider">{currency}</span>
         <ChevronDown
           size={12}
-          className={`text-cream-dim transition-transform duration-200 ${
-            isOpen ? "rotate-180 text-gold" : ""
+          className={`text-[#7A7364] transition-transform duration-200 ${
+            isOpen ? "rotate-180 text-[#9C7A3F]" : ""
           }`}
         />
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 w-44 bg-[#140E0A] border border-gold/30 rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.7)] z-50 end-0 p-1 animate-fadeInUp">
-          <div className="px-3 py-1.5 text-[10px] uppercase tracking-wider text-gold/80 font-bold border-b border-gold/10">
+        <div className="absolute mt-2 w-44 bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-md overflow-hidden shadow-lg z-50 end-0 p-1 animate-fadeIn">
+          <div className="px-3 py-1.5 text-[10px] uppercase tracking-wider text-[#9C7A3F] font-bold border-b border-[#9C7A3F]/20">
             Döviz / Currency
           </div>
           <div className="py-1 space-y-0.5">
@@ -70,19 +70,19 @@ export default function CurrencySwitcher() {
                     changeCurrency(c.code);
                     setIsOpen(false);
                   }}
-                  className={`w-full text-start px-3 py-2 text-xs rounded-xl font-medium transition-all flex items-center justify-between gap-2 ${
+                  className={`w-full text-start px-3 py-2 text-xs rounded-md font-medium transition-colors flex items-center justify-between gap-2 ${
                     isSelected
-                      ? "bg-gradient-to-r from-copper/20 to-gold/20 text-gold font-bold border border-gold/30"
-                      : "text-cream-dim hover:bg-ink-2 hover:text-cream"
+                      ? "bg-[#4E5F4C] text-white font-bold"
+                      : "text-[#2B2620] hover:bg-[#EDE3CE]"
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <span className="w-5 h-5 rounded-md bg-ink flex items-center justify-center text-gold font-bold text-xs border border-teal-dim/30">
+                    <span className="w-5 h-5 rounded-md bg-[#EDE3CE] flex items-center justify-center text-[#9C7A3F] font-bold text-xs border border-[#9C7A3F]/20">
                       {c.symbol}
                     </span>
                     <span className="font-semibold">{c.code}</span>
                   </div>
-                  {isSelected && <Check size={14} className="text-gold shrink-0" />}
+                  {isSelected && <Check size={14} className="text-white shrink-0" />}
                 </button>
               );
             })}

@@ -1,63 +1,91 @@
 @import "tailwindcss";
+@import "../styles/fonts.css";
 
 :root {
-  --ink: #181009;
-  --ink-2: #241a12;
-  --teal: #41b8ac;
-  --teal-dim: #2a7e75;
-  --copper: #d9743c;
-  --gold: #d4a24c;
-  --cream: #faf3e7;
-  --cream-dim: #efe4d0;
-  --brick: #c94b3c;
-  --ink-text: #2a211a;
+  /* Brand Color Palette */
+  --bg: #EDE3CE;             /* Beige Marble Background */
+  --bg-card: #F7F2E7;        /* Soft Cream Card Background */
+  --primary: #4E5F4C;        /* Olive Green Primary Button */
+  --primary-dim: #3D4B3B;    /* Darker Olive Green Hover */
+  --accent: #9C7A3F;         /* Ottoman Bronze / Gold */
+  --gold: #9C7A3F;           /* Ottoman Bronze / Gold */
+  --text: #2B2620;           /* Deep Espresso Text */
+  --text-secondary: #7A7364; /* Warm Taupe Secondary Text */
+  --error: #A0422E;          /* Terracotta Accent Alert */
+  
+  /* Legacy mapping aliases for gradual component transition */
+  --ink: #EDE3CE;
+  --ink-2: #F7F2E7;
+  --teal: #4E5F4C;
+  --teal-dim: #3D4B3B;
+  --copper: #9C7A3F;
+  --cream: #2B2620;
+  --cream-dim: #7A7364;
+  --brick: #A0422E;
+  --ink-text: #EDE3CE;
+
+  /* Spacing Tokens */
+  --spacing-margin-ext: 16px;
+  --spacing-padding-card: 12px;
+  --spacing-gap-card: 8px;
+  --spacing-gap-section: 28px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
 }
 
 @theme inline {
-  --color-ink: var(--ink);
-  --color-ink-2: var(--ink-2);
-  --color-teal: var(--teal);
-  --color-teal-dim: var(--teal-dim);
-  --color-copper: var(--copper);
-  --color-gold: var(--gold);
-  --color-cream: var(--cream);
-  --color-cream-dim: var(--cream-dim);
-  --color-brick: var(--brick);
-  --color-ink-text: var(--ink-text);
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
+  --color-primary: var(--primary);
+  --color-primary-dim: var(--primary-dim);
+  --color-accent: var(--accent);
+  --color-gold: var(--accent);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-error: var(--error);
+
+  /* Mapping legacy Tailwind utility names */
+  --color-ink: var(--bg);
+  --color-ink-2: var(--bg-card);
+  --color-teal: var(--primary);
+  --color-teal-dim: var(--primary-dim);
+  --color-copper: var(--accent);
+  --color-cream: var(--text);
+  --color-cream-dim: var(--text-secondary);
+  --color-brick: var(--error);
   
   --font-cairo: "Cairo", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-amiri: "Amiri", Georgia, serif;
 }
 
 /* ==========================================================================
-   BASE
+   BASE STYLES & LAYOUT
    ========================================================================== */
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 body {
-  background:
-    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(198,98,43,0.10), transparent 60%),
-    radial-gradient(ellipse 600px 400px at 80% 50%, rgba(47,158,147,0.04), transparent 50%),
-    radial-gradient(ellipse 400px 300px at 20% 80%, rgba(212,162,76,0.04), transparent 50%),
-    var(--ink);
-  color: var(--cream);
+  background-color: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
-/* Hide scrollbar for clean UI */
+/* Utility to hide scrollbars */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* ==========================================================================
-   KEYFRAMES
+   ANIMATION KEYFRAMES (Transform & Opacity Only for Performance)
    ========================================================================== */
 
 @keyframes fadeIn {
@@ -66,125 +94,57 @@ body {
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-24px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.95); }
+  from { opacity: 0; transform: scale(0.97); }
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes shimmer {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes marqueeScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.8; box-shadow: 0 0 15px rgba(212,162,76,0.3); }
-  50% { opacity: 1; box-shadow: 0 0 30px rgba(212,162,76,0.6); }
-}
-
-@keyframes borderGlow {
-  0%, 100% { border-color: rgba(47, 158, 147, 0.3); }
-  50% { border-color: rgba(47, 158, 147, 0.8); }
-}
-
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* ==========================================================================
-   ANIMATION UTILITY CLASSES
-   ========================================================================== */
-
 .animate-fadeIn {
-  animation: fadeIn 0.5s ease-out both;
+  animation: fadeIn 0.3s ease-out both;
 }
 
 .animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
-.animate-fadeInDown {
-  animation: fadeInDown 0.5s ease-out both;
+  animation: fadeInUp 0.4s ease-out both;
 }
 
 .animate-scaleIn {
-  animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.animate-shimmer {
-  background-size: 200% 100%;
-  animation: shimmer 2s ease-in-out infinite;
+/* Respect user reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-marquee {
-  animation: marqueeScroll 40s linear infinite;
-}
-
-.animate-pulseGlow {
-  animation: pulseGlow 3s ease-in-out infinite;
-}
-
-.animate-borderGlow {
-  animation: borderGlow 3s ease-in-out infinite;
-}
-
-.animate-spinSlow {
-  animation: spinSlow 12s linear infinite;
-}
-
-/* Stagger delays for children */
-.stagger-1 { animation-delay: 50ms; }
-.stagger-2 { animation-delay: 100ms; }
-.stagger-3 { animation-delay: 150ms; }
-.stagger-4 { animation-delay: 200ms; }
-.stagger-5 { animation-delay: 250ms; }
-.stagger-6 { animation-delay: 300ms; }
-.stagger-7 { animation-delay: 350ms; }
-.stagger-8 { animation-delay: 400ms; }
 
 /* ==========================================================================
-   GLASSMORPHISM
+   FLAT SOLID CARD STYLES (Replacing Glassmorphism)
    ========================================================================== */
 
-.glass-card {
-  background: rgba(24, 16, 9, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(47, 158, 147, 0.15);
+.glass-card,
+.flat-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(156, 122, 63, 0.2);
+  border-radius: var(--radius-card);
 }
 
-.glass-card-strong {
-  background: rgba(24, 16, 9, 0.80);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(47, 158, 147, 0.25);
+.glass-card-strong,
+.flat-card-strong {
+  background: #FFFFFF;
+  border: 1px solid rgba(156, 122, 63, 0.3);
+  border-radius: var(--radius-card);
 }
 
 /* ==========================================================================
-   OTTOMAN DECORATIVE ELEMENTS
+   AUTHENTIC OTTOMAN DECORATIVE ELEMENTS
    ========================================================================== */
 
 .ottoman-divider {
@@ -193,62 +153,14 @@ body {
   background: linear-gradient(
     to right,
     transparent,
-    rgba(212, 162, 76, 0.1) 15%,
-    rgba(212, 162, 76, 0.5) 40%,
-    transparent 40%,
-    transparent 60%,
-    rgba(212, 162, 76, 0.5) 60%,
-    rgba(212, 162, 76, 0.1) 85%,
+    rgba(156, 122, 63, 0.2) 20%,
+    rgba(156, 122, 63, 0.5) 50%,
+    rgba(156, 122, 63, 0.2) 80%,
     transparent
   );
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 1.5rem 0;
 }
 
-.ottoman-divider::before {
-  content: "❦"; /* Traditional floral heart/leaf symbol, human & classic */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  color: var(--gold);
-  background: transparent;
-  text-shadow: 0 0 15px rgba(212, 162, 76, 0.6);
-}
-
-.ottoman-corner {
-  position: relative;
-}
-
-.ottoman-corner::before,
-.ottoman-corner::after {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-color: rgba(212, 162, 76, 0.3);
-  pointer-events: none;
-}
-
-.ottoman-corner::before {
-  top: 0;
-  left: 0;
-  border-top: 2px solid;
-  border-left: 2px solid;
-  border-color: inherit;
-}
-
-.ottoman-corner::after {
-  bottom: 0;
-  right: 0;
-  border-bottom: 2px solid;
-  border-right: 2px solid;
-  border-color: inherit;
-}
-
-/* Ornamental bracket pattern */
 .ottoman-bracket {
   position: relative;
   padding: 1.5rem 2rem;
@@ -258,45 +170,30 @@ body {
 .ottoman-bracket::after {
   content: "";
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .ottoman-bracket::before {
   top: 0;
   left: 0;
-  border-top: 2px solid var(--gold);
-  border-left: 2px solid var(--gold);
+  border-top: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
   border-top-left-radius: 4px;
 }
 
 .ottoman-bracket::after {
   bottom: 0;
   right: 0;
-  border-bottom: 2px solid var(--gold);
-  border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
   border-bottom-right-radius: 4px;
 }
 
 /* ==========================================================================
-   SCROLL-TRIGGERED REVEAL
-   ========================================================================== */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ==========================================================================
-   HERO BACKGROUND
+   HERO SECTION OVERLAY
    ========================================================================== */
 
 .hero-bg {
@@ -310,13 +207,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to bottom,
-      rgba(24,16,9,0.50) 0%,
-      rgba(24,16,9,0.70) 40%,
-      rgba(24,16,9,0.92) 80%,
-      var(--ink) 100%
-    );
+  background: linear-gradient(180deg, rgba(237, 227, 206, 0.88) 0%, rgba(237, 227, 206, 0.95) 100%);
   z-index: 1;
 }
 
@@ -325,26 +216,24 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  filter: brightness(0.6) saturate(1.1);
+  filter: brightness(1.15) contrast(0.9) opacity(0.3);
 }
 
 /* ==========================================================================
-   GOOGLE MAPS DARK THEME
+   MAP CONTAINER (Clean Natural Rendering)
    ========================================================================== */
 
 .map-dark-container {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   overflow: hidden;
-  border: 1px solid rgba(47, 158, 147, 0.2);
+  border: 1px solid rgba(156, 122, 63, 0.2);
 }
 
 .map-dark-container iframe {
   width: 100%;
   height: 100%;
   border: 0;
-  filter: invert(90%) hue-rotate(180deg) brightness(0.85) contrast(1.15);
-  pointer-events: none;
 }
 
 /* ==========================================================================
@@ -352,14 +241,11 @@ body {
    ========================================================================== */
 
 .food-card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .food-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 8px 32px rgba(198, 98, 43, 0.12),
-    0 2px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -367,86 +253,31 @@ body {
    ========================================================================== */
 
 .modal-overlay {
-  animation: fadeIn 0.25s ease-out both;
+  animation: fadeIn 0.2s ease-out both;
+  background-color: rgba(43, 38, 32, 0.6);
 }
 
 .modal-content {
-  animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes shimmer {
-  100% {
-    transform: translateX(100%);
-  }
+  animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ==========================================================================
-   CART SYSTEM
+   WHATSAPP ORDER BUTTON
    ========================================================================== */
 
-/* FAB pulse — green ripple ring when item is added */
-@keyframes cartRipple {
-  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-  70%  { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-.cart-pulse {
-  animation: cartRipple 0.6s ease-out;
-}
-
-/* Counter number bounce */
-@keyframes counterPop {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.4); }
-  100% { transform: scale(1); }
-}
-.animate-counterPop {
-  animation: counterPop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Cart drawer — slide from right on desktop */
-@keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0.5; }
-  to   { transform: translateX(0);    opacity: 1; }
-}
-.cart-drawer-panel {
-  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Individual cart item entry */
-@keyframes cartItemIn {
-  from { opacity: 0; transform: translateX(12px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-.animate-cartItemIn {
-  animation: cartItemIn 0.2s ease-out both;
-}
-
-/* WhatsApp branded button */
 .whatsapp-btn {
-  background: linear-gradient(135deg, #25D366 0%, #1da851 100%);
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
-  transition: box-shadow 0.3s, transform 0.2s;
-}
-.whatsapp-btn:hover {
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.4);
-  transform: translateY(-1px);
+  background-color: #25D366;
+  color: #FFFFFF;
+  transition: opacity 0.2s;
 }
 
-/* Premium Human-Crafted Text Effects */
-.luxury-title {
-  font-weight: 300 !important;
-  letter-spacing: -0.01em;
+.whatsapp-btn:hover {
+  opacity: 0.92;
 }
 
 .luxury-gold-serif {
-  font-family: var(--font-playfair), Georgia, serif !important;
-  font-style: italic;
-  font-weight: 500;
-  color: #C6A87C;
-  letter-spacing: 0.02em;
-}
-
-.whatsapp-btn:active {
-  transform: translateY(0);
+  font-family: var(--font-amiri), Georgia, serif !important;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent);
 }

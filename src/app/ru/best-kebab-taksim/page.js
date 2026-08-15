@@ -92,7 +92,7 @@ export default function RussianLandingPage() {
   const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("Здравствуйте, ресторан Kardeşler Cihangir! Хочу забронировать столик или узнать меню.");
 
   return (
-    <div className="min-h-screen bg-[#0E0804] text-cream selection:bg-copper selection:text-white">
+    <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaRu) }}

@@ -33,26 +33,44 @@ export default function OrderFlow() {
       {/* ═══════════════════════════════════════════
           FLOATING CART BUTTON (FAB)
           ═══════════════════════════════════════════ */}
+      {/* ═══════════════════════════════════════════
+          STICKY BOTTOM BAR (Order Bar)
+          ═══════════════════════════════════════════ */}
       {!isCartOpen && (
-        <button
-          onClick={() => setIsCartOpen(true)}
-          aria-label={labels.yourOrder || "Your Order"}
-          id="cart-fab"
-          className={`fixed bottom-28 end-6 z-50 rounded-full bg-gradient-to-br from-copper to-copper/80 text-cream flex items-center justify-center gap-2 px-6 py-4 shadow-[0_4px_24px_rgba(198,98,43,0.4)] hover:scale-105 transition-all duration-300 border border-copper/50 ${cartPulse ? "cart-pulse" : ""}`}
-        >
-          <ShoppingBag size={22} />
-          <span className="font-bold text-sm tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
-            {labels.yourOrder || "Siparişiniz"}
-          </span>
-          {cartCount > 0 && (
-            <span
-              key={cartCount}
-              className="absolute -top-2 -end-2 w-7 h-7 bg-teal text-cream text-sm font-bold flex items-center justify-center rounded-full border-2 border-ink animate-scaleIn shadow-lg"
-            >
-              {cartCount}
-            </span>
-          )}
-        </button>
+        <div className="fixed bottom-0 start-0 end-0 z-50 bg-[#F7F2E7] border-t border-[#9C7A3F]/30 px-4 py-3 pb-[calc(12px+env(safe-area-inset-bottom))] shadow-lg flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="w-10 h-10 rounded-md bg-[#4E5F4C] text-white flex items-center justify-center">
+                <ShoppingBag size={20} />
+              </div>
+              {cartCount > 0 && (
+                <span
+                  key={cartCount}
+                  className="absolute -top-1.5 -end-1.5 w-5 h-5 bg-[#9C7A3F] text-white text-xs font-bold flex items-center justify-center rounded-full border border-[#F7F2E7]"
+                >
+                  {cartCount}
+                </span>
+              )}
+            </div>
+            <div>
+              <p className="text-xs text-[#7A7364] font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                {labels.yourOrder || "Siparişiniz"}
+              </p>
+              <p className="text-sm font-bold text-[#2B2620]">
+                {convertPrice(cartTotal)} {symbol}
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => setIsCartOpen(true)}
+            aria-label={labels.yourOrder || "Your Order"}
+            id="cart-fab"
+            className="px-5 py-2.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-semibold text-xs tracking-wider uppercase transition-colors"
+          >
+            {labels.viewCart || "Sepeti Gör"}
+          </button>
+        </div>
       )}
 
       {/* ═══════════════════════════════════════════
@@ -126,8 +144,8 @@ export default function OrderFlow() {
                             />
                           </div>
                         ) : (
-                          <div className="w-12 h-12 rounded-lg bg-ink-2 flex items-center justify-center shrink-0">
-                            <span className="text-lg">🥤</span>
+                          <div className="w-12 h-12 rounded-lg bg-[#EDE3CE] flex items-center justify-center shrink-0">
+                            <ShoppingBag size={18} className="text-[#9C7A3F]" />
                           </div>
                         )}
 

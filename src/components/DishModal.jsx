@@ -91,7 +91,8 @@ export default function DishModal({
   customTags,
   hideCart = false 
 }) {
-  const { menuT, t, convertPrice, getCurrencySymbol } = useAppContext();
+  const { menuT, t, convertPrice, getCurrencySymbol, lang } = useAppContext();
+  const isRTL = lang === "ar" || lang === "fa";
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -118,63 +119,63 @@ export default function DishModal({
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="glass-card-strong rounded-3xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative modal-content border-gold/20"
+            dir={isRTL ? "rtl" : "ltr"}
+            className="bg-[#F7F2E7] rounded-2xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-xl relative modal-content border border-[#9C7A3F]/30 text-start"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
               aria-label="Close modal"
-              className="absolute top-4 end-4 z-50 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold transition-colors border-white/10"
+              className={`absolute top-4 ${isRTL ? "start-4" : "end-4"} z-50 w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-colors border border-[#9C7A3F]/20`}
             >
-              <X size={20} />
+              <X size={18} />
             </button>
 
             {/* Modal Image */}
             {image && (
-              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-ink-2 group">
+              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-[#EDE3CE] group">
                 <Image src={image} alt={name} fill style={{ objectFit: "contain" }} sizes="(max-width: 768px) 100vw, 400px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent pointer-events-none"></div>
                 
                 {/* Zoom Button */}
                 <button
                   onClick={() => setIsFullscreenImage(true)}
                   aria-label="View fullscreen image"
-                  className="absolute bottom-4 end-4 z-20 w-10 h-10 flex items-center justify-center rounded-full glass-card text-cream hover:text-gold hover:scale-110 transition-all border-white/20 shadow-lg"
+                  className={`absolute bottom-4 ${isRTL ? "start-4" : "end-4"} z-20 w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-all border border-[#9C7A3F]/30 shadow-md`}
                 >
-                  <ZoomIn size={18} />
+                  <ZoomIn size={16} />
                 </button>
               </div>
             )}
 
             {/* Modal Details */}
-            <div className="p-6 overflow-y-auto no-scrollbar flex flex-col gap-4">
+            <div className="p-6 overflow-y-auto no-scrollbar flex flex-col gap-4 text-start">
               <div className="flex justify-between items-start gap-4">
-                <h2 className="text-2xl font-bold text-cream">{name}</h2>
-                <span className="shrink-0 flex items-center gap-1 text-xl font-bold text-copper glass-card px-3 py-1 rounded-lg border-copper/20" style={{ fontFamily: "var(--font-inter)" }}>
+                <h2 className="text-2xl font-bold text-[#2B2620] leading-tight text-start">{name}</h2>
+                <span className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#9C7A3F] px-3 py-1 rounded-md" style={{ fontFamily: "var(--font-inter)" }}>
                   {displayPrice} {symbol}
                 </span>
               </div>
 
               {tags && tags.length > 0 && (
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {tags.includes("signature") && (
-                    <span className="px-3 py-1 bg-gold/10 text-gold border border-gold/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#9C7A3F]/15 text-[#9C7A3F] border border-[#9C7A3F]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       {t?.signature || "Signature"}
                     </span>
                   )}
                   {tags.includes("spicy") && (
-                    <span className="px-3 py-1 bg-brick/10 text-brick border border-brick/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#A0422E]/15 text-[#A0422E] border border-[#A0422E]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       {t?.spicy || "Spicy"}
                     </span>
                   )}
                   {tags.includes("vegetarian") && (
-                    <span className="px-3 py-1 bg-teal/10 text-teal border border-teal/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#4E5F4C]/15 text-[#4E5F4C] border border-[#4E5F4C]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       {t?.vegetarian || "Veg"}
                     </span>
                   )}
                   {tags.includes("vegan") && (
-                    <span className="px-3 py-1 bg-[#4ade80]/10 text-[#4ade80] border border-[#4ade80]/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#4E5F4C]/15 text-[#4E5F4C] border border-[#4E5F4C]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       {t?.vegan || "Vegan"}
                     </span>
                   )}
@@ -182,15 +183,19 @@ export default function DishModal({
               )}
 
               {description && (
-                <div className="mt-2">
-                  <h4 className="text-sm font-bold text-gold mb-2 uppercase tracking-widest">{t?.description || "Details"}</h4>
-                  <p className="text-cream-dim leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>{description}</p>
+                <div className="mt-1 text-start" dir={isRTL ? "rtl" : "ltr"}>
+                  <h4 className="text-xs font-bold text-[#9C7A3F] mb-1 uppercase tracking-widest text-start" style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}>
+                    {t?.description || "Details"}
+                  </h4>
+                  <p className="text-[#7A7364] leading-relaxed text-sm text-start" style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}>
+                    {description}
+                  </p>
                 </div>
               )}
               
               {/* Modal Cart Action */}
               {!hideCart && item && (
-                <div className="mt-4 flex items-center justify-center">
+                <div className="mt-2 flex items-center justify-center">
                   <CartCounter item={item} compact={false} />
                 </div>
               )}
@@ -198,7 +203,7 @@ export default function DishModal({
               <button
                 onClick={() => setIsOpen(false)}
                 aria-label="Close modal"
-                className="mt-2 w-full py-3 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors duration-300 border border-teal-dim/50 text-sm"
+                className="mt-2 w-full py-2.5 rounded-md bg-[#EDE3CE] text-[#2B2620] font-bold hover:bg-[#9C7A3F] hover:text-white transition-colors border border-[#9C7A3F]/30 text-xs uppercase tracking-wider"
               >
                 {t?.close || "Close"}
               </button>
