@@ -118,8 +118,16 @@ export default function Header() {
         <div className="max-w-5xl mx-auto px-3 sm:px-4 h-15 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity shrink-0 group">
-            <div className="relative w-9 h-9 sm:w-11 sm:h-11 shrink-0 drop-shadow-xs">
-              <Image src="/logo.webp" alt="Kardeşler Cihangir Logo" fill priority sizes="80px" style={{ objectFit: 'contain' }} className="transition-transform group-hover:scale-105" />
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full bg-[#FAF7F0] p-1 border-2 border-[#9C7A3F]/40 shadow-xs flex items-center justify-center overflow-hidden">
+              <Image 
+                src="/logo.webp" 
+                alt="Kardeşler Cihangir Logo" 
+                fill 
+                priority 
+                sizes="96px" 
+                style={{ objectFit: 'contain' }} 
+                className="transition-transform group-hover:scale-105 p-0.5 filter contrast-110 brightness-105" 
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-base sm:text-lg font-black text-[#2B2620] leading-none" style={{ fontFamily: "var(--font-cairo)" }}>
