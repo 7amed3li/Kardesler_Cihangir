@@ -29,8 +29,8 @@ const featuredDishes = [
     categoryId: "kebap",
     price: 870.0,
     image: "/images/17-Vali-Kebabi.webp",
-    badgeKey: "signature",
-    defaultBadge: "KRAL ZİYAFETİ"
+    badgeKey: "trending",
+    defaultBadge: "EN ÇOK SATAN"
   },
   {
     id: "beyti_kebap",
@@ -38,8 +38,8 @@ const featuredDishes = [
     categoryId: "kebap",
     price: 730.0,
     image: "/images/beyti-1024x677.webp",
-    badgeKey: "signature",
-    defaultBadge: "ŞEFİN SEÇİMİ"
+    badgeKey: "trending",
+    defaultBadge: "EN ÇOK SATAN"
   },
   {
     id: "mardin_kebap",
@@ -47,8 +47,8 @@ const featuredDishes = [
     categoryId: "kebap",
     price: 750.0,
     image: "/images/12-Mardin-Kebap.webp",
-    badgeKey: "signature",
-    defaultBadge: "ŞEFİN SEÇİMİ"
+    badgeKey: "trending",
+    defaultBadge: "EN ÇOK SATAN"
   },
   {
     id: "kasarli_sucuklu_pide",
@@ -163,7 +163,7 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
                      
                      {/* Badge Overlapping Bottom Center */}
                      <div className="absolute -bottom-1.5 inset-x-0 flex justify-center z-10">
-                       <span className="px-1.5 py-0.5 bg-[#4E5F4C] text-[#EAF0E6] rounded text-[8px] sm:text-[9px] font-bold whitespace-nowrap shadow-xs uppercase tracking-tight scale-90">
+                       <span className="px-1.5 py-0.5 bg-[#4E5F4C] text-[#EAF0E6] rounded text-[8px] sm:text-[9px] font-bold whitespace-nowrap shadow-xs uppercase tracking-tight scale-90 max-w-full overflow-hidden text-ellipsis">
                          {translatedBadge}
                        </span>
                      </div>
