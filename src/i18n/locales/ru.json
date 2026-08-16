@@ -71,7 +71,10 @@
     "hoursValue": "Ежедневно: 09:00 - 02:00",
     "whatsapp": "Заказ по WhatsApp",
     "rights": "Все права защищены.",
-    "madeBy": "Дизайн и разработка от"
+    "madeBy": "Дизайн и разработка от",
+    "paymentMethods": "Принимаемые Способы Оплаты",
+    "paymentSubtitle": "Принимаются все банковские карты, бесконтактные İstanbulkart и корпоративные карты на питание",
+    "paymentNote": "Мы принимаем наличные, кредитные карты (Visa, Mastercard, Troy), бесконтактные İstanbulkart и все турецкие корпоративные карты на питание (MultiNet, Metropol, Setcard, Pluxee, Ticket)."
   },
   "aboutPage": {
     "storyTitle": "Наша История: Наследие от Отца к Сыну",
@@ -98,5 +101,17 @@
     "directions": "Проложить маршрут",
     "findUs": "Как нас найти"
   },
-  "vegan": "Веганское"
+  "vegan": "Веганское",
+  "signatureDishes": "Выбор Шеф-повара",
+  "storyBadge": "Традиционная Турецкая Кухня • Джихангир",
+  "ourStoryTitle": "Наша История в Kardeşler Kebap Cihangir",
+  "ourStoryDesc": "В Джихангире, одном из самых аутентичных районов Бейоглу в Стамбуле, мы уже более 25 лет предлагаем нашим гостям традиционные вкусы, от рубленного вручную кебаба Адана до различных видов пиде из дровяной печи.",
+  "learnMoreAboutUs": "Узнать Больше О Нас",
+  "dishesCountText": "Видов Блюд",
+  "googleScore": "Оценка Google",
+  "openingHours": "Часы Работы",
+  "languagesCountText": "Языки",
+  "locationTitle": "Расположение и Контакты",
+  "locationSubtitle": "В 5 минутах от площади Таксим",
+  "contactPageBtn": "Страница Контактов"
 }

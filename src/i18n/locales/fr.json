@@ -71,7 +71,10 @@
     "hoursValue": "Tous les jours : 09h00 - 02h00",
     "whatsapp": "Commande WhatsApp",
     "rights": "Tous droits réservés.",
-    "madeBy": "Conçu et développé par"
+    "madeBy": "Conçu et développé par",
+    "paymentMethods": "Modes de Paiement Acceptés",
+    "paymentSubtitle": "Toutes les cartes bancaires, İstanbulkart sans contact et cartes repas d'entreprise sont acceptées",
+    "paymentNote": "Nous acceptons les espèces, les cartes de crédit (Visa, Mastercard, Troy), İstanbulkart sans contact et toutes les cartes repas d'entreprise turques (MultiNet, Metropol, Setcard, Pluxee, Ticket)."
   },
   "aboutPage": {
     "storyTitle": "Notre Histoire : Un Héritage de Père en Fils",
@@ -98,5 +101,17 @@
     "directions": "Itinéraire",
     "findUs": "Trouvez-nous"
   },
-  "vegan": "Végétalien"
+  "vegan": "Végétalien",
+  "signatureDishes": "Sélections du Chef",
+  "storyBadge": "Cuisine Turque Traditionnelle • Cihangir",
+  "ourStoryTitle": "Notre Histoire chez Kardeşler Kebap Cihangir",
+  "ourStoryDesc": "À Cihangir, l'un des quartiers les plus authentiques de Beyoğlu à Istanbul, nous servons des saveurs traditionnelles à nos invités depuis plus de 25 ans, du kebab Adana haché à la main aux diverses pides cuites au feu de bois.",
+  "learnMoreAboutUs": "En Savoir Plus Sur Nous",
+  "dishesCountText": "Variétés de Plats",
+  "googleScore": "Note Google",
+  "openingHours": "Heures d'Ouverture",
+  "languagesCountText": "Langues",
+  "locationTitle": "Emplacement et Contacts",
+  "locationSubtitle": "À 5 Minutes de la Place Taksim",
+  "contactPageBtn": "Page de Contact"
 }
