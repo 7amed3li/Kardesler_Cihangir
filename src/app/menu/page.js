@@ -101,8 +101,8 @@ const featuredDishes = [
     categoryId: "kebap",
     price: 625.0,
     image: "/images/adana.webp",
-    badgeKey: "spicy",
-    defaultBadge: "MÜŞTERİ FAVORİSİ"
+    badgeKey: "trending",
+    defaultBadge: "EN ÇOK SATAN"
   }
 ];
 

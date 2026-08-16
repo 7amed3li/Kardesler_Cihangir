@@ -109,7 +109,10 @@ export default function DishModal({
   const displayPrice = convertPrice ? convertPrice(price) : price;
   const symbol = getCurrencySymbol ? getCurrencySymbol() : "₺";
   const image = customImage || (item ? item.image : null);
-  const tags = customTags || (item ? item.tags : []);
+  const baseTags = customTags || (item ? item.tags : []) || [];
+  const tags = Array.isArray(baseTags) ? [...baseTags] : [];
+  if (item?.badgeKey && !tags.includes(item.badgeKey)) tags.push(item.badgeKey);
+  if (item?.trending && !tags.includes("trending")) tags.push("trending");
 
   return (
     <>
@@ -164,7 +167,7 @@ export default function DishModal({
                       {t?.signature || "Signature"}
                     </span>
                   )}
-                  {(tags.includes("trending") || item?.trending) && (
+                  {tags.includes("trending") && (
                     <span className="px-2.5 py-0.5 bg-[#B8860B]/15 text-[#B8860B] border border-[#B8860B]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       {t?.trending || "Trending"}
                     </span>
