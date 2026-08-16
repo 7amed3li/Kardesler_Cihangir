@@ -90,12 +90,6 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/tasarim-gelistirme`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -118,6 +112,6 @@ export default function sitemap() {
           en: `${baseUrl}/en/design-development`,
         },
       },
-    },
+    }
   ];
 }
