@@ -235,7 +235,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 mb-4">
               <Clock size={15} className="text-[#4E5F4C] shrink-0" />
               <p className="text-[#7A7364] text-xs sm:text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                {fc.hours || (
+                {fc.hoursValue || fc.hours || (
                   lang === "ar" ? "يومياً: 09:00 - 02:00" :
                   lang === "zh" ? "每日营业：09:00 - 02:00" :
                   lang === "de" ? "Täglich: 09:00 - 02:00 Uhr" :
