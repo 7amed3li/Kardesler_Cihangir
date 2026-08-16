@@ -33,6 +33,24 @@ const featuredDishes = [
     defaultBadge: "KRAL ZİYAFETİ"
   },
   {
+    id: "beyti_kebap",
+    menuItemId: "beyti_kebap",
+    categoryId: "kebap",
+    price: 730.0,
+    image: "/images/beyti-1024x677.webp",
+    badgeKey: "signature",
+    defaultBadge: "ŞEFİN SEÇİMİ"
+  },
+  {
+    id: "mardin_kebap",
+    menuItemId: "mardin_kebap",
+    categoryId: "kebap",
+    price: 750.0,
+    image: "/images/12-Mardin-Kebap.webp",
+    badgeKey: "signature",
+    defaultBadge: "ŞEFİN SEÇİMİ"
+  },
+  {
     id: "kasarli_sucuklu_pide",
     menuItemId: "kasarli_sucuklu_pide",
     categoryId: "pide",
