@@ -15,427 +15,427 @@
   "items": {
     "serpme_kahvalti": {
       "name": "Serpme Kahvaltı (2 Kişilik)",
-      "desc": "Смешанный завтрак (на двоих) - Богатое блюдо для завтрака"
+      "desc": "Serpme Kahvaltı (2 Kişilik) — Смешанный завтрак (на двоих) - Богатое блюдо для завтрака"
     },
     "pacanga_boregi": {
       "name": "Paçanga Böreği",
-      "desc": "Пачанга бёрек (слойка с мясом и сыром)"
+      "desc": "Paçanga Böreği — Пачанга бёрек (слойка с мясом и сыром)"
     },
     "omlet": {
       "name": "Omlet",
-      "desc": "Омлет"
+      "desc": "Omlet — Омлет"
     },
     "menemen": {
       "name": "Menemen",
-      "desc": "Менемен (яичница с помидорами и перцем)"
+      "desc": "Menemen — Менемен (яичница с помидорами и перцем)"
     },
     "sahanda_yumurta": {
       "name": "Sahanda Yumurta",
-      "desc": "Яичница-глазунья"
+      "desc": "Sahanda Yumurta — Яичница-глазунья"
     },
     "sucuklu_yumurta": {
       "name": "Sucuklu Yumurta",
-      "desc": "Яичница с суджуком (колбасой)"
+      "desc": "Sucuklu Yumurta — Яичница с суджуком (колбасой)"
     },
     "kavurmali_yumurta": {
       "name": "Kavurmalı Yumurta",
-      "desc": "Яичница с жареным мясом"
+      "desc": "Kavurmalı Yumurta — Яичница с жареным мясом"
     },
     "kuzu_gerdan_corba": {
       "name": "Kuzu Gerdan Çorba",
-      "desc": "Суп из баранины"
+      "desc": "Kuzu Gerdan Çorba — Суп из баранины"
     },
     "sehriyeli_tavuk_corbasi": {
       "name": "Şehriyeli Tavuk Çorbası",
-      "desc": "Куриный суп с вермишелью"
+      "desc": "Şehriyeli Tavuk Çorbası — Куриный суп с вермишелью"
     },
     "ezogelin_mercimek_corbasi": {
       "name": "Ezogelin / Mercimek Çorbası",
-      "desc": "Чечевичный суп / Эзогелин"
+      "desc": "Ezogelin / Mercimek Çorbası — Чечевичный суп / Эзогелин"
     },
     "adana_urfa": {
-      "name": "Adana & Urfa Kebap",
-      "desc": "Адана и Урфа кебаб - 140 гр. рубленый говяжий фарш на гриле"
+      "name": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)",
+      "desc": "Adana & Urfa Kebap — Адана и Урфа кебаб - 140 гр. рубленый говяжий фарш на гриле"
     },
     "mardin_kebap": {
       "name": "Mardin Kebap",
-      "desc": "Мардин кебаб - 180 гр. Мардин кебаб"
+      "desc": "Mardin Kebap — Мардин кебаб - 180 гр. Мардин кебаб"
     },
     "beyti_kebap": {
       "name": "Beyti Kebap",
-      "desc": "Бейти кебаб - 170 гр. говяжий фарш с чесноком"
+      "desc": "Beyti Kebap — Бейти кебаб - 170 гр. говяжий фарш с чесноком"
     },
     "domatesli_kebap": {
       "name": "Domatesli Kebap",
-      "desc": "Кебаб с помидорами - 150 гр. кебаб с запеченными помидорами"
+      "desc": "Domatesli Kebap — Кебаб с помидорами - 150 гр. кебаб с запеченными помидорами"
     },
     "patlicanli_kebap": {
       "name": "Patlıcanlı Kebap",
-      "desc": "Кебаб с баклажанами - 160 гр. говяжий кебаб с баклажанами"
+      "desc": "Patlıcanlı Kebap — Кебаб с баклажанами - 160 гр. говяжий кебаб с баклажанами"
     },
     "kuzu_sis_kebap": {
       "name": "Kuzu Şiş Kebap",
-      "desc": "Шашлык из баранины - 150 гр. нежнейший шашлык из баранины"
+      "desc": "Kuzu Şiş Kebap — Шашлык из баранины - 150 гр. нежнейший шашлык из баранины"
     },
     "ali_nazik_kebap": {
       "name": "Ali Nazik Kebap",
-      "desc": "Али Назик кебаб - 150 гр. баранина с баклажанами и чесночным йогуртом"
+      "desc": "Ali Nazik Kebap — Али Назик кебаб - 150 гр. баранина с баклажанами и чесночным йогуртом"
     },
     "inegol_kofte": {
       "name": "İnegöl Köfte",
-      "desc": "Кёфте Инегёль (турецкие котлеты) - 150 гр. котлеты на гриле"
+      "desc": "İnegöl Köfte — Кёфте Инегёль (турецкие котлеты) - 150 гр. котлеты на гриле"
     },
     "vali_kebabi": {
       "name": "Vali Kebabı",
-      "desc": "Вали кебаб - 220 гр. курица, баранина, говядина с баклажанами, помидорами, перцем и сыром"
+      "desc": "Vali Kebabı — Вали кебаб - 220 гр. курица, баранина, говядина с баклажанами, помидорами, перцем и сыром"
     },
     "tavuk_sis_izgara": {
       "name": "Tavuk Şiş Izgara",
-      "desc": "Куриный шашлык - 150 гр. куриный шашлык"
+      "desc": "Tavuk Şiş Izgara — Куриный шашлык - 150 гр. куриный шашлык"
     },
     "tavuk_kanat": {
       "name": "Tavuk Kanat",
-      "desc": "Куриные крылышки - 170 гр. куриные крылышки"
+      "desc": "Tavuk Kanat — Куриные крылышки - 170 гр. куриные крылышки"
     },
     "kuzu_lokum": {
       "name": "Kuzu Lokum",
-      "desc": "Баранина локум - 220 гр. нежнейшая баранина с булгуром и салатом"
+      "desc": "Kuzu Lokum — Баранина локум - 220 гр. нежнейшая баранина с булгуром и салатом"
     },
     "kuzu_pirzola": {
       "name": "Kuzu Pirzola",
-      "desc": "Бараньи ребрышки - 320 гр. бараньи ребрышки"
+      "desc": "Kuzu Pirzola — Бараньи ребрышки - 320 гр. бараньи ребрышки"
     },
     "kiremit_kebap": {
       "name": "Kiremit Kebap",
-      "desc": "Кебаб в глиняной посуде - 160 гр. кебаб, запеченный в духовке"
+      "desc": "Kiremit Kebap — Кебаб в глиняной посуде - 160 гр. кебаб, запеченный в духовке"
     },
     "iskender_kebap": {
       "name": "İskender Kebap",
-      "desc": "Искендер кебаб - 140 гр. Искендер кебаб"
+      "desc": "İskender Kebap — Искендер кебаб - 140 гр. Искендер кебаб"
     },
     "yogurtlu_kebap": {
       "name": "Yoğurtlu Kebap",
-      "desc": "Кебаб с йогуртом - 140 гр. говяжий кебаб с йогуртом"
+      "desc": "Yoğurtlu Kebap — Кебаб с йогуртом - 140 гр. говяжий кебаб с йогуртом"
     },
     "alti_ezmeli_kebap": {
       "name": "Altı Ezmeli Kebap",
-      "desc": "Кебаб на пюре из помидоров - 140 гр. кебаб на пюре из жареных помидоров"
+      "desc": "Altı Ezmeli Kebap — Кебаб на пюре из помидоров - 140 гр. кебаб на пюре из жареных помидоров"
     },
     "dana_bonfile": {
       "name": "Dana Bonfile",
-      "desc": "Говяжий стейк (филе) - 200 гр. говяжий стейк с булгуром и салатом"
+      "desc": "Dana Bonfile — Говяжий стейк (филе) - 200 гр. говяжий стейк с булгуром и салатом"
     },
     "dana_cop_sis": {
       "name": "Dana Çöp Şiş",
-      "desc": "Говяжий шашлык (мелкие кусочки) - 200 гр. говяжий шашлык с булгуром и салатом"
+      "desc": "Dana Çöp Şiş — Говяжий шашлык (мелкие кусочки) - 200 гр. говяжий шашлык с булгуром и салатом"
     },
     "karisik_kebap_1": {
       "name": "Karışık Kebap 1",
-      "desc": "Смешанный кебаб 1 - 350 гр. курица, баранина, котлета, томатный кебаб, салат с говяжьим фаршем и булгур"
+      "desc": "Karışık Kebap 1 — Смешанный кебаб 1 - 350 гр. курица, баранина, котлета, томатный кебаб, салат с говяжьим фаршем и булгур"
     },
     "karisik_kebap_2": {
       "name": "Karışık Kebap 2",
-      "desc": "Смешанный кебаб 2 - 550 гр. шашлык из баранины, котлета, бараньи ребрышки, стейк, фарш и закуски"
+      "desc": "Karışık Kebap 2 — Смешанный кебаб 2 - 550 гр. шашлык из баранины, котлета, бараньи ребрышки, стейк, фарш и закуски"
     },
     "mardin_kebap_menu": {
       "name": "Mardin Kebap Menü",
-      "desc": "Специальное меню: Мардин кебаб - 180 гр. Мардин кебаб (специальное меню)"
+      "desc": "Mardin Kebap Menü — Специальное меню: Мардин кебаб - 180 гр. Мардин кебаб (специальное меню)"
     },
     "tavuk_kanat_menu": {
       "name": "Tavuk Kanat Menü",
-      "desc": "Специальное меню: Куриные крылышки - 160 гр. куриные крылышки (специальное меню)"
+      "desc": "Tavuk Kanat Menü — Специальное меню: Куриные крылышки - 160 гр. куриные крылышки (специальное меню)"
     },
     "kuzu_ciger_menu": {
       "name": "Kuzu Ciğer Menü",
-      "desc": "Специальное меню: Баранья печень - 170 гр. баранья печень (специальное меню)"
+      "desc": "Kuzu Ciğer Menü — Специальное меню: Баранья печень - 170 гр. баранья печень (специальное меню)"
     },
     "kuzu_sis_menu": {
       "name": "Kuzu Şiş Kebap Menü",
-      "desc": "Специальное меню: Шашлык из баранины - 140 гр. шашлык из баранины (специальное меню)"
+      "desc": "Kuzu Şiş Kebap Menü — Специальное меню: Шашлык из баранины - 140 гр. шашлык из баранины (специальное меню)"
     },
     "mezeli_adana_urfa": {
       "name": "Mezeli Adana & Urfa Kebap",
-      "desc": "Адана и Урфа с закусками - 140 гр. говяжий кебаб с закусками"
+      "desc": "Mezeli Adana & Urfa Kebap — Адана и Урфа с закусками - 140 гр. говяжий кебаб с закусками"
     },
     "mezeli_dana_cop_sis": {
       "name": "Mezeli Dana Çöp Şiş",
-      "desc": "Говяжий шашлык с закусками - 200 гр. говяжий шашлык с закусками"
+      "desc": "Mezeli Dana Çöp Şiş — Говяжий шашлык с закусками - 200 гр. говяжий шашлык с закусками"
     },
     "mezeli_kuzu_pirzola": {
       "name": "Mezeli Kuzu Pirzola",
-      "desc": "Бараньи ребрышки с закусками - 320 гр. бараньи ребрышки с закусками"
+      "desc": "Mezeli Kuzu Pirzola — Бараньи ребрышки с закусками - 320 гр. бараньи ребрышки с закусками"
     },
     "mezeli_kuzu_lokum": {
       "name": "Mezeli Kuzu Lokum",
-      "desc": "Баранина локум с закусками - 220 гр. нежнейшая баранина с закусками"
+      "desc": "Mezeli Kuzu Lokum — Баранина локум с закусками - 220 гр. нежнейшая баранина с закусками"
     },
     "mezeli_inegol_kofte": {
       "name": "Mezeli İnegöl Köfte",
-      "desc": "Кёфте Инегёль с закусками - 150 гр. турецкие котлеты с закусками"
+      "desc": "Mezeli İnegöl Köfte — Кёфте Инегёль с закусками - 150 гр. турецкие котлеты с закусками"
     },
     "mezeli_kuzu_sis": {
       "name": "Mezeli Kuzu Şiş",
-      "desc": "Шашлык из баранины с закусками - 150 гр. шашлык из баранины с закусками"
+      "desc": "Mezeli Kuzu Şiş — Шашлык из баранины с закусками - 150 гр. шашлык из баранины с закусками"
     },
     "mezeli_dana_bonfile": {
       "name": "Mezeli Dana Bonfile",
-      "desc": "Говяжье филе с закусками - 200 гр. говяжий стейк с закусками"
+      "desc": "Mezeli Dana Bonfile — Говяжье филе с закусками - 200 гр. говяжий стейк с закусками"
     },
     "mezeli_durum": {
       "name": "Mezeli Dürüm",
-      "desc": "Шаурма (дюрюм) с закусками - 90 гр. шаурма с закусками"
+      "desc": "Mezeli Dürüm — Шаурма (дюрюм) с закусками - 90 гр. шаурма с закусками"
     },
     "mezeli_tavuk_kanat": {
       "name": "Mezeli Tavuk Kanat",
-      "desc": "Куриные крылышки с закусками - 150 гр. куриные крылышки с закусками"
+      "desc": "Mezeli Tavuk Kanat — Куриные крылышки с закусками - 150 гр. куриные крылышки с закусками"
     },
     "mezeli_tavuk_sis": {
       "name": "Mezeli Tavuk Şiş",
-      "desc": "Куриный шашлык с закусками - 150 гр. куриный шашлык с закусками"
+      "desc": "Mezeli Tavuk Şiş — Куриный шашлык с закусками - 150 гр. куриный шашлык с закусками"
     },
     "karisik_meze_tabagi": {
       "name": "Karışık Meze Tabağı",
-      "desc": "Тарелка смешанных закусок (мезе)"
+      "desc": "Karışık Meze Tabağı — Тарелка смешанных закусок (мезе)"
     },
     "adana_durum": {
       "name": "Adana Dürüm",
-      "desc": "Адана дюрюм (в лаваше) - 95 гр. Адана кебаб в лаваше"
+      "desc": "Adana Dürüm — Адана дюрюм (в лаваше) - 95 гр. Адана кебаб в лаваше"
     },
     "urfa_durum": {
       "name": "Urfa Dürüm",
-      "desc": "Урфа дюрюм (в лаваше) - 95 гр. Урфа кебаб в лаваше"
+      "desc": "Urfa Dürüm — Урфа дюрюм (в лаваше) - 95 гр. Урфа кебаб в лаваше"
     },
     "dana_cop_sis_durum": {
       "name": "Dana Çöp Şiş Dürüm",
-      "desc": "Дюрюм с говяжьим шашлыком - 95 гр. говяжий шашлык в лаваше"
+      "desc": "Dana Çöp Şiş Dürüm — Дюрюм с говяжьим шашлыком - 95 гр. говяжий шашлык в лаваше"
     },
     "tavuk_sis_durum": {
       "name": "Tavuk Şiş Dürüm",
-      "desc": "Дюрюм с куриным шашлыком - 95 гр. куриный шашлык в лаваше"
+      "desc": "Tavuk Şiş Dürüm — Дюрюм с куриным шашлыком - 95 гр. куриный шашлык в лаваше"
     },
     "kuzu_sis_durum": {
       "name": "Kuzu Şiş Dürüm",
-      "desc": "Дюрюм с шашлыком из баранины - 95 гр. шашлык из баранины в лаваше"
+      "desc": "Kuzu Şiş Dürüm — Дюрюм с шашлыком из баранины - 95 гр. шашлык из баранины в лаваше"
     },
     "kuzu_ciger_durum": {
       "name": "Kuzu Ciğer Dürüm",
-      "desc": "Дюрюм с бараньей печенью - 95 гр. баранья печень в лаваше"
+      "desc": "Kuzu Ciğer Dürüm — Дюрюм с бараньей печенью - 95 гр. баранья печень в лаваше"
     },
     "kofte_durum": {
       "name": "Köfte Dürüm",
-      "desc": "Дюрюм с кёфте (котлетами) - 95 гр. турецкие котлеты в лаваше"
+      "desc": "Köfte Dürüm — Дюрюм с кёфте (котлетами) - 95 гр. турецкие котлеты в лаваше"
     },
     "cigkofte_durum": {
       "name": "Çiğköfte Dürüm",
-      "desc": "Чиг кёфте дюрюм (вегетарианский)"
+      "desc": "Çiğköfte Dürüm — Чиг кёфте дюрюм (вегетарианский)"
     },
     "kasarli_pide": {
       "name": "Kaşarlı Pide",
-      "desc": "Пиде с сыром кашар"
+      "desc": "Kaşarlı Pide — Пиде с сыром кашар"
     },
     "kasarli_yumurtali_pide": {
       "name": "Kaşarlı Yumurtalı Pide",
-      "desc": "Пиде с сыром и яйцом"
+      "desc": "Kaşarlı Yumurtalı Pide — Пиде с сыром и яйцом"
     },
     "kasarli_sucuklu_pide": {
       "name": "Kaşarlı Sucuklu Pide",
-      "desc": "Пиде с сыром и суджуком (колбасой)"
+      "desc": "Kaşarlı Sucuklu Pide — Пиде с сыром и суджуком (колбасой)"
     },
     "kasarli_sucuklu_yumurtali_pide": {
       "name": "Kaşarlı Sucuklu Yumurtalı Pide",
-      "desc": "Пиде с сыром, суджуком и яйцом"
+      "desc": "Kaşarlı Sucuklu Yumurtalı Pide — Пиде с сыром, суджуком и яйцом"
     },
     "kiymali_pide": {
       "name": "Kıymalı Pide",
-      "desc": "Пиде с мясным фаршем"
+      "desc": "Kıymalı Pide — Пиде с мясным фаршем"
     },
     "kiymali_kasarli_pide": {
       "name": "Kıymalı Kaşarlı Pide",
-      "desc": "Пиде с фаршем и сыром"
+      "desc": "Kıymalı Kaşarlı Pide — Пиде с фаршем и сыром"
     },
     "kusbasili_pide": {
       "name": "Kuşbaşılı Pide",
-      "desc": "Пиде с рубленым мясом"
+      "desc": "Kuşbaşılı Pide — Пиде с рубленым мясом"
     },
     "kusbasili_kasarli_pide": {
       "name": "Kuşbaşılı Kaşarlı Pide",
-      "desc": "Пиде с рубленым мясом и сыром"
+      "desc": "Kuşbaşılı Kaşarlı Pide — Пиде с рубленым мясом и сыром"
     },
     "kavurmali_pide": {
       "name": "Kavurmalı Pide",
-      "desc": "Пиде с жареным мясом"
+      "desc": "Kavurmalı Pide — Пиде с жареным мясом"
     },
     "kavurmali_kasarli_pide": {
       "name": "Kavurmalı Kaşarlı Pide",
-      "desc": "Пиде с жареным мясом и сыром"
+      "desc": "Kavurmalı Kaşarlı Pide — Пиде с жареным мясом и сыром"
     },
     "beyaz_peynirli_pide": {
       "name": "Beyaz Peynirli Pide",
-      "desc": "Пиде с белым сыром (брынзой)"
+      "desc": "Beyaz Peynirli Pide — Пиде с белым сыром (брынзой)"
     },
     "kasarli_mantarli_sebzeli_pide": {
-      "name": "Kaşarlı Mantarlı Sebzeli Pide",
-      "desc": "Пиде с сыром, грибами и овощами"
+      "name": "Kaşarlı Mantarli Sebzeli Pide",
+      "desc": "Kaşarlı Mantarlı Sebzeli Pide — Пиде с сыром, грибами и овощами"
     },
     "pastirmali_kasarli_pide": {
       "name": "Pastırmalı Kaşarlı Pide",
-      "desc": "Пиде с бастурмой (пастырмой) и сыром"
+      "desc": "Pastırmalı Kaşarlı Pide — Пиде с бастурмой (пастырмой) и сыром"
     },
     "tavuklu_kasarli_pide": {
       "name": "Tavuklu Kaşarlı Pide",
-      "desc": "Пиде с курицей и сыром"
+      "desc": "Tavuklu Kaşarlı Pide — Пиде с курицей и сыром"
     },
     "etli_konya": {
-      "name": "Etli Konya",
-      "desc": "Этли Конья (лахмаджун с мясом)"
+      "name": "Etli Konya Pidesi",
+      "desc": "Etli Konya — Этли Конья (лахмаджун с мясом)"
     },
     "etli_etmek": {
-      "name": "Etli Etmek",
-      "desc": "Этли Экмек (пиде с рубленым мясом)"
+      "name": "Etli Ekmek",
+      "desc": "Etli Etmek — Этли Экмек (пиде с рубленым мясом)"
     },
     "lahmacun_item": {
-      "name": "Lahmacun",
-      "desc": "Лахмаджун - Хрустящий лахмаджун с мясным фаршем"
+      "name": "Çıtır Fırın Lahmacun",
+      "desc": "Lahmacun — Лахмаджун - Хрустящий лахмаджун с мясным фаршем"
     },
     "ozel_lahmacun": {
-      "name": "Özel Lahmacun",
-      "desc": "Фирменный Лахмаджун"
+      "name": "Özel Sarımsaklı Lahmacun",
+      "desc": "Özel Lahmacun — Фирменный Лахмаджун"
     },
     "semiz_otu": {
-      "name": "Semiz Otu",
-      "desc": "Портулак (семизоту)"
+      "name": "Semiz Otu Mezesi",
+      "desc": "Semiz Otu — Портулак (семизоту)"
     },
     "kuru_cacik": {
       "name": "Kuru Cacık",
-      "desc": "Густой джаджик"
+      "desc": "Kuru Cacık — Густой джаджик"
     },
     "mutebbel": {
       "name": "Mütebbel",
-      "desc": "Мутабаль (баклажаны с тахини)"
+      "desc": "Mütebbel — Мутабаль (баклажаны с тахини)"
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
-      "desc": "Мезе с зеленью и йогуртом"
+      "desc": "Otlu Yoğurtlu Meze — Мезе с зеленью и йогуртом"
     },
     "havuc_tarator": {
       "name": "Havuç Taratör",
-      "desc": "Морковный таратор (с йогуртом)"
+      "desc": "Havuç Taratör — Морковный таратор (с йогуртом)"
     },
     "koz_biberli_yogurt": {
       "name": "Köz Biberli Yoğurt",
-      "desc": "Йогурт с печеным перцем"
+      "desc": "Köz Biberli Yoğurt — Йогурт с печеным перцем"
     },
     "babagannush": {
       "name": "Babagannuş",
-      "desc": "Бабагануш"
+      "desc": "Babagannuş — Бабагануш"
     },
     "ezme_salata": {
-      "name": "Ezme Salata",
-      "desc": "Острый салат Эзме"
+      "name": "Acılı Ezme Salata",
+      "desc": "Ezme Salata — Острый салат Эзме"
     },
     "humus": {
-      "name": "Humus",
-      "desc": "Хумус"
+      "name": "Sıcak/Soğuk Humus",
+      "desc": "Humus — Хумус"
     },
     "mevsim_salatasi": {
       "name": "Mevsim Salatası",
-      "desc": "Сезонный салат - Морковь, огурцы, помидоры, зелень"
+      "desc": "Mevsim Salatası — Сезонный салат - Морковь, огурцы, помидоры, зелень"
     },
     "coban_salata": {
       "name": "Çoban Salata",
-      "desc": "Пастуший салат (Чобан) - Помидоры, огурцы, перец, зелень"
+      "desc": "Çoban Salata — Пастуший салат (Чобан) - Помидоры, огурцы, перец, зелень"
     },
     "cig_kofte": {
-      "name": "Çiğ Köfte",
-      "desc": "Чиг кёфте (вегетарианские котлеты)"
+      "name": "Çiğ Köfte Porsiyon",
+      "desc": "Çiğ Köfte — Чиг кёфте (вегетарианские котлеты)"
     },
     "icli_kofte": {
-      "name": "İçli Köfte",
-      "desc": "Ичли кёфте (фаршированные котлеты с грецким орехом)"
+      "name": "İçli Köfte (Adet)",
+      "desc": "İçli Köfte — Ичли кёфте (фаршированные котлеты с грецким орехом)"
     },
     "cacik": {
       "name": "Cacık",
-      "desc": "Джаджик (огуречный йогурт)"
+      "desc": "Cacık — Джаджик (огуречный йогурт)"
     },
     "yogurt": {
-      "name": "Yoğurt",
-      "desc": "Йогурт"
+      "name": "Süzme Yoğurt",
+      "desc": "Yoğurt — Йогурт"
     },
     "kunefe": {
-      "name": "Künefe",
-      "desc": "Кюнефе - В стиле Хатай (с сыром и сиропом)"
+      "name": "Hatay Künefesi",
+      "desc": "Künefe — Кюнефе - В стиле Хатай (с сыром и сиропом)"
     },
     "firin_sutlac": {
       "name": "Fırın Sütlaç",
-      "desc": "Запеченный рисовый пудинг (Сютлач)"
+      "desc": "Fırın Sütlaç — Запеченный рисовый пудинг (Сютлач)"
     },
     "kazandibi": {
-      "name": "Kazandibi",
-      "desc": "Казандиби"
+      "name": "Geleneksel Kazandibi",
+      "desc": "Kazandibi — Казандиби"
     },
     "trilece": {
-      "name": "Trileçe",
-      "desc": "Трилече"
+      "name": "Karamelli Trileçe",
+      "desc": "Trileçe — Трилече"
     },
     "cola": {
-      "name": "Cola",
-      "desc": "Кока-Кола"
+      "name": "Coca-Cola (33 cl)",
+      "desc": "Cola — Кока-Кола"
     },
     "fanta": {
-      "name": "Fanta",
-      "desc": "Фанта"
+      "name": "Fanta (33 cl)",
+      "desc": "Fanta — Фанта"
     },
     "sprite": {
-      "name": "Sprite",
-      "desc": "Спрайт"
+      "name": "Sprite (33 cl)",
+      "desc": "Sprite — Спрайт"
     },
     "camlica": {
-      "name": "Çamlıca",
-      "desc": "Чамлыджа (газированный напиток)"
+      "name": "Çamlıca Gazoz",
+      "desc": "Çamlıca — Чамлыджа (газированный напиток)"
     },
     "litrelik_cola": {
-      "name": "Litrelik Cola",
-      "desc": "Кока-Кола 1Л"
+      "name": "Litrelik Coca-Cola (1 L)",
+      "desc": "Litrelik Cola — Кока-Кола 1Л"
     },
     "ayran_kucuk": {
-      "name": "Ayran (Küçük)",
-      "desc": "Айран (маленький)"
+      "name": "Yayık Ayran (Küçük)",
+      "desc": "Ayran (Küçük) — Айран (маленький)"
     },
     "ayran_litrelik": {
-      "name": "Ayran (Litrelik)",
-      "desc": "Айран (1Л)"
+      "name": "Yayık Ayran (1 L)",
+      "desc": "Ayran (Litrelik) — Айран (1Л)"
     },
     "salgam": {
-      "name": "Şalgam",
-      "desc": "Шалгам (сок из репы)"
+      "name": "Şalgam Suyu",
+      "desc": "Şalgam — Шалгам (сок из репы)"
     },
     "meyve_sulari": {
       "name": "Meyve Suları",
-      "desc": "Фруктовые соки"
+      "desc": "Meyve Suları — Фруктовые соки"
     },
     "ice_tea": {
       "name": "Ice Tea",
-      "desc": "Холодный чай"
+      "desc": "Ice Tea — Холодный чай"
     },
     "sikma_portakal": {
-      "name": "Sıkma Portakal",
-      "desc": "Свежевыжатый апельсиновый сок"
+      "name": "Taze Sıkma Portakal Suyu",
+      "desc": "Sıkma Portakal — Свежевыжатый апельсиновый сок"
     },
     "sikma_nar": {
-      "name": "Sıkma Nar",
-      "desc": "Свежевыжатый гранатовый сок"
+      "name": "Taze Sıkma Nar Suyu",
+      "desc": "Sıkma Nar — Свежевыжатый гранатовый сок"
     },
     "limonata": {
-      "name": "Limonata",
-      "desc": "Лимонад"
+      "name": "Ev Yapımı Limonata",
+      "desc": "Limonata — Лимонад"
     },
     "soda": {
-      "name": "Soda",
-      "desc": "Минеральная газированная вода"
+      "name": "Maden Suyu / Soda",
+      "desc": "Soda — Минеральная газированная вода"
     },
     "su": {
       "name": "Su",
-      "desc": "Вода"
+      "desc": "Su — Вода"
     }
   }
 }

@@ -13,111 +13,429 @@
     "soguk_icecek": "Kalte Getränke"
   },
   "items": {
-    "serpme_kahvalti": { "name": "Reichhaltiges Türkisches Frühstück (2 Personen)", "desc": "Für 2 Personen: Regionale Ezine- & Schnittkäsesorten, Honig & Rahm, hausgemachte Marmeladen, Oliven, Spiegeleier in der Kupferpfanne und frisches Ofenbrot." },
-    "pacanga_boregi": { "name": "Paçanga Teigtasche", "desc": "Knuspriger Filoteig gefüllt mit Rinderpastirma, geschmolzenem Käse, Tomaten und Paprika." },
-    "omlet": { "name": "Bauernomelett", "desc": "Frische Eier in Butter goldbraun gebraten." },
-    "menemen": { "name": "Traditionelles Menemen", "desc": "Geröstete Paprika, saftige Tomaten, Butter und Eier in der Kupferpfanne." },
-    "sahanda_yumurta": { "name": "Spiegeleier in der Kupferpfanne", "desc": "Frische Eier in feiner Schafbutter gebraten." },
-    "sucuklu_yumurta": { "name": "Spiegeleier mit Sucuk", "desc": "Würzige Rindersucuk-Wurst mit Spiegeleiern." },
-    "kavurmali_yumurta": { "name": "Spiegeleier mit Kavurma", "desc": "Zartes Rinderkavurma mit frischen Eiern." },
-    "kuzu_gerdan_corba": { "name": "Lammhals-Suppe", "desc": "Kräftige Suppe aus stundenlang gekochtem Lammhalsfleisch." },
-    "sehriyeli_tavuk_corbasi": { "name": "Hühnersuppe mit Nudeln", "desc": "Frisches Hähnchenbrustfleisch mit Fadennudeln und Zitrone." },
-    "ezogelin_mercimek_corbasi": { "name": "Traditionelle Linsensuppe", "desc": "Cremige rote Linsensuppe mit Minzbutter und Zitrone." },
-    "adana_urfa": { "name": "Adana & Urfa Kebab", "desc": "140g. Würziges (Adana) oder mildes (Urfa) Hackfleisch vom Holzkohlegrill. Mit gegrillter Paprika, Tomaten & Bulgur." },
-    "mardin_kebap": { "name": "Mardin Knoblauch Kebab", "desc": "180g. Hackfleisch nach Mardin-Art mit Knoblauch und Kräutern." },
-    "beyti_kebap": { "name": "Beyti Kebab Wrap", "desc": "170g. Gegrillter Kebab in dünnem Brot, mit Tomatensauce, Butter und Joghurt." },
-    "domatesli_kebap": { "name": "Kebab mit Tomaten", "desc": "150g. Gegrilltes Hackfleisch abwechselnd mit Tomatenscheiben am Spieß." },
-    "patlicanli_kebap": { "name": "Auberginen Kebab", "desc": "160g. Gegrillter Kebab zwischen gerösteten Auberginenscheiben." },
-    "kuzu_sis_kebap": { "name": "Lammspieß Kebab", "desc": "150g. Zarte marinierte Lammfleischwürfel vom Holzkohlegrill." },
-    "ali_nazik_kebap": { "name": "Ali Nazik Kebab", "desc": "150g. Gegrilltes Fleisch auf warmem Knoblauch-Joghurt-Auberginenpüree." },
-    "inegol_kofte": { "name": "İnegöl Frikadellen", "desc": "150g. Zarte gegrillte Rinderhackfleisch-Frikadellen." },
-    "vali_kebabi": { "name": "Gouverneur Kebab-Platte", "desc": "220g. Kombination aus Adana, Lammspieß, Hähnchenspieß & Frikadelle." },
-    "tavuk_sis_izgara": { "name": "Hähnchenspieß", "desc": "150g. Marinierte Hähnchenbrustwürfel vom Grill." },
-    "tavuk_kanat": { "name": "Gegrillte Hähnchenflügel", "desc": "170g. Knusprig gewürzte Hähnchenflügel." },
-    "kuzu_lokum": { "name": "Lammfilet Lokum", "desc": "220g. Zartes Lammrückenfilet." },
-    "kuzu_pirzola": { "name": "Lammkoteletts", "desc": "320g. Saftige Lammkoteletts vom Holzkohlegrill." },
-    "kiremit_kebap": { "name": "Ton-Schale Kebab", "desc": "160g. Im Tongefäß mit Tomatensauce und Käse überbackener Kebab." },
-    "iskender_kebap": { "name": "İskender Kebab", "desc": "140g. Kebabfleisch auf Fladenbrotwürfeln mit Tomatensauce, Butter & Joghurt." },
-    "yogurtlu_kebap": { "name": "Joghurt Kebab", "desc": "140g. Gegrillter Kebab auf knusprigem Brot mit Joghurt." },
-    "alti_ezmeli_kebap": { "name": "Kebab auf Tomaten-Püree", "desc": "140g. Kebab auf gegrilltem Paprika-Tomaten-Püree." },
-    "dana_bonfile": { "name": "Rinderfilet Steak", "desc": "200g. Zarte Rinderfiletscheiben." },
-    "dana_cop_sis": { "name": "Rinderspießchen", "desc": "200g. Kleine Rindfleischwürfel am Spieß." },
-    "karisik_kebap_1": { "name": "Gemischte Kebab-Platte 1", "desc": "350g. Hähnchenspieß, Lammspieß, Adana Kebab, Frikadelle & Vorspeisen." },
-    "karisik_kebap_2": { "name": "Familien Kebab-Platte 2", "desc": "550g. Große gemischte Kebab-Platte für 2-3 Personen." },
-    "mardin_kebap_menu": { "name": "Mardin Kebab Menü", "desc": "180g. Mardin Kebab serviert mit Vorspeisen, Salat & Getränk." },
-    "tavuk_kanat_menu": { "name": "Hähnchenflügel Menü", "desc": "160g. Hähnchenflügel mit Reis, Vorspeisen & Getränk." },
-    "kuzu_ciger_menu": { "name": "Lammleber Menü", "desc": "170g. Lammleberspieß mit Zwiebeln, Fladenbrot & Vorspeisen." },
-    "kuzu_sis_menu": { "name": "Lammspieß Menü", "desc": "140g. Lammspieß mit Reis, Vorspeisen & Getränk." },
-    "mezeli_adana_urfa": { "name": "Adana/Urfa Kebab + 4 Vorspeisen", "desc": "140g. Kebab mit 4 frischen Vorspeisen & warmem Fladenbrot." },
-    "mezeli_dana_cop_sis": { "name": "Rinderspießchen + 4 Vorspeisen", "desc": "200g. Rinderspießchen mit 4 Vorspeisen." },
-    "mezeli_kuzu_pirzola": { "name": "Lammkoteletts + 4 Vorspeisen", "desc": "320g. Lammkoteletts mit 4 Vorspeisen." },
-    "mezeli_kuzu_lokum": { "name": "Lammfilet + 4 Vorspeisen", "desc": "220g. Zartes Lammfilet mit Vorspeisen-Platte." },
-    "mezeli_inegol_kofte": { "name": "İnegöl Frikadellen + Vorspeisen", "desc": "150g. Frikadellen mit Vorspeisen." },
-    "mezeli_kuzu_sis": { "name": "Lammspieß + Vorspeisen", "desc": "150g. Lammspieß mit Vorspeisen." },
-    "mezeli_dana_bonfile": { "name": "Rinderfilet + Vorspeisen", "desc": "200g. Rinderfilet mit Vorspeisen." },
-    "mezeli_durum": { "name": "Dürüm Wrap + Vorspeise", "desc": "90g. Kebab Wrap mit Vorspeise." },
-    "mezeli_tavuk_kanat": { "name": "Hähnchenflügel + Vorspeisen", "desc": "150g. Hähnchenflügel mit Vorspeisen." },
-    "mezeli_tavuk_sis": { "name": "Hähnchenspieß + Vorspeisen", "desc": "150g. Hähnchenspieß mit Vorspeisen." },
-    "karisik_meze_tabagi": { "name": "Gemischter Vorspeisenteller", "desc": "6 frische kalte türkische Vorspeisen mit Olivenöl." },
-    "adana_durum": { "name": "Adana Kebab Wrap", "desc": "95g. Würziges Adana Hackfleisch im Fladenbrot mit Kraut & Zwiebeln." },
-    "urfa_durum": { "name": "Urfa Kebab Wrap", "desc": "95g. Mildes Urfa Hackfleisch im Fladenbrot." },
-    "dana_cop_sis_durum": { "name": "Rinderspieß Wrap", "desc": "95g. Gegrillte Rindfleischwürfel im Fladenbrot." },
-    "tavuk_sis_durum": { "name": "Hähnchenspieß Wrap", "desc": "95g. Gegrillte Hähnchenbrustwürfel im Fladenbrot." },
-    "kuzu_sis_durum": { "name": "Lammspieß Wrap", "desc": "95g. Zartes Lammfleisch im Fladenbrot." },
-    "kuzu_ciger_durum": { "name": "Lammleber Wrap", "desc": "95g. Gegrillte Lammleber mit Kreuzkümmel & Zwiebeln." },
-    "kofte_durum": { "name": "Frikadellen Wrap", "desc": "95g. Frikadellen im warmen Fladenbrot." },
-    "cigkofte_durum": { "name": "Çiğköfte Veggie Wrap", "desc": "Traditioneller gewürzter Bulgur-Wrap mit Salat & Granatapfelsirup." },
-    "kasarli_pide": { "name": "Pide mit Käse", "desc": "Holzofen-Pide mit geschmolzenem Käse." },
-    "kasarli_yumurtali_pide": { "name": "Pide mit Käse & Ei", "desc": "Pide mit geschmolzenem Käse und Ei." },
-    "kasarli_sucuklu_pide": { "name": "Pide mit Käse & Sucuk", "desc": "Pide mit Käse und gewürzter Knoblauchwurst." },
-    "kasarli_sucuklu_yumurtali_pide": { "name": "Pide mit Käse, Sucuk & Ei", "desc": "Kombination aus Käse, Knoblauchwurst und Ei." },
-    "kiymali_pide": { "name": "Pide mit Hackfleisch", "desc": "Pide mit gewürztem Rinderhackfleisch." },
-    "kiymali_kasarli_pide": { "name": "Pide mit Hackfleisch & Käse", "desc": "Rinderhackfleisch mit geschmolzenem Käse." },
-    "kusbasili_pide": { "name": "Pide mit Rindfleischwürfeln", "desc": "Pide mit geschnittenen Rindfleischwürfeln, Paprika und Tomaten." },
-    "kusbasili_kasarli_pide": { "name": "Pide mit Rindfleisch & Käse", "desc": "Rindfleischwürfel mit geschmolzenem Käse." },
-    "kavurmali_pide": { "name": "Pide mit Kavurma", "desc": "Langsam geschmortes Rinderkavurma auf Pide." },
-    "kavurmali_kasarli_pide": { "name": "Pide mit Kavurma & Käse", "desc": "Rinderkavurma mit geschmolzenem Käse." },
-    "beyaz_peynirli_pide": { "name": "Pide mit Schafskäse", "desc": "Weißer Schafskäse mit frischer Petersilie." },
-    "kasarli_mantarli_sebzeli_pide": { "name": "Pide mit Pilzen & Gemüse", "desc": "Frische Champignons, Paprika, Tomaten & Käse." },
-    "pastirmali_kasarli_pide": { "name": "Pide mit Pastirma & Käse", "desc": "Rinderpastirma mit geschmolzenem Käse." },
-    "tavuklu_kasarli_pide": { "name": "Pide mit Hähnchen & Käse", "desc": "Gebratenes Hähnchenbrustfleisch mit Käse." },
-    "etli_konya": { "name": "Konya Lange Pide", "desc": "Dünne lange Pide mit Hackfleisch nach Konya-Art." },
-    "etli_etmek": { "name": "Traditionelles Etli Ekmek", "desc": "Klassisches Brot mit gewürztem Hackfleisch." },
-    "lahmacun_item": { "name": "Knuspriges Lahmacun", "desc": "Hauchdünner Teig mit gewürztem Hackfleisch, Petersilie & Zitrone." },
-    "ozel_lahmacun": { "name": "Gaziantep Knoblauch Lahmacun", "desc": "Lahmacun nach Gaziantep-Art mit Knoblauch." },
-    "semiz_otu": { "name": "Portulak-Joghurt Meze", "desc": "Frischer Portulak mit Knoblauchjoghurt." },
-    "kuru_cacik": { "name": "Cacik Joghurt-Dip", "desc": "Dicker Joghurt mit Gurken, Knoblauch & Minze." },
-    "mutebbel": { "name": "Müttabel Auberginen-Dip", "desc": "Geröstete Aubergine mit Tahini & Joghurt." },
-    "otlu_yogurtlu_meze": { "name": "Kräuter-Joghurt Dip", "desc": "Frische Ägäis-Kräuter mit Joghurt." },
-    "havuc_tarator": { "name": "Karotten-Tarator Dip", "desc": "Süße Karotten mit Knoblauchjoghurt & Walnüssen." },
-    "koz_biberli_yogurt": { "name": "Paprika-Joghurt Dip", "desc": "Gegrillte rote Paprika mit Joghurt." },
-    "babagannush": { "name": "Baba Ghanoush Dip", "desc": "Gegrillte Aubergine, Paprika, Tomaten & Knoblauch." },
-    "ezme_salata": { "name": "Scharfer Tomaten-Dip (Ezme)", "desc": "Gehackte scharfe Tomaten mit Granatapfelsirup & Walnüssen." },
-    "humus": { "name": "Klassisches Hummus", "desc": "Kichererbsenpüree mit Tahini & Olivenöl." },
-    "mevsim_salatasi": { "name": "Frischer Saison-Salat", "desc": "Knackiger Salat mit Zitronen-Dressing." },
-    "coban_salata": { "name": "Türkischer Bauernsalat", "desc": "Würfel-Tomaten, Gurken, Paprika, Zwiebeln & Petersilie." },
-    "cig_kofte": { "name": "Çiğköfte Teller", "desc": "Gewürzte Bulgur-Bällchen mit Salat & Granatapfelsirup." },
-    "icli_kofte": { "name": "İçli Köfte (Stück)", "desc": "Knuspriges Bulgur-Bällchen gefüllt mit Hackfleisch & Walnüssen." },
-    "cacik": { "name": "Gekühlte Cacık-Suppe", "desc": "Joghurt mit Gurke, Knoblauch & Minze." },
-    "yogurt": { "name": "Türkischer Joghurt", "desc": "Reiner fester Landjoghurt." },
-    "kunefe": { "name": "Hatay Künefe", "desc": "Warme Engelshaar-Süßspeise mit geschmolzenem Käse, Sirup und Pistazien." },
-    "firin_sutlac": { "name": "Ofen-Milchreis", "desc": "Im Tontopf überbackener Milchreis." },
-    "kazandibi": { "name": "Kazandibi Pudding", "desc": "Karamellisierter Milchpudding." },
-    "trilece": { "name": "Trileçe Kuchen", "desc": "Saftiger Drei-Milch-Kuchen mit Karamell." },
-    "cola": { "name": "Coca-Cola (33 cl)", "desc": "Eiskaltes Dosengetränk." },
-    "fanta": { "name": "Fanta (33 cl)", "desc": "Eiskaltes Dosengetränk." },
-    "sprite": { "name": "Sprite (33 cl)", "desc": "Eiskaltes Dosengetränk." },
-    "camlica": { "name": "Çamlıca Limonade", "desc": "Traditionelles Glasflaschen-Getränk." },
-    "litrelik_cola": { "name": "Coca-Cola (1 L)", "desc": "Große Flasche." },
-    "ayran_kucuk": { "name": "Ayran (Klein)", "desc": "Schaumiges Joghurtgetränk." },
-    "ayran_litrelik": { "name": "Ayran (1 L)", "desc": "1 Liter Ayran." },
-    "salgam": { "name": "Şalgam Saft", "desc": "Traditioneller Steckrübensaft." },
-    "meyve_sulari": { "name": "Fruchtsäfte", "desc": "Pfirsich, Kirsche oder Gemischt." },
-    "ice_tea": { "name": "Eistee", "desc": "Pfirsich oder Zitrone." },
-    "sikma_portakal": { "name": "Frischer Orangensaft", "desc": "100% frisch gepresster Orangensaft." },
-    "sikma_nar": { "name": "Frischer Granatapfelsaft", "desc": "100% frisch gepresster Granatapfelsaft." },
-    "limonata": { "name": "Hausgemachte Limonade", "desc": "Frische Limonade mit Minze." },
-    "soda": { "name": "Mineralwasser", "desc": "Prickelndes Mineralwasser." },
-    "su": { "name": "Stilles Wasser", "desc": "Kaltes Quellwasser." }
+    "serpme_kahvalti": {
+      "name": "Serpme Kahvaltı (2 Kişilik)",
+      "desc": "Reichhaltiges Türkisches Frühstück (2 Personen) — Für 2 Personen: Regionale Ezine- & Schnittkäsesorten, Honig & Rahm, hausgemachte Marmeladen, Oliven, Spiegeleier in der Kupferpfanne und frisches Ofenbrot."
+    },
+    "pacanga_boregi": {
+      "name": "Paçanga Böreği",
+      "desc": "Paçanga Teigtasche — Knuspriger Filoteig gefüllt mit Rinderpastirma, geschmolzenem Käse, Tomaten und Paprika."
+    },
+    "omlet": {
+      "name": "Omlet",
+      "desc": "Bauernomelett — Frische Eier in Butter goldbraun gebraten."
+    },
+    "menemen": {
+      "name": "Menemen",
+      "desc": "Traditionelles Menemen — Geröstete Paprika, saftige Tomaten, Butter und Eier in der Kupferpfanne."
+    },
+    "sahanda_yumurta": {
+      "name": "Sahanda Yumurta",
+      "desc": "Spiegeleier in der Kupferpfanne — Frische Eier in feiner Schafbutter gebraten."
+    },
+    "sucuklu_yumurta": {
+      "name": "Sucuklu Yumurta",
+      "desc": "Spiegeleier mit Sucuk — Würzige Rindersucuk-Wurst mit Spiegeleiern."
+    },
+    "kavurmali_yumurta": {
+      "name": "Kavurmalı Yumurta",
+      "desc": "Spiegeleier mit Kavurma — Zartes Rinderkavurma mit frischen Eiern."
+    },
+    "kuzu_gerdan_corba": {
+      "name": "Kuzu Gerdan Çorba",
+      "desc": "Lammhals-Suppe — Kräftige Suppe aus stundenlang gekochtem Lammhalsfleisch."
+    },
+    "sehriyeli_tavuk_corbasi": {
+      "name": "Şehriyeli Tavuk Çorbası",
+      "desc": "Hühnersuppe mit Nudeln — Frisches Hähnchenbrustfleisch mit Fadennudeln und Zitrone."
+    },
+    "ezogelin_mercimek_corbasi": {
+      "name": "Ezogelin / Mercimek Çorbası",
+      "desc": "Traditionelle Linsensuppe — Cremige rote Linsensuppe mit Minzbutter und Zitrone."
+    },
+    "adana_urfa": {
+      "name": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)",
+      "desc": "Adana & Urfa Kebab — 140g. Würziges (Adana) oder mildes (Urfa) Hackfleisch vom Holzkohlegrill. Mit gegrillter Paprika, Tomaten & Bulgur."
+    },
+    "mardin_kebap": {
+      "name": "Mardin Kebap",
+      "desc": "Mardin Knoblauch Kebab — 180g. Hackfleisch nach Mardin-Art mit Knoblauch und Kräutern."
+    },
+    "beyti_kebap": {
+      "name": "Beyti Kebap",
+      "desc": "Beyti Kebab Wrap — 170g. Gegrillter Kebab in dünnem Brot, mit Tomatensauce, Butter und Joghurt."
+    },
+    "domatesli_kebap": {
+      "name": "Domatesli Kebap",
+      "desc": "Kebab mit Tomaten — 150g. Gegrilltes Hackfleisch abwechselnd mit Tomatenscheiben am Spieß."
+    },
+    "patlicanli_kebap": {
+      "name": "Patlıcanlı Kebap",
+      "desc": "Auberginen Kebab — 160g. Gegrillter Kebab zwischen gerösteten Auberginenscheiben."
+    },
+    "kuzu_sis_kebap": {
+      "name": "Kuzu Şiş Kebap",
+      "desc": "Lammspieß Kebab — 150g. Zarte marinierte Lammfleischwürfel vom Holzkohlegrill."
+    },
+    "ali_nazik_kebap": {
+      "name": "Ali Nazik Kebap",
+      "desc": "Ali Nazik Kebab — 150g. Gegrilltes Fleisch auf warmem Knoblauch-Joghurt-Auberginenpüree."
+    },
+    "inegol_kofte": {
+      "name": "İnegöl Köfte",
+      "desc": "İnegöl Frikadellen — 150g. Zarte gegrillte Rinderhackfleisch-Frikadellen."
+    },
+    "vali_kebabi": {
+      "name": "Vali Kebabı",
+      "desc": "Gouverneur Kebab-Platte — 220g. Kombination aus Adana, Lammspieß, Hähnchenspieß & Frikadelle."
+    },
+    "tavuk_sis_izgara": {
+      "name": "Tavuk Şiş Izgara",
+      "desc": "Hähnchenspieß — 150g. Marinierte Hähnchenbrustwürfel vom Grill."
+    },
+    "tavuk_kanat": {
+      "name": "Tavuk Kanat",
+      "desc": "Gegrillte Hähnchenflügel — 170g. Knusprig gewürzte Hähnchenflügel."
+    },
+    "kuzu_lokum": {
+      "name": "Kuzu Lokum",
+      "desc": "Lammfilet Lokum — 220g. Zartes Lammrückenfilet."
+    },
+    "kuzu_pirzola": {
+      "name": "Kuzu Pirzola",
+      "desc": "Lammkoteletts — 320g. Saftige Lammkoteletts vom Holzkohlegrill."
+    },
+    "kiremit_kebap": {
+      "name": "Kiremit Kebap",
+      "desc": "Ton-Schale Kebab — 160g. Im Tongefäß mit Tomatensauce und Käse überbackener Kebab."
+    },
+    "iskender_kebap": {
+      "name": "İskender Kebap",
+      "desc": "İskender Kebab — 140g. Kebabfleisch auf Fladenbrotwürfeln mit Tomatensauce, Butter & Joghurt."
+    },
+    "yogurtlu_kebap": {
+      "name": "Yoğurtlu Kebap",
+      "desc": "Joghurt Kebab — 140g. Gegrillter Kebab auf knusprigem Brot mit Joghurt."
+    },
+    "alti_ezmeli_kebap": {
+      "name": "Altı Ezmeli Kebap",
+      "desc": "Kebab auf Tomaten-Püree — 140g. Kebab auf gegrilltem Paprika-Tomaten-Püree."
+    },
+    "dana_bonfile": {
+      "name": "Dana Bonfile",
+      "desc": "Rinderfilet Steak — 200g. Zarte Rinderfiletscheiben."
+    },
+    "dana_cop_sis": {
+      "name": "Dana Çöp Şiş",
+      "desc": "Rinderspießchen — 200g. Kleine Rindfleischwürfel am Spieß."
+    },
+    "karisik_kebap_1": {
+      "name": "Karışık Kebap 1",
+      "desc": "Gemischte Kebab-Platte 1 — 350g. Hähnchenspieß, Lammspieß, Adana Kebab, Frikadelle & Vorspeisen."
+    },
+    "karisik_kebap_2": {
+      "name": "Karışık Kebap 2",
+      "desc": "Familien Kebab-Platte 2 — 550g. Große gemischte Kebab-Platte für 2-3 Personen."
+    },
+    "mardin_kebap_menu": {
+      "name": "Mardin Kebap Menü",
+      "desc": "Mardin Kebab Menü — 180g. Mardin Kebab serviert mit Vorspeisen, Salat & Getränk."
+    },
+    "tavuk_kanat_menu": {
+      "name": "Tavuk Kanat Menü",
+      "desc": "Hähnchenflügel Menü — 160g. Hähnchenflügel mit Reis, Vorspeisen & Getränk."
+    },
+    "kuzu_ciger_menu": {
+      "name": "Kuzu Ciğer Menü",
+      "desc": "Lammleber Menü — 170g. Lammleberspieß mit Zwiebeln, Fladenbrot & Vorspeisen."
+    },
+    "kuzu_sis_menu": {
+      "name": "Kuzu Şiş Kebap Menü",
+      "desc": "Lammspieß Menü — 140g. Lammspieß mit Reis, Vorspeisen & Getränk."
+    },
+    "mezeli_adana_urfa": {
+      "name": "Mezeli Adana & Urfa Kebap",
+      "desc": "Adana/Urfa Kebab + 4 Vorspeisen — 140g. Kebab mit 4 frischen Vorspeisen & warmem Fladenbrot."
+    },
+    "mezeli_dana_cop_sis": {
+      "name": "Mezeli Dana Çöp Şiş",
+      "desc": "Rinderspießchen + 4 Vorspeisen — 200g. Rinderspießchen mit 4 Vorspeisen."
+    },
+    "mezeli_kuzu_pirzola": {
+      "name": "Mezeli Kuzu Pirzola",
+      "desc": "Lammkoteletts + 4 Vorspeisen — 320g. Lammkoteletts mit 4 Vorspeisen."
+    },
+    "mezeli_kuzu_lokum": {
+      "name": "Mezeli Kuzu Lokum",
+      "desc": "Lammfilet + 4 Vorspeisen — 220g. Zartes Lammfilet mit Vorspeisen-Platte."
+    },
+    "mezeli_inegol_kofte": {
+      "name": "Mezeli İnegöl Köfte",
+      "desc": "İnegöl Frikadellen + Vorspeisen — 150g. Frikadellen mit Vorspeisen."
+    },
+    "mezeli_kuzu_sis": {
+      "name": "Mezeli Kuzu Şiş",
+      "desc": "Lammspieß + Vorspeisen — 150g. Lammspieß mit Vorspeisen."
+    },
+    "mezeli_dana_bonfile": {
+      "name": "Mezeli Dana Bonfile",
+      "desc": "Rinderfilet + Vorspeisen — 200g. Rinderfilet mit Vorspeisen."
+    },
+    "mezeli_durum": {
+      "name": "Mezeli Dürüm",
+      "desc": "Dürüm Wrap + Vorspeise — 90g. Kebab Wrap mit Vorspeise."
+    },
+    "mezeli_tavuk_kanat": {
+      "name": "Mezeli Tavuk Kanat",
+      "desc": "Hähnchenflügel + Vorspeisen — 150g. Hähnchenflügel mit Vorspeisen."
+    },
+    "mezeli_tavuk_sis": {
+      "name": "Mezeli Tavuk Şiş",
+      "desc": "Hähnchenspieß + Vorspeisen — 150g. Hähnchenspieß mit Vorspeisen."
+    },
+    "karisik_meze_tabagi": {
+      "name": "Karışık Meze Tabağı",
+      "desc": "Gemischter Vorspeisenteller — 6 frische kalte türkische Vorspeisen mit Olivenöl."
+    },
+    "adana_durum": {
+      "name": "Adana Dürüm",
+      "desc": "Adana Kebab Wrap — 95g. Würziges Adana Hackfleisch im Fladenbrot mit Kraut & Zwiebeln."
+    },
+    "urfa_durum": {
+      "name": "Urfa Dürüm",
+      "desc": "Urfa Kebab Wrap — 95g. Mildes Urfa Hackfleisch im Fladenbrot."
+    },
+    "dana_cop_sis_durum": {
+      "name": "Dana Çöp Şiş Dürüm",
+      "desc": "Rinderspieß Wrap — 95g. Gegrillte Rindfleischwürfel im Fladenbrot."
+    },
+    "tavuk_sis_durum": {
+      "name": "Tavuk Şiş Dürüm",
+      "desc": "Hähnchenspieß Wrap — 95g. Gegrillte Hähnchenbrustwürfel im Fladenbrot."
+    },
+    "kuzu_sis_durum": {
+      "name": "Kuzu Şiş Dürüm",
+      "desc": "Lammspieß Wrap — 95g. Zartes Lammfleisch im Fladenbrot."
+    },
+    "kuzu_ciger_durum": {
+      "name": "Kuzu Ciğer Dürüm",
+      "desc": "Lammleber Wrap — 95g. Gegrillte Lammleber mit Kreuzkümmel & Zwiebeln."
+    },
+    "kofte_durum": {
+      "name": "Köfte Dürüm",
+      "desc": "Frikadellen Wrap — 95g. Frikadellen im warmen Fladenbrot."
+    },
+    "cigkofte_durum": {
+      "name": "Çiğköfte Dürüm",
+      "desc": "Çiğköfte Veggie Wrap — Traditioneller gewürzter Bulgur-Wrap mit Salat & Granatapfelsirup."
+    },
+    "kasarli_pide": {
+      "name": "Kaşarlı Pide",
+      "desc": "Pide mit Käse — Holzofen-Pide mit geschmolzenem Käse."
+    },
+    "kasarli_yumurtali_pide": {
+      "name": "Kaşarlı Yumurtalı Pide",
+      "desc": "Pide mit Käse & Ei — Pide mit geschmolzenem Käse und Ei."
+    },
+    "kasarli_sucuklu_pide": {
+      "name": "Kaşarlı Sucuklu Pide",
+      "desc": "Pide mit Käse & Sucuk — Pide mit Käse und gewürzter Knoblauchwurst."
+    },
+    "kasarli_sucuklu_yumurtali_pide": {
+      "name": "Kaşarlı Sucuklu Yumurtalı Pide",
+      "desc": "Pide mit Käse, Sucuk & Ei — Kombination aus Käse, Knoblauchwurst und Ei."
+    },
+    "kiymali_pide": {
+      "name": "Kıymalı Pide",
+      "desc": "Pide mit Hackfleisch — Pide mit gewürztem Rinderhackfleisch."
+    },
+    "kiymali_kasarli_pide": {
+      "name": "Kıymalı Kaşarlı Pide",
+      "desc": "Pide mit Hackfleisch & Käse — Rinderhackfleisch mit geschmolzenem Käse."
+    },
+    "kusbasili_pide": {
+      "name": "Kuşbaşılı Pide",
+      "desc": "Pide mit Rindfleischwürfeln — Pide mit geschnittenen Rindfleischwürfeln, Paprika und Tomaten."
+    },
+    "kusbasili_kasarli_pide": {
+      "name": "Kuşbaşılı Kaşarlı Pide",
+      "desc": "Pide mit Rindfleisch & Käse — Rindfleischwürfel mit geschmolzenem Käse."
+    },
+    "kavurmali_pide": {
+      "name": "Kavurmalı Pide",
+      "desc": "Pide mit Kavurma — Langsam geschmortes Rinderkavurma auf Pide."
+    },
+    "kavurmali_kasarli_pide": {
+      "name": "Kavurmalı Kaşarlı Pide",
+      "desc": "Pide mit Kavurma & Käse — Rinderkavurma mit geschmolzenem Käse."
+    },
+    "beyaz_peynirli_pide": {
+      "name": "Beyaz Peynirli Pide",
+      "desc": "Pide mit Schafskäse — Weißer Schafskäse mit frischer Petersilie."
+    },
+    "kasarli_mantarli_sebzeli_pide": {
+      "name": "Kaşarlı Mantarli Sebzeli Pide",
+      "desc": "Pide mit Pilzen & Gemüse — Frische Champignons, Paprika, Tomaten & Käse."
+    },
+    "pastirmali_kasarli_pide": {
+      "name": "Pastırmalı Kaşarlı Pide",
+      "desc": "Pide mit Pastirma & Käse — Rinderpastirma mit geschmolzenem Käse."
+    },
+    "tavuklu_kasarli_pide": {
+      "name": "Tavuklu Kaşarlı Pide",
+      "desc": "Pide mit Hähnchen & Käse — Gebratenes Hähnchenbrustfleisch mit Käse."
+    },
+    "etli_konya": {
+      "name": "Etli Konya Pidesi",
+      "desc": "Konya Lange Pide — Dünne lange Pide mit Hackfleisch nach Konya-Art."
+    },
+    "etli_etmek": {
+      "name": "Etli Ekmek",
+      "desc": "Traditionelles Etli Ekmek — Klassisches Brot mit gewürztem Hackfleisch."
+    },
+    "lahmacun_item": {
+      "name": "Çıtır Fırın Lahmacun",
+      "desc": "Knuspriges Lahmacun — Hauchdünner Teig mit gewürztem Hackfleisch, Petersilie & Zitrone."
+    },
+    "ozel_lahmacun": {
+      "name": "Özel Sarımsaklı Lahmacun",
+      "desc": "Gaziantep Knoblauch Lahmacun — Lahmacun nach Gaziantep-Art mit Knoblauch."
+    },
+    "semiz_otu": {
+      "name": "Semiz Otu Mezesi",
+      "desc": "Portulak-Joghurt Meze — Frischer Portulak mit Knoblauchjoghurt."
+    },
+    "kuru_cacik": {
+      "name": "Kuru Cacık",
+      "desc": "Cacik Joghurt-Dip — Dicker Joghurt mit Gurken, Knoblauch & Minze."
+    },
+    "mutebbel": {
+      "name": "Mütebbel",
+      "desc": "Müttabel Auberginen-Dip — Geröstete Aubergine mit Tahini & Joghurt."
+    },
+    "otlu_yogurtlu_meze": {
+      "name": "Otlu Yoğurtlu Meze",
+      "desc": "Kräuter-Joghurt Dip — Frische Ägäis-Kräuter mit Joghurt."
+    },
+    "havuc_tarator": {
+      "name": "Havuç Taratör",
+      "desc": "Karotten-Tarator Dip — Süße Karotten mit Knoblauchjoghurt & Walnüssen."
+    },
+    "koz_biberli_yogurt": {
+      "name": "Köz Biberli Yoğurt",
+      "desc": "Paprika-Joghurt Dip — Gegrillte rote Paprika mit Joghurt."
+    },
+    "babagannush": {
+      "name": "Babagannuş",
+      "desc": "Baba Ghanoush Dip — Gegrillte Aubergine, Paprika, Tomaten & Knoblauch."
+    },
+    "ezme_salata": {
+      "name": "Acılı Ezme Salata",
+      "desc": "Scharfer Tomaten-Dip (Ezme) — Gehackte scharfe Tomaten mit Granatapfelsirup & Walnüssen."
+    },
+    "humus": {
+      "name": "Sıcak/Soğuk Humus",
+      "desc": "Klassisches Hummus — Kichererbsenpüree mit Tahini & Olivenöl."
+    },
+    "mevsim_salatasi": {
+      "name": "Mevsim Salatası",
+      "desc": "Frischer Saison-Salat — Knackiger Salat mit Zitronen-Dressing."
+    },
+    "coban_salata": {
+      "name": "Çoban Salata",
+      "desc": "Türkischer Bauernsalat — Würfel-Tomaten, Gurken, Paprika, Zwiebeln & Petersilie."
+    },
+    "cig_kofte": {
+      "name": "Çiğ Köfte Porsiyon",
+      "desc": "Çiğköfte Teller — Gewürzte Bulgur-Bällchen mit Salat & Granatapfelsirup."
+    },
+    "icli_kofte": {
+      "name": "İçli Köfte (Adet)",
+      "desc": "İçli Köfte (Stück) — Knuspriges Bulgur-Bällchen gefüllt mit Hackfleisch & Walnüssen."
+    },
+    "cacik": {
+      "name": "Cacık",
+      "desc": "Gekühlte Cacık-Suppe — Joghurt mit Gurke, Knoblauch & Minze."
+    },
+    "yogurt": {
+      "name": "Süzme Yoğurt",
+      "desc": "Türkischer Joghurt — Reiner fester Landjoghurt."
+    },
+    "kunefe": {
+      "name": "Hatay Künefesi",
+      "desc": "Hatay Künefe — Warme Engelshaar-Süßspeise mit geschmolzenem Käse, Sirup und Pistazien."
+    },
+    "firin_sutlac": {
+      "name": "Fırın Sütlaç",
+      "desc": "Ofen-Milchreis — Im Tontopf überbackener Milchreis."
+    },
+    "kazandibi": {
+      "name": "Geleneksel Kazandibi",
+      "desc": "Kazandibi Pudding — Karamellisierter Milchpudding."
+    },
+    "trilece": {
+      "name": "Karamelli Trileçe",
+      "desc": "Trileçe Kuchen — Saftiger Drei-Milch-Kuchen mit Karamell."
+    },
+    "cola": {
+      "name": "Coca-Cola (33 cl)",
+      "desc": "Coca-Cola (33 cl) — Eiskaltes Dosengetränk."
+    },
+    "fanta": {
+      "name": "Fanta (33 cl)",
+      "desc": "Fanta (33 cl) — Eiskaltes Dosengetränk."
+    },
+    "sprite": {
+      "name": "Sprite (33 cl)",
+      "desc": "Sprite (33 cl) — Eiskaltes Dosengetränk."
+    },
+    "camlica": {
+      "name": "Çamlıca Gazoz",
+      "desc": "Çamlıca Limonade — Traditionelles Glasflaschen-Getränk."
+    },
+    "litrelik_cola": {
+      "name": "Litrelik Coca-Cola (1 L)",
+      "desc": "Coca-Cola (1 L) — Große Flasche."
+    },
+    "ayran_kucuk": {
+      "name": "Yayık Ayran (Küçük)",
+      "desc": "Ayran (Klein) — Schaumiges Joghurtgetränk."
+    },
+    "ayran_litrelik": {
+      "name": "Yayık Ayran (1 L)",
+      "desc": "Ayran (1 L) — 1 Liter Ayran."
+    },
+    "salgam": {
+      "name": "Şalgam Suyu",
+      "desc": "Şalgam Saft — Traditioneller Steckrübensaft."
+    },
+    "meyve_sulari": {
+      "name": "Meyve Suları",
+      "desc": "Fruchtsäfte — Pfirsich, Kirsche oder Gemischt."
+    },
+    "ice_tea": {
+      "name": "Ice Tea",
+      "desc": "Eistee — Pfirsich oder Zitrone."
+    },
+    "sikma_portakal": {
+      "name": "Taze Sıkma Portakal Suyu",
+      "desc": "Frischer Orangensaft — 100% frisch gepresster Orangensaft."
+    },
+    "sikma_nar": {
+      "name": "Taze Sıkma Nar Suyu",
+      "desc": "Frischer Granatapfelsaft — 100% frisch gepresster Granatapfelsaft."
+    },
+    "limonata": {
+      "name": "Ev Yapımı Limonata",
+      "desc": "Hausgemachte Limonade — Frische Limonade mit Minze."
+    },
+    "soda": {
+      "name": "Maden Suyu / Soda",
+      "desc": "Mineralwasser — Prickelndes Mineralwasser."
+    },
+    "su": {
+      "name": "Su",
+      "desc": "Stilles Wasser — Kaltes Quellwasser."
+    }
   }
 }

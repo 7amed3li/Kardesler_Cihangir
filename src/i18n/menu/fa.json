@@ -15,427 +15,427 @@
   "items": {
     "serpme_kahvalti": {
       "name": "Serpme Kahvaltı (2 Kişilik)",
-      "desc": "صبحانه سنتی ترکی سرپمه (دونفره) - سینی کامل و غنی از پنیرها، زیتون، مربا، کره، تخم‌مرغ و چای"
+      "desc": "Serpme Kahvaltı (2 Kişilik) — صبحانه سنتی ترکی سرپمه (دونفره) - سینی کامل و غنی از پنیرها، زیتون، مربا، کره، تخم‌مرغ و چای"
     },
     "pacanga_boregi": {
       "name": "Paçanga Böreği",
-      "desc": "بورک پاچانگا - بورک گرم و کریسپی پر از گوشت پاستورما و پنیر کش‌دار"
+      "desc": "Paçanga Böreği — بورک پاچانگا - بورک گرم و کریسپی پر از گوشت پاستورما و پنیر کش‌دار"
     },
     "omlet": {
       "name": "Omlet",
-      "desc": "املت تخم‌مرغ تازه و کره‌ای"
+      "desc": "Omlet — املت تخم‌مرغ تازه و کره‌ای"
     },
     "menemen": {
       "name": "Menemen",
-      "desc": "منمن سنتی ترکی - تخم‌مرغ پخته شده با گوجه‌فرنگی تازه و فلفل در تابه مسی"
+      "desc": "Menemen — منمن سنتی ترکی - تخم‌مرغ پخته شده با گوجه‌فرنگی تازه و فلفل در تابه مسی"
     },
     "sahanda_yumurta": {
       "name": "Sahanda Yumurta",
-      "desc": "نیمرو در تابه مسی با کره محلی"
+      "desc": "Sahanda Yumurta — نیمرو در تابه مسی با کره محلی"
     },
     "sucuklu_yumurta": {
       "name": "Sucuklu Yumurta",
-      "desc": "نیمرو با سوسیس ترکی سووجوک تند و معطر"
+      "desc": "Sucuklu Yumurta — نیمرو با سوسیس ترکی سووجوک تند و معطر"
     },
     "kavurmali_yumurta": {
       "name": "Kavurmalı Yumurta",
-      "desc": "نیمرو با گوشت تفت‌داده شده کاوورما"
+      "desc": "Kavurmalı Yumurta — نیمرو با گوشت تفت‌داده شده کاوورما"
     },
     "kuzu_gerdan_corba": {
       "name": "Kuzu Gerdan Çorba",
-      "desc": "سوپ گردن بره - عصاره مقوی و غلیظ گوشت گردن گوسفندی"
+      "desc": "Kuzu Gerdan Çorba — سوپ گردن بره - عصاره مقوی و غلیظ گوشت گردن گوسفندی"
     },
     "sehriyeli_tavuk_corbasi": {
       "name": "Şehriyeli Tavuk Çorbası",
-      "desc": "سوپ مرغ و ورمیشل سنتی"
+      "desc": "Şehriyeli Tavuk Çorbası — سوپ مرغ و ورمیشل سنتی"
     },
     "ezogelin_mercimek_corbasi": {
       "name": "Ezogelin / Mercimek Çorbası",
-      "desc": "سوپ عدس ترکی / ازوگلین داغ با نعناع و لیمو"
+      "desc": "Ezogelin / Mercimek Çorbası — سوپ عدس ترکی / ازوگلین داغ با نعناع و لیمو"
     },
     "adana_urfa": {
-      "name": "Adana & Urfa Kebap",
-      "desc": "کباب آدانا و اورفا - ۱۴۰ گرم - گوشت چرخ‌کرده بره گریل‌شده روی زغال چوب"
+      "name": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)",
+      "desc": "Adana & Urfa Kebap — کباب آدانا و اورفا - ۱۴۰ گرم - گوشت چرخ‌کرده بره گریل‌شده روی زغال چوب"
     },
     "mardin_kebap": {
       "name": "Mardin Kebap",
-      "desc": "کباب ماردین - ۱۸۰ گرم - کباب اصیل و معطر ماردین با ادویه‌های خاص"
+      "desc": "Mardin Kebap — کباب ماردین - ۱۸۰ گرم - کباب اصیل و معطر ماردین با ادویه‌های خاص"
     },
     "beyti_kebap": {
       "name": "Beyti Kebap",
-      "desc": "کباب بیتی - ۱۷۰ گرم - کباب گوشت سیردار پیچیده شده در نان لواش با سس گوجه، کره و ماست"
+      "desc": "Beyti Kebap — کباب بیتی - ۱۷۰ گرم - کباب گوشت سیردار پیچیده شده در نان لواش با سس گوجه، کره و ماست"
     },
     "domatesli_kebap": {
       "name": "Domatesli Kebap",
-      "desc": "کباب گوجه‌فرنگی - ۱۵۰ گرم - کباب گوشت چرخ‌کرده به همراه گوجه‌فرنگی‌های کبابی"
+      "desc": "Domatesli Kebap — کباب گوجه‌فرنگی - ۱۵۰ گرم - کباب گوشت چرخ‌کرده به همراه گوجه‌فرنگی‌های کبابی"
     },
     "patlicanli_kebap": {
       "name": "Patlıcanlı Kebap",
-      "desc": "کباب بادمجان - ۱۶۰ گرم - لقمه‌های گوشت بره و بادمجان کبابی روی سیخ"
+      "desc": "Patlıcanlı Kebap — کباب بادمجان - ۱۶۰ گرم - لقمه‌های گوشت بره و بادمجان کبابی روی سیخ"
     },
     "kuzu_sis_kebap": {
       "name": "Kuzu Şiş Kebap",
-      "desc": "شیش کباب بره - ۱۵۰ گرم - تکه‌های فیله بره نرم و آبدار کبابی"
+      "desc": "Kuzu Şiş Kebap — شیش کباب بره - ۱۵۰ گرم - تکه‌های فیله بره نرم و آبدار کبابی"
     },
     "ali_nazik_kebap": {
       "name": "Ali Nazik Kebap",
-      "desc": "علی نازیک کباب - ۱۵۰ گرم - گوشت بره کبابی روی پوره بادمجان دودی با ماست چکیده و سیر"
+      "desc": "Ali Nazik Kebap — علی نازیک کباب - ۱۵۰ گرم - گوشت بره کبابی روی پوره بادمجان دودی با ماست چکیده و سیر"
     },
     "inegol_kofte": {
       "name": "İnegöl Köfte",
-      "desc": "کوفته اینه‌گول - ۱۵۰ گرم - کوفته‌های گریل‌شده ترکی نرم و لذیذ"
+      "desc": "İnegöl Köfte — کوفته اینه‌گول - ۱۵۰ گرم - کوفته‌های گریل‌شده ترکی نرم و لذیذ"
     },
     "vali_kebabi": {
       "name": "Vali Kebabı",
-      "desc": "کباب والی (سلطنتی) - ۲۲۰ گرم - ترکیبی از گوشت بره، مرغ، کوفته، بادمجان، گوجه و پنیر"
+      "desc": "Vali Kebabı — کباب والی (سلطنتی) - ۲۲۰ گرم - ترکیبی از گوشت بره، مرغ، کوفته، بادمجان، گوجه و پنیر"
     },
     "tavuk_sis_izgara": {
       "name": "Tavuk Şiş Izgara",
-      "desc": "جوجه کباب ترکی (شیش طاووق) - ۱۵۰ گرم - فیله مرغ مرینیت‌شده روی زغال"
+      "desc": "Tavuk Şiş Izgara — جوجه کباب ترکی (شیش طاووق) - ۱۵۰ گرم - فیله مرغ مرینیت‌شده روی زغال"
     },
     "tavuk_kanat": {
       "name": "Tavuk Kanat",
-      "desc": "بال مرغ کبابی - ۱۷۰ گرم - بال‌های مرغ کباب‌شده با ادویه مخصوص"
+      "desc": "Tavuk Kanat — بال مرغ کبابی - ۱۷۰ گرم - بال‌های مرغ کباب‌شده با ادویه مخصوص"
     },
     "kuzu_lokum": {
       "name": "Kuzu Lokum",
-      "desc": "کوزو لوکوم (فیله پنبه‌ای بره) - ۲۲۰ گرم - تکه‌های فوق‌العاده نرم بره همراه با سالاد و بلغور"
+      "desc": "Kuzu Lokum — کوزو لوکوم (فیله پنبه‌ای بره) - ۲۲۰ گرم - تکه‌های فوق‌العاده نرم بره همراه با سالاد و بلغور"
     },
     "kuzu_pirzola": {
       "name": "Kuzu Pirzola",
-      "desc": "شیشلیک / دنده بره - ۳۲۰ گرم - دنده‌های گوسفندی بریان‌شده روی زغال"
+      "desc": "Kuzu Pirzola — شیشلیک / دنده بره - ۳۲۰ گرم - دنده‌های گوسفندی بریان‌شده روی زغال"
     },
     "kiremit_kebap": {
       "name": "Kiremit Kebap",
-      "desc": "کباب سفالی (کیرمیت) - ۱۶۰ گرم - پخته شده در ظرف سفالی سنتی با سس و پنیر"
+      "desc": "Kiremit Kebap — کباب سفالی (کیرمیت) - ۱۶۰ گرم - پخته شده در ظرف سفالی سنتی با سس و پنیر"
     },
     "iskender_kebap": {
       "name": "İskender Kebap",
-      "desc": "اسکندر کباب - ۱۴۰ گرم - گوشت بره ورقه شده روی نان پیده داغ با سس گوجه، کره داغ و ماست"
+      "desc": "İskender Kebap — اسکندر کباب - ۱۴۰ گرم - گوشت بره ورقه شده روی نان پیده داغ با سس گوجه، کره داغ و ماست"
     },
     "yogurtlu_kebap": {
       "name": "Yoğurtlu Kebap",
-      "desc": "کباب با ماست - ۱۴۰ گرم - کباب لذیذ سرو شده همراه با ماست چکیده طعم‌دار"
+      "desc": "Yoğurtlu Kebap — کباب با ماست - ۱۴۰ گرم - کباب لذیذ سرو شده همراه با ماست چکیده طعم‌دار"
     },
     "alti_ezmeli_kebap": {
       "name": "Altı Ezmeli Kebap",
-      "desc": "کباب التی ازمه - ۱۴۰ گرم - کباب بره روی بستری از پوره گوجه‌فرنگی و فلفل کبابی تند"
+      "desc": "Altı Ezmeli Kebap — کباب التی ازمه - ۱۴۰ گرم - کباب بره روی بستری از پوره گوجه‌فرنگی و فلفل کبابی تند"
     },
     "dana_bonfile": {
       "name": "Dana Bonfile",
-      "desc": "استیک فیله گوساله - ۲۰۰ گرم - استیک نرم فیله گوساله با سالاد و بلغور"
+      "desc": "Dana Bonfile — استیک فیله گوساله - ۲۰۰ گرم - استیک نرم فیله گوساله با سالاد و بلغور"
     },
     "dana_cop_sis": {
       "name": "Dana Çöp Şiş",
-      "desc": "چوپ شیش گوساله - ۲۰۰ گرم - سیخ‌های چوبی گوشت گوساله آبدار کبابی"
+      "desc": "Dana Çöp Şiş — چوپ شیش گوساله - ۲۰۰ گرم - سیخ‌های چوبی گوشت گوساله آبدار کبابی"
     },
     "karisik_kebap_1": {
       "name": "Karışık Kebap 1",
-      "desc": "میکس کباب ۱ - ۳۵۰ گرم - ترکیب کباب آدانا، جوجه، کوفته، کباب گوجه و بلغور"
+      "desc": "Karışık Kebap 1 — میکس کباب ۱ - ۳۵۰ گرم - ترکیب کباب آدانا، جوجه، کوفته، کباب گوجه و بلغور"
     },
     "karisik_kebap_2": {
       "name": "Karışık Kebap 2",
-      "desc": "میکس کباب ویژه ۲ - ۵۵۰ گرم - سینی مجلل: شیش بره، کوفته، دنده، استیک، آدانا و مزه‌ها"
+      "desc": "Karışık Kebap 2 — میکس کباب ویژه ۲ - ۵۵۰ گرم - سینی مجلل: شیش بره، کوفته، دنده، استیک، آدانا و مزه‌ها"
     },
     "mardin_kebap_menu": {
       "name": "Mardin Kebap Menü",
-      "desc": "منوی کامل کباب ماردین - ۱۸۰ گرم - همراه با مزه، سالاد و نوشیدنی"
+      "desc": "Mardin Kebap Menü — منوی کامل کباب ماردین - ۱۸۰ گرم - همراه با مزه، سالاد و نوشیدنی"
     },
     "tavuk_kanat_menu": {
       "name": "Tavuk Kanat Menü",
-      "desc": "منوی کامل بال مرغ - ۱۶۰ گرم - همراه با مزه، سالاد و نوشیدنی"
+      "desc": "Tavuk Kanat Menü — منوی کامل بال مرغ - ۱۶۰ گرم - همراه با مزه، سالاد و نوشیدنی"
     },
     "kuzu_ciger_menu": {
       "name": "Kuzu Ciğer Menü",
-      "desc": "منوی جگر بره - ۱۷۰ گرم - سیخ‌های جگر گوسفندی همراه با مزه و نوشیدنی"
+      "desc": "Kuzu Ciğer Menü — منوی جگر بره - ۱۷۰ گرم - سیخ‌های جگر گوسفندی همراه با مزه و نوشیدنی"
     },
     "kuzu_sis_menu": {
       "name": "Kuzu Şiş Kebap Menü",
-      "desc": "منوی کامل شیش بره - ۱۴۰ گرم - همراه با مزه، سالاد و نوشیدنی"
+      "desc": "Kuzu Şiş Kebap Menü — منوی کامل شیش بره - ۱۴۰ گرم - همراه با مزه، سالاد و نوشیدنی"
     },
     "mezeli_adana_urfa": {
       "name": "Mezeli Adana & Urfa Kebap",
-      "desc": "کباب آدانا و اورفا همراه با سینی مزه - ۱۴۰ گرم"
+      "desc": "Mezeli Adana & Urfa Kebap — کباب آدانا و اورفا همراه با سینی مزه - ۱۴۰ گرم"
     },
     "mezeli_dana_cop_sis": {
       "name": "Mezeli Dana Çöp Şiş",
-      "desc": "چوپ شیش گوساله همراه با سینی مزه - ۲۰۰ گرم"
+      "desc": "Mezeli Dana Çöp Şiş — چوپ شیش گوساله همراه با سینی مزه - ۲۰۰ گرم"
     },
     "mezeli_kuzu_pirzola": {
       "name": "Mezeli Kuzu Pirzola",
-      "desc": "شیشلیک بره همراه با سینی مزه - ۳۲۰ گرم"
+      "desc": "Mezeli Kuzu Pirzola — شیشلیک بره همراه با سینی مزه - ۳۲۰ گرم"
     },
     "mezeli_kuzu_lokum": {
       "name": "Mezeli Kuzu Lokum",
-      "desc": "فیله نرم بره لوکوم همراه با سینی مزه - ۲۲۰ گرم"
+      "desc": "Mezeli Kuzu Lokum — فیله نرم بره لوکوم همراه با سینی مزه - ۲۲۰ گرم"
     },
     "mezeli_inegol_kofte": {
       "name": "Mezeli İnegöl Köfte",
-      "desc": "کوفته اینه‌گول همراه با سینی مزه - ۱۵۰ گرم"
+      "desc": "Mezeli İnegöl Köfte — کوفته اینه‌گول همراه با سینی مزه - ۱۵۰ گرم"
     },
     "mezeli_kuzu_sis": {
       "name": "Mezeli Kuzu Şiş",
-      "desc": "شیش بره همراه با سینی مزه - ۱۵۰ گرم"
+      "desc": "Mezeli Kuzu Şiş — شیش بره همراه با سینی مزه - ۱۵۰ گرم"
     },
     "mezeli_dana_bonfile": {
       "name": "Mezeli Dana Bonfile",
-      "desc": "استیک فیله گوساله همراه با سینی مزه - ۲۰۰ گرم"
+      "desc": "Mezeli Dana Bonfile — استیک فیله گوساله همراه با سینی مزه - ۲۰۰ گرم"
     },
     "mezeli_durum": {
       "name": "Mezeli Dürüm",
-      "desc": "لقمه دوروم همراه با مزه‌های تازه - ۹۰ گرم"
+      "desc": "Mezeli Dürüm — لقمه دوروم همراه با مزه‌های تازه - ۹۰ گرم"
     },
     "mezeli_tavuk_kanat": {
       "name": "Mezeli Tavuk Kanat",
-      "desc": "بال مرغ کبابی همراه با سینی مزه - ۱۵۰ گرم"
+      "desc": "Mezeli Tavuk Kanat — بال مرغ کبابی همراه با سینی مزه - ۱۵۰ گرم"
     },
     "mezeli_tavuk_sis": {
       "name": "Mezeli Tavuk Şiş",
-      "desc": "جوجه کباب شیش طاووق همراه با سینی مزه - ۱۵۰ گرم"
+      "desc": "Mezeli Tavuk Şiş — جوجه کباب شیش طاووق همراه با سینی مزه - ۱۵۰ گرم"
     },
     "karisik_meze_tabagi": {
       "name": "Karışık Meze Tabağı",
-      "desc": "سینی مزه مخلوط - مجموعه‌ای از لذیذترین پیش‌غذاهای سرد ترکی"
+      "desc": "Karışık Meze Tabağı — سینی مزه مخلوط - مجموعه‌ای از لذیذترین پیش‌غذاهای سرد ترکی"
     },
     "adana_durum": {
       "name": "Adana Dürüm",
-      "desc": "لقمه کباب آدانا - ۹۵ گرم - کباب تند آدانا در نان لواش تازه با سبزیجات و پیاز سماقی"
+      "desc": "Adana Dürüm — لقمه کباب آدانا - ۹۵ گرم - کباب تند آدانا در نان لواش تازه با سبزیجات و پیاز سماقی"
     },
     "urfa_durum": {
       "name": "Urfa Dürüm",
-      "desc": "لقمه کباب اورفا - ۹۵ گرم - کباب ملایم اورفا در نان لواش تازه"
+      "desc": "Urfa Dürüm — لقمه کباب اورفا - ۹۵ گرم - کباب ملایم اورفا در نان لواش تازه"
     },
     "dana_cop_sis_durum": {
       "name": "Dana Çöp Şiş Dürüm",
-      "desc": "لقمه چوپ شیش گوساله - ۹۵ گرم"
+      "desc": "Dana Çöp Şiş Dürüm — لقمه چوپ شیش گوساله - ۹۵ گرم"
     },
     "tavuk_sis_durum": {
       "name": "Tavuk Şiş Dürüm",
-      "desc": "لقمه جوجه کباب - ۹۵ گرم - فیله مرغ کباب‌شده در نان لواش"
+      "desc": "Tavuk Şiş Dürüm — لقمه جوجه کباب - ۹۵ گرم - فیله مرغ کباب‌شده در نان لواش"
     },
     "kuzu_sis_durum": {
       "name": "Kuzu Şiş Dürüm",
-      "desc": "لقمه شیش بره - ۹۵ گرم"
+      "desc": "Kuzu Şiş Dürüm — لقمه شیش بره - ۹۵ گرم"
     },
     "kuzu_ciger_durum": {
       "name": "Kuzu Ciğer Dürüm",
-      "desc": "لقمه جگر بره - ۹۵ گرم"
+      "desc": "Kuzu Ciğer Dürüm — لقمه جگر بره - ۹۵ گرم"
     },
     "kofte_durum": {
       "name": "Köfte Dürüm",
-      "desc": "لقمه کوفته ترکی - ۹۵ گرم"
+      "desc": "Köfte Dürüm — لقمه کوفته ترکی - ۹۵ گرم"
     },
     "cigkofte_durum": {
       "name": "Çiğköfte Dürüm",
-      "desc": "لقمه چی کوفته گیاهی در نان لواش با سس انار و کاهو"
+      "desc": "Çiğköfte Dürüm — لقمه چی کوفته گیاهی در نان لواش با سس انار و کاهو"
     },
     "kasarli_pide": {
       "name": "Kaşarlı Pide",
-      "desc": "پیده پنیری - پیده تنوری داغ با پنیر کاشار آب‌شده"
+      "desc": "Kaşarlı Pide — پیده پنیری - پیده تنوری داغ با پنیر کاشار آب‌شده"
     },
     "kasarli_yumurtali_pide": {
       "name": "Kaşarlı Yumurtalı Pide",
-      "desc": "پیده پنیر و تخم‌مرغ تنوری"
+      "desc": "Kaşarlı Yumurtalı Pide — پیده پنیر و تخم‌مرغ تنوری"
     },
     "kasarli_sucuklu_pide": {
       "name": "Kaşarlı Sucuklu Pide",
-      "desc": "پیده پنیر و سووجوک (سوسیس گوشت ترکی)"
+      "desc": "Kaşarlı Sucuklu Pide — پیده پنیر و سووجوک (سوسیس گوشت ترکی)"
     },
     "kasarli_sucuklu_yumurtali_pide": {
       "name": "Kaşarlı Sucuklu Yumurtalı Pide",
-      "desc": "پیده پنیر، سووجوک و تخم‌مرغ تنوری"
+      "desc": "Kaşarlı Sucuklu Yumurtalı Pide — پیده پنیر، سووجوک و تخم‌مرغ تنوری"
     },
     "kiymali_pide": {
       "name": "Kıymalı Pide",
-      "desc": "پیده گوشت چرخ‌کرده با پیاز و فلفل در تنور چوبی"
+      "desc": "Kıymalı Pide — پیده گوشت چرخ‌کرده با پیاز و فلفل در تنور چوبی"
     },
     "kiymali_kasarli_pide": {
       "name": "Kıymalı Kaşarlı Pide",
-      "desc": "پیده گوشت چرخ‌کرده و پنیر کاشار"
+      "desc": "Kıymalı Kaşarlı Pide — پیده گوشت چرخ‌کرده و پنیر کاشار"
     },
     "kusbasili_pide": {
       "name": "Kuşbaşılı Pide",
-      "desc": "پیده گوشت تکه‌ای (قوش‌باشی) با گوجه و فلفل"
+      "desc": "Kuşbaşılı Pide — پیده گوشت تکه‌ای (قوش‌باشی) با گوجه و فلفل"
     },
     "kusbasili_kasarli_pide": {
       "name": "Kuşbaşılı Kaşarlı Pide",
-      "desc": "پیده گوشت تکه‌ای و پنیر کاشار"
+      "desc": "Kuşbaşılı Kaşarlı Pide — پیده گوشت تکه‌ای و پنیر کاشار"
     },
     "kavurmali_pide": {
       "name": "Kavurmalı Pide",
-      "desc": "پیده با گوشت کاوورما تفت‌داده سنتی"
+      "desc": "Kavurmalı Pide — پیده با گوشت کاوورما تفت‌داده سنتی"
     },
     "kavurmali_kasarli_pide": {
       "name": "Kavurmalı Kaşarlı Pide",
-      "desc": "پیده گوشت کاوورما و پنیر کش‌دار"
+      "desc": "Kavurmalı Kaşarlı Pide — پیده گوشت کاوورما و پنیر کش‌دار"
     },
     "beyaz_peynirli_pide": {
       "name": "Beyaz Peynirli Pide",
-      "desc": "پیده با پنیر سفید سنتی"
+      "desc": "Beyaz Peynirli Pide — پیده با پنیر سفید سنتی"
     },
     "kasarli_mantarli_sebzeli_pide": {
-      "name": "Kaşarlı Mantarlı Sebzeli Pide",
-      "desc": "پیده سبزیجات، قارچ و پنیر"
+      "name": "Kaşarlı Mantarli Sebzeli Pide",
+      "desc": "Kaşarlı Mantarlı Sebzeli Pide — پیده سبزیجات، قارچ و پنیر"
     },
     "pastirmali_kasarli_pide": {
       "name": "Pastırmalı Kaşarlı Pide",
-      "desc": "پیده پاستورما و پنیر کاشار"
+      "desc": "Pastırmalı Kaşarlı Pide — پیده پاستورما و پنیر کاشار"
     },
     "tavuklu_kasarli_pide": {
       "name": "Tavuklu Kaşarlı Pide",
-      "desc": "پیده تکه‌های مرغ و پنیر"
+      "desc": "Tavuklu Kaşarlı Pide — پیده تکه‌های مرغ و پنیر"
     },
     "etli_konya": {
-      "name": "Etli Konya",
-      "desc": "اتلی اکمک به سبک قونیه - نان تنوری کشیده و نازک با گوشت چرخ‌کرده"
+      "name": "Etli Konya Pidesi",
+      "desc": "Etli Konya — اتلی اکمک به سبک قونیه - نان تنوری کشیده و نازک با گوشت چرخ‌کرده"
     },
     "etli_etmek": {
-      "name": "Etli Etmek",
-      "desc": "اتلی اکمک سنتی ترکی"
+      "name": "Etli Ekmek",
+      "desc": "Etli Etmek — اتلی اکمک سنتی ترکی"
     },
     "lahmacun_item": {
-      "name": "Lahmacun",
-      "desc": "لحم‌عجین کلاسیک - نان بسیار نازک و کریسپی با مخلوط گوشت چرخ‌کرده، گوجه و ادویه"
+      "name": "Çıtır Fırın Lahmacun",
+      "desc": "Lahmacun — لحم‌عجین کلاسیک - نان بسیار نازک و کریسپی با مخلوط گوشت چرخ‌کرده، گوجه و ادویه"
     },
     "ozel_lahmacun": {
-      "name": "Özel Lahmacun",
-      "desc": "لحم‌عجین مخصوص سرآشپز با گوشت و ادویه فراوان"
+      "name": "Özel Sarımsaklı Lahmacun",
+      "desc": "Özel Lahmacun — لحم‌عجین مخصوص سرآشپز با گوشت و ادویه فراوان"
     },
     "semiz_otu": {
-      "name": "Semiz Otu",
-      "desc": "مزه خرفه با ماست و سیر"
+      "name": "Semiz Otu Mezesi",
+      "desc": "Semiz Otu — مزه خرفه با ماست و سیر"
     },
     "kuru_cacik": {
       "name": "Kuru Cacık",
-      "desc": "جاجیک غلیظ (ماست چکیده با خیار، سیر و نعناع)"
+      "desc": "Kuru Cacık — جاجیک غلیظ (ماست چکیده با خیار، سیر و نعناع)"
     },
     "mutebbel": {
       "name": "Mütebbel",
-      "desc": "متبل بادمجان کبابی با ارده و لیمو"
+      "desc": "Mütebbel — متبل بادمجان کبابی با ارده و لیمو"
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
-      "desc": "مزه ماست با سبزیجات معطر کوهی"
+      "desc": "Otlu Yoğurtlu Meze — مزه ماست با سبزیجات معطر کوهی"
     },
     "havuc_tarator": {
       "name": "Havuç Taratör",
-      "desc": "هویج تاراتور - هویج تفت‌داده در روغن زیتون با ماست و گردو"
+      "desc": "Havuç Taratör — هویج تاراتور - هویج تفت‌داده در روغن زیتون با ماست و گردو"
     },
     "koz_biberli_yogurt": {
       "name": "Köz Biberli Yoğurt",
-      "desc": "ماست با فلفل کبابی شیرین"
+      "desc": "Köz Biberli Yoğurt — ماست با فلفل کبابی شیرین"
     },
     "babagannush": {
       "name": "Babagannuş",
-      "desc": "باباغنوش اصیل با بادمجان تنوری، گوجه و فلفل"
+      "desc": "Babagannuş — باباغنوش اصیل با بادمجان تنوری، گوجه و فلفل"
     },
     "ezme_salata": {
-      "name": "Ezme Salata",
-      "desc": "ازمه سالاد - سالاد پوره گوجه‌فرنگی، فلفل تند، انار و سماق"
+      "name": "Acılı Ezme Salata",
+      "desc": "Ezme Salata — ازمه سالاد - سالاد پوره گوجه‌فرنگی، فلفل تند، انار و سماق"
     },
     "humus": {
-      "name": "Humus",
-      "desc": "حمص کرمی سنتی با روغن زیتون فرابکر"
+      "name": "Sıcak/Soğuk Humus",
+      "desc": "Humus — حمص کرمی سنتی با روغن زیتون فرابکر"
     },
     "mevsim_salatasi": {
       "name": "Mevsim Salatası",
-      "desc": "سالاد فصل تازه با هویج، خیار، گوجه و سس لیمو"
+      "desc": "Mevsim Salatası — سالاد فصل تازه با هویج، خیار، گوجه و سس لیمو"
     },
     "coban_salata": {
       "name": "Çoban Salata",
-      "desc": "سالاد چوبان (چوپان) - خیار، گوجه‌فرنگی نگینی، پیاز و فلفل با سس روغن زیتون"
+      "desc": "Çoban Salata — سالاد چوبان (چوپان) - خیار، گوجه‌فرنگی نگینی، پیاز و فلفل با سس روغن زیتون"
     },
     "cig_kofte": {
-      "name": "Çiğ Köfte",
-      "desc": "چی کوفته دست‌ساز گیاهی همراه با کاهو و لیمو"
+      "name": "Çiğ Köfte Porsiyon",
+      "desc": "Çiğ Köfte — چی کوفته دست‌ساز گیاهی همراه با کاهو و لیمو"
     },
     "icli_kofte": {
-      "name": "İçli Köfte",
-      "desc": "ایچلی کوفته (کبه) سرخ‌شده پر از گوشت بره و گردو"
+      "name": "İçli Köfte (Adet)",
+      "desc": "İçli Köfte — ایچلی کوفته (کبه) سرخ‌شده پر از گوشت بره و گردو"
     },
     "cacik": {
       "name": "Cacık",
-      "desc": "جاجیک خنک (ماست و خیار و نعناع خشک)"
+      "desc": "Cacık — جاجیک خنک (ماست و خیار و نعناع خشک)"
     },
     "yogurt": {
-      "name": "Yoğurt",
-      "desc": "ماست سنتی ترکی کاسه‌ای"
+      "name": "Süzme Yoğurt",
+      "desc": "Yoğurt — ماست سنتی ترکی کاسه‌ای"
     },
     "kunefe": {
-      "name": "Künefe",
-      "desc": "کونفه داغ هاتای با پنیر کش‌دار، شهد زعفرانی و پسته فراوان"
+      "name": "Hatay Künefesi",
+      "desc": "Künefe — کونفه داغ هاتای با پنیر کش‌دار، شهد زعفرانی و پسته فراوان"
     },
     "firin_sutlac": {
       "name": "Fırın Sütlaç",
-      "desc": "سوتلاچ تنوری - شیربرنج کاراملی پخته‌شده در تنور سفالی"
+      "desc": "Fırın Sütlaç — سوتلاچ تنوری - شیربرنج کاراملی پخته‌شده در تنور سفالی"
     },
     "kazandibi": {
-      "name": "Kazandibi",
-      "desc": "کازاندیبی سنتی - پودینگ شیری با ته دیگ برشته کاراملی"
+      "name": "Geleneksel Kazandibi",
+      "desc": "Kazandibi — کازاندیبی سنتی - پودینگ شیری با ته دیگ برشته کاراملی"
     },
     "trilece": {
-      "name": "Trileçe",
-      "desc": "تریلیچه (کیک سه شیر) با روکش کاراملی نرم"
+      "name": "Karamelli Trileçe",
+      "desc": "Trileçe — تریلیچه (کیک سه شیر) با روکش کاراملی نرم"
     },
     "cola": {
-      "name": "Cola",
-      "desc": "کوکاکولا"
+      "name": "Coca-Cola (33 cl)",
+      "desc": "Cola — کوکاکولا"
     },
     "fanta": {
-      "name": "Fanta",
-      "desc": "فانتا"
+      "name": "Fanta (33 cl)",
+      "desc": "Fanta — فانتا"
     },
     "sprite": {
-      "name": "Sprite",
-      "desc": "اسپرایت"
+      "name": "Sprite (33 cl)",
+      "desc": "Sprite — اسپرایت"
     },
     "camlica": {
-      "name": "Çamlıca",
-      "desc": "چاملیجا (لیموناد گازدار سنتی ترکیه)"
+      "name": "Çamlıca Gazoz",
+      "desc": "Çamlıca — چاملیجا (لیموناد گازدار سنتی ترکیه)"
     },
     "litrelik_cola": {
-      "name": "Litrelik Cola",
-      "desc": "کوکاکولا ۱ لیتری"
+      "name": "Litrelik Coca-Cola (1 L)",
+      "desc": "Litrelik Cola — کوکاکولا ۱ لیتری"
     },
     "ayran_kucuk": {
-      "name": "Ayran (Küçük)",
-      "desc": "دوغ سنتی آیران (تک‌نفره)"
+      "name": "Yayık Ayran (Küçük)",
+      "desc": "Ayran (Küçük) — دوغ سنتی آیران (تک‌نفره)"
     },
     "ayran_litrelik": {
-      "name": "Ayran (Litrelik)",
-      "desc": "دوغ سنتی آیران ۱ لیتری"
+      "name": "Yayık Ayran (1 L)",
+      "desc": "Ayran (Litrelik) — دوغ سنتی آیران ۱ لیتری"
     },
     "salgam": {
-      "name": "Şalgam",
-      "desc": "شلغم ترکی (نوشیدنی آب شلغم تخمیر شده سنتی)"
+      "name": "Şalgam Suyu",
+      "desc": "Şalgam — شلغم ترکی (نوشیدنی آب شلغم تخمیر شده سنتی)"
     },
     "meyve_sulari": {
       "name": "Meyve Suları",
-      "desc": "آبمیوه‌های متنوع طبیعی"
+      "desc": "Meyve Suları — آبمیوه‌های متنوع طبیعی"
     },
     "ice_tea": {
       "name": "Ice Tea",
-      "desc": "آیس تی خنک"
+      "desc": "Ice Tea — آیس تی خنک"
     },
     "sikma_portakal": {
-      "name": "Sıkma Portakal",
-      "desc": "آب پرتقال طبیعی دست‌افشار"
+      "name": "Taze Sıkma Portakal Suyu",
+      "desc": "Sıkma Portakal — آب پرتقال طبیعی دست‌افشار"
     },
     "sikma_nar": {
-      "name": "Sıkma Nar",
-      "desc": "آب انار تازه طبیعی"
+      "name": "Taze Sıkma Nar Suyu",
+      "desc": "Sıkma Nar — آب انار تازه طبیعی"
     },
     "limonata": {
-      "name": "Limonata",
-      "desc": "لیموناد خانگی تازه با برگ نعناع"
+      "name": "Ev Yapımı Limonata",
+      "desc": "Limonata — لیموناد خانگی تازه با برگ نعناع"
     },
     "soda": {
-      "name": "Soda",
-      "desc": "سودا (آب گازدار معدنی)"
+      "name": "Maden Suyu / Soda",
+      "desc": "Soda — سودا (آب گازدار معدنی)"
     },
     "su": {
       "name": "Su",
-      "desc": "آب معدنی خنک"
+      "desc": "Su — آب معدنی خنک"
     }
   }
 }

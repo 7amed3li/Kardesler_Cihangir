@@ -13,111 +13,429 @@
     "soguk_icecek": "Cold Beverages"
   },
   "items": {
-    "serpme_kahvalti": { "name": "Authentic Village Breakfast (For 2)", "desc": "For 2: Regional Ezine & Kashar cheeses, honey & clotted cream, homemade jams, olives, fried eggs in copper pan, tomatoes, cucumbers and hot oven bread." },
-    "pacanga_boregi": { "name": "Paçanga Pastry", "desc": "Crispy phyllo pastry stuffed with aged pastrami, melted kashar cheese, tomatoes and peppers." },
-    "omlet": { "name": "Farm Omelette", "desc": "Fresh farm eggs cooked golden in butter, with optional melted kashar cheese." },
-    "menemen": { "name": "Traditional Menemen", "desc": "Fresh roasted peppers, juicy tomatoes, pure butter and eggs cooked in traditional copper pan." },
-    "sahanda_yumurta": { "name": "Fried Eggs in Copper Pan", "desc": "Fresh farm eggs fried sunny-side up in organic sheep butter." },
-    "sucuklu_yumurta": { "name": "Spiced Sucuk & Eggs", "desc": "Spiced garlic beef sucuk sausages fried with fresh farm eggs in butter." },
-    "kavurmali_yumurta": { "name": "Roasted Beef Kavurma & Eggs", "desc": "Slow-cooked savory beef kavurma topped with fresh eggs in copper pan." },
-    "kuzu_gerdan_corba": { "name": "Lamb Neck Soup", "desc": "Healing soup made with tender lamb neck meat simmered for hours in marrow bone broth." },
-    "sehriyeli_tavuk_corbasi": { "name": "Chicken Noodle Soup", "desc": "Shredded village chicken breast, vermicelli noodles, lemon and black pepper." },
-    "ezogelin_mercimek_corbasi": { "name": "Traditional Lentil Soup", "desc": "Strained red lentil soup served with mint butter, chili flakes and fresh lemon." },
-    "adana_urfa": { "name": "Adana Kebab (Spicy) or Urfa Kebab (Mild)", "desc": "Note: Adana Kebab is spicy, while Urfa Kebab is mild and non-spicy. 140g hand-minced lamb charcoal-grilled, served with roasted peppers, tomatoes, warm lavash, and bulgur." },
-    "mardin_kebap": { "name": "Mardin Style Garlic Kebab", "desc": "180g. Hand-minced meat seasoned with garlic and regional herbs from Mardin." },
-    "beyti_kebap": { "name": "Beyti Kebab Wrap", "desc": "170g. Charcoal grilled minced kebab wrapped in crispy lavash, baked with tomato sauce, melted butter and strained yogurt." },
-    "domatesli_kebap": { "name": "Tomato Skewered Kebab", "desc": "150g. Skewered hand-minced meat grilled sequentially with juicy roasted tomato halves." },
-    "patlicanli_kebap": { "name": "Eggplant Kebab", "desc": "160g. Minced kebab layered between roasted charcoal eggplant slices." },
-    "kuzu_sis_kebap": { "name": "Lamb Shish Kebab", "desc": "150g. Tender marinated lamb leg cubes grilled on charcoal iron skewers." },
-    "ali_nazik_kebap": { "name": "Ali Nazik Kebab", "desc": "150g. Tender butter-grilled meat served over warm garlic yogurt roasted eggplant puree." },
-    "inegol_kofte": { "name": "İnegöl Meatballs", "desc": "150g. Tender traditional grilled beef meatballs." },
-    "vali_kebabi": { "name": "Governor's Mixed Feast Kebab", "desc": "220g. Royal combination of Adana, lamb shish, chicken shish & meatball." },
-    "tavuk_sis_izgara": { "name": "Chicken Shish Kebab", "desc": "150g. Marinated chicken breast cubes grilled on charcoal fire." },
-    "tavuk_kanat": { "name": "Grilled Chicken Wings", "desc": "170g. Crispy spiced charcoal-grilled chicken wings." },
-    "kuzu_lokum": { "name": "Lamb Tenderloin Lokum", "desc": "220g. Aged melt-in-the-mouth lamb tenderloin medallions." },
-    "kuzu_pirzola": { "name": "Lamb Chops", "desc": "320g. Fresh tender lamb chops grilled to perfection over oak embers." },
-    "kiremit_kebap": { "name": "Clay Dish Kebab", "desc": "160g. Kebab baked in clay dish with tomato sauce, peppers and melted kashar cheese." },
-    "iskender_kebap": { "name": "İskender Kebab", "desc": "140g. Sliced meat over warm pita cubes, topped with rich tomato sauce, sizzling butter & cold yogurt." },
-    "yogurtlu_kebap": { "name": "Yogurt Kebab", "desc": "140g. Minced kebab over crispy bread cubes with tomato sauce & strained yogurt." },
-    "alti_ezmeli_kebap": { "name": "Kebab over Roasted Tomato Mash", "desc": "140g. Minced kebab served over smoky charcoal-roasted tomato & pepper mash." },
-    "dana_bonfile": { "name": "Beef Tenderloin Steak", "desc": "200g. Aged grilled beef tenderloin slices." },
-    "dana_cop_sis": { "name": "Beef Skewer Chöp Shish", "desc": "200g. Small tender beef cubes grilled on wooden skewers." },
-    "karisik_kebap_1": { "name": "Grand Mixed Kebab Feast 1", "desc": "350g. Chicken shish, lamb shish, Adana kebab, meatball & meze sides." },
-    "karisik_kebap_2": { "name": "Family Mixed Kebab Feast 2", "desc": "550g. Family-size mixed kebab platter for 2-3 people." },
-    "mardin_kebap_menu": { "name": "Mardin Kebab Set Menu", "desc": "180g. Mardin kebab set served with meze platter, salad & cold drink." },
-    "tavuk_kanat_menu": { "name": "Chicken Wing Set Menu", "desc": "160g. Grilled wings served with rice, meze platter & drink." },
-    "kuzu_ciger_menu": { "name": "Lamb Liver Skewer Menu", "desc": "170g. Charcoal lamb liver skewers with sumac onions, fresh lavash & mezes." },
-    "kuzu_sis_menu": { "name": "Lamb Shish Set Menu", "desc": "140g. Lamb shish served with rice, meze platter & drink." },
-    "mezeli_adana_urfa": { "name": "Adana/Urfa Kebab + 4 Mezes", "desc": "140g. Adana or Urfa kebab served with 4 daily fresh mezes & hot lavash." },
-    "mezeli_dana_cop_sis": { "name": "Beef Chöp Shish + 4 Mezes", "desc": "200g. Beef skewers served with 4 daily fresh mezes & fresh bread." },
-    "mezeli_kuzu_pirzola": { "name": "Lamb Chops + 4 Mezes", "desc": "320g. Lamb chops served with 4 daily fresh mezes & oven lavash." },
-    "mezeli_kuzu_lokum": { "name": "Lamb Lokum + 4 Mezes", "desc": "220g. Tender lamb fillet served with generous meze platter." },
-    "mezeli_inegol_kofte": { "name": "İnegöl Meatballs + Mezes", "desc": "150g. Meatballs served with meze platter & hot bread." },
-    "mezeli_kuzu_sis": { "name": "Lamb Shish + Mezes", "desc": "150g. Lamb shish served with fresh daily mezes." },
-    "mezeli_dana_bonfile": { "name": "Beef Fillet + Mezes", "desc": "200g. Grilled fillet steak with fresh meze sides." },
-    "mezeli_durum": { "name": "Wrap Kebab + Meze Side", "desc": "90g. Kebab wrap with side meze platter." },
-    "mezeli_tavuk_kanat": { "name": "Chicken Wings + Mezes", "desc": "150g. Chicken wings with meze platter." },
-    "mezeli_tavuk_sis": { "name": "Chicken Shish + Mezes", "desc": "150g. Chicken shish with meze platter." },
-    "karisik_meze_tabagi": { "name": "Chef's Mixed Meze Platter", "desc": "Selection of 6 daily fresh authentic olive-oil cold mezes." },
-    "adana_durum": { "name": "Adana Kebab Wrap", "desc": "95g. Hand-minced spicy Adana kebab wrapped in stone-baked lavash with fresh herbs & sumac onions." },
-    "urfa_durum": { "name": "Urfa Kebab Wrap", "desc": "95g. Mild Urfa kebab wrapped in fresh lavash bread." },
-    "dana_cop_sis_durum": { "name": "Beef Chöp Shish Wrap", "desc": "95g. Grilled beef skewers wrapped in crispy lavash." },
-    "tavuk_sis_durum": { "name": "Chicken Shish Wrap", "desc": "95g. Grilled chicken breast cubes wrapped in lavash bread." },
-    "kuzu_sis_durum": { "name": "Lamb Shish Wrap", "desc": "95g. Tender lamb shish wrapped in wood-fired lavash." },
-    "kuzu_ciger_durum": { "name": "Lamb Liver Wrap", "desc": "95g. Charcoal grilled lamb liver wrapped with cumin & sumac onions." },
-    "kofte_durum": { "name": "Meatball Wrap", "desc": "95g. Grilled beef meatballs wrapped in warm lavash." },
-    "cigkofte_durum": { "name": "Çiğköfte Vegan Wrap", "desc": "Traditional spiced bulgur wrap with fresh lettuce, mint & pomegranate molasses." },
-    "kasarli_pide": { "name": "Kashar Cheese Pide", "desc": "Crispy wood-fired dough topped with melted real Ezine kashar cheese." },
-    "kasarli_yumurtali_pide": { "name": "Kashar Cheese & Egg Pide", "desc": "Wood-fired dough with melted kashar cheese and organic egg." },
-    "kasarli_sucuklu_pide": { "name": "Kashar Cheese & Sucuk Pide", "desc": "Melted kashar cheese and spicy Turkish garlic beef sucuk slices." },
-    "kasarli_sucuklu_yumurtali_pide": { "name": "Kashar, Sucuk & Egg Pide", "desc": "Combination of cheese, spiced sucuk and egg baked in stone oven." },
-    "kiymali_pide": { "name": "Minced Beef Pide", "desc": "Seasoned minced beef, onions, tomatoes and green peppers on crispy dough." },
-    "kiymali_kasarli_pide": { "name": "Minced Beef & Kashar Pide", "desc": "Minced beef topped with melted kashar cheese." },
-    "kusbasili_pide": { "name": "Diced Beef Pide", "desc": "Hand-cut diced beef tenderloin, bell peppers and tomatoes." },
-    "kusbasili_kasarli_pide": { "name": "Diced Beef & Kashar Pide", "desc": "Hand-cut diced beef topped with melted kashar cheese." },
-    "kavurmali_pide": { "name": "Roasted Beef Kavurma Pide", "desc": "Slow-cooked savory beef kavurma baked on crispy wood-fired crust." },
-    "kavurmali_kasarli_pide": { "name": "Kavurma & Kashar Cheese Pide", "desc": "Beef kavurma topped with melted kashar cheese." },
-    "beyaz_peynirli_pide": { "name": "Feta Cheese & Parsley Pide", "desc": "Authentic Ezine feta cheese and fresh parsley blend." },
-    "kasarli_mantarli_sebzeli_pide": { "name": "Mushroom & Veggie Pide", "desc": "Fresh mushrooms, bell peppers, tomatoes and kashar cheese." },
-    "pastirmali_kasarli_pide": { "name": "Pastrami & Kashar Pide", "desc": "Aged spiced beef pastrami with melted kashar cheese." },
-    "tavuklu_kasarli_pide": { "name": "Chicken & Kashar Pide", "desc": "Sautéed chicken breast with melted kashar cheese." },
-    "etli_konya": { "name": "Konya Style Long Pide", "desc": "Ultra-thin long crispy pide with minced beef." },
-    "etli_etmek": { "name": "Traditional Etli Ekmek", "desc": "Classic thin crispy dough topped with seasoned minced meat." },
-    "lahmacun_item": { "name": "Crispy Stone-Baked Lahmacun", "desc": "Ultra-thin crispy dough topped with minced meat, herbs & spices. Served with parsley, sumac onions & lemon." },
-    "ozel_lahmacun": { "name": "Gaziantep Garlic Lahmacun", "desc": "Gaziantep style garlic seasoned minced meat lahmacun." },
-    "semiz_otu": { "name": "Purslane Yogurt Meze", "desc": "Fresh purslane leaves mixed with garlic strained yogurt & olive oil." },
-    "kuru_cacik": { "name": "Strained Yogurt Tzatziki", "desc": "Thick strained yogurt with diced cucumber, garlic, mint & olive oil." },
-    "mutebbel": { "name": "Mutabbal Eggplant Dip", "desc": "Smoky roasted eggplant blended with tahini, garlic & thick yogurt." },
-    "otlu_yogurtlu_meze": { "name": "Aegean Herb Yogurt Dip", "desc": "Fresh Aegean herbs mixed with strained yogurt & cold olive oil." },
-    "havuc_tarator": { "name": "Carrot Tarator Dip", "desc": "Sautéed sweet carrots with garlic yogurt & roasted walnuts." },
-    "koz_biberli_yogurt": { "name": "Roasted Red Pepper Yogurt", "desc": "Charcoal-roasted sweet red capia peppers with strained yogurt." },
-    "babagannush": { "name": "Baba Ghanoush Dip", "desc": "Smoky roasted eggplant, red peppers, tomatoes, garlic & virgin olive oil." },
-    "ezme_salata": { "name": "Spicy Tomato & Pepper Ezme", "desc": "Hand-chopped spicy tomato & pepper relish with pomegranate molasses & walnuts." },
-    "humus": { "name": "Classic Tahini Hummus", "desc": "Smooth chickpeas blended with tahini, garlic, cumin & virgin olive oil." },
-    "mevsim_salatasi": { "name": "Fresh Garden Salad", "desc": "Seasonal crisp lettuce, purple cabbage, carrots & lemon dressing." },
-    "coban_salata": { "name": "Traditional Shepherd's Salad", "desc": "Diced tomatoes, cucumbers, bell peppers, onions, parsley & extra virgin olive oil." },
-    "cig_kofte": { "name": "Vegan Çiğköfte Platter", "desc": "Spiced bulgur pate served with fresh lettuce leaves & pomegranate glaze." },
-    "icli_kofte": { "name": "Kibbeh (İçli Köfte)", "desc": "Crispy bulgur shell stuffed with spiced minced beef & walnuts." },
-    "cacik": { "name": "Chilled Cucumber Cacık", "desc": "Chilled yogurt soup with cucumber, garlic, dried mint & olive oil." },
-    "yogurt": { "name": "Strained Farm Yogurt", "desc": "Pure thick strained farm sheep/cow milk yogurt." },
-    "kunefe": { "name": "Hatay Künefe", "desc": "Crispy shredded kadayıf pastry filled with unsalted melting cheese, warm syrup & crushed pistachios." },
-    "firin_sutlac": { "name": "Baked Rice Pudding", "desc": "Traditional creamy rice pudding caramelized in clay dish." },
-    "kazandibi": { "name": "Kazandibi Caramelized Pudding", "desc": "Classic caramelized milk pudding with golden bottom." },
-    "trilece": { "name": "Caramel Tres Leches Cake", "desc": "Light sponge cake soaked in three milks topped with rich caramel." },
-    "cola": { "name": "Coca-Cola (33 cl)", "desc": "Chilled canned beverage." },
-    "fanta": { "name": "Fanta (33 cl)", "desc": "Chilled canned beverage." },
-    "sprite": { "name": "Sprite (33 cl)", "desc": "Chilled canned beverage." },
-    "camlica": { "name": "Çamlıca Soda", "desc": "Traditional glass bottle soda." },
-    "litrelik_cola": { "name": "Coca-Cola (1 L)", "desc": "1 Liter bottle." },
-    "ayran_kucuk": { "name": "Frothy Yayık Ayran (Small)", "desc": "Cold whipped yogurt drink with foam." },
-    "ayran_litrelik": { "name": "Yayık Ayran (1 L)", "desc": "1 Liter chilled yogurt drink." },
-    "salgam": { "name": "Turnip Juice Şalgam", "desc": "Traditional Adana spicy or mild turnip juice." },
-    "meyve_sulari": { "name": "Fruit Juices", "desc": "Cappy peach, cherry, or mixed fruit juice." },
-    "ice_tea": { "name": "Ice Tea", "desc": "Peach or lemon iced tea." },
-    "sikma_portakal": { "name": "Fresh Orange Juice", "desc": "100% natural freshly squeezed orange juice." },
-    "sikma_nar": { "name": "Fresh Pomegranate Juice", "desc": "100% natural freshly pressed pomegranate juice." },
-    "limonata": { "name": "Homemade Lemonade", "desc": "Refreshing homemade lemonade with fresh mint." },
-    "soda": { "name": "Mineral Water", "desc": "Natural sparkling mineral water." },
-    "su": { "name": "Bottled Water", "desc": "Chilled spring water." }
+    "serpme_kahvalti": {
+      "name": "Serpme Kahvaltı (2 Kişilik)",
+      "desc": "Authentic Village Breakfast (For 2) — For 2: Regional Ezine & Kashar cheeses, honey & clotted cream, homemade jams, olives, fried eggs in copper pan, tomatoes, cucumbers and hot oven bread."
+    },
+    "pacanga_boregi": {
+      "name": "Paçanga Böreği",
+      "desc": "Paçanga Pastry — Crispy phyllo pastry stuffed with aged pastrami, melted kashar cheese, tomatoes and peppers."
+    },
+    "omlet": {
+      "name": "Omlet",
+      "desc": "Farm Omelette — Fresh farm eggs cooked golden in butter, with optional melted kashar cheese."
+    },
+    "menemen": {
+      "name": "Menemen",
+      "desc": "Traditional Menemen — Fresh roasted peppers, juicy tomatoes, pure butter and eggs cooked in traditional copper pan."
+    },
+    "sahanda_yumurta": {
+      "name": "Sahanda Yumurta",
+      "desc": "Fried Eggs in Copper Pan — Fresh farm eggs fried sunny-side up in organic sheep butter."
+    },
+    "sucuklu_yumurta": {
+      "name": "Sucuklu Yumurta",
+      "desc": "Spiced Sucuk & Eggs — Spiced garlic beef sucuk sausages fried with fresh farm eggs in butter."
+    },
+    "kavurmali_yumurta": {
+      "name": "Kavurmalı Yumurta",
+      "desc": "Roasted Beef Kavurma & Eggs — Slow-cooked savory beef kavurma topped with fresh eggs in copper pan."
+    },
+    "kuzu_gerdan_corba": {
+      "name": "Kuzu Gerdan Çorba",
+      "desc": "Lamb Neck Soup — Healing soup made with tender lamb neck meat simmered for hours in marrow bone broth."
+    },
+    "sehriyeli_tavuk_corbasi": {
+      "name": "Şehriyeli Tavuk Çorbası",
+      "desc": "Chicken Noodle Soup — Shredded village chicken breast, vermicelli noodles, lemon and black pepper."
+    },
+    "ezogelin_mercimek_corbasi": {
+      "name": "Ezogelin / Mercimek Çorbası",
+      "desc": "Traditional Lentil Soup — Strained red lentil soup served with mint butter, chili flakes and fresh lemon."
+    },
+    "adana_urfa": {
+      "name": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)",
+      "desc": "Adana Kebab (Spicy) or Urfa Kebab (Mild) — Note: Adana Kebab is spicy, while Urfa Kebab is mild and non-spicy. 140g hand-minced lamb charcoal-grilled, served with roasted peppers, tomatoes, warm lavash, and bulgur."
+    },
+    "mardin_kebap": {
+      "name": "Mardin Kebap",
+      "desc": "Mardin Style Garlic Kebab — 180g. Hand-minced meat seasoned with garlic and regional herbs from Mardin."
+    },
+    "beyti_kebap": {
+      "name": "Beyti Kebap",
+      "desc": "Beyti Kebab Wrap — 170g. Charcoal grilled minced kebab wrapped in crispy lavash, baked with tomato sauce, melted butter and strained yogurt."
+    },
+    "domatesli_kebap": {
+      "name": "Domatesli Kebap",
+      "desc": "Tomato Skewered Kebab — 150g. Skewered hand-minced meat grilled sequentially with juicy roasted tomato halves."
+    },
+    "patlicanli_kebap": {
+      "name": "Patlıcanlı Kebap",
+      "desc": "Eggplant Kebab — 160g. Minced kebab layered between roasted charcoal eggplant slices."
+    },
+    "kuzu_sis_kebap": {
+      "name": "Kuzu Şiş Kebap",
+      "desc": "Lamb Shish Kebab — 150g. Tender marinated lamb leg cubes grilled on charcoal iron skewers."
+    },
+    "ali_nazik_kebap": {
+      "name": "Ali Nazik Kebap",
+      "desc": "Ali Nazik Kebab — 150g. Tender butter-grilled meat served over warm garlic yogurt roasted eggplant puree."
+    },
+    "inegol_kofte": {
+      "name": "İnegöl Köfte",
+      "desc": "İnegöl Meatballs — 150g. Tender traditional grilled beef meatballs."
+    },
+    "vali_kebabi": {
+      "name": "Vali Kebabı",
+      "desc": "Governor's Mixed Feast Kebab — 220g. Royal combination of Adana, lamb shish, chicken shish & meatball."
+    },
+    "tavuk_sis_izgara": {
+      "name": "Tavuk Şiş Izgara",
+      "desc": "Chicken Shish Kebab — 150g. Marinated chicken breast cubes grilled on charcoal fire."
+    },
+    "tavuk_kanat": {
+      "name": "Tavuk Kanat",
+      "desc": "Grilled Chicken Wings — 170g. Crispy spiced charcoal-grilled chicken wings."
+    },
+    "kuzu_lokum": {
+      "name": "Kuzu Lokum",
+      "desc": "Lamb Tenderloin Lokum — 220g. Aged melt-in-the-mouth lamb tenderloin medallions."
+    },
+    "kuzu_pirzola": {
+      "name": "Kuzu Pirzola",
+      "desc": "Lamb Chops — 320g. Fresh tender lamb chops grilled to perfection over oak embers."
+    },
+    "kiremit_kebap": {
+      "name": "Kiremit Kebap",
+      "desc": "Clay Dish Kebab — 160g. Kebab baked in clay dish with tomato sauce, peppers and melted kashar cheese."
+    },
+    "iskender_kebap": {
+      "name": "İskender Kebap",
+      "desc": "İskender Kebab — 140g. Sliced meat over warm pita cubes, topped with rich tomato sauce, sizzling butter & cold yogurt."
+    },
+    "yogurtlu_kebap": {
+      "name": "Yoğurtlu Kebap",
+      "desc": "Yogurt Kebab — 140g. Minced kebab over crispy bread cubes with tomato sauce & strained yogurt."
+    },
+    "alti_ezmeli_kebap": {
+      "name": "Altı Ezmeli Kebap",
+      "desc": "Kebab over Roasted Tomato Mash — 140g. Minced kebab served over smoky charcoal-roasted tomato & pepper mash."
+    },
+    "dana_bonfile": {
+      "name": "Dana Bonfile",
+      "desc": "Beef Tenderloin Steak — 200g. Aged grilled beef tenderloin slices."
+    },
+    "dana_cop_sis": {
+      "name": "Dana Çöp Şiş",
+      "desc": "Beef Skewer Chöp Shish — 200g. Small tender beef cubes grilled on wooden skewers."
+    },
+    "karisik_kebap_1": {
+      "name": "Karışık Kebap 1",
+      "desc": "Grand Mixed Kebab Feast 1 — 350g. Chicken shish, lamb shish, Adana kebab, meatball & meze sides."
+    },
+    "karisik_kebap_2": {
+      "name": "Karışık Kebap 2",
+      "desc": "Family Mixed Kebab Feast 2 — 550g. Family-size mixed kebab platter for 2-3 people."
+    },
+    "mardin_kebap_menu": {
+      "name": "Mardin Kebap Menü",
+      "desc": "Mardin Kebab Set Menu — 180g. Mardin kebab set served with meze platter, salad & cold drink."
+    },
+    "tavuk_kanat_menu": {
+      "name": "Tavuk Kanat Menü",
+      "desc": "Chicken Wing Set Menu — 160g. Grilled wings served with rice, meze platter & drink."
+    },
+    "kuzu_ciger_menu": {
+      "name": "Kuzu Ciğer Menü",
+      "desc": "Lamb Liver Skewer Menu — 170g. Charcoal lamb liver skewers with sumac onions, fresh lavash & mezes."
+    },
+    "kuzu_sis_menu": {
+      "name": "Kuzu Şiş Kebap Menü",
+      "desc": "Lamb Shish Set Menu — 140g. Lamb shish served with rice, meze platter & drink."
+    },
+    "mezeli_adana_urfa": {
+      "name": "Mezeli Adana & Urfa Kebap",
+      "desc": "Adana/Urfa Kebab + 4 Mezes — 140g. Adana or Urfa kebab served with 4 daily fresh mezes & hot lavash."
+    },
+    "mezeli_dana_cop_sis": {
+      "name": "Mezeli Dana Çöp Şiş",
+      "desc": "Beef Chöp Shish + 4 Mezes — 200g. Beef skewers served with 4 daily fresh mezes & fresh bread."
+    },
+    "mezeli_kuzu_pirzola": {
+      "name": "Mezeli Kuzu Pirzola",
+      "desc": "Lamb Chops + 4 Mezes — 320g. Lamb chops served with 4 daily fresh mezes & oven lavash."
+    },
+    "mezeli_kuzu_lokum": {
+      "name": "Mezeli Kuzu Lokum",
+      "desc": "Lamb Lokum + 4 Mezes — 220g. Tender lamb fillet served with generous meze platter."
+    },
+    "mezeli_inegol_kofte": {
+      "name": "Mezeli İnegöl Köfte",
+      "desc": "İnegöl Meatballs + Mezes — 150g. Meatballs served with meze platter & hot bread."
+    },
+    "mezeli_kuzu_sis": {
+      "name": "Mezeli Kuzu Şiş",
+      "desc": "Lamb Shish + Mezes — 150g. Lamb shish served with fresh daily mezes."
+    },
+    "mezeli_dana_bonfile": {
+      "name": "Mezeli Dana Bonfile",
+      "desc": "Beef Fillet + Mezes — 200g. Grilled fillet steak with fresh meze sides."
+    },
+    "mezeli_durum": {
+      "name": "Mezeli Dürüm",
+      "desc": "Wrap Kebab + Meze Side — 90g. Kebab wrap with side meze platter."
+    },
+    "mezeli_tavuk_kanat": {
+      "name": "Mezeli Tavuk Kanat",
+      "desc": "Chicken Wings + Mezes — 150g. Chicken wings with meze platter."
+    },
+    "mezeli_tavuk_sis": {
+      "name": "Mezeli Tavuk Şiş",
+      "desc": "Chicken Shish + Mezes — 150g. Chicken shish with meze platter."
+    },
+    "karisik_meze_tabagi": {
+      "name": "Karışık Meze Tabağı",
+      "desc": "Chef's Mixed Meze Platter — Selection of 6 daily fresh authentic olive-oil cold mezes."
+    },
+    "adana_durum": {
+      "name": "Adana Dürüm",
+      "desc": "Adana Kebab Wrap — 95g. Hand-minced spicy Adana kebab wrapped in stone-baked lavash with fresh herbs & sumac onions."
+    },
+    "urfa_durum": {
+      "name": "Urfa Dürüm",
+      "desc": "Urfa Kebab Wrap — 95g. Mild Urfa kebab wrapped in fresh lavash bread."
+    },
+    "dana_cop_sis_durum": {
+      "name": "Dana Çöp Şiş Dürüm",
+      "desc": "Beef Chöp Shish Wrap — 95g. Grilled beef skewers wrapped in crispy lavash."
+    },
+    "tavuk_sis_durum": {
+      "name": "Tavuk Şiş Dürüm",
+      "desc": "Chicken Shish Wrap — 95g. Grilled chicken breast cubes wrapped in lavash bread."
+    },
+    "kuzu_sis_durum": {
+      "name": "Kuzu Şiş Dürüm",
+      "desc": "Lamb Shish Wrap — 95g. Tender lamb shish wrapped in wood-fired lavash."
+    },
+    "kuzu_ciger_durum": {
+      "name": "Kuzu Ciğer Dürüm",
+      "desc": "Lamb Liver Wrap — 95g. Charcoal grilled lamb liver wrapped with cumin & sumac onions."
+    },
+    "kofte_durum": {
+      "name": "Köfte Dürüm",
+      "desc": "Meatball Wrap — 95g. Grilled beef meatballs wrapped in warm lavash."
+    },
+    "cigkofte_durum": {
+      "name": "Çiğköfte Dürüm",
+      "desc": "Çiğköfte Vegan Wrap — Traditional spiced bulgur wrap with fresh lettuce, mint & pomegranate molasses."
+    },
+    "kasarli_pide": {
+      "name": "Kaşarlı Pide",
+      "desc": "Kashar Cheese Pide — Crispy wood-fired dough topped with melted real Ezine kashar cheese."
+    },
+    "kasarli_yumurtali_pide": {
+      "name": "Kaşarlı Yumurtalı Pide",
+      "desc": "Kashar Cheese & Egg Pide — Wood-fired dough with melted kashar cheese and organic egg."
+    },
+    "kasarli_sucuklu_pide": {
+      "name": "Kaşarlı Sucuklu Pide",
+      "desc": "Kashar Cheese & Sucuk Pide — Melted kashar cheese and spicy Turkish garlic beef sucuk slices."
+    },
+    "kasarli_sucuklu_yumurtali_pide": {
+      "name": "Kaşarlı Sucuklu Yumurtalı Pide",
+      "desc": "Kashar, Sucuk & Egg Pide — Combination of cheese, spiced sucuk and egg baked in stone oven."
+    },
+    "kiymali_pide": {
+      "name": "Kıymalı Pide",
+      "desc": "Minced Beef Pide — Seasoned minced beef, onions, tomatoes and green peppers on crispy dough."
+    },
+    "kiymali_kasarli_pide": {
+      "name": "Kıymalı Kaşarlı Pide",
+      "desc": "Minced Beef & Kashar Pide — Minced beef topped with melted kashar cheese."
+    },
+    "kusbasili_pide": {
+      "name": "Kuşbaşılı Pide",
+      "desc": "Diced Beef Pide — Hand-cut diced beef tenderloin, bell peppers and tomatoes."
+    },
+    "kusbasili_kasarli_pide": {
+      "name": "Kuşbaşılı Kaşarlı Pide",
+      "desc": "Diced Beef & Kashar Pide — Hand-cut diced beef topped with melted kashar cheese."
+    },
+    "kavurmali_pide": {
+      "name": "Kavurmalı Pide",
+      "desc": "Roasted Beef Kavurma Pide — Slow-cooked savory beef kavurma baked on crispy wood-fired crust."
+    },
+    "kavurmali_kasarli_pide": {
+      "name": "Kavurmalı Kaşarlı Pide",
+      "desc": "Kavurma & Kashar Cheese Pide — Beef kavurma topped with melted kashar cheese."
+    },
+    "beyaz_peynirli_pide": {
+      "name": "Beyaz Peynirli Pide",
+      "desc": "Feta Cheese & Parsley Pide — Authentic Ezine feta cheese and fresh parsley blend."
+    },
+    "kasarli_mantarli_sebzeli_pide": {
+      "name": "Kaşarlı Mantarli Sebzeli Pide",
+      "desc": "Mushroom & Veggie Pide — Fresh mushrooms, bell peppers, tomatoes and kashar cheese."
+    },
+    "pastirmali_kasarli_pide": {
+      "name": "Pastırmalı Kaşarlı Pide",
+      "desc": "Pastrami & Kashar Pide — Aged spiced beef pastrami with melted kashar cheese."
+    },
+    "tavuklu_kasarli_pide": {
+      "name": "Tavuklu Kaşarlı Pide",
+      "desc": "Chicken & Kashar Pide — Sautéed chicken breast with melted kashar cheese."
+    },
+    "etli_konya": {
+      "name": "Etli Konya Pidesi",
+      "desc": "Konya Style Long Pide — Ultra-thin long crispy pide with minced beef."
+    },
+    "etli_etmek": {
+      "name": "Etli Ekmek",
+      "desc": "Traditional Etli Ekmek — Classic thin crispy dough topped with seasoned minced meat."
+    },
+    "lahmacun_item": {
+      "name": "Çıtır Fırın Lahmacun",
+      "desc": "Crispy Stone-Baked Lahmacun — Ultra-thin crispy dough topped with minced meat, herbs & spices. Served with parsley, sumac onions & lemon."
+    },
+    "ozel_lahmacun": {
+      "name": "Özel Sarımsaklı Lahmacun",
+      "desc": "Gaziantep Garlic Lahmacun — Gaziantep style garlic seasoned minced meat lahmacun."
+    },
+    "semiz_otu": {
+      "name": "Semiz Otu Mezesi",
+      "desc": "Purslane Yogurt Meze — Fresh purslane leaves mixed with garlic strained yogurt & olive oil."
+    },
+    "kuru_cacik": {
+      "name": "Kuru Cacık",
+      "desc": "Strained Yogurt Tzatziki — Thick strained yogurt with diced cucumber, garlic, mint & olive oil."
+    },
+    "mutebbel": {
+      "name": "Mütebbel",
+      "desc": "Mutabbal Eggplant Dip — Smoky roasted eggplant blended with tahini, garlic & thick yogurt."
+    },
+    "otlu_yogurtlu_meze": {
+      "name": "Otlu Yoğurtlu Meze",
+      "desc": "Aegean Herb Yogurt Dip — Fresh Aegean herbs mixed with strained yogurt & cold olive oil."
+    },
+    "havuc_tarator": {
+      "name": "Havuç Taratör",
+      "desc": "Carrot Tarator Dip — Sautéed sweet carrots with garlic yogurt & roasted walnuts."
+    },
+    "koz_biberli_yogurt": {
+      "name": "Köz Biberli Yoğurt",
+      "desc": "Roasted Red Pepper Yogurt — Charcoal-roasted sweet red capia peppers with strained yogurt."
+    },
+    "babagannush": {
+      "name": "Babagannuş",
+      "desc": "Baba Ghanoush Dip — Smoky roasted eggplant, red peppers, tomatoes, garlic & virgin olive oil."
+    },
+    "ezme_salata": {
+      "name": "Acılı Ezme Salata",
+      "desc": "Spicy Tomato & Pepper Ezme — Hand-chopped spicy tomato & pepper relish with pomegranate molasses & walnuts."
+    },
+    "humus": {
+      "name": "Sıcak/Soğuk Humus",
+      "desc": "Classic Tahini Hummus — Smooth chickpeas blended with tahini, garlic, cumin & virgin olive oil."
+    },
+    "mevsim_salatasi": {
+      "name": "Mevsim Salatası",
+      "desc": "Fresh Garden Salad — Seasonal crisp lettuce, purple cabbage, carrots & lemon dressing."
+    },
+    "coban_salata": {
+      "name": "Çoban Salata",
+      "desc": "Traditional Shepherd's Salad — Diced tomatoes, cucumbers, bell peppers, onions, parsley & extra virgin olive oil."
+    },
+    "cig_kofte": {
+      "name": "Çiğ Köfte Porsiyon",
+      "desc": "Vegan Çiğköfte Platter — Spiced bulgur pate served with fresh lettuce leaves & pomegranate glaze."
+    },
+    "icli_kofte": {
+      "name": "İçli Köfte (Adet)",
+      "desc": "Kibbeh (İçli Köfte) — Crispy bulgur shell stuffed with spiced minced beef & walnuts."
+    },
+    "cacik": {
+      "name": "Cacık",
+      "desc": "Chilled Cucumber Cacık — Chilled yogurt soup with cucumber, garlic, dried mint & olive oil."
+    },
+    "yogurt": {
+      "name": "Süzme Yoğurt",
+      "desc": "Strained Farm Yogurt — Pure thick strained farm sheep/cow milk yogurt."
+    },
+    "kunefe": {
+      "name": "Hatay Künefesi",
+      "desc": "Hatay Künefe — Crispy shredded kadayıf pastry filled with unsalted melting cheese, warm syrup & crushed pistachios."
+    },
+    "firin_sutlac": {
+      "name": "Fırın Sütlaç",
+      "desc": "Baked Rice Pudding — Traditional creamy rice pudding caramelized in clay dish."
+    },
+    "kazandibi": {
+      "name": "Geleneksel Kazandibi",
+      "desc": "Kazandibi Caramelized Pudding — Classic caramelized milk pudding with golden bottom."
+    },
+    "trilece": {
+      "name": "Karamelli Trileçe",
+      "desc": "Caramel Tres Leches Cake — Light sponge cake soaked in three milks topped with rich caramel."
+    },
+    "cola": {
+      "name": "Coca-Cola (33 cl)",
+      "desc": "Coca-Cola (33 cl) — Chilled canned beverage."
+    },
+    "fanta": {
+      "name": "Fanta (33 cl)",
+      "desc": "Fanta (33 cl) — Chilled canned beverage."
+    },
+    "sprite": {
+      "name": "Sprite (33 cl)",
+      "desc": "Sprite (33 cl) — Chilled canned beverage."
+    },
+    "camlica": {
+      "name": "Çamlıca Gazoz",
+      "desc": "Çamlıca Soda — Traditional glass bottle soda."
+    },
+    "litrelik_cola": {
+      "name": "Litrelik Coca-Cola (1 L)",
+      "desc": "Coca-Cola (1 L) — 1 Liter bottle."
+    },
+    "ayran_kucuk": {
+      "name": "Yayık Ayran (Küçük)",
+      "desc": "Frothy Yayık Ayran (Small) — Cold whipped yogurt drink with foam."
+    },
+    "ayran_litrelik": {
+      "name": "Yayık Ayran (1 L)",
+      "desc": "Yayık Ayran (1 L) — 1 Liter chilled yogurt drink."
+    },
+    "salgam": {
+      "name": "Şalgam Suyu",
+      "desc": "Turnip Juice Şalgam — Traditional Adana spicy or mild turnip juice."
+    },
+    "meyve_sulari": {
+      "name": "Meyve Suları",
+      "desc": "Fruit Juices — Cappy peach, cherry, or mixed fruit juice."
+    },
+    "ice_tea": {
+      "name": "Ice Tea",
+      "desc": "Ice Tea — Peach or lemon iced tea."
+    },
+    "sikma_portakal": {
+      "name": "Taze Sıkma Portakal Suyu",
+      "desc": "Fresh Orange Juice — 100% natural freshly squeezed orange juice."
+    },
+    "sikma_nar": {
+      "name": "Taze Sıkma Nar Suyu",
+      "desc": "Fresh Pomegranate Juice — 100% natural freshly pressed pomegranate juice."
+    },
+    "limonata": {
+      "name": "Ev Yapımı Limonata",
+      "desc": "Homemade Lemonade — Refreshing homemade lemonade with fresh mint."
+    },
+    "soda": {
+      "name": "Maden Suyu / Soda",
+      "desc": "Mineral Water — Natural sparkling mineral water."
+    },
+    "su": {
+      "name": "Su",
+      "desc": "Bottled Water — Chilled spring water."
+    }
   }
 }

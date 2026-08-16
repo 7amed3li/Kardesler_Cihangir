@@ -13,111 +13,429 @@
     "soguk_icecek": "Bevande Fredde"
   },
   "items": {
-    "serpme_kahvalti": { "name": "Colazione Turca Completa (Per 2)", "desc": "Per 2 persone: Formaggi locali Ezine e caciocavallo, miele e panna, marmellate artigianali, olive, uova al tegamino nel tegamino di rame e pane fresco." },
-    "pacanga_boregi": { "name": "Sfoglia Paçanga", "desc": "Pasta sfoglia croccante ripiena di pastrami di manzo, formaggio fuso, pomodori e peperoni." },
-    "omlet": { "name": "Omelette della Fattoria", "desc": "Uova fresche cotte al burro fino a doratura." },
-    "menemen": { "name": "Menemen Tradizionale", "desc": "Peperoni grigliati, pomodori succosi, burro e uova nel tegamino di rame." },
-    "sahanda_yumurta": { "name": "Uova al Tegamino di Rame", "desc": "Uova fresche di fattoria cotte nel burro di pecora." },
-    "sucuklu_yumurta": { "name": "Uova con Salsiccia Sucuk", "desc": "Salsiccia di manzo speziata e uova fresche al burro." },
-    "kavurmali_yumurta": { "name": "Uova con Kavurma", "desc": "Manzo brasato Kavurma con uova fresche al tegamino." },
-    "kuzu_gerdan_corba": { "name": "Zuppa di Collo d'Agnello", "desc": "Zuppa ricca e nutritiva con carne d'agnello cotta a fuoco lento." },
-    "sehriyeli_tavuk_corbasi": { "name": "Zuppa di Pollo con Pastina", "desc": "Petto di pollo con pastina, limone e pepe nero." },
-    "ezogelin_mercimek_corbasi": { "name": "Zuppa Tradizionale di Lenticchie", "desc": "Zuppa di lenticchie rosse servita con burro alla menta e limone." },
-    "adana_urfa": { "name": "Kebab Adana & Urfa", "desc": "140g. Carne macinata piccante (Adana) o dolce (Urfa) alla griglia. Servito con peperoni, pomodori & bulgur." },
-    "mardin_kebap": { "name": "Kebab Mardin all'Aglio", "desc": "180g. Carne macinata alla griglia aromatizzata all'aglio e erbe regionali." },
-    "beyti_kebap": { "name": "Beyti Kebab Wrap", "desc": "170g. Kebab arrotolato in pane sfoglia al forno con salsa al pomodoro, burro e yogurt." },
-    "domatesli_kebap": { "name": "Kebab con Pomodori", "desc": "150g. Carne macinata alternata a fette di pomodoro grigliato." },
-    "patlicanli_kebap": { "name": "Kebab con Melanzane", "desc": "160g. Kebab grigliato tra fette di melanzane arrostite." },
-    "kuzu_sis_kebap": { "name": "Spiedino d'Agnello", "desc": "150g. Cubetti di agnello marinati alla griglia." },
-    "ali_nazik_kebap": { "name": "Ali Nazik Kebab", "desc": "150g. Carne alla griglia su puree di melanzane arrostite con yogurt e aglio." },
-    "inegol_kofte": { "name": "Polpette İnegöl", "desc": "150g. Polpette di manzo grigliate morbide e gustose." },
-    "vali_kebabi": { "name": "Gran Grigliata del Governatore", "desc": "220g. Combinazione di Adana, spiedino d'agnello, spiedino di pollo e polpette." },
-    "tavuk_sis_izgara": { "name": "Spiedino di Pollo", "desc": "150g. Petto di pollo marinato e grigliato." },
-    "tavuk_kanat": { "name": "Alette di Pollo Grigliate", "desc": "170g. Alette di pollo croccanti speziate." },
-    "kuzu_lokum": { "name": "Filetto d'Agnello Lokum", "desc": "220g. Filetto d'agnello tenerissimo alla griglia." },
-    "kuzu_pirzola": { "name": "Costolette d'Agnello", "desc": "320g. Succulente costolette d'agnello alla griglia." },
-    "kiremit_kebap": { "name": "Kebab in Terracotta", "desc": "160g. Kebab cotto in terracotta con salsa al pomodoro e formaggio fuso." },
-    "iskender_kebap": { "name": "İskender Kebab", "desc": "140g. Carne a fette su cubetti di pane, con salsa al pomodoro, burro fuso e yogurt." },
-    "yogurtlu_kebap": { "name": "Kebab allo Yogurt", "desc": "140g. Kebab grigliato su pane croccante con yogurt." },
-    "alti_ezmeli_kebap": { "name": "Kebab su Salsa di Pomodoro", "desc": "140g. Kebab servito su salsa di pomodori e peperoni arrostiti." },
-    "dana_bonfile": { "name": "Bistecca di Filetto di Manzo", "desc": "200g. Filetto di manzo frollato alla griglia." },
-    "dana_cop_sis": { "name": "Spiedini di Manzo", "desc": "200g. Piccoli cubetti di manzo su spiedini di legno." },
-    "karisik_kebap_1": { "name": "Grigliata Mista 1", "desc": "350g. Spiedino di pollo, agnello, Adana Kebab, polpetta e antipasti." },
-    "karisik_kebap_2": { "name": "Grigliata Mista Famiglia 2", "desc": "550g. Gran piatto di grigliata mista per 2-3 persone." },
-    "mardin_kebap_menu": { "name": "Menu Kebab Mardin", "desc": "180g. Kebab Mardin servito con antipasti, insalata e bevanda." },
-    "tavuk_kanat_menu": { "name": "Menu Alette di Pollo", "desc": "160g. Alette di pollo con riso, antipasti e bevanda." },
-    "kuzu_ciger_menu": { "name": "Menu Fegato d'Agnello", "desc": "170g. Fegato d'agnello con cipolle al sommacco e antipasti." },
-    "kuzu_sis_menu": { "name": "Menu Spiedino d'Agnello", "desc": "140g. Spiedino d'agnello con riso e bevanda." },
-    "mezeli_adana_urfa": { "name": "Adana/Urfa Kebab + 4 Antipasti", "desc": "140g. Kebab con 4 antipasti freschi e pane caldo." },
-    "mezeli_dana_cop_sis": { "name": "Spiedini di Manzo + 4 Antipasti", "desc": "200g. Spiedini con 4 antipasti." },
-    "mezeli_kuzu_pirzola": { "name": "Costolette d'Agnello + 4 Antipasti", "desc": "320g. Costolette con 4 antipasti." },
-    "mezeli_kuzu_lokum": { "name": "Filetto d'Agnello + 4 Antipasti", "desc": "220g. Filetto d'agnello con antipasti misti." },
-    "mezeli_inegol_kofte": { "name": "Polpette İnegöl + Antipasti", "desc": "150g. Polpette con antipasti misti." },
-    "mezeli_kuzu_sis": { "name": "Spiedino d'Agnello + Antipasti", "desc": "150g. Spiedino con antipasti misti." },
-    "mezeli_dana_bonfile": { "name": "Filetto di Manzo + Antipasti", "desc": "200g. Filetto con antipasti misti." },
-    "mezeli_durum": { "name": "Wrap Kebab + Antipasto", "desc": "90g. Kebab Wrap con antipasto." },
-    "mezeli_tavuk_kanat": { "name": "Alette di Pollo + Antipasti", "desc": "150g. Alette di pollo con antipasti." },
-    "mezeli_tavuk_sis": { "name": "Spiedino di Pollo + Antipasti", "desc": "150g. Spiedino di pollo con antipasti." },
-    "karisik_meze_tabagi": { "name": "Gran Piatto Antipasti Misti", "desc": "6 antipasti freddi turchi all'olio d'oliva." },
-    "adana_durum": { "name": "Adana Kebab Wrap", "desc": "95g. Carne macinata Adana in pane sfoglia con insalata e cipolle." },
-    "urfa_durum": { "name": "Urfa Kebab Wrap", "desc": "95g. Kebab Urfa dolce arrotolato in pane sfoglia." },
-    "dana_cop_sis_durum": { "name": "Wrap Spiedino di Manzo", "desc": "95g. Spiedini di manzo arrotolati in pane sfoglia." },
-    "tavuk_sis_durum": { "name": "Wrap Spiedino di Pollo", "desc": "95g. Pollo grigliato arrotolato in pane sfoglia." },
-    "kuzu_sis_durum": { "name": "Wrap Spiedino d'Agnello", "desc": "95g. Agnello grigliato arrotolato in pane sfoglia." },
-    "kuzu_ciger_durum": { "name": "Wrap Fegato d'Agnello", "desc": "95g. Fegato d'agnello con cumino e cipolle." },
-    "kofte_durum": { "name": "Wrap Polpette", "desc": "95g. Polpette grigliate in pane caldo." },
-    "cigkofte_durum": { "name": "Çiğköfte Veggie Wrap", "desc": "Wrap di bulgur speziato con lattuga e melassa di melograno." },
-    "kasarli_pide": { "name": "Pide al Formaggio", "desc": "Impasto croccante cotto nel forno a legna con formaggio fuso." },
-    "kasarli_yumurtali_pide": { "name": "Pide Formaggio & Uovo", "desc": "Formaggio fuso e uovo fresco cotto al forno." },
-    "kasarli_sucuklu_pide": { "name": "Pide Formaggio & Sucuk", "desc": "Formaggio fuso e fette di salsiccia di manzo speziata." },
-    "kasarli_sucuklu_yumurtali_pide": { "name": "Pide Formaggio, Sucuk & Uovo", "desc": "Combinazione di formaggio, salsiccia e uovo." },
-    "kiymali_pide": { "name": "Pide con Carne Macinata", "desc": "Carne macinata di manzo condita con cipolle e pomodori." },
-    "kiymali_kasarli_pide": { "name": "Pide Carne & Formaggio", "desc": "Carne macinata con formaggio fuso." },
-    "kusbasili_pide": { "name": "Pide con Manzo a Cubetti", "desc": "Manzo a cubetti, peperoni e pomodori." },
-    "kusbasili_kasarli_pide": { "name": "Pide Manzo & Formaggio", "desc": "Manzo a cubetti con formaggio fuso." },
-    "kavurmali_pide": { "name": "Pide con Kavurma", "desc": "Manzo Kavurma stufato al forno." },
-    "kavurmali_kasarli_pide": { "name": "Pide Kavurma & Formaggio", "desc": "Manzo Kavurma con formaggio fuso." },
-    "beyaz_peynirli_pide": { "name": "Pide con Feta & Prezzemolo", "desc": "Formaggio bianco tipo Feta con prezzemolo fresco." },
-    "kasarli_mantarli_sebzeli_pide": { "name": "Pide Funghi & Verdure", "desc": "Funghi freschi, peperoni, pomodori e formaggio." },
-    "pastirmali_kasarli_pide": { "name": "Pide Pastrami & Formaggio", "desc": "Pastrami di manzo con formaggio fuso." },
-    "tavuklu_kasarli_pide": { "name": "Pide Pollo & Formaggio", "desc": "Petto di pollo con formaggio fuso." },
-    "etli_konya": { "name": "Pide Lunga di Konya", "desc": "Sottilissima pide lunga con carne macinata." },
-    "etli_etmek": { "name": "Etli Ekmek Tradizionale", "desc": "Pane croccante con carne macinata speziata." },
-    "lahmacun_item": { "name": "Lahmacun Croccante", "desc": "Sottilissima sfoglia al forno con carne macinata speziata, prezzemolo e limone." },
-    "ozel_lahmacun": { "name": "Lahmacun all'Aglio Gaziantep", "desc": "Lahmacun di Gaziantep con aglio e carne ricca." },
-    "semiz_otu": { "name": "Meze Portulaca e Yogurt", "desc": "Portulaca fresca con yogurt all'aglio." },
-    "kuru_cacik": { "name": "Salsa Tzatziki Turca", "desc": "Yogurt denso con cetrioli, aglio e menta." },
-    "mutebbel": { "name": "Salsa Mutabbal Melanzane", "desc": "Melanzana arrostita con tahina e yogurt." },
-    "otlu_yogurtlu_meze": { "name": "Salsa Erbe & Yogurt", "desc": "Erbe fresche dell'Egeo con yogurt." },
-    "havuc_tarator": { "name": "Salsa Carote & Noci", "desc": "Carote saltate con yogurt all'aglio e noci." },
-    "koz_biberli_yogurt": { "name": "Salsa Peperoni e Yogurt", "desc": "Peperoni rossi grigliati con yogurt." },
-    "babagannush": { "name": "Baba Ghanoush", "desc": "Melanzane grigliate, peperoni, pomodori e aglio." },
-    "ezme_salata": { "name": "Salsa Piccante Ezme", "desc": "Pomodori e peperoni tritati finemente con melassa di melograno." },
-    "humus": { "name": "Hummus Classico", "desc": "Ceci frullati con tahina e olio d'oliva." },
-    "mevsim_salatasi": { "name": "Insalata di Stagione", "desc": "Lattuga croccante con condimento al limone." },
-    "coban_salata": { "name": "Insalata del Pastore", "desc": "Pomodori a cubetti, cetrioli, peperoni e prezzemolo." },
-    "cig_kofte": { "name": "Piatto Çiğköfte Vegano", "desc": "Polpette di bulgur speziato con lattuga." },
-    "icli_kofte": { "name": "Kibbeh (Pezzo)", "desc": "Guscio di bulgur croccante ripieno di carne e noci." },
-    "cacik": { "name": "Zuppa Fredda Cacık", "desc": "Yogurt con cetrioli, aglio e menta." },
-    "yogurt": { "name": "Yogurt Turco Denso", "desc": "Puro yogurt naturale denso." },
-    "kunefe": { "name": "Künefe di Hatay", "desc": "Dolce di pasta filo croccante con formaggio fuso, sciroppo caldo e pistacchi." },
-    "firin_sutlac": { "name": "Budino di Riso al Forno", "desc": "Budino di riso caramellato cotto in terracotta." },
-    "kazandibi": { "name": "Kazandibi Caramelized Pudding", "desc": "Budino al latte caramellato sul fondo." },
-    "trilece": { "name": "Torta Tres Leches Caramel", "desc": "Torta soffice ai tre latti con caramello." },
-    "cola": { "name": "Coca-Cola (33 cl)", "desc": "Lattina ghiacciata." },
-    "fanta": { "name": "Fanta (33 cl)", "desc": "Lattina ghiacciata." },
-    "sprite": { "name": "Sprite (33 cl)", "desc": "Lattina ghiacciata." },
-    "camlica": { "name": "Çamlıca Gazoz", "desc": "Gazzosa tradizionale in bottiglia." },
-    "litrelik_cola": { "name": "Coca-Cola (1 L)", "desc": "Bottiglia grande." },
-    "ayran_kucuk": { "name": "Ayran (Piccolo)", "desc": "Bevanda allo yogurt con schiuma." },
-    "ayran_litrelik": { "name": "Ayran (1 L)", "desc": "1 Litro di Ayran." },
-    "salgam": { "name": "Şalgam Succo di Rapa", "desc": "Succo di rapa tradizionale." },
-    "meyve_sulari": { "name": "Succhi di Frutta", "desc": "Pesca, amarena o misto." },
-    "ice_tea": { "name": "Tè Freddo", "desc": "Pesca o limone." },
-    "sikma_portakal": { "name": "Spremuta d'Arancia Fresca", "desc": "Spremuta d'arancia 100% naturale." },
-    "sikma_nar": { "name": "Spremuta di Melograno Fresca", "desc": "Spremuta di melograno 100% naturale." },
-    "limonata": { "name": "Limonata Fatta in Casa", "desc": "Limonata rinfrescante con menta." },
-    "soda": { "name": "Acqua Minerale Frizzante", "desc": "Acqua minerale naturale." },
-    "su": { "name": "Acqua Naturale", "desc": "Bottiglia d'acqua minerale fredda." }
+    "serpme_kahvalti": {
+      "name": "Serpme Kahvaltı (2 Kişilik)",
+      "desc": "Colazione Turca Completa (Per 2) — Per 2 persone: Formaggi locali Ezine e caciocavallo, miele e panna, marmellate artigianali, olive, uova al tegamino nel tegamino di rame e pane fresco."
+    },
+    "pacanga_boregi": {
+      "name": "Paçanga Böreği",
+      "desc": "Sfoglia Paçanga — Pasta sfoglia croccante ripiena di pastrami di manzo, formaggio fuso, pomodori e peperoni."
+    },
+    "omlet": {
+      "name": "Omlet",
+      "desc": "Omelette della Fattoria — Uova fresche cotte al burro fino a doratura."
+    },
+    "menemen": {
+      "name": "Menemen",
+      "desc": "Menemen Tradizionale — Peperoni grigliati, pomodori succosi, burro e uova nel tegamino di rame."
+    },
+    "sahanda_yumurta": {
+      "name": "Sahanda Yumurta",
+      "desc": "Uova al Tegamino di Rame — Uova fresche di fattoria cotte nel burro di pecora."
+    },
+    "sucuklu_yumurta": {
+      "name": "Sucuklu Yumurta",
+      "desc": "Uova con Salsiccia Sucuk — Salsiccia di manzo speziata e uova fresche al burro."
+    },
+    "kavurmali_yumurta": {
+      "name": "Kavurmalı Yumurta",
+      "desc": "Uova con Kavurma — Manzo brasato Kavurma con uova fresche al tegamino."
+    },
+    "kuzu_gerdan_corba": {
+      "name": "Kuzu Gerdan Çorba",
+      "desc": "Zuppa di Collo d'Agnello — Zuppa ricca e nutritiva con carne d'agnello cotta a fuoco lento."
+    },
+    "sehriyeli_tavuk_corbasi": {
+      "name": "Şehriyeli Tavuk Çorbası",
+      "desc": "Zuppa di Pollo con Pastina — Petto di pollo con pastina, limone e pepe nero."
+    },
+    "ezogelin_mercimek_corbasi": {
+      "name": "Ezogelin / Mercimek Çorbası",
+      "desc": "Zuppa Tradizionale di Lenticchie — Zuppa di lenticchie rosse servita con burro alla menta e limone."
+    },
+    "adana_urfa": {
+      "name": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)",
+      "desc": "Kebab Adana & Urfa — 140g. Carne macinata piccante (Adana) o dolce (Urfa) alla griglia. Servito con peperoni, pomodori & bulgur."
+    },
+    "mardin_kebap": {
+      "name": "Mardin Kebap",
+      "desc": "Kebab Mardin all'Aglio — 180g. Carne macinata alla griglia aromatizzata all'aglio e erbe regionali."
+    },
+    "beyti_kebap": {
+      "name": "Beyti Kebap",
+      "desc": "Beyti Kebab Wrap — 170g. Kebab arrotolato in pane sfoglia al forno con salsa al pomodoro, burro e yogurt."
+    },
+    "domatesli_kebap": {
+      "name": "Domatesli Kebap",
+      "desc": "Kebab con Pomodori — 150g. Carne macinata alternata a fette di pomodoro grigliato."
+    },
+    "patlicanli_kebap": {
+      "name": "Patlıcanlı Kebap",
+      "desc": "Kebab con Melanzane — 160g. Kebab grigliato tra fette di melanzane arrostite."
+    },
+    "kuzu_sis_kebap": {
+      "name": "Kuzu Şiş Kebap",
+      "desc": "Spiedino d'Agnello — 150g. Cubetti di agnello marinati alla griglia."
+    },
+    "ali_nazik_kebap": {
+      "name": "Ali Nazik Kebap",
+      "desc": "Ali Nazik Kebab — 150g. Carne alla griglia su puree di melanzane arrostite con yogurt e aglio."
+    },
+    "inegol_kofte": {
+      "name": "İnegöl Köfte",
+      "desc": "Polpette İnegöl — 150g. Polpette di manzo grigliate morbide e gustose."
+    },
+    "vali_kebabi": {
+      "name": "Vali Kebabı",
+      "desc": "Gran Grigliata del Governatore — 220g. Combinazione di Adana, spiedino d'agnello, spiedino di pollo e polpette."
+    },
+    "tavuk_sis_izgara": {
+      "name": "Tavuk Şiş Izgara",
+      "desc": "Spiedino di Pollo — 150g. Petto di pollo marinato e grigliato."
+    },
+    "tavuk_kanat": {
+      "name": "Tavuk Kanat",
+      "desc": "Alette di Pollo Grigliate — 170g. Alette di pollo croccanti speziate."
+    },
+    "kuzu_lokum": {
+      "name": "Kuzu Lokum",
+      "desc": "Filetto d'Agnello Lokum — 220g. Filetto d'agnello tenerissimo alla griglia."
+    },
+    "kuzu_pirzola": {
+      "name": "Kuzu Pirzola",
+      "desc": "Costolette d'Agnello — 320g. Succulente costolette d'agnello alla griglia."
+    },
+    "kiremit_kebap": {
+      "name": "Kiremit Kebap",
+      "desc": "Kebab in Terracotta — 160g. Kebab cotto in terracotta con salsa al pomodoro e formaggio fuso."
+    },
+    "iskender_kebap": {
+      "name": "İskender Kebap",
+      "desc": "İskender Kebab — 140g. Carne a fette su cubetti di pane, con salsa al pomodoro, burro fuso e yogurt."
+    },
+    "yogurtlu_kebap": {
+      "name": "Yoğurtlu Kebap",
+      "desc": "Kebab allo Yogurt — 140g. Kebab grigliato su pane croccante con yogurt."
+    },
+    "alti_ezmeli_kebap": {
+      "name": "Altı Ezmeli Kebap",
+      "desc": "Kebab su Salsa di Pomodoro — 140g. Kebab servito su salsa di pomodori e peperoni arrostiti."
+    },
+    "dana_bonfile": {
+      "name": "Dana Bonfile",
+      "desc": "Bistecca di Filetto di Manzo — 200g. Filetto di manzo frollato alla griglia."
+    },
+    "dana_cop_sis": {
+      "name": "Dana Çöp Şiş",
+      "desc": "Spiedini di Manzo — 200g. Piccoli cubetti di manzo su spiedini di legno."
+    },
+    "karisik_kebap_1": {
+      "name": "Karışık Kebap 1",
+      "desc": "Grigliata Mista 1 — 350g. Spiedino di pollo, agnello, Adana Kebab, polpetta e antipasti."
+    },
+    "karisik_kebap_2": {
+      "name": "Karışık Kebap 2",
+      "desc": "Grigliata Mista Famiglia 2 — 550g. Gran piatto di grigliata mista per 2-3 persone."
+    },
+    "mardin_kebap_menu": {
+      "name": "Mardin Kebap Menü",
+      "desc": "Menu Kebab Mardin — 180g. Kebab Mardin servito con antipasti, insalata e bevanda."
+    },
+    "tavuk_kanat_menu": {
+      "name": "Tavuk Kanat Menü",
+      "desc": "Menu Alette di Pollo — 160g. Alette di pollo con riso, antipasti e bevanda."
+    },
+    "kuzu_ciger_menu": {
+      "name": "Kuzu Ciğer Menü",
+      "desc": "Menu Fegato d'Agnello — 170g. Fegato d'agnello con cipolle al sommacco e antipasti."
+    },
+    "kuzu_sis_menu": {
+      "name": "Kuzu Şiş Kebap Menü",
+      "desc": "Menu Spiedino d'Agnello — 140g. Spiedino d'agnello con riso e bevanda."
+    },
+    "mezeli_adana_urfa": {
+      "name": "Mezeli Adana & Urfa Kebap",
+      "desc": "Adana/Urfa Kebab + 4 Antipasti — 140g. Kebab con 4 antipasti freschi e pane caldo."
+    },
+    "mezeli_dana_cop_sis": {
+      "name": "Mezeli Dana Çöp Şiş",
+      "desc": "Spiedini di Manzo + 4 Antipasti — 200g. Spiedini con 4 antipasti."
+    },
+    "mezeli_kuzu_pirzola": {
+      "name": "Mezeli Kuzu Pirzola",
+      "desc": "Costolette d'Agnello + 4 Antipasti — 320g. Costolette con 4 antipasti."
+    },
+    "mezeli_kuzu_lokum": {
+      "name": "Mezeli Kuzu Lokum",
+      "desc": "Filetto d'Agnello + 4 Antipasti — 220g. Filetto d'agnello con antipasti misti."
+    },
+    "mezeli_inegol_kofte": {
+      "name": "Mezeli İnegöl Köfte",
+      "desc": "Polpette İnegöl + Antipasti — 150g. Polpette con antipasti misti."
+    },
+    "mezeli_kuzu_sis": {
+      "name": "Mezeli Kuzu Şiş",
+      "desc": "Spiedino d'Agnello + Antipasti — 150g. Spiedino con antipasti misti."
+    },
+    "mezeli_dana_bonfile": {
+      "name": "Mezeli Dana Bonfile",
+      "desc": "Filetto di Manzo + Antipasti — 200g. Filetto con antipasti misti."
+    },
+    "mezeli_durum": {
+      "name": "Mezeli Dürüm",
+      "desc": "Wrap Kebab + Antipasto — 90g. Kebab Wrap con antipasto."
+    },
+    "mezeli_tavuk_kanat": {
+      "name": "Mezeli Tavuk Kanat",
+      "desc": "Alette di Pollo + Antipasti — 150g. Alette di pollo con antipasti."
+    },
+    "mezeli_tavuk_sis": {
+      "name": "Mezeli Tavuk Şiş",
+      "desc": "Spiedino di Pollo + Antipasti — 150g. Spiedino di pollo con antipasti."
+    },
+    "karisik_meze_tabagi": {
+      "name": "Karışık Meze Tabağı",
+      "desc": "Gran Piatto Antipasti Misti — 6 antipasti freddi turchi all'olio d'oliva."
+    },
+    "adana_durum": {
+      "name": "Adana Dürüm",
+      "desc": "Adana Kebab Wrap — 95g. Carne macinata Adana in pane sfoglia con insalata e cipolle."
+    },
+    "urfa_durum": {
+      "name": "Urfa Dürüm",
+      "desc": "Urfa Kebab Wrap — 95g. Kebab Urfa dolce arrotolato in pane sfoglia."
+    },
+    "dana_cop_sis_durum": {
+      "name": "Dana Çöp Şiş Dürüm",
+      "desc": "Wrap Spiedino di Manzo — 95g. Spiedini di manzo arrotolati in pane sfoglia."
+    },
+    "tavuk_sis_durum": {
+      "name": "Tavuk Şiş Dürüm",
+      "desc": "Wrap Spiedino di Pollo — 95g. Pollo grigliato arrotolato in pane sfoglia."
+    },
+    "kuzu_sis_durum": {
+      "name": "Kuzu Şiş Dürüm",
+      "desc": "Wrap Spiedino d'Agnello — 95g. Agnello grigliato arrotolato in pane sfoglia."
+    },
+    "kuzu_ciger_durum": {
+      "name": "Kuzu Ciğer Dürüm",
+      "desc": "Wrap Fegato d'Agnello — 95g. Fegato d'agnello con cumino e cipolle."
+    },
+    "kofte_durum": {
+      "name": "Köfte Dürüm",
+      "desc": "Wrap Polpette — 95g. Polpette grigliate in pane caldo."
+    },
+    "cigkofte_durum": {
+      "name": "Çiğköfte Dürüm",
+      "desc": "Çiğköfte Veggie Wrap — Wrap di bulgur speziato con lattuga e melassa di melograno."
+    },
+    "kasarli_pide": {
+      "name": "Kaşarlı Pide",
+      "desc": "Pide al Formaggio — Impasto croccante cotto nel forno a legna con formaggio fuso."
+    },
+    "kasarli_yumurtali_pide": {
+      "name": "Kaşarlı Yumurtalı Pide",
+      "desc": "Pide Formaggio & Uovo — Formaggio fuso e uovo fresco cotto al forno."
+    },
+    "kasarli_sucuklu_pide": {
+      "name": "Kaşarlı Sucuklu Pide",
+      "desc": "Pide Formaggio & Sucuk — Formaggio fuso e fette di salsiccia di manzo speziata."
+    },
+    "kasarli_sucuklu_yumurtali_pide": {
+      "name": "Kaşarlı Sucuklu Yumurtalı Pide",
+      "desc": "Pide Formaggio, Sucuk & Uovo — Combinazione di formaggio, salsiccia e uovo."
+    },
+    "kiymali_pide": {
+      "name": "Kıymalı Pide",
+      "desc": "Pide con Carne Macinata — Carne macinata di manzo condita con cipolle e pomodori."
+    },
+    "kiymali_kasarli_pide": {
+      "name": "Kıymalı Kaşarlı Pide",
+      "desc": "Pide Carne & Formaggio — Carne macinata con formaggio fuso."
+    },
+    "kusbasili_pide": {
+      "name": "Kuşbaşılı Pide",
+      "desc": "Pide con Manzo a Cubetti — Manzo a cubetti, peperoni e pomodori."
+    },
+    "kusbasili_kasarli_pide": {
+      "name": "Kuşbaşılı Kaşarlı Pide",
+      "desc": "Pide Manzo & Formaggio — Manzo a cubetti con formaggio fuso."
+    },
+    "kavurmali_pide": {
+      "name": "Kavurmalı Pide",
+      "desc": "Pide con Kavurma — Manzo Kavurma stufato al forno."
+    },
+    "kavurmali_kasarli_pide": {
+      "name": "Kavurmalı Kaşarlı Pide",
+      "desc": "Pide Kavurma & Formaggio — Manzo Kavurma con formaggio fuso."
+    },
+    "beyaz_peynirli_pide": {
+      "name": "Beyaz Peynirli Pide",
+      "desc": "Pide con Feta & Prezzemolo — Formaggio bianco tipo Feta con prezzemolo fresco."
+    },
+    "kasarli_mantarli_sebzeli_pide": {
+      "name": "Kaşarlı Mantarli Sebzeli Pide",
+      "desc": "Pide Funghi & Verdure — Funghi freschi, peperoni, pomodori e formaggio."
+    },
+    "pastirmali_kasarli_pide": {
+      "name": "Pastırmalı Kaşarlı Pide",
+      "desc": "Pide Pastrami & Formaggio — Pastrami di manzo con formaggio fuso."
+    },
+    "tavuklu_kasarli_pide": {
+      "name": "Tavuklu Kaşarlı Pide",
+      "desc": "Pide Pollo & Formaggio — Petto di pollo con formaggio fuso."
+    },
+    "etli_konya": {
+      "name": "Etli Konya Pidesi",
+      "desc": "Pide Lunga di Konya — Sottilissima pide lunga con carne macinata."
+    },
+    "etli_etmek": {
+      "name": "Etli Ekmek",
+      "desc": "Etli Ekmek Tradizionale — Pane croccante con carne macinata speziata."
+    },
+    "lahmacun_item": {
+      "name": "Çıtır Fırın Lahmacun",
+      "desc": "Lahmacun Croccante — Sottilissima sfoglia al forno con carne macinata speziata, prezzemolo e limone."
+    },
+    "ozel_lahmacun": {
+      "name": "Özel Sarımsaklı Lahmacun",
+      "desc": "Lahmacun all'Aglio Gaziantep — Lahmacun di Gaziantep con aglio e carne ricca."
+    },
+    "semiz_otu": {
+      "name": "Semiz Otu Mezesi",
+      "desc": "Meze Portulaca e Yogurt — Portulaca fresca con yogurt all'aglio."
+    },
+    "kuru_cacik": {
+      "name": "Kuru Cacık",
+      "desc": "Salsa Tzatziki Turca — Yogurt denso con cetrioli, aglio e menta."
+    },
+    "mutebbel": {
+      "name": "Mütebbel",
+      "desc": "Salsa Mutabbal Melanzane — Melanzana arrostita con tahina e yogurt."
+    },
+    "otlu_yogurtlu_meze": {
+      "name": "Otlu Yoğurtlu Meze",
+      "desc": "Salsa Erbe & Yogurt — Erbe fresche dell'Egeo con yogurt."
+    },
+    "havuc_tarator": {
+      "name": "Havuç Taratör",
+      "desc": "Salsa Carote & Noci — Carote saltate con yogurt all'aglio e noci."
+    },
+    "koz_biberli_yogurt": {
+      "name": "Köz Biberli Yoğurt",
+      "desc": "Salsa Peperoni e Yogurt — Peperoni rossi grigliati con yogurt."
+    },
+    "babagannush": {
+      "name": "Babagannuş",
+      "desc": "Baba Ghanoush — Melanzane grigliate, peperoni, pomodori e aglio."
+    },
+    "ezme_salata": {
+      "name": "Acılı Ezme Salata",
+      "desc": "Salsa Piccante Ezme — Pomodori e peperoni tritati finemente con melassa di melograno."
+    },
+    "humus": {
+      "name": "Sıcak/Soğuk Humus",
+      "desc": "Hummus Classico — Ceci frullati con tahina e olio d'oliva."
+    },
+    "mevsim_salatasi": {
+      "name": "Mevsim Salatası",
+      "desc": "Insalata di Stagione — Lattuga croccante con condimento al limone."
+    },
+    "coban_salata": {
+      "name": "Çoban Salata",
+      "desc": "Insalata del Pastore — Pomodori a cubetti, cetrioli, peperoni e prezzemolo."
+    },
+    "cig_kofte": {
+      "name": "Çiğ Köfte Porsiyon",
+      "desc": "Piatto Çiğköfte Vegano — Polpette di bulgur speziato con lattuga."
+    },
+    "icli_kofte": {
+      "name": "İçli Köfte (Adet)",
+      "desc": "Kibbeh (Pezzo) — Guscio di bulgur croccante ripieno di carne e noci."
+    },
+    "cacik": {
+      "name": "Cacık",
+      "desc": "Zuppa Fredda Cacık — Yogurt con cetrioli, aglio e menta."
+    },
+    "yogurt": {
+      "name": "Süzme Yoğurt",
+      "desc": "Yogurt Turco Denso — Puro yogurt naturale denso."
+    },
+    "kunefe": {
+      "name": "Hatay Künefesi",
+      "desc": "Künefe di Hatay — Dolce di pasta filo croccante con formaggio fuso, sciroppo caldo e pistacchi."
+    },
+    "firin_sutlac": {
+      "name": "Fırın Sütlaç",
+      "desc": "Budino di Riso al Forno — Budino di riso caramellato cotto in terracotta."
+    },
+    "kazandibi": {
+      "name": "Geleneksel Kazandibi",
+      "desc": "Kazandibi Caramelized Pudding — Budino al latte caramellato sul fondo."
+    },
+    "trilece": {
+      "name": "Karamelli Trileçe",
+      "desc": "Torta Tres Leches Caramel — Torta soffice ai tre latti con caramello."
+    },
+    "cola": {
+      "name": "Coca-Cola (33 cl)",
+      "desc": "Coca-Cola (33 cl) — Lattina ghiacciata."
+    },
+    "fanta": {
+      "name": "Fanta (33 cl)",
+      "desc": "Fanta (33 cl) — Lattina ghiacciata."
+    },
+    "sprite": {
+      "name": "Sprite (33 cl)",
+      "desc": "Sprite (33 cl) — Lattina ghiacciata."
+    },
+    "camlica": {
+      "name": "Çamlıca Gazoz",
+      "desc": "Çamlıca Gazoz — Gazzosa tradizionale in bottiglia."
+    },
+    "litrelik_cola": {
+      "name": "Litrelik Coca-Cola (1 L)",
+      "desc": "Coca-Cola (1 L) — Bottiglia grande."
+    },
+    "ayran_kucuk": {
+      "name": "Yayık Ayran (Küçük)",
+      "desc": "Ayran (Piccolo) — Bevanda allo yogurt con schiuma."
+    },
+    "ayran_litrelik": {
+      "name": "Yayık Ayran (1 L)",
+      "desc": "Ayran (1 L) — 1 Litro di Ayran."
+    },
+    "salgam": {
+      "name": "Şalgam Suyu",
+      "desc": "Şalgam Succo di Rapa — Succo di rapa tradizionale."
+    },
+    "meyve_sulari": {
+      "name": "Meyve Suları",
+      "desc": "Succhi di Frutta — Pesca, amarena o misto."
+    },
+    "ice_tea": {
+      "name": "Ice Tea",
+      "desc": "Tè Freddo — Pesca o limone."
+    },
+    "sikma_portakal": {
+      "name": "Taze Sıkma Portakal Suyu",
+      "desc": "Spremuta d'Arancia Fresca — Spremuta d'arancia 100% naturale."
+    },
+    "sikma_nar": {
+      "name": "Taze Sıkma Nar Suyu",
+      "desc": "Spremuta di Melograno Fresca — Spremuta di melograno 100% naturale."
+    },
+    "limonata": {
+      "name": "Ev Yapımı Limonata",
+      "desc": "Limonata Fatta in Casa — Limonata rinfrescante con menta."
+    },
+    "soda": {
+      "name": "Maden Suyu / Soda",
+      "desc": "Acqua Minerale Frizzante — Acqua minerale naturale."
+    },
+    "su": {
+      "name": "Su",
+      "desc": "Acqua Naturale — Bottiglia d'acqua minerale fredda."
+    }
   }
 }
