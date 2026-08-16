@@ -69,14 +69,14 @@ export const menuData = [
         id: "adana_urfa",
         price: 625.00,
         image: "/images/adana.webp",
-        tags: ["spicy", "signature"],
+        tags: [],
         trending: true,
       },
       {
         id: "mardin_kebap",
         price: 750.00,
         image: "/images/12-Mardin-Kebap.webp",
-        tags: ["signature"],
+        tags: [],
         trending: true,
       },
       {
@@ -120,7 +120,8 @@ export const menuData = [
         id: "vali_kebabi",
         price: 870.00,
         image: "/images/17-Vali-Kebabi.webp",
-        tags: ["signature"],
+        tags: [],
+        trending: true,
       },
       {
         id: "tavuk_sis_izgara",
