@@ -48,12 +48,6 @@ export const menuData = [
         tags: [],
       },
       {
-        id: "kuzu_gerdan_corba",
-        price: 330.00,
-        image: "/images/8-Kuzu-Gerdan-Corba.webp",
-        tags: ["signature"],
-      },
-      {
         id: "sehriyeli_tavuk_corbasi",
         price: 180.00,
         image: "/images/9-Sehriyeli-Tavuk-Corbasi.webp",
