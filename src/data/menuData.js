@@ -77,12 +77,14 @@ export const menuData = [
         price: 750.00,
         image: "/images/12-Mardin-Kebap.webp",
         tags: ["signature"],
+        trending: true,
       },
       {
         id: "beyti_kebap",
         price: 730.00,
         image: "/images/beyti-1024x677.webp",
         tags: [],
+        trending: true,
       },
       {
         id: "domatesli_kebap",
