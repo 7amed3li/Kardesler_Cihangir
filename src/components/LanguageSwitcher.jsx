@@ -37,6 +37,11 @@ export default function LanguageSwitcher() {
     pathname.endsWith("/turkish-breakfast-cihangir")
   );
 
+  const isMenu = pathname && (
+    pathname === "/menu" ||
+    pathname.endsWith("/menu")
+  );
+
   const selectLang = (code) => {
     changeLang(code);
     setIsOpen(false);
@@ -56,6 +61,11 @@ export default function LanguageSwitcher() {
       }
     } else if (isBreakfastLanding) {
       const targetUrl = code === "en" ? "/turkish-breakfast-cihangir" : `/${code}/turkish-breakfast-cihangir`;
+      if (pathname !== targetUrl) {
+        router.push(targetUrl);
+      }
+    } else if (isMenu) {
+      const targetUrl = code === "en" ? "/menu" : `/${code}/menu`;
       if (pathname !== targetUrl) {
         router.push(targetUrl);
       }

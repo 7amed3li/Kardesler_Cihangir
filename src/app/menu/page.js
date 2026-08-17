@@ -12,6 +12,7 @@ const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr:
 import { ChevronLeft, ChevronRight, ChevronDown, Plus, Minus, Check, UtensilsCrossed, Coffee } from "lucide-react";
 import { OttomanSeal, OttomanStar, KebabSkewer } from "@/components/BrandIcons";
 import Link from "next/link";
+import DeepMenuSchema from "@/components/DeepMenuSchema";
 
 // ─── Breakfast Cross-Link Banner (shown on /menu) ───
 function BreakfastBanner() {
@@ -391,6 +392,7 @@ export default function MenuPage() {
 
   return (
     <div className="pb-12 bg-[#EDE3CE] min-h-screen text-[#2B2620] font-sans">
+      <DeepMenuSchema locale="en" />
       
       {/* ═══════════════════════════════════════════
           APPETITE-INDUCING SIGNATURE SPECIALS HERO

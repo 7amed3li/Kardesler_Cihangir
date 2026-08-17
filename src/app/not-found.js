@@ -69,7 +69,7 @@ const notFoundI18n = {
 };
 
 export default function NotFound() {
-  const { lang, setLang } = useAppContext();
+  const { lang, changeLang } = useAppContext();
   const t = notFoundI18n[lang] || notFoundI18n.tr;
   const isRTL = lang === "ar" || lang === "fa";
 
@@ -99,7 +99,7 @@ export default function NotFound() {
             {languages.map((l) => (
               <button
                 key={l.code}
-                onClick={() => setLang(l.code)}
+                onClick={() => changeLang(l.code)}
                 className={`px-2 py-0.5 rounded-md text-[11px] font-bold transition-colors ${
                   lang === l.code
                     ? "bg-[#4E5F4C] text-[#EAF0E6]"

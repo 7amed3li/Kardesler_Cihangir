@@ -80,6 +80,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
   return (
     <>
       <div
+        id={item.id}
         dir={isRTL ? "rtl" : "ltr"}
         className={`group relative rounded-xl bg-[#F7F2E7] ${
           isFeatured

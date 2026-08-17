@@ -28,12 +28,40 @@ export default function sitemap() {
         },
       },
     },
-    {
-      url: `${baseUrl}/menu`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.95,
-    },
+    // ── Localized Menu Pages ──
+    ...(() => {
+      const menuAlternates = {
+        en: `${baseUrl}/menu`,
+        ar: `${baseUrl}/ar/menu`,
+        tr: `${baseUrl}/tr/menu`,
+        ru: `${baseUrl}/ru/menu`,
+        fa: `${baseUrl}/fa/menu`,
+        fr: `${baseUrl}/fr/menu`,
+        de: `${baseUrl}/de/menu`,
+        it: `${baseUrl}/it/menu`,
+        es: `${baseUrl}/es/menu`,
+        zh: `${baseUrl}/zh/menu`,
+      };
+      const menuPages = [
+        { url: `${baseUrl}/menu`, priority: 0.95 },
+        { url: `${baseUrl}/ar/menu`, priority: 0.95 },
+        { url: `${baseUrl}/tr/menu`, priority: 0.95 },
+        { url: `${baseUrl}/ru/menu`, priority: 0.95 },
+        { url: `${baseUrl}/fa/menu`, priority: 0.95 },
+        { url: `${baseUrl}/fr/menu`, priority: 0.95 },
+        { url: `${baseUrl}/de/menu`, priority: 0.95 },
+        { url: `${baseUrl}/it/menu`, priority: 0.95 },
+        { url: `${baseUrl}/es/menu`, priority: 0.95 },
+        { url: `${baseUrl}/zh/menu`, priority: 0.95 },
+      ];
+      return menuPages.map(p => ({
+        url: p.url,
+        lastModified: currentDate,
+        changeFrequency: 'daily',
+        priority: p.priority,
+        alternates: { languages: menuAlternates },
+      }));
+    })(),
     {
       url: `${baseUrl}/best-kebab-taksim`,
       lastModified: currentDate,
