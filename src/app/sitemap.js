@@ -1,3 +1,5 @@
+import { menuData } from "@/data/menuData";
+
 export default function sitemap() {
   const baseUrl = 'https://kardeslercihangir.com';
   const currentDate = new Date();
@@ -175,6 +177,33 @@ export default function sitemap() {
           en: `${baseUrl}/en/design-development`,
         },
       },
-    }
+    },
+    // ── Dynamic Dish Pages ──
+    ...(() => {
+      const locales = ["en", "ar", "tr", "ru", "fa", "fr", "de", "it", "es", "zh"];
+      const dishPages = [];
+
+      menuData.forEach(category => {
+        category.items.forEach(item => {
+          if (!item.id) return;
+
+          const dishAlternates = {};
+          locales.forEach(loc => {
+            dishAlternates[loc] = loc === "en" ? `${baseUrl}/dish/${item.id}` : `${baseUrl}/${loc}/dish/${item.id}`;
+          });
+
+          locales.forEach(loc => {
+            dishPages.push({
+              url: loc === "en" ? `${baseUrl}/dish/${item.id}` : `${baseUrl}/${loc}/dish/${item.id}`,
+              lastModified: currentDate,
+              changeFrequency: 'weekly',
+              priority: 0.8,
+              alternates: { languages: dishAlternates },
+            });
+          });
+        });
+      });
+      return dishPages;
+    })(),
   ];
 }

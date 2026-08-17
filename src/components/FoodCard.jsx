@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppContext } from "../context/AppContext";
-import { X, ZoomIn, Plus, Minus, ShoppingBag } from "lucide-react";
+import { X, ZoomIn, Plus, Minus, ShoppingBag, Share2, Check } from "lucide-react";
 import Image from "next/image";
 
 /**
@@ -64,6 +64,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -76,6 +77,19 @@ export default function FoodCard({ item, index, isVertical = false }) {
   const symbol = getCurrencySymbol();
   const qty = getItemQuantity(item.id);
   const isFeatured = item.tags?.includes("signature") || item.trending;
+
+  const handleCopyLink = async (e) => {
+    e.stopPropagation();
+    try {
+      const baseUrl = window.location.origin;
+      const dishUrl = lang === "en" ? `/dish/${item.id}` : `/${lang}/dish/${item.id}`;
+      await navigator.clipboard.writeText(`${baseUrl}${dishUrl}`);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy link:", err);
+    }
+  };
 
   return (
     <>
@@ -184,14 +198,24 @@ export default function FoodCard({ item, index, isVertical = false }) {
             className="bg-[#F7F2E7] rounded-2xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-xl relative border border-[#9C7A3F]/30"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
-            <button
-              onClick={() => setIsModalOpen(false)}
-              aria-label="Close modal"
-              className="absolute top-4 end-4 z-50 w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-colors border border-[#9C7A3F]/20"
-            >
-              <X size={18} />
-            </button>
+            {/* Action Buttons: Share & Close */}
+            <div className="absolute top-4 end-4 z-50 flex items-center gap-2">
+              <button
+                onClick={handleCopyLink}
+                aria-label="Copy link to dish"
+                className="w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] hover:bg-[#F7F2E7] transition-all border border-[#9C7A3F]/20 shadow-sm"
+              >
+                {isCopied ? <Check size={16} className="text-green-600" /> : <Share2 size={16} />}
+              </button>
+              
+              <button
+                onClick={() => setIsModalOpen(false)}
+                aria-label="Close modal"
+                className="w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] hover:bg-[#F7F2E7] transition-all border border-[#9C7A3F]/20 shadow-sm"
+              >
+                <X size={18} />
+              </button>
+            </div>
 
             {/* Modal Image */}
             {item.image && (
