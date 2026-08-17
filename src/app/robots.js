@@ -41,6 +41,8 @@ export default function robots() {
     "/author/",
     "/tag/",
     "/api/",
+    "/*?*add-to-cart*",
+    "/*?*wc-ajax*",
   ];
 
   return {
