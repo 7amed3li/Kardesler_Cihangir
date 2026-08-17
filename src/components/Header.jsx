@@ -22,6 +22,19 @@ export default function Header() {
     en: "/best-kebab-taksim",
   }[lang] || "/best-kebab-taksim";
 
+  const breakfastHref = {
+    tr: "/tr/turkish-breakfast-cihangir",
+    ar: "/ar/turkish-breakfast-cihangir",
+    ru: "/ru/turkish-breakfast-cihangir",
+    fa: "/fa/turkish-breakfast-cihangir",
+    fr: "/fr/turkish-breakfast-cihangir",
+    it: "/it/turkish-breakfast-cihangir",
+    es: "/es/turkish-breakfast-cihangir",
+    de: "/de/turkish-breakfast-cihangir",
+    zh: "/zh/turkish-breakfast-cihangir",
+    en: "/turkish-breakfast-cihangir",
+  }[lang] || "/turkish-breakfast-cihangir";
+
   const getNavLabel = (key) => {
     if (key === "home") {
       if (lang === "ar") return "الرئيسية";
@@ -82,6 +95,18 @@ export default function Header() {
       if (lang === "fr") return "Guide Meilleur Kebab Taksim";
       if (lang === "ru") return "Гид по лучшему кебабу";
       return "Best Kebab Taksim Guide";
+    }
+    if (key === "breakfastGuide") {
+      if (lang === "ar") return "أفضل فطور تركي";
+      if (lang === "zh") return "最佳土耳其早餐";
+      if (lang === "de") return "Bestes Türkisches Frühstück";
+      if (lang === "it") return "Miglior Colazione Turca";
+      if (lang === "es") return "Mejor Desayuno Turco";
+      if (lang === "tr") return "En İyi Türk Kahvaltısı";
+      if (lang === "fa") return "بهترین صبحانه ترکی";
+      if (lang === "fr") return "Meilleur Petit Déjeuner Turc";
+      if (lang === "ru") return "Лучший турецкий завтрак";
+      return "Best Turkish Breakfast";
     }
     return "";
   };
@@ -185,6 +210,14 @@ export default function Header() {
                     >
                       <span className="w-2 h-2 rounded-full bg-[#9C7A3F]"></span>
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("taksimGuide")}</span>
+                    </Link>
+                    <Link 
+                      href={breakfastHref} 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="px-4 py-2.5 flex items-center gap-3 text-xs text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors font-bold"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-[#9C7A3F]"></span>
+                      <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("breakfastGuide")}</span>
                     </Link>
                   </div>
                 </div>
