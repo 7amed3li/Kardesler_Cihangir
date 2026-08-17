@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppContext } from "../context/AppContext";
-import { X, ZoomIn, Plus, Minus, ShoppingBag, Share2, Check } from "lucide-react";
+import { X, ZoomIn, Plus, Minus, ShoppingBag, Share2, Check, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 /**
@@ -119,6 +119,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
               />
             </div>
 
+
             {/* Price Tag — Compact flat badge */}
             <div className="absolute top-2 start-2 z-20 flex items-center pointer-events-none">
               <span className="flex items-center px-2.5 py-1 rounded-[4px] bg-[#9C7A3F] text-[#EAF0E6] font-bold text-xs tracking-wide shadow-xs" style={{ fontFamily: "var(--font-inter)" }}>
@@ -154,12 +155,18 @@ export default function FoodCard({ item, index, isVertical = false }) {
         >
           {/* Top part — clickable for modal */}
           <div 
-            className="cursor-pointer flex-1 text-start"
+            className="cursor-pointer flex-1 text-start flex flex-col"
             onClick={() => setIsModalOpen(true)}
           >
-            <h3 className="font-bold text-base md:text-lg text-[#2B2620] leading-tight mb-1 truncate md:whitespace-normal group-hover:text-[#9C7A3F] transition-colors text-start" style={{ fontFamily: "var(--font-cairo)" }}>
-              {name}
-            </h3>
+            <div className="flex items-start justify-between gap-2 mb-1">
+              <h3 className="font-bold text-base md:text-lg text-[#2B2620] leading-tight truncate md:whitespace-normal group-hover:text-[#9C7A3F] transition-colors text-start" style={{ fontFamily: "var(--font-cairo)" }}>
+                {name}
+              </h3>
+              {/* Click Affordance Chevron */}
+              <div className="shrink-0 w-6 h-6 rounded-full bg-[#9C7A3F]/10 flex items-center justify-center text-[#9C7A3F] group-hover:bg-[#9C7A3F] group-hover:text-white transition-colors">
+                <ArrowUpRight size={14} className={`transition-transform ${isRTL ? "-scale-x-100" : ""}`} />
+              </div>
+            </div>
             {description && (
               <p className="text-xs md:text-sm text-[#7A7364] mt-1 line-clamp-2 leading-relaxed font-medium text-start" style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}>
                 {description}
