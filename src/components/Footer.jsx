@@ -143,6 +143,28 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href={
+                    { tr: "/tr/turkish-breakfast-cihangir", ar: "/ar/turkish-breakfast-cihangir", ru: "/ru/turkish-breakfast-cihangir", fa: "/fa/turkish-breakfast-cihangir", fr: "/fr/turkish-breakfast-cihangir", de: "/de/turkish-breakfast-cihangir", it: "/it/turkish-breakfast-cihangir", es: "/es/turkish-breakfast-cihangir", zh: "/zh/turkish-breakfast-cihangir", en: "/turkish-breakfast-cihangir" }[lang] || "/turkish-breakfast-cihangir"
+                  }
+                  className="text-[#9C7A3F] font-bold hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  <ArrowIcon size={13} className="text-[#9C7A3F]" />
+                  <span className="underline underline-offset-4 decoration-[#9C7A3F]/50 group-hover:decoration-[#2B2620]">
+                    {lang === "ar" ? "استكشف الإفطار التركي" :
+                     lang === "tr" ? "Türk Kahvaltısını Keşfet" :
+                     lang === "ru" ? "Турецкий завтрак" :
+                     lang === "fa" ? "صبحانه ترکی" :
+                     lang === "fr" ? "Petit-déjeuner turc" :
+                     lang === "de" ? "Türkisches Frühstück" :
+                     lang === "it" ? "Colazione turca" :
+                     lang === "es" ? "Desayuno turco" :
+                     lang === "zh" ? "土耳其早餐" :
+                     "Explore Turkish Breakfast"}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about"
                   className="text-[#7A7364] hover:text-[#2B2620] font-medium transition-colors inline-flex items-center gap-1.5 group"
                 >
@@ -168,13 +190,13 @@ export default function Footer() {
                   <ArrowIcon size={13} className="text-[#9C7A3F]" />
                   <span>
                     {fc.contact || (
-                      lang === "ar" ? "التواصل والحجز" :
-                      lang === "zh" ? "联系与预订" :
-                      lang === "de" ? "Kontakt & Reservierung" :
-                      lang === "it" ? "Contatti e Prenotazioni" :
-                      lang === "es" ? "Contacto y Reserva" :
-                      lang === "tr" ? "İletişim & Rezervasyon" :
-                      "Contact & Reservation"
+                      lang === "ar" ? "التواصل" :
+                      lang === "zh" ? "联系我们" :
+                      lang === "de" ? "Kontakt" :
+                      lang === "it" ? "Contatti" :
+                      lang === "es" ? "Contacto" :
+                      lang === "tr" ? "İletişim" :
+                      "Contact Us"
                     )}
                   </span>
                 </Link>

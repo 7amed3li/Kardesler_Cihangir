@@ -28,18 +28,49 @@ export const metadata = {
   description:
     "Authentic Turkish cuisine in the heart of Cihangir, 5 min from Taksim Square. 100+ dishes — Adana kebab, pide, lahmacun, mezes & more. Open daily 09:00-02:00.",
   keywords: [
+    // Core Brand & Location
     "Kardeşler Cihangir",
+    "Kardesler Kebap Cihangir",
+    "Cihangir restaurant",
     "kebab Istanbul",
     "pide Cihangir",
-    "Turkish restaurant",
+    "Turkish restaurant Beyoğlu",
+    "Firuzağa mahallesi",
+    // Breakfast Specific
+    "turkish breakfast cihangir",
+    "authentic serpme kahvalti istanbul",
+    "breakfast near taksim square",
+    "traditional turkish breakfast beyoglu",
+    "menemen istanbul",
+    "halal breakfast taksim",
+    "cihangir cafes",
+    "family breakfast istanbul",
+    // Kebab & Dining Specific
     "best kebab taksim",
-    "Beyoğlu restaurant",
-    "Adana kebab",
-    "lahmacun",
-    "Firuzağa",
+    "adana kebab istanbul",
+    "wood fired kebab beyoglu",
     "halal restaurant istanbul",
+    "stone oven pide",
+    "lahmacun taksim",
+    "authentic anatolian cuisine",
+    "charcoal grilled meat",
+    "best doner taksim",
+    "late night food taksim",
+    "affordable restaurant taksim",
+    // Tourist & Landmarks
+    "restaurants near galata tower",
+    "best restaurants in istiklal street",
+    "food near galataport",
+    "where to eat in taksim",
+    "istanbul food guide",
+    // Multi-lang support
     "أفضل كباب تقسيم",
+    "مطعم تركي حلال جيهانكير",
+    "فطور تركي أصيل إسطنبول",
     "лучший кебаб Таксим",
+    "турецкий завтрак Стамбул",
+    "کباب حلال تکسیم",
+    "petit déjeuner turc istanbul",
   ],
   icons: {
     icon: "/logo.webp",
@@ -278,6 +309,19 @@ export default function RootLayout({ children }) {
       className={`h-full antialiased ${cairo.variable} ${inter.variable}`}
     >
       <head>
+        {/* ── Google Tag Manager (placeholder — replace GTM-XXXXXXX with your ID) ── */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');`,
+          }}
+        />
+        {/* ── GA4 gtag.js (placeholder — replace G-XXXXXXXXXX with your Measurement ID) ── */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -286,6 +330,15 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#EDE3CE] text-[#2B2620] font-[var(--font-inter)]" suppressHydrationWarning>
+        {/* GTM noscript fallback */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <AppProvider>
           <SmartSplash />
           <Analytics />

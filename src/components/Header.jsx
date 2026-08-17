@@ -5,14 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
-import ReservationModal from "./ReservationModal";
 import { useAppContext } from "../context/AppContext";
 import { Menu, Home, Info, Phone, UtensilsCrossed, Calendar } from "lucide-react";
 
 export default function Header() {
   const { t, lang } = useAppContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isReservationOpen, setIsReservationOpen] = useState(false);
   const menuRef = useRef(null);
 
   const guideHref = {
@@ -23,19 +21,6 @@ export default function Header() {
     fr: "/fr/best-kebab-taksim",
     en: "/best-kebab-taksim",
   }[lang] || "/best-kebab-taksim";
-
-  const reserveText = {
-    tr: "Rezervasyon",
-    en: "Reserve",
-    ar: "حجز طاولة",
-    ru: "Столик",
-    fa: "رزرو میز",
-    fr: "Réserver",
-    de: "Reservieren",
-    it: "Prenota",
-    es: "Reservar",
-    zh: "预订餐桌",
-  }[lang] || "Reserve";
 
   const getNavLabel = (key) => {
     if (key === "home") {
@@ -140,17 +125,7 @@ export default function Header() {
           </Link>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            {/* Quick Table Reservation Button (Desktop/Tablet) */}
-            <button
-              onClick={() => setIsReservationOpen(true)}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-semibold text-xs tracking-wider uppercase transition-colors"
-            >
-              <Calendar size={13} className="text-white" />
-              <span>{reserveText}</span>
-            </button>
-
-            <CurrencySwitcher />
+          <div className="flex items-center gap-1.5 sm:gap-2">            <CurrencySwitcher />
             <LanguageSwitcher />
 
             {/* Navigation Menu */}
@@ -170,21 +145,7 @@ export default function Header() {
               {/* Dropdown */}
               {isMenuOpen && (
                 <div className="absolute end-0 mt-2 w-56 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-lg overflow-hidden z-50 animate-fadeIn">
-                  <div className="py-2 flex flex-col">
-                    <button
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsReservationOpen(true);
-                      }}
-                      className="px-4 py-2.5 flex items-center gap-3 text-xs font-bold text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors text-start w-full uppercase tracking-wider"
-                    >
-                      <Calendar size={15} className="text-[#9C7A3F]" />
-                      <span style={{ fontFamily: "var(--font-cairo)" }}>{reserveText}</span>
-                    </button>
-
-                    <div className="h-px bg-[#9C7A3F]/20 my-1"></div>
-
-                    <Link 
+                  <div className="py-2 flex flex-col">                    <Link 
                       href="/" 
                       onClick={() => setIsMenuOpen(false)}
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
@@ -232,12 +193,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
-      {/* Reservation Modal */}
-      <ReservationModal
-        isOpen={isReservationOpen}
-        onClose={() => setIsReservationOpen(false)}
-      />
     </>
   );
 }

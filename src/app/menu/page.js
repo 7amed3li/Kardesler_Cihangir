@@ -11,6 +11,44 @@ import dynamic from "next/dynamic";
 const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: true });
 import { ChevronLeft, ChevronRight, ChevronDown, Plus, Minus, Check, UtensilsCrossed, Coffee } from "lucide-react";
 import { OttomanSeal, OttomanStar, KebabSkewer } from "@/components/BrandIcons";
+import Link from "next/link";
+
+// ─── Breakfast Cross-Link Banner (shown on /menu) ───
+function BreakfastBanner() {
+  const { lang } = useAppContext();
+  const breakfastHref = {
+    tr: "/tr/turkish-breakfast-cihangir", ar: "/ar/turkish-breakfast-cihangir",
+    ru: "/ru/turkish-breakfast-cihangir", fa: "/fa/turkish-breakfast-cihangir",
+    fr: "/fr/turkish-breakfast-cihangir", de: "/de/turkish-breakfast-cihangir",
+    it: "/it/turkish-breakfast-cihangir", es: "/es/turkish-breakfast-cihangir",
+    zh: "/zh/turkish-breakfast-cihangir", en: "/turkish-breakfast-cihangir",
+  }[lang] || "/turkish-breakfast-cihangir";
+
+  const label = lang === "ar" ? "استكشف الإفطار التركي ←" :
+    lang === "tr" ? "Türk Kahvaltısını Keşfet →" :
+    lang === "ru" ? "Турецкий завтрак →" :
+    lang === "fa" ? "صبحانه ترکی ←" :
+    lang === "fr" ? "Découvrir le petit-déjeuner turc →" :
+    lang === "de" ? "Türkisches Frühstück entdecken →" :
+    lang === "it" ? "Scopri la colazione turca →" :
+    lang === "es" ? "Descubre el desayuno turco →" :
+    lang === "zh" ? "探索土耳其早餐 →" :
+    "Explore Our Turkish Breakfast →";
+
+  return (
+    <div className="max-w-5xl mx-auto px-3 sm:px-6 py-3">
+      <Link
+        href={breakfastHref}
+        className="flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/25 hover:border-[#9C7A3F]/50 hover:bg-[#9C7A3F]/5 transition-all group"
+      >
+        <Coffee size={16} className="text-[#9C7A3F]" />
+        <span className="text-sm font-semibold text-[#9C7A3F] group-hover:text-[#7A5F2E] transition-colors">
+          {label}
+        </span>
+      </Link>
+    </div>
+  );
+}
 
 // ─── Real Signature Dishes with Authentic Photos & Official Prices ───
 const featuredDishes = [
@@ -361,6 +399,9 @@ export default function MenuPage() {
         onExplore={scrollToMenu} 
         onSelectCategory={handleCategorySelect} 
       />
+
+      {/* ── Breakfast Cross-Link Banner ── */}
+      <BreakfastBanner />
 
       {/* ═══════════════════════════════════════════
           STICKY CATEGORY TABS & SMART FILTERS

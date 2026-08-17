@@ -27,16 +27,21 @@ export default function LanguageSwitcher() {
 
   const currentLangObj = languagesConfig.find((l) => l.code === lang) || languagesConfig[0];
 
-  const isLandingPage = pathname && (
+  const isKebabLanding = pathname && (
     pathname === "/best-kebab-taksim" ||
     pathname.endsWith("/best-kebab-taksim")
+  );
+
+  const isBreakfastLanding = pathname && (
+    pathname === "/turkish-breakfast-cihangir" ||
+    pathname.endsWith("/turkish-breakfast-cihangir")
   );
 
   const selectLang = (code) => {
     changeLang(code);
     setIsOpen(false);
 
-    if (isLandingPage) {
+    if (isKebabLanding) {
       const targetRoutes = {
         tr: "/tr/best-kebab-taksim",
         en: "/best-kebab-taksim",
@@ -46,6 +51,11 @@ export default function LanguageSwitcher() {
         fr: "/fr/best-kebab-taksim",
       };
       const targetUrl = targetRoutes[code] || "/best-kebab-taksim";
+      if (pathname !== targetUrl) {
+        router.push(targetUrl);
+      }
+    } else if (isBreakfastLanding) {
+      const targetUrl = code === "en" ? "/turkish-breakfast-cihangir" : `/${code}/turkish-breakfast-cihangir`;
       if (pathname !== targetUrl) {
         router.push(targetUrl);
       }
