@@ -74,6 +74,7 @@ export const metadata = {
   alternates: {
     canonical: "https://kardeslercihangir.com/best-kebab-taksim",
     languages: {
+      "x-default": "https://kardeslercihangir.com/best-kebab-taksim",
       en: "https://kardeslercihangir.com/best-kebab-taksim",
       ar: "https://kardeslercihangir.com/ar/best-kebab-taksim",
       tr: "https://kardeslercihangir.com/tr/best-kebab-taksim",

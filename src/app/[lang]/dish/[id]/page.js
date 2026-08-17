@@ -66,13 +66,27 @@ export async function generateMetadata({ params }) {
     alternates.languages[l] = `${siteUrl}/${l}/dish/${id}`;
   });
 
+  const seoPrefix = {
+    en: "Best", tr: "Cihangir'in En İyi", ar: "أفضل", ru: "Лучший", 
+    fr: "Meilleur", fa: "بهترین", de: "Beste", it: "Il Miglior", es: "Mejor", zh: "最好的"
+  };
+  const inCihangir = {
+    en: "in Cihangir", tr: "", ar: "في جيهانغير", ru: "в Джихангире", 
+    fr: "à Cihangir", fa: "در جیهانگیر", de: "in Cihangir", it: "a Cihangir", es: "en Cihangir", zh: "在吉汉吉尔"
+  };
+
+  const prefix = seoPrefix[lang] || seoPrefix.en;
+  const suffix = inCihangir[lang] || inCihangir.en;
+  const seoTitle = lang === 'tr' ? `${prefix} ${itemName} | Kardeşler Kebap` : `${prefix} ${itemName} ${suffix} | Kardeşler Cihangir`;
+  const seoDesc = itemDesc ? `${itemDesc} - ${seoTitle}` : `Enjoy the ${prefix.toLowerCase()} ${itemName} ${suffix} at Kardeşler Kebap Cihangir Restaurant.`;
+
   return {
-    title: `${itemName} | Kardeşler Cihangir`,
-    description: itemDesc || `Delicious ${itemName} at Kardeşler Cihangir Restaurant.`,
+    title: seoTitle,
+    description: seoDesc,
     alternates,
     openGraph: {
-      title: `${itemName} | Kardeşler Cihangir`,
-      description: itemDesc,
+      title: seoTitle,
+      description: seoDesc,
       url: `${siteUrl}/${lang}/dish/${id}`,
       images: itemData.image ? [{ url: `${siteUrl}${itemData.image}` }] : [],
     }

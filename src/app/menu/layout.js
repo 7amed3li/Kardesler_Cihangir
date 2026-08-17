@@ -26,6 +26,19 @@ export const metadata = {
   ],
   alternates: {
     canonical: "https://kardeslercihangir.com/menu",
+    languages: {
+      "x-default": "https://kardeslercihangir.com/menu",
+      en: "https://kardeslercihangir.com/menu",
+      ar: "https://kardeslercihangir.com/ar/menu",
+      tr: "https://kardeslercihangir.com/tr/menu",
+      ru: "https://kardeslercihangir.com/ru/menu",
+      fa: "https://kardeslercihangir.com/fa/menu",
+      fr: "https://kardeslercihangir.com/fr/menu",
+      de: "https://kardeslercihangir.com/de/menu",
+      it: "https://kardeslercihangir.com/it/menu",
+      es: "https://kardeslercihangir.com/es/menu",
+      zh: "https://kardeslercihangir.com/zh/menu",
+    },
   },
   openGraph: {
     title: "Menu | Kardeşler Cihangir — Kebap, Lahmacun & Pide",

@@ -63,11 +63,47 @@ export default function DeepMenuSchema({ locale = "en" }) {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Menu",
-    "name": `Kardeşler Kebap & Breakfast - Menu (${locale.toUpperCase()})`,
-    "url": menuUrl,
-    "mainEntityOfPage": menuUrl,
-    "hasMenuSection": hasMenuSection
+    "@type": "Restaurant",
+    "name": "Kardeşler Kebap Cihangir",
+    "image": `${baseUrl}/logo.webp`,
+    "url": baseUrl,
+    "telephone": "+902122441998",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
+      "addressLocality": "Cihangir, Beyoğlu",
+      "addressRegion": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.0317, 
+      "longitude": 28.9840
+    },
+    "servesCuisine": ["Turkish", "Kebabs", "Breakfast", "Lahmacun"],
+    "foundingDate": "1998",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "23:59"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "description": "Breakfast Hours",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "15:00"
+      }
+    ],
+    "hasMenu": {
+      "@type": "Menu",
+      "name": `Kardeşler Kebap & Breakfast - Menu (${locale.toUpperCase()})`,
+      "url": menuUrl,
+      "mainEntityOfPage": menuUrl,
+      "hasMenuSection": hasMenuSection
+    }
   };
 
   return (

@@ -22,6 +22,18 @@ const nextConfig = {
   // 301 Permanent Redirects for legacy WordPress / WooCommerce URLs
   async redirects() {
     return [
+      // Domain Canonicalization: non-www to www
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'kardeslercihangir.com',
+          },
+        ],
+        destination: 'https://www.kardeslercihangir.com/:path*',
+        permanent: true,
+      },
       // Old WordPress WooCommerce product pages -> /menu
       {
         source: "/urun/:slug*",
