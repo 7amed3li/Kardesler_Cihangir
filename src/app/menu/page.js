@@ -73,7 +73,7 @@ const featuredDishes = [
     menuItemId: "serpme_kahvalti",
     categoryId: "kahvalti",
     price: 900.0,
-    image: "/images/kahvalti.webp",
+    image: "/images/Serpme-Kahvalti-2-Kisilik.webp",
     badgeKey: "signature",
     defaultBadge: "ZENGİN SERPME"
   },

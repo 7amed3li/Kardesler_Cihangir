@@ -6,7 +6,7 @@ export const menuData = [
       {
         id: "serpme_kahvalti",
         price: 900.00,
-        image: "/images/kahvalti.webp",
+        image: "/images/Serpme-Kahvalti-2-Kisilik.webp",
         tags: ["signature"],
         trending: true,
       },

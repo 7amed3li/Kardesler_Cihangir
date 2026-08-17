@@ -123,7 +123,7 @@ const globalSchemaGraph = {
         },
         {
           "@type": "ImageObject",
-          url: `${siteUrl}/images/kahvalti.webp`,
+          url: `${siteUrl}/images/Serpme-Kahvalti-2-Kisilik.webp`,
           caption: "Traditional Turkish Breakfast at Kardeşler Cihangir",
           width: 1024,
           height: 677,
@@ -253,7 +253,7 @@ const globalSchemaGraph = {
       image: [
         `${siteUrl}/images/hero-bg.webp`,
         `${siteUrl}/images/adana.webp`,
-        `${siteUrl}/images/kahvalti.webp`,
+        `${siteUrl}/images/Serpme-Kahvalti-2-Kisilik.webp`,
         `${siteUrl}/images/lahmacun.webp`,
         `${siteUrl}/images/kasarli_pide.webp`,
         `${siteUrl}/images/27-Karisik-Kebap_1.webp`,
