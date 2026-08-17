@@ -390,6 +390,11 @@ export default function MenuPage() {
     scrollToMenu();
   };
 
+  const handleFilterSelect = (filter) => {
+    setActiveFilter(filter);
+    scrollToMenu();
+  };
+
   return (
     <div className="pb-12 bg-[#EDE3CE] min-h-screen text-[#2B2620] font-sans">
       <DeepMenuSchema locale="en" />
@@ -405,19 +410,22 @@ export default function MenuPage() {
       {/* ── Breakfast Cross-Link Banner ── */}
       <BreakfastBanner />
 
+      {/* Anchor for scrolling */}
+      <div ref={menuSectionRef} className="invisible h-0 w-0 -mt-20 pt-20"></div>
+
       {/* ═══════════════════════════════════════════
           STICKY CATEGORY TABS & SMART FILTERS
           ═══════════════════════════════════════════ */}
-      <div ref={menuSectionRef} className="sticky top-[56px] z-30 shadow-sm">
+      <div className="sticky top-[56px] z-30 shadow-sm">
         <MenuCategoryBar 
           categories={menuData} 
           activeCategory={activeCategory} 
-          setActiveCategory={setActiveCategory} 
+          setActiveCategory={handleCategorySelect} 
         />
         
         {/* Smart Filters */}
         <div className="bg-[#F7F2E7] border-b border-[#9C7A3F]/20 py-1">
-          <SmartFilters activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
+          <SmartFilters activeFilter={activeFilter} setActiveFilter={handleFilterSelect} />
         </div>
       </div>
 
