@@ -36,7 +36,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { lang, id } = params;
+  const { lang, id } = await params;
   
   let itemData = null;
   for (const cat of menuData) {
@@ -79,8 +79,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function DishPage({ params }) {
-  const { lang, id } = params;
+export default async function DishPage({ params }) {
+  const { lang, id } = await params;
   
   let itemData = null;
   let categoryData = null;
@@ -164,16 +164,6 @@ export default function DishPage({ params }) {
               </p>
             )}
 
-            <div className="mt-auto">
-              <a 
-                href={RESTAURANT_INFO.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-bold text-sm uppercase tracking-widest transition-all shadow-md"
-              >
-                {lang === "tr" ? "Sipariş Ver" : lang === "ar" ? "اطلب الآن" : "Order Now"}
-              </a>
-            </div>
           </div>
         </div>
       </div>
