@@ -7,7 +7,7 @@ import { menuTranslations } from "@/i18n/translations";
 export default function DeepMenuSchema({ locale = "en" }) {
   const mt = menuTranslations[locale] || menuTranslations.en;
   
-  const baseUrl = "https://www.kardeslercihangir.com";
+  const baseUrl = "https://kardeslercihangir.com";
   // The locale-specific menu path
   const localePath = locale === "en" ? "/menu" : `/${locale}/menu`;
   const menuUrl = `${baseUrl}${localePath}`;
