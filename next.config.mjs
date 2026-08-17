@@ -29,6 +29,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/urun-etiketi/:slug*",
+        destination: "/menu",
+        permanent: true,
+      },
+      {
         source: "/product/:slug*",
         destination: "/menu",
         permanent: true,
@@ -40,6 +45,21 @@ const nextConfig = {
       },
       {
         source: "/product-category/:slug*",
+        destination: "/menu",
+        permanent: true,
+      },
+      {
+        source: "/product-tag/:slug*",
+        destination: "/menu",
+        permanent: true,
+      },
+      {
+        source: "/kategori/:slug*",
+        destination: "/menu",
+        permanent: true,
+      },
+      {
+        source: "/category/:slug*",
         destination: "/menu",
         permanent: true,
       },
