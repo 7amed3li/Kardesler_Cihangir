@@ -10,6 +10,9 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
+  experimental: {
+    optimizePackageImports: ['@phosphor-icons/react', 'lucide-react'],
+  },
   // Image optimization
   images: {
     formats: ["image/avif", "image/webp"],
