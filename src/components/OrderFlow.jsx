@@ -1,15 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import Image from "next/image";
-import { ShoppingBag, X, Plus, Minus, Trash2, MessageCircle, CheckCircle } from "lucide-react";
-import PaymentMethods from "./PaymentMethods";
+import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle } from "lucide-react";
 
 export default function OrderFlow() {
   const {
     t,
     menuT,
+    lang,
     cart,
     cartCount,
     cartTotal,
@@ -27,11 +27,42 @@ export default function OrderFlow() {
 
   const symbol = getCurrencySymbol();
   const labels = t.orderFlow || {};
+  const isRTL = lang === "ar" || lang === "fa";
+
+  const waiterText = lang === "ar" ? "اعرض هذه القائمة للجرسون لإتمام طلبك" : 
+                     lang === "tr" ? "Siparişinizi vermek için bu listeyi garsona gösterin" : 
+                     "Show this list to the waiter to order";
+
+  const listTitle = lang === "ar" ? "قائمتي" : 
+                    lang === "tr" ? "Listem" : 
+                    "My List";
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <>
       {/* ═══════════════════════════════════════════
-          CART DRAWER
+          FAB (Floating Action Button) - My List
+          ═══════════════════════════════════════════ */}
+      {cartCount > 0 && !isCartOpen && (
+        <button
+          onClick={() => setIsCartOpen(true)}
+          className={`fixed bottom-6 ${isRTL ? "left-6" : "right-6"} z-[99990] flex items-center gap-2 bg-[#9C7A3F] text-white px-5 py-3.5 rounded-full shadow-xl hover:bg-[#7A5F2E] hover:scale-105 transition-all duration-300 ${cartPulse ? 'animate-bounce' : ''}`}
+        >
+          <ClipboardList size={22} />
+          <span className="font-bold text-[15px]" style={{ fontFamily: "var(--font-cairo)" }}>
+            {listTitle} ({cartCount})
+          </span>
+        </button>
+      )}
+
+      {/* ═══════════════════════════════════════════
+          LIST DRAWER (Bottom Sheet)
           ═══════════════════════════════════════════ */}
       {isCartOpen && (
         <div
@@ -39,44 +70,48 @@ export default function OrderFlow() {
           onClick={() => setIsCartOpen(false)}
         >
           <div
-            className="glass-card-strong w-full sm:max-w-md sm:h-full max-h-[85vh] sm:max-h-full rounded-t-3xl sm:rounded-none overflow-hidden flex flex-col cart-drawer-panel border-gold/20"
+            className="bg-[#FAF7F0] w-full sm:max-w-md sm:h-full max-h-[90vh] sm:max-h-full rounded-t-3xl sm:rounded-none overflow-hidden flex flex-col shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-teal-dim/20 shrink-0">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-copper/15 flex items-center justify-center">
-                  <ShoppingBag size={16} className="text-copper" />
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#9C7A3F]/20 shrink-0 bg-[#F7F2E7]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#9C7A3F]/15 flex items-center justify-center">
+                  <ClipboardList size={18} className="text-[#9C7A3F]" />
                 </div>
-                <h2 className="text-lg font-bold text-cream" style={{ fontFamily: "var(--font-cairo)" }}>
-                  {labels.yourOrder || "Your Order"}
+                <h2 className="text-xl font-bold text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
+                  {listTitle}
                 </h2>
                 {cartCount > 0 && (
-                  <span className="text-xs text-cream-dim/60 font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                  <span className="text-sm text-[#7A7364] font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                     ({cartCount})
                   </span>
                 )}
               </div>
               <button
                 onClick={() => setIsCartOpen(false)}
-                aria-label="Close cart"
-                className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-cream-dim hover:text-cream transition-colors"
+                aria-label="Close list"
+                className="w-8 h-8 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-colors"
               >
                 <X size={18} />
               </button>
             </div>
+            
+            {/* Waiter Prominent Instruction */}
+            <div className="bg-[#4E5F4C] text-white px-6 py-3 text-center shrink-0 shadow-sm z-10">
+              <p className="font-bold text-sm sm:text-base leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+                {waiterText}
+              </p>
+            </div>
 
-            {/* Cart Items */}
-            <div className="flex-1 overflow-y-auto no-scrollbar px-6 py-4">
+            {/* List Items */}
+            <div className="flex-1 overflow-y-auto no-scrollbar px-5 py-4 bg-[#EDE3CE]/30">
               {cart.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
-                  <div className="w-20 h-20 rounded-full bg-cream-dim/5 flex items-center justify-center mb-5">
-                    <ShoppingBag size={32} className="text-cream-dim/20" />
+                  <div className="w-20 h-20 rounded-full bg-[#9C7A3F]/10 flex items-center justify-center mb-5">
+                    <ClipboardList size={32} className="text-[#9C7A3F]/40" />
                   </div>
-                  <p className="text-cream-dim/60 font-medium mb-1">{labels.empty || "Your cart is empty"}</p>
-                  <p className="text-cream-dim/30 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
-                    {labels.emptyHint || "Start adding items from the menu"}
-                  </p>
+                  <p className="text-[#7A7364] font-medium mb-1">{labels.empty || "Your list is empty"}</p>
                 </div>
               ) : (
                 <div className="space-y-3">
@@ -86,53 +121,50 @@ export default function OrderFlow() {
                     return (
                       <div
                         key={item.id}
-                        className="flex items-center gap-3 p-3 rounded-xl bg-ink/50 border border-teal-dim/15 group animate-cartItemIn"
-                        style={{ animationDelay: `${idx * 40}ms` }}
+                        className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#9C7A3F]/15 shadow-sm group animate-fadeIn"
                       >
                         {/* Thumbnail */}
                         {item.image ? (
-                          <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 relative bg-ink-2">
+                          <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 relative bg-[#EDE3CE]">
                             <Image
                               src={item.image}
                               alt={name}
                               fill
                               style={{ objectFit: "cover" }}
-                              sizes="48px"
+                              sizes="56px"
                             />
                           </div>
                         ) : (
-                          <div className="w-12 h-12 rounded-lg bg-[#EDE3CE] flex items-center justify-center shrink-0">
-                            <ShoppingBag size={18} className="text-[#9C7A3F]" />
+                          <div className="w-14 h-14 rounded-lg bg-[#EDE3CE] flex items-center justify-center shrink-0">
+                            <ClipboardList size={18} className="text-[#9C7A3F]" />
                           </div>
                         )}
 
                         {/* Item info */}
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-cream truncate">{name}</p>
-                          <p className="text-xs text-cream-dim/50 mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
-                            {item.qty} × {convertPrice(item.price)} = <span className="text-copper font-bold">{convertPrice(itemSubtotal)} {symbol}</span>
+                          <p className="text-sm font-bold text-[#2B2620] truncate" style={{ fontFamily: "var(--font-cairo)" }}>{name}</p>
+                          <p className="text-[11px] text-[#7A7364] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
+                            {convertPrice(itemSubtotal)} {symbol}
                           </p>
                         </div>
 
                         {/* Qty controls */}
-                        <div className="flex items-center gap-1.5 shrink-0">
+                        <div className="flex items-center gap-1.5 shrink-0 bg-[#F7F2E7] rounded-lg p-1 border border-[#9C7A3F]/20">
                           <button
                             onClick={() => removeFromCart(item.id)}
-                            aria-label="Decrease quantity"
-                            className="w-7 h-7 rounded-full border border-teal-dim/30 flex items-center justify-center text-cream-dim hover:text-brick hover:border-brick/50 transition-colors"
+                            className="w-7 h-7 rounded-md bg-white flex items-center justify-center text-[#2B2620] shadow-sm hover:text-[#A0422E] transition-colors"
                           >
                             {item.qty === 1 ? <Trash2 size={12} /> : <Minus size={12} />}
                           </button>
                           <span
                             key={item.qty}
-                            className="w-6 text-center text-sm font-bold text-cream animate-counterPop"
+                            className="w-5 text-center text-xs font-bold text-[#2B2620]"
                           >
                             {item.qty}
                           </span>
                           <button
                             onClick={() => addToCart(item)}
-                            aria-label="Increase quantity"
-                            className="w-7 h-7 rounded-full border border-teal-dim/30 flex items-center justify-center text-cream-dim hover:text-teal hover:border-teal/50 transition-colors"
+                            className="w-7 h-7 rounded-md bg-[#9C7A3F] flex items-center justify-center text-white shadow-sm hover:bg-[#7A5F2E] transition-colors"
                           >
                             <Plus size={12} />
                           </button>
@@ -144,48 +176,24 @@ export default function OrderFlow() {
               )}
             </div>
 
-            {/* Footer — Total & Actions */}
+            {/* Footer — Actions */}
             {cart.length > 0 && (
-              <div className="px-6 py-5 border-t border-teal-dim/20 space-y-4 shrink-0">
-                {/* Total */}
-                <div className="flex items-center justify-between">
-                  <span className="text-cream-dim text-sm font-medium">{labels.total || "Total"}</span>
-                  <span className="text-xl font-black text-cream" style={{ fontFamily: "var(--font-inter)" }}>
-                    {convertPrice(cartTotal)} {symbol}
-                  </span>
+              <div className="px-5 py-4 border-t border-[#9C7A3F]/20 bg-[#FAF7F0] space-y-3 shrink-0">
+                
+                {/* Total (Subtle) */}
+                <div className="flex items-center justify-center gap-2 text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                  <span>{labels.total || "Estimated Total:"}</span>
+                  <span>{convertPrice(cartTotal)} {symbol}</span>
                 </div>
 
-                {/* WhatsApp submit / Success state */}
-                {orderStatus === "sent" ? (
-                  <div className="flex items-center justify-center gap-3 py-4 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 text-[#25D366]">
-                    <CheckCircle size={20} />
-                    <div className="flex flex-col items-start">
-                      <span className="font-bold text-sm">{labels.sent || "Order Sent!"}</span>
-                      <span className="text-xs opacity-70">{labels.whatsappRedirect || "Redirecting to WhatsApp..."}</span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex gap-2">
-                    <button
-                      onClick={clearCart}
-                      className="px-4 py-3.5 rounded-xl border border-teal-dim/30 text-cream-dim text-sm font-medium hover:border-brick/50 hover:text-brick transition-colors"
-                    >
-                      {labels.clear || "Clear"}
-                    </button>
-                    <button
-                      onClick={submitOrder}
-                      id="submit-whatsapp-order"
-                      className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl whatsapp-btn text-white font-bold text-sm tracking-wider"
-                    >
-                      <MessageCircle size={18} />
-                      <span>{labels.sendWhatsApp || "Order via WhatsApp"}</span>
-                    </button>
-                  </div>
-                )}
-
-                {/* Accepted Payments Strip */}
-                <div className="pt-3 border-t border-teal-dim/15">
-                  <PaymentMethods variant="compact" />
+                {/* Clear List */}
+                <div className="flex justify-center pt-2 pb-1">
+                  <button
+                    onClick={clearCart}
+                    className="text-[12px] text-[#A0422E] font-medium hover:underline opacity-80"
+                  >
+                    {labels.clear || "Clear List"}
+                  </button>
                 </div>
               </div>
             )}

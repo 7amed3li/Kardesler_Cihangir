@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppContext } from "../context/AppContext";
-import { X, ZoomIn, Plus, Minus, ShoppingBag, Share2, Check, ArrowUpRight } from "lucide-react";
+import { X, ZoomIn, Plus, Minus, ShoppingBag, Share2, Check, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 /**
@@ -26,7 +26,15 @@ function CartCounter({ item, compact = false }) {
   };
 
   if (qty === 0) {
-    return null;
+    return (
+      <button
+        onClick={handleAdd}
+        aria-label="Add to list"
+        className={`flex items-center justify-center rounded-md border border-[#9C7A3F] text-[#9C7A3F] hover:bg-[#9C7A3F] hover:text-white transition-colors ${compact ? "w-8 h-8" : "w-10 h-10"}`}
+      >
+        <Plus size={compact ? 16 : 20} strokeWidth={2.5} />
+      </button>
+    );
   }
 
   return (
@@ -164,7 +172,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
               </h3>
               {/* Click Affordance Chevron */}
               <div className="shrink-0 w-6 h-6 rounded-full bg-[#9C7A3F]/10 flex items-center justify-center text-[#9C7A3F] group-hover:bg-[#9C7A3F] group-hover:text-white transition-colors">
-                <ArrowUpRight size={14} className={`transition-transform ${isRTL ? "-scale-x-100" : ""}`} />
+                <ChevronRight size={14} className={`transition-transform ${isRTL ? "-scale-x-100" : ""}`} />
               </div>
             </div>
             {description && (

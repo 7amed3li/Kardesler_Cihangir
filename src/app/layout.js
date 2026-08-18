@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
 import OrderFlowWrapper from "@/components/OrderFlowWrapper";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -307,17 +308,22 @@ export default function RootLayout({ children }) {
       lang="tr"
       suppressHydrationWarning
       className={`h-full antialiased ${cairo.variable} ${inter.variable}`}
+      data-scroll-behavior="smooth"
     >
       <head>
         {/* ── Google Tag Manager (placeholder — replace GTM-XXXXXXX with your ID) ── */}
-        <script
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');`,
           }}
         />
         {/* ── GA4 gtag.js (placeholder — replace G-XXXXXXXXXX with your Measurement ID) ── */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
-        <script
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <Script
+          id="ga4-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');`,
           }}

@@ -30,7 +30,7 @@ function applyRateLimit(ip) {
   return false;
 }
 
-export function middleware(request) {
+export function proxy(request) {
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
