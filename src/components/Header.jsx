@@ -6,7 +6,7 @@ import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
 import { useAppContext } from "../context/AppContext";
-import { Menu, Home, Info, Phone, UtensilsCrossed, Calendar } from "lucide-react";
+import { List, House, BookOpen, Info, Phone, MapPin, Coffee } from "@phosphor-icons/react";
 
 export default function Header() {
   const { t, lang } = useAppContext();
@@ -128,15 +128,15 @@ export default function Header() {
         <div className="max-w-5xl mx-auto px-3 sm:px-4 h-15 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity shrink-0 group">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full bg-[#FAF7F0] p-1 border-2 border-[#9C7A3F]/40 shadow-xs flex items-center justify-center overflow-hidden">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center">
               <Image 
                 src="/logo.webp" 
                 alt="Kardeşler Cihangir Logo" 
                 fill 
                 priority 
-                sizes="96px" 
+                unoptimized={true}
                 style={{ objectFit: 'contain' }} 
-                className="transition-transform group-hover:scale-105 p-0.5 filter contrast-110 brightness-105" 
+                className="transition-transform group-hover:scale-105" 
               />
             </div>
             <div className="flex flex-col">
@@ -164,7 +164,7 @@ export default function Header() {
                 }`}
                 aria-label="Menu"
               >
-                <Menu size={16} />
+                <List size={20} weight="bold" />
               </button>
 
               {/* Dropdown */}
@@ -175,7 +175,7 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <Home size={15} className="text-[#4E5F4C]" />
+                      <House size={18} weight="duotone" className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("home")}</span>
                     </Link>
                     <Link 
@@ -183,7 +183,7 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <UtensilsCrossed size={15} className="text-[#4E5F4C]" />
+                      <BookOpen size={18} weight="duotone" className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("menu")}</span>
                     </Link>
                     <Link 
@@ -191,7 +191,7 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <Info size={15} className="text-[#4E5F4C]" />
+                      <Info size={18} weight="duotone" className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("about")}</span>
                     </Link>
                     <Link 
@@ -199,7 +199,7 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                       className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                     >
-                      <Phone size={15} className="text-[#4E5F4C]" />
+                      <Phone size={18} weight="duotone" className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("contact")}</span>
                     </Link>
                     <div className="h-px bg-[#9C7A3F]/20 my-1"></div>
@@ -208,7 +208,7 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                       className="px-4 py-2.5 flex items-center gap-3 text-xs text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors font-bold"
                     >
-                      <span className="w-2 h-2 rounded-full bg-[#9C7A3F]"></span>
+                      <MapPin size={16} weight="fill" className="text-[#9C7A3F]" />
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("taksimGuide")}</span>
                     </Link>
                     <Link 
@@ -216,7 +216,7 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                       className="px-4 py-2.5 flex items-center gap-3 text-xs text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors font-bold"
                     >
-                      <span className="w-2 h-2 rounded-full bg-[#9C7A3F]"></span>
+                      <Coffee size={16} weight="fill" className="text-[#9C7A3F]" />
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("breakfastGuide")}</span>
                     </Link>
                   </div>

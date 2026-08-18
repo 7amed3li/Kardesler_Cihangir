@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Flame, Utensils, ArrowUpRight, ArrowUpLeft, ChevronRight, ChevronLeft, Coins, Check, ZoomIn } from "lucide-react";
+import { Fire, ForkKnife, ArrowUpRight, ArrowUpLeft, CaretRight, CaretLeft, Coins, Check, MagnifyingGlassPlus } from "@phosphor-icons/react";
 import { useAppContext } from "../context/AppContext";
 import SaudiRiyalIcon from "./SaudiRiyalIcon";
 import DishModal from "./DishModal";
@@ -400,7 +400,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
         {/* Header */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
-            <Utensils size={13} />
+            <ForkKnife size={16} weight="duotone" />
             <span>{labels.badge}</span>
           </div>
           <h2
@@ -487,7 +487,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                   {/* Hover zoom hint overlay */}
                   <div className="absolute inset-0 bg-[#2B2620]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
                     <div className="w-10 h-10 rounded-md bg-[#4E5F4C] flex items-center justify-center text-white">
-                      <ZoomIn size={18} />
+                      <MagnifyingGlassPlus size={20} weight="bold" />
                     </div>
                   </div>
 
@@ -533,7 +533,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
 
                   <div className="pt-3 border-t border-[#9C7A3F]/20 flex items-center justify-between gap-2">
                     <span className="text-xs text-[#9C7A3F] font-semibold flex items-center gap-1">
-                      <Flame size={13} /> {labels.woodFired}
+                      <Fire size={16} weight="duotone" /> {labels.woodFired}
                     </span>
                     <a
                       href={waLink}

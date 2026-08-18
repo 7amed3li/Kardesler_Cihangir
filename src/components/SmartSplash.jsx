@@ -6,23 +6,19 @@ import Image from "next/image";
 
 export default function SmartSplash() {
   const pathname = usePathname();
-  const [show, setShow] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  const [show, setShow] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
-  useEffect(() => {
-    // Skip splash entirely on /menu (instant access) or if already seen in current session
-    if (pathname === "/menu" || typeof window === "undefined") {
-      return;
-    }
-
-    const hasSeenSplash = sessionStorage.getItem("kardesler_splash_seen");
-    if (hasSeenSplash) {
-      return;
-    }
-
-    // Mark as seen and show briefly
-    sessionStorage.setItem("kardesler_splash_seen", "1");
+  // Derived state: instantly show splash when pathname changes (zero flash)
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setShow(true);
+    setIsFadingOut(false);
+  }
+
+  useEffect(() => {
+    if (!show) return;
 
     // Fast, ultra-smooth fade out after 800ms
     const fadeOutTimer = setTimeout(() => {
@@ -38,7 +34,7 @@ export default function SmartSplash() {
       clearTimeout(fadeOutTimer);
       clearTimeout(unmountTimer);
     };
-  }, [pathname]);
+  }, [show, pathname]);
 
   if (!show) return null;
 
@@ -192,10 +188,10 @@ export default function SmartSplash() {
 
         .tagline {
           margin-top: 20px;
-          font-weight: 600;
+          font-weight: 800;
           letter-spacing: 0.35em;
           font-size: clamp(11px, 1.5vw, 13px);
-          color: #f7ece1;
+          color: #2B2620;
           text-transform: uppercase;
           opacity: 0;
           text-align: center;
@@ -205,7 +201,7 @@ export default function SmartSplash() {
         }
 
         .tagline span {
-          color: #f2a45c;
+          color: #9C7A3F;
         }
 
         @keyframes fade-up {

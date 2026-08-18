@@ -6,7 +6,7 @@ import FoodCard from "@/components/FoodCard";
 import Image from "next/image";
 import Link from "next/link";
 import { useAppContext } from "@/context/AppContext";
-import { MapPin, ChevronDown, Utensils, ArrowRight, Sparkles, Award } from "lucide-react";
+import { MapPin, CaretDown, ArrowRight, Medal } from "@phosphor-icons/react";
 import { OttomanStar, OttomanSeal, KebabSkewer, StoneOven } from "@/components/BrandIcons";
 import RestaurantMap from "@/components/RestaurantMap";
 
@@ -211,7 +211,7 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-3 start-1/2 -translate-x-1/2 z-10">
-          <ChevronDown size={18} className="text-[#7A7364] animate-bounce" />
+          <CaretDown size={18} className="text-[#7A7364] animate-bounce" weight="bold" />
         </div>
       </section>
 
@@ -269,7 +269,7 @@ export default function Home() {
             
             <div className="md:col-span-2 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#9C7A3F]/15 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
-                <Award size={14} />
+                <Medal size={16} weight="duotone" />
                 <span>{t.storyBadge || "Geleneksel Türk Mutfağı • Cihangir"}</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>

@@ -8,7 +8,9 @@ const OrderFlow = dynamic(() => import("./OrderFlow"), { ssr: false });
 export default function OrderFlowWrapper() {
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/admin") || pathname?.includes("/admin/")) {
+  const isMenuOrDish = pathname?.endsWith("/menu") || pathname?.includes("/menu/") || pathname?.includes("/dish/");
+
+  if (!isMenuOrDish || pathname?.startsWith("/admin")) {
     return null;
   }
 
