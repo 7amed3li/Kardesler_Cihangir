@@ -469,6 +469,10 @@
     "turk_kahvesi": {
       "name": "Türkischer Kaffee",
       "desc": ""
+    },
+    "kuzu_ciger": {
+      "name": "Lammleber",
+      "desc": "Marinierter Lammleber-Spieß"
     }
   }
 }

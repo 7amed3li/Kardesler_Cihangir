@@ -469,6 +469,10 @@
     "turk_kahvesi": {
       "name": "Caffè Turco",
       "desc": ""
+    },
+    "kuzu_ciger": {
+      "name": "Fegato di Agnello",
+      "desc": "Spiedino di fegato di agnello marinato"
     }
   }
 }

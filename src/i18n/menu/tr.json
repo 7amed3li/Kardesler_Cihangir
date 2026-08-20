@@ -469,6 +469,10 @@
     "turk_kahvesi": {
       "name": "Türk Kahvesi",
       "desc": ""
+    },
+    "kuzu_ciger": {
+      "name": "Kuzu Ciğer",
+      "desc": "Özel soslu kuzu ciğer şiş"
     }
   }
 }

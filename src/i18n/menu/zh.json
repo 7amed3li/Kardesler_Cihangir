@@ -337,6 +337,10 @@
     "elma_cayi": {
       "name": "苹果茶",
       "desc": ""
+    },
+    "kuzu_ciger": {
+      "name": "羊肝",
+      "desc": "特制腌制羊肝烤串"
     }
   }
 }

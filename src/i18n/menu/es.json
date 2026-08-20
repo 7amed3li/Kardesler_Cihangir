@@ -469,6 +469,10 @@
     "turk_kahvesi": {
       "name": "Café Turco",
       "desc": ""
+    },
+    "kuzu_ciger": {
+      "name": "Hígado de Cordero",
+      "desc": "Brocheta de hígado de cordero marinado"
     }
   }
 }

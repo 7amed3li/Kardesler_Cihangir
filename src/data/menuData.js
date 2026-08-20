@@ -65,6 +65,7 @@ export const menuData = [
     id: "kebap",
     category: { en: "Kebab" },
     items: [
+      { id: "kuzu_ciger", price: 825, image: "/images/menu/kuzu_ciger.webp", tags: [] },
       {
         id: "adana_urfa",
         price: 725,

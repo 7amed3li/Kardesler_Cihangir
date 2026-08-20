@@ -3028,5 +3028,26 @@
     },
     "image": "/images/menu/default-hot-drink.jpg",
     "tags": []
+  },
+  {
+    "id": "kuzu_ciger",
+    "name": {
+      "tr": "Kuzu Ciğer",
+      "en": "Lamb Liver",
+      "ar": "كبدة غنم"
+    },
+    "description": {
+      "tr": "Özel soslu kuzu ciğer şiş",
+      "en": "Special marinated lamb liver skewer",
+      "ar": "سيخ كبدة غنم متبلة بصلصة خاصة"
+    },
+    "price": 825,
+    "category": {
+      "tr": "Kebap",
+      "en": "Kebab",
+      "ar": "كباب"
+    },
+    "image": "/images/menu/kuzu_ciger.webp",
+    "tags": []
   }
 ]

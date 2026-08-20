@@ -469,6 +469,10 @@
     "turk_kahvesi": {
       "name": "Turkish Coffee",
       "desc": ""
+    },
+    "kuzu_ciger": {
+      "name": "Lamb Liver",
+      "desc": "Special marinated lamb liver skewer"
     }
   }
 }
