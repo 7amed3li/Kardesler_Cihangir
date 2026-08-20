@@ -10,7 +10,8 @@
     "meze": "Мезе (закуски)",
     "salata": "Салаты",
     "tatli": "Десерты",
-    "soguk_icecek": "Холодные напитки"
+    "soguk_icecek": "Холодные напитки",
+    "sicak_icecek": "Горячие Напитки"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "Su — Вода"
+    },
+    "kucuk_cay": {
+      "name": "Маленький Чай",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "Большой Чай",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "Шалфейный Чай",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "Нескафе",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "Киви Чай",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "Оралет",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "Яблочный Чай",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "Турецкий Кофе",
+      "desc": ""
     }
   }
 }

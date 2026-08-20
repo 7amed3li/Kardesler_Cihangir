@@ -10,7 +10,8 @@
     "meze": "特色冷盘与小吃",
     "salata": "清爽沙拉",
     "tatli": "土耳其甜品",
-    "soguk_icecek": "冷饮"
+    "soguk_icecek": "冷饮",
+    "sicak_icecek": "热饮"
   },
   "items": {
     "serpme_kahvalti": {
@@ -306,8 +307,36 @@
       "desc": "传统土耳其红茶。"
     },
     "turk_kahvesi": {
-      "name": "Türk Kahvesi",
-      "desc": "传统土耳其咖啡。"
+      "name": "土耳其咖啡",
+      "desc": ""
+    },
+    "kucuk_cay": {
+      "name": "小杯茶",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "大杯茶",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "鼠尾草茶",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "雀巢咖啡",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "猕猴桃茶",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "Oralet果味茶",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "苹果茶",
+      "desc": ""
     }
   }
 }

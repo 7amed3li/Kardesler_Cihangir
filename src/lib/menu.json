@@ -2860,5 +2860,173 @@
     "signature": false,
     "trending": false,
     "allergens": []
+  },
+  {
+    "id": "kucuk_cay",
+    "name": {
+      "tr": "Küçük Çay",
+      "en": "Small Tea",
+      "ar": "شاي صغير"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 30,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
+  },
+  {
+    "id": "buyuk_cay",
+    "name": {
+      "tr": "Büyük Çay",
+      "en": "Large Tea",
+      "ar": "شاي كبير"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 60,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
+  },
+  {
+    "id": "ada_cayi",
+    "name": {
+      "tr": "Ada Çayı",
+      "en": "Sage Tea",
+      "ar": "شاي المريمية"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 70,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
+  },
+  {
+    "id": "nescafe",
+    "name": {
+      "tr": "Nescafe",
+      "en": "Nescafe",
+      "ar": "نسكافيه"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 100,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
+  },
+  {
+    "id": "kivi_cayi",
+    "name": {
+      "tr": "Kivi",
+      "en": "Kiwi Tea",
+      "ar": "شاي الكيوي"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 30,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
+  },
+  {
+    "id": "oralet",
+    "name": {
+      "tr": "Oralet",
+      "en": "Oralet",
+      "ar": "أوراليت"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 30,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
+  },
+  {
+    "id": "elma_cayi",
+    "name": {
+      "tr": "Elma Çayı",
+      "en": "Apple Tea",
+      "ar": "شاي التفاح"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 30,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
+  },
+  {
+    "id": "turk_kahvesi",
+    "name": {
+      "tr": "Türk Kahvesi",
+      "en": "Turkish Coffee",
+      "ar": "قهوة تركية"
+    },
+    "description": {
+      "tr": "",
+      "en": "",
+      "ar": ""
+    },
+    "price": 100,
+    "category": {
+      "tr": "Sıcak İçecekler",
+      "en": "Hot Drinks",
+      "ar": "مشروبات ساخنة"
+    },
+    "image": "/images/menu/default-hot-drink.jpg",
+    "tags": []
   }
 ]

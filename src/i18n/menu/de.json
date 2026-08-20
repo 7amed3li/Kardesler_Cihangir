@@ -10,7 +10,8 @@
     "meze": "Vorspeisen (Meze)",
     "salata": "Salate",
     "tatli": "Desserts",
-    "soguk_icecek": "Kalte Getränke"
+    "soguk_icecek": "Kalte Getränke",
+    "sicak_icecek": "Heisse Getränke"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "Stilles Wasser — Kaltes Quellwasser."
+    },
+    "kucuk_cay": {
+      "name": "Kleiner Tee",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "Großer Tee",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "Salbeitee",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "Nescafé",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "Kiwitee",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "Oralet",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "Apfeltee",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "Türkischer Kaffee",
+      "desc": ""
     }
   }
 }

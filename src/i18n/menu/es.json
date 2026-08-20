@@ -10,7 +10,8 @@
     "meze": "Aperitivos (Mezze)",
     "salata": "Ensaladas",
     "tatli": "Postres",
-    "soguk_icecek": "Bebidas Frías"
+    "soguk_icecek": "Bebidas Frías",
+    "sicak_icecek": "Bebidas Calientes"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "Agua Mineral — Botella de agua fría."
+    },
+    "kucuk_cay": {
+      "name": "Té Pequeño",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "Té Grande",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "Té de Salvia",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "Nescafé",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "Té de Kiwi",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "Oralet",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "Té de Manzana",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "Café Turco",
+      "desc": ""
     }
   }
 }

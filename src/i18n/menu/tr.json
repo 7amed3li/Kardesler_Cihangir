@@ -10,7 +10,8 @@
     "meze": "Meze",
     "salata": "Salata",
     "tatli": "Tatlı",
-    "soguk_icecek": "Soğuk İçecek"
+    "soguk_icecek": "Soğuk İçecek",
+    "sicak_icecek": "Sıcak İçecekler"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "Soğuk şişe kaynak suyu."
+    },
+    "kucuk_cay": {
+      "name": "Küçük Çay",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "Büyük Çay",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "Ada Çayı",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "Nescafe",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "Kivi",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "Oralet",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "Elma Çayı",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "Türk Kahvesi",
+      "desc": ""
     }
   }
 }

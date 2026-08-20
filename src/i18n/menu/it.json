@@ -10,7 +10,8 @@
     "meze": "Antipasti (Meze)",
     "salata": "Insalate",
     "tatli": "Dolci",
-    "soguk_icecek": "Bevande Fredde"
+    "soguk_icecek": "Bevande Fredde",
+    "sicak_icecek": "Bevande Calde"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "Acqua Naturale — Bottiglia d'acqua minerale fredda."
+    },
+    "kucuk_cay": {
+      "name": "Tè Piccolo",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "Tè Grande",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "Tè alla Salvia",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "Nescafé",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "Tè al Kiwi",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "Oralet",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "Tè alla Mela",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "Caffè Turco",
+      "desc": ""
     }
   }
 }

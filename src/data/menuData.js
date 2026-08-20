@@ -690,5 +690,21 @@ export const menuData = [
         tags: [],
       }
     ]
-  }
+  },
+  {
+    id: "sicak_icecek",
+    category: {
+      en: "Hot Drink"
+    },
+    items: [
+      { id: "kucuk_cay", price: 30, tags: [] },
+      { id: "buyuk_cay", price: 60, tags: [] },
+      { id: "ada_cayi", price: 70, tags: [] },
+      { id: "nescafe", price: 100, tags: [] },
+      { id: "kivi_cayi", price: 30, tags: [] },
+      { id: "oralet", price: 30, tags: [] },
+      { id: "elma_cayi", price: 30, tags: [] },
+      { id: "turk_kahvesi", price: 100, tags: [] }
+    ]
+  },
 ];

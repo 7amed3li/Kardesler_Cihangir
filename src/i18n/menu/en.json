@@ -10,7 +10,8 @@
     "meze": "Mezes & Appetizers",
     "salata": "Salads",
     "tatli": "Desserts",
-    "soguk_icecek": "Cold Beverages"
+    "soguk_icecek": "Cold Beverages",
+    "sicak_icecek": "Hot Drinks"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "Bottled Water — Chilled spring water."
+    },
+    "kucuk_cay": {
+      "name": "Small Tea",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "Large Tea",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "Sage Tea",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "Nescafe",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "Kiwi Tea",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "Oralet",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "Apple Tea",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "Turkish Coffee",
+      "desc": ""
     }
   }
 }

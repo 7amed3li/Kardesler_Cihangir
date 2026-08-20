@@ -10,7 +10,8 @@
     "meze": "پیش‌غذا و مزه‌ها",
     "salata": "سالادها و مخلفات",
     "tatli": "دسر و شیرینی‌ها",
-    "soguk_icecek": "نوشیدنی‌های خنک"
+    "soguk_icecek": "نوشیدنی‌های خنک",
+    "sicak_icecek": "نوشیدنی‌های گرم"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "Su — آب معدنی خنک"
+    },
+    "kucuk_cay": {
+      "name": "چای کوچک",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "چای بزرگ",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "چای مریم گلی",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "نسکافه",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "چای کیوی",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "اورالت",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "چای سیب",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "قهوه ترک",
+      "desc": ""
     }
   }
 }

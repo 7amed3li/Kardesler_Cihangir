@@ -10,7 +10,8 @@
     "meze": "المقبلات والمازة",
     "salata": "السلطات الطازجة",
     "tatli": "الحلويات",
-    "soguk_icecek": "المشروبات الباردة"
+    "soguk_icecek": "المشروبات الباردة",
+    "sicak_icecek": "مشروبات ساخنة"
   },
   "items": {
     "serpme_kahvalti": {
@@ -436,6 +437,38 @@
     "su": {
       "name": "Su",
       "desc": "مياه معبأة نقية — زجاجة مياه شرب نقية باردة"
+    },
+    "kucuk_cay": {
+      "name": "شاي صغير",
+      "desc": ""
+    },
+    "buyuk_cay": {
+      "name": "شاي كبير",
+      "desc": ""
+    },
+    "ada_cayi": {
+      "name": "شاي المريمية",
+      "desc": ""
+    },
+    "nescafe": {
+      "name": "نسكافيه",
+      "desc": ""
+    },
+    "kivi_cayi": {
+      "name": "شاي الكيوي",
+      "desc": ""
+    },
+    "oralet": {
+      "name": "أوراليت",
+      "desc": ""
+    },
+    "elma_cayi": {
+      "name": "شاي التفاح",
+      "desc": ""
+    },
+    "turk_kahvesi": {
+      "name": "قهوة تركية",
+      "desc": ""
     }
   }
 }
