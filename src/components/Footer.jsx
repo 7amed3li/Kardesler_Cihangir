@@ -269,7 +269,7 @@ export default function Footer() {
             </div>
             {/* WhatsApp Quick Link */}
             <a
-              href="https://wa.me/905060453906"
+              href="https://wa.me/902122513696"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-[#4E5F4C] text-white hover:bg-[#3D4B3B] transition-colors group"

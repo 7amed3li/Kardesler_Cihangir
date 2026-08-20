@@ -52,7 +52,7 @@ export const devProfileContent = {
       whatsapp: "WhatsApp Me",
       email: "Email Me",
       portfolio: "See More Work →",
-      whatsappLink: "https://wa.me/905060453906", // TODO: REPLACE WITH ACTUAL NUMBER
+      whatsappLink: "https://wa.me/902122513696", // TODO: REPLACE WITH ACTUAL NUMBER
       emailLink: "mailto:hello@hamedmohamed.dev", // TODO: REPLACE WITH ACTUAL EMAIL
       portfolioLink: "https://hamedmohamed.dev"
     }
@@ -110,7 +110,7 @@ export const devProfileContent = {
       whatsapp: "WhatsApp'tan Yaz",
       email: "E-posta Gönder",
       portfolio: "Daha Fazla Çalışma Gör →",
-      whatsappLink: "https://wa.me/905060453906",
+      whatsappLink: "https://wa.me/902122513696",
       emailLink: "mailto:hello@hamedmohamed.dev",
       portfolioLink: "https://hamedmohamed.dev"
     }
@@ -168,7 +168,7 @@ export const devProfileContent = {
       whatsapp: "كلمني واتساب",
       email: "ابعتلي إيميل",
       portfolio: "شوف شغل تاني →",
-      whatsappLink: "https://wa.me/905060453906",
+      whatsappLink: "https://wa.me/902122513696",
       emailLink: "mailto:hello@hamedmohamed.dev",
       portfolioLink: "https://hamedmohamed.dev"
     }
@@ -226,7 +226,7 @@ export const devProfileContent = {
       whatsapp: "WhatsApp schreiben",
       email: "E-Mail senden",
       portfolio: "Mehr Arbeiten sehen →",
-      whatsappLink: "https://wa.me/905060453906",
+      whatsappLink: "https://wa.me/902122513696",
       emailLink: "mailto:hello@hamedmohamed.dev",
       portfolioLink: "https://hamedmohamed.dev"
     }

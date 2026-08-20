@@ -1,6 +1,6 @@
 import { menuTranslations } from "../i18n/translations";
 
-const WHATSAPP_NUMBER = "905060453906";
+const WHATSAPP_NUMBER = "902122513696";
 
 export function generateWhatsAppLink(cart, lang = "tr") {
   const menuT = menuTranslations[lang] || menuTranslations["tr"];

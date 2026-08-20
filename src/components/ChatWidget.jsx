@@ -149,7 +149,7 @@ export default function ChatWidget() {
       console.error("Chat Error:", error);
       setMessages(prev => [...prev, { 
         role: "model", 
-        text: "Sorry, I'm having trouble connecting. Please reach out via WhatsApp: wa.me/905060453906" 
+        text: "Sorry, I'm having trouble connecting. Please reach out via WhatsApp: wa.me/902122513696" 
       }]);
     } finally {
       setIsLoading(false);
@@ -201,7 +201,7 @@ export default function ChatWidget() {
 
         {/* WhatsApp Fallback Link */}
         <div className="px-4 py-2 bg-[#F7F2E7] text-xs text-center border-b border-[#9C7A3F]/10 text-[#7A7364]">
-          <a href="https://wa.me/905060453906" target="_blank" rel="noopener noreferrer" className="hover:text-[#2B2620] transition-colors underline decoration-[#9C7A3F]/50 underline-offset-2 font-medium">
+          <a href="https://wa.me/902122513696" target="_blank" rel="noopener noreferrer" className="hover:text-[#2B2620] transition-colors underline decoration-[#9C7A3F]/50 underline-offset-2 font-medium">
             {strings.contact}
           </a>
         </div>

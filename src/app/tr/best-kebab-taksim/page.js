@@ -87,14 +87,14 @@ const faqSchemaTr = {
       name: "Çalışma saatleri ve rezervasyon nasıl yapılır?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Haftanın 7 günü sabah 09:00'dan gece 02:00'ye kadar aralıksız hizmet vermekteyiz. WhatsApp (+90 506 045 39 06) veya telefon (+90 212 251 36 96) ile kolayca masa ayırtabilirsiniz.",
+        text: "Haftanın 7 günü sabah 09:00'dan gece 02:00'ye kadar aralıksız hizmet vermekteyiz. WhatsApp (+90 212 251 36 96) veya telefon (+90 212 251 36 96) ile kolayca masa ayırtabilirsiniz.",
       },
     },
   ],
 };
 
 export default function TurkishLandingPage() {
-  const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("Merhaba Kardeşler Kebap Cihangir, masa rezervasyonu yaptırmak veya sipariş vermek istiyorum.");
+  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("Merhaba Kardeşler Kebap Cihangir, masa rezervasyonu yaptırmak veya sipariş vermek istiyorum.");
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">

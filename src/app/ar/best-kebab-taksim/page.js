@@ -123,7 +123,7 @@ const faqSchemaAr = {
       name: "ما هي أوقات العمل وكيف يمكن حجز طاولة؟",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "المطعم مفتوح يومياً من 09:00 صباحاً وحتى 02:00 بعد منتصف الليل. يمكن حجز الطاولات مباشرة وتأكيدها فوراً عبر واتساب (+90 506 045 39 06) أو بالاتصال على (+90 212 251 36 96).",
+        text: "المطعم مفتوح يومياً من 09:00 صباحاً وحتى 02:00 بعد منتصف الليل. يمكن حجز الطاولات مباشرة وتأكيدها فوراً عبر واتساب (+90 212 251 36 96) أو بالاتصال على (+90 212 251 36 96).",
       },
     },
   ],
@@ -190,7 +190,7 @@ export default function BestKebabTaksimArabicPage() {
     },
   ];
 
-  const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("مرحباً مطعم كارديشلر جيهانكير، أود حجز طاولة أو الاستفسار عن المنيو.");
+  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("مرحباً مطعم كارديشلر جيهانكير، أود حجز طاولة أو الاستفسار عن المنيو.");
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans" dir="rtl">
@@ -432,7 +432,7 @@ export default function BestKebabTaksimArabicPage() {
 
           <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <a
-              href="https://wa.me/905060453906?text=*طلب%20حجز%20طاولة%20-%20مطعم%20كارديشلر%20جيهانكير*%0A--------------------------------%0Aمرحباً%D8%8C%20أود%20حجز%20طاولة%20في%20مطعم%20كارديشلر.%20يرجى%20تأكيد%20التوفر.%20شكراً%20لكم!"
+              href="https://wa.me/902122513696?text=*طلب%20حجز%20طاولة%20-%20مطعم%20كارديشلر%20جيهانكير*%0A--------------------------------%0Aمرحباً%D8%8C%20أود%20حجز%20طاولة%20في%20مطعم%20كارديشلر.%20يرجى%20تأكيد%20التوفر.%20شكراً%20لكم!"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"

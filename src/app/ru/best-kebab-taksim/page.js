@@ -82,14 +82,14 @@ const faqSchemaRu = {
       name: "Как забронировать столик и какие часы работы?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ресторан открыт ежедневно с 09:00 до 02:00 ночи. Бронь столика подтверждается мгновенно через WhatsApp (+90 506 045 39 06) или по телефону (+90 212 251 36 96).",
+        text: "Ресторан открыт ежедневно с 09:00 до 02:00 ночи. Бронь столика подтверждается мгновенно через WhatsApp (+90 212 251 36 96) или по телефону (+90 212 251 36 96).",
       },
     },
   ],
 };
 
 export default function RussianLandingPage() {
-  const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("Здравствуйте, ресторан Kardeşler Cihangir! Хочу забронировать столик или узнать меню.");
+  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("Здравствуйте, ресторан Kardeşler Cihangir! Хочу забронировать столик или узнать меню.");
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">

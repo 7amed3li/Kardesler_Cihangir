@@ -391,7 +391,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
     const message = isRtl
       ? `مرحباً مطعم كارديشلر، أود طلب: ${dish.name} (${formattedPrice} / ${dish.priceTRY} ₺)`
       : `Hello Kardeşler Kebap, I would like to order: ${dish.name} (${formattedPrice} / ${dish.priceTRY} ₺)`;
-    return `https://wa.me/905060453906?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/902122513696?text=${encodeURIComponent(message)}`;
   };
 
   return (

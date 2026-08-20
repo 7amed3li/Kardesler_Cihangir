@@ -171,7 +171,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="font-bold text-[#2B2620] text-sm mb-1">{content.orderLine}</h3>
-                <a href="tel:+905060453906" className="text-[#7A7364] text-sm font-medium hover:text-[#2B2620] transition-colors">+90 506 045 39 06</a>
+                <a href="tel:+902122513696" className="text-[#7A7364] text-sm font-medium hover:text-[#2B2620] transition-colors">+90 212 251 36 96</a>
               </div>
             </div>
 
@@ -189,7 +189,7 @@ export default function AboutPage() {
 
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/905060453906"
+            href="https://wa.me/902122513696"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 mt-6 py-3 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] transition-colors"

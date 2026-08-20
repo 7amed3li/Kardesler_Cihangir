@@ -115,7 +115,7 @@ const faqSchema = {
       name: "What are the opening hours and reservation options?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We are open 7 days a week from 09:00 AM until 02:00 AM. Table reservations can be confirmed instantly via WhatsApp (+90 506 045 39 06) or phone (+90 212 251 36 96).",
+        text: "We are open 7 days a week from 09:00 AM until 02:00 AM. Table reservations can be confirmed instantly via WhatsApp (+90 212 251 36 96) or phone (+90 212 251 36 96).",
       },
     },
   ],
@@ -184,7 +184,7 @@ export default function BestKebabTaksimPage() {
     },
   ];
 
-  const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("Hello Kardeşler Kebap Cihangir, I would like to reserve a table or ask about the menu.");
+  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("Hello Kardeşler Kebap Cihangir, I would like to reserve a table or ask about the menu.");
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">
@@ -406,7 +406,7 @@ export default function BestKebabTaksimPage() {
 
           <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <a
-              href="https://wa.me/905060453906?text=*Table%20Reservation%20-%20Karde%C5%9Fler%20Kebap%20Cihangir*%0AHello%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Karde%C5%9Fler.%20Please%20confirm%20availability.%20Thank%20you!"
+              href="https://wa.me/902122513696?text=*Table%20Reservation%20-%20Karde%C5%9Fler%20Kebap%20Cihangir*%0AHello%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Karde%C5%9Fler.%20Please%20confirm%20availability.%20Thank%20you!"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"

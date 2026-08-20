@@ -108,7 +108,7 @@ export default function ContactPage() {
 
           {/* Phone */}
           <a
-            href="tel:+905060453906"
+            href="tel:+902122513696"
             className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 hover:border-[#9C7A3F] transition-colors shadow-sm group"
           >
             <div className="w-12 h-12 rounded-md bg-[#EDE3CE] text-[#4E5F4C] flex items-center justify-center shrink-0 border border-[#9C7A3F]/20">
@@ -117,7 +117,7 @@ export default function ContactPage() {
             <div>
               <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.phoneLabel}</h3>
               <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                +90 506 045 39 06
+                +90 212 251 36 96
               </p>
               <p className="text-[#7A7364]/70 text-xs font-medium mt-1">+90 212 251 36 96</p>
             </div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
 
           {/* WhatsApp */}
           <a
-            href="https://wa.me/905060453906"
+            href="https://wa.me/902122513696"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 hover:border-[#4E5F4C] transition-colors shadow-sm group"
@@ -151,7 +151,7 @@ export default function ContactPage() {
             <div>
               <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.whatsapp}</h3>
               <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                +90 534 866 27 15
+                +90 212 251 36 96
               </p>
             </div>
           </a>

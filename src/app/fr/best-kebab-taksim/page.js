@@ -79,7 +79,7 @@ const faqSchemaFr = {
 };
 
 export default function FrenchLandingPage() {
-  const whatsappUrl = "https://wa.me/905060453906?text=" + encodeURIComponent("Bonjour Kardeşler Cihangir, je souhaite réserver une table ou consulter le menu.");
+  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("Bonjour Kardeşler Cihangir, je souhaite réserver une table ou consulter le menu.");
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">

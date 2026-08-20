@@ -150,7 +150,7 @@ export default function NotFound() {
         {/* Secondary Links: WhatsApp & Map */}
         <div className="pt-4 border-t border-teal-dim/20 flex items-center justify-center gap-6 text-xs text-cream-dim flex-wrap">
           <a
-            href="https://wa.me/905060453906"
+            href="https://wa.me/902122513696"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-[#25D366] transition-colors"
