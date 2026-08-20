@@ -142,6 +142,15 @@ const featuredDishes = [
     image: "/images/adana.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
+  },
+  {
+    id: "karisik_meze_tabagi",
+    menuItemId: "karisik_meze_tabagi",
+    categoryId: "meze",
+    price: 500.0,
+    image: "/images/karisik_meze.webp",
+    badgeKey: "trending",
+    defaultBadge: "EN ÇOK SATAN"
   }
 ];
 
