@@ -3049,5 +3049,111 @@
     },
     "image": "/images/menu/kuzu_ciger.webp",
     "tags": []
+  },
+  {
+    "id": "elma_dilim_patates",
+    "name": {
+      "tr": "Elma Dilim Patates",
+      "en": "Potato Wedges",
+      "ar": "بطاطس ودجز"
+    },
+    "description": {
+      "tr": "Patato Wedges",
+      "en": "Baked potato wedges",
+      "ar": "بطاطس ودجز محمصة"
+    },
+    "price": 300,
+    "category": {
+      "tr": "Salata",
+      "en": "Salad",
+      "ar": "سلطة"
+    },
+    "tags": [
+      "vegetarian",
+      "vegan"
+    ]
+  },
+  {
+    "id": "kizartmasi_patates",
+    "name": {
+      "tr": "Kızartması Patates",
+      "en": "French Fries",
+      "ar": "بطاطا مقلية"
+    },
+    "description": {
+      "tr": "French Fries",
+      "en": "Crispy french fries",
+      "ar": "بطاطا مقلية مقرمشة"
+    },
+    "price": 250,
+    "category": {
+      "tr": "Salata",
+      "en": "Salad",
+      "ar": "سلطة"
+    },
+    "tags": [
+      "vegetarian",
+      "vegan"
+    ]
+  },
+  {
+    "id": "ton_balikli_salata",
+    "name": {
+      "tr": "Ton Balıklı Salata",
+      "en": "Tuna Salad",
+      "ar": "سلطة تونة"
+    },
+    "description": {
+      "tr": "Tuna Salad",
+      "en": "Fresh salad with tuna",
+      "ar": "سلطة طازجة مع التونة"
+    },
+    "price": 700,
+    "category": {
+      "tr": "Salata",
+      "en": "Salad",
+      "ar": "سلطة"
+    },
+    "tags": []
+  },
+  {
+    "id": "tavuklu_salata",
+    "name": {
+      "tr": "Tavuklu Salata",
+      "en": "Chicken Salad",
+      "ar": "سلطة دجاج"
+    },
+    "description": {
+      "tr": "Chicken with salad",
+      "en": "Chicken with salad",
+      "ar": "سلطة مع قطع الدجاج"
+    },
+    "price": 700,
+    "category": {
+      "tr": "Salata",
+      "en": "Salad",
+      "ar": "سلطة"
+    },
+    "tags": []
+  },
+  {
+    "id": "karides_guvec",
+    "name": {
+      "tr": "Karides Güveç",
+      "en": "Shrimp in Clay Pot",
+      "ar": "روبيان بالفخار"
+    },
+    "description": {
+      "tr": "Shrimp in Clay Pot",
+      "en": "Shrimp cooked in a traditional clay pot",
+      "ar": "روبيان مطبوخ في الفخار التقليدي"
+    },
+    "price": 700,
+    "category": {
+      "tr": "Salata",
+      "en": "Salad",
+      "ar": "سلطة"
+    },
+    "tags": []
   }
 ]

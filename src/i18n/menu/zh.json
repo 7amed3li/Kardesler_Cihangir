@@ -341,6 +341,26 @@
     "kuzu_ciger": {
       "name": "羊肝",
       "desc": "特制腌制羊肝烤串"
+    },
+    "elma_dilim_patates": {
+      "name": "烤土豆角",
+      "desc": "烤制土豆角"
+    },
+    "kizartmasi_patates": {
+      "name": "炸薯条",
+      "desc": "香脆炸薯条"
+    },
+    "ton_balikli_salata": {
+      "name": "金枪鱼沙拉",
+      "desc": "新鲜金枪鱼沙拉"
+    },
+    "tavuklu_salata": {
+      "name": "鸡肉沙拉",
+      "desc": "鸡肉沙拉"
+    },
+    "karides_guvec": {
+      "name": "砂锅虾",
+      "desc": "传统砂锅烹制虾"
     }
   }
 }

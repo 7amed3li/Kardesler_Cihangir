@@ -473,6 +473,26 @@
     "kuzu_ciger": {
       "name": "Kuzu Ciğer",
       "desc": "Özel soslu kuzu ciğer şiş"
+    },
+    "elma_dilim_patates": {
+      "name": "Elma Dilim Patates",
+      "desc": "Patato Wedges"
+    },
+    "kizartmasi_patates": {
+      "name": "Kızartması Patates",
+      "desc": "French Fries"
+    },
+    "ton_balikli_salata": {
+      "name": "Ton Balıklı Salata",
+      "desc": "Tuna Salad"
+    },
+    "tavuklu_salata": {
+      "name": "Tavuklu Salata",
+      "desc": "Chicken with salad"
+    },
+    "karides_guvec": {
+      "name": "Karides Güveç",
+      "desc": "Shrimp in Clay Pot"
     }
   }
 }

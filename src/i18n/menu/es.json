@@ -473,6 +473,26 @@
     "kuzu_ciger": {
       "name": "Hígado de Cordero",
       "desc": "Brocheta de hígado de cordero marinado"
+    },
+    "elma_dilim_patates": {
+      "name": "Gajos de Patata",
+      "desc": "Gajos de patata asados"
+    },
+    "kizartmasi_patates": {
+      "name": "Patatas Fritas",
+      "desc": "Patatas fritas crujientes"
+    },
+    "ton_balikli_salata": {
+      "name": "Ensalada de Atún",
+      "desc": "Ensalada fresca con atún"
+    },
+    "tavuklu_salata": {
+      "name": "Ensalada de Pollo",
+      "desc": "Ensalada con pollo"
+    },
+    "karides_guvec": {
+      "name": "Camarones en cazuela de barro",
+      "desc": "Camarones cocinados en cazuela de barro"
     }
   }
 }

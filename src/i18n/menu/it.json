@@ -473,6 +473,26 @@
     "kuzu_ciger": {
       "name": "Fegato di Agnello",
       "desc": "Spiedino di fegato di agnello marinato"
+    },
+    "elma_dilim_patates": {
+      "name": "Spicchi di Patate",
+      "desc": "Spicchi di patate al forno"
+    },
+    "kizartmasi_patates": {
+      "name": "Patatine Fritte",
+      "desc": "Patatine fritte croccanti"
+    },
+    "ton_balikli_salata": {
+      "name": "Insalata di Tonno",
+      "desc": "Insalata fresca con tonno"
+    },
+    "tavuklu_salata": {
+      "name": "Insalata di Pollo",
+      "desc": "Insalata con pollo"
+    },
+    "karides_guvec": {
+      "name": "Gamberi in tegame di terracotta",
+      "desc": "Gamberi cotti in terracotta"
     }
   }
 }

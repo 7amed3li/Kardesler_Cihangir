@@ -473,6 +473,26 @@
     "kuzu_ciger": {
       "name": "Lammleber",
       "desc": "Marinierter Lammleber-Spieß"
+    },
+    "elma_dilim_patates": {
+      "name": "Kartoffelspalten",
+      "desc": "Gebackene Kartoffelspalten"
+    },
+    "kizartmasi_patates": {
+      "name": "Pommes Frites",
+      "desc": "Knusprige Pommes Frites"
+    },
+    "ton_balikli_salata": {
+      "name": "Thunfischsalat",
+      "desc": "Frischer Salat mit Thunfisch"
+    },
+    "tavuklu_salata": {
+      "name": "Hähnchensalat",
+      "desc": "Salat mit Hähnchenstücken"
+    },
+    "karides_guvec": {
+      "name": "Garnelen im Tontopf",
+      "desc": "Garnelen im Tontopf gebacken"
     }
   }
 }

@@ -577,7 +577,12 @@ export const menuData = [
         price: 120.00,
         image: "/images/yogurt.webp",
         tags: ["vegetarian"],
-      }
+      },
+    { id: "elma_dilim_patates", price: 300, tags: ["vegetarian","vegan"] },
+    { id: "kizartmasi_patates", price: 250, tags: ["vegetarian","vegan"] },
+    { id: "ton_balikli_salata", price: 700, tags: [] },
+    { id: "tavuklu_salata", price: 700, tags: [] },
+    { id: "karides_guvec", price: 700, tags: [] },
     ]
   },
   {

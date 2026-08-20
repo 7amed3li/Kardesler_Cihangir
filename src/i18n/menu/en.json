@@ -473,6 +473,26 @@
     "kuzu_ciger": {
       "name": "Lamb Liver",
       "desc": "Special marinated lamb liver skewer"
+    },
+    "elma_dilim_patates": {
+      "name": "Potato Wedges",
+      "desc": "Baked potato wedges"
+    },
+    "kizartmasi_patates": {
+      "name": "French Fries",
+      "desc": "Crispy french fries"
+    },
+    "ton_balikli_salata": {
+      "name": "Tuna Salad",
+      "desc": "Fresh salad with tuna"
+    },
+    "tavuklu_salata": {
+      "name": "Chicken Salad",
+      "desc": "Chicken with salad"
+    },
+    "karides_guvec": {
+      "name": "Shrimp in Clay Pot",
+      "desc": "Shrimp cooked in a traditional clay pot"
     }
   }
 }
