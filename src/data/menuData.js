@@ -72,7 +72,7 @@ export const menuData = [
         tags: [],
         trending: true,
       },
-      { id: "kuzu_ciger", price: 825, image: "/images/menu/kuzu_ciger.webp", tags: [] },
+      { id: "kuzu_ciger", price: 825, image: "/images/menu/kuzu_ciger_v2.webp", tags: [] },
       {
         id: "mardin_kebap",
         price: 850,
