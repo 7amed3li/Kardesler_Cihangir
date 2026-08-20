@@ -297,7 +297,7 @@ export const menuData = [
       },
       {
         id: "karisik_meze_tabagi",
-        price: 600,
+        price: 500,
         image: "/images/karisik_meze.webp",
         tags: ["vegetarian"],
       }
