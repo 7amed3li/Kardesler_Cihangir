@@ -108,7 +108,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
           isFeatured
             ? "border border-[#9C7A3F]/60 shadow-xs"
             : "border border-[#9C7A3F]/20 hover:border-[#9C7A3F]/50"
-        } overflow-hidden transition-all duration-200 flex ${isVertical ? "flex-col" : "flex-row"} items-stretch ${isVertical ? "h-auto" : "h-36 sm:h-40"} text-start`}
+        } overflow-hidden transition-all duration-200 flex ${isVertical ? "flex-col" : "flex-row"} items-stretch ${isVertical ? "h-auto" : "min-h-[9rem] sm:min-h-[10rem]"} text-start`}
       >
         {/* Image Section */}
         {item.image && (
