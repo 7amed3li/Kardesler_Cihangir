@@ -1228,7 +1228,11 @@
     },
     "price": 500,
     "currency": "TRY",
-    "category": "mezeli_kebaplar",
+    "category": {
+      "tr": "Meze",
+      "en": "Appetizers",
+      "ar": "مقبلات"
+    },
     "categoryName": {
       "tr": "Mezeli Kebaplar",
       "en": "Appetizers Kebabs",

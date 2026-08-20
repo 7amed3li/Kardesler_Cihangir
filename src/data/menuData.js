@@ -295,12 +295,6 @@ export const menuData = [
         image: "/images/mezeli_tavuk_sis.webp",
         tags: [],
       },
-      {
-        id: "karisik_meze_tabagi",
-        price: 500,
-        image: "/images/karisik_meze.webp",
-        tags: ["vegetarian"],
-      }
     ]
   },
   {
@@ -535,7 +529,13 @@ export const menuData = [
         price: 180.00,
         image: "/images/humus.webp",
         tags: ["vegetarian", "vegan"],
-      }
+      },
+      {
+        id: "karisik_meze_tabagi",
+        price: 500,
+        image: "/images/karisik_meze.webp",
+        tags: ["vegetarian"],
+      },
     ]
   },
   {
