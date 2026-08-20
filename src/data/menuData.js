@@ -416,7 +416,7 @@ export const menuData = [
       },
       {
         id: "kavurmali_kasarli_pide",
-        price: 530,
+        price: 535,
         image: "/images/kavurmali_kasarli_pide.webp",
         tags: [],
       },
