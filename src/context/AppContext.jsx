@@ -53,6 +53,7 @@ export function AppProvider({ children }) {
   const [exchangeRates, setExchangeRates] = useState(HARDCODED_FALLBACK);
   const [ratesSource, setRatesSource] = useState("fallback");
   const [ratesLastUpdated, setRatesLastUpdated] = useState(null);
+  const [livePrices, setLivePrices] = useState({});
 
   // ═══════════════════════════════════════════
   // CART STATE
@@ -125,6 +126,26 @@ export function AppProvider({ children }) {
 
     // Refresh every 5 minutes
     const interval = setInterval(fetchRates, REFRESH_INTERVAL_MS);
+
+    // Fetch live prices from Supabase
+    async function fetchPrices() {
+      try {
+        const { createClient } = await import('@/lib/supabase/client');
+        const supabase = createClient();
+        const { data, error } = await supabase.from('items').select('id, price');
+        if (data && !error) {
+          const pricesMap = {};
+          data.forEach(item => {
+             pricesMap[item.id] = item.price;
+          });
+          setLivePrices(pricesMap);
+        }
+      } catch (e) {
+        console.error("Failed to load live prices", e);
+      }
+    }
+    fetchPrices();
+
     return () => {
       clearInterval(interval);
       // Cleanup cart-related timeouts
@@ -142,6 +163,10 @@ export function AppProvider({ children }) {
     setCurrency(newCurrency);
     localStorage.setItem("app_currency", newCurrency);
   };
+
+  const getLivePrice = useCallback((item) => {
+    return livePrices[item.id] !== undefined ? livePrices[item.id] : item.price;
+  }, [livePrices]);
 
   const convertPrice = (priceInTRY) => {
     const rateData = exchangeRates[currency] || HARDCODED_FALLBACK[currency];
@@ -211,7 +236,7 @@ export function AppProvider({ children }) {
 
   // Derived values
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
-  const cartTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const cartTotal = cart.reduce((sum, item) => sum + getLivePrice(item) * item.qty, 0);
 
   // Submit order via WhatsApp
   const submitOrder = useCallback(() => {
@@ -263,6 +288,7 @@ export function AppProvider({ children }) {
     ratesSource,
     ratesLastUpdated,
     getCurrencySymbol,
+    getLivePrice,
     convertPrice,
     // Cart
     cart,

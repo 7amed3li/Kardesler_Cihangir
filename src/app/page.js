@@ -35,7 +35,6 @@ function useReveal() {
 }
 
 export default function Home() {
-  const [livePrices, setLivePrices] = useState({});
   const [googleRating, setGoogleRating] = useState("4.6");
   const { t } = useAppContext();
   const menuRef = useRef(null);
@@ -53,24 +52,6 @@ export default function Home() {
 
   useEffect(() => {
     requestAnimationFrame(() => setHeroVisible(true));
-    
-    // Fetch live prices from Supabase
-    async function fetchPrices() {
-      try {
-        const { createClient } = await import('@/lib/supabase/client');
-        const supabase = createClient();
-        const { data, error } = await supabase.from('items').select('id, price');
-        if (data && !error) {
-          const pricesMap = {};
-          data.forEach(item => {
-             pricesMap[item.id] = item.price;
-          });
-          setLivePrices(pricesMap);
-        }
-      } catch (e) {
-        console.error("Failed to load live prices", e);
-      }
-    }
 
     // Fetch live Google rating score dynamically from /api/reviews
     async function fetchLiveRating() {
@@ -87,8 +68,6 @@ export default function Home() {
         console.warn("Failed to load live reviews rating", e);
       }
     }
-
-    fetchPrices();
     fetchLiveRating();
   }, []);
 
@@ -234,16 +213,15 @@ export default function Home() {
           </h2>
         </div>
         
-        <div className="flex overflow-x-auto gap-4 pb-6 px-2 no-scrollbar snap-x max-w-6xl mx-auto">
-          {trendingItems.map((item, idx) => {
-            const livePrice = livePrices[item.id];
-            const displayItem = livePrice ? { ...item, price: livePrice } : item;
-            return (
-              <div key={`trending-${item.id}`} className="min-w-[82vw] sm:min-w-[340px] md:min-w-[320px] snap-center">
-                <FoodCard item={displayItem} index={idx} isVertical={true} />
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {trendingItems.slice(0, 3).map((item, index) => (
+            <FoodCard 
+              key={item.id} 
+              item={item} 
+              index={index} 
+              isVertical={true} 
+            />
+          ))}
         </div>
 
         <div className="text-center mt-6">

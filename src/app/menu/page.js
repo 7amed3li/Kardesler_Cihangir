@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import dynamic from "next/dynamic";
 const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: true });
-import { ChevronLeft, ChevronRight, ChevronDown, Plus, Minus, Check, UtensilsCrossed, Coffee } from "lucide-react";
+import { CaretLeft, CaretRight, ForkKnife, Coffee } from "@phosphor-icons/react";
 import { OttomanSeal, OttomanStar, KebabSkewer } from "@/components/BrandIcons";
 import Link from "next/link";
 import DeepMenuSchema from "@/components/DeepMenuSchema";
@@ -42,7 +42,7 @@ function BreakfastBanner() {
         href={breakfastHref}
         className="flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/25 hover:border-[#9C7A3F]/50 hover:bg-[#9C7A3F]/5 transition-all group"
       >
-        <Coffee size={16} className="text-[#9C7A3F]" />
+        <Coffee size={16} weight="bold" className="text-[#9C7A3F]" />
         <span className="text-sm font-semibold text-[#9C7A3F] group-hover:text-[#7A5F2E] transition-colors">
           {label}
         </span>
@@ -302,7 +302,7 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                 aria-label="Scroll left"
                 className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
               >
-                <ChevronLeft size={18} className="text-[#2B2620]" />
+                <CaretLeft size={18} weight="bold" className="text-[#2B2620]" />
               </button>
             )}
             {canScrollRight && (
@@ -311,7 +311,7 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                 aria-label="Scroll right"
                 className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
               >
-                <ChevronRight size={18} className="text-[#2B2620]" />
+                <CaretRight size={18} weight="bold" className="text-[#2B2620]" />
               </button>
             )}
 
@@ -351,9 +351,9 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center text-[#9C7A3F]">
                           {cat.id.includes("icecek") || cat.id.includes("kahve") ? (
-                            <Coffee size={20} strokeWidth={1.5} />
+                            <Coffee size={20} weight="regular" />
                           ) : (
-                            <UtensilsCrossed size={20} strokeWidth={1.5} />
+                            <ForkKnife size={20} weight="regular" />
                           )}
                         </div>
                       )}

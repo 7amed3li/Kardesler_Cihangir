@@ -281,7 +281,7 @@
       "en": "Adana & Urfa Kebab - 140 gr. Grill Minced Beaf Meat",
       "ar": "كباب أضنة وأورفا - 140 غرام - لحم مفروم مشوي على الفحم"
     },
-    "price": 625,
+    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -308,7 +308,7 @@
       "en": "Mardin Kebab - 180 gr. Mardin Kebab",
       "ar": "كباب ماردين - 180 غرام - كباب على طريقة ماردين"
     },
-    "price": 750,
+    "price": 950,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -335,7 +335,7 @@
       "en": "Beyti Kebab - 170 gr. Grill Minced Beaf Meat with Garlicky",
       "ar": "كباب بيتي - 170 غرام - كباب لحم بالثوم ملفوف بالخبز"
     },
-    "price": 730,
+    "price": 930,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -362,7 +362,7 @@
       "en": "Tomatoes Kebab - 150 gr. Grill Tomatoes, Beaf Meat",
       "ar": "كباب بالطماطم - 150 غرام - كباب مشوي مع طماطم"
     },
-    "price": 700,
+    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -389,7 +389,7 @@
       "en": "Eggplant Kebab - 160 gr. Grill Eggplant, Minced Beaf Meat",
       "ar": "كباب بالباذنجان - 160 غرام - كباب لحم مع باذنجان مشوي"
     },
-    "price": 700,
+    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -416,7 +416,7 @@
       "en": "Lamb Shish Kebab - 150 gr. Lamb Shish Kebab",
       "ar": "شيش لحم غنم - 150 غرام - قطع غنم طرية مشوية على أسياخ"
     },
-    "price": 700,
+    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -443,7 +443,7 @@
       "en": "Ali Nazik Kebab - 150 gr. Grill Lamb Meat and Eggplant with Garlicky Yogurt",
       "ar": "علي نازك - 150 غرام - لحم غنم مشوي على باذنجان مدخّن بالزبادي والثوم"
     },
-    "price": 730,
+    "price": 930,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -470,7 +470,7 @@
       "en": "Grill Meatball - 150 gr. Grill Meatball",
       "ar": "كفتة تركية مشوية - 150 غرام - كفتة على طريقة إينيغول"
     },
-    "price": 625,
+    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -497,7 +497,7 @@
       "en": "Vali Kebab - 220 gr. Grill Chicken, Lamb, Mince Beaf Meat with Eggplant, Tomatoes and Pepper with Cheese",
       "ar": "كباب الوالي (مشكّل) - 220 غرام - دجاج وغنم ولحم بقري مع باذنجان وطماطم وفلفل وجبنة"
     },
-    "price": 870,
+    "price": 1070,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -524,7 +524,7 @@
       "en": "Chicken Shish - 150 gr. Chicken Shish",
       "ar": "شيش طاووق (دجاج مشوي) - 150 غرام - صدور دجاج متبلة مشوية على أسياخ"
     },
-    "price": 575,
+    "price": 775,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -551,7 +551,7 @@
       "en": "Chicken Wings - 170 gr. Chicken Wings",
       "ar": "أجنحة دجاج مشوية - 170 غرام"
     },
-    "price": 600,
+    "price": 800,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -578,7 +578,7 @@
       "en": "Lamb Loin - 220 gr. Lamb Loin with Bulgur Rice and with Salad",
       "ar": "لحم غنم لوقم (طري) - 220 غرام - قطع لحم غنم طرية مع برغل وسلطة"
     },
-    "price": 1100,
+    "price": 1300,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -605,7 +605,7 @@
       "en": "Lamb Chops - 320 gr. Lamb Chops",
       "ar": "ريش غنم مشوية - 320 غرام - ريش غنم على الفحم"
     },
-    "price": 1350,
+    "price": 1550,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -632,7 +632,7 @@
       "en": "Casserole Kebab - 160 gr. Casserole Kebab",
       "ar": "كباب بالصاج (كاسرول) - 160 غرام - كباب مطبوخ على صاج فخاري"
     },
-    "price": 700,
+    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -659,7 +659,7 @@
       "en": "Iskender Kebab - 140 gr. Iskender Kebab",
       "ar": "إسكندر كباب - 140 غرام - شرائح لحم فوق خبز بصلصة الطماطم والزبدة"
     },
-    "price": 625,
+    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -686,7 +686,7 @@
       "en": "Kebab with Yogurt - 140 gr. Grill Minced Beaf Meat with Yogurt",
       "ar": "كباب بالزبادي - 140 غرام - كباب لحم مع زبادي"
     },
-    "price": 625,
+    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -713,7 +713,7 @@
       "en": "Mashed Tomatoes Kebab - 140 gr. Mashed Tomatoes Kebab",
       "ar": "كباب على صلصة طماطم مشوية - 140 غرام - كباب فوق طماطم مهروسة مشوية"
     },
-    "price": 650,
+    "price": 850,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -740,7 +740,7 @@
       "en": "Beaf Veal Steak Sish - 200 gr. Beaf Veal Steak Sish with Bulgur Rice and Salad",
       "ar": "ستيك لحم بقري (فيليه) - 200 غرام - ستيك فيليه بقري مع برغل وسلطة"
     },
-    "price": 950,
+    "price": 1150,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -767,7 +767,7 @@
       "en": "Beaf Sish Kebab - 200 gr. Beaf Sish Kebap with Bulgur Rice and Salad",
       "ar": "شيش لحم بقري (قطع صغيرة) - 200 غرام - قطع لحم بقري مشوية مع برغل وسلطة"
     },
-    "price": 750,
+    "price": 950,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -794,7 +794,7 @@
       "en": "Mixed Kebab 1 - 350 gr. Grilled chicken, lamb, meatball, tomatoes kebab, mince beaf meat salad with bulgur rice",
       "ar": "مشويات مشكّلة 1 - 350 غرام - تشكيلة: دجاج، غنم، كفتة، كباب بالطماطم، لحم مفروم مع برغل"
     },
-    "price": 1600,
+    "price": 1800,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -821,7 +821,7 @@
       "en": "Mixed Kebab 2 - 550 gr. Grill lamb sish, meatball, lamb chops, beaf steak meat, mince beaf meat and Appetizers",
       "ar": "مشويات مشكّلة 2 (فاخرة) - 550 غرام - تشكيلة فاخرة: شيش غنم، كفتة، ريش، ستيك، لحم مفروم مع مقبلات"
     },
-    "price": 2450,
+    "price": 2650,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
@@ -848,7 +848,7 @@
       "en": "Special Mardin Kebab - 180 gr. Special Mardin Kebab",
       "ar": "وجبة كباب ماردين - 180 غرام - وجبة كاملة مع مقبلات ومشروب"
     },
-    "price": 1050,
+    "price": 1250,
     "currency": "TRY",
     "category": "ozel_menu",
     "categoryName": {
@@ -929,7 +929,7 @@
       "en": "Special Lamb Shish Kebab - 140 gr. Special Lamb Shish Kebab",
       "ar": "وجبة شيش غنم - 140 غرام - وجبة كاملة مع مقبلات ومشروب"
     },
-    "price": 1000,
+    "price": 1200,
     "currency": "TRY",
     "category": "ozel_menu",
     "categoryName": {
@@ -956,7 +956,7 @@
       "en": "Adana & Urfa with Appetizers - 140 gr. Grill Minced Beaf Meat with Appetizers",
       "ar": "كباب أضنة وأورفا مع مقبلات - 140 غرام - كباب لحم مع تشكيلة مقبلات"
     },
-    "price": 725,
+    "price": 925,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -983,7 +983,7 @@
       "en": "Beaf Shish Kebab with Appetizers - 200 gr. Beaf Shish Kebab with Appetizers",
       "ar": "شيش لحم بقري مع مقبلات - 200 غرام"
     },
-    "price": 800,
+    "price": 1000,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1010,7 +1010,7 @@
       "en": "Lamb Chops with Appetizer - 320 gr. Lamb Chops with Appetizer",
       "ar": "ريش غنم مع مقبلات - 320 غرام"
     },
-    "price": 1450,
+    "price": 1650,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1037,7 +1037,7 @@
       "en": "Lamb Delight with Appetizers - 220 gr. Lamb Delight with Appetizers",
       "ar": "لحم غنم لوقم مع مقبلات - 220 غرام"
     },
-    "price": 1100,
+    "price": 1300,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1064,7 +1064,7 @@
       "en": "İnegöl Meatballs with Appetizers - 150 gr. İnegöl Meatballs with Appetizers",
       "ar": "كفتة تركية مع مقبلات - 150 غرام"
     },
-    "price": 725,
+    "price": 925,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1091,7 +1091,7 @@
       "en": "Lamb Shish with Appetizers - 150 gr. Lamb Shish with Appetizers",
       "ar": "شيش غنم مع مقبلات - 150 غرام"
     },
-    "price": 800,
+    "price": 1000,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1118,7 +1118,7 @@
       "en": "Beaf Tenderloin with Appetizers - 200 gr. Beaf Tenderloin with Appetizers",
       "ar": "ستيك بقري مع مقبلات - 200 غرام"
     },
-    "price": 1050,
+    "price": 1250,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1145,7 +1145,7 @@
       "en": "Appetizer Wrap - 90 gr. Appetizer Wrap",
       "ar": "ساندوتش دورم مع مقبلات - 90 غرام"
     },
-    "price": 480,
+    "price": 680,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1172,7 +1172,7 @@
       "en": "Chicken Wings with Appetizers - 150 gr. Chicken Wings with Appetizers",
       "ar": "أجنحة دجاج مع مقبلات - 150 غرام"
     },
-    "price": 725,
+    "price": 925,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1199,7 +1199,7 @@
       "en": "Chicken Shish with Appetizers - 150 gr. Chicken Shish with Appetizers",
       "ar": "شيش طاووق مع مقبلات - 150 غرام"
     },
-    "price": 625,
+    "price": 825,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
@@ -1226,7 +1226,7 @@
       "en": "Mixed Appetizer Platter",
       "ar": "طبق مقبلات مشكّل"
     },
-    "price": 500,
+    "price": 700,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {

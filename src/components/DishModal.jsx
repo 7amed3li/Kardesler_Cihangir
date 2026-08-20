@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import { X, ZoomIn, Plus, Minus } from "lucide-react";
+import { X, MagnifyingGlassPlus, Plus, Minus } from "@phosphor-icons/react";
 import { useAppContext } from "../context/AppContext";
 
 /**
@@ -33,7 +33,7 @@ function CartCounter({ item, compact = false }) {
           compact ? "w-8 h-8" : "px-5 py-2.5 w-full max-w-[200px]"
         }`}
       >
-        <Plus size={compact ? 16 : 18} strokeWidth={2.5} />
+        <Plus size={compact ? 16 : 20} weight="bold" />
         {!compact && (
           <span className="text-sm font-bold tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
             Add to Order
@@ -57,7 +57,7 @@ function CartCounter({ item, compact = false }) {
           compact ? "w-6 h-6" : "w-10 h-10"
         }`}
       >
-        <Minus size={compact ? 12 : 16} strokeWidth={2.5} />
+        <Minus size={14} weight="bold" />
       </button>
       <span
         key={qty}
@@ -91,7 +91,7 @@ export default function DishModal({
   customTags,
   hideCart = false 
 }) {
-  const { menuT, t, convertPrice, getCurrencySymbol, lang } = useAppContext();
+  const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, lang } = useAppContext();
   const isRTL = lang === "ar" || lang === "fa";
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -105,7 +105,7 @@ export default function DishModal({
   // Resolve data either from context (if item is provided) or custom props
   const name = customName || (item ? (menuT.items[item.id]?.name || item?.name?.en) : "Special Dish");
   const description = customDesc || (item ? (menuT.items[item.id]?.desc || item?.description?.en) : "");
-  const price = customPrice || (item ? item.price : 0);
+  const price = customPrice || (item ? getLivePrice(item) : 0);
   const displayPrice = convertPrice ? convertPrice(price) : price;
   const symbol = getCurrencySymbol ? getCurrencySymbol() : "₺";
   const image = customImage || (item ? item.image : null);
@@ -132,7 +132,7 @@ export default function DishModal({
               aria-label="Close modal"
               className={`absolute top-4 ${isRTL ? "start-4" : "end-4"} z-50 w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-colors border border-[#9C7A3F]/20`}
             >
-              <X size={18} />
+              <X size={18} weight="bold" />
             </button>
 
             {/* Modal Image */}
@@ -146,7 +146,7 @@ export default function DishModal({
                   aria-label="View fullscreen image"
                   className={`absolute bottom-4 ${isRTL ? "start-4" : "end-4"} z-20 w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-all border border-[#9C7A3F]/30 shadow-md`}
                 >
-                  <ZoomIn size={16} />
+                  <MagnifyingGlassPlus size={16} weight="bold" />
                 </button>
               </div>
             )}
@@ -232,7 +232,7 @@ export default function DishModal({
             aria-label="Close fullscreen image"
             className="absolute top-6 end-6 z-[9999999] w-12 h-12 flex items-center justify-center rounded-full bg-cream text-ink hover:bg-gold hover:scale-110 transition-all shadow-[0_0_20px_rgba(250,243,231,0.3)]"
           >
-            <X size={28} strokeWidth={2.5} />
+            <X size={28} weight="bold" />
           </button>
           
           <div className="relative w-full h-full max-w-5xl max-h-[90vh] modal-content" onClick={(e) => e.stopPropagation()}>

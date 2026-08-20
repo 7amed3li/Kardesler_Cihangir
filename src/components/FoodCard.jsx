@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppContext } from "../context/AppContext";
-import { X, ZoomIn, Plus, Minus, ShoppingBag, Share2, Check, ChevronRight } from "lucide-react";
+import { X, MagnifyingGlassPlus, Plus, Minus, ShareNetwork, Check, CaretRight } from "@phosphor-icons/react";
 import Image from "next/image";
 
 /**
@@ -32,7 +32,7 @@ function CartCounter({ item, compact = false }) {
         aria-label="Add to list"
         className={`flex items-center justify-center rounded-md border border-[#9C7A3F] text-[#9C7A3F] hover:bg-[#9C7A3F] hover:text-white transition-colors ${compact ? "w-8 h-8" : "w-10 h-10"}`}
       >
-        <Plus size={compact ? 16 : 20} strokeWidth={2.5} />
+        <Plus size={compact ? 16 : 20} weight="bold" />
       </button>
     );
   }
@@ -47,7 +47,7 @@ function CartCounter({ item, compact = false }) {
         aria-label="Decrease quantity"
         className="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-md text-[#2B2620] hover:text-[#A0422E] transition-colors"
       >
-        <Minus size={14} strokeWidth={2.5} />
+        <Minus size={14} weight="bold" />
       </button>
       <span
         key={qty}
@@ -60,14 +60,14 @@ function CartCounter({ item, compact = false }) {
         aria-label="Increase quantity"
         className="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-md text-[#2B2620] hover:text-[#4E5F4C] transition-colors"
       >
-        <Plus size={14} strokeWidth={2.5} />
+        <Plus size={14} weight="bold" />
       </button>
     </div>
   );
 }
 
 export default function FoodCard({ item, index, isVertical = false }) {
-  const { menuT, t, convertPrice, getCurrencySymbol, getItemQuantity, lang } = useAppContext();
+  const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, getItemQuantity, lang } = useAppContext();
   const isRTL = lang === "ar" || lang === "fa";
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
@@ -81,7 +81,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
   const name = menuT.items[item.id]?.name || item?.name?.en || "Yeni Ürün";
   const description = menuT.items[item.id]?.desc || item?.description?.en || "";
 
-  const displayPrice = convertPrice(item.price);
+  const displayPrice = convertPrice(getLivePrice(item));
   const symbol = getCurrencySymbol();
   const qty = getItemQuantity(item.id);
   const isFeatured = item.tags?.includes("signature") || item.trending;
@@ -172,7 +172,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
               </h3>
               {/* Click Affordance Chevron */}
               <div className="shrink-0 w-6 h-6 rounded-full bg-[#9C7A3F]/10 flex items-center justify-center text-[#9C7A3F] group-hover:bg-[#9C7A3F] group-hover:text-white transition-colors">
-                <ChevronRight size={14} className={`transition-transform ${isRTL ? "-scale-x-100" : ""}`} />
+                <CaretRight size={14} weight="bold" className={`transition-transform ${isRTL ? "-scale-x-100" : ""}`} />
               </div>
             </div>
             {description && (
@@ -220,7 +220,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 aria-label="Copy link to dish"
                 className="w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] hover:bg-[#F7F2E7] transition-all border border-[#9C7A3F]/20 shadow-sm"
               >
-                {isCopied ? <Check size={16} className="text-green-600" /> : <Share2 size={16} />}
+                {isCopied ? <Check size={16} weight="bold" className="text-green-600" /> : <ShareNetwork size={16} weight="regular" />}
               </button>
               
               <button
@@ -228,7 +228,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 aria-label="Close modal"
                 className="w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] hover:bg-[#F7F2E7] transition-all border border-[#9C7A3F]/20 shadow-sm"
               >
-                <X size={18} />
+                <X size={18} weight="bold" />
               </button>
             </div>
 
@@ -242,7 +242,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                   aria-label="View fullscreen image"
                   className="absolute bottom-4 end-4 z-20 w-9 h-9 flex items-center justify-center rounded-md bg-[#2B2620] text-white hover:bg-[#9C7A3F] transition-colors shadow-md"
                 >
-                  <ZoomIn size={16} />
+                  <MagnifyingGlassPlus size={16} weight="bold" />
                 </button>
               </div>
             )}
@@ -316,7 +316,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
             aria-label="Close fullscreen image"
             className="absolute top-6 end-6 z-[9999999] w-12 h-12 flex items-center justify-center rounded-full bg-cream text-ink hover:bg-gold hover:scale-110 transition-all shadow-[0_0_20px_rgba(250,243,231,0.3)]"
           >
-            <X size={28} strokeWidth={2.5} />
+            <X size={28} weight="bold" />
           </button>
           
           <div className="relative w-full h-full max-w-5xl max-h-[90vh] modal-content" onClick={(e) => e.stopPropagation()}>
