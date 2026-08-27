@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, Navigation, Flame, ShieldCheck, Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink } from "lucide-react";
-import LandingDishesSection from "../../components/LandingDishesSection";
-import LandingVerifiedReviews from "../../components/LandingVerifiedReviews";
-import SeoStorytelling from "../../components/SeoStorytelling";
-import HeroImageWithModal from "./HeroImageWithModal";
+import LandingDishesSection from "@/components/LandingDishesSection";
+import LandingVerifiedReviews from "@/components/LandingVerifiedReviews";
+import SeoStorytelling from "@/components/SeoStorytelling";
+import HeroImageWithModal from "@/app/best-kebab-taksim/HeroImageWithModal";
 
 export const metadata = {
   title: "Authentic Wood-Fired Kebab Near Taksim Square (Since 1998) | Kardeşler Cihangir",
