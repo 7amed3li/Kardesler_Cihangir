@@ -340,7 +340,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#EDE3CE] text-[#2B2620] font-[var(--font-inter)]" suppressHydrationWarning>
-        {process.env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
+        <GoogleTagManager gtmId="GTM-PRHLP84Z" />
 
         <AppProvider>
           <SmartSplash />
