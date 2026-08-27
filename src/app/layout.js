@@ -304,8 +304,8 @@ const globalSchemaGraph = {
 
 import Footer from "@/components/Footer";
 
-export default function RootLayout({ children }) {
-  const headersList = headers();
+export default async function RootLayout({ children }) {
+  const headersList = await headers();
   const locale = headersList.get('x-locale') || 'tr';
   const dir = locale === 'ar' || locale === 'fa' ? 'rtl' : 'ltr';
   
