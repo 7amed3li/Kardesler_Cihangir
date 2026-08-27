@@ -6,9 +6,8 @@ import { translations, menuTranslations } from "../i18n/translations";
 import SaudiRiyalIcon from "../components/SaudiRiyalIcon";
 import { menuData } from "../data/menuData";
 
-// Flat lookup for menuData items by id — used as price fallback when Supabase is unreachable
+// Flat lookup for menuData items by id (used only for images/names, NOT prices)
 const allMenuItems = menuData.flatMap(cat => cat.items || []);
-const getMenuItemPrice = (itemId) => allMenuItems.find(i => i.id === itemId)?.price ?? 0;
 
 const AppContext = createContext();
 
@@ -59,6 +58,8 @@ export function AppProvider({ children }) {
   const [ratesSource, setRatesSource] = useState("fallback");
   const [ratesLastUpdated, setRatesLastUpdated] = useState(null);
   const [livePrices, setLivePrices] = useState({});
+  const [pricesLoading, setPricesLoading] = useState(true);
+  const [pricesError, setPricesError] = useState(null);
 
   // ═══════════════════════════════════════════
   // CART STATE
@@ -94,10 +95,19 @@ export function AppProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    const savedLang = localStorage.getItem("app_lang");
-    if (savedLang && translations[savedLang]) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setLang(savedLang);
+    // URL Locale > LocalStorage Locale
+    const locales = ['tr', 'en', 'ar', 'ru', 'fa', 'fr', 'de', 'it', 'es', 'zh'];
+    const pathLocale = window.location.pathname.split('/')[1];
+    
+    if (locales.includes(pathLocale)) {
+      setLang(pathLocale);
+      localStorage.setItem("app_lang", pathLocale);
+    } else {
+      const savedLang = localStorage.getItem("app_lang");
+      if (savedLang && translations[savedLang]) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setLang(savedLang);
+      }
     }
     
     const savedCurrency = localStorage.getItem("app_currency");
@@ -134,11 +144,14 @@ export function AppProvider({ children }) {
 
     // Fetch live prices from Supabase
     async function fetchPrices() {
+      setPricesLoading(true);
+      setPricesError(null);
       try {
         const { createClient } = await import('@/lib/supabase/client');
         const supabase = createClient();
         const { data, error } = await supabase.from('items').select('id, price');
-        if (data && !error) {
+        if (error) throw error;
+        if (data) {
           const pricesMap = {};
           data.forEach(item => {
              pricesMap[item.id] = item.price;
@@ -147,6 +160,9 @@ export function AppProvider({ children }) {
         }
       } catch (e) {
         console.error("Failed to load live prices", e);
+        setPricesError(e.message || "Failed to load prices");
+      } finally {
+        setPricesLoading(false);
       }
     }
     fetchPrices();
@@ -170,10 +186,9 @@ export function AppProvider({ children }) {
   };
 
   const getLivePrice = useCallback((item) => {
-    // Priority: 1) Supabase live price, 2) item.price (menuData), 3) menuData lookup by id
+    // Priority: STRICTLY Supabase live price. NO FALLBACK to menuData.
     if (livePrices[item.id] !== undefined) return livePrices[item.id];
-    if (item.price !== undefined) return item.price;
-    return getMenuItemPrice(item.id);
+    return null; // Return null explicitly if price is unknown
   }, [livePrices]);
 
   const convertPrice = (priceInTRY) => {
@@ -313,6 +328,8 @@ export function AppProvider({ children }) {
     getItemQuantity,
     submitOrder,
     orderStatus,
+    pricesLoading,
+    pricesError,
   };
 
   return (

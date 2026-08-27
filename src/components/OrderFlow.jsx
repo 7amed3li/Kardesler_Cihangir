@@ -23,6 +23,9 @@ export default function OrderFlow() {
     orderStatus,
     convertPrice,
     getCurrencySymbol,
+    getLivePrice,
+    pricesLoading,
+    pricesError,
   } = useAppContext();
 
   const symbol = getCurrencySymbol();
@@ -117,7 +120,8 @@ export default function OrderFlow() {
                 <div className="space-y-3">
                   {cart.map((item, idx) => {
                     const name = menuT.items[item.id]?.name || item.id;
-                    const itemSubtotal = item.price * item.qty;
+                    const price = getLivePrice(item);
+                    const itemSubtotal = price !== null ? price * item.qty : null;
                     return (
                       <div
                         key={item.id}
@@ -143,9 +147,15 @@ export default function OrderFlow() {
                         {/* Item info */}
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-bold text-[#2B2620] truncate" style={{ fontFamily: "var(--font-cairo)" }}>{name}</p>
-                          <p className="text-[11px] text-[#7A7364] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
-                            {convertPrice(itemSubtotal)} {symbol}
-                          </p>
+                          {pricesLoading ? (
+                            <p className="text-[11px] text-[#9C7A3F] mt-0.5 animate-pulse" style={{ fontFamily: "var(--font-inter)" }}>Loading...</p>
+                          ) : pricesError || itemSubtotal === null ? (
+                            <p className="text-[11px] text-[#A0422E] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>Unavailable</p>
+                          ) : (
+                            <p className="text-[11px] text-[#7A7364] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
+                              {convertPrice(itemSubtotal)} {symbol}
+                            </p>
+                          )}
                         </div>
 
                         {/* Qty controls */}
@@ -183,7 +193,13 @@ export default function OrderFlow() {
                 {/* Total (Subtle) */}
                 <div className="flex items-center justify-center gap-2 text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                   <span>{labels.total || "Estimated Total:"}</span>
-                  <span>{convertPrice(cartTotal)} {symbol}</span>
+                  {pricesLoading ? (
+                    <span className="animate-pulse">...</span>
+                  ) : pricesError ? (
+                    <span className="text-[#A0422E]">-</span>
+                  ) : (
+                    <span>{convertPrice(cartTotal)} {symbol}</span>
+                  )}
                 </div>
 
                 {/* Call to Order Button */}

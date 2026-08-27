@@ -67,7 +67,7 @@ function CartCounter({ item, compact = false }) {
 }
 
 export default function FoodCard({ item, index, isVertical = false }) {
-  const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, getItemQuantity, lang } = useAppContext();
+  const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, getItemQuantity, lang, pricesLoading, pricesError } = useAppContext();
   const isRTL = lang === "ar" || lang === "fa";
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
@@ -81,7 +81,8 @@ export default function FoodCard({ item, index, isVertical = false }) {
   const name = menuT.items[item.id]?.name || item?.name?.en || "Yeni Ürün";
   const description = menuT.items[item.id]?.desc || item?.description?.en || "";
 
-  const displayPrice = convertPrice(getLivePrice(item));
+  const rawPrice = getLivePrice(item);
+  const displayPrice = rawPrice !== null ? convertPrice(rawPrice) : null;
   const symbol = getCurrencySymbol();
   const qty = getItemQuantity(item.id);
   const isFeatured = item.tags?.includes("signature") || item.trending;
@@ -131,7 +132,13 @@ export default function FoodCard({ item, index, isVertical = false }) {
             {/* Price Tag — Compact flat badge */}
             <div className="absolute top-2 start-2 z-20 flex items-center pointer-events-none">
               <span className="flex items-center px-2.5 py-1 rounded-[4px] bg-[#9C7A3F] text-[#EAF0E6] font-bold text-xs tracking-wide shadow-xs" style={{ fontFamily: "var(--font-inter)" }}>
-                {displayPrice} {symbol}
+                {pricesLoading ? (
+                  <span className="animate-pulse">...</span>
+                ) : pricesError || displayPrice === null ? (
+                  <span className="text-[#A0422E] bg-white/90 px-1 rounded">-</span>
+                ) : (
+                  <>{displayPrice} {symbol}</>
+                )}
               </span>
             </div>
 
@@ -186,7 +193,13 @@ export default function FoodCard({ item, index, isVertical = false }) {
           <div className={`flex items-center justify-between ${isVertical ? "mt-3" : "mt-2"}`}>
             {!item.image && (
               <span className="text-[#9C7A3F] font-bold text-sm" style={{ fontFamily: "var(--font-inter)" }}>
-                {displayPrice} {symbol}
+                {pricesLoading ? (
+                  <span className="animate-pulse">...</span>
+                ) : pricesError || displayPrice === null ? (
+                  <span className="text-[#A0422E]">-</span>
+                ) : (
+                  <>{displayPrice} {symbol}</>
+                )}
               </span>
             )}
             {item.image && <div />}
@@ -252,7 +265,13 @@ export default function FoodCard({ item, index, isVertical = false }) {
               <div className="flex justify-between items-start gap-4">
                 <h2 className="text-2xl font-bold text-[#2B2620]">{name}</h2>
                 <span className="shrink-0 text-lg font-bold text-[#9C7A3F] bg-[#EDE3CE] px-3 py-1 rounded-md border border-[#9C7A3F]/30" style={{ fontFamily: "var(--font-inter)" }}>
-                  {displayPrice} {symbol}
+                  {pricesLoading ? (
+                    <span className="animate-pulse">...</span>
+                  ) : pricesError || displayPrice === null ? (
+                    <span className="text-[#A0422E]">Unavailable</span>
+                  ) : (
+                    <>{displayPrice} {symbol}</>
+                  )}
                 </span>
               </div>
 

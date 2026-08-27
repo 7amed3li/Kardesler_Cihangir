@@ -91,7 +91,7 @@ export default function DishModal({
   customTags,
   hideCart = false 
 }) {
-  const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, lang } = useAppContext();
+  const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, lang, pricesLoading, pricesError } = useAppContext();
   const isRTL = lang === "ar" || lang === "fa";
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -105,8 +105,8 @@ export default function DishModal({
   // Resolve data either from context (if item is provided) or custom props
   const name = customName || (item ? (menuT.items[item.id]?.name || item?.name?.en) : "Special Dish");
   const description = customDesc || (item ? (menuT.items[item.id]?.desc || item?.description?.en) : "");
-  const price = customPrice || (item ? getLivePrice(item) : 0);
-  const displayPrice = convertPrice ? convertPrice(price) : price;
+  const price = customPrice !== undefined ? customPrice : (item ? getLivePrice(item) : null);
+  const displayPrice = price !== null ? (convertPrice ? convertPrice(price) : price) : null;
   const symbol = getCurrencySymbol ? getCurrencySymbol() : "₺";
   const image = customImage || (item ? item.image : null);
   const baseTags = customTags || (item ? item.tags : []) || [];
@@ -156,7 +156,13 @@ export default function DishModal({
               <div className="flex justify-between items-start gap-4">
                 <h2 className="text-2xl font-bold text-[#2B2620] leading-tight text-start">{name}</h2>
                 <span className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#9C7A3F] px-3 py-1 rounded-md" style={{ fontFamily: "var(--font-inter)" }}>
-                  {displayPrice} {symbol}
+                  {pricesLoading ? (
+                    <span className="animate-pulse">...</span>
+                  ) : pricesError || displayPrice === null ? (
+                    <span className="text-[#A0422E]">Unavailable</span>
+                  ) : (
+                    <>{displayPrice} {symbol}</>
+                  )}
                 </span>
               </div>
 
