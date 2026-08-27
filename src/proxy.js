@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+const locales = ['tr', 'en', 'ar', 'ru', 'fa', 'fr', 'de', 'it', 'es', 'zh'];
+const defaultLocale = 'en';
+
 // In-memory rate limiter for Edge/Node Middleware
 // Use globalThis to persist the Map across Next.js dev reloads
 const rateLimitMap = globalThis.rateLimitMap || new Map();
@@ -92,7 +95,24 @@ export function proxy(request) {
     return res;
   }
 
-  return NextResponse.next();
+  // 4. Inject locale for dynamic routing
+  const pathnameIsMissingLocale = locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  );
+
+  let locale = defaultLocale;
+  if (!pathnameIsMissingLocale) {
+    locale = pathname.split('/')[1];
+  }
+
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-locale', locale);
+
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
 }
 
 export const config = {
