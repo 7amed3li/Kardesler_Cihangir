@@ -6,6 +6,7 @@ import OrderFlowWrapper from "@/components/OrderFlowWrapper";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleTagManager } from '@next/third-parties/google';
 import Script from "next/script";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -304,9 +305,14 @@ const globalSchemaGraph = {
 import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }) {
+  const headersList = headers();
+  const locale = headersList.get('x-locale') || 'tr';
+  const dir = locale === 'ar' || locale === 'fa' ? 'rtl' : 'ltr';
+  
   return (
     <html
-      lang="tr"
+      lang={locale}
+      dir={dir}
       suppressHydrationWarning
       className={`h-full antialiased ${cairo.variable} ${inter.variable}`}
       data-scroll-behavior="smooth"
