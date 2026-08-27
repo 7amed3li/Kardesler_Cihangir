@@ -68,8 +68,8 @@
     "errorHint": "请重新尝试",
     "clear": "清空购物车",
     "table": "您的桌号",
-    "sendWhatsApp": "通过 WhatsApp 订餐",
-    "whatsappRedirect": "正在跳转至 WhatsApp...",
+    "sendWhatsApp": "致电订购",
+    "whatsappRedirect": "致电订购",
     "subtotal": "小计"
   },
   "footer": {
@@ -82,7 +82,7 @@
     "social": "社交媒体",
     "hours": "营业时间",
     "hoursValue": "每天: 09:00 - 02:00",
-    "whatsapp": "WhatsApp 订餐",
+    "whatsapp": "电话订购",
     "paymentMethods": "支持的支付方式",
     "paymentSubtitle": "支持所有银行卡、İstanbulkart闪付以及企业餐饮卡",
     "paymentNote": "我们接受现金、信用卡（Visa、Mastercard、Troy）、İstanbulkart闪付，以及所有土耳其企业餐饮卡（MultiNet、Metropol、Setcard、Pluxee、Ticket）。",
@@ -99,7 +99,7 @@
     "workHoursLabel": "营业时间",
     "workHours": "每天: 09:00 - 02:00",
     "followUs": "关注我们",
-    "whatsapp": "WhatsApp 订餐",
+    "whatsapp": "电话订购",
     "findUs": "餐厅地址"
   },
   "contactPage": {
@@ -110,7 +110,7 @@
     "phoneLabel": "订餐热线",
     "hoursLabel": "营业时间",
     "hours": "每天: 09:00 - 02:00",
-    "whatsapp": "WhatsApp 订餐",
+    "whatsapp": "电话订购",
     "directions": "查看地图导航",
     "findUs": "餐厅地址"
   }

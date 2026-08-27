@@ -2,8 +2,13 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
 import { translations, menuTranslations } from "../i18n/translations";
-import { generateWhatsAppLink } from "../lib/generateWhatsAppLink";
+// WhatsApp functionality removed based on user request (phone calls only)
 import SaudiRiyalIcon from "../components/SaudiRiyalIcon";
+import { menuData } from "../data/menuData";
+
+// Flat lookup for menuData items by id — used as price fallback when Supabase is unreachable
+const allMenuItems = menuData.flatMap(cat => cat.items || []);
+const getMenuItemPrice = (itemId) => allMenuItems.find(i => i.id === itemId)?.price ?? 0;
 
 const AppContext = createContext();
 
@@ -165,7 +170,10 @@ export function AppProvider({ children }) {
   };
 
   const getLivePrice = useCallback((item) => {
-    return livePrices[item.id] !== undefined ? livePrices[item.id] : item.price;
+    // Priority: 1) Supabase live price, 2) item.price (menuData), 3) menuData lookup by id
+    if (livePrices[item.id] !== undefined) return livePrices[item.id];
+    if (item.price !== undefined) return item.price;
+    return getMenuItemPrice(item.id);
   }, [livePrices]);
 
   const convertPrice = (priceInTRY) => {
@@ -201,7 +209,7 @@ export function AppProvider({ children }) {
           i.id === item.id ? { ...i, qty: i.qty + 1 } : i
         );
       }
-      return [...prev, { id: item.id, price: item.price, image: item.image, qty: 1 }];
+      return [...prev, { id: item.id, image: item.image, qty: 1 }];
     });
 
     // Trigger FAB pulse animation
@@ -238,11 +246,13 @@ export function AppProvider({ children }) {
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
   const cartTotal = cart.reduce((sum, item) => sum + getLivePrice(item) * item.qty, 0);
 
-  // Submit order via WhatsApp
+  // Initiate phone call instead of WhatsApp
   const submitOrder = useCallback(() => {
     if (cart.length === 0) return;
-    const link = generateWhatsAppLink(cart, lang);
-    window.open(link, "_blank");
+    
+    // Redirect user to phone dialer
+    window.location.href = "tel:+902122513696";
+    
     setOrderStatus("sent");
 
     // After 3 seconds: clear cart, close drawer, reset status

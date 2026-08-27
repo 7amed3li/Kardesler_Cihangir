@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, 
-  Navigation, MessageCircle, Flame, ShieldCheck, 
-  Heart, Compass, ChevronLeft, ArrowUpLeft, Check, ExternalLink
-} from "lucide-react";
+import { Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, Navigation, Flame, ShieldCheck, Heart, Compass, ChevronLeft, ArrowUpLeft, Check, ExternalLink } from "lucide-react";
 import LandingDishesSection from "../../../components/LandingDishesSection";
 import LandingVerifiedReviews from "../../../components/LandingVerifiedReviews";
 import SeoStorytelling from "../../../components/SeoStorytelling";
@@ -190,7 +186,7 @@ export default function BestKebabTaksimArabicPage() {
     },
   ];
 
-  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("مرحباً مطعم كارديشلر جيهانكير، أود حجز طاولة أو الاستفسار عن المنيو.");
+  const phoneCallUrl = "tel:+902122513696";
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans" dir="rtl">
@@ -262,13 +258,13 @@ export default function BestKebabTaksimArabicPage() {
           {/* Primary Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-4">
             <a
-              href={whatsappUrl}
+              href={phoneCallUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-[#0E0804] font-bold text-sm tracking-wide uppercase hover:opacity-95 transition-all shadow-lg shadow-copper/20 hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-white font-bold text-sm tracking-wide uppercase hover:opacity-95 transition-all shadow-lg shadow-copper/20 hover:scale-[1.02]"
             >
-              <MessageCircle size={18} />
-              <span>حجز طاولة VIP عبر واتساب</span>
+              <Phone size={18} />
+              <span>اتصل الآن للحجز أو الطلب</span>
             </a>
             <a
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
@@ -284,7 +280,7 @@ export default function BestKebabTaksimArabicPage() {
       </section>
 
       {/* ── 2. TRUST STATS STRIP ── */}
-      <section className="border-y border-teal-dim/30 bg-[#140D07]/90 py-6 px-4">
+      <section className="border-y border-teal-dim/30 bg-[#F7F2E7] py-6 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
           <div className="p-3 border-r border-teal-dim/20">
             <div className="text-2xl sm:text-3xl font-black text-gold">1998</div>
@@ -345,7 +341,7 @@ export default function BestKebabTaksimArabicPage() {
       </section>
 
       {/* ── 6. WALKING DISTANCE & LOCATION GUIDE ── */}
-      <section className="py-14 sm:py-20 bg-[#140D07]/80 border-y border-teal-dim/20 px-4 sm:px-6 lg:px-8">
+      <section className="py-14 sm:py-20 bg-[#F7F2E7] border-y border-teal-dim/20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-10">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal/10 border border-teal/30 text-teal text-xs font-semibold uppercase tracking-wider">
@@ -392,7 +388,7 @@ export default function BestKebabTaksimArabicPage() {
                 href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-xl bg-teal text-[#0E0804] font-bold text-sm flex items-center justify-center gap-2 hover:bg-teal/90 transition-all"
+                className="w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-xl bg-teal text-white font-bold text-sm flex items-center justify-center gap-2 hover:bg-teal/90 transition-all"
               >
                 <Navigation size={16} />
                 <span>فتح الملاحة عبر خرائط Google Maps</span>
@@ -413,7 +409,7 @@ export default function BestKebabTaksimArabicPage() {
       <LandingVerifiedReviews currentLocale="ar" />
 
       {/* ── 8. FINAL VIP RESERVATION CALLOUT ── */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#140D07] to-[#0E0804] border-t border-teal-dim/30">
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F2E7] border-t border-teal-dim/30">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-copper/20 border border-copper/40 text-gold text-xs font-bold uppercase tracking-wider">
             <span>خدمة حجز الطاولات والضيوف المميزين (VIP)</span>
@@ -437,8 +433,8 @@ export default function BestKebabTaksimArabicPage() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"
             >
-              <MessageCircle size={18} />
-              <span>تأكيد الحجز الفوري عبر واتساب</span>
+              <Phone size={18} />
+              <span>اتصل الآن للحجز أو الطلب</span>
             </a>
             <a
               href="tel:+902122513696"

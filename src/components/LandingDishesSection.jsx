@@ -3,309 +3,517 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Fire, ForkKnife, ArrowUpRight, ArrowUpLeft, CaretRight, CaretLeft, Coins, Check, MagnifyingGlassPlus } from "@phosphor-icons/react";
+import { Fire, ForkKnife, ArrowUpRight, ArrowUpLeft, CaretRight, CaretLeft, Coins, Check, MagnifyingGlassPlus, Phone } from "@phosphor-icons/react";
 import { useAppContext } from "../context/AppContext";
 import SaudiRiyalIcon from "./SaudiRiyalIcon";
 import DishModal from "./DishModal";
+import { menuData } from "../data/menuData";
 
+// Helper: find a menu item by id from menuData (used to resolve live prices from Supabase)
+const allMenuItems = menuData.flatMap(cat => cat.items || []);
+const getMenuItemById = (id) => allMenuItems.find(item => item.id === id) || null;
+
+// menuItemId maps each landing dish to its Supabase item ID for live price lookup
 export const landingDishesData = {
   ar: [
     {
       id: "adana",
+      menuItemId: "adana_urfa",
       name: "كباب أضنة العثماني بالساطور",
       tag: "الطبق المميز منذ 1998",
       desc: "لحم غنم وعجل بلدي مفروم يدوياً بساطور الزيرح ومتبل بالفلفل الأحمر، مشوي على جمر خشب السنديان الطبيعي ويقدم مع خبز اللواش الساخن.",
-      priceTRY: 625,
       image: "/images/adana.webp",
     },
     {
       id: "beyti",
+      menuItemId: "beyti_kebap",
       name: "كباب بيتي الملكي بالفرن الحجري",
       tag: "وصفة متوارثة",
       desc: "كباب لحم ملفوف في خبز لواش مقرمش مخبوز على الحجر، مغطى بصلصة الطماطم والزبدة المذابة ويقدم مع اللبن الزبادي الطازج.",
-      priceTRY: 730,
       image: "/images/beyti-1024x677.webp",
     },
     {
       id: "karisik",
+      menuItemId: "karisik_kebap_1",
       name: "وليمة المشاوي الملكية المشكلة",
       tag: "وليمة الشيف الكبرى",
       desc: "تشكيلة فاخرة مشوية على الفحم: كباب أضنة، شيش طاووق، أوصال غنم طرية، كفتة إينيغول وأجنحة دجاج مع مقبلات البيت.",
-      priceTRY: 1600,
       image: "/images/27-Karisik-Kebap_1.webp",
     },
     {
       id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
       name: "فطيرة بيدا باللحم المقرمش وجبن القشقوان",
       tag: "فرن حجري 450 درجة",
       desc: "عجين رقيق طازج مغطى بقطع لحم الضأن المتبلة وجبن القشقوان الذائب ومخبوزة على حرارة الحجر الطبيعي فور الطلب.",
-      priceTRY: 480,
       image: "/images/kusbasili_kasarli_pide.webp",
     },
     {
       id: "lahmacun",
-      name: "لحم بعجين عثماني رقيق ومقرمش",
+      menuItemId: "lahmacun_item",
+      name: "لحم بعجين مقرمش بالفرن التركي",
       tag: "مخبوز في دقيقتين",
-      desc: "عجين رقيق جداً متبل باللحم المفروم الطازج، البقدونس، الطماطم والتوابل الأناضولية الأصيلة مقرمش ولذيذ.",
-      priceTRY: 190,
+      desc: "عجينة رقيقة جداً ومقرمشة بلحم مفروم متبل بالفرن التركي، تقدم مع خس، بقدونس، طماطم وليمون.",
       image: "/images/lahmacun.webp",
     },
     {
       id: "kunefe",
+      menuItemId: "kunefe",
       name: "كنافة أنطاكيا الساخنة بالفستق الحلبي",
       tag: "حلوى طازجة بالفرن",
       desc: "كنافة شعر ذهبية مقرمشة محشوة بالجبن الماط وتُسقى بالقطر الساخن وتزين بوفرة من الفستق الحلبي الفاخر.",
-      priceTRY: 250,
       image: "/images/kunefe.webp",
     },
+
   ],
   en: [
     {
       id: "adana",
+      menuItemId: "adana_urfa",
       name: "Hand-Minced Artisanal Adana Kebab",
       tag: "Signature Since 1998",
       desc: "Prime lamb & beef hand-minced with traditional Zırh knife, spiced with Urfa pepper, slow-grilled over natural oak embers.",
-      priceTRY: 625,
       image: "/images/adana.webp",
     },
     {
       id: "beyti",
+      menuItemId: "beyti_kebap",
       name: "Royal Oven-Baked Beyti Kebab",
       tag: "Heritage Recipe",
       desc: "Tender kebab wrapped in stone-baked lavash, topped with sizzling melted butter tomato sauce and fresh farm yoghurt.",
-      priceTRY: 730,
       image: "/images/beyti-1024x677.webp",
     },
     {
       id: "karisik",
-      name: "Sultan’s Mixed Charcoal Grill Platter",
+      menuItemId: "karisik_kebap_1",
+      name: "Sultan's Mixed Charcoal Grill Platter",
       tag: "Grand Feast for 2-3",
       desc: "The ultimate charcoal feast: Adana kebab, tender lamb cubes, chicken shish, Inegol meatballs & marinated wings with home mezes.",
-      priceTRY: 1600,
       image: "/images/27-Karisik-Kebap_1.webp",
     },
     {
       id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
       name: "Marinated Beef & Melted Kaşar Pide",
       tag: "Stone Oven 450°C",
       desc: "Fresh hand-stretched dough, marinated tender beef cuts, and premium melting Kaşar cheese, baked instantly on hot stone tiles.",
-      priceTRY: 480,
       image: "/images/kusbasili_kasarli_pide.webp",
     },
     {
       id: "lahmacun",
+      menuItemId: "lahmacun_item",
       name: "Crispy Traditional Stone-Oven Lahmacun",
       tag: "Baked to Order",
-      desc: "Ultra-thin crispy dough topped with seasoned minced meat, fresh herbs, and Mediterranean spices, served with fresh lemon and parsley.",
-      priceTRY: 190,
+      desc: "Ultra-thin crispy dough topped with seasoned minced meat, baked in a stone oven, served with lettuce, parsley, tomatoes, and lemon.",
       image: "/images/lahmacun.webp",
     },
     {
       id: "kunefe",
+      menuItemId: "kunefe",
       name: "Warm Antakya Künefe with Antep Pistachios",
       tag: "Artisanal Dessert",
       desc: "Golden crispy shredded phyllo pastry with molten stringy cheese, scented warm syrup, and generous green Antep pistachios.",
-      priceTRY: 250,
       image: "/images/kunefe.webp",
     },
   ],
+
   tr: [
     {
       id: "adana",
+      menuItemId: "adana_urfa",
       name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "1998'den Beri İmza Lezzet",
       desc: "Günlük taze kuzu ve dana eti, geleneksel zırh bıçağı ile elde kıyılarak meşe kömürü ateşinde közlenir. Tırnak pide ve köz biberle sunulur.",
-      priceTRY: 625,
       image: "/images/adana.webp",
     },
     {
       id: "beyti",
+      menuItemId: "beyti_kebap",
       name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "Tarihi Reçete",
       desc: "Taş fırından yeni çıkmış sıcak lavaşa sarılan zırh kebabı, tereyağlı özel domates sosu ve süzme yoğurt eşliğinde servis edilir.",
-      priceTRY: 730,
       image: "/images/beyti-1024x677.webp",
     },
     {
       id: "karisik",
+      menuItemId: "karisik_kebap_1",
       name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "2-3 Kişilik Şölen",
       desc: "Meşe kömüründe pişen Adana kebap, kuzu şiş, tavuk şiş, İnegöl köfte ve kanat; köz sebzeler ve taze mezeler ile.",
-      priceTRY: 1600,
       image: "/images/27-Karisik-Kebap_1.webp",
     },
     {
       id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
       name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "450°C Taş Fırın",
       desc: "Anında açılan ince hamur, marine edilmiş dana eti ve eriyen leziz kaşar peyniri ile odun ateşinde nar gibi kızarır.",
-      priceTRY: 480,
       image: "/images/kusbasili_kasarli_pide.webp",
     },
     {
       id: "lahmacun",
+      menuItemId: "lahmacun_item",
       name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "Anında Fırından",
-      desc: "İncecik çıtır hamur, özenle hazırlanan zırh harcı, maydanoz ve limon eşliğinde sıcacık servis edilir.",
-      priceTRY: 190,
+      desc: "İncecik çıtır hamur, özenle hazırlanan kıyma harcı ile taş fırında pişirilir; kıvırcık marul, maydanoz, domates ve limon eşliğinde servis edilir.",
       image: "/images/lahmacun.webp",
     },
     {
       id: "kunefe",
+      menuItemId: "kunefe",
       name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "Sıcak Servis",
       desc: "Altın sarısı kadayıf, sünme Hatay peyniri, sıcak şerbet ve hakiki Antep fıstığı tozu ile tatlı bir lezzet şöleni.",
-      priceTRY: 250,
       image: "/images/kunefe.webp",
     },
   ],
   ru: [
     {
       id: "adana",
+      menuItemId: "adana_urfa",
       name: "Фирменный Адана Кебаб ручной рубки",
       tag: "Хит с 1998 года",
       desc: "Свежая баранина и телятина, рубленная вручную османским ножом Зырх, обжаренная на углях из дуба. Подается с горячим лавашем.",
-      priceTRY: 625,
       image: "/images/adana.webp",
     },
     {
       id: "beyti",
+      menuItemId: "beyti_kebap",
       name: "Королевский Бейти Кебаб в лаваше",
       tag: "Исторический рецепт",
       desc: "Сочный кебаб, запеченный в хрустящем лаваше, политый горячим томатно-сливочным маслом и подаваемый с фермерским йогуртом.",
-      priceTRY: 730,
       image: "/images/beyti-1024x677.webp",
     },
     {
       id: "karisik",
+      menuItemId: "karisik_kebap_1",
       name: "Большое мясное ассорти на углях",
       tag: "Блюдо для 2-3 гостей",
       desc: "Богатое ассорти: Адана кебаб, шашлык из баранины, куриный шашлык, котлеты Инегёль и крылышки на углях с мезе.",
-      priceTRY: 1600,
       image: "/images/27-Karisik-Kebap_1.webp",
     },
     {
       id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
       name: "Пиде с нежным мясом и сыром кашар",
       tag: "Каменная печь 450°C",
       desc: "Тонкое тесто ручной раскатки, маринованная сочная говядина и тянущийся сыр, выпекается на раскаленном камне печи.",
-      priceTRY: 480,
       image: "/images/kusbasili_kasarli_pide.webp",
     },
     {
       id: "lahmacun",
+      menuItemId: "lahmacun_item",
       name: "Хрустящий турецкий лахмаджун",
       tag: "Выпекается за 2 мин",
-      desc: "Ультратонкая хрустящая лепешка с мясным фаршем, зеленью и восточными пряностями прямо из дровяной печи.",
-      priceTRY: 190,
+      desc: "Ультратонкая хрустящая лепешка с мясным фаршем, запеченная в каменной печи, подается с листьями салата, петрушкой, помидорами и лимоном.",
       image: "/images/lahmacun.webp",
     },
     {
       id: "kunefe",
+      menuItemId: "kunefe",
       name: "Горячий кюнефе с антепскими фисташками",
       tag: "Традиционный десерт",
       desc: "Золотистое хрустящее тесто кадаиф, тягучий сыр, горячий ароматный сироп и щедрая порция зеленых фисташек.",
-      priceTRY: 250,
       image: "/images/kunefe.webp",
     },
   ],
   fa: [
     {
       id: "adana",
+      menuItemId: "adana_urfa",
       name: "کباب آدانا مخصوص ساطوری عثمانی",
       tag: "شاهکار رستوران از ۱۹۹۸",
       desc: "گوشت تازه بره و گوساله ساطوری شده با چاقوی زره و فلفل اورفا، کباب شده روی زغال طبیعی بلوط با نان لواش داغ تنوری.",
-      priceTRY: 625,
       image: "/images/adana.webp",
     },
     {
       id: "beyti",
+      menuItemId: "beyti_kebap",
       name: "بیتی کباب شاهانه پیچیده در لواش",
       tag: "دستورپخت تاریخی",
       desc: "کباب لذیذ پیچیده شده در نان تنوری با سس کره مخصوص گوجه‌فرنگی و ماست چکیده سنتی تازه.",
-      priceTRY: 730,
       image: "/images/beyti-1024x677.webp",
     },
     {
       id: "karisik",
+      menuItemId: "karisik_kebap_1",
       name: "سینی مجلل کباب شاهانه مخلوط",
       tag: "ولیمه ۲ الی ۳ نفره",
       desc: "مجموعه کباب‌های زغالی: کباب آدانا، کباب برگ و چنجه بره، جوجه کباب، کوفته مخصوص و بال کبابی با مخلفات.",
-      priceTRY: 1600,
       image: "/images/27-Karisik-Kebap_1.webp",
     },
     {
       id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
       name: "پیده تنوری با گوشت راسته و پنیر کش‌دار",
       tag: "پخت در تنور ۴۵۰ درجه",
       desc: "خمیر دست‌ساز تازه، گوشت تازه مرینیت شده و پنیر درجه یک کاشار، پخته شده بر روی سنگ داغ تنور هیزمی.",
-      priceTRY: 480,
       image: "/images/kusbasili_kasarli_pide.webp",
     },
     {
       id: "lahmacun",
+      menuItemId: "lahmacun_item",
       name: "لاه‌ماجون ترد و برشته سنتی",
       tag: "دست‌ساز و برشته",
-      desc: "خمیر بسیار نازک و ترد با گوشت چرخ‌کرده، جعفری تازه، گوجه و ادویه‌جات معطر ترکی پخته شده در لحظه.",
-      priceTRY: 190,
+      desc: "خمیر بسیار نازک و ترد با گوشت چرخ‌کرده، پخته شده در تنور سنگی، سرو شده با کاهو، جعفری، گوجه فرنگی و لیمو.",
       image: "/images/lahmacun.webp",
     },
     {
       id: "kunefe",
+      menuItemId: "kunefe",
       name: "کونفه داغ هاتای با پسته فراوان",
       tag: "دسر اصیل شیرین",
       desc: "رشته‌های کادایف طلایی با پنیر مخصوص و شهد داغ معطر و پودر پسته اعلا.",
-      priceTRY: 250,
       image: "/images/kunefe.webp",
     },
   ],
   fr: [
     {
       id: "adana",
+      menuItemId: "adana_urfa",
       name: "Adana Kebab Artisanal au Couteau Zırh",
       tag: "Plat Signature Depuis 1998",
       desc: "Agneau et bœuf frais hachés au couteau traditionnel, assaisonnés au piment d'Antep et grillés sur braises de chêne avec lavash chaud.",
-      priceTRY: 625,
       image: "/images/adana.webp",
     },
     {
       id: "beyti",
+      menuItemId: "beyti_kebap",
       name: "Beyti Kebab Signature au Four",
       tag: "Recette Historique",
       desc: "Kebab roulé dans un pain lavash croustillant, nappé de sauce tomate au beurre fondu et servi avec du yaourt frais fermier.",
-      priceTRY: 730,
       image: "/images/beyti-1024x677.webp",
     },
     {
       id: "karisik",
+      menuItemId: "karisik_kebap_1",
       name: "Plateau Royal de Grillades Mixtes",
       tag: "Festin pour 2-3 personnes",
       desc: "Le festin au charbon de bois : Adana kebab, agneau tendre, brochettes de poulet, boulettes İnegöl et ailes grillées.",
-      priceTRY: 1600,
       image: "/images/27-Karisik-Kebap_1.webp",
     },
     {
       id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
       name: "Pide Gourmande Viande & Kaşar",
       tag: "Four à Pierre 450°C",
       desc: "Pâte fine étalée à la minute, dés de viande marinée et fromage Kaşar fondant, cuite sur pierre volcanique au feu de bois.",
-      priceTRY: 480,
       image: "/images/kusbasili_kasarli_pide.webp",
     },
     {
       id: "lahmacun",
+      menuItemId: "lahmacun_item",
       name: "Lahmacun Traditionnel Croustillant",
       tag: "Cuit à la Minute",
-      desc: "Pâte extra-fine garnie de viande hachée, persil frais, tomates et épices d'Anatolie, cuite en 2 minutes au four à pierre.",
-      priceTRY: 190,
+      desc: "Pâte extra-fine garnie de viande hachée, cuite au four à pierre, servie avec de la laitue, du persil, des tomates et du citron.",
       image: "/images/lahmacun.webp",
     },
     {
       id: "kunefe",
+      menuItemId: "kunefe",
       name: "Künefe d'Antakya aux Pistaches",
       tag: "Dessert Chaud Artisanal",
       desc: "Cheveux d'ange dorés, fromage fondant d'Antakya, sirop parfumé chaud et éclats de pistaches vertes.",
-      priceTRY: 250,
+      image: "/images/kunefe.webp",
+    },
+  ],
+  de: [
+    {
+      id: "adana",
+      menuItemId: "adana_urfa",
+      name: "Handgehackter Adana Kebab",
+      tag: "Signatur seit 1998",
+      desc: "Lamm- und Rindfleisch, handgehackt mit dem Zırh-Messer, gewürzt und auf Eichenglut gegrillt.",
+      image: "/images/adana.webp",
+    },
+    {
+      id: "beyti",
+      menuItemId: "beyti_kebap",
+      name: "Königlicher Beyti Kebab aus dem Ofen",
+      tag: "Historisches Rezept",
+      desc: "Zarter Kebab in knusprigem Lavash, mit geschmolzener Butter-Tomatensauce und frischem Joghurt.",
+      image: "/images/beyti-1024x677.webp",
+    },
+    {
+      id: "karisik",
+      menuItemId: "karisik_kebap_1",
+      name: "Sultans Gemischter Grillteller",
+      tag: "Festmahl für 2-3",
+      desc: "Das ultimative Grillfest: Adana Kebab, Lammspieß, Hähnchenspieß, Inegöl-Frikadellen & Flügel.",
+      image: "/images/27-Karisik-Kebap_1.webp",
+    },
+    {
+      id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
+      name: "Pide mit mariniertem Rindfleisch & Kaşar",
+      tag: "Steinofen 450°C",
+      desc: "Frischer Teig, mariniertes Rindfleisch und schmelzender Kaşar-Käse, gebacken auf heißem Stein.",
+      image: "/images/kusbasili_kasarli_pide.webp",
+    },
+    {
+      id: "lahmacun",
+      menuItemId: "lahmacun_item",
+      name: "Knuspriger Traditioneller Steinofen-Lahmacun",
+      tag: "Frisch gebacken",
+      desc: "Hauchdünner knuspriger Teig mit gewürztem Hackfleisch, gebacken im Steinofen, serviert mit Salat, Petersilie, Tomaten und Zitrone.",
+      image: "/images/lahmacun.webp",
+    },
+    {
+      id: "kunefe",
+      menuItemId: "kunefe",
+      name: "Warmer Antakya Künefe mit Antep-Pistazien",
+      tag: "Handwerkliches Dessert",
+      desc: "Goldbraun gebackener Engelshaar-Teig mit geschmolzenem Käse, warmem Sirup und Pistazien.",
+      image: "/images/kunefe.webp",
+    },
+  ],
+  it: [
+    {
+      id: "adana",
+      menuItemId: "adana_urfa",
+      name: "Adana Kebab Artigianale Tagliato a Mano",
+      tag: "Firma dal 1998",
+      desc: "Agnello e manzo tritati a mano con il coltello Zırh, speziati e grigliati su brace di quercia.",
+      image: "/images/adana.webp",
+    },
+    {
+      id: "beyti",
+      menuItemId: "beyti_kebap",
+      name: "Beyti Kebab Reale al Forno",
+      tag: "Ricetta Storica",
+      desc: "Kebab tenero avvolto in lavash croccante, condito con salsa di pomodoro al burro fuso e yogurt fresco.",
+      image: "/images/beyti-1024x677.webp",
+    },
+    {
+      id: "karisik",
+      menuItemId: "karisik_kebap_1",
+      name: "Piatto Misto Grigliato del Sultano",
+      tag: "Banchetto per 2-3",
+      desc: "Il banchetto definitivo: Adana kebab, spiedini di agnello, pollo, polpette Inegöl e ali marinate.",
+      image: "/images/27-Karisik-Kebap_1.webp",
+    },
+    {
+      id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
+      name: "Pide con Manzo Marinato e Formaggio Kaşar",
+      tag: "Forno a Pietra 450°C",
+      desc: "Impasto fresco, manzo marinato e formaggio Kaşar fuso, cotto istantaneamente su pietra calda.",
+      image: "/images/kusbasili_kasarli_pide.webp",
+    },
+    {
+      id: "lahmacun",
+      menuItemId: "lahmacun_item",
+      name: "Lahmacun Tradizionale Croccante al Forno di Pietra",
+      tag: "Cotto al momento",
+      desc: "Impasto sottilissimo e croccante con carne macinata speziata, cotto nel forno di pietra, servito con lattuga, prezzemolo, pomodori e limone.",
+      image: "/images/lahmacun.webp",
+    },
+    {
+      id: "kunefe",
+      menuItemId: "kunefe",
+      name: "Künefe Caldo di Antakya con Pistacchi",
+      tag: "Dessert Artigianale",
+      desc: "Pasta fillo dorata e croccante con formaggio fuso, sciroppo caldo e pistacchi di Antep.",
+      image: "/images/kunefe.webp",
+    },
+  ],
+  es: [
+    {
+      id: "adana",
+      menuItemId: "adana_urfa",
+      name: "Adana Kebab Artesanal Picado a Mano",
+      tag: "Firma desde 1998",
+      desc: "Cordero y ternera picados a mano con cuchillo Zırh, especiados y asados a las brasas de roble.",
+      image: "/images/adana.webp",
+    },
+    {
+      id: "beyti",
+      menuItemId: "beyti_kebap",
+      name: "Beyti Kebab Real al Horno",
+      tag: "Receta Histórica",
+      desc: "Tierno kebab envuelto en lavash crujiente, cubierto con salsa de tomate con mantequilla derretida y yogur.",
+      image: "/images/beyti-1024x677.webp",
+    },
+    {
+      id: "karisik",
+      menuItemId: "karisik_kebap_1",
+      name: "Bandeja Mixta de Parrilla del Sultán",
+      tag: "Banquete para 2-3",
+      desc: "El gran banquete: Adana kebab, brochetas de cordero, pollo, albóndigas Inegöl y alitas marinadas.",
+      image: "/images/27-Karisik-Kebap_1.webp",
+    },
+    {
+      id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
+      name: "Pide de Ternera Marinada y Queso Kaşar",
+      tag: "Horno de Piedra 450°C",
+      desc: "Masa fresca, ternera marinada y queso Kaşar derretido, horneado al instante sobre piedra caliente.",
+      image: "/images/kusbasili_kasarli_pide.webp",
+    },
+    {
+      id: "lahmacun",
+      menuItemId: "lahmacun_item",
+      name: "Lahmacun Tradicional Crujiente al Horno de Piedra",
+      tag: "Horneado al instante",
+      desc: "Masa extrafina y crujiente con carne picada especiada, horneada en horno de piedra, servida con lechuga, perejil, tomates y limón.",
+      image: "/images/lahmacun.webp",
+    },
+    {
+      id: "kunefe",
+      menuItemId: "kunefe",
+      name: "Künefe Caliente de Antakya con Pistachos",
+      tag: "Postre Artesanal",
+      desc: "Masa dorada y crujiente con queso derretido, sirope caliente perfumado y pistachos de Antep.",
+      image: "/images/kunefe.webp",
+    },
+  ],
+  zh: [
+    {
+      id: "adana",
+      menuItemId: "adana_urfa",
+      name: "手工切碎阿达纳烤肉",
+      tag: "1998年以来的招牌",
+      desc: "优质羊肉和牛肉，使用传统Zırh刀手工切碎，加入香料并在橡木炭火上慢烤。",
+      image: "/images/adana.webp",
+    },
+    {
+      id: "beyti",
+      menuItemId: "beyti_kebap",
+      name: "皇家石炉烤Beyti烤肉",
+      tag: "历史秘方",
+      desc: "嫩烤肉包裹在酥脆的薄饼中，淋上热黄油番茄酱，配以新鲜酸奶。",
+      image: "/images/beyti-1024x677.webp",
+    },
+    {
+      id: "karisik",
+      menuItemId: "karisik_kebap_1",
+      name: "苏丹混合炭火烤肉拼盘",
+      tag: "2-3人盛宴",
+      desc: "终极炭火盛宴：阿达纳烤肉、嫩羊肉块、鸡肉串、Inegol肉丸和腌制鸡翅。",
+      image: "/images/27-Karisik-Kebap_1.webp",
+    },
+    {
+      id: "kusbasi-pide",
+      menuItemId: "kusbasili_kasarli_pide",
+      name: "腌制牛肉配融化Kaşar奶酪烤饼",
+      tag: "石炉 450°C",
+      desc: "新鲜手擀面团，腌制嫩牛肉块和优质融化奶酪，在热石板上即时烘烤。",
+      image: "/images/kusbasili_kasarli_pide.webp",
+    },
+    {
+      id: "lahmacun",
+      menuItemId: "lahmacun_item",
+      name: "传统酥脆石炉烤肉饼 (Lahmacun)",
+      tag: "现点现烤",
+      desc: "超薄酥脆面团，铺上调味碎肉，在石炉中烘烤，配以生菜、欧芹、西红柿和柠檬。",
+      image: "/images/lahmacun.webp",
+    },
+    {
+      id: "kunefe",
+      menuItemId: "kunefe",
+      name: "安塔基亚热库内法配开心果",
+      tag: "手工甜点",
+      desc: "金黄酥脆的丝状面点，内含融化的拉丝奶酪，淋上热糖浆并撒上开心果。",
       image: "/images/kunefe.webp",
     },
   ],
@@ -326,7 +534,7 @@ const uiLabels = {
     title: "أطباق أسطورية مشوية على جمر السنديان",
     subtitle: "أسعار دقيقة ومطابقة للمنيو الرسمي مع إمكانية التحويل الفوري بالدولار واليورو والريال:",
     currencyHint: "اختر عملة العرض المفضلة لديك:",
-    orderNow: "اطلب عبر واتساب",
+    orderNow: "اتصل للطلب",
     woodFired: "مشوي على جمر السنديان",
     viewFullMenu: "تصفح المنيو الرقمي الكامل (+100 صنف مع تحويل العملات)",
   },
@@ -335,7 +543,7 @@ const uiLabels = {
     title: "Legendary Dishes Grilled on Oak Embers",
     subtitle: "Official live menu prices with instant currency conversion for international travelers:",
     currencyHint: "Select your preferred display currency:",
-    orderNow: "Order on WhatsApp",
+    orderNow: "Call to Order",
     woodFired: "Oak Charcoal Grilled",
     viewFullMenu: "Explore Full Digital Menu (100+ items with currency converter)",
   },
@@ -344,7 +552,7 @@ const uiLabels = {
     title: "Meşe Kömüründe Pişen Efsane Lezzetler",
     subtitle: "Canlı ve güncel menü fiyatları (farklı para birimleriyle görüntüleyebilirsiniz):",
     currencyHint: "Görüntüleme para birimini seçin:",
-    orderNow: "WhatsApp'tan Sipariş Ver",
+    orderNow: "Sipariş İçin Ara",
     woodFired: "Meşe Kömürü Ateşinde",
     viewFullMenu: "Tüm Dijital Menüyü İnceleyin (100+ Çeşit)",
   },
@@ -353,7 +561,7 @@ const uiLabels = {
     title: "Легендарные блюда на углях из дуба",
     subtitle: "Официальные актуальные цены с мгновенной конвертацией в рубли, доллары и евро:",
     currencyHint: "Выберите удобную валюту:",
-    orderNow: "Заказать в WhatsApp",
+    orderNow: "Позвонить для заказа",
     woodFired: "На натуральных углях",
     viewFullMenu: "Смотреть полное меню (более 100 блюд с конвертером)",
   },
@@ -362,7 +570,7 @@ const uiLabels = {
     title: "غذاهای شاهکار پخته شده روی زغال بلوط",
     subtitle: "قیمت‌های رسمی منو با قابلیت تبدیل خودکار به دلار، یورو، ریال و لیر:",
     currencyHint: "انتخاب واحد پول نمایشی:",
-    orderNow: "سفارش در واتس‌اپ",
+    orderNow: "تماس برای سفارش",
     woodFired: "پخت روی زغال چوب",
     viewFullMenu: "مشاهده منوی کامل (بیش از ۱۰۰ تنوع غذایی)",
   },
@@ -371,28 +579,65 @@ const uiLabels = {
     title: "Grillades d'Exception sur Braises de Chêne",
     subtitle: "Tarifs officiels avec conversion en direct en Euros, Dollars et autres devises :",
     currencyHint: "Choisissez votre devise d'affichage :",
-    orderNow: "Commander sur WhatsApp",
+    orderNow: "Appeler pour commander",
     woodFired: "Braises de Chêne",
     viewFullMenu: "Découvrir notre Menu Complet (100+ Plats avec convertisseur)",
+  },
+  de: {
+    badge: "Empfehlung des Küchenchefs",
+    title: "Legendäre Gerichte auf Eichenglut",
+    subtitle: "Aktuelle Menüpreise mit Währungsumrechnung:",
+    currencyHint: "Währung auswählen:",
+    orderNow: "Anrufen zum Bestellen",
+    woodFired: "Auf Eichenholz gegrillt",
+    viewFullMenu: "Komplettes Menü ansehen (100+ Gerichte)",
+  },
+  it: {
+    badge: "Selezione dello Chef",
+    title: "Piatti Leggendari alla Brace di Quercia",
+    subtitle: "Prezzi ufficiali del menu con conversione di valuta in tempo reale:",
+    currencyHint: "Seleziona la tua valuta:",
+    orderNow: "Chiama per ordinare",
+    woodFired: "Grigliato a Carbone",
+    viewFullMenu: "Esplora il Menu Completo (100+ piatti)",
+  },
+  es: {
+    badge: "Selección del Chef",
+    title: "Platos Legendarios a la Brasa de Roble",
+    subtitle: "Precios oficiales del menú con conversión de moneda:",
+    currencyHint: "Seleccione su moneda:",
+    orderNow: "Llamar para pedir",
+    woodFired: "Asado a la Brasa de Roble",
+    viewFullMenu: "Ver Menú Completo (100+ platos)",
+  },
+  zh: {
+    badge: "主厨招牌精选",
+    title: "橡木炭火烤制的传奇菜肴",
+    subtitle: "官方实时菜单价格，带货币转换功能：",
+    currencyHint: "选择您喜欢的显示货币：",
+    orderNow: "致电订购",
+    woodFired: "橡木炭烤",
+    viewFullMenu: "查看完整数字菜单 (100多种菜品)",
   },
 };
 
 export default function LandingDishesSection({ currentLocale = "ar" }) {
-  const { currency, changeCurrency, convertPrice, getCurrencySymbol } = useAppContext();
+  const { currency, changeCurrency, convertPrice, getCurrencySymbol, getLivePrice } = useAppContext();
   const [modalDish, setModalDish] = useState(null);
 
   const dishes = landingDishesData[currentLocale] || landingDishesData.en;
   const labels = uiLabels[currentLocale] || uiLabels.en;
   const isRtl = currentLocale === "ar" || currentLocale === "fa";
 
-  const getWhatsAppOrderLink = (dish) => {
-    const symbolStr = currency === "SAR" ? "SAR" : getCurrencySymbol();
-    const formattedPrice = `${convertPrice(dish.priceTRY)} ${symbolStr}`;
-    const message = isRtl
-      ? `مرحباً مطعم كارديشلر، أود طلب: ${dish.name} (${formattedPrice} / ${dish.priceTRY} ₺)`
-      : `Hello Kardeşler Kebap, I would like to order: ${dish.name} (${formattedPrice} / ${dish.priceTRY} ₺)`;
-    return `https://wa.me/902122513696?text=${encodeURIComponent(message)}`;
+  // Resolve live price from Supabase via menuItemId → menuData item → getLivePrice
+  const getDishLivePrice = (dish) => {
+    if (!dish.menuItemId) return 0;
+    const menuItem = getMenuItemById(dish.menuItemId);
+    if (!menuItem) return 0;
+    return getLivePrice(menuItem);
   };
+
+  const phoneOrderLink = "tel:+902122513696";
 
   return (
     <section className="py-14 sm:py-20 bg-[#EDE3CE] border-y border-[#9C7A3F]/20 px-4 sm:px-6 lg:px-8">
@@ -444,11 +689,10 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                   key={c.code}
                   type="button"
                   onClick={() => changeCurrency(c.code)}
-                  className={`py-2 px-1.5 rounded-md text-xs font-bold transition-colors flex items-center justify-center gap-1.5 ${
-                    isSelected
+                  className={`py-2 px-1.5 rounded-md text-xs font-bold transition-colors flex items-center justify-center gap-1.5 ${isSelected
                       ? "bg-[#4E5F4C] text-[#EAF0E6]"
                       : "bg-[#EDE3CE] text-[#2B2620] border border-[#9C7A3F]/20 hover:border-[#9C7A3F]"
-                  }`}
+                    }`}
                 >
                   <span>{c.code}</span>
                   <span className="flex items-center opacity-90">{c.symbol}</span>
@@ -461,9 +705,10 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
         {/* Dish Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {dishes.map((dish) => {
-            const converted = convertPrice(dish.priceTRY);
+            // Live price from Supabase via menuItemId — never hardcoded
+            const livePriceTRY = getDishLivePrice(dish);
+            const converted = convertPrice(livePriceTRY);
             const symbol = getCurrencySymbol();
-            const waLink = getWhatsAppOrderLink(dish);
 
             return (
               <div
@@ -495,7 +740,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                     {dish.tag}
                   </div>
 
-                  {/* Dynamic Converted Price Badge */}
+                  {/* Dynamic Converted Price Badge — sourced from Supabase */}
                   <div className="absolute top-3 end-3 px-3 py-1.5 rounded-md bg-[#4E5F4C] text-[#EAF0E6] shadow-sm flex flex-col items-end leading-tight">
                     <span className="text-xs font-black tracking-tight flex items-center gap-1">
                       {currency !== "TRY" && (
@@ -508,11 +753,11 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                           )}
                         </>
                       )}
-                      {currency === "TRY" && `${dish.priceTRY} ₺`}
+                      {currency === "TRY" && `${livePriceTRY} ₺`}
                     </span>
                     {currency !== "TRY" && (
                       <span className="text-[9px] font-bold opacity-90">
-                        ({dish.priceTRY} ₺)
+                        ({livePriceTRY} ₺)
                       </span>
                     )}
                   </div>
@@ -536,14 +781,12 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                       <Fire size={16} weight="duotone" /> {labels.woodFired}
                     </span>
                     <a
-                      href={waLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3.5 py-1.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white text-xs font-bold transition-colors inline-flex items-center gap-1"
+                      href={phoneOrderLink}
+                      className="px-3.5 py-1.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white text-xs font-bold transition-colors inline-flex items-center gap-1.5 shadow-sm"
                       onClick={(e) => e.stopPropagation()}
                     >
+                      <Phone size={14} weight="bold" />
                       <span>{labels.orderNow}</span>
-                      {isRtl ? <ArrowUpLeft size={13} /> : <ArrowUpRight size={13} />}
                     </a>
                   </div>
                 </div>
@@ -564,14 +807,14 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
         </div>
       </div>
 
-      {/* Dish Detail Modal */}
+      {/* Dish Detail Modal — item resolved from menuData for live price via getLivePrice */}
       {modalDish && (
         <DishModal
           isOpen={!!modalDish}
           setIsOpen={(open) => { if (!open) setModalDish(null); }}
+          item={modalDish.menuItemId ? getMenuItemById(modalDish.menuItemId) : null}
           customName={modalDish.name}
           customDesc={modalDish.desc}
-          customPrice={modalDish.priceTRY}
           customImage={modalDish.image}
           customTags={["signature"]}
           hideCart={true}

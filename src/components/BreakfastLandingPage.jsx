@@ -67,7 +67,7 @@ function FAQItem({ question, answer, isRTL }) {
 // MAIN COMPONENT
 // ═══════════════════════════════════════════════════════════════
 export default function BreakfastLandingPage({ locale = "en" }) {
-  const { convertPrice, getCurrencySymbol } = useAppContext();
+  const { convertPrice, getCurrencySymbol, getLivePrice } = useAppContext();
   const t = breakfastTranslations[locale] || breakfastTranslations.en;
   const mt = menuTranslations[locale] || menuTranslations.en;
   const isRTL = locale === "ar" || locale === "fa";
@@ -220,7 +220,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
                     {mt.items?.[featured.id]?.name || "Serpme Kahvaltı (2 Kişilik)"}
                   </h3>
                   <span className="text-xl sm:text-2xl font-black text-[#9C7A3F]">
-                    {getCurrencySymbol()}{convertPrice(featured.price)}
+                    {getCurrencySymbol()}{convertPrice(getLivePrice(featured))}
                   </span>
                 </div>
                 <p className="text-sm text-[#7A7364] leading-relaxed">
@@ -279,7 +279,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
                         {dishT.name || dish.id}
                       </h3>
                       <span className="text-base font-black text-[#9C7A3F] whitespace-nowrap">
-                        {getCurrencySymbol()}{convertPrice(dish.price)}
+                        {getCurrencySymbol()}{convertPrice(getLivePrice(dish))}
                       </span>
                     </div>
                     {dishT.desc && (

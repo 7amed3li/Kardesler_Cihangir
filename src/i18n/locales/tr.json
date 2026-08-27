@@ -67,8 +67,8 @@
     "errorHint": "Tekrar deneyin",
     "clear": "Temizle",
     "table": "Masa",
-    "sendWhatsApp": "WhatsApp ile Sipariş Ver",
-    "whatsappRedirect": "WhatsApp'a yönlendiriliyorsunuz...",
+    "sendWhatsApp": "Sipariş İçin Ara",
+    "whatsappRedirect": "Sipariş İçin Ara",
     "subtotal": "Ara Toplam"
   },
   "footer": {
@@ -81,7 +81,7 @@
     "social": "Sosyal Medya",
     "hours": "Çalışma Saatleri",
     "hoursValue": "Her gün: 09:00 - 02:00",
-    "whatsapp": "WhatsApp Sipariş",
+    "whatsapp": "Telefonla Sipariş",
     "paymentMethods": "Kabul Edilen Ödeme Yöntemleri",
     "paymentSubtitle": "Tüm kredi kartları, temassız İstanbulkart ve kurumsal yemek kartları geçerlidir",
     "paymentNote": "Masada nakit, kredi kartı, temassız İstanbulkart ve tüm kurumsal yemek kartları ile ödeme yapabilirsiniz.",
@@ -98,7 +98,7 @@
     "workHoursLabel": "Çalışma Saatleri",
     "workHours": "Her gün: 09:00 - 02:00",
     "followUs": "Bizi Takip Edin",
-    "whatsapp": "WhatsApp Sipariş",
+    "whatsapp": "Telefonla Sipariş",
     "findUs": "Bizi Bulun"
   },
   "contactPage": {
@@ -109,7 +109,7 @@
     "phoneLabel": "Sipariş Hattı",
     "hoursLabel": "Çalışma Saatleri",
     "hours": "Her gün: 09:00 - 02:00",
-    "whatsapp": "WhatsApp Sipariş",
+    "whatsapp": "Telefonla Sipariş",
     "directions": "Yol Tarifi Al",
     "findUs": "Bizi Bulun"
   },

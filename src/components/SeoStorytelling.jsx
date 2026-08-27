@@ -132,10 +132,16 @@ export default function SeoStorytelling({ locale = 'en' }) {
               </h2>
               <div className="space-y-4 text-[#7A7364] text-sm sm:text-base leading-relaxed font-medium">
                 <p>
-                  <span className={`text-5xl font-black text-[#9C7A3F] leading-none mt-1 ${dropCapFloat}`} style={{ fontFamily: "var(--font-cairo)" }}>
-                    {t.storyText1.charAt(0)}
-                  </span>
-                  {t.storyText1.substring(1)}
+                  {isRtl ? (
+                    t.storyText1
+                  ) : (
+                    <>
+                      <span className={`text-5xl font-black text-[#9C7A3F] leading-none mt-1 float-left mr-3`} style={{ fontFamily: "var(--font-cairo)" }}>
+                        {t.storyText1.charAt(0)}
+                      </span>
+                      {t.storyText1.substring(1)}
+                    </>
+                  )}
                 </p>
                 <p className="pt-2">{t.storyText2}</p>
               </div>

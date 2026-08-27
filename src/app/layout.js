@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
 import OrderFlowWrapper from "@/components/OrderFlowWrapper";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleTagManager } from '@next/third-parties/google';
 import Script from "next/script";
 import "./globals.css";
 
@@ -226,7 +227,7 @@ const globalSchemaGraph = {
       servesCuisine: ["Turkish", "Kebab", "Mediterranean", "Pide", "Lahmacun"],
       priceRange: "₺₺",
       menu: `${siteUrl}/menu`,
-      acceptsReservations: "True",
+      acceptsReservations: false,
       currenciesAccepted: "TRY",
       paymentAccepted: "Cash, Credit Card",
       aggregateRating: {
@@ -311,23 +312,26 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
     >
       <head>
-        {/* ── Google Tag Manager (placeholder — replace GTM-XXXXXXX with your ID) ── */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');`,
-          }}
-        />
-        {/* ── GA4 gtag.js (placeholder — replace G-XXXXXXXXXX with your Measurement ID) ── */}
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
-        <Script
-          id="ga4-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');`,
-          }}
-        />
+      {/* ── Google Tag Manager
+           Set NEXT_PUBLIC_GTM_ID in your .env.local or hosting env vars
+           Example: NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+      ── */}
+      {/* ── GA4 gtag.js
+           Set NEXT_PUBLIC_GA4_ID in your .env.local or hosting env vars
+           Example: NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX
+      ── */}
+      {process.env.NEXT_PUBLIC_GA4_ID && (
+        <>
+          <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}`} />
+          <Script
+            id="ga4-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');`,
+            }}
+          />
+        </>
+      )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -336,15 +340,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#EDE3CE] text-[#2B2620] font-[var(--font-inter)]" suppressHydrationWarning>
-        {/* GTM noscript fallback */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
+        {process.env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
+
         <AppProvider>
           <SmartSplash />
           <Analytics />

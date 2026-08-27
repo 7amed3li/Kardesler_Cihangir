@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, 
-  Navigation, MessageCircle, Flame, ShieldCheck, 
-  Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink
-} from "lucide-react";
+import { Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, Navigation, Flame, ShieldCheck, Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink } from "lucide-react";
 import LandingDishesSection from "../../components/LandingDishesSection";
 import LandingVerifiedReviews from "../../components/LandingVerifiedReviews";
 import SeoStorytelling from "../../components/SeoStorytelling";
@@ -184,7 +180,7 @@ export default function BestKebabTaksimPage() {
     },
   ];
 
-  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("Hello Kardeşler Kebap Cihangir, I would like to reserve a table or ask about the menu.");
+  const phoneCallUrl = "tel:+902122513696";
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">
@@ -236,13 +232,13 @@ export default function BestKebabTaksimPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-4">
             <a
-              href={whatsappUrl}
+              href={phoneCallUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs tracking-wider uppercase transition-colors shadow-sm"
             >
-              <MessageCircle size={18} />
-              <span>Reserve Table / Order on WhatsApp</span>
+              <Phone size={18} />
+              <span>Call to Reserve / Order</span>
             </a>
             <a
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
@@ -319,7 +315,7 @@ export default function BestKebabTaksimPage() {
       </section>
 
       {/* ── 6. WALKING DISTANCE & LOCATION GUIDE ── */}
-      <section className="py-14 sm:py-20 bg-[#140D07]/80 border-y border-teal-dim/20 px-4 sm:px-6 lg:px-8">
+      <section className="py-14 sm:py-20 bg-[#F7F2E7] border-y border-teal-dim/20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-10">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal/10 border border-teal/30 text-teal text-xs font-semibold uppercase tracking-wider">
@@ -366,7 +362,7 @@ export default function BestKebabTaksimPage() {
                 href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-xl bg-teal text-[#0E0804] font-bold text-sm flex items-center justify-center gap-2 hover:bg-teal/90 transition-all"
+                className="w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-xl bg-teal text-white font-bold text-sm flex items-center justify-center gap-2 hover:bg-teal/90 transition-all"
               >
                 <Navigation size={16} />
                 <span>Open in Google Maps Navigation</span>
@@ -387,7 +383,7 @@ export default function BestKebabTaksimPage() {
       <LandingVerifiedReviews currentLocale="en" />
 
       {/* ── 8. FINAL VIP CALLOUT ── */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#140D07] to-[#0E0804] border-t border-teal-dim/30">
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F2E7] border-t border-teal-dim/30">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-copper/20 border border-copper/40 text-gold text-xs font-bold uppercase tracking-wider">
             <span>VIP Table Reservations & Delivery</span>
@@ -411,8 +407,8 @@ export default function BestKebabTaksimPage() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"
             >
-              <MessageCircle size={18} />
-              <span>Confirm Instant Booking via WhatsApp</span>
+              <Phone size={18} />
+              <span>Call to Reserve / Order</span>
             </a>
             <a
               href="tel:+902122513696"

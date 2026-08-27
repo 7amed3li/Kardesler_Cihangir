@@ -68,8 +68,8 @@
     "errorHint": "Por favor, inténtalo de nuevo",
     "clear": "Vaciar",
     "table": "Mesa",
-    "sendWhatsApp": "Pedir por WhatsApp",
-    "whatsappRedirect": "Redirigiendo a WhatsApp...",
+    "sendWhatsApp": "Llamar para pedir",
+    "whatsappRedirect": "Llamar para pedir",
     "subtotal": "Subtotal"
   },
   "footer": {
@@ -82,7 +82,7 @@
     "social": "Redes Sociales",
     "hours": "Horario",
     "hoursValue": "Todos los días: 09:00 - 02:00",
-    "whatsapp": "Pedido WhatsApp",
+    "whatsapp": "Pedido telefónico",
     "paymentMethods": "Métodos de Pago Aceptados",
     "paymentSubtitle": "Se aceptan todas las tarjetas bancarias, İstanbulkart sin contacto y tarjetas de comida de empresa",
     "paymentNote": "Aceptamos Efectivo, Tarjetas de Crédito (Visa, Mastercard, Troy), İstanbulkart sin contacto y todas las tarjetas de comida de empresa turcas (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
@@ -99,7 +99,7 @@
     "workHoursLabel": "Horario de Trabajo",
     "workHours": "Todos los días: 09:00 - 02:00",
     "followUs": "Síguenos",
-    "whatsapp": "Pedido WhatsApp",
+    "whatsapp": "Pedido telefónico",
     "findUs": "Encuéntranos"
   },
   "contactPage": {
@@ -110,7 +110,7 @@
     "phoneLabel": "Línea de Pedidos",
     "hoursLabel": "Horario",
     "hours": "Todos los días: 09:00 - 02:00",
-    "whatsapp": "Pedido WhatsApp",
+    "whatsapp": "Pedido telefónico",
     "directions": "Obtener Direcciones",
     "findUs": "Encuéntranos"
   }

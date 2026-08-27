@@ -95,107 +95,7 @@ export default function ReservationModal({ isOpen, onClose }) {
   const { lang, isRtl } = useAppContext();
   const t = reservationTranslations[lang] || reservationTranslations.en;
 
-  const [name, setName] = useState("");
-  const [guests, setGuests] = useState("2");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("19:30");
-  const [notes, setNotes] = useState("");
-
-  // Default date to today
-  useEffect(() => {
-    if (isOpen) {
-      const today = new Date().toISOString().split("T")[0];
-      setDate(today);
-    }
-  }, [isOpen]);
-
   if (!isOpen) return null;
-
-  const handleWhatsAppBooking = (e) => {
-    e.preventDefault();
-    const guestName = name.trim() || (lang === "tr" ? "Misafir" : "Guest");
-    
-    let messageLines = [];
-
-    if (lang === "tr") {
-      messageLines = [
-        "*MASA REZERVASYONU - KARDEŞLER CİHANGİR*",
-        "--------------------------------",
-        `• *İsim:* ${guestName}`,
-        `• *Kişi Sayısı:* ${guests} Kişi`,
-        `• *Tarih:* ${date}`,
-        `• *Saat:* ${time}`,
-      ];
-      if (notes.trim()) messageLines.push(`• *Not:* ${notes.trim()}`);
-      messageLines.push("--------------------------------");
-      messageLines.push("Lütfen rezervasyonumu onaylayın. Teşekkürler!");
-    } else if (lang === "ar") {
-      messageLines = [
-        "*طلب حجز طاولة - مطعم كارديشلر جيهانكير*",
-        "--------------------------------",
-        `• *الاسم:* ${guestName}`,
-        `• *عدد الأشخاص:* ${guests}`,
-        `• *التاريخ:* ${date}`,
-        `• *الوقت:* ${time}`,
-      ];
-      if (notes.trim()) messageLines.push(`• *ملاحظات:* ${notes.trim()}`);
-      messageLines.push("--------------------------------");
-      messageLines.push("يرجى تأكيد الحجز، شكراً لكم!");
-    } else if (lang === "ru") {
-      messageLines = [
-        "*БРОНИРОВАНИЕ СТОЛИКА - KARDEŞLER CIHANGIR*",
-        "--------------------------------",
-        `• *Имя:* ${guestName}`,
-        `• *Гостей:* ${guests} чел.`,
-        `• *Дата:* ${date}`,
-        `• *Время:* ${time}`,
-      ];
-      if (notes.trim()) messageLines.push(`• *Пожелания:* ${notes.trim()}`);
-      messageLines.push("--------------------------------");
-      messageLines.push("Пожалуйста, подтвердите бронирование. Спасибо!");
-    } else if (lang === "fa") {
-      messageLines = [
-        "*درخواست رزرو میز - رستوران کارداشلر جهانگیر*",
-        "--------------------------------",
-        `• *نام:* ${guestName}`,
-        `• *تعداد نفرات:* ${guests} نفر`,
-        `• *تاریخ:* ${date}`,
-        `• *ساعت:* ${time}`,
-      ];
-      if (notes.trim()) messageLines.push(`• *یادداشت:* ${notes.trim()}`);
-      messageLines.push("--------------------------------");
-      messageLines.push("لطفاً رزرو را تایید بفرمایید. با تشکر!");
-    } else if (lang === "fr") {
-      messageLines = [
-        "*RÉSERVATION DE TABLE - KARDEŞLER CIHANGIR*",
-        "--------------------------------",
-        `• *Nom:* ${guestName}`,
-        `• *Personnes:* ${guests} personnes`,
-        `• *Date:* ${date}`,
-        `• *Heure:* ${time}`,
-      ];
-      if (notes.trim()) messageLines.push(`• *Notes:* ${notes.trim()}`);
-      messageLines.push("--------------------------------");
-      messageLines.push("Merci de bien vouloir confirmer la réservation !");
-    } else {
-      messageLines = [
-        "*TABLE RESERVATION - KARDEŞLER CIHANGIR*",
-        "--------------------------------",
-        `• *Name:* ${guestName}`,
-        `• *Guests:* ${guests} Guests`,
-        `• *Date:* ${date}`,
-        `• *Time:* ${time}`,
-      ];
-      if (notes.trim()) messageLines.push(`• *Notes:* ${notes.trim()}`);
-      messageLines.push("--------------------------------");
-      messageLines.push("Please confirm the table reservation. Thank you!");
-    }
-
-    const message = messageLines.join("\n");
-    const whatsappUrl = `https://wa.me/902122513696?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
-    onClose();
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-fadeIn">
@@ -227,116 +127,19 @@ export default function ReservationModal({ isOpen, onClose }) {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleWhatsAppBooking} className="space-y-4">
-          {/* Name */}
-          <div>
-            <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
-              <User size={14} className="text-[#4E5F4C]" />
-              {t.nameLabel}
-            </label>
-            <input
-              type="text"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder={t.namePlaceholder}
-              className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] placeholder-[#7A7364]/60 focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
-            />
-          </div>
-
-          {/* Guests and Date */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {/* Guests */}
-            <div>
-              <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
-                <Users size={14} className="text-[#4E5F4C]" />
-                {t.guestsLabel}
-              </label>
-              <select
-                value={guests}
-                onChange={(e) => setGuests(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
-              >
-                {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20].map((num) => (
-                  <option key={num} value={num} className="bg-[#EDE3CE] text-[#2B2620]">
-                    {num} {lang === "tr" ? "Kişi" : lang === "ar" ? "شخص" : lang === "ru" ? "чел." : "Guests"}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Time */}
-            <div>
-              <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
-                <Clock size={14} className="text-[#4E5F4C]" />
-                {t.timeLabel}
-              </label>
-              <select
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
-              >
-                {[
-                  "10:00", "11:00", "12:00", "13:00", "14:00", "15:00",
-                  "16:00", "17:00", "18:00", "18:30", "19:00", "19:30",
-                  "20:00", "20:30", "21:00", "21:30", "22:00", "23:00", "00:00"
-                ].map((tStr) => (
-                  <option key={tStr} value={tStr} className="bg-[#EDE3CE] text-[#2B2620]">
-                    {tStr}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Date */}
-          <div>
-            <label className="block text-xs font-semibold text-[#7A7364] mb-1 flex items-center gap-1.5">
-              <Calendar size={14} className="text-[#4E5F4C]" />
-              {t.dateLabel}
-            </label>
-            <input
-              type="date"
-              required
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm"
-            />
-          </div>
-
-          {/* Notes */}
-          <div>
-            <label className="block text-xs font-semibold text-[#7A7364] mb-1">
-              {t.notesLabel}
-            </label>
-            <textarea
-              rows={2}
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              placeholder={t.notesPlaceholder}
-              className="w-full px-4 py-2.5 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] placeholder-[#7A7364]/60 focus:outline-none focus:border-[#9C7A3F] transition-colors text-sm resize-none"
-            />
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="pt-2 space-y-2.5">
-            <button
-              type="submit"
-              className="w-full py-3 px-6 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors"
-            >
-              <MessageCircle size={16} />
-              <span>{t.whatsappButton || "WhatsApp İle Rezerve Et"}</span>
-            </button>
-
-            <a
-              href="tel:+902122513696"
-              className="w-full py-2.5 px-4 rounded-md bg-[#EDE3CE] border border-[#9C7A3F]/30 text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
-            >
-              <Phone size={14} className="text-[#9C7A3F]" />
-              <span>{t.directCall}: +90 212 251 36 96</span>
-            </a>
-          </div>
-        </form>
+        {/* CTA Button */}
+        <div className="pt-4 pb-2 space-y-3">
+          <a
+            href="tel:+902122513696"
+            className="w-full py-4 px-6 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-base tracking-wider uppercase flex items-center justify-center gap-3 transition-colors shadow-lg"
+          >
+            <Phone size={22} className="animate-pulse" />
+            <span>{t.directCall}: +90 212 251 36 96</span>
+          </a>
+          <p className="text-center text-xs text-[#7A7364]">
+            {lang === "ar" ? "نحن نستقبل الحجوزات عبر الهاتف فقط لضمان أفضل خدمة." : "We accept reservations by phone only to ensure the best service."}
+          </p>
+        </div>
 
         <p className="text-center text-[11px] text-[#7A7364] mt-4 flex items-center justify-center gap-1">
           <span>Firuzağa Mah., Cihangir, Beyoğlu • 09:00 - 02:00</span>

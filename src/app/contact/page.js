@@ -87,7 +87,7 @@ export default function ContactPage() {
 
       <div className="max-w-3xl mx-auto px-4 space-y-6">
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {/* Address */}
           <a
             href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
@@ -137,25 +137,9 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-
-          {/* WhatsApp */}
-          <a
-            href="https://wa.me/902122513696"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 hover:border-[#4E5F4C] transition-colors shadow-sm group"
-          >
-            <div className="w-12 h-12 rounded-md bg-[#EDE3CE] text-[#4E5F4C] flex items-center justify-center shrink-0 border border-[#9C7A3F]/20">
-              <MessageCircle size={20} />
-            </div>
-            <div>
-              <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.whatsapp}</h3>
-              <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                +90 212 251 36 96
-              </p>
-            </div>
-          </a>
         </div>
+
+
 
         {/* Map */}
         <div className="pt-4">

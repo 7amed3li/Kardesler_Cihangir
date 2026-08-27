@@ -216,12 +216,6 @@ export default function AboutPage() {
             <a href="https://www.instagram.com/kardeslerkebapcihangir/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 flex items-center justify-center text-[#9C7A3F] hover:border-[#9C7A3F] transition-colors">
               <InstagramIcon size={20} />
             </a>
-            <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 flex items-center justify-center text-[#9C7A3F] hover:border-[#9C7A3F] transition-colors">
-              <FacebookIcon size={20} />
-            </a>
-            <a href="https://kardeslercihangir.com" target="_blank" rel="noopener noreferrer" aria-label="Website" className="w-10 h-10 rounded-md bg-[#F7F2E7] border border-[#9C7A3F]/30 flex items-center justify-center text-[#9C7A3F] hover:border-[#9C7A3F] transition-colors">
-              <Globe size={20} />
-            </a>
           </div>
 
           {/* Ottoman Divider */}

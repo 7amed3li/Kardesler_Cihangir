@@ -51,13 +51,14 @@ function BreakfastBanner() {
   );
 }
 
-// ─── Real Signature Dishes with Authentic Photos & Official Prices ───
+// ─── Signature Dishes Showcase — Prices come from Supabase via getLivePrice() ───
+// NOTE: No hardcoded prices here. Each dish is looked up by menuItemId in menuData,
+// then getLivePrice() from AppContext fetches the live price from the database.
 const featuredDishes = [
   {
     id: "karisik_kebap_2",
     menuItemId: "karisik_kebap_2",
     categoryId: "kebap",
-    price: 2400.0,
     image: "/images/28-Karisik-Kebap_2.webp",
     badgeKey: "signature",
     defaultBadge: "ŞEFİN SEÇİMİ"
@@ -66,7 +67,6 @@ const featuredDishes = [
     id: "vali_kebabi",
     menuItemId: "vali_kebabi",
     categoryId: "kebap",
-    price: 870.0,
     image: "/images/17-Vali-Kebabi.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
@@ -75,7 +75,6 @@ const featuredDishes = [
     id: "beyti_kebap",
     menuItemId: "beyti_kebap",
     categoryId: "kebap",
-    price: 730.0,
     image: "/images/beyti-1024x677.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
@@ -84,7 +83,6 @@ const featuredDishes = [
     id: "mardin_kebap",
     menuItemId: "mardin_kebap",
     categoryId: "kebap",
-    price: 750.0,
     image: "/images/12-Mardin-Kebap.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
@@ -93,7 +91,6 @@ const featuredDishes = [
     id: "kasarli_sucuklu_pide",
     menuItemId: "kasarli_sucuklu_pide",
     categoryId: "pide",
-    price: 430.0,
     image: "/images/kasarli_sucuklu_pide.webp",
     badgeKey: "trending",
     defaultBadge: "TAŞ FIRIN"
@@ -102,7 +99,6 @@ const featuredDishes = [
     id: "lahmacun_item",
     menuItemId: "lahmacun_item",
     categoryId: "lahmacun",
-    price: 190.0,
     image: "/images/lahmacun.webp",
     badgeKey: "signature",
     defaultBadge: "GELENEKSEL LEZZET"
@@ -111,7 +107,6 @@ const featuredDishes = [
     id: "serpme_kahvalti",
     menuItemId: "serpme_kahvalti",
     categoryId: "kahvalti",
-    price: 900.0,
     image: "/images/Serpme-Kahvalti-2-Kisilik.webp",
     badgeKey: "signature",
     defaultBadge: "ZENGİN SERPME"
@@ -120,7 +115,6 @@ const featuredDishes = [
     id: "kunefe",
     menuItemId: "kunefe",
     categoryId: "tatli",
-    price: 250.0,
     image: "/images/kunefe.webp",
     badgeKey: "signature",
     defaultBadge: "ŞEFİN İMZASI"
@@ -129,7 +123,6 @@ const featuredDishes = [
     id: "iskender_kebap",
     menuItemId: "iskender_kebap",
     categoryId: "kebap",
-    price: 625.0,
     image: "/images/18-Iskender-Kebap.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
@@ -138,7 +131,6 @@ const featuredDishes = [
     id: "adana_urfa",
     menuItemId: "adana_urfa",
     categoryId: "kebap",
-    price: 625.0,
     image: "/images/adana.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
@@ -147,7 +139,6 @@ const featuredDishes = [
     id: "karisik_meze_tabagi",
     menuItemId: "karisik_meze_tabagi",
     categoryId: "meze",
-    price: 500.0,
     image: "/images/karisik_meze.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
@@ -236,7 +227,7 @@ function FeaturedDishesShowcase({ onExplore, onSelectCategory }) {
          <DishModal 
            isOpen={true} 
            setIsOpen={() => setSelectedDish(null)} 
-           item={menuData.flatMap(c => c.items || []).find(i => i.id === selectedDish.menuItemId) || { id: selectedDish.menuItemId, price: selectedDish.price, image: selectedDish.image }}
+           item={menuData.flatMap(c => c.items || []).find(i => i.id === selectedDish.menuItemId) || { id: selectedDish.menuItemId, image: selectedDish.image }}
            customName={selectedDish.translatedName}
            customDesc={selectedDish.translatedDesc}
            customImage={selectedDish.image}

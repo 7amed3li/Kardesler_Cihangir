@@ -68,8 +68,8 @@
     "errorHint": "Per favore riprova",
     "clear": "Svuota",
     "table": "Tavolo",
-    "sendWhatsApp": "Ordina tramite WhatsApp",
-    "whatsappRedirect": "Reindirizzamento a WhatsApp...",
+    "sendWhatsApp": "Chiama per ordinare",
+    "whatsappRedirect": "Chiama per ordinare",
     "subtotal": "Subtotale"
   },
   "footer": {
@@ -82,7 +82,7 @@
     "social": "Social Media",
     "hours": "Orari",
     "hoursValue": "Tutti i giorni: 09:00 - 02:00",
-    "whatsapp": "Ordine WhatsApp",
+    "whatsapp": "Ordine telefonico",
     "paymentMethods": "Metodi di Pagamento Accettati",
     "paymentSubtitle": "Si accettano tutte le carte bancarie, İstanbulkart contactless e carte pasto aziendali",
     "paymentNote": "Accettiamo Contanti, Carte di Credito (Visa, Mastercard, Troy), İstanbulkart contactless e tutte le carte pasto aziendali turche (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
@@ -99,7 +99,7 @@
     "workHoursLabel": "Orari di Lavoro",
     "workHours": "Tutti i giorni: 09:00 - 02:00",
     "followUs": "Seguici",
-    "whatsapp": "Ordine WhatsApp",
+    "whatsapp": "Ordine telefonico",
     "findUs": "Trovaci"
   },
   "contactPage": {
@@ -110,7 +110,7 @@
     "phoneLabel": "Linea Ordini",
     "hoursLabel": "Orari",
     "hours": "Tutti i giorni: 09:00 - 02:00",
-    "whatsapp": "Ordine WhatsApp",
+    "whatsapp": "Ordine telefonico",
     "directions": "Ottieni Indicazioni",
     "findUs": "Trovaci"
   }

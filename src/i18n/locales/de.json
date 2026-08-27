@@ -68,8 +68,8 @@
     "errorHint": "Bitte versuchen Sie es erneut",
     "clear": "Leeren",
     "table": "Tisch",
-    "sendWhatsApp": "Über WhatsApp Bestellen",
-    "whatsappRedirect": "Weiterleitung zu WhatsApp...",
+    "sendWhatsApp": "Anrufen zum Bestellen",
+    "whatsappRedirect": "Anrufen zum Bestellen",
     "subtotal": "Zwischensumme"
   },
   "footer": {
@@ -82,7 +82,7 @@
     "social": "Soziale Medien",
     "hours": "Öffnungszeiten",
     "hoursValue": "Täglich: 09:00 - 02:00 Uhr",
-    "whatsapp": "WhatsApp Bestellung",
+    "whatsapp": "Telefonische Bestellung",
     "paymentMethods": "Akzeptierte Zahlungsmethoden",
     "paymentSubtitle": "Alle Bankkarten, kontaktlose İstanbulkart und Firmen-Essenskarten werden akzeptiert",
     "paymentNote": "Wir akzeptieren Bargeld, Kreditkarten (Visa, Mastercard, Troy), kontaktlose İstanbulkart und alle türkischen Firmen-Essenskarten (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
@@ -99,7 +99,7 @@
     "workHoursLabel": "Öffnungszeiten",
     "workHours": "Täglich: 09:00 - 02:00 Uhr",
     "followUs": "Folgen Sie Uns",
-    "whatsapp": "WhatsApp Bestellung",
+    "whatsapp": "Telefonische Bestellung",
     "findUs": "Finden Sie Uns"
   },
   "contactPage": {
@@ -110,7 +110,7 @@
     "phoneLabel": "Bestellhotline",
     "hoursLabel": "Öffnungszeiten",
     "hours": "Täglich: 09:00 - 02:00 Uhr",
-    "whatsapp": "WhatsApp Bestellung",
+    "whatsapp": "Telefonische Bestellung",
     "directions": "Route Abrufen",
     "findUs": "Finden Sie Uns"
   }

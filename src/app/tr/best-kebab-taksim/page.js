@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, 
-  Navigation, MessageCircle, Flame, ShieldCheck, 
-  Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink
-} from "lucide-react";
+import { Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, Navigation, Flame, ShieldCheck, Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink } from "lucide-react";
 import LandingDishesSection from "../../../components/LandingDishesSection";
 import LandingVerifiedReviews from "../../../components/LandingVerifiedReviews";
 import SeoStorytelling from "../../../components/SeoStorytelling";
@@ -94,7 +90,7 @@ const faqSchemaTr = {
 };
 
 export default function TurkishLandingPage() {
-  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("Merhaba Kardeşler Kebap Cihangir, masa rezervasyonu yaptırmak veya sipariş vermek istiyorum.");
+  const phoneCallUrl = "tel:+902122513696";
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">
@@ -144,13 +140,13 @@ export default function TurkishLandingPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-4">
             <a
-              href={whatsappUrl}
+              href={phoneCallUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs tracking-wider uppercase transition-colors shadow-sm"
             >
-              <MessageCircle size={18} />
-              <span>WhatsApp ile Masa Ayırt / Sipariş Ver</span>
+              <Phone size={18} />
+              <span>Rezervasyon ve Sipariş İçin Ara</span>
             </a>
             <a
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
@@ -216,13 +212,13 @@ export default function TurkishLandingPage() {
 
           <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <a
-              href={whatsappUrl}
+              href={phoneCallUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"
             >
-              <MessageCircle size={18} />
-              <span>WhatsApp ile Hemen İletişime Geç</span>
+              <Phone size={18} />
+              <span>Rezervasyon ve Sipariş İçin Ara</span>
             </a>
             <a
               href="tel:+902122513696"

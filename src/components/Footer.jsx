@@ -267,22 +267,20 @@ export default function Footer() {
                 )}
               </p>
             </div>
-            {/* WhatsApp Quick Link */}
+            {/* Phone Quick Link */}
             <a
-              href="https://wa.me/902122513696"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:+902122513696"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-[#4E5F4C] text-white hover:bg-[#3D4B3B] transition-colors group"
             >
-              <MessageCircle size={16} className="text-white" />
+              <Phone size={16} className="text-white" />
               <span className="font-semibold text-xs sm:text-sm">
                 {fc.whatsapp || (
-                  lang === "ar" ? "طلب عبر الواتساب" :
-                  lang === "zh" ? "WhatsApp 订餐" :
-                  lang === "de" ? "WhatsApp Bestellung" :
-                  lang === "it" ? "Ordine WhatsApp" :
-                  lang === "es" ? "Pedir por WhatsApp" :
-                  "WhatsApp Order"
+                  lang === "ar" ? "طلب عبر الهاتف" :
+                  lang === "zh" ? "电话订购" :
+                  lang === "de" ? "Telefonische Bestellung" :
+                  lang === "it" ? "Ordine telefonico" :
+                  lang === "es" ? "Pedido telefónico" :
+                  "Call to Order"
                 )}
               </span>
             </a>

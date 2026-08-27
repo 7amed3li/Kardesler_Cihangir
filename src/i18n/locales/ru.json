@@ -55,8 +55,8 @@
     "errorHint": "Пожалуйста, попробуйте еще раз",
     "clear": "Очистить",
     "table": "Стол",
-    "sendWhatsApp": "Заказать через WhatsApp",
-    "whatsappRedirect": "Перенаправление в WhatsApp...",
+    "sendWhatsApp": "Позвонить для заказа",
+    "whatsappRedirect": "Позвонить для заказа",
     "subtotal": "Промежуточный итог"
   },
   "footer": {
@@ -69,7 +69,7 @@
     "social": "Социальные сети",
     "hours": "Часы работы",
     "hoursValue": "Ежедневно: 09:00 - 02:00",
-    "whatsapp": "Заказ по WhatsApp",
+    "whatsapp": "Заказ по телефону",
     "rights": "Все права защищены.",
     "madeBy": "Дизайн и разработка от",
     "paymentMethods": "Принимаемые Способы Оплаты",
@@ -86,7 +86,7 @@
     "workHoursLabel": "Часы работы",
     "workHours": "Ежедневно: 09:00 - 02:00",
     "followUs": "Следите за нами",
-    "whatsapp": "Заказ по WhatsApp",
+    "whatsapp": "Заказ по телефону",
     "findUs": "Как нас найти"
   },
   "contactPage": {
@@ -97,7 +97,7 @@
     "phoneLabel": "Линия заказов",
     "hoursLabel": "Часы работы",
     "hours": "Ежедневно: 09:00 - 02:00",
-    "whatsapp": "Заказ по WhatsApp",
+    "whatsapp": "Заказ по телефону",
     "directions": "Проложить маршрут",
     "findUs": "Как нас найти"
   },

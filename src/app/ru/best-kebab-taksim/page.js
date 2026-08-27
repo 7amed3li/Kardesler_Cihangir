@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, 
-  Navigation, MessageCircle, Flame, ShieldCheck, 
-  Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink
-} from "lucide-react";
+import { Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, Navigation, Flame, ShieldCheck, Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink } from "lucide-react";
 import LandingDishesSection from "../../../components/LandingDishesSection";
 import LandingVerifiedReviews from "../../../components/LandingVerifiedReviews";
 import SeoStorytelling from "../../../components/SeoStorytelling";
@@ -89,7 +85,7 @@ const faqSchemaRu = {
 };
 
 export default function RussianLandingPage() {
-  const whatsappUrl = "https://wa.me/902122513696?text=" + encodeURIComponent("Здравствуйте, ресторан Kardeşler Cihangir! Хочу забронировать столик или узнать меню.");
+  const phoneCallUrl = "tel:+902122513696";
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans">
@@ -150,13 +146,13 @@ export default function RussianLandingPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-4">
             <a
-              href={whatsappUrl}
+              href={phoneCallUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-[#0E0804] font-bold text-sm tracking-wide uppercase hover:opacity-95 transition-all shadow-lg shadow-copper/20 hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-white font-bold text-sm tracking-wide uppercase hover:opacity-95 transition-all shadow-lg shadow-copper/20 hover:scale-[1.02]"
             >
-              <MessageCircle size={18} />
-              <span>VIP Бронь столика в WhatsApp</span>
+              <Phone size={18} />
+              <span>Позвонить для заказа / брони</span>
             </a>
             <a
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
@@ -172,7 +168,7 @@ export default function RussianLandingPage() {
       </section>
 
       {/* ── 2. TRUST STATS STRIP ── */}
-      <section className="border-y border-teal-dim/30 bg-[#140D07]/90 py-6 px-4">
+      <section className="border-y border-teal-dim/30 bg-[#F7F2E7] py-6 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
           <div className="p-3 border-r border-teal-dim/20">
             <div className="text-2xl sm:text-3xl font-black text-gold">1998</div>
@@ -203,7 +199,7 @@ export default function RussianLandingPage() {
       <LandingVerifiedReviews currentLocale="ru" />
 
       {/* ── 5. FINAL VIP CALLOUT ── */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#140D07] to-[#0E0804] border-t border-teal-dim/30 text-center">
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F2E7] border-t border-teal-dim/30 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-copper/20 border border-copper/40 text-gold text-xs font-bold uppercase tracking-wider">
             <span>VIP Бронирование столиков</span>
@@ -222,13 +218,13 @@ export default function RussianLandingPage() {
 
           <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <a
-              href={whatsappUrl}
+              href={phoneCallUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"
             >
-              <MessageCircle size={18} />
-              <span>Забронировать через WhatsApp</span>
+              <Phone size={18} />
+              <span>Позвонить для заказа / брони</span>
             </a>
             <a
               href="tel:+902122513696"

@@ -55,8 +55,8 @@
     "errorHint": "Veuillez réessayer",
     "clear": "Effacer",
     "table": "Table",
-    "sendWhatsApp": "Commander via WhatsApp",
-    "whatsappRedirect": "Redirection vers WhatsApp...",
+    "sendWhatsApp": "Appeler pour commander",
+    "whatsappRedirect": "Appeler pour commander",
     "subtotal": "Sous-total"
   },
   "footer": {
@@ -69,7 +69,7 @@
     "social": "Réseaux Sociaux",
     "hours": "Horaires",
     "hoursValue": "Tous les jours : 09h00 - 02h00",
-    "whatsapp": "Commande WhatsApp",
+    "whatsapp": "Commande par téléphone",
     "rights": "Tous droits réservés.",
     "madeBy": "Conçu et développé par",
     "paymentMethods": "Modes de Paiement Acceptés",
@@ -86,7 +86,7 @@
     "workHoursLabel": "Horaires d'ouverture",
     "workHours": "Tous les jours : 09h00 - 02h00",
     "followUs": "Suivez-nous",
-    "whatsapp": "Commande WhatsApp",
+    "whatsapp": "Commande par téléphone",
     "findUs": "Trouvez-nous"
   },
   "contactPage": {
@@ -97,7 +97,7 @@
     "phoneLabel": "Ligne de commande",
     "hoursLabel": "Horaires d'ouverture",
     "hours": "Tous les jours : 09h00 - 02h00",
-    "whatsapp": "Commande WhatsApp",
+    "whatsapp": "Commande par téléphone",
     "directions": "Itinéraire",
     "findUs": "Trouvez-nous"
   },
