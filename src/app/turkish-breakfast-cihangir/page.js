@@ -114,69 +114,7 @@ const faqSchema = {
 };
 
 // ─── Restaurant JSON-LD (real data only) ───
-const restaurantSchema = {
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "@id": `${siteUrl}/#restaurant`,
-  name: RESTAURANT_INFO.name,
-  alternateName: ["Kardeşler Cihangir", "Kardesler Cihangir", "كارديشلر جيهانكير"],
-  description:
-    "Authentic Turkish breakfast and kebab restaurant in Cihangir, Beyoğlu, Istanbul. Serving traditional Serpme Kahvaltı and freshly cooked egg dishes daily.",
-  url: siteUrl,
-  telephone: RESTAURANT_INFO.phone,
-  image: [
-    {
-      "@type": "ImageObject",
-      url: `${siteUrl}/images/Serpme-Kahvalti-2-Kisilik.webp`,
-      caption: "Traditional Turkish Breakfast Serpme Kahvaltı at Kardeşler Cihangir",
-      width: 1024,
-      height: 677,
-    },
-    {
-      "@type": "ImageObject",
-      url: `${siteUrl}/images/menemen.webp`,
-      caption: "Menemen — Turkish egg and pepper dish at Kardeşler Cihangir",
-    },
-    {
-      "@type": "ImageObject",
-      url: `${siteUrl}/images/hero-bg.webp`,
-      caption: "Kardeşler Kebap & Breakfast Cihangir restaurant exterior",
-      width: 1200,
-      height: 630,
-    },
-  ],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: RESTAURANT_INFO.address.street,
-    addressLocality: RESTAURANT_INFO.address.locality,
-    addressRegion: RESTAURANT_INFO.address.region,
-    postalCode: RESTAURANT_INFO.address.postalCode,
-    addressCountry: RESTAURANT_INFO.address.country,
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: RESTAURANT_INFO.coordinates.latitude,
-    longitude: RESTAURANT_INFO.coordinates.longitude,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: RESTAURANT_INFO.generalHours.opens,
-      closes: RESTAURANT_INFO.generalHours.closes,
-    },
-  ],
-  servesCuisine: ["Turkish", "Breakfast", "Kebab", "Mediterranean"],
-  priceRange: "₺₺",
-  menu: `${siteUrl}/menu`,
-  acceptsReservations: "True",
-  currenciesAccepted: "TRY",
-  paymentAccepted: "Cash, Credit Card",
-  sameAs: [
-    RESTAURANT_INFO.instagram,
-    `https://www.google.com/maps/place/?q=place_id:${RESTAURANT_INFO.googleMapsPlaceId}`,
-  ],
-};
+
 
 export default function TurkishBreakfastCihangirPage() {
   return (
@@ -185,10 +123,7 @@ export default function TurkishBreakfastCihangirPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
-      />
+      
       <BreakfastLandingPage locale="en" />
     </>
   );

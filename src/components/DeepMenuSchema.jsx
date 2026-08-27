@@ -3,8 +3,10 @@
 import React from 'react';
 import { menuData } from "@/data/menuData";
 import { menuTranslations } from "@/i18n/translations";
+import { useAppContext } from "@/context/AppContext";
 
 export default function DeepMenuSchema({ locale = "en" }) {
+  const { getLivePrice } = useAppContext();
   const mt = menuTranslations[locale] || menuTranslations.en;
   
   const baseUrl = "https://kardeslercihangir.com";
@@ -29,7 +31,7 @@ export default function DeepMenuSchema({ locale = "en" }) {
         "url": `${menuUrl}#${item.id}`,
         "offers": {
           "@type": "Offer",
-          "price": item.price,
+          "price": getLivePrice(item) || 0,
           "priceCurrency": "TRY",
           "availability": "https://schema.org/InStock"
         }
@@ -63,47 +65,13 @@ export default function DeepMenuSchema({ locale = "en" }) {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Kardeşler Kebap Cihangir",
-    "image": `${baseUrl}/logo.webp`,
-    "url": baseUrl,
-    "telephone": "+902122441998",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
-      "addressLocality": "Cihangir, Beyoğlu",
-      "addressRegion": "İstanbul",
-      "addressCountry": "TR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 41.0317, 
-      "longitude": 28.9840
-    },
-    "servesCuisine": ["Turkish", "Kebabs", "Breakfast", "Lahmacun"],
-    "foundingDate": "1998",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "09:00",
-        "closes": "23:59"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "description": "Breakfast Hours",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "09:00",
-        "closes": "15:00"
-      }
-    ],
-    "hasMenu": {
-      "@type": "Menu",
-      "name": `Kardeşler Kebap & Breakfast - Menu (${locale.toUpperCase()})`,
-      "url": menuUrl,
-      "mainEntityOfPage": menuUrl,
-      "hasMenuSection": hasMenuSection
-    }
+    "@type": "Menu",
+    "@id": `${menuUrl}/#menu`,
+    "name": `Kardeşler Kebap & Breakfast - Menu (${locale.toUpperCase()})`,
+    "url": menuUrl,
+    "mainEntityOfPage": menuUrl,
+    "isPartOf": { "@id": `${baseUrl}/#restaurant` },
+    "hasMenuSection": hasMenuSection
   };
 
   return (

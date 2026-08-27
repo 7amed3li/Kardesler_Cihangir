@@ -117,38 +117,7 @@ const faqSchema = {
   ],
 };
 
-const restaurantSchema = {
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: "Kardeşler Kebap & Breakfast",
-  description: "Authentic Wood-Fired Kebab Near Taksim Square (Since 1998) | Kardeşler Cihangir",
-  url: "https://kardeslercihangir.com/best-kebab-taksim",
-  telephone: "+902122513696",
-  image: "https://kardeslercihangir.com/images/hero-bg.webp",
-  servesCuisine: ["Turkish", "Kebab", "Mediterranean", "Pide", "Lahmacun"],
-  priceRange: "₺₺",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
-    addressLocality: "Cihangir, Beyoğlu",
-    addressRegion: "İstanbul",
-    postalCode: "34425",
-    addressCountry: "TR",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 41.0310944,
-    longitude: 28.9824818,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "09:00",
-      closes: "02:00",
-    },
-  ],
-};
+
 
 export default function BestKebabTaksimPage() {
   const distanceGuide = [
@@ -189,10 +158,7 @@ export default function BestKebabTaksimPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
-      />
+      
 
       {/* ── 1. HERO SECTION ── */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center pt-16 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#EDE3CE]">
