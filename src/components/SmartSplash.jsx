@@ -6,19 +6,13 @@ import Image from "next/image";
 
 export default function SmartSplash() {
   const pathname = usePathname();
-  const [prevPathname, setPrevPathname] = useState(pathname);
   const [show, setShow] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
-  // Derived state: instantly show splash when pathname changes (zero flash)
-  if (pathname !== prevPathname) {
-    setPrevPathname(pathname);
+  // Simplified lifecycle: manage timers in a single effect dependent only on pathname
+  useEffect(() => {
     setShow(true);
     setIsFadingOut(false);
-  }
-
-  useEffect(() => {
-    if (!show) return;
 
     // Fast, ultra-smooth fade out after 800ms
     const fadeOutTimer = setTimeout(() => {
@@ -34,12 +28,12 @@ export default function SmartSplash() {
       clearTimeout(fadeOutTimer);
       clearTimeout(unmountTimer);
     };
-  }, [show, pathname]);
+  }, [pathname]);
 
   if (!show) return null;
 
   return (
-    <div className={`splash-container ${isFadingOut ? "fade-out" : ""}`}>
+    <div id="smart-splash-container" className={`splash-container ${isFadingOut ? "fade-out" : ""}`}>
       <style>{`
         .splash-container {
           position: fixed;
@@ -47,6 +41,7 @@ export default function SmartSplash() {
           z-index: 9999999;
           width: 100vw;
           height: 100vh;
+          height: 100dvh;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -56,6 +51,13 @@ export default function SmartSplash() {
           font-family: var(--font-inter, sans-serif);
           transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           will-change: opacity;
+          
+          /* CSS-only fallback to ensure hide even if JS thread freezes */
+          animation: css-safety-hide 0.1s 3s forwards;
+        }
+
+        @keyframes css-safety-hide {
+          to { visibility: hidden; pointer-events: none; opacity: 0; }
         }
 
         .splash-container.fade-out {
@@ -237,38 +239,13 @@ export default function SmartSplash() {
         }
       `}</style>
 
-      <div className="embers" id="embers">
-        {[
-          { left: "15%", s: "3px", dur: "5s", delay: "0s", drift: "12px" },
-          { left: "35%", s: "4px", dur: "4s", delay: "0.8s", drift: "-8px" },
-          { left: "55%", s: "3px", dur: "6s", delay: "0.2s", drift: "10px" },
-          { left: "75%", s: "5px", dur: "4.5s", delay: "0.5s", drift: "-12px" },
-        ].map((ember, i) => (
-          <div
-            key={i}
-            className="ember-dot"
-            style={{
-              left: ember.left,
-              "--s": ember.s,
-              "--dur": ember.dur,
-              "--delay": ember.delay,
-              "--drift": ember.drift,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="stage">
         <div className="halo" />
-        <Image
+        <img
           className="logo-layer layer-mid"
           src="/logo.webp"
           alt="Kardeşler Logo"
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, 380px"
         />
-        <div className="impact-ring" />
         <div className="shine" />
       </div>
 
