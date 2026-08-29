@@ -2,12 +2,12 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { menuData } from "@/data/menuData";
-import SmartFilters from "@/components/SmartFilters";
 import FoodCard from "@/components/FoodCard";
-import DishModal from "@/components/DishModal";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import dynamic from "next/dynamic";
+const SmartFilters = dynamic(() => import("@/components/SmartFilters"), { ssr: false });
+const DishModal = dynamic(() => import("@/components/DishModal"), { ssr: false });
 const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: true });
 import { CaretLeft, CaretRight, ForkKnife, Coffee } from "@phosphor-icons/react";
 import { OttomanSeal, OttomanStar, KebabSkewer } from "@/components/BrandIcons";
