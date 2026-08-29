@@ -1,7 +1,7 @@
 import { menuData } from "@/data/menuData";
 
 export default function sitemap() {
-  const baseUrl = 'https://kardeslercihangir.com';
+  const baseUrl = 'https://www.kardeslercihangir.com';
   const currentDate = new Date();
 
   const landingAlternates = {
@@ -25,12 +25,17 @@ export default function sitemap() {
       priority: 1.0,
       alternates: {
         languages: {
+          'x-default': `${baseUrl}/`,
           tr: `${baseUrl}/`,
-          en: `${baseUrl}/`,
-          ar: `${baseUrl}/`,
-          ru: `${baseUrl}/`,
-          fa: `${baseUrl}/`,
-          fr: `${baseUrl}/`,
+          en: `${baseUrl}/en`,
+          ar: `${baseUrl}/ar`,
+          ru: `${baseUrl}/ru`,
+          fa: `${baseUrl}/fa`,
+          fr: `${baseUrl}/fr`,
+          de: `${baseUrl}/de`,
+          it: `${baseUrl}/it`,
+          es: `${baseUrl}/es`,
+          zh: `${baseUrl}/zh`,
         },
       },
     },
@@ -68,48 +73,24 @@ export default function sitemap() {
         alternates: { languages: menuAlternates },
       }));
     })(),
-    {
-      url: `${baseUrl}/best-kebab-taksim`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: { languages: landingAlternates },
-    },
-    {
-      url: `${baseUrl}/fr/best-kebab-taksim`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: { languages: landingAlternates },
-    },
-    {
-      url: `${baseUrl}/de/best-kebab-taksim`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: { languages: landingAlternates },
-    },
-    {
-      url: `${baseUrl}/it/best-kebab-taksim`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: { languages: landingAlternates },
-    },
-    {
-      url: `${baseUrl}/es/best-kebab-taksim`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: { languages: landingAlternates },
-    },
-    {
-      url: `${baseUrl}/zh/best-kebab-taksim`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: { languages: landingAlternates },
-    },
+    // ── Best Kebab Landing Pages ──
+    ...(() => {
+      const slug = 'best-kebab-taksim';
+      const locales = ["en", "ar", "tr", "ru", "fa", "fr", "de", "it", "es", "zh"];
+      const landingAlternates = {};
+      
+      locales.forEach(loc => {
+        landingAlternates[loc] = loc === "en" ? `${baseUrl}/${slug}` : `${baseUrl}/${loc}/${slug}`;
+      });
+
+      return locales.map(loc => ({
+        url: loc === "en" ? `${baseUrl}/${slug}` : `${baseUrl}/${loc}/${slug}`,
+        lastModified: currentDate,
+        changeFrequency: 'weekly',
+        priority: 0.9,
+        alternates: { languages: landingAlternates },
+      }));
+    })(),
     // ── Turkish Breakfast Landing Pages ──
     ...(() => {
       const bfSlug = 'turkish-breakfast-cihangir';

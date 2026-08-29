@@ -26,7 +26,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://kardeslercihangir.com"),
+  metadataBase: new URL("https://www.kardeslercihangir.com"),
   title: "Kardeşler Cihangir | Kebap & Pide — Geleneksel Türk Mutfağı",
   description:
     "Authentic Turkish cuisine in the heart of Cihangir, 5 min from Taksim Square. 100+ dishes — Adana kebab, pide, lahmacun, mezes & more. Open daily 09:00-02:00.",
@@ -75,6 +75,22 @@ export const metadata = {
     "کباب حلال تکسیم",
     "petit déjeuner turc istanbul",
   ],
+  alternates: {
+    canonical: "/",
+    languages: {
+      "x-default": "/",
+      tr: "/",
+      en: "/en",
+      ar: "/ar",
+      ru: "/ru",
+      fa: "/fa",
+      fr: "/fr",
+      de: "/de",
+      it: "/it",
+      es: "/es",
+      zh: "/zh",
+    },
+  },
   icons: {
     icon: "/logo.webp",
     apple: "/logo.webp",
@@ -85,7 +101,7 @@ export const metadata = {
     title: "Kardeşler Cihangir | Kebap & Pide",
     description:
       "Authentic Turkish cuisine in the heart of Cihangir. 100+ dishes including kebabs, pide, and traditional mezes.",
-    url: "https://kardeslercihangir.com",
+    url: "https://www.kardeslercihangir.com",
     siteName: "Kardeşler Cihangir",
     locale: "tr_TR",
     type: "website",
@@ -117,7 +133,7 @@ export const metadata = {
 };
 
 // Dynamic URL for Schema
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kardeslercihangir.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kardeslercihangir.com";
 
 // Comprehensive Schema.org JSON-LD Graph (Restaurant + WebSite + Person Creator + ImageGallery)
 const globalSchemaGraph = {

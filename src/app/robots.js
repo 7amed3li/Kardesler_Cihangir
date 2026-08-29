@@ -1,5 +1,5 @@
 export default function robots() {
-  const siteUrl = "https://kardeslercihangir.com";
+  const siteUrl = "https://www.kardeslercihangir.com";
 
   // All public pages that should be crawled and indexed
   const publicPages = [
