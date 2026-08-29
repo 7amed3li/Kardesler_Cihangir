@@ -3,7 +3,7 @@ import DeveloperProfile from "@/components/DeveloperProfile";
 import { devProfileContent } from "@/data/developerProfile";
 
 export async function generateMetadata({ params }) {
-  const { lang } = params;
+  const { lang } = await params;
   const content = devProfileContent[lang] || devProfileContent.en;
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kardeslercihangir.com";
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function DesignDevelopmentDynamicPage({ params }) {
-  const { lang } = params;
+export default async function DesignDevelopmentDynamicPage({ params }) {
+  const { lang } = await params;
   const content = devProfileContent[lang] || devProfileContent.en;
   const isRTL = lang === "ar" || lang === "fa";
 
