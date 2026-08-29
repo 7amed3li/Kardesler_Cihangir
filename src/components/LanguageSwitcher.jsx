@@ -27,48 +27,38 @@ export default function LanguageSwitcher() {
 
   const currentLangObj = languagesConfig.find((l) => l.code === lang) || languagesConfig[0];
 
-  const isKebabLanding = pathname && (
-    pathname === "/best-kebab-taksim" ||
-    pathname.endsWith("/best-kebab-taksim")
-  );
-
-  const isBreakfastLanding = pathname && (
-    pathname === "/turkish-breakfast-cihangir" ||
-    pathname.endsWith("/turkish-breakfast-cihangir")
-  );
-
-  const isMenu = pathname && (
-    pathname === "/menu" ||
-    pathname.endsWith("/menu")
-  );
-
   const selectLang = (code) => {
     changeLang(code);
     setIsOpen(false);
 
-    if (isKebabLanding) {
-      const targetRoutes = {
-        tr: "/tr/best-kebab-taksim",
-        en: "/best-kebab-taksim",
-        ar: "/ar/best-kebab-taksim",
-        ru: "/ru/best-kebab-taksim",
-        fa: "/fa/best-kebab-taksim",
-        fr: "/fr/best-kebab-taksim",
-      };
-      const targetUrl = targetRoutes[code] || "/best-kebab-taksim";
-      if (pathname !== targetUrl) {
-        router.push(targetUrl);
-      }
-    } else if (isBreakfastLanding) {
-      const targetUrl = code === "en" ? "/turkish-breakfast-cihangir" : `/${code}/turkish-breakfast-cihangir`;
-      if (pathname !== targetUrl) {
-        router.push(targetUrl);
-      }
-    } else if (isMenu) {
-      const targetUrl = code === "en" ? "/menu" : `/${code}/menu`;
-      if (pathname !== targetUrl) {
-        router.push(targetUrl);
-      }
+    if (!pathname) return;
+
+    // Split pathname into parts
+    const parts = pathname.split("/").filter(Boolean);
+    const knownLocales = ["ar", "tr", "ru", "fa", "fr", "de", "it", "es", "zh", "en"];
+    
+    if (parts.length > 0 && knownLocales.includes(parts[0])) {
+      parts.shift(); // Remove the locale part from the array
+    }
+
+    let baseRoute = `/${parts.join("/")}`;
+    
+    // Special case for design-development route
+    if (baseRoute === "/tasarim-gelistirme" && code === "en") {
+      baseRoute = "/en/design-development";
+    } else if (baseRoute === "/design-development" || baseRoute === "/en/design-development") {
+      if (code === "tr") baseRoute = "/tasarim-gelistirme";
+      else if (code !== "en") baseRoute = `/${code}/design-development`; // although other languages might not exist, fallback safely
+    }
+
+    // Default locale (en) uses root paths, except for special cases like /en/design-development which are already handled
+    let targetUrl = baseRoute;
+    if (code !== "en" && baseRoute !== "/tasarim-gelistirme") {
+      targetUrl = baseRoute === "/" ? `/${code}` : `/${code}${baseRoute}`;
+    }
+
+    if (pathname !== targetUrl) {
+      router.push(targetUrl);
     }
   };
 
