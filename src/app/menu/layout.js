@@ -57,8 +57,13 @@ export const metadata = {
   },
 };
 
-export default function MenuLayout({ children }) {
-  const siteUrl = "https://kardeslercihangir.com";
+import { getLivePricesMap } from "@/lib/services/priceService";
+
+export default async function MenuLayout({ children }) {
+  const siteUrl = "https://www.kardeslercihangir.com";
+  
+  // Fetch live prices from Supabase on the server
+  const livePrices = await getLivePricesMap();
 
   // Build dynamic Menu Schema with all sections and items
   const menuSections = menuData.map((cat) => {
@@ -72,13 +77,16 @@ export default function MenuLayout({ children }) {
         const trItem = trMenu.items?.[item.id] || {};
         const arItem = arMenu.items?.[item.id] || {};
         const itemName = `${trItem.name || item.id} - ${arItem.desc || ""}`;
+        
+        // Use live price from Supabase or default to 0 if not found
+        const itemPrice = livePrices[item.id] || 0;
 
         return {
           "@type": "MenuItem",
           name: itemName,
           description: `${trItem.name || ""} - ${arItem.desc || ""}. Freshly prepared with traditional Turkish ingredients.`,
           image: [
-            item.image ? `${siteUrl}${item.image}` : `${siteUrl}/logo.webp`
+            item.image ? (item.image.startsWith('http') ? item.image : `${siteUrl}${item.image}`) : `${siteUrl}/logo.webp`
           ],
           brand: {
             "@type": "Brand",
@@ -86,7 +94,7 @@ export default function MenuLayout({ children }) {
           },
           offers: {
             "@type": "Offer",
-            price: item.price,
+            price: itemPrice,
             priceCurrency: "TRY",
             availability: "https://schema.org/InStock",
             url: `${siteUrl}/menu#${cat.id}`,

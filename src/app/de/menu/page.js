@@ -1,5 +1,4 @@
 import MenuPage from "@/app/menu/page";
-import DeepMenuSchema from "@/components/DeepMenuSchema";
 import { RESTAURANT_INFO } from "@/data/breakfastConfig";
 
 const siteUrl = RESTAURANT_INFO.siteUrl;
@@ -35,8 +34,7 @@ export const metadata = {
 export default function LocalizedMenuPage() {
   return (
     <>
-      <DeepMenuSchema locale={locale} />
-      <div data-locale={locale} className="localized-menu-wrapper">
+            <div data-locale={locale} className="localized-menu-wrapper">
         <MenuPage />
       </div>
     </>

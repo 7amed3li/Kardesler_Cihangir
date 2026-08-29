@@ -2,8 +2,8 @@ import { menuData } from "@/data/menuData";
 import { RESTAURANT_INFO } from "@/data/breakfastConfig";
 import Image from "next/image";
 import Link from "next/link";
-import DeepMenuSchema from "@/components/DeepMenuSchema";
 import { ChevronLeft } from "lucide-react";
+import { getLivePricesMap } from "@/lib/services/priceService";
 
 import tr from "@/i18n/menu/tr.json";
 import en from "@/i18n/menu/en.json";
@@ -100,12 +100,13 @@ export default async function DishPage({ params }) {
   const itemDesc = t.items?.[id]?.desc || "";
   
   const isRTL = lang === "ar" || lang === "fa";
-  const displayPrice = itemData.price?.TRY ? itemData.price.TRY : itemData.price;
+
+  const livePrices = await getLivePricesMap();
+  const displayPrice = livePrices[id] || 0;
 
   return (
     <main className="min-h-screen bg-[#EDE3CE]" dir={isRTL ? "rtl" : "ltr"}>
-      <DeepMenuSchema locale={lang} />
-      
+            
       <div className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8 pt-24">
         <Link 
           href={`/menu#${id}`}
