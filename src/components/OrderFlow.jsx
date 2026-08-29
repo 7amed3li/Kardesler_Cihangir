@@ -195,7 +195,7 @@ export default function OrderFlow() {
                   <span>{labels.total || "Estimated Total:"}</span>
                   {pricesLoading ? (
                     <span className="animate-pulse">...</span>
-                  ) : pricesError ? (
+                  ) : pricesError || cartTotal === null ? (
                     <span className="text-[#A0422E]">-</span>
                   ) : (
                     <span>{convertPrice(cartTotal)} {symbol}</span>
