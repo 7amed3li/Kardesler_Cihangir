@@ -113,6 +113,10 @@ export async function POST(request) {
       console.error('History error:', historyError);
     }
 
+    // Invalidate cached prices
+    const { revalidateTag } = require('next/cache');
+    revalidateTag('menu-prices');
+
     return NextResponse.json({ 
       success: true, 
       message: 'Price updated successfully',

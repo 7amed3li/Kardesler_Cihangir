@@ -142,21 +142,19 @@ export function AppProvider({ children }) {
     // Refresh every 5 minutes
     const interval = setInterval(fetchRates, REFRESH_INTERVAL_MS);
 
-    // Fetch live prices from Supabase
+    // Fetch live prices from unified API
     async function fetchPrices() {
       setPricesLoading(true);
       setPricesError(null);
       try {
-        const { createClient } = await import('@/lib/supabase/client');
-        const supabase = createClient();
-        const { data, error } = await supabase.from('items').select('id, price');
-        if (error) throw error;
-        if (data) {
-          const pricesMap = {};
-          data.forEach(item => {
-             pricesMap[item.id] = item.price;
-          });
-          setLivePrices(pricesMap);
+        const res = await fetch('/api/prices', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const result = await res.json();
+        
+        if (result.success && result.data) {
+          setLivePrices(result.data);
+        } else {
+          throw new Error(result.error || "Failed to load prices");
         }
       } catch (e) {
         console.error("Failed to load live prices", e);
@@ -192,6 +190,7 @@ export function AppProvider({ children }) {
   }, [livePrices]);
 
   const convertPrice = (priceInTRY) => {
+    if (priceInTRY == null) return null;
     const rateData = exchangeRates[currency] || HARDCODED_FALLBACK[currency];
     const { rate } = rateData;
     return (priceInTRY * rate).toFixed(2);
@@ -259,7 +258,12 @@ export function AppProvider({ children }) {
 
   // Derived values
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
-  const cartTotal = cart.reduce((sum, item) => sum + getLivePrice(item) * item.qty, 0);
+  const cartTotal = cart.reduce((sum, item) => {
+    if (sum === null) return null;
+    const price = getLivePrice(item);
+    if (price === null) return null;
+    return sum + price * item.qty;
+  }, 0);
 
   // Initiate phone call instead of WhatsApp
   const submitOrder = useCallback(() => {
