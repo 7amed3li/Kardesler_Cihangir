@@ -216,6 +216,12 @@ export function AppProvider({ children }) {
   }, [cart]);
 
   const addToCart = useCallback((item) => {
+    // Guard: don't add items if prices haven't loaded or item has no price
+    if (pricesLoading || getLivePrice(item) === null) {
+      console.warn(`Cannot add ${item.id} to cart: price not available`);
+      return;
+    }
+
     setCart((prev) => {
       const existing = prev.find((i) => i.id === item.id);
       if (existing) {
@@ -230,7 +236,7 @@ export function AppProvider({ children }) {
     setCartPulse(true);
     if (pulseTimeoutRef.current) clearTimeout(pulseTimeoutRef.current);
     pulseTimeoutRef.current = setTimeout(() => setCartPulse(false), 600);
-  }, []);
+  }, [pricesLoading, getLivePrice]);
 
   const removeFromCart = useCallback((itemId) => {
     setCart((prev) => {
