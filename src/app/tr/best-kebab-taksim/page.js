@@ -7,9 +7,9 @@ import LandingVerifiedReviews from "../../../components/LandingVerifiedReviews";
 import SeoStorytelling from "../../../components/SeoStorytelling";
 
 export const metadata = {
-  title: "Taksim'e En Yakın Meşe Kömüründe Hakiki Kebap & Taş Fırın Pide (1998'den Beri) | Kardeşler Cihangir",
+  title: "Taksim'deki En İyi Kebap | Otantik Odun Ateşi (1998'den Beri) | Kardeşler Cihangir",
   description:
-    "Cihangir'in 28 yıllık lezzet durağı. Zırhta çekilmiş taze etler, meşe kömürü ateşi ve 450 derecelik taş fırından sıcacık pideler. Taksim Meydanı'na sadece 5 dakika yürüme mesafesinde.",
+    "1998'den beri Cihangir'de otantik meşe kömürü kebabı ve taş fırın pideleri. Taksim'deki en iyi kebap, 10 dakikalık yürüme mesafesinde. Rezervasyon gerekmez, doğrudan gelebilirsiniz.",
   keywords: [
     "taksim en iyi kebapçı",
     "cihangir kebap salonu",
@@ -22,11 +22,6 @@ export const metadata = {
     "kardeşler kebap cihangir",
     "taksim ucuz ve kaliteli yemek",
     "istanbul en iyi kebapçılar",
-    "galataport yakın restoranlar",
-    "tarihi türk mutfağı",
-    "közde kebap keyfi",
-    "taksim kebap tavsiye",
-    "istanbul lezzet durakları",
     "taksim serpme kahvaltı",
     "istanbul en iyi kahvaltı",
     "menemen nerede yenir",
@@ -52,8 +47,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Taksim'e En Yakın Hakiki Meşe Kömüründe Kebap — Kardeşler Cihangir (1998)",
-    description: "28 yıllık esnaf terbiyesi ve değişmeyen meşe kömürü lezzetiyle Cihangir'de hizmetinizdeyiz.",
+    title: "Taksim'deki En İyi Kebap (Kuruluş 1998) — Kardeşler Cihangir",
+    description: "Otantik meşe kömürü ızgaraları ve taş fırın pideleri. Rezervasyon gerekmez.",
     images: [{ url: "https://kardeslercihangir.com/images/hero-bg.webp" }],
   },
 };
@@ -111,11 +106,11 @@ export default function TurkishLandingPage() {
             className="text-3xl sm:text-5xl md:text-6xl font-black text-[#2B2620] leading-[1.15] tracking-tight"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
-            Meşe Kömüründe <br className="hidden sm:inline" />
+            Taksim'deki En İyi Kebap <br className="hidden sm:inline" />
             <span className="text-[#9C7A3F]">
-              Hakiki Zırh Kebabı
+              Doğal Meşe Kömüründe
             </span>{" "}
-            Taksim'in Yanında
+            Zırh Kebabı
           </h1>
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-[#7A7364] font-medium leading-relaxed">
@@ -146,7 +141,7 @@ export default function TurkishLandingPage() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs tracking-wider uppercase transition-colors shadow-sm"
             >
               <Phone size={18} />
-              <span>Rezervasyon ve Sipariş İçin Ara</span>
+              <span>Restoranı Ara</span>
             </a>
             <a
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
@@ -196,7 +191,7 @@ export default function TurkishLandingPage() {
       <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#EDE3CE] border-t border-[#9C7A3F]/20 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider">
-            <span>Rezervasyon ve Paket Servis</span>
+            <span>Rezervasyon Gerekmez</span>
           </div>
 
           <h2
@@ -218,7 +213,7 @@ export default function TurkishLandingPage() {
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"
             >
               <Phone size={18} />
-              <span>Rezervasyon ve Sipariş İçin Ara</span>
+              <span>Restoranı Ara</span>
             </a>
             <a
               href="tel:+902122513696"

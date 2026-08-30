@@ -149,7 +149,7 @@ export default function OrderFlow() {
                           <p className="text-sm font-bold text-[#2B2620] truncate" style={{ fontFamily: "var(--font-cairo)" }}>{name}</p>
                           {pricesLoading ? (
                             <p className="text-[11px] text-[#9C7A3F] mt-0.5 animate-pulse" style={{ fontFamily: "var(--font-inter)" }}>Loading...</p>
-                          ) : pricesError || itemSubtotal === null ? (
+                          ) : itemSubtotal == null ? (
                             <p className="text-[11px] text-[#A0422E] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>Unavailable</p>
                           ) : (
                             <p className="text-[11px] text-[#7A7364] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
@@ -195,7 +195,7 @@ export default function OrderFlow() {
                   <span>{labels.total || "Estimated Total:"}</span>
                   {pricesLoading ? (
                     <span className="animate-pulse">...</span>
-                  ) : pricesError || cartTotal === null ? (
+                  ) : cartTotal == null ? (
                     <span className="text-[#A0422E]">-</span>
                   ) : (
                     <span>{convertPrice(cartTotal)} {symbol}</span>

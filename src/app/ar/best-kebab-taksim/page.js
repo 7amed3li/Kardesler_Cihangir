@@ -7,9 +7,9 @@ import LandingVerifiedReviews from "../../../components/LandingVerifiedReviews";
 import SeoStorytelling from "../../../components/SeoStorytelling";
 
 export const metadata = {
-  title: "أفضل كباب تركي حلال قرب ميدان تقسيم (منذ 1998) | مطعم كارديشلر جيهانكير إسطنبول",
+  title: "أفضل كباب في تقسيم | مشاوي تركية أصيلة (منذ 1998) | كارديشلر جيهانكير",
   description:
-    "اكتشف سر المشاوي التركية الأصيلة على جمر السنديان وفطائر البيدا بالفرن الحجري في حي جيهانكير التاريخي منذ 1998. لحوم حلال طازجة 100% مفرومة بالساطور العثماني. 5 دقائق سيراً من ميدان تقسيم.",
+    "اكتشف سر المشاوي التركية الأصيلة على جمر السنديان في حي جيهانكير التاريخي. أفضل كباب في تقسيم، 10 دقائق سيراً. لا حاجة للحجز مسبقاً، نرحب بكم دائماً.",
   keywords: [
     "أفضل كباب تقسيم",
     "مطعم كباب حلال تقسيم اسطنبول",
@@ -88,8 +88,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "أفضل كباب تركي حلال قرب ميدان تقسيم (تأسس 1998) — مطعم كارديشلر",
-    description: "أكثر من 28 عاماً من الأصالة والشواء على جمر السنديان الطبيعي في قلب إسطنبول التاريخية.",
+    title: "أفضل كباب في تقسيم (تأسس 1998) — مطعم كارديشلر",
+    description: "أصالة الشواء على جمر السنديان الطبيعي في قلب إسطنبول. لا حاجة للحجز.",
     images: [{ url: "https://kardeslercihangir.com/images/hero-bg.webp" }],
   },
 };
@@ -103,7 +103,7 @@ const faqSchemaAr = {
       name: "أين أجد أفضل كباب تركي أصيل حلال قريب من ميدان تقسيم؟",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "مطعم كارديشلر كباب (تأسس عام 1998) في حي جيهانكير التاريخي يبعد 5 دقائق فقط سيراً على الأقدام (450 متراً) عن ميدان تقسيم ومحطة المترو، ويشتهر بكباب أضنة المشوي على جمر السنديان وفطائر البيدا واللحم بعجين الطازج من الفرن الحجري.",
+        text: "مطعم كارديشلر كباب (تأسس عام 1998) في حي جيهانكير التاريخي يبعد 10 دقائق سيراً على الأقدام (750 متراً) عن ميدان تقسيم ومحطة المترو، ويشتهر بكباب أضنة المشوي على جمر السنديان وفطائر البيدا واللحم بعجين الطازج من الفرن الحجري.",
       },
     },
     {
@@ -119,7 +119,7 @@ const faqSchemaAr = {
       name: "ما هي أوقات العمل وكيف يمكن حجز طاولة؟",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "المطعم مفتوح يومياً من 09:00 صباحاً وحتى 02:00 بعد منتصف الليل. يمكن حجز الطاولات مباشرة وتأكيدها فوراً عبر واتساب (+90 212 251 36 96) أو بالاتصال على (+90 212 251 36 96).",
+        text: "المطعم مفتوح يومياً من 09:00 صباحاً وحتى 02:00 بعد منتصف الليل. يمكنكم الاتصال بنا للاستعلام (+90 212 251 36 96). لا حاجة للحجز المسبق، نرحب بكم في أي وقت.",
       },
     },
   ],
@@ -158,8 +158,8 @@ const restaurantSchemaAr = {
 
 export default function BestKebabTaksimArabicPage() {
   const distanceGuide = [
-    { from: "ميدان تقسيم (Taksim Meydanı)", dist: "450 متر", walk: "5 دقائق", route: "نزولاً عبر شارع Sıraselviler بجوار فندق The Marmara" },
-    { from: "شارع الاستقلال (İstiklal Caddesi)", dist: "350 متر", walk: "4 دقائق", route: "عبر أزقة غلطة سراي باتجاه جامع فيروز آغا" },
+    { from: "ميدان تقسيم (Taksim Meydanı)", dist: "750 متر", walk: "10 دقائق", route: "نزولاً عبر شارع Sıraselviler بجوار فندق The Marmara" },
+    { from: "شارع الاستقلال (İstiklal Caddesi)", dist: "500 متر", walk: "7 دقائق", route: "عبر أزقة غلطة سراي باتجاه جامع فيروز آغا" },
     { from: "برج غلاطة (Galata Kulesi)", dist: "1.2 كم", walk: "12 دقيقة", route: "مروراً بحي جيهانكير العريق وشوارعه البوتيكية" },
   ];
 
@@ -229,8 +229,8 @@ export default function BestKebabTaksimArabicPage() {
             className="text-3xl sm:text-5xl md:text-6xl font-black text-cream leading-[1.25] tracking-tight luxury-title"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
-            الكباب العثماني الأصيل <br className="hidden sm:inline" />
-            على <span className="luxury-gold-serif">جمر السنديان الطبيعي</span> قرب تقسيم
+            أفضل كباب في تقسيم <br className="hidden sm:inline" />
+            على <span className="luxury-gold-serif">جمر السنديان الطبيعي</span>
           </h1>
 
           {/* Subtitle */}
@@ -247,7 +247,7 @@ export default function BestKebabTaksimArabicPage() {
             </div>
             <div className="flex items-center gap-1.5 bg-ink/70 px-3.5 py-1.5 rounded-full border border-teal-dim/40 backdrop-blur-sm">
               <MapPin size={14} className="text-copper" />
-              <span>5 دقائق سيراً من ميدان تقسيم (450م)</span>
+              <span>10 دقائق سيراً من ميدان تقسيم (750م)</span>
             </div>
             <div className="flex items-center gap-1.5 bg-ink/70 px-3.5 py-1.5 rounded-full border border-teal-dim/40 backdrop-blur-sm">
               <ShieldCheck size={14} className="text-teal" />
@@ -428,7 +428,7 @@ export default function BestKebabTaksimArabicPage() {
 
           <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <a
-              href="https://wa.me/902122513696?text=*طلب%20حجز%20طاولة%20-%20مطعم%20كارديشلر%20جيهانكير*%0A--------------------------------%0Aمرحباً%D8%8C%20أود%20حجز%20طاولة%20في%20مطعم%20كارديشلر.%20يرجى%20تأكيد%20التوفر.%20شكراً%20لكم!"
+              href="tel:+902122513696"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"

@@ -22,7 +22,7 @@ const allAlternates = {
 export const metadata = {
   title: "Authentic Turkish Breakfast in Cihangir, Istanbul | Kardeşler Kebap & Breakfast",
   description:
-    "Start your Istanbul morning with a traditional Serpme Kahvaltı spread at Kardeşler Cihangir. Cheese, olives, honey, eggs & more. Near Taksim Square. Reserve via WhatsApp.",
+    "Traditional Turkish breakfast and Serpme Kahvaltı served daily in Cihangir, a short walk from Taksim. Walk-ins welcome, no reservation needed. Breakfast 09:00–13:00.",
   keywords: [
     "turkish breakfast cihangir",
     "serpme kahvalti istanbul",
@@ -75,7 +75,7 @@ const faqSchema = {
       name: "Do I need a reservation for breakfast?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We recommend reserving via WhatsApp (+90 538 663 06 92) especially on weekends, but walk-ins are welcome on weekdays subject to availability.",
+        text: "No reservation is needed. Walk-ins are welcome anytime. We have plenty of space in our quiet restaurant.",
       },
     },
     {
@@ -169,7 +169,7 @@ const restaurantSchema = {
   servesCuisine: ["Turkish", "Breakfast", "Kebab", "Mediterranean"],
   priceRange: "₺₺",
   menu: `${siteUrl}/menu`,
-  acceptsReservations: "True",
+  acceptsReservations: "False",
   currenciesAccepted: "TRY",
   paymentAccepted: "Cash, Credit Card",
   sameAs: [

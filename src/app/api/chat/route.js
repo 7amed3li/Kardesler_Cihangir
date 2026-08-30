@@ -133,7 +133,7 @@ export async function POST(req) {
     console.error("Chat API error:", err);
     return Response.json(
       {
-        reply: "Sorry, I'm having trouble right now. Please reach us directly on WhatsApp and our team will be happy to help!\n\nwa.me/902122513696",
+        reply: "Sorry, I'm having trouble right now. Please reach us directly by phone at +90 212 251 36 96 and our team will be happy to help!",
       },
       { status: 200 } // 200 so the widget renders the fallback text gracefully
     );

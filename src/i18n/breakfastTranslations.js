@@ -8,13 +8,12 @@ const breakfastTranslations = {
   // ENGLISH
   // ═══════════════════════════════════════════════════════════════
   en: {
-    metaTitle: "Authentic Turkish Breakfast in Cihangir, Istanbul | Kardeşler Kebap & Breakfast",
-    metaDescription: "Start your Istanbul morning with a traditional Serpme Kahvaltı spread at Kardeşler Cihangir. Cheese, olives, honey, eggs & more. Near Taksim Square.",
-    h1: "Authentic Turkish Breakfast in Cihangir",
+    metaTitle: "Authentic Turkish Breakfast in Cihangir Near Taksim | Kardeşler Kebap & Breakfast",
+    metaDescription: "Traditional Turkish breakfast and Serpme Kahvaltı served daily in Cihangir, a short walk from Taksim. Walk-ins welcome, no reservation needed. Breakfast 09:00–13:00.",
+    h1: "Authentic Turkish Breakfast in Cihangir Near Taksim",
     heroSubtitle: "Kebap & Breakfast",
-    heroDescription: "Begin your Istanbul morning with a generous Serpme Kahvaltı spread — artisan cheeses, Aegean olives, village honey, clotted cream, fresh-baked simit, and farm eggs cooked to order in copper pans. Served daily at our family restaurant in the heart of Cihangir, steps from Taksim.",
-    ctaWhatsApp: "Contact via WhatsApp",
-    ctaCall: "Call Us",
+    heroDescription: "Traditional Turkish breakfast and Serpme Kahvaltı served daily in Cihangir, only a short walk from Taksim Square. Walk-ins are welcome and no reservation is needed. Breakfast is served daily from 09:00 to 13:00.",
+    ctaCall: "Call Restaurant",
     ctaDirections: "Get Directions",
     ctaViewMenu: "View Breakfast Menu",
     ctaBookNow: "Get Directions",
@@ -27,7 +26,9 @@ const breakfastTranslations = {
     addressTitle: "Find Us in Cihangir",
     fullAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah., Cihangir, Beyoğlu, Istanbul",
     nearbyTitle: "In the Heart of Istanbul's Most Charming Neighborhood",
-    nearbyText: `Kardeşler is located in Cihangir, a peaceful escape right next to the bustling city center. We are perfectly positioned for tourists exploring Istanbul, located just a stone's throw away from Taksim Square, İstiklal Street, Galata, Karaköy, Şişhane, and Dolmabahçe Palace.`,
+    nearbyText: `Kardeşler is located in Cihangir, a peaceful neighborhood near the bustling city center. We are approximately a 10-minute walk from Taksim Square, and close to İstiklal Street, Galata, Karaköy, Şişhane, and Dolmabahçe Palace.`,
+    walkInsWelcome: "Walk-ins Welcome — No Reservation Needed",
+    priceDisclaimer: "Prices may change. Please check the current menu or call the restaurant for today's prices.",
     faqTitle: "Frequently Asked Questions",
     faq: [
       { q: "Do I need a reservation for breakfast?", a: "No reservation is needed! We have plenty of space in our quiet restaurant, so you can walk in anytime." },
@@ -37,7 +38,7 @@ const breakfastTranslations = {
       {
       q: `How do I get to the restaurant from Taksim, Galata, or Karaköy?`,
       a: `
-      <br><strong>From Taksim Square:</strong> Put the Republic Monument behind you and walk towards the Burger King and Taksim Hospital. Continue down this street (passing the Romanian Consulate). After about 5 minutes, you will see a large pharmacy on the left corner; turn left there and our restaurant is right in front of you.
+      <br><strong>From Taksim Square:</strong> Put the Republic Monument behind you and walk towards the Burger King and Taksim Hospital. Continue down this street (passing the Romanian Consulate). After about 10 minutes, you will see a large pharmacy on the left corner; turn left there and our restaurant is right in front of you.
       <br><strong>From İstiklal Street:</strong> Walk to the wide Taksim Square. Turn right towards the taxi rank and walk down the street parallel to the Bosphorus for 7 minutes until you reach quiet Cihangir. We'll be on the corner.
       <br><strong>From Galata Tower:</strong> Take your photos, then walk up to Şişhane Square. Take the M2 Metro one stop to Taksim, or enjoy walking the full length of İstiklal Street to reach us.
       <br><strong>From Karaköy & Galataport:</strong> Take the blue T1 Tram towards Kabataş and get off at Tophane. Cross the street and walk up the short, cobbled hill (beside Kılıç Ali Paşa Mosque) right into Cihangir.
@@ -58,13 +59,12 @@ const breakfastTranslations = {
   // TURKISH
   // ═══════════════════════════════════════════════════════════════
   tr: {
-    metaTitle: "Cihangir'de Geleneksel Türk Kahvaltısı | Kardeşler Kebap & Breakfast",
-    metaDescription: "Cihangir'in kalbinde zengin serpme kahvaltı keyfi. Peynir tabağı, zeytin çeşitleri, bal-kaymak, sahanda yumurta ve daha fazlası. Taksim'e yürüme mesafesinde.",
-    h1: "Cihangir'de Geleneksel Türk Kahvaltısı",
+    metaTitle: "Cihangir'de Taksim'e Yakın Geleneksel Türk Kahvaltısı | Kardeşler Kebap & Breakfast",
+    metaDescription: "Cihangir'in kalbinde zengin serpme kahvaltı keyfi. Peynir, zeytin, bal-kaymak, sahanda yumurta ve daha fazlası. Taksim'e yürüme mesafesinde. Rezervasyon gerekmez.",
+    h1: "Cihangir'de Taksim'e Yakın Geleneksel Türk Kahvaltısı",
     heroSubtitle: "Kebap & Kahvaltı",
-    heroDescription: "İstanbul sabahınıza zengin bir serpme kahvaltı ile başlayın — el yapımı peynirler, Ege zeytinleri, köy balı, kaymak, taze simit ve bakır tavada sipariş üzerine pişirilen çiftlik yumurtaları. Taksim'e birkaç adım uzaklıktaki aile restoranımızda her gün servis edilir.",
-    ctaWhatsApp: "WhatsApp'tan İletişime Geç",
-    ctaCall: "Bizi Arayın",
+    heroDescription: "Geleneksel Türk kahvaltısı ve serpme kahvaltı, Taksim Meydanı'na kısa bir yürüyüş mesafesinde Cihangir'de her gün servis edilmektedir. Rezervasyona gerek yoktur, doğrudan gelebilirsiniz. Kahvaltı her gün 09:00 – 13:00 arasında servis edilir.",
+    ctaCall: "Restoranı Ara",
     ctaDirections: "Yol Tarifi Al",
     ctaViewMenu: "Kahvaltı Menüsünü Gör",
     ctaBookNow: "Yol Tarifi Al",
@@ -77,14 +77,16 @@ const breakfastTranslations = {
     addressTitle: "Cihangir'de Bizi Bulun",
     fullAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah., Cihangir, Beyoğlu, İstanbul",
     nearbyTitle: "İstanbul'un En Şirin Mahallesinin Kalbinde",
-    nearbyText: `Kardeşler, hareketli şehir merkezinin hemen yanında huzurlu bir kaçış noktası olan Cihangir'de yer almaktadır. Turistler için mükemmel bir konumdayız; Taksim Meydanı, İstiklal Caddesi, Galata, Karaköy, Şişhane ve Dolmabahçe Sarayı'na çok yakınız.`,
+    nearbyText: `Kardeşler, hareketli şehir merkezine yakın, huzurlu Cihangir'de yer almaktadır. Taksim Meydanı'na yaklaşık 10 dakikalık yürüme mesafesindeyiz. İstiklal Caddesi, Galata, Karaköy, Şişhane ve Dolmabahçe Sarayı'na çok yakınız.`,
+    walkInsWelcome: "Rezervasyon Gerekmez — Doğrudan Gelebilirsiniz",
+    priceDisclaimer: "Fiyatlar değişebilir. Güncel fiyatlar için menüyü kontrol edin veya restoranmızı arayın.",
     faqTitle: "Sık Sorulan Sorular",
     faq: [
       { q: "Kahvaltı için rezervasyon gerekli mi?", a: "Hayır, rezervasyona gerek yoktur. Geniş ve sakin restoranımıza dilediğiniz zaman çat kapı gelebilirsiniz." },
       { q: "Serpme Kahvaltı nedir ve kaç kişiliktir?", a: "Serpme Kahvaltı, peynir, zeytin, bal-kaymak, reçel çeşitleri, yumurta, simit ve daha fazlasını içeren 15'ten fazla çeşitli geleneksel Türk kahvaltısıdır. Serpme kahvaltımız 2 kişiliktir." },
       { q: "Kahvaltı hangi saatlerde servis ediliyor?", a: "Kahvaltı her gün 09:00 - 13:00 saatleri arasında servis edilmektedir. Ana menü 09:00 - 02:00 arasında mevcuttur." },
       { q: "Vejetaryen kahvaltı seçenekleri var mı?", a: "Evet! Menemen, Omlet ve Sahanda Yumurta vejetaryen seçeneklerimizdir. Serpme Kahvaltımızda da birçok vejetaryen ürün bulunmaktadır." },
-      { q: "Taksim'den restorana nasıl gelinir?", a: "Cihangir, Beyoğlu'ndayız — Taksim Meydanı'ndan kısa bir yürüyüş mesafesindeyiz. Sıraselviler Caddesi'nden aşağı inin, bizi Defterdar Yokuşu'nda bulacaksınız." },
+      { q: "Taksim'den restorana nasıl gelinir?", a: "Cihangir, Beyoğlu'ndayız — Taksim Meydanı'ndan yaklaşık 10 dakikalık yürüme mesafesindeyiz. Sıraselviler Caddesi'nden aşağı inin, bizi Defterdar Yokuşu'nda bulacaksınız." },
       { q: "Kahvaltı fiyatları ne kadar?", a: "2 kişilik Serpme Kahvaltımız ve bireysel yumurta tabaklarımız ana menümüzle aynı fiyattadır. Tam fiyatlar için menümüzü inceleyebilirsiniz." },
     ],
     menuLinkText: "Tam Menüyü Gör",
@@ -99,13 +101,12 @@ const breakfastTranslations = {
   // ARABIC
   // ═══════════════════════════════════════════════════════════════
   ar: {
-    metaTitle: "إفطار تركي أصيل في جيهانكير، إسطنبول | كارديشلر كباب وإفطار",
-    metaDescription: "ابدأ صباحك في إسطنبول بإفطار سربمه كهفالتي التركي الأصيل في مطعم كارديشلر جيهانكير. أجبان، زيتون، عسل، بيض طازج والمزيد. قرب ميدان تقسيم.",
-    h1: "إفطار تركي أصيل في جيهانكير، إسطنبول",
+    metaTitle: "إفطار تركي أصيل في جيهانكير قرب تقسيم، إسطنبول | كارديشلر كباب وإفطار",
+    metaDescription: "إفطار تركي تقليدي وسربمه كهفالتي يُقدم يومياً في جيهانكير، على بُعد دقائق من ميدان تقسيم. الحضور المباشر مرحب به، لا حاجة للحجز. الإفطار 09:00–13:00.",
+    h1: "إفطار تركي أصيل في جيهانكير قرب تقسيم، إسطنبول",
     heroSubtitle: "كباب وإفطار",
-    heroDescription: "ابدأ صباحك في إسطنبول بمائدة إفطار تركي تقليدي سربمه كهفالتي — أجبان حرفية، زيتون إيجي، عسل ريفي، قشطة، سميت طازج، وبيض مزرعة يُطهى لك حسب الطلب في مقالي نحاسية. يُقدم يومياً في مطعمنا العائلي في قلب جيهانكير، على بُعد خطوات من ميدان تقسيم.",
-    ctaWhatsApp: "تواصل معنا عبر واتساب",
-    ctaCall: "اتصل بنا",
+    heroDescription: "إفطار تركي تقليدي وسربمه كهفالتي يُقدم يومياً في جيهانكير، على بُعد دقائق مشياً من ميدان تقسيم. الحضور المباشر مرحب به ولا حاجة للحجز المسبق. يُقدم الإفطار يومياً من 09:00 حتى 13:00.",
+    ctaCall: "اتصل بالمطعم",
     ctaDirections: "احصل على الاتجاهات",
     ctaViewMenu: "عرض قائمة الإفطار",
     ctaBookNow: "احصل على الاتجاهات",
@@ -118,7 +119,9 @@ const breakfastTranslations = {
     addressTitle: "موقعنا في جيهانكير",
     fullAddress: "دفتاردار يوكوشو رقم: 1/A، محلة فيروز آغا، جيهانكير، بيوغلو، إسطنبول",
     nearbyTitle: "في قلب أجمل أحياء إسطنبول",
-    nearbyText: `يقع كارديشلر في جيهانكير، ويوفر ملاذاً هادئاً بجوار وسط المدينة الصاخب. يتمتع مطعمنا بموقع مثالي للسياح، حيث يقع على مرمى حجر من ميدان تقسيم، شارع الاستقلال، غلاطة، كاراكوي، شيشهانه، وقصر دولمة بهتشه.`,
+    nearbyText: `يقع كارديشلر في جيهانكير، حي هادئ قريب من وسط المدينة. نبعد حوالي 10 دقائق مشياً عن ميدان تقسيم، وقريبون من شارع الاستقلال، غلاطة، كاراكوي، شيشهانه، وقصر دولمة بهتشه.`,
+    walkInsWelcome: "الحضور المباشر مرحب به — لا حاجة للحجز المسبق",
+    priceDisclaimer: "قد تتغير الأسعار. يُرجى مراجعة القائمة الحالية أو الاتصال بالمطعم للتأكد من الأسعار.",
     faqTitle: "الأسئلة الشائعة",
     faq: [
       { q: "هل أحتاج حجز مسبق للإفطار؟", a: "لا، الحجز المسبق غير ضروري! المطعم هادئ ولدينا مساحة كافية، نرحب بزيارتكم في أي وقت." },
@@ -149,13 +152,12 @@ const breakfastTranslations = {
   // RUSSIAN
   // ═══════════════════════════════════════════════════════════════
   ru: {
-    metaTitle: "Аутентичный турецкий завтрак в Джихангире, Стамбул | Kardeşler Kebap & Breakfast",
-    metaDescription: "Начните утро в Стамбуле с традиционного завтрака Serpme Kahvaltı в ресторане Kardeşler Cihangir. Сыры, оливки, мёд, яйца и многое другое. Рядом с площадью Таксим.",
-    h1: "Аутентичный турецкий завтрак в Джихангире, Стамбул",
+    metaTitle: "Аутентичный турецкий завтрак в Джихангире рядом с Таксим | Kardeşler Kebap & Breakfast",
+    metaDescription: "Традиционный турецкий завтрак и Serpme Kahvaltı ежедневно в Джихангире, недалеко от Таксим. Без бронирования. Завтрак 09:00–13:00.",
+    h1: "Аутентичный турецкий завтрак в Джихангире рядом с Таксим",
     heroSubtitle: "Кебаб & Завтрак",
-    heroDescription: "Начните своё утро в Стамбуле с щедрого турецкого завтрака Serpme Kahvaltı — ремесленные сыры, эгейские оливки, деревенский мёд, каймак, свежий симит и фермерские яйца, приготовленные на заказ в медных сковородках. Подаётся ежедневно в нашем семейном ресторане в самом сердце Джихангира, в нескольких шагах от Таксим.",
-    ctaWhatsApp: "Свяжитесь по WhatsApp",
-    ctaCall: "Позвонить нам",
+    heroDescription: "Традиционный турецкий завтрак и Serpme Kahvaltı подаётся ежедневно в Джихангире, недалеко от площади Таксим. Бронирование не требуется, приходите в любое время. Завтрак ежедневно с 09:00 до 13:00.",
+    ctaCall: "Позвонить в ресторан",
     ctaDirections: "Показать маршрут",
     ctaViewMenu: "Меню завтрака",
     ctaBookNow: "Проложить маршрут",
@@ -168,7 +170,9 @@ const breakfastTranslations = {
     addressTitle: "Найдите нас в Джихангире",
     fullAddress: "Дефтердар Йокушу №1/A, махалле Фирузага, Джихангир, Бейоглу, Стамбул",
     nearbyTitle: "В сердце самого очаровательного района Стамбула",
-    nearbyText: `Kardeşler расположен в Джихангире, в тихом уголке рядом с шумным центром. Мы идеально расположены для туристов — в двух шагах от площади Таксим, улицы Истикляль, Галаты, Каракёя, Шишхане и дворца Долмабахче.`,
+    nearbyText: `Kardeşler расположен в Джихангире, в тихом районе рядом с центром. Мы находимся примерно в 10 минутах ходьбы от площади Таксим, недалеко от улицы Истикляль, Галаты, Каракёя, Шишхане и дворца Долмабахче.`,
+    walkInsWelcome: "Без бронирования — приходите в любое время",
+    priceDisclaimer: "Цены могут меняться. Пожалуйста, проверьте актуальное меню или позвоните в ресторан.",
     faqTitle: "Часто задаваемые вопросы",
     faq: [
       { q: "Нужна ли бронь на завтрак?", a: "Нет, бронировать столик не обязательно. В нашем спокойном ресторане всегда найдется место, вы можете прийти в любое время." },
@@ -178,7 +182,7 @@ const breakfastTranslations = {
       {
       q: `Как добраться из Таксима, Галаты или Каракёя?`,
       a: `
-      <br><strong>От площади Таксим:</strong> Встаньте спиной к монументу Республики и идите в сторону Burger King. Продолжайте идти по этой улице (мимо румынского консульства). Через 5 минут вы увидите большую аптеку на левом углу; поверните налево, и наш ресторан будет прямо перед вами.
+      <br><strong>От площади Таксим:</strong> Встаньте спиной к монументу Республики и идите в сторону Burger King. Продолжайте идти по этой улице (мимо румынского консульства). Примерно через 10 минут вы увидите большую аптеку на левом углу; поверните налево, и наш ресторан будет прямо перед вами.
       <br><strong>С улицы Истикляль:</strong> Дойдите до площади Таксим. Поверните направо к стоянке такси и идите 7 минут по улице, параллельной Босфору, до Джихангира.
       <br><strong>От Галатской башни:</strong> Дойдите до площади Шишхане. Сядьте на метро (M2) до Таксима (1 остановка) или прогуляйтесь по всей Истикляль.
       <br><strong>От Каракёя и Галатапорта:</strong> Сядьте на трамвай T1 и выйдите на остановке Tophane. Перейдите дорогу и поднимитесь по короткому холму (рядом с мечетью Кылыч Али-паши) прямо в Джихангир.
@@ -199,13 +203,12 @@ const breakfastTranslations = {
   // FARSI
   // ═══════════════════════════════════════════════════════════════
   fa: {
-    metaTitle: "صبحانه ترکی اصیل در جیهانگیر، استانبول | کاردشلر کباب و صبحانه",
-    metaDescription: "صبح خود را در استانبول با صبحانه سنتی سرپمه کهوالتی در رستوران کاردشلر جیهانگیر آغاز کنید. پنیر، زیتون، عسل، تخم‌مرغ و موارد بیشتر. نزدیک میدان تقسیم.",
-    h1: "صبحانه ترکی اصیل در جیهانگیر، استانبول",
+    metaTitle: "صبحانه ترکی اصیل در جیهانگیر نزدیک تقسیم، استانبول | کاردشلر کباب و صبحانه",
+    metaDescription: "صبحانه سنتی ترکی و سرپمه کهوالتی هر روز در جیهانگیر، چند دقیقه پیاده‌روی تا میدان تقسیم. بدون نیاز به رزرو. صبحانه ۰۹:۰۰ تا ۱۳:۰۰.",
+    h1: "صبحانه ترکی اصیل در جیهانگیر نزدیک تقسیم",
     heroSubtitle: "کباب و صبحانه",
-    heroDescription: "صبح خود را در استانبول با یک سفره صبحانه سرپمه کهوالتی سخاوتمندانه آغاز کنید — پنیرهای دست‌ساز، زیتون‌های اژه‌ای، عسل روستایی، کایماک، سیمیت تازه و تخم‌مرغ مزرعه که در تابه‌های مسی به سفارش شما پخته می‌شود. هر روز در رستوران خانوادگی ما در قلب جیهانگیر، چند قدم تا تقسیم سرو می‌شود.",
-    ctaWhatsApp: "تماس از طریق واتساپ",
-    ctaCall: "تماس با ما",
+    heroDescription: "صبحانه سنتی ترکی و سرپمه کهوالتی هر روز در جیهانگیر، چند دقیقه پیاده‌روی از میدان تقسیم سرو می‌شود. بدون نیاز به رزرو، مستقیماً تشریف بیاورید. صبحانه هر روز از ۰۹:۰۰ تا ۱۳:۰۰.",
+    ctaCall: "تماس با رستوران",
     ctaDirections: "مسیریابی",
     ctaViewMenu: "مشاهده منوی صبحانه",
     ctaBookNow: "مسیریابی",
@@ -218,7 +221,9 @@ const breakfastTranslations = {
     addressTitle: "ما را در جیهانگیر پیدا کنید",
     fullAddress: "دفتردار یوکوشو شماره 1/A، محله فیروزآغا، جیهانگیر، بی‌اوغلو، استانبول",
     nearbyTitle: "در قلب دلنشین‌ترین محله استانبول",
-    nearbyText: `کاردشلر در جیهانگیر واقع شده است، یک فرار آرام درست در کنار مرکز شلوغ شهر. ما در موقعیتی عالی برای گردشگران قرار داریم، تنها چند قدم دورتر از میدان تقسیم، خیابان استقلال، گالاتا، کاراکوی، شیشهانه و کاخ دلمه باغچه.`,
+    nearbyText: `کاردشلر در جیهانگیر واقع شده است، محله‌ای آرام نزدیک مرکز شهر. ما حدود ۱۰ دقیقه پیاده‌روی از میدان تقسیم فاصله داریم و نزدیک خیابان استقلال، گالاتا، کاراکوی، شیشهانه و کاخ دلمه باغچه هستیم.`,
+    walkInsWelcome: "بدون نیاز به رزرو — مستقیماً تشریف بیاورید",
+    priceDisclaimer: "قیمت‌ها ممکن است تغییر کنند. لطفاً منوی فعلی را بررسی کنید یا با رستوران تماس بگیرید.",
     faqTitle: "سوالات متداول",
     faq: [
       { q: "آیا برای صبحانه باید رزرو کنم؟", a: "خیر، نیازی به رزرو نیست. رستوران ما آرام و دارای فضای کافی است، هر زمان که مایل بودید تشریف بیاورید." },
@@ -228,7 +233,7 @@ const breakfastTranslations = {
       {
       q: `چگونه از تقسیم، گالاتا یا کاراکوی به رستوران بیایم؟`,
       a: `
-      <br><strong>از میدان تقسیم:</strong> بنای یادبود جمهوری را پشت سر بگذارید و به سمت Burger King حرکت کنید. در این خیابان ادامه دهید (با عبور از کنسولگری رومانی). بعد از ۵ دقیقه یک داروخانه بزرگ می‌بینید؛ به چپ بپیچید و ما آنجا هستیم.
+      <br><strong>از میدان تقسیم:</strong> بنای یادبود جمهوری را پشت سر بگذارید و به سمت Burger King حرکت کنید. در این خیابان ادامه دهید (با عبور از کنسولگری رومانی). بعد از حدود ۱۰ دقیقه یک داروخانه بزرگ می‌بینید؛ به چپ بپیچید و ما آنجا هستیم.
       <br><strong>از خیابان استقلال:</strong> تا میدان تقسیم قدم بزنید. به راست بپیچید و ۷ دقیقه در خیابان موازی با بسفر راه بروید تا به جیهانگیر آرام برسید.
       <br><strong>از برج گالاتا:</strong> تا میدان شیشهانه بروید. با مترو M2 یک ایستگاه تا تقسیم بروید یا کل خیابان استقلال را پیاده‌روی کنید.
       <br><strong>از کاراکوی و گالاتاپورت:</strong> سوار تراموا T1 شوید و در Tophane پیاده شوید. از خیابان رد شوید و از تپه سنگفرش شده (کنار مسجد قلیچ علی پاشا) بالا بروید تا به جیهانگیر برسید.
@@ -249,13 +254,12 @@ const breakfastTranslations = {
   // FRENCH
   // ═══════════════════════════════════════════════════════════════
   fr: {
-    metaTitle: "Petit-déjeuner turc authentique à Cihangir, Istanbul | Kardeşler Kebap & Breakfast",
-    metaDescription: "Commencez votre matinée à Istanbul avec un Serpme Kahvaltı traditionnel chez Kardeşler Cihangir. Fromages, olives, miel, œufs et plus. Près de Taksim.",
-    h1: "Petit-déjeuner turc authentique à Cihangir, Istanbul",
+    metaTitle: "Petit-déjeuner turc authentique à Cihangir près de Taksim | Kardeşler Kebap & Breakfast",
+    metaDescription: "Petit-déjeuner turc traditionnel et Serpme Kahvaltı servi chaque jour à Cihangir, à quelques minutes de Taksim. Sans réservation. Petit-déjeuner 09h00–13h00.",
+    h1: "Petit-déjeuner turc authentique à Cihangir près de Taksim",
     heroSubtitle: "Kebap & Petit-déjeuner",
-    heroDescription: "Commencez votre matinée à Istanbul par un généreux petit-déjeuner turc Serpme Kahvaltı — fromages artisanaux, olives de l'Égée, miel de village, kaymak, simit frais et œufs fermiers cuits à la commande dans des poêles en cuivre. Servi quotidiennement dans notre restaurant familial au cœur de Cihangir, à quelques pas de Taksim.",
-    ctaWhatsApp: "Contactez-nous via WhatsApp",
-    ctaCall: "Appelez-nous",
+    heroDescription: "Petit-déjeuner turc traditionnel et Serpme Kahvaltı servi chaque jour à Cihangir, à quelques minutes à pied de la place Taksim. Venez directement, aucune réservation nécessaire. Petit-déjeuner servi tous les jours de 09h00 à 13h00.",
+    ctaCall: "Appeler le restaurant",
     ctaDirections: "Obtenir l'itinéraire",
     ctaViewMenu: "Voir le menu petit-déjeuner",
     ctaBookNow: "Obtenir l'itinéraire",
@@ -268,7 +272,9 @@ const breakfastTranslations = {
     addressTitle: "Retrouvez-nous à Cihangir",
     fullAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah., Cihangir, Beyoğlu, Istanbul",
     nearbyTitle: "Au cœur du quartier le plus charmant d'Istanbul",
-    nearbyText: `Kardeşler est situé à Cihangir, une escapade paisible juste à côté du centre-ville animé. Nous sommes idéalement positionnés pour les touristes, à quelques pas de la place Taksim, de la rue İstiklal, de Galata, de Karaköy, de Şişhane et du palais de Dolmabahçe.`,
+    nearbyText: `Kardeşler est situé à Cihangir, un quartier paisible près du centre-ville. Nous sommes à environ 10 minutes à pied de la place Taksim, près de la rue İstiklal, de Galata, Karaköy, Şişhane et du palais de Dolmabahçe.`,
+    walkInsWelcome: "Venez directement — Aucune réservation nécessaire",
+    priceDisclaimer: "Les prix peuvent changer. Veuillez consulter le menu actuel ou appeler le restaurant.",
     faqTitle: "Questions fréquentes",
     faq: [
       { q: "Faut-il réserver pour le petit-déjeuner ?", a: "Non, aucune réservation n'est nécessaire. Notre restaurant est calme et spacieux, vous pouvez venir quand vous le souhaitez." },
@@ -278,7 +284,7 @@ const breakfastTranslations = {
       {
       q: `Comment venir depuis Taksim, Galata ou Karaköy ?`,
       a: `
-      <br><strong>Depuis la place Taksim :</strong> Laissez le Monument de la République derrière vous et marchez vers le Burger King. Continuez dans cette rue (en passant le consulat de Roumanie). Après 5 minutes, vous verrez une grande pharmacie sur la gauche ; tournez à gauche et vous nous trouverez.
+      <br><strong>Depuis la place Taksim :</strong> Laissez le Monument de la République derrière vous et marchez vers le Burger King. Continuez dans cette rue (en passant le consulat de Roumanie). Après environ 10 minutes, vous verrez une grande pharmacie sur la gauche ; tournez à gauche et vous nous trouverez.
       <br><strong>Depuis la rue İstiklal :</strong> Marchez jusqu'à la place Taksim. Tournez à droite vers les taxis et marchez 7 minutes pour atteindre le calme de Cihangir.
       <br><strong>Depuis la tour de Galata :</strong> Montez jusqu'à la place Şişhane. Prenez le métro M2 jusqu'à Taksim, ou profitez d'une promenade sur İstiklal.
       <br><strong>Depuis Karaköy & Galataport :</strong> Prenez le tram T1 et descendez à Tophane. Traversez la rue et montez la petite colline pavée (à côté de la mosquée Kılıç Ali Paşa).
@@ -299,13 +305,12 @@ const breakfastTranslations = {
   // GERMAN
   // ═══════════════════════════════════════════════════════════════
   de: {
-    metaTitle: "Authentisches türkisches Frühstück in Cihangir, Istanbul | Kardeşler Kebap & Breakfast",
-    metaDescription: "Starten Sie Ihren Istanbul-Morgen mit einem traditionellen Serpme Kahvaltı bei Kardeşler Cihangir. Käse, Oliven, Honig, Eier & mehr. Nahe Taksim-Platz.",
-    h1: "Authentisches türkisches Frühstück in Cihangir, Istanbul",
+    metaTitle: "Authentisches türkisches Frühstück in Cihangir nahe Taksim | Kardeşler Kebap & Breakfast",
+    metaDescription: "Traditionelles türkisches Frühstück und Serpme Kahvaltı täglich in Cihangir, wenige Gehminuten vom Taksim-Platz. Ohne Reservierung. Frühstück 09:00–13:00.",
+    h1: "Authentisches türkisches Frühstück in Cihangir nahe Taksim",
     heroSubtitle: "Kebap & Frühstück",
-    heroDescription: "Beginnen Sie Ihren Istanbul-Morgen mit einem großzügigen türkischen Frühstück Serpme Kahvaltı — handwerkliche Käsesorten, ägäische Oliven, Dorfhonig, Kaymak, frisch gebackener Simit und Bauernhof-Eier, auf Bestellung in Kupferpfannen zubereitet. Täglich serviert in unserem Familienrestaurant im Herzen von Cihangir, nur Schritte vom Taksim-Platz.",
-    ctaWhatsApp: "Kontakt per WhatsApp",
-    ctaCall: "Rufen Sie uns an",
+    heroDescription: "Traditionelles türkisches Frühstück und Serpme Kahvaltı wird täglich in Cihangir serviert, nur wenige Gehminuten vom Taksim-Platz. Kommen Sie einfach vorbei, keine Reservierung nötig. Frühstück täglich von 09:00 bis 13:00 Uhr.",
+    ctaCall: "Restaurant anrufen",
     ctaDirections: "Route anzeigen",
     ctaViewMenu: "Frühstückskarte ansehen",
     ctaBookNow: "Route anzeigen",
@@ -318,7 +323,9 @@ const breakfastTranslations = {
     addressTitle: "Finden Sie uns in Cihangir",
     fullAddress: "Defterdar Yokuşu Nr. 1/A, Firuzağa Mah., Cihangir, Beyoğlu, Istanbul",
     nearbyTitle: "Im Herzen des charmantesten Viertels Istanbuls",
-    nearbyText: `Kardeşler liegt in Cihangir, einem ruhigen Rückzugsort direkt neben dem lebhaften Stadtzentrum. Wir sind ideal für Touristen gelegen, nur einen Katzensprung von Taksim-Platz, İstiklal-Straße, Galata, Karaköy, Şişhane und dem Dolmabahçe-Palast entfernt.`,
+    nearbyText: `Kardeşler liegt in Cihangir, einem ruhigen Viertel nahe dem Stadtzentrum. Wir sind etwa 10 Gehminuten vom Taksim-Platz entfernt, nahe der İstiklal-Straße, Galata, Karaköy, Şişhane und dem Dolmabahçe-Palast.`,
+    walkInsWelcome: "Ohne Reservierung — Kommen Sie einfach vorbei",
+    priceDisclaimer: "Preise können sich ändern. Bitte überprüfen Sie die aktuelle Speisekarte oder rufen Sie das Restaurant an.",
     faqTitle: "Häufig gestellte Fragen",
     faq: [
       { q: "Brauche ich eine Reservierung für das Frühstück?", a: "Nein, eine Reservierung ist nicht erforderlich. In unserem ruhigen Restaurant haben wir viel Platz, kommen Sie einfach vorbei." },
@@ -328,7 +335,7 @@ const breakfastTranslations = {
       {
       q: `Wie komme ich von Taksim, Galata oder Karaköy zum Restaurant?`,
       a: `
-      <br><strong>Vom Taksim-Platz:</strong> Lassen Sie das Republikdenkmal hinter sich und gehen Sie in Richtung Burger King. Folgen Sie dieser Straße (vorbei am rumänischen Konsulat). Nach 5 Minuten sehen Sie links eine große Apotheke; biegen Sie links ab und Sie finden uns.
+      <br><strong>Vom Taksim-Platz:</strong> Lassen Sie das Republikdenkmal hinter sich und gehen Sie in Richtung Burger King. Folgen Sie dieser Straße (vorbei am rumänischen Konsulat). Nach etwa 10 Minuten sehen Sie links eine große Apotheke; biegen Sie links ab und Sie finden uns.
       <br><strong>Von der İstiklal-Straße:</strong> Gehen Sie zum Taksim-Platz. Biegen Sie rechts zu den Taxis ab und gehen Sie 7 Minuten, bis Sie das ruhige Cihangir erreichen.
       <br><strong>Vom Galata-Turm:</strong> Gehen Sie zum Şişhane-Platz. Nehmen Sie die Metro M2 zum Taksim, oder spazieren Sie die İstiklal-Straße entlang.
       <br><strong>Von Karaköy & Galataport:</strong> Nehmen Sie die Tram T1 bis Tophane. Überqueren Sie die Straße und gehen Sie den kurzen Kopfsteinpflasterhügel (neben der Kılıç Ali Paşa Moschee) hinauf nach Cihangir.
@@ -349,13 +356,12 @@ const breakfastTranslations = {
   // ITALIAN
   // ═══════════════════════════════════════════════════════════════
   it: {
-    metaTitle: "Colazione turca autentica a Cihangir, Istanbul | Kardeşler Kebap & Breakfast",
-    metaDescription: "Inizia la tua mattinata a Istanbul con un tradizionale Serpme Kahvaltı da Kardeşler Cihangir. Formaggi, olive, miele, uova e altro. Vicino a Piazza Taksim.",
-    h1: "Colazione turca autentica a Cihangir, Istanbul",
+    metaTitle: "Colazione turca autentica a Cihangir vicino a Taksim | Kardeşler Kebap & Breakfast",
+    metaDescription: "Colazione turca tradizionale e Serpme Kahvaltı ogni giorno a Cihangir, a pochi minuti a piedi da Taksim. Senza prenotazione. Colazione 09:00–13:00.",
+    h1: "Colazione turca autentica a Cihangir vicino a Taksim",
     heroSubtitle: "Kebap & Colazione",
-    heroDescription: "Inizia la tua mattinata a Istanbul con un generoso Serpme Kahvaltı — formaggi artigianali, olive dell'Egeo, miele di villaggio, kaymak, simit appena sfornato e uova di fattoria cucinate su ordinazione in padelle di rame. Servito ogni giorno nel nostro ristorante familiare nel cuore di Cihangir, a pochi passi da Taksim.",
-    ctaWhatsApp: "Contattaci su WhatsApp",
-    ctaCall: "Chiamaci",
+    heroDescription: "Colazione turca tradizionale e Serpme Kahvaltı servita ogni giorno a Cihangir, a pochi minuti a piedi da Piazza Taksim. Venite direttamente, nessuna prenotazione necessaria. Colazione servita ogni giorno dalle 09:00 alle 13:00.",
+    ctaCall: "Chiama il ristorante",
     ctaDirections: "Indicazioni stradali",
     ctaViewMenu: "Vedi il menu colazione",
     ctaBookNow: "Indicazioni stradali",
@@ -368,7 +374,9 @@ const breakfastTranslations = {
     addressTitle: "Trovaci a Cihangir",
     fullAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah., Cihangir, Beyoğlu, Istanbul",
     nearbyTitle: "Nel cuore del quartiere più affascinante di Istanbul",
-    nearbyText: `Kardeşler si trova a Cihangir, una tranquilla via di fuga proprio accanto al vivace centro città. Siamo in posizione perfetta per i turisti, a due passi da Piazza Taksim, Via İstiklal, Galata, Karaköy, Şişhane e Palazzo Dolmabahçe.`,
+    nearbyText: `Kardeşler si trova a Cihangir, un quartiere tranquillo vicino al centro città. Siamo a circa 10 minuti a piedi da Piazza Taksim, vicino a Via İstiklal, Galata, Karaköy, Şişhane e Palazzo Dolmabahçe.`,
+    walkInsWelcome: "Venite direttamente — Nessuna prenotazione necessaria",
+    priceDisclaimer: "I prezzi possono variare. Consultare il menu attuale o chiamare il ristorante.",
     faqTitle: "Domande frequenti",
     faq: [
       { q: "Devo prenotare per la colazione?", a: "No, la prenotazione non è necessaria. Il nostro ristorante è tranquillo e spazioso, siete i benvenuti in qualsiasi momento." },
@@ -378,7 +386,7 @@ const breakfastTranslations = {
       {
       q: `Come arrivo da Taksim, Galata o Karaköy?`,
       a: `
-      <br><strong>Da Piazza Taksim:</strong> Mettiti il Monumento alla Repubblica alle spalle e cammina verso Burger King. Continua su questa strada (passando il consolato rumeno). Dopo 5 minuti vedrai una grande farmacia sulla sinistra; gira a sinistra e ci troverai.
+      <br><strong>Da Piazza Taksim:</strong> Mettiti il Monumento alla Repubblica alle spalle e cammina verso Burger King. Continua su questa strada (passando il consolato rumeno). Dopo circa 10 minuti vedrai una grande farmacia sulla sinistra; gira a sinistra e ci troverai.
       <br><strong>Da Via İstiklal:</strong> Cammina fino a Piazza Taksim. Gira a destra verso i taxi e cammina per 7 minuti fino a raggiungere la tranquilla Cihangir.
       <br><strong>Dalla Torre di Galata:</strong> Sali fino a Piazza Şişhane. Prendi la Metro M2 per Taksim, oppure fai una passeggiata lungo l'İstiklal.
       <br><strong>Da Karaköy e Galataport:</strong> Prendi il tram T1 e scendi a Tophane. Attraversa la strada e sali la breve collina acciottolata (vicino alla moschea Kılıç Ali Paşa).
@@ -399,13 +407,12 @@ const breakfastTranslations = {
   // SPANISH
   // ═══════════════════════════════════════════════════════════════
   es: {
-    metaTitle: "Desayuno turco auténtico en Cihangir, Estambul | Kardeşler Kebap & Breakfast",
-    metaDescription: "Comienza tu mañana en Estambul con un tradicional Serpme Kahvaltı en Kardeşler Cihangir. Quesos, aceitunas, miel, huevos y más. Cerca de la Plaza Taksim.",
-    h1: "Desayuno turco auténtico en Cihangir, Estambul",
+    metaTitle: "Desayuno turco auténtico en Cihangir cerca de Taksim | Kardeşler Kebap & Breakfast",
+    metaDescription: "Desayuno turco tradicional y Serpme Kahvaltı servido diariamente en Cihangir, a pocos minutos de Taksim. Sin reserva necesaria. Desayuno 09:00–13:00.",
+    h1: "Desayuno turco auténtico en Cihangir cerca de Taksim",
     heroSubtitle: "Kebap & Desayuno",
-    heroDescription: "Comienza tu mañana en Estambul con un generoso desayuno turco Serpme Kahvaltı — quesos artesanales, aceitunas del Egeo, miel de pueblo, kaymak, simit recién horneado y huevos de granja cocinados a pedido en sartenes de cobre. Servido a diario en nuestro restaurante familiar en el corazón de Cihangir, a pasos de Taksim.",
-    ctaWhatsApp: "Contáctanos por WhatsApp",
-    ctaCall: "Llámanos",
+    heroDescription: "Desayuno turco tradicional y Serpme Kahvaltı servido a diario en Cihangir, a pocos minutos caminando de la Plaza Taksim. No se necesita reserva, puede venir directamente. Desayuno servido todos los días de 09:00 a 13:00.",
+    ctaCall: "Llamar al restaurante",
     ctaDirections: "Cómo llegar",
     ctaViewMenu: "Ver menú de desayuno",
     ctaBookNow: "Cómo llegar",
@@ -418,7 +425,9 @@ const breakfastTranslations = {
     addressTitle: "Encuéntranos en Cihangir",
     fullAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah., Cihangir, Beyoğlu, Estambul",
     nearbyTitle: "En el corazón del barrio más encantador de Estambul",
-    nearbyText: `Kardeşler está ubicado en Cihangir, un escape tranquilo justo al lado del bullicioso centro de la ciudad. Estamos perfectamente posicionados para los turistas, a un paso de la Plaza Taksim, la calle İstiklal, Galata, Karaköy, Şişhane y el Palacio Dolmabahçe.`,
+    nearbyText: `Kardeşler está ubicado en Cihangir, un barrio tranquilo cerca del centro de la ciudad. Estamos a aproximadamente 10 minutos caminando de la Plaza Taksim, cerca de la calle İstiklal, Galata, Karaköy, Şişhane y el Palacio Dolmabahçe.`,
+    walkInsWelcome: "Venga directamente — No se necesita reserva",
+    priceDisclaimer: "Los precios pueden cambiar. Consulte el menú actual o llame al restaurante.",
     faqTitle: "Preguntas frecuentes",
     faq: [
       { q: "¿Necesito reservar para el desayuno?", a: "No, no es necesario reservar. Tenemos mucho espacio en nuestro tranquilo restaurante, así que puedes venir cuando quieras." },
@@ -428,7 +437,7 @@ const breakfastTranslations = {
       {
       q: `¿Cómo llego desde Taksim, Galata o Karaköy?`,
       a: `
-      <br><strong>Desde la Plaza Taksim:</strong> Deja el Monumento a la República a tu espalda y camina hacia Burger King. Sigue por esta calle (pasando el consulado rumano). Después de 5 minutos verás una farmacia grande a la izquierda; gira a la izquierda y nos encontrarás.
+      <br><strong>Desde la Plaza Taksim:</strong> Deja el Monumento a la República a tu espalda y camina hacia Burger King. Sigue por esta calle (pasando el consulado rumano). Después de unos 10 minutos verás una farmacia grande a la izquierda; gira a la izquierda y nos encontrarás.
       <br><strong>Desde la calle İstiklal:</strong> Camina hasta la Plaza Taksim. Gira a la derecha hacia los taxis y camina 7 minutos hasta llegar a la tranquila Cihangir.
       <br><strong>Desde la Torre de Gálata:</strong> Sube hasta la Plaza Şişhane. Toma el metro M2 hasta Taksim, o disfruta caminando por İstiklal.
       <br><strong>Desde Karaköy y Galataport:</strong> Toma el tranvía T1 y bájate en Tophane. Cruza la calle y sube la pequeña colina adoquinada (junto a la mezquita Kılıç Ali Paşa).
@@ -449,13 +458,12 @@ const breakfastTranslations = {
   // CHINESE
   // ═══════════════════════════════════════════════════════════════
   zh: {
-    metaTitle: "伊斯坦布尔奇杭吉尔正宗土耳其早餐 | Kardeşler Kebap & Breakfast",
-    metaDescription: "在 Kardeşler Cihangir 享用传统的土耳其早餐 Serpme Kahvaltı。奶酪、橄榄、蜂蜜、鸡蛋等。靠近塔克西姆广场。通过 WhatsApp 预订。",
-    h1: "伊斯坦布尔奇杭吉尔正宗土耳其早餐",
+    metaTitle: "奇杭吉尔塔克西姆附近正宗土耳其早餐 | Kardeşler Kebap & Breakfast",
+    metaDescription: "传统土耳其早餐和 Serpme Kahvaltı 每天在奇杭吉尔供应，步行即可到达塔克西姆。无需预订。早餐 09:00–13:00。",
+    h1: "奇杭吉尔塔克西姆附近正宗土耳其早餐",
     heroSubtitle: "烤肉 & 早餐",
-    heroDescription: "以丰盛的土耳其传统早餐 Serpme Kahvaltı 开启您的伊斯坦布尔早晨——手工奶酪、爱琴海橄榄、乡村蜂蜜、奶油、新鲜烘焙的芝麻面包圈，以及用铜锅现点现做的农场鸡蛋。每天在我们位于奇杭吉尔中心的家庭餐厅供应，距离塔克西姆仅几步之遥。",
-    ctaWhatsApp: "通过 WhatsApp 联系我们",
-    ctaCall: "致电我们",
+    heroDescription: "传统土耳其早餐和 Serpme Kahvaltı 每天在奇杭吉尔供应，距离塔克西姆广场仅几分钟步行路程。无需预订，随时欢迎光临。早餐每天 09:00 至 13:00 供应。",
+    ctaCall: "致电餐厅",
     ctaDirections: "获取路线",
     ctaViewMenu: "查看早餐菜单",
     ctaBookNow: "获取路线",
@@ -468,7 +476,9 @@ const breakfastTranslations = {
     addressTitle: "在奇杭吉尔找到我们",
     fullAddress: "Defterdar Yokuşu No:1/A, Firuzağa Mah., Cihangir, Beyoğlu, 伊斯坦布尔",
     nearbyTitle: "伊斯坦布尔最迷人街区的中心",
-    nearbyText: `Kardeşler 位于奇杭吉尔，是繁华市中心旁的一处宁静之地。我们的位置非常适合游客，距离塔克西姆广场、独立大街、加拉太、卡拉柯伊、希希哈内和多尔玛巴赫切宫仅一步之遥。`,
+    nearbyText: `Kardeşler 位于奇杭吉尔，是市中心附近的安静街区。距塔克西姆广场约10分钟步行路程，靠近独立大街、加拉太、卡拉柯伊、希希哈内和多尔玛巴赫切宫。`,
+    walkInsWelcome: "无需预订 — 随时欢迎光临",
+    priceDisclaimer: "价格可能会变动。请查看当前菜单或致电餐厅确认。",
     faqTitle: "常见问题",
     faq: [
       { q: "早餐需要预订吗？", a: "不需要预订！我们的餐厅宽敞安静，随时欢迎您直接光临。" },
@@ -478,7 +488,7 @@ const breakfastTranslations = {
       {
       q: `如何从塔克西姆、加拉太或卡拉柯伊到达餐厅？`,
       a: `
-      <br><strong>从塔克西姆广场：</strong> 背对共和国纪念碑，朝汉堡王方向走。沿着这条街走（经过罗马尼亚领事馆）。5分钟后，您会在左边看到一家大药房；向左转，我们就在您面前。
+      <br><strong>从塔克西姆广场：</strong> 背对共和国纪念碑，朝汉堡王方向走。沿着这条街走（经过罗马尼亚领事馆）。大约10分钟后，您会在左边看到一家大药房；向左转，我们就在您面前。
       <br><strong>从独立大街：</strong> 步行到塔克西姆广场。向右转朝出租车站方向走，步行7分钟即可到达安静的奇杭吉尔。
       <br><strong>从加拉太塔：</strong> 走到希希哈内广场。乘坐M2地铁到塔克西姆，或沿着独立大街步行。
       <br><strong>从卡拉柯伊和加拉达港：</strong> 乘坐T1电车在Tophane下车。过马路，沿着鹅卵石小山（Kılıç Ali Paşa清真寺旁）走上去。

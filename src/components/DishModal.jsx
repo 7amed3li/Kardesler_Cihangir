@@ -155,15 +155,15 @@ export default function DishModal({
             <div className="p-6 overflow-y-auto no-scrollbar flex flex-col gap-4 text-start">
               <div className="flex justify-between items-start gap-4">
                 <h2 className="text-2xl font-bold text-[#2B2620] leading-tight text-start">{name}</h2>
-                <span className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#9C7A3F] px-3 py-1 rounded-md" style={{ fontFamily: "var(--font-inter)" }}>
-                  {pricesLoading ? (
-                    <span className="animate-pulse">...</span>
-                  ) : pricesError || displayPrice === null ? (
-                    <span className="text-[#A0422E]">Unavailable</span>
-                  ) : (
-                    <>{displayPrice} {symbol}</>
-                  )}
-                </span>
+                {(pricesLoading || displayPrice != null) && (
+                  <span className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#9C7A3F] px-3 py-1 rounded-md" style={{ fontFamily: "var(--font-inter)" }}>
+                    {pricesLoading ? (
+                      <span className="animate-pulse">...</span>
+                    ) : (
+                      <>{displayPrice} {symbol}</>
+                    )}
+                  </span>
+                )}
               </div>
 
               {tags && tags.length > 0 && (

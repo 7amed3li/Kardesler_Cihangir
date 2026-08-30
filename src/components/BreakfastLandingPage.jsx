@@ -84,7 +84,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
 
   // Track button click helper
   const handleTrack = (eventName, extra = {}) => {
-    trackEvent(eventName, { language: locale, page: "turkish-breakfast-cihangir", ...extra });
+    trackEvent(eventName, { language: locale, page_type: "breakfast", page_url: typeof window !== 'undefined' ? window.location.href : '', ...extra });
   };
 
   return (
@@ -149,7 +149,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
           {/* Call */}
           <a
             href={`tel:${RESTAURANT_INFO.phone}`}
-            onClick={() => handleTrack("phone_click", { button_location: "hero_cta" })}
+            onClick={() => handleTrack("click_to_call", { button_location: "hero" })}
             id="breakfast-call-cta"
             className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-sm transition-colors"
           >
@@ -163,7 +163,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
               href={RESTAURANT_INFO.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => handleTrack("directions_click", { button_location: "hero_cta" })}
+              onClick={() => handleTrack("get_directions", { button_location: "hero" })}
               id="breakfast-directions-cta"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/30 text-[#2B2620] hover:bg-[#EDE3CE] font-semibold text-xs transition-colors"
             >
@@ -174,7 +174,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
             {/* View Breakfast Menu */}
             <Link
               href={appendUTMToUrl("/menu")}
-              onClick={() => handleTrack("breakfast_menu_click", { button_location: "hero_cta" })}
+              onClick={() => handleTrack("view_menu", { button_location: "hero" })}
               id="breakfast-menu-cta"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/30 text-[#2B2620] hover:bg-[#EDE3CE] font-semibold text-xs transition-colors"
             >
@@ -182,6 +182,13 @@ export default function BreakfastLandingPage({ locale = "en" }) {
               <span>{t.ctaViewMenu}</span>
             </Link>
           </div>
+        </div>
+
+        {/* Walk-ins Welcome Banner */}
+        <div className="max-w-xl mx-auto mt-3">
+          <p className="text-center text-sm font-semibold text-[#4E5F4C] bg-[#4E5F4C]/10 border border-[#4E5F4C]/20 rounded-lg py-2.5 px-4">
+            {t.walkInsWelcome}
+          </p>
         </div>
       </section>
 
@@ -225,6 +232,9 @@ export default function BreakfastLandingPage({ locale = "en" }) {
                 </div>
                 <p className="text-sm text-[#7A7364] leading-relaxed">
                   {mt.items?.[featured.id]?.desc || t.serpmeDesc}
+                </p>
+                <p className="text-xs text-[#9C7A3F]/80 italic mt-1">
+                  {t.priceDisclaimer}
                 </p>
               </div>
             </div>
@@ -312,6 +322,13 @@ export default function BreakfastLandingPage({ locale = "en" }) {
             <span>
               {locale === "tr" ? "Ana menü: Her gün 09:00 – 02:00" :
                locale === "ar" ? "القائمة الكاملة: يومياً 09:00 – 02:00" :
+               locale === "ru" ? "Основное меню: ежедневно 09:00 – 02:00" :
+               locale === "fa" ? "منوی کامل: هر روز ۰۹:۰۰ – ۰۲:۰۰" :
+               locale === "fr" ? "Menu complet : tous les jours 09h00 – 02h00" :
+               locale === "de" ? "Hauptkarte: täglich 09:00 – 02:00 Uhr" :
+               locale === "it" ? "Menu completo: tutti i giorni 09:00 – 02:00" :
+               locale === "es" ? "Menú completo: todos los días 09:00 – 02:00" :
+               locale === "zh" ? "完整菜单：每天 09:00 – 02:00" :
                "Full menu: Daily 09:00 AM – 02:00 AM"}
             </span>
           </div>
@@ -337,7 +354,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
             href={RESTAURANT_INFO.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => handleTrack("maps_click", { button_location: "address_section" })}
+            onClick={() => handleTrack("get_directions", { button_location: "address_section" })}
             id="breakfast-maps-link"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-sm transition-colors"
           >
@@ -399,7 +416,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
             href={RESTAURANT_INFO.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => handleTrack("directions_click", { button_location: "bottom_cta" })}
+            onClick={() => handleTrack("get_directions", { button_location: "bottom_cta" })}
             id="breakfast-bottom-directions"
             className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-xl bg-[#9C7A3F] hover:bg-[#7A5F2E] text-white font-bold text-sm transition-colors shadow-md"
           >
@@ -435,7 +452,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
             href={RESTAURANT_INFO.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => handleTrack("maps_click", { button_location: "footer_links" })}
+            onClick={() => handleTrack("get_directions", { button_location: "footer_links" })}
             className="flex items-center gap-1.5 text-[#9C7A3F] hover:text-[#7A5F2E] font-semibold transition-colors"
           >
             <MapPin size={14} />

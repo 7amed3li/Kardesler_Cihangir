@@ -741,26 +741,28 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
                   </div>
 
                   {/* Dynamic Converted Price Badge — sourced from Supabase */}
-                  <div className="absolute top-3 end-3 px-3 py-1.5 rounded-md bg-[#4E5F4C] text-[#EAF0E6] shadow-sm flex flex-col items-end leading-tight">
-                    <span className="text-xs font-black tracking-tight flex items-center gap-1">
-                      {currency !== "TRY" && (
-                        <>
-                          <span>{converted}</span>
-                          {currency === "SAR" ? (
-                            <SaudiRiyalIcon className="h-3.5 w-auto inline-block fill-current" />
-                          ) : (
-                            <span>{symbol}</span>
-                          )}
-                        </>
-                      )}
-                      {currency === "TRY" && `${livePriceTRY} ₺`}
-                    </span>
-                    {currency !== "TRY" && (
-                      <span className="text-[9px] font-bold opacity-90">
-                        ({livePriceTRY} ₺)
+                  {livePriceTRY != null && (
+                    <div className="absolute top-3 end-3 px-3 py-1.5 rounded-md bg-[#4E5F4C] text-[#EAF0E6] shadow-sm flex flex-col items-end leading-tight">
+                      <span className="text-xs font-black tracking-tight flex items-center gap-1">
+                        {currency !== "TRY" && (
+                          <>
+                            <span>{converted}</span>
+                            {currency === "SAR" ? (
+                              <SaudiRiyalIcon className="h-3.5 w-auto inline-block fill-current" />
+                            ) : (
+                              <span>{symbol}</span>
+                            )}
+                          </>
+                        )}
+                        {currency === "TRY" && `${livePriceTRY} ₺`}
                       </span>
-                    )}
-                  </div>
+                      {currency !== "TRY" && (
+                        <span className="text-[9px] font-bold opacity-90">
+                          ({livePriceTRY} ₺)
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">

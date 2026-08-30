@@ -8,9 +8,9 @@ import SeoStorytelling from "../../components/SeoStorytelling";
 import HeroImageWithModal from "./HeroImageWithModal";
 
 export const metadata = {
-  title: "Authentic Wood-Fired Kebab Near Taksim Square (Since 1998) | Kardeşler Cihangir",
+  title: "Best Kebab in Taksim & Cihangir | Authentic Wood-Fired (Since 1998)",
   description:
-    "Experience Istanbul's authentic oak-charcoal kebabs and stone-oven pides in historical Cihangir since 1998. Hand-minced meats, genuine local prices, 5-minute walk from Taksim.",
+    "Experience Istanbul's authentic oak-charcoal kebabs and stone-oven pides in historical Cihangir. Best kebab in Taksim, 10-minute walk. Walk-ins welcome.",
   keywords: [
     "best kebab taksim",
     "kebab near taksim square",
@@ -80,8 +80,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Authentic Wood-Fired Kebab Near Taksim Square (Est. 1998) — Kardeşler Cihangir",
-    description: "28+ years of authentic oak-charcoal grills and stone-oven pides in historical Cihangir.",
+    title: "Best Kebab in Taksim & Cihangir (Est. 1998) — Kardeşler Cihangir",
+    description: "Authentic oak-charcoal grills and stone-oven pides. Walk-ins welcome.",
     images: [{ url: "https://kardeslercihangir.com/images/hero-bg.webp" }],
   },
 };
@@ -95,7 +95,7 @@ const faqSchema = {
       name: "Where can I find the best authentic kebab near Taksim Square?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Kardeşler Kebap & Cafe in historical Cihangir, established in 1998, is located just a 5-minute walk (450m) from Taksim Square. Renowned for authentic oak-charcoal Adana kebab, hand-minced meats, and stone-oven pides.",
+        text: "Kardeşler Kebap & Cafe in historical Cihangir, established in 1998, is located just a 10-minute walk (750m) from Taksim Square. Renowned for authentic oak-charcoal Adana kebab, hand-minced meats, and stone-oven pides.",
       },
     },
     {
@@ -103,7 +103,7 @@ const faqSchema = {
       name: "What makes Kardeşler Cihangir unique compared to tourist restaurants in Taksim?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Unlike commercial tourist spots on Istiklal, Kardeşler has been a beloved local institution since 1998. We hand-mince our meats using traditional Zırh knives, grill strictly over natural oak embers, bake pides to order in our 450°C stone oven, and maintain honest local prices with 100% Halal certified meats.",
+        text: "Unlike commercial tourist spots on Istiklal, Kardeşler has been a beloved local institution since 1998. We hand-mince our meats using traditional Zırh knives, grill strictly over natural oak embers, bake pides to order in our 450°C stone oven, and maintain honest local prices with Fresh Halal Meat.",
       },
     },
     {
@@ -111,7 +111,7 @@ const faqSchema = {
       name: "What are the opening hours and reservation options?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We are open 7 days a week from 09:00 AM until 02:00 AM. Table reservations can be confirmed instantly via WhatsApp (+90 212 251 36 96) or phone (+90 212 251 36 96).",
+        text: "We are open 7 days a week from 09:00 AM until 02:00 AM. You can call us for information (+90 212 251 36 96). Walk-ins are welcome, no reservation is needed.",
       },
     },
   ],
@@ -121,8 +121,8 @@ const faqSchema = {
 
 export default function BestKebabTaksimPage() {
   const distanceGuide = [
-    { from: "Taksim Square (Meydan)", dist: "450 meters", walk: "5 min walk", route: "Down Sıraselviler Avenue beside The Marmara Hotel" },
-    { from: "İstiklal Avenue (Galatasaray)", dist: "350 meters", walk: "4 min walk", route: "Via Yeni Çarşı Street heading towards Firuzağa Mosque" },
+    { from: "Taksim Square (Meydan)", dist: "750 meters", walk: "10 min walk", route: "Down Sıraselviler Avenue beside The Marmara Hotel" },
+    { from: "İstiklal Avenue (Galatasaray)", dist: "500 meters", walk: "7 min walk", route: "Via Yeni Çarşı Street heading towards Firuzağa Mosque" },
     { from: "Galata Tower", dist: "1.2 km", walk: "12 min walk", route: "A scenic stroll through bohemian Cihangir antique alleys" },
   ];
 
@@ -172,8 +172,8 @@ export default function BestKebabTaksimPage() {
             className="text-3xl sm:text-5xl md:text-6xl font-black text-[#2B2620] leading-[1.15] tracking-tight"
             style={{ fontFamily: "var(--font-cairo)" }}
           >
-            Authentic Wood-Fired Kebab <br className="hidden sm:inline" />
-            on <span className="text-[#9C7A3F]">Natural Oak Embers</span> Near Taksim
+            The Best Kebab in Taksim <br className="hidden sm:inline" />
+            on <span className="text-[#9C7A3F]">Natural Oak Embers</span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-[#7A7364] font-medium leading-relaxed">
@@ -188,11 +188,11 @@ export default function BestKebabTaksimPage() {
             </div>
             <div className="flex items-center gap-1.5 bg-[#F7F2E7] px-3.5 py-1.5 rounded-md border border-[#9C7A3F]/30">
               <MapPin size={14} className="text-[#4E5F4C]" />
-              <span className="font-medium text-[#2B2620]">5 min walk from Taksim Square (450m)</span>
+              <span className="font-medium text-[#2B2620]">10 min walk from Taksim Square (750m)</span>
             </div>
             <div className="flex items-center gap-1.5 bg-[#F7F2E7] px-3.5 py-1.5 rounded-md border border-[#9C7A3F]/30">
               <ShieldCheck size={14} className="text-[#4E5F4C]" />
-              <span className="font-medium text-[#2B2620]">100% Daily Fresh Halal Meat</span>
+              <span className="font-medium text-[#2B2620]">Fresh Halal Meat</span>
             </div>
           </div>
 
@@ -204,7 +204,7 @@ export default function BestKebabTaksimPage() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs tracking-wider uppercase transition-colors shadow-sm"
             >
               <Phone size={18} />
-              <span>Call to Reserve / Order</span>
+              <span>Call Restaurant</span>
             </a>
             <a
               href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g"
@@ -352,7 +352,7 @@ export default function BestKebabTaksimPage() {
       <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F2E7] border-t border-teal-dim/30">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-copper/20 border border-copper/40 text-gold text-xs font-bold uppercase tracking-wider">
-            <span>VIP Table Reservations & Delivery</span>
+            <span>Walk-ins Welcome</span>
           </div>
 
           <h2
@@ -368,13 +368,13 @@ export default function BestKebabTaksimPage() {
 
           <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <a
-              href="https://wa.me/902122513696?text=*Table%20Reservation%20-%20Karde%C5%9Fler%20Kebap%20Cihangir*%0AHello%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Karde%C5%9Fler.%20Please%20confirm%20availability.%20Thank%20you!"
+              href="tel:+902122513696"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#25D366]/20"
             >
               <Phone size={18} />
-              <span>Call to Reserve / Order</span>
+              <span>Call Restaurant</span>
             </a>
             <a
               href="tel:+902122513696"

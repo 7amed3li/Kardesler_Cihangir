@@ -20,9 +20,9 @@ const allAlternates = {
 };
 
 export const metadata = {
-  title: "Authentic Turkish Breakfast in Cihangir, Istanbul | Kardeşler Kebap & Breakfast",
+  title: "Authentic Turkish Breakfast in Cihangir Near Taksim | Kardeşler Kebap & Breakfast",
   description:
-    "Start your Istanbul morning with a traditional Serpme Kahvaltı spread at Kardeşler Cihangir. Cheese, olives, honey, eggs & more. Near Taksim Square. Reserve via WhatsApp.",
+    "Traditional Turkish breakfast and Serpme Kahvaltı served daily in Cihangir, a short walk from Taksim. Walk-ins welcome, no reservation needed. Breakfast 09:00–13:00.",
   keywords: [
     "turkish breakfast cihangir",
     "serpme kahvalti istanbul",
@@ -40,9 +40,9 @@ export const metadata = {
     languages: allAlternates,
   },
   openGraph: {
-    title: "Authentic Turkish Breakfast in Cihangir — Kardeşler Kebap & Breakfast Cihangir - Istanbul",
+    title: "Authentic Turkish Breakfast in Cihangir Near Taksim — Kardeşler Kebap & Breakfast Cihangir - Istanbul",
     description:
-      "Generous Serpme Kahvaltı spread with artisan cheeses, olives, honey, eggs & simit. Served daily in Cihangir, near Taksim.",
+      "Traditional Serpme Kahvaltı with artisan cheeses, olives, honey, eggs & simit. Served daily in Cihangir, near Taksim. Walk-ins welcome.",
     url: `${siteUrl}/${slug}`,
     siteName: "Kardeşler Kebap & Breakfast Cihangir - Istanbul",
     locale: "en_US",
@@ -75,7 +75,7 @@ const faqSchema = {
       name: "Do I need a reservation for breakfast?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We recommend reserving via WhatsApp (+90 538 663 06 92) especially on weekends, but walk-ins are welcome on weekdays subject to availability.",
+        text: "No reservation is needed. Walk-ins are welcome anytime. We have plenty of space in our quiet restaurant.",
       },
     },
     {
@@ -107,7 +107,7 @@ const faqSchema = {
       name: "How do I get to the restaurant from Taksim?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We are in Cihangir, Beyoğlu. Head down Sıraselviler Avenue from Taksim Square and find us on Defterdar Yokuşu. Use the Get Directions button for Google Maps navigation.",
+        text: "We are in Cihangir, Beyoğlu. Head down Sıraselviler Avenue from Taksim Square and find us on Defterdar Yokuşu, approximately a 10-minute walk. Use the Get Directions button for Google Maps navigation.",
       },
     },
   ],

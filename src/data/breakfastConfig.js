@@ -28,8 +28,6 @@ export const RESTAURANT_INFO = {
   name: "Kardeşler Kebap & Breakfast Cihangir - Istanbul",
   phone: "+902122513696",
   phoneDisplay: "+90 212 251 36 96",
-  whatsapp: "905386630692",
-  whatsappDisplay: "+90 538 663 06 92",
   address: {
     street: "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
     locality: "Cihangir, Beyoğlu",
@@ -75,20 +73,6 @@ export const UTM_CAMPAIGNS = {
   zh: "breakfast_zh",
 };
 
-// ─── WhatsApp Message Templates per Language ───
-export const WHATSAPP_MESSAGES = {
-  en: "Hello Kardeşler Kebap Cihangir, we are coming for the Turkish breakfast.",
-  tr: "Merhaba Kardeşler Kebap Cihangir, Türk kahvaltısı için gelmek istiyoruz.",
-  ar: "مرحباً مطعم كارديشلر جيهانكير، نحن قادمون لتناول الإفطار التركي.",
-  ru: "Здравствуйте, Kardeşler Kebap Cihangir, мы хотели бы прийти на турецкий завтрак.",
-  fa: "سلام کاردشلر کباب جیهانگیر، ما برای صرف صبحانه ترکی می‌آییم.",
-  fr: "Bonjour Kardeşler Kebap Cihangir, nous souhaitons venir pour le petit-déjeuner turc.",
-  de: "Hallo Kardeşler Kebap Cihangir, wir möchten für das türkische Frühstück vorbeikommen.",
-  it: "Ciao Kardeşler Kebap Cihangir, vorremmo venire per la colazione turca.",
-  es: "Hola Kardeşler Kebap Cihangir, nos gustaría ir a disfrutar del desayuno turco.",
-  zh: "你好 Kardeşler Kebap Cihangir，我们想来品尝土耳其早餐。",
-};
-
 // ─── URL Helpers ───
 export function getBreakfastUrl(locale) {
   const slug = "turkish-breakfast-cihangir";
@@ -100,7 +84,9 @@ export function getBreakfastFullUrl(locale) {
   return `${RESTAURANT_INFO.siteUrl}${getBreakfastUrl(locale)}`;
 }
 
-export function getWhatsAppUrl(locale) {
-  const msg = WHATSAPP_MESSAGES[locale] || WHATSAPP_MESSAGES.en;
-  return `https://wa.me/${RESTAURANT_INFO.whatsapp}?text=${encodeURIComponent(msg)}`;
-}
+/**
+ * Helper to get directions URL
+ */
+export const getDirectionsUrl = () => {
+  return RESTAURANT_INFO.googleMapsUrl;
+};

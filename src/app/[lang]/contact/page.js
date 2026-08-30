@@ -20,7 +20,7 @@ const contactContent = {
   },
   en: {
     title: "Contact",
-    subtitle: "Reach out to us, make a reservation, or place an order",
+    subtitle: "Reach out to us or place an order",
     address: "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
     addressLabel: "Address",
     phoneLabel: "Order Line",

@@ -52,7 +52,7 @@ function saveRatesToStorage(rates, source, lastUpdated) {
 }
 
 export function AppProvider({ children }) {
-  const [lang, setLang] = useState("tr");
+  const [lang, setLang] = useState("en");
   const [currency, setCurrency] = useState("TRY");
   const [exchangeRates, setExchangeRates] = useState(HARDCODED_FALLBACK);
   const [ratesSource, setRatesSource] = useState("fallback");
@@ -103,11 +103,9 @@ export function AppProvider({ children }) {
       setLang(pathLocale);
       localStorage.setItem("app_lang", pathLocale);
     } else {
-      const savedLang = localStorage.getItem("app_lang");
-      if (savedLang && translations[savedLang]) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setLang(savedLang);
-      }
+      // It's a root route like /best-kebab-taksim or / (which is the English default)
+      setLang("en");
+      localStorage.setItem("app_lang", "en");
     }
     
     const savedCurrency = localStorage.getItem("app_currency");
@@ -184,9 +182,8 @@ export function AppProvider({ children }) {
   };
 
   const getLivePrice = useCallback((item) => {
-    // Priority: STRICTLY Supabase live price. NO FALLBACK to menuData.
     if (livePrices[item.id] !== undefined) return livePrices[item.id];
-    return null; // Return null explicitly if price is unknown
+    return item.price || null; // Fallback to menuData price if live price is unavailable
   }, [livePrices]);
 
   const convertPrice = (priceInTRY) => {

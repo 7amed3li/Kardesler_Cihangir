@@ -134,7 +134,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
               <span className="flex items-center px-2.5 py-1 rounded-[4px] bg-[#9C7A3F] text-[#EAF0E6] font-bold text-xs tracking-wide shadow-xs" style={{ fontFamily: "var(--font-inter)" }}>
                 {pricesLoading ? (
                   <span className="animate-pulse">...</span>
-                ) : pricesError || displayPrice === null ? (
+                ) : displayPrice == null ? (
                   <span className="text-[#A0422E] bg-white/90 px-1 rounded">-</span>
                 ) : (
                   <>{displayPrice} {symbol}</>
@@ -195,7 +195,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
               <span className="text-[#9C7A3F] font-bold text-sm" style={{ fontFamily: "var(--font-inter)" }}>
                 {pricesLoading ? (
                   <span className="animate-pulse">...</span>
-                ) : pricesError || displayPrice === null ? (
+                ) : displayPrice == null ? (
                   <span className="text-[#A0422E]">-</span>
                 ) : (
                   <>{displayPrice} {symbol}</>
@@ -267,7 +267,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 <span className="shrink-0 text-lg font-bold text-[#9C7A3F] bg-[#EDE3CE] px-3 py-1 rounded-md border border-[#9C7A3F]/30" style={{ fontFamily: "var(--font-inter)" }}>
                   {pricesLoading ? (
                     <span className="animate-pulse">...</span>
-                  ) : pricesError || displayPrice === null ? (
+                  ) : displayPrice == null ? (
                     <span className="text-[#A0422E]">Unavailable</span>
                   ) : (
                     <>{displayPrice} {symbol}</>

@@ -73,7 +73,7 @@ export default function BestKebabTaksimIt() {
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-4">
             <a href={phoneCallUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-copper to-gold text-white font-bold text-sm tracking-wide uppercase hover:opacity-95 transition-all shadow-lg shadow-copper/20 hover:scale-[1.02]">
-              <Phone size={18} /><span>Chiama per Prenotare / Ordinare</span>
+              <Phone size={18} /><span>Chiama il ristorante</span>
             </a>
             <a href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-card border border-teal-dim/40 text-cream font-medium text-sm hover:border-gold/50 hover:bg-gold/5 transition-all">
               <Navigation size={16} className="text-copper" /><span>Indicazioni Google Maps</span>
@@ -97,7 +97,7 @@ export default function BestKebabTaksimIt() {
           <h2 className="text-2xl sm:text-4xl font-black text-cream leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>Scopri 28 anni di tradizione questa sera</h2>
           <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
             <a href={phoneCallUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-base flex items-center justify-center gap-2.5 transition-all">
-              <Phone size={18} /><span>Chiama per Prenotare / Ordinare</span>
+              <Phone size={18} /><span>Chiama il ristorante</span>
             </a>
             <a href="tel:+902122513696" className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 rounded-xl glass-card border border-teal-dim/40 text-cream font-bold text-sm flex items-center justify-center gap-2 transition-all">
               <Phone size={16} className="text-teal" /><span>+90 212 251 36 96</span>
