@@ -52,7 +52,7 @@ function saveRatesToStorage(rates, source, lastUpdated) {
 }
 
 export function AppProvider({ children }) {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("tr");
   const [currency, setCurrency] = useState("TRY");
   const [exchangeRates, setExchangeRates] = useState(HARDCODED_FALLBACK);
   const [ratesSource, setRatesSource] = useState("fallback");
@@ -103,9 +103,9 @@ export function AppProvider({ children }) {
       setLang(pathLocale);
       localStorage.setItem("app_lang", pathLocale);
     } else {
-      // It's a root route like /best-kebab-taksim or / (which is the English default)
-      setLang("en");
-      localStorage.setItem("app_lang", "en");
+      // It's a root route like /best-kebab-taksim or / (which is the Turkish default)
+      setLang("tr");
+      localStorage.setItem("app_lang", "tr");
     }
     
     const savedCurrency = localStorage.getItem("app_currency");

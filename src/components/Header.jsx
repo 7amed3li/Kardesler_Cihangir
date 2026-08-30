@@ -14,16 +14,16 @@ export default function Header() {
   const menuRef = useRef(null);
 
   const guideHref = {
-    tr: "/tr/best-kebab-taksim",
+    en: "/en/best-kebab-taksim",
     ar: "/ar/best-kebab-taksim",
     ru: "/ru/best-kebab-taksim",
     fa: "/fa/best-kebab-taksim",
     fr: "/fr/best-kebab-taksim",
-    en: "/best-kebab-taksim",
+    tr: "/best-kebab-taksim",
   }[lang] || "/best-kebab-taksim";
 
   const breakfastHref = {
-    tr: "/tr/turkish-breakfast-cihangir",
+    en: "/en/turkish-breakfast-cihangir",
     ar: "/ar/turkish-breakfast-cihangir",
     ru: "/ru/turkish-breakfast-cihangir",
     fa: "/fa/turkish-breakfast-cihangir",
@@ -32,7 +32,7 @@ export default function Header() {
     es: "/es/turkish-breakfast-cihangir",
     de: "/de/turkish-breakfast-cihangir",
     zh: "/zh/turkish-breakfast-cihangir",
-    en: "/turkish-breakfast-cihangir",
+    tr: "/turkish-breakfast-cihangir",
   }[lang] || "/turkish-breakfast-cihangir";
 
   const getNavLabel = (key) => {

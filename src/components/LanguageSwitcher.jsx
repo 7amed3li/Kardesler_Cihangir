@@ -48,12 +48,12 @@ export default function LanguageSwitcher() {
       baseRoute = "/en/design-development";
     } else if (baseRoute === "/design-development" || baseRoute === "/en/design-development") {
       if (code === "tr") baseRoute = "/tasarim-gelistirme";
-      else if (code !== "en") baseRoute = `/${code}/design-development`; // although other languages might not exist, fallback safely
+      else if (code !== "tr") baseRoute = `/${code}/design-development`; 
     }
 
-    // Default locale (en) uses root paths, except for special cases like /en/design-development which are already handled
+    // Default locale (tr) uses root paths, except for special cases like /en/design-development
     let targetUrl = baseRoute;
-    if (code !== "en" && baseRoute !== "/tasarim-gelistirme") {
+    if (code !== "tr" && baseRoute !== "/tasarim-gelistirme") {
       targetUrl = baseRoute === "/" ? `/${code}` : `/${code}${baseRoute}`;
     }
 
