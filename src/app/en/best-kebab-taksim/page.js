@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, Navigation, Flame, ShieldCheck, Heart, Compass, ChevronRight, ArrowUpRight, Check, ExternalLink } from "lucide-react";
-import LandingDishesSection from "../../components/LandingDishesSection";
-import LandingVerifiedReviews from "../../components/LandingVerifiedReviews";
-import SeoStorytelling from "../../components/SeoStorytelling";
+import LandingDishesSection from "../../../components/LandingDishesSection";
+import LandingVerifiedReviews from "../../../components/LandingVerifiedReviews";
+import SeoStorytelling from "../../../components/SeoStorytelling";
 import HeroImageWithModal from "./HeroImageWithModal";
 
 export const metadata = {
