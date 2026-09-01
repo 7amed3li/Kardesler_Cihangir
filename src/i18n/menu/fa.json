@@ -351,7 +351,7 @@
       "desc": "Çiğ Köfte — چی کوفته دست‌ساز گیاهی همراه با کاهو و لیمو"
     },
     "icli_kofte": {
-      "name": "ایچلی کوفته (۳ عدد)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "İçli Köfte — ایچلی کوفته (کبه) سرخ‌شده پر از گوشت بره و گردو"
     },
     "cacik": {
@@ -439,59 +439,59 @@
       "desc": "Su — آب معدنی خنک"
     },
     "kucuk_cay": {
-      "name": "چای کوچک",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "چای بزرگ",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "چای مریم گلی",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "نسکافه",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "چای کیوی",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
-      "name": "اورالت",
+      "name": "Oralet",
       "desc": ""
     },
     "elma_cayi": {
-      "name": "چای سیب",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "قهوه ترک",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "جگر گوسفندی",
+      "name": "Kuzu Ciğer",
       "desc": "سیخ جگر گوسفند سنتی"
     },
     "elma_dilim_patates": {
-      "name": "سیب زمینی تنوری",
+      "name": "Elma Dilim Patates",
       "desc": "سیب زمینی تنوری خوشمزه"
     },
     "kizartmasi_patates": {
-      "name": "سیب زمینی سرخ کرده",
+      "name": "Kızartması Patates",
       "desc": "سیب زمینی سرخ کرده ترد"
     },
     "ton_balikli_salata": {
-      "name": "سالاد تن ماهی",
+      "name": "Ton Balıklı Salata",
       "desc": "سالاد تازه با تن ماهی"
     },
     "tavuklu_salata": {
-      "name": "سالاد مرغ",
+      "name": "Tavuklu Salata",
       "desc": "سالاد تازه با تکه های مرغ"
     },
     "karides_guvec": {
-      "name": "میگو در ظرف سفالی",
+      "name": "Karides Güveç",
       "desc": "میگو پخته شده در ظرف سفالی"
     }
   }

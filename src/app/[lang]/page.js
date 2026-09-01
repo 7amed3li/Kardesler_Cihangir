@@ -168,7 +168,7 @@ export default function Home() {
               <div className="flex flex-col items-center px-4">
                 <div className="flex items-center gap-1.5 text-[#9C7A3F]">
                   <StoneOven size={16} className="text-[#9C7A3F]" />
-                  <span className="text-2xl sm:text-3xl font-black text-[#2B2620]">11</span>
+                  <span className="text-2xl sm:text-3xl font-black text-[#2B2620]">12</span>
                 </div>
                 <span className="text-[10px] sm:text-xs font-bold text-[#7A7364] uppercase tracking-wider mt-0.5">KATEGORİ</span>
               </div>

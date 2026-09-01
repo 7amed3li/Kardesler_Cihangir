@@ -351,7 +351,7 @@
       "desc": "Çiğ Köfte — Boulettes crues végétariennes"
     },
     "icli_kofte": {
-      "name": "İçli Köfte (3 Pièces)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "İçli Köfte — Boulettes farcies aux noix"
     },
     "cacik": {
@@ -439,23 +439,23 @@
       "desc": "Su — Eau"
     },
     "kucuk_cay": {
-      "name": "Petit Thé",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "Grand Thé",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "Thé à la Sauge",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "Nescafé",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "Thé au Kiwi",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
@@ -463,35 +463,35 @@
       "desc": ""
     },
     "elma_cayi": {
-      "name": "Thé aux Pommes",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "Café Turc",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "Foie d'agneau",
+      "name": "Kuzu Ciğer",
       "desc": "Brochette de foie d'agneau traditionnelle"
     },
     "elma_dilim_patates": {
-      "name": "Quartiers de pommes de terre",
+      "name": "Elma Dilim Patates",
       "desc": "Quartiers de pommes de terre rôtis"
     },
     "kizartmasi_patates": {
-      "name": "Frites",
+      "name": "Kızartması Patates",
       "desc": "Frites croustillantes"
     },
     "ton_balikli_salata": {
-      "name": "Salade de Thon",
+      "name": "Ton Balıklı Salata",
       "desc": "Salade fraîche au thon"
     },
     "tavuklu_salata": {
-      "name": "Salade de Poulet",
+      "name": "Tavuklu Salata",
       "desc": "Salade avec morceaux de poulet"
     },
     "karides_guvec": {
-      "name": "Crevettes en pot d'argile",
+      "name": "Karides Güveç",
       "desc": "Crevettes cuites dans un pot en argile"
     }
   }

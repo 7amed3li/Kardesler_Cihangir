@@ -351,7 +351,7 @@
       "desc": "Plato Çiğköfte Vegano — Albóndigas de bulgur especiado con lechuga."
     },
     "icli_kofte": {
-      "name": "İçli Köfte (3 Unidades)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "Kibbeh (Unidad) — Bola de bulgur crujiente rellena de carne y nueces."
     },
     "cacik": {
@@ -439,23 +439,23 @@
       "desc": "Agua Mineral — Botella de agua fría."
     },
     "kucuk_cay": {
-      "name": "Té Pequeño",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "Té Grande",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "Té de Salvia",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "Nescafé",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "Té de Kiwi",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
@@ -463,35 +463,35 @@
       "desc": ""
     },
     "elma_cayi": {
-      "name": "Té de Manzana",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "Café Turco",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "Hígado de Cordero",
+      "name": "Kuzu Ciğer",
       "desc": "Brocheta de hígado de cordero tradicional"
     },
     "elma_dilim_patates": {
-      "name": "Gajos de Patata",
+      "name": "Elma Dilim Patates",
       "desc": "Gajos de patata asados"
     },
     "kizartmasi_patates": {
-      "name": "Patatas Fritas",
+      "name": "Kızartması Patates",
       "desc": "Patatas fritas crujientes"
     },
     "ton_balikli_salata": {
-      "name": "Ensalada de Atún",
+      "name": "Ton Balıklı Salata",
       "desc": "Ensalada fresca con atún"
     },
     "tavuklu_salata": {
-      "name": "Ensalada de Pollo",
+      "name": "Tavuklu Salata",
       "desc": "Ensalada con pollo"
     },
     "karides_guvec": {
-      "name": "Camarones en cazuela de barro",
+      "name": "Karides Güveç",
       "desc": "Camarones cocinados en cazuela de barro"
     }
   }

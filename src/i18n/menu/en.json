@@ -351,7 +351,7 @@
       "desc": "Vegan Çiğköfte Platter — Spiced bulgur pate served with fresh lettuce leaves & pomegranate glaze."
     },
     "icli_kofte": {
-      "name": "İçli Köfte (3 Pieces)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "Kibbeh (İçli Köfte) — Crispy bulgur shell stuffed with spiced minced beef & walnuts."
     },
     "cacik": {
@@ -439,15 +439,15 @@
       "desc": "Bottled Water — Chilled spring water."
     },
     "kucuk_cay": {
-      "name": "Small Tea",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "Large Tea",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "Sage Tea",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
@@ -455,7 +455,7 @@
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "Kiwi Tea",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
@@ -463,35 +463,35 @@
       "desc": ""
     },
     "elma_cayi": {
-      "name": "Apple Tea",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "Turkish Coffee",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "Lamb Liver",
+      "name": "Kuzu Ciğer",
       "desc": "Traditional lamb liver skewer"
     },
     "elma_dilim_patates": {
-      "name": "Potato Wedges",
+      "name": "Elma Dilim Patates",
       "desc": "Baked potato wedges"
     },
     "kizartmasi_patates": {
-      "name": "French Fries",
+      "name": "Kızartması Patates",
       "desc": "Crispy french fries"
     },
     "ton_balikli_salata": {
-      "name": "Tuna Salad",
+      "name": "Ton Balıklı Salata",
       "desc": "Fresh salad with tuna"
     },
     "tavuklu_salata": {
-      "name": "Chicken Salad",
+      "name": "Tavuklu Salata",
       "desc": "Chicken with salad"
     },
     "karides_guvec": {
-      "name": "Shrimp in Clay Pot",
+      "name": "Karides Güveç",
       "desc": "Shrimp cooked in a traditional clay pot"
     }
   }

@@ -351,7 +351,7 @@
       "desc": "Çiğ Köfte — Чиг кёфте (вегетарианские котлеты)"
     },
     "icli_kofte": {
-      "name": "Ичли Кёфте (3 штуки)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "İçli Köfte — Ичли кёфте (фаршированные котлеты с грецким орехом)"
     },
     "cacik": {
@@ -439,59 +439,59 @@
       "desc": "Su — Вода"
     },
     "kucuk_cay": {
-      "name": "Маленький Чай",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "Большой Чай",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "Шалфейный Чай",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "Нескафе",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "Киви Чай",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
-      "name": "Оралет",
+      "name": "Oralet",
       "desc": ""
     },
     "elma_cayi": {
-      "name": "Яблочный Чай",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "Турецкий Кофе",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "Печень Ягненка",
+      "name": "Kuzu Ciğer",
       "desc": "Традиционный шашлык из бараньей печени"
     },
     "elma_dilim_patates": {
-      "name": "Картофельные дольки",
+      "name": "Elma Dilim Patates",
       "desc": "Запеченные картофельные дольки"
     },
     "kizartmasi_patates": {
-      "name": "Картофель фри",
+      "name": "Kızartması Patates",
       "desc": "Хрустящий картофель фри"
     },
     "ton_balikli_salata": {
-      "name": "Салат с тунцом",
+      "name": "Ton Balıklı Salata",
       "desc": "Свежий салат с тунцом"
     },
     "tavuklu_salata": {
-      "name": "Куриный салат",
+      "name": "Tavuklu Salata",
       "desc": "Салат с кусочками курицы"
     },
     "karides_guvec": {
-      "name": "Креветки в глиняном горшке",
+      "name": "Karides Güveç",
       "desc": "Креветки, запеченные в глиняном горшке"
     }
   }

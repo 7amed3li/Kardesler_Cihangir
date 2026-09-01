@@ -159,7 +159,7 @@
       "desc": "炭烤鸡肉串套餐 — 150克。包含炭烤鸡肉串、土耳其谷物饭、冷盘小吃、沙拉与饮料。"
     },
     "kuzu_sis_menu": {
-      "name": "Kuzu Şiş Menü",
+      "name": "Kuzu Şiş Kebap Menü",
       "desc": "炭烤羊肉串套餐 — 150克。包含极品羊肉串、冷盘小吃、沙拉与饮料。"
     },
     "lahmacun_menu": {
@@ -167,11 +167,11 @@
       "desc": "土耳其薄饼套餐 (2片) — 2片传统石炉薄饼 (Lahmacun)，配以冷盘小吃、沙拉与饮料。"
     },
     "adana_durum": {
-      "name": "Adana Dürüm (Acılı)",
+      "name": "Adana Dürüm",
       "desc": "阿达纳烤肉卷饼 (微辣) — 手工剁制的辣味肉末烤串，搭配烤洋葱与欧芹，卷入现烤薄饼中。"
     },
     "urfa_durum": {
-      "name": "Urfa Dürüm (Acısız)",
+      "name": "Urfa Dürüm",
       "desc": "乌尔法烤肉卷饼 (原味) — 手工剁制的原味肉末烤串，搭配烤洋葱与欧芹，卷入现烤薄饼中。"
     },
     "kuzu_sis_durum": {
@@ -223,7 +223,7 @@
       "desc": "什锦全拼烤饼 — 包含肉末、羊肉丁、香肠与芝士的豪华全拼。"
     },
     "lahmacun_item": {
-      "name": "Lahmacun",
+      "name": "Çıtır Fırın Lahmacun",
       "desc": "土耳其薄饼 (Lahmacun) — 极薄的脆皮面饼，铺满肉末、番茄、欧芹与秘制香料，石炉高温烤制。"
     },
     "peynirli_pide": {
@@ -231,11 +231,11 @@
       "desc": "白奶酪烤饼 — 特色羊乳白奶酪搭配新鲜欧芹烤制。"
     },
     "cig_kofte": {
-      "name": "Çiğ Köfte",
+      "name": "Çiğ Köfte Porsiyon",
       "desc": "土耳其生肉丸 (纯素) — 传统手揉纯素小麦碎肉丸，配新鲜生菜叶、柠檬与浓郁石榴糖浆。"
     },
     "icli_kofte": {
-      "name": "炸碎麦肉丸 (3个)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "炸碎麦肉丸 (单个) — 酥脆的碎麦外壳，包裹着核桃肉末馅料。"
     },
     "suzem_yogurt": {
@@ -259,7 +259,7 @@
       "desc": "时令鲜蔬沙拉 — 当季新鲜绿叶蔬菜、紫甘蓝与胡萝卜丝。"
     },
     "kunefe": {
-      "name": "Künefe",
+      "name": "Hatay Künefesi",
       "desc": "库内法 (Künefe) — 酥脆的金黄面丝，包裹融化的特色无盐奶酪，出炉后淋上热糖浆与开心果碎。"
     },
     "firin_sutlac": {
@@ -291,7 +291,7 @@
       "desc": "混合果汁。"
     },
     "salgam": {
-      "name": "Şalgam (Acılı/Acısız)",
+      "name": "Şalgam Suyu",
       "desc": "土耳其红萝卜汁（辣味 / 原味）— 搭配烤肉的传统绝佳饮品。"
     },
     "su": {
@@ -307,59 +307,59 @@
       "desc": "传统土耳其红茶。"
     },
     "turk_kahvesi": {
-      "name": "土耳其咖啡",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kucuk_cay": {
-      "name": "小杯茶",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "大杯茶",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "鼠尾草茶",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "雀巢咖啡",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "猕猴桃茶",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
-      "name": "Oralet果味茶",
+      "name": "Oralet",
       "desc": ""
     },
     "elma_cayi": {
-      "name": "苹果茶",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "羊肝",
+      "name": "Kuzu Ciğer",
       "desc": "传统羊肝烤串"
     },
     "elma_dilim_patates": {
-      "name": "烤土豆角",
+      "name": "Elma Dilim Patates",
       "desc": "烤制土豆角"
     },
     "kizartmasi_patates": {
-      "name": "炸薯条",
+      "name": "Kızartması Patates",
       "desc": "香脆炸薯条"
     },
     "ton_balikli_salata": {
-      "name": "金枪鱼沙拉",
+      "name": "Ton Balıklı Salata",
       "desc": "新鲜金枪鱼沙拉"
     },
     "tavuklu_salata": {
-      "name": "鸡肉沙拉",
+      "name": "Tavuklu Salata",
       "desc": "鸡肉沙拉"
     },
     "karides_guvec": {
-      "name": "砂锅虾",
+      "name": "Karides Güveç",
       "desc": "传统砂锅烹制虾"
     }
   }

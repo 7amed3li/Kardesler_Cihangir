@@ -351,7 +351,7 @@
       "desc": "Çiğköfte Teller — Gewürzte Bulgur-Bällchen mit Salat & Granatapfelsirup."
     },
     "icli_kofte": {
-      "name": "İçli Köfte (3 Stück)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "İçli Köfte (Stück) — Knuspriges Bulgur-Bällchen gefüllt mit Hackfleisch & Walnüssen."
     },
     "cacik": {
@@ -439,23 +439,23 @@
       "desc": "Stilles Wasser — Kaltes Quellwasser."
     },
     "kucuk_cay": {
-      "name": "Kleiner Tee",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "Großer Tee",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "Salbeitee",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "Nescafé",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "Kiwitee",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
@@ -463,35 +463,35 @@
       "desc": ""
     },
     "elma_cayi": {
-      "name": "Apfeltee",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "Türkischer Kaffee",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "Lammleber",
+      "name": "Kuzu Ciğer",
       "desc": "Traditioneller Lammleber-Spieß"
     },
     "elma_dilim_patates": {
-      "name": "Kartoffelspalten",
+      "name": "Elma Dilim Patates",
       "desc": "Gebackene Kartoffelspalten"
     },
     "kizartmasi_patates": {
-      "name": "Pommes Frites",
+      "name": "Kızartması Patates",
       "desc": "Knusprige Pommes Frites"
     },
     "ton_balikli_salata": {
-      "name": "Thunfischsalat",
+      "name": "Ton Balıklı Salata",
       "desc": "Frischer Salat mit Thunfisch"
     },
     "tavuklu_salata": {
-      "name": "Hähnchensalat",
+      "name": "Tavuklu Salata",
       "desc": "Salat mit Hähnchenstücken"
     },
     "karides_guvec": {
-      "name": "Garnelen im Tontopf",
+      "name": "Karides Güveç",
       "desc": "Garnelen im Tontopf gebacken"
     }
   }

@@ -351,7 +351,7 @@
       "desc": "Piatto Çiğköfte Vegano — Polpette di bulgur speziato con lattuga."
     },
     "icli_kofte": {
-      "name": "İçli Köfte (3 Pezzi)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "Kibbeh (Pezzo) — Guscio di bulgur croccante ripieno di carne e noci."
     },
     "cacik": {
@@ -439,23 +439,23 @@
       "desc": "Acqua Naturale — Bottiglia d'acqua minerale fredda."
     },
     "kucuk_cay": {
-      "name": "Tè Piccolo",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "Tè Grande",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "Tè alla Salvia",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "Nescafé",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "Tè al Kiwi",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
@@ -463,35 +463,35 @@
       "desc": ""
     },
     "elma_cayi": {
-      "name": "Tè alla Mela",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "Caffè Turco",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "Fegato di Agnello",
+      "name": "Kuzu Ciğer",
       "desc": "Spiedino di fegato di agnello tradizionale"
     },
     "elma_dilim_patates": {
-      "name": "Spicchi di Patate",
+      "name": "Elma Dilim Patates",
       "desc": "Spicchi di patate al forno"
     },
     "kizartmasi_patates": {
-      "name": "Patatine Fritte",
+      "name": "Kızartması Patates",
       "desc": "Patatine fritte croccanti"
     },
     "ton_balikli_salata": {
-      "name": "Insalata di Tonno",
+      "name": "Ton Balıklı Salata",
       "desc": "Insalata fresca con tonno"
     },
     "tavuklu_salata": {
-      "name": "Insalata di Pollo",
+      "name": "Tavuklu Salata",
       "desc": "Insalata con pollo"
     },
     "karides_guvec": {
-      "name": "Gamberi in tegame di terracotta",
+      "name": "Karides Güveç",
       "desc": "Gamberi cotti in terracotta"
     }
   }

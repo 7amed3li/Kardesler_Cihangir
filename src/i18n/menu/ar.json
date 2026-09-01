@@ -351,7 +351,7 @@
       "desc": "طبق تشي كفتة نباتي — طبق التشي كفتة المبهرة يقدم مع أوراق الخس الطازجة ودبس الرمان"
     },
     "icli_kofte": {
-      "name": "كبة مقلية (3 حبات)",
+      "name": "İçli Köfte (3 Adet/Porsiyon)",
       "desc": "كبة مقلية / مخبوزة (بالحبة) — كبة مقرمشة محشوة باللحم المفروم المتبل والجوز"
     },
     "cacik": {
@@ -439,59 +439,59 @@
       "desc": "مياه معبأة نقية — زجاجة مياه شرب نقية باردة"
     },
     "kucuk_cay": {
-      "name": "شاي صغير",
+      "name": "Küçük Çay",
       "desc": ""
     },
     "buyuk_cay": {
-      "name": "شاي كبير",
+      "name": "Büyük Çay",
       "desc": ""
     },
     "ada_cayi": {
-      "name": "شاي المريمية",
+      "name": "Ada Çayı",
       "desc": ""
     },
     "nescafe": {
-      "name": "نسكافيه",
+      "name": "Nescafe",
       "desc": ""
     },
     "kivi_cayi": {
-      "name": "شاي الكيوي",
+      "name": "Kivi",
       "desc": ""
     },
     "oralet": {
-      "name": "أوراليت",
+      "name": "Oralet",
       "desc": ""
     },
     "elma_cayi": {
-      "name": "شاي التفاح",
+      "name": "Elma Çayı",
       "desc": ""
     },
     "turk_kahvesi": {
-      "name": "قهوة تركية",
+      "name": "Türk Kahvesi",
       "desc": ""
     },
     "kuzu_ciger": {
-      "name": "كبدة غنم",
+      "name": "Kuzu Ciğer",
       "desc": "سيخ كبدة غنم تقليدية"
     },
     "elma_dilim_patates": {
-      "name": "بطاطس ودجز",
+      "name": "Elma Dilim Patates",
       "desc": "بطاطس ودجز محمصة"
     },
     "kizartmasi_patates": {
-      "name": "بطاطا مقلية",
+      "name": "Kızartması Patates",
       "desc": "بطاطا مقلية مقرمشة"
     },
     "ton_balikli_salata": {
-      "name": "سلطة تونة",
+      "name": "Ton Balıklı Salata",
       "desc": "سلطة طازجة مع التونة"
     },
     "tavuklu_salata": {
-      "name": "سلطة دجاج",
+      "name": "Tavuklu Salata",
       "desc": "سلطة مع قطع الدجاج"
     },
     "karides_guvec": {
-      "name": "روبيان بالفخار",
+      "name": "Karides Güveç",
       "desc": "روبيان مطبوخ في الفخار التقليدي"
     }
   }
