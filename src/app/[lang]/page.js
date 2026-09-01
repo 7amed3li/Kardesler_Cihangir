@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#EDE3CE] min-h-screen text-[#2B2620] font-sans selection:bg-[#4E5F4C] selection:text-[#EDE3CE] overflow-x-hidden">
+    <div className="bg-[#EDE3CE] min-h-screen text-[#2B2620] font-sans selection:bg-[#4E5F4C] selection:text-[#EDE3CE]">
       
       {/* ═══════════════════════════════════════════
           1. CINEMATIC HERO SECTION 
@@ -177,7 +177,7 @@ export default function Home() {
 
         {/* Item 1: Adana Kebap (Image Left, Text Right) */}
         <section ref={item1Ref} className={`flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-24 transition-all duration-1000 ease-out ${isItem1Visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
-          <div className="flex-1 w-full aspect-square md:aspect-[4/5] relative rounded-full overflow-hidden shadow-2xl">
+          <div className="flex-1 w-full aspect-[4/3] relative rounded-[2rem] overflow-hidden shadow-2xl">
             <Image src="/images/beyti-1024x677.webp" alt="Adana Kebap" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
           </div>
           <div className="flex-1 space-y-6 text-center md:text-start">
@@ -208,14 +208,14 @@ export default function Home() {
               {lang === "ar" ? "تخبز يومياً في فرن الحطب الحجري، حيث تمتزج العجينة الرقيقة المقرمشة مع اللحوم الطازجة والأجبان المحلية." : lang === "tr" ? "İncecik, çıtır çıtır hamurun taze et ve yöresel peynirlerle buluştuğu, taş fırında günlük olarak pişirilen geleneksel lezzet." : "Baked daily in our stone wood-fired oven. Crispy, thin crust meets fresh meats and regional cheeses for the ultimate Turkish flatbread."}
             </p>
           </div>
-          <div className="flex-1 w-full aspect-square md:aspect-[4/5] relative rounded-[2rem] overflow-hidden shadow-2xl">
+          <div className="flex-1 w-full aspect-[4/3] relative rounded-[2rem] overflow-hidden shadow-2xl">
             <Image src="/images/lahmacun.webp" alt="Wood-fired Pide" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
           </div>
         </section>
 
         {/* Item 3: Turkish Breakfast (Image Left, Text Right) */}
         <section ref={item3Ref} className={`flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-24 transition-all duration-1000 ease-out ${isItem3Visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
-          <div className="flex-1 w-full aspect-[4/3] md:aspect-square relative rounded-full overflow-hidden shadow-2xl">
+          <div className="flex-1 w-full aspect-[4/3] relative rounded-[2rem] overflow-hidden shadow-2xl">
             <Image src="/images/menemen.webp" alt="Turkish Breakfast & Menemen" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
           </div>
           <div className="flex-1 space-y-6 text-center md:text-start">
