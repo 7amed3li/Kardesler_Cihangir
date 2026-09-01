@@ -440,35 +440,35 @@
     },
     "kucuk_cay": {
       "name": "Küçük Çay",
-      "desc": ""
+      "desc": "Small Turkish Tea"
     },
     "buyuk_cay": {
       "name": "Büyük Çay",
-      "desc": ""
+      "desc": "Large Turkish Tea"
     },
     "ada_cayi": {
       "name": "Ada Çayı",
-      "desc": ""
+      "desc": "Sage Tea"
     },
     "nescafe": {
       "name": "Nescafe",
-      "desc": ""
+      "desc": "Nescafe (Instant Coffee)"
     },
     "kivi_cayi": {
       "name": "Kivi",
-      "desc": ""
+      "desc": "Kiwi Tea"
     },
     "oralet": {
       "name": "Oralet",
-      "desc": ""
+      "desc": "Oralet (Orange Flavored Hot Drink)"
     },
     "elma_cayi": {
       "name": "Elma Çayı",
-      "desc": ""
+      "desc": "Apple Tea"
     },
     "turk_kahvesi": {
       "name": "Türk Kahvesi",
-      "desc": ""
+      "desc": "Turkish Coffee"
     },
     "kuzu_ciger": {
       "name": "Kuzu Ciğer",

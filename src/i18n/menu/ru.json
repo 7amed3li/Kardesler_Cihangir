@@ -440,35 +440,35 @@
     },
     "kucuk_cay": {
       "name": "Küçük Çay",
-      "desc": ""
+      "desc": "Маленький турецкий чай"
     },
     "buyuk_cay": {
       "name": "Büyük Çay",
-      "desc": ""
+      "desc": "Большой турецкий чай"
     },
     "ada_cayi": {
       "name": "Ada Çayı",
-      "desc": ""
+      "desc": "Шалфейный чай"
     },
     "nescafe": {
       "name": "Nescafe",
-      "desc": ""
+      "desc": "Нескафе"
     },
     "kivi_cayi": {
       "name": "Kivi",
-      "desc": ""
+      "desc": "Киви чай"
     },
     "oralet": {
       "name": "Oralet",
-      "desc": ""
+      "desc": "Оралет (Апельсиновый горячий напиток)"
     },
     "elma_cayi": {
       "name": "Elma Çayı",
-      "desc": ""
+      "desc": "Яблочный чай"
     },
     "turk_kahvesi": {
       "name": "Türk Kahvesi",
-      "desc": ""
+      "desc": "Турецкий кофе"
     },
     "kuzu_ciger": {
       "name": "Kuzu Ciğer",

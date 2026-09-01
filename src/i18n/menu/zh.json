@@ -308,35 +308,35 @@
     },
     "turk_kahvesi": {
       "name": "Türk Kahvesi",
-      "desc": ""
+      "desc": "土耳其咖啡"
     },
     "kucuk_cay": {
       "name": "Küçük Çay",
-      "desc": ""
+      "desc": "小杯土耳其茶"
     },
     "buyuk_cay": {
       "name": "Büyük Çay",
-      "desc": ""
+      "desc": "大杯土耳其茶"
     },
     "ada_cayi": {
       "name": "Ada Çayı",
-      "desc": ""
+      "desc": "鼠尾草茶"
     },
     "nescafe": {
       "name": "Nescafe",
-      "desc": ""
+      "desc": "雀巢速溶咖啡"
     },
     "kivi_cayi": {
       "name": "Kivi",
-      "desc": ""
+      "desc": "奇异果茶"
     },
     "oralet": {
       "name": "Oralet",
-      "desc": ""
+      "desc": "Oralet（橘子味热饮）"
     },
     "elma_cayi": {
       "name": "Elma Çayı",
-      "desc": ""
+      "desc": "苹果茶"
     },
     "kuzu_ciger": {
       "name": "Kuzu Ciğer",
