@@ -5,7 +5,7 @@ import { Star, MapPin, Clock, Phone, Utensils, Award, CheckCircle2, Navigation, 
 import LandingDishesSection from "@/components/LandingDishesSection";
 import LandingVerifiedReviews from "@/components/LandingVerifiedReviews";
 import SeoStorytelling from "@/components/SeoStorytelling";
-import HeroImageWithModal from "@/app/best-kebab-taksim/HeroImageWithModal";
+import HeroImageWithModal from "@/components/HeroImageWithModal";
 
 export const metadata = {
   title: "Best Kebab in Taksim & Cihangir | Authentic Wood-Fired (Since 1998)",

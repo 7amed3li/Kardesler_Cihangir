@@ -10,6 +10,7 @@ const SmartFilters = dynamic(() => import("@/components/SmartFilters"), { ssr: f
 const DishModal = dynamic(() => import("@/components/DishModal"), { ssr: false });
 const ReviewSection = dynamic(() => import("@/components/ReviewSection"), { ssr: true });
 import { CaretLeft, CaretRight, ForkKnife, Coffee } from "@phosphor-icons/react";
+import { CupSoda } from "lucide-react";
 import { OttomanSeal, OttomanStar, KebabSkewer } from "@/components/BrandIcons";
 import Link from "next/link";
 
@@ -349,7 +350,9 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
                         />
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center text-[#9C7A3F]">
-                          {cat.id.includes("icecek") || cat.id.includes("kahve") ? (
+                          {cat.id === "soguk_icecek" ? (
+                            <CupSoda size={20} strokeWidth={1.5} />
+                          ) : cat.id === "sicak_icecek" || cat.id.includes("kahve") ? (
                             <Coffee size={20} weight="regular" />
                           ) : (
                             <ForkKnife size={20} weight="regular" />

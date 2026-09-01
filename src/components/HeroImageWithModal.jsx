@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ZoomIn } from "lucide-react";
-import DishModal from "../../../components/DishModal";
+import DishModal from "./DishModal";
 
 export default function HeroImageWithModal() {
   const [modalOpen, setModalOpen] = useState(false);
