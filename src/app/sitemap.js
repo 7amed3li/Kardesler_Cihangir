@@ -1,6 +1,6 @@
 import { menuData } from "@/data/menuData";
 
-export default function sitemap() {
+export default async function sitemap() {
   const baseUrl = 'https://www.kardeslercihangir.com';
   const currentDate = new Date();
 
@@ -156,15 +156,18 @@ export default function sitemap() {
         },
       },
     },
-    // ── Dynamic Dish Pages ──
-    ...(() => {
+    // ── Dynamic Dish Pages (Live from Database) ──
+    ...(await (async () => {
       const locales = ["en", "ar", "tr", "ru", "fa", "fr", "de", "it", "es", "zh"];
       const dishPages = [];
-
-      menuData.forEach(category => {
-        category.items.forEach(item => {
+      
+      try {
+        const { getCurrentMenuItems } = await import('@/lib/services/priceService');
+        const liveItems = await getCurrentMenuItems();
+        
+        liveItems.forEach(item => {
           if (!item.id) return;
-
+          
           const dishAlternates = {};
           locales.forEach(loc => {
             dishAlternates[loc] = loc === "en" ? `${baseUrl}/dish/${item.id}` : `${baseUrl}/${loc}/dish/${item.id}`;
@@ -180,8 +183,10 @@ export default function sitemap() {
             });
           });
         });
-      });
+      } catch (e) {
+        console.error("Failed to generate dynamic sitemap for dishes:", e);
+      }
       return dishPages;
-    })(),
+    })()),
   ];
 }

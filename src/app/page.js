@@ -170,7 +170,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex-1 w-full aspect-square md:aspect-[4/5] relative rounded-[2rem] overflow-hidden shadow-2xl">
-            <Image src="/images/kahvalti.webp" alt="Authentic Turkish Tradition" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
+            <Image src="/images/kahvalti.webp" alt="Authentic Turkish Tradition" fill priority={true} style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
             <div className="absolute inset-0 bg-[#2B2620]/10 mix-blend-multiply"></div>
           </div>
         </section>
@@ -178,7 +178,7 @@ export default function Home() {
         {/* Item 1: Adana Kebap (Image Left, Text Right) */}
         <section ref={item1Ref} className={`flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-24 transition-all duration-1000 ease-out ${isItem1Visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
           <div className="flex-1 w-full aspect-[4/3] relative rounded-[2rem] overflow-hidden shadow-2xl">
-            <Image src="/images/beyti-1024x677.webp" alt="Adana Kebap" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
+            <Image src="/images/adana.webp" alt="Adana Kebap" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
           </div>
           <div className="flex-1 space-y-6 text-center md:text-start">
             <div className="inline-flex items-center gap-2 text-[#4E5F4C] text-xs font-bold uppercase tracking-widest">

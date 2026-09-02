@@ -35,6 +35,7 @@ function useReveal(threshold = 0.15) {
 export default function Home() {
   const { t, lang } = useAppContext();
   const [heroVisible, setHeroVisible] = useState(false);
+  const [timeBasedHero, setTimeBasedHero] = useState("default");
 
   // Scroll-reveal refs for cinematic sections
   const [storyRef, isStoryVisible] = useReveal();
@@ -46,6 +47,12 @@ export default function Home() {
 
   useEffect(() => {
     requestAnimationFrame(() => setHeroVisible(true));
+    
+    // Time-based CRO: Show breakfast if it's between 8 AM and 3 PM local time
+    const hour = new Date().getHours();
+    if (hour >= 8 && hour < 15) {
+      setTimeBasedHero("breakfast");
+    }
   }, []);
 
   return (
@@ -56,9 +63,25 @@ export default function Home() {
           ═══════════════════════════════════════════ */}
       <section className="relative w-full min-h-[92vh] sm:min-h-screen flex flex-col items-center justify-center text-center px-4 pt-12 pb-24 overflow-hidden">
         
-        {/* Subtle Background Elements */}
-        <div className="absolute inset-0 bg-[#EDE3CE] opacity-90 z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#EDE3CE]/50 to-[#EDE3CE] z-0"></div>
+        {/* Dynamic Background Image for Breakfast Offer */}
+        {timeBasedHero === "breakfast" ? (
+          <div className="absolute inset-0 z-0">
+            <Image 
+              src="/images/Serpme-Kahvalti-2-Kisilik.webp" 
+              alt="Turkish Breakfast" 
+              fill 
+              style={{ objectFit: 'cover' }}
+              className="opacity-20 transition-opacity duration-1000"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#EDE3CE]/80 via-[#EDE3CE]/60 to-[#EDE3CE] mix-blend-overlay"></div>
+          </div>
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-[#EDE3CE] opacity-90 z-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#EDE3CE]/50 to-[#EDE3CE] z-0"></div>
+          </>
+        )}
 
         <div className={`relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center space-y-7 transition-all duration-1000 ease-out transform ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           
@@ -74,7 +97,9 @@ export default function Home() {
               className="text-6xl sm:text-7xl md:text-8xl font-black text-[#2B2620] tracking-tighter leading-none drop-shadow-sm"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
-              {t.welcome || "Kardeşler"}
+              {timeBasedHero === "breakfast" 
+                ? (lang === "ar" ? "إفطار تركي" : lang === "tr" ? "Türk Kahvaltısı" : "Turkish Breakfast") 
+                : (t.welcome || "Kardeşler")}
             </h1>
             
             <div className="flex items-center gap-4 w-full max-w-xs mx-auto opacity-80">
@@ -83,7 +108,9 @@ export default function Home() {
                 className="text-[#9C7A3F] text-sm sm:text-base md:text-lg font-bold tracking-[0.4em] uppercase whitespace-nowrap"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                {t.heroTagline || "KEBAP & PİDE"}
+                {timeBasedHero === "breakfast" 
+                  ? (lang === "ar" ? "صباح الخير" : lang === "tr" ? "GÜNAYDIN" : "GOOD MORNING") 
+                  : (t.heroTagline || "KEBAP & PİDE")}
               </p>
               <div className="h-px bg-[#4E5F4C]/40 flex-1"></div>
             </div>
@@ -94,11 +121,13 @@ export default function Home() {
             className="text-[#7A7364] text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-md mx-auto pt-2"
             style={{ fontFamily: "var(--font-inter)" }}
           >
-            {t.subtitle || (lang === "ar" 
+            {timeBasedHero === "breakfast"
+              ? (lang === "ar" ? "ابدأ يومك بأفضل تشكيلة إفطار في تقسيم" : lang === "tr" ? "Güne Taksim'in en iyi kahvaltısıyla başlayın" : "Start your day with the best breakfast spread in Taksim")
+              : (t.subtitle || (lang === "ar" 
               ? "حيث تلتقي التقاليد بالمذاق الأصيل في قلب جيهانغير" 
               : lang === "tr" 
               ? "Cihangir'in kalbinde gelenek ve lezzetin buluştuğu yer" 
-              : "Where tradition meets taste in the heart of Cihangir")}
+              : "Where tradition meets taste in the heart of Cihangir"))}
           </p>
 
           {/* Refined Stats Block */}
@@ -122,10 +151,14 @@ export default function Home() {
           {/* Elegant CTAs */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
             <Link
-              href="/menu"
+              href={timeBasedHero === "breakfast" ? "/menu?category=kahvalti" : "/menu"}
               className="w-full sm:w-auto min-h-[56px] px-10 bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-3 group"
             >
-              <span>{t.exploreMenu || (lang === "ar" ? "استكشف القائمة" : lang === "en" ? "EXPLORE MENU" : "MENÜYÜ KEŞFET")}</span>
+              <span>
+                {timeBasedHero === "breakfast" 
+                  ? (lang === "ar" ? "اطلب الإفطار الآن" : lang === "en" ? "ORDER BREAKFAST" : "KAHVALTI SİPARİŞİ VER") 
+                  : (t.exploreMenu || (lang === "ar" ? "استكشف القائمة" : lang === "en" ? "EXPLORE MENU" : "MENÜYÜ KEŞFET"))}
+              </span>
               <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
             </Link>
             <a
@@ -178,7 +211,7 @@ export default function Home() {
         {/* Item 1: Adana Kebap (Image Left, Text Right) */}
         <section ref={item1Ref} className={`flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-24 transition-all duration-1000 ease-out ${isItem1Visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
           <div className="flex-1 w-full aspect-[4/3] relative rounded-[2rem] overflow-hidden shadow-2xl">
-            <Image src="/images/beyti-1024x677.webp" alt="Adana Kebap" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
+            <Image src="/images/adana.webp" alt="Adana Kebap" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
           </div>
           <div className="flex-1 space-y-6 text-center md:text-start">
             <div className="inline-flex items-center gap-2 text-[#4E5F4C] text-xs font-bold uppercase tracking-widest">

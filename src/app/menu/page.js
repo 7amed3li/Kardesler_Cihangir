@@ -13,6 +13,7 @@ import { CaretLeft, CaretRight, ForkKnife, Coffee } from "@phosphor-icons/react"
 import { CupSoda } from "lucide-react";
 import { OttomanSeal, OttomanStar, KebabSkewer } from "@/components/BrandIcons";
 import Link from "next/link";
+import { trackViewItemList } from "@/lib/analytics";
 
 // ─── Breakfast Cross-Link Banner (shown on /menu) ───
 function BreakfastBanner() {
@@ -397,8 +398,47 @@ export default function MenuPage() {
     scrollToMenu();
   };
 
+  useEffect(() => {
+    const category = menuData.find(c => c.id === activeCategory);
+    if (category && category.items) {
+      const itemsToTrack = category.items
+        .filter(item => {
+          if (!activeFilter) return true;
+          return item.tags?.includes(activeFilter);
+        })
+        .map(item => ({
+          ...item,
+          category: activeCategory
+        }));
+      trackViewItemList(itemsToTrack, activeCategory);
+    }
+  }, [activeCategory, activeFilter]);
+
   return (
     <div className="pb-12 bg-[#EDE3CE] min-h-screen text-[#2B2620] font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.kardeslercihangir.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Menu",
+                "item": "https://www.kardeslercihangir.com/menu"
+              }
+            ]
+          }),
+        }}
+      />
             
       {/* ═══════════════════════════════════════════
           APPETITE-INDUCING SIGNATURE SPECIALS HERO

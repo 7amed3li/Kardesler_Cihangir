@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { X, MagnifyingGlassPlus, Plus, Minus } from "@phosphor-icons/react";
 import { useAppContext } from "../context/AppContext";
+import { trackViewItem } from "@/lib/analytics";
 
 /**
  * Inline cart counter — shows (+) when qty is 0, or (- N +) when qty > 0.
@@ -100,6 +101,20 @@ export default function DishModal({
     setMounted(true);
   }, []);
 
+  // Track view_item for Google Ads Dynamic Remarketing
+  useEffect(() => {
+    if (mounted && isOpen && item) {
+      const priceVal = customPrice !== undefined ? customPrice : getLivePrice(item);
+      const itemName = customName || (menuT.items[item.id]?.name || item?.name?.en) || "Dish";
+      trackViewItem({
+        id: item.id,
+        name: itemName,
+        category: item.categoryId || "Menu",
+        price: priceVal || 0,
+      });
+    }
+  }, [mounted, isOpen, item, customName, customPrice, getLivePrice, menuT]);
+
   if (!mounted || !isOpen) return null;
 
   // Resolve data either from context (if item is provided) or custom props
@@ -114,8 +129,30 @@ export default function DishModal({
   if (item?.badgeKey && !tags.includes(item.badgeKey)) tags.push(item.badgeKey);
   if (item?.trending && !tags.includes("trending")) tags.push("trending");
 
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": name,
+    "image": image ? `https://www.kardeslercihangir.com${image}` : undefined,
+    "description": description || name,
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "TRY",
+      "price": price || 0,
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Kardeşler Kebap Cihangir"
+      }
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {createPortal(
         <div
           className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 backdrop-blur-lg p-4 modal-overlay"
