@@ -145,7 +145,7 @@ const globalSchemaGraph = {
       "@id": `${siteUrl}/#restaurant`,
       name: "Kardeşler Kebap & Cafe Cihangir",
       alternateName: ["Kardeşler Cihangir", "Kardesler Cihangir", "كاردشلر جيهانغير"],
-      description: "Authentic Turkish kebab, pide & lahmacun restaurant in Cihangir, 5 minutes from Taksim Square. Serving traditional wood-fired cuisine since 1998.",
+      description: "Authentic Turkish kebab, pide & lahmacun restaurant in Cihangir, 5 minutes from Taksim Square. Serving traditional wood-fired cuisine for 28 years since 1998.",
       url: siteUrl,
       telephone: "+902122513696",
       logo: {
