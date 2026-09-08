@@ -59,9 +59,21 @@ export default function Home() {
           ═══════════════════════════════════════════ */}
       <section className="relative w-full min-h-[92vh] sm:min-h-screen flex flex-col items-center justify-center text-center px-4 pt-12 pb-24 overflow-hidden">
         
-        {/* Subtle Background Elements */}
-        <div className="absolute inset-0 bg-[#EDE3CE] opacity-90 z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#EDE3CE]/50 to-[#EDE3CE] z-0"></div>
+        {/* Cinematic Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero-bg.webp"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/videos/hero-promo.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#2B2620]/55 z-[1]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#EDE3CE] z-[1]"></div>
 
         <div className={`relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center space-y-7 transition-all duration-1000 ease-out transform ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           
@@ -74,27 +86,27 @@ export default function Home() {
           {/* Main Brand Lockup */}
           <div className="flex flex-col items-center space-y-3">
             <h1
-              className="text-6xl sm:text-7xl md:text-8xl font-black text-[#2B2620] tracking-tighter leading-none drop-shadow-sm"
+              className="text-6xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter leading-none drop-shadow-lg"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
               {t.welcome || "Kardeşler"}
             </h1>
             
             <div className="flex items-center gap-4 w-full max-w-xs mx-auto opacity-80">
-              <div className="h-px bg-[#4E5F4C]/40 flex-1"></div>
+              <div className="h-px bg-[#EDE3CE]/40 flex-1"></div>
               <p 
                 className="text-[#9C7A3F] text-sm sm:text-base md:text-lg font-bold tracking-[0.4em] uppercase whitespace-nowrap"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {t.heroTagline || "KEBAP & PİDE"}
               </p>
-              <div className="h-px bg-[#4E5F4C]/40 flex-1"></div>
+              <div className="h-px bg-[#EDE3CE]/40 flex-1"></div>
             </div>
           </div>
 
           {/* Minimalist Tagline */}
           <p
-            className="text-[#7A7364] text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-md mx-auto pt-2"
+            className="text-[#EDE3CE]/90 text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-md mx-auto pt-2"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {t.subtitle || (lang === "ar" 
