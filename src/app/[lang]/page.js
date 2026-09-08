@@ -203,7 +203,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex-1 w-full aspect-square md:aspect-[4/5] relative rounded-[2rem] overflow-hidden shadow-2xl">
-            <Image src="/images/kahvalti.webp" alt="Authentic Turkish Tradition" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
+            <Image src="/images/adana.webp" alt="Authentic Charcoal Kebab — Kardeşler Cihangir Since 1998" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
             <div className="absolute inset-0 bg-[#2B2620]/10 mix-blend-multiply"></div>
           </div>
         </section>

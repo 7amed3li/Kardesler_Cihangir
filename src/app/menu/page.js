@@ -19,11 +19,11 @@ import { trackViewItemList } from "@/lib/analytics";
 function BreakfastBanner() {
   const { lang } = useAppContext();
   const breakfastHref = {
-    tr: "/tr/turkish-breakfast-cihangir", ar: "/ar/turkish-breakfast-cihangir",
+    en: "/en/turkish-breakfast-cihangir", ar: "/ar/turkish-breakfast-cihangir",
     ru: "/ru/turkish-breakfast-cihangir", fa: "/fa/turkish-breakfast-cihangir",
     fr: "/fr/turkish-breakfast-cihangir", de: "/de/turkish-breakfast-cihangir",
     it: "/it/turkish-breakfast-cihangir", es: "/es/turkish-breakfast-cihangir",
-    zh: "/zh/turkish-breakfast-cihangir", en: "/turkish-breakfast-cihangir",
+    zh: "/zh/turkish-breakfast-cihangir", tr: "/turkish-breakfast-cihangir",
   }[lang] || "/turkish-breakfast-cihangir";
 
   const label = lang === "ar" ? "استكشف الإفطار التركي ←" :
@@ -473,7 +473,7 @@ export default function MenuPage() {
       {/* ═══════════════════════════════════════════
           MENU ITEMS GRID
           ═══════════════════════════════════════════ */}
-      <section className="px-3 sm:px-6 py-6 min-h-[60vh] bg-[#EDE3CE]">
+      <section className="px-3 sm:px-6 py-6 min-h-[60vh] bg-[#EDE3CE] scroll-mt-[120px]">
         {menuData.map((category) => {
           if (activeCategory !== category.id) return null;
 

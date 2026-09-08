@@ -119,7 +119,6 @@ export default function ContactPage() {
               <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                 +90 212 251 36 96
               </p>
-              <p className="text-[#7A7364]/70 text-xs font-medium mt-1">+90 212 251 36 96</p>
             </div>
           </a>
 
