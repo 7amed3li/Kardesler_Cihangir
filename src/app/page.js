@@ -69,7 +69,7 @@ export default function Home() {
           poster="/images/hero-bg.webp"
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="/videos/hero-promo.mp4" type="video/mp4" />
+          <source src="/videos/hero-promo-v2.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-[#2B2620]/55 z-[1]"></div>
