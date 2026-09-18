@@ -54,6 +54,42 @@ const uiTexts = {
     viewAllGoogle: "Lire tous les avis",
     verifyReview: "Vérifier la source",
   },
+  de: {
+    badge: "Authentische und verifizierte Gästebewertungen",
+    title: "Was unsere echten Gäste sagen",
+    subtitle: "Echte Bewertungen auf Google Maps und offiziellen Plattformen. Klicken Sie auf eine Bewertung, um sie direkt an der Quelle zu überprüfen:",
+    verifiedBadge: "Auf Google verifiziert",
+    viewAllReviews: "Alle 1.280+ Bewertungen auf Google Maps lesen",
+    viewAllGoogle: "Alle Bewertungen lesen",
+    verifyReview: "Auf Google prüfen",
+  },
+  it: {
+    badge: "Recensioni degli ospiti autentiche e verificate",
+    title: "Cosa dicono i nostri ospiti",
+    subtitle: "Recensioni autentiche registrate su Google Maps e piattaforme ufficiali. Clicca su qualsiasi recensione per verificarla direttamente alla fonte:",
+    verifiedBadge: "Verificato su Google",
+    viewAllReviews: "Leggi tutte le 1.280+ recensioni su Google Maps",
+    viewAllGoogle: "Leggi tutte le recensioni",
+    verifyReview: "Verifica su Google",
+  },
+  es: {
+    badge: "Reseñas de huéspedes auténticas y verificadas",
+    title: "Lo que dicen nuestros comensales reales",
+    subtitle: "Reseñas genuinas registradas en Google Maps y plataformas oficiales. Haz clic en cualquier reseña para verificarla directamente en la fuente:",
+    verifiedBadge: "Verificado en Google",
+    viewAllReviews: "Leer las más de 1.280 reseñas en Google Maps",
+    viewAllGoogle: "Leer todas las reseñas",
+    verifyReview: "Verificar en Google",
+  },
+  zh: {
+    badge: "真实经过验证的宾客评价",
+    title: "我们真实宾客的心声",
+    subtitle: "记录在 Google 地图和官方平台上的真实评价。点击任意评价可在源网站直接核实：",
+    verifiedBadge: "Google 已核实",
+    viewAllReviews: "在 Google 地图上阅读全部 1,280+ 条评价",
+    viewAllGoogle: "阅读所有评价",
+    verifyReview: "在 Google 上核实",
+  },
 };
 
 export default function LandingVerifiedReviews({ currentLocale = "ar" }) {

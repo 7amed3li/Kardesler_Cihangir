@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAppContext } from "@/context/AppContext";
 import { MapPin, CaretDown, ArrowRight, Medal, Phone, Clock, Star } from "@phosphor-icons/react";
+import LandingVerifiedReviews from "@/components/LandingVerifiedReviews";
 import { OttomanStar, OttomanSeal, KebabSkewer, StoneOven } from "@/components/BrandIcons";
 import RestaurantMap from "@/components/RestaurantMap";
-import LandingVerifiedReviews from "@/components/LandingVerifiedReviews";
 
 // Hook: Intersection Observer for cinematic scroll-reveal animations
 function useReveal(threshold = 0.15) {
@@ -33,9 +33,86 @@ function useReveal(threshold = 0.15) {
   return [ref, isVisible];
 }
 
+
+const timelineContent = {
+  badge: {
+    tr: "28 Yıllık Yolculuk",
+    en: "28 Years Journey",
+    ar: "رحلة 28 عاماً من الأصالة",
+    fa: "سفر ۲۸ ساله اصالت",
+    ru: "28 лет кулинарного пути",
+    fr: "28 ans d'histoire culinaire",
+    de: "28 Jahre kulinarische Reise",
+    it: "Un viaggio lungo 28 anni",
+    es: "Un viaje culinario de 28 años",
+    zh: "28年传承之旅",
+  },
+  title: {
+    tr: "Babadan Oğula Miras",
+    en: "A Legacy from Father to Son",
+    ar: "إرث عائلي من الأب إلى الابن",
+    fa: "میراثی ماندگار از پدر به پسر",
+    ru: "Наследие от отца к сыну",
+    fr: "Un héritage transmis de père en fils",
+    de: "Ein Erbe von Vater zu Sohn",
+    it: "Un'eredità da padre in figlio",
+    es: "Un legado de padres a hijos",
+    zh: "父子相传的匠心传承",
+  },
+  e1998: {
+    tr: "Kardeşler, Firuzağa köşesinde küçük bir lokanta olarak açıldı. Tek bir odun fırını ve meşe kömürü mangalıyla hizmete başladı.",
+    en: "Brothers opened their small eatery on the Firuzağa corner of Cihangir, with one wood-fired oven and an oak charcoal grill.",
+    ar: "افتتح الإخوة مطعمهم الصغير في زاوية فيروز آغا بجيهانكير، بفرن حطب حجري وشواية فحم بلوط نقية.",
+    fa: "برادران رستوران کوچک خود را در گوشه فیروزآقا جهانگیر با یک تنور هیزمی و منقل زغال بلوط افتتاح کردند.",
+    ru: "Братья открыли небольшое заведение на углу Фирузага в Джихангире с одной дровяной печью и мангалом на дубовых углях.",
+    fr: "Les frères ouvrent leur petit restaurant au coin de Firuzağa à Cihangir, avec un four à bois et un gril au charbon de chêne.",
+    de: "Die Brüder eröffneten ihr kleines Lokal an der Firuzağa-Ecke in Cihangir mit einem Holzofen und einem Eichenholzkohlegrill.",
+    it: "I fratelli aprono il loro locale all'angolo di Firuzağa a Cihangir, con un forno a legna e una brace a carbone di quercia.",
+    es: "Los hermanos abrieron su pequeño restaurante en la esquina de Firuzağa en Cihangir, con un horno de leña y parrilla de carbón de roble.",
+    zh: "兄弟俩在吉汉吉尔的 Firuzağa 街角创办了这家小店，凭着一座木柴烤炉和一个橡木炭火烤炉开启了美食之旅。",
+  },
+  e2005: {
+    tr: "Restoran genişledi. Menü, taş fırında pişen çıtır pide ve zırh kıyması lahmacun çeşitleriyle zenginleşti. Beyoğlu'nda tanınan bir lezzet durağı haline geldi.",
+    en: "The restaurant expanded. The menu was enriched with stone-oven baked pides and hand-minced lahmacuns, becoming a landmark in Beyoğlu.",
+    ar: "توسع المطعم وأصبح وجهة شهيرة لعشاق الكباب في بيوغلو، وتوسعت القائمة لتشمل الفطائر والبيدة واللحم بعجين المقرمش.",
+    fa: "رستوران گسترش یافت و به مقصدی مشهور برای عاشقان کباب در بی اوغلو تبدیل شد و منو با انواع پیده و لاهماجون تنوری غنی‌تر گشت.",
+    ru: "Ресторан расширился и стал известным местом для ценителей кебаба в Бейоглу. Меню пополнилось пиде и лахмаджуном из каменной печи.",
+    fr: "Le restaurant s'agrandit et devient une adresse réputée de Beyoğlu, enrichissant sa carte de pides croustillantes et de lahmacuns au feu de bois.",
+    de: "Das Restaurant vergrößerte sich und wurde zu einer bekannten Adresse in Beyoğlu, erweitert um knusprige Pide und Lahmacun aus dem Steinofen.",
+    it: "Il ristorante si espande e diventa un punto di riferimento a Beyoğlu, arricchendo il menu con pide croccanti e lahmacun cotti nel forno a legna.",
+    es: "El restaurante se amplió y se convirtió en un destino reconocido en Beyoğlu, incorporando pides crujientes y lahmacun al horno de leña.",
+    zh: "餐厅规模扩大，成为贝伊奥卢地区知名的烤肉胜地，菜单新增了石炉烤制的香脆土耳其披萨（Pide）和薄饼（Lahmacun）。",
+  },
+  e2015: {
+    tr: "İkinci nesil devraldı. Aynı aile tarifleri, aynı odun ateşi, aynı esnaf geleneği. Yeni enerji ile zamansız lezzet geleceğe taşındı.",
+    en: "Second generation takes over. Same family recipes, same fire, same artisan tradition—fresh energy with timeless taste.",
+    ar: "الجيل الثاني يتولى الإدارة، مع التمسك الصارم بنفس الوصفات العائلية الأصيلة ونفس نار الفحم والضيافة الدافئة.",
+    fa: "نسل دوم مدیریت را بر عهده گرفت؛ با حفظ دقیق همان دستورپخت‌های خانوادگی، همان آتش زغال و سنت اصیل مهمان‌نوازی.",
+    ru: "Второе поколение принимает руководство. Те же семейные рецепты, тот же живой огонь и традиции ремесленного мастерства.",
+    fr: "La deuxième génération prend la relève. Mêmes recettes familiales, même feu de braise, même tradition artisanale et passion intemporelle.",
+    de: "Die zweite Generation übernimmt. Dieselben Familienrezepte, dasselbe Feuer, dieselbe Handwerkstradition – zeitloser Geschmack mit neuer Energie.",
+    it: "La seconda generazione prende le redini. Stesse ricette di famiglia, stesso fuoco e tradizione artigianale che unisce passato e futuro.",
+    es: "La segunda generación toma el relevo. Las mismas recetas familiares, el mismo fuego y la misma tradición artesanal con energía renovada.",
+    zh: "第二代传承人接棒经营。秉持相同的家族秘方、相同的炭火技艺与工匠传统，为经典美味注入现代活力。",
+  },
+  e2026: {
+    tr: "28 yıllık köklü gelenek. 106+ lezzet çeşidi, 11 kategori. Google'da 1.280+ doğrulanmış misafir yorumu. Hâlâ ilk günkü aşk ve ateşle pişiriyoruz.",
+    en: "28 years of culinary heritage. 106+ dishes across 11 categories. Over 1,280+ verified Google reviews. Still cooking with the same love and fire.",
+    ar: "28 عاماً من العراقة والريادة. أكثر من 106 أطباق ضمن 11 فئة متنوعة. أكثر من 1,280 تقييم معتمد على Google. وما زلنا نطهو بنفس الشغف والنار الأولى.",
+    fa: "۲۸ سال اصالت و افتخار. بیش از ۱۰۶ نوع غذای متنوع در ۱۱ دسته‌بندی. بیش از ۱۲۸۰ نظر تایید شده در گوگل. همچنان با همان عشق و حرارت می‌پزیم.",
+    ru: "28 лет гастрономического наследия. Более 106 блюд в 11 категориях. 1 280+ отзывов на Google. Мы готовим с той же любовью и страстью.",
+    fr: "28 ans d'héritage culinaire. Plus de 106 plats dans 11 catégories. Plus de 1 280 avis vérifiés sur Google. Cuisiné avec le même amour et la même flamme.",
+    de: "28 Jahre kulinarische Tradition. Über 106 Spezialitäten in 11 Kategorien. Mehr als 1.280 verifizierte Google-Bewertungen. Zubereitet mit derselben Liebe und Glut.",
+    it: "28 anni di tradizione gastronomica. Oltre 106 piatti in 11 categorie. Più di 1.280 recensioni verificate su Google. Cucinati con lo stesso amore e fuoco.",
+    es: "28 años de tradición culinaria. Más de 106 platos en 11 categorías. Más de 1.280 reseñas verificadas en Google. Cocinados con el mismo amor y fuego.",
+    zh: "28年深厚美食底蕴。11大品类超过106道佳肴，Google 地图上超过1,280+条真实好评。始终以最初的热情与炭火精心烹制。",
+  }
+};
+
 export default function Home() {
   const { t, lang } = useAppContext();
   const [heroVisible, setHeroVisible] = useState(false);
+  const [timeBasedHero, setTimeBasedHero] = useState("default");
 
   // Scroll-reveal refs for cinematic sections
   const [storyRef, isStoryVisible] = useReveal();
@@ -49,6 +126,12 @@ export default function Home() {
 
   useEffect(() => {
     requestAnimationFrame(() => setHeroVisible(true));
+    
+    // Time-based CRO: Show breakfast if it's between 8 AM and 3 PM local time
+    const hour = new Date().getHours();
+    if (hour >= 8 && hour < 15) {
+      setTimeBasedHero("breakfast");
+    }
   }, []);
 
   return (
@@ -80,7 +163,20 @@ export default function Home() {
           {/* Location Pill */}
           <div className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full border border-[#9C7A3F]/30 bg-[#F7F2E7]/80 backdrop-blur-sm text-xs font-semibold tracking-wider text-[#4E5F4C] shadow-sm mb-4">
             <MapPin size={16} weight="fill" />
-            <span className="uppercase">{t.heroLocation || "Cihangir, Istanbul"}</span>
+            <span className="uppercase">
+              {{
+                tr: "Cihangir, İstanbul",
+                en: "Cihangir, Istanbul",
+                ar: "جيهانغير، إسطنبول",
+                fa: "جهانگیر، استانبول",
+                ru: "Джихангир, Стамбул",
+                fr: "Cihangir, Istanbul",
+                de: "Cihangir, Istanbul",
+                it: "Cihangir, Istanbul",
+                es: "Cihangir, Estambul",
+                zh: "伊斯坦布尔 · 吉汉吉尔"
+              }[lang] || "Cihangir, Istanbul"}
+            </span>
           </div>
 
           {/* Main Brand Lockup */}
@@ -89,7 +185,20 @@ export default function Home() {
               className="text-6xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter leading-none drop-shadow-lg"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
-              {t.welcome || "Kardeşler"}
+              {timeBasedHero === "breakfast" 
+                ? ({
+                    tr: "Türk Kahvaltısı",
+                    en: "Turkish Breakfast",
+                    ar: "إفطار تركي",
+                    ru: "Турецкий завтрак",
+                    fa: "صبحانه ترکی",
+                    fr: "Petit-Déjeuner Turc",
+                    de: "Türkisches Frühstück",
+                    it: "Colazione Turca",
+                    es: "Desayuno Turco",
+                    zh: "土耳其传统早餐"
+                  }[lang] || "Turkish Breakfast")
+                : (t.welcome || "Kardeşler")}
             </h1>
             
             <div className="flex items-center gap-4 w-full max-w-xs mx-auto opacity-80">
@@ -98,7 +207,20 @@ export default function Home() {
                 className="text-[#9C7A3F] text-sm sm:text-base md:text-lg font-bold tracking-[0.4em] uppercase whitespace-nowrap"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                {t.heroTagline || "KEBAP & PİDE"}
+                {timeBasedHero === "breakfast" 
+                  ? ({
+                      tr: "GÜNAYDIN",
+                      en: "GOOD MORNING",
+                      ar: "صباح الخير",
+                      ru: "ДОБРОЕ УТРО",
+                      fa: "صبح بخیر",
+                      fr: "BONJOUR",
+                      de: "GUTEN MORGEN",
+                      it: "BUONGIORNO",
+                      es: "BUENOS DÍAS",
+                      zh: "早上好"
+                    }[lang] || "GOOD MORNING")
+                  : (t.heroTagline || "KEBAP & PİDE")}
               </p>
               <div className="h-px bg-[#EDE3CE]/40 flex-1"></div>
             </div>
@@ -109,11 +231,20 @@ export default function Home() {
             className="text-[#EDE3CE]/90 text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-md mx-auto pt-2"
             style={{ fontFamily: "var(--font-inter)" }}
           >
-            {t.subtitle || (lang === "ar" 
-              ? "حيث تلتقي التقاليد بالمذاق الأصيل في قلب جيهانغير" 
-              : lang === "tr" 
-              ? "Cihangir'in kalbinde gelenek ve lezzetin buluştuğu yer" 
-              : "Where tradition meets taste in the heart of Cihangir")}
+            {timeBasedHero === "breakfast"
+              ? ({
+                  tr: "Güne Taksim'in en iyi kahvaltısıyla başlayın",
+                  en: "Start your day with the best breakfast spread in Taksim",
+                  ar: "ابدأ يومك بأفضل تشكيلة إفطار في تقسيم",
+                  ru: "Начните день с лучшего турецкого завтрака в Таксиме",
+                  fa: "روز خود را با بهترین صبحانه سنتی ترکی در نزدیکی تقسیم آغاز کنید",
+                  fr: "Commencez votre journée avec le meilleur petit-déjeuner de Taksim",
+                  de: "Beginnen Sie Ihren Tag mit dem besten Frühstücksangebot in Taksim",
+                  it: "Inizia la giornata con la migliore colazione vicino a Taksim",
+                  es: "Comienza el día con el mejor desayuno tradicional en Taksim",
+                  zh: "在塔克西姆享用最地道的土耳其传统早餐开启新的一天"
+                }[lang] || "Start your day with the best breakfast spread in Taksim")
+              : (t.subtitle || "Where tradition meets taste in the heart of Cihangir")}
           </p>
 
           {/* Refined Stats Block */}
@@ -121,15 +252,15 @@ export default function Home() {
             <div className="flex items-center justify-between divide-x divide-[#9C7A3F]/20">
               <div className="flex flex-col items-center flex-1 px-2">
                 <span className="text-3xl font-black text-[#2B2620] mb-1">106</span>
-                <span className="text-[10px] font-bold text-[#7A7364] uppercase tracking-widest">{lang === "ar" ? "صنف" : lang === "en" ? "DISHES" : lang === "ru" ? "БЛЮД" : lang === "fa" ? "غذا" : lang === "fr" ? "PLATS" : lang === "de" ? "GERICHTE" : lang === "it" ? "PIATTI" : lang === "es" ? "PLATOS" : lang === "zh" ? "道菜" : "ÇEŞİT"}</span>
+                <span className="text-[10px] font-bold text-[#7A7364] uppercase tracking-widest">{t.statsDishes || t.dishesCountText || "ÇEŞİT"}</span>
               </div>
               <div className="flex flex-col items-center flex-1 px-2">
                 <span className="text-3xl font-black text-[#2B2620] mb-1">11</span>
-                <span className="text-[10px] font-bold text-[#7A7364] uppercase tracking-widest">{lang === "ar" ? "فئة" : lang === "en" ? "CATEGORIES" : lang === "ru" ? "КАТЕГОРИЙ" : lang === "fa" ? "دسته" : lang === "fr" ? "CATÉGORIES" : lang === "de" ? "KATEGORIEN" : lang === "it" ? "CATEGORIE" : lang === "es" ? "CATEGORÍAS" : lang === "zh" ? "类别" : "KATEGORİ"}</span>
+                <span className="text-[10px] font-bold text-[#7A7364] uppercase tracking-widest">{t.statsCategories || t.categories || "KATEGORİ"}</span>
               </div>
               <div className="flex flex-col items-center flex-1 px-2">
                 <span className="text-3xl font-black text-[#2B2620] mb-1">28</span>
-                <span className="text-[10px] font-bold text-[#7A7364] uppercase tracking-widest">{lang === "ar" ? "سنة تراث" : lang === "en" ? "YEARS LEGACY" : lang === "ru" ? "ЛЕТ ТРАДИЦИЙ" : lang === "fa" ? "سال سنت" : lang === "fr" ? "ANS TRADITION" : lang === "de" ? "JAHRE TRADITION" : lang === "it" ? "ANNI TRADIZIONE" : lang === "es" ? "AÑOS TRADICIÓN" : lang === "zh" ? "年传承" : "YIL GELENEK"}</span>
+                <span className="text-[10px] font-bold text-[#7A7364] uppercase tracking-widest">{t.statsYears || "YILLIK GELENEK"}</span>
               </div>
             </div>
           </div>
@@ -137,17 +268,21 @@ export default function Home() {
           {/* Elegant CTAs */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
             <Link
-              href="/menu"
+              href={timeBasedHero === "breakfast" ? "/menu?category=kahvalti" : "/menu"}
               className="w-full sm:w-auto min-h-[56px] px-10 bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-3 group"
             >
-              <span>{t.exploreMenu || (lang === "ar" ? "استكشف القائمة" : lang === "en" ? "EXPLORE MENU" : "MENÜYÜ KEŞFET")}</span>
+              <span>
+                {timeBasedHero === "breakfast" 
+                  ? (t.orderBreakfastCta || "KAHVALTI SİPARİŞİ VER") 
+                  : (t.exploreMenu || "MENÜYÜ KEŞFET")}
+              </span>
               <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
             </Link>
             <a
               href="tel:+902122513696"
               className="w-full sm:w-auto min-h-[56px] px-10 bg-transparent hover:bg-[#F7F2E7] text-[#4E5F4C] border border-[#4E5F4C] font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full transition-all duration-300 inline-flex items-center justify-center gap-3"
             >
-              <span>{t.callToOrder || (lang === "ar" ? "اطلب عبر الهاتف" : lang === "en" ? "CALL TO ORDER" : "TELEFONLA SİPARİŞ")}</span>
+              <span>{t.callToOrder || "TELEFONLA SİPARİŞ"}</span>
             </a>
           </div>
 
@@ -177,15 +312,11 @@ export default function Home() {
               {t.ourStoryTitle || "Our Kardeşler Kebap Cihangir Story"}
             </h2>
             <p className="text-[#7A7364] text-sm sm:text-base leading-loose max-w-lg mx-auto md:mx-0" style={{ fontFamily: "var(--font-inter)" }}>
-              {t.ourStoryDesc || (lang === "ar" 
-                ? "في قلب جيهانغير منذ أكثر من 28 عامًا، نقدم لكم النكهات التركية الأصيلة، بدءًا من كباب أضنة المفروم يدويًا وحتى الفطائر المخبوزة في الفرن الحطبي."
-                : lang === "tr" 
-                ? "Cihangir'de 28 yıldır, zırh kıyması Adana kebaptan odun ateşinde pide çeşitlerine kadar geleneksel lezzetleri misafirlerimize sunuyoruz."
-                : "For 28 years in the heart of Cihangir, we have been serving authentic Turkish flavors—from hand-minced Adana kebab to wood-fired baked pide.")}
+              {t.ourStoryDesc || "For over 28 years in the heart of Cihangir, we have been serving authentic Turkish flavors—from hand-minced Adana kebab to wood-fired baked pide."}
             </p>
           </div>
           <div className="flex-1 w-full aspect-square md:aspect-[4/5] relative rounded-[2rem] overflow-hidden shadow-2xl">
-            <Image src="/images/adana.webp" alt="Authentic Charcoal Kebab — Kardeşler Cihangir Since 1998" fill priority={true} style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
+            <Image src="/images/adana.webp" alt="Authentic Charcoal Kebab — Kardeşler Cihangir Since 1998" fill style={{ objectFit: 'cover' }} className="hover:scale-105 transition-transform duration-1000" />
             <div className="absolute inset-0 bg-[#2B2620]/10 mix-blend-multiply"></div>
           </div>
         </section>
@@ -198,13 +329,13 @@ export default function Home() {
           <div className="flex-1 space-y-6 text-center md:text-start">
             <div className="inline-flex items-center gap-2 text-[#4E5F4C] text-xs font-bold uppercase tracking-widest">
               <KebabSkewer size={18} />
-              <span>{lang === "ar" ? "شواية الفحم المميزة" : lang === "tr" ? "İmza Mangal Lezzetleri" : lang === "ru" ? "Фирменный мангал" : lang === "fa" ? "کباب زغال اخته" : lang === "fr" ? "Grillade au charbon" : lang === "de" ? "Holzkohlegrill" : lang === "it" ? "Griglia a carbone" : lang === "es" ? "Parrilla de carbón" : lang === "zh" ? "炭火烤肉" : "Signature Charcoal Grill"}</span>
+              <span>{t.adanaBadge || "Signature Charcoal Grill"}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black text-[#2B2620] leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
-              {lang === "ar" ? "أضنة كباب الأصلي" : lang === "tr" ? "Gerçek Adana Kebap" : "Authentic Adana Kebap"}
+              {t.adanaTitle || "Authentic Adana Kebap"}
             </h2>
             <p className="text-[#7A7364] text-sm sm:text-base leading-loose max-w-lg mx-auto md:mx-0" style={{ fontFamily: "var(--font-inter)" }}>
-              {lang === "ar" ? "محضر يدوياً باستخدام سكاكين الزره التقليدية ومحمر ببطء على الفحم النقي لضمان قوام عصاري ونكهة مدخنة عميقة." : lang === "tr" ? "Geleneksel zırh kıymasıyla hazırlanan ve saf meşe kömüründe yavaş yavaş pişirilen, sulu dokusu ve derin isli aromasıyla eşsiz bir lezzet." : "Hand-minced using traditional zırh knives and slow-roasted over pure oak charcoal, ensuring a juicy texture and deep smoky flavor."}
+              {t.adanaDesc || "Hand-minced using traditional zırh knives and slow-roasted over pure oak charcoal, ensuring a juicy texture and deep smoky flavor."}
             </p>
           </div>
         </section>
@@ -214,13 +345,13 @@ export default function Home() {
           <div className="flex-1 space-y-6 text-center md:text-start">
             <div className="inline-flex items-center gap-2 text-[#9C7A3F] text-xs font-bold uppercase tracking-widest">
               <StoneOven size={18} />
-              <span>{lang === "ar" ? "فرن الحطب" : lang === "tr" ? "Odun Ateşi Fırını" : lang === "ru" ? "Дровяная печь" : lang === "fa" ? "تنور هیزمی" : lang === "fr" ? "Four à bois" : lang === "de" ? "Holzofen" : lang === "it" ? "Forno a legna" : lang === "es" ? "Horno de leña" : lang === "zh" ? "柴火烤炉" : "Wood-Fired Oven"}</span>
+              <span>{t.pideBadge || "Wood-Fired Stone Oven"}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black text-[#2B2620] leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
-              {lang === "ar" ? "فطائر لحم بعجين (بيدة)" : lang === "tr" ? "Odun Ateşinde Pide" : "Wood-Fired Pide"}
+              {t.pideTitle || "Wood-Fired Pide"}
             </h2>
             <p className="text-[#7A7364] text-sm sm:text-base leading-loose max-w-lg mx-auto md:mx-0" style={{ fontFamily: "var(--font-inter)" }}>
-              {lang === "ar" ? "تخبز يومياً في فرن الحطب الحجري، حيث تمتزج العجينة الرقيقة المقرمشة مع اللحوم الطازجة والأجبان المحلية." : lang === "tr" ? "İncecik, çıtır çıtır hamurun taze et ve yöresel peynirlerle buluştuğu, taş fırında günlük olarak pişirilen geleneksel lezzet." : "Baked daily in our stone wood-fired oven. Crispy, thin crust meets fresh meats and regional cheeses for the ultimate Turkish flatbread."}
+              {t.pideDesc || "Baked daily in our stone wood-fired oven. Crispy, thin crust meets fresh meats and regional cheeses for the ultimate Turkish flatbread."}
             </p>
           </div>
           <div className="flex-1 w-full aspect-[4/3] relative rounded-[2rem] overflow-hidden shadow-2xl">
@@ -236,13 +367,13 @@ export default function Home() {
           <div className="flex-1 space-y-6 text-center md:text-start">
             <div className="inline-flex items-center gap-2 text-[#4E5F4C] text-xs font-bold uppercase tracking-widest">
               <span className="w-2 h-2 rounded-full bg-[#4E5F4C]"></span>
-              <span>{lang === "ar" ? "طقوس الصباح" : lang === "tr" ? "Sabah Ritüeli" : lang === "ru" ? "Утренний ритуал" : lang === "fa" ? "آیین صبحانه" : lang === "fr" ? "Rituel matinal" : lang === "de" ? "Morgenritual" : lang === "it" ? "Rituale mattutino" : lang === "es" ? "Ritual matutino" : lang === "zh" ? "早餐仪式" : "Morning Ritual"}</span>
+              <span>{t.breakfastBadge || "Morning Ritual"}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black text-[#2B2620] leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
-              {lang === "ar" ? "الإفطار والمينمن" : lang === "tr" ? "Kahvaltı & Menemen" : "Breakfast & Menemen"}
+              {t.breakfastTitle || "Breakfast & Menemen"}
             </h2>
             <p className="text-[#7A7364] text-sm sm:text-base leading-loose max-w-lg mx-auto md:mx-0" style={{ fontFamily: "var(--font-inter)" }}>
-              {lang === "ar" ? "ابدأ يومك بتشكيلة الإفطار (Serpme Kahvaltı) الغنية، ومقلاة المينمن الساخنة مع الطماطم الطازجة والبيض." : lang === "tr" ? "Zengin Serpme Kahvaltımız ve taze domates, biber ve yumurtayla hazırlanan sıcacık menemenimizle güne başlayın." : "Start your day with our rich Serpme Kahvaltı spread and sizzling copper pans of Menemen made with fresh tomatoes and eggs."}
+              {t.breakfastDesc || "Start your day with our rich Serpme Kahvaltı spread and sizzling copper pans of Menemen made with fresh tomatoes and eggs."}
             </p>
           </div>
         </section>
@@ -256,11 +387,11 @@ export default function Home() {
         <div className="text-center mb-16 space-y-4">
           <span className="text-[#9C7A3F] text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2">
             <span className="w-12 h-px bg-[#9C7A3F]/50"></span>
-            <span>{lang === "ar" ? "أجواء وأطباق" : lang === "tr" ? "Atmosfer & Lezzet" : "Atmosphere & Flavors"}</span>
+            <span>{t.galleryBadge || "Atmosphere & Flavors"}</span>
             <span className="w-12 h-px bg-[#9C7A3F]/50"></span>
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-[#2B2620] uppercase" style={{ fontFamily: "var(--font-cairo)" }}>
-            {lang === "ar" ? "معرض الصور" : lang === "tr" ? "Galeri" : "Visual Journey"}
+            {t.galleryTitle || "Visual Journey"}
           </h2>
         </div>
 
@@ -282,18 +413,19 @@ export default function Home() {
         </div>
       </section>
 
+      
       {/* ═══════════════════════════════════════════
-          3.5. HERITAGE TIMELINE (1998 → 2026)
+          3.6. HERITAGE TIMELINE (1998 -> 2026)
           ═══════════════════════════════════════════ */}
-      <section ref={timelineRef} className={`py-20 sm:py-28 px-4 max-w-4xl mx-auto transition-all duration-1000 ease-out ${isTimelineVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
-        <div className="text-center mb-14 space-y-4">
+      <section ref={timelineRef} className={`py-24 px-4 max-w-5xl mx-auto transition-all duration-1000 ease-out ${isTimelineVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
+        <div className="text-center mb-20 space-y-4">
           <span className="text-[#9C7A3F] text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2">
             <span className="w-12 h-px bg-[#9C7A3F]/50"></span>
-            <span>{lang === "ar" ? "رحلة 28 عاماً" : lang === "tr" ? "28 Yıllık Yolculuk" : lang === "ru" ? "28 лет пути" : lang === "fa" ? "سفر ۲۸ ساله" : lang === "fr" ? "28 ans de voyage" : lang === "de" ? "28 Jahre Reise" : "28 Years Journey"}</span>
+            <span>{timelineContent.badge[lang] || timelineContent.badge.en}</span>
             <span className="w-12 h-px bg-[#9C7A3F]/50"></span>
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
-            {lang === "ar" ? "إرث من الأب إلى الابن" : lang === "tr" ? "Babadan Oğula Miras" : lang === "ru" ? "Наследие от отца к сыну" : lang === "fa" ? "میراث پدر به پسر" : lang === "fr" ? "Un héritage de père en fils" : lang === "de" ? "Erbe von Vater zu Sohn" : "A Legacy from Father to Son"}
+            {timelineContent.title[lang] || timelineContent.title.en}
           </h2>
         </div>
 
@@ -309,7 +441,7 @@ export default function Home() {
               <div className="hidden sm:block sm:w-1/2 sm:pe-12 text-end">
                 <div className="inline-block bg-[#F7F2E7] border border-[#9C7A3F]/25 rounded-xl p-5 shadow-sm max-w-sm">
                   <p className="text-[#2B2620] text-sm font-semibold leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
-                    {lang === "ar" ? "افتتح الأخوة مطعمهم الصغير في زاوية حي فيروز آغا بجيهانغير، مع فرن حطب واحد وشواية فحم بلوط." : lang === "tr" ? "Kardeşler, Firuzağa köşesinde küçük bir lokanta olarak açıldı. Tek bir odun fırını ve meşe kömürü mangalıyla hizmete başladı." : "Brothers opened their small eatery on the Firuzağa corner of Cihangir, with one wood-fired oven and an oak charcoal grill."}
+                    {timelineContent.e1998[lang] || timelineContent.e1998.en}
                   </p>
                 </div>
               </div>
@@ -317,10 +449,9 @@ export default function Home() {
                 '98
               </div>
               <div className="ps-20 sm:ps-0 sm:w-1/2 sm:ms-auto">
-                <h3 className="sm:hidden text-xl font-black text-[#4E5F4C]" style={{ fontFamily: "var(--font-cairo)" }}>1998</h3>
-                <h3 className="hidden sm:block text-xl font-black text-[#4E5F4C] ps-12" style={{ fontFamily: "var(--font-cairo)" }}>1998</h3>
+                <h3 className="text-xl font-black text-[#4E5F4C] sm:ps-12" style={{ fontFamily: "var(--font-cairo)" }}>1998</h3>
                 <p className="sm:hidden text-[#2B2620] text-sm font-medium leading-relaxed mt-1">
-                  {lang === "ar" ? "افتتح الأخوة مطعمهم الصغير في زاوية حي فيروز آغا بجيهانغير." : lang === "tr" ? "Kardeşler, Firuzağa köşesinde küçük bir lokanta olarak açıldı." : "Brothers opened their small eatery in Cihangir."}
+                  {timelineContent.e1998[lang] || timelineContent.e1998.en}
                 </p>
               </div>
             </div>
@@ -330,11 +461,11 @@ export default function Home() {
               <div className="ps-20 sm:ps-0 sm:w-1/2 sm:pe-12 sm:text-end">
                 <h3 className="text-xl font-black text-[#9C7A3F]" style={{ fontFamily: "var(--font-cairo)" }}>2005</h3>
                 <p className="text-[#2B2620] text-sm font-medium leading-relaxed mt-1 sm:hidden">
-                  {lang === "ar" ? "توسع المطعم وأصبح وجهة معروفة لعشاق الكباب في بيوغلو." : lang === "tr" ? "Restoran genişledi ve Beyoğlu'nda kebap severler arasında bilinen bir mekan haline geldi." : "The restaurant expanded and became a known destination for kebab lovers in Beyoğlu."}
+                  {timelineContent.e2005[lang] || timelineContent.e2005.en}
                 </p>
                 <div className="hidden sm:inline-block bg-[#F7F2E7] border border-[#9C7A3F]/25 rounded-xl p-5 shadow-sm max-w-sm mt-2">
                   <p className="text-[#2B2620] text-sm font-semibold leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
-                    {lang === "ar" ? "توسع المطعم وأصبح وجهة معروفة لعشاق الكباب في بيوغلو. المنيو يتوسع ليشمل البيدة واللحم بعجين." : lang === "tr" ? "Restoran genişledi. Menü, pide ve lahmacun çeşitleriyle zenginleşti. Beyoğlu'nda tanınan bir mekan." : "Restaurant expanded. Menu enriched with pide and lahmacun varieties. A known spot in Beyoğlu."}
+                    {timelineContent.e2005[lang] || timelineContent.e2005.en}
                   </p>
                 </div>
               </div>
@@ -349,7 +480,7 @@ export default function Home() {
               <div className="hidden sm:block sm:w-1/2 sm:pe-12 text-end">
                 <div className="inline-block bg-[#F7F2E7] border border-[#9C7A3F]/25 rounded-xl p-5 shadow-sm max-w-sm">
                   <p className="text-[#2B2620] text-sm font-semibold leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
-                    {lang === "ar" ? "الجيل الثاني يتولى الإدارة، مع الحفاظ على نفس الوصفات العائلية الأصلية ونفس نار الفحم." : lang === "tr" ? "İkinci nesil devraldı. Aynı aile tarifleri, aynı ateş, aynı gelenek. Yeni enerji ile eski lezzet." : "Second generation takes over. Same family recipes, same fire, same tradition — fresh energy with timeless taste."}
+                    {timelineContent.e2015[lang] || timelineContent.e2015.en}
                   </p>
                 </div>
               </div>
@@ -357,10 +488,9 @@ export default function Home() {
                 '15
               </div>
               <div className="ps-20 sm:ps-0 sm:w-1/2 sm:ms-auto">
-                <h3 className="sm:hidden text-xl font-black text-[#4E5F4C]" style={{ fontFamily: "var(--font-cairo)" }}>2015</h3>
-                <h3 className="hidden sm:block text-xl font-black text-[#4E5F4C] ps-12" style={{ fontFamily: "var(--font-cairo)" }}>2015</h3>
+                <h3 className="text-xl font-black text-[#4E5F4C] sm:ps-12" style={{ fontFamily: "var(--font-cairo)" }}>2015</h3>
                 <p className="sm:hidden text-[#2B2620] text-sm font-medium leading-relaxed mt-1">
-                  {lang === "ar" ? "الجيل الثاني يتولى الإدارة مع نفس الوصفات العائلية." : lang === "tr" ? "İkinci nesil devraldı. Aynı tarifler, aynı ateş." : "Second generation takes over with the same recipes."}
+                  {timelineContent.e2015[lang] || timelineContent.e2015.en}
                 </p>
               </div>
             </div>
@@ -370,11 +500,11 @@ export default function Home() {
               <div className="ps-20 sm:ps-0 sm:w-1/2 sm:pe-12 sm:text-end">
                 <h3 className="text-xl font-black text-[#9C7A3F]" style={{ fontFamily: "var(--font-cairo)" }}>2026</h3>
                 <p className="text-[#2B2620] text-sm font-medium leading-relaxed mt-1 sm:hidden">
-                  {lang === "ar" ? "28 سنة من العراقة. أكثر من 106 طبق. وما زلنا نطهو بنفس الحب." : lang === "tr" ? "28 yıl gelenek. 106+ çeşit. Hâlâ aynı aşkla pişiriyoruz." : "28 years of heritage. 106+ dishes. Still cooking with the same love."}
+                  {timelineContent.e2026[lang] || timelineContent.e2026.en}
                 </p>
                 <div className="hidden sm:inline-block bg-[#F7F2E7] border border-[#9C7A3F]/25 rounded-xl p-5 shadow-sm max-w-sm mt-2">
                   <p className="text-[#2B2620] text-sm font-semibold leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
-                    {lang === "ar" ? "28 سنة من العراقة. أكثر من 106 طبق و11 فئة. 1280+ تقييم على Google. وما زلنا نطهو بنفس الحب والنار الأولى." : lang === "tr" ? "28 yıl gelenek. 106+ çeşit, 11 kategori. Google'da 1.280+ yorum. Hâlâ ilk günkü aşk ve ateşle pişiriyoruz." : "28 years of heritage. 106+ dishes, 11 categories. 1,280+ Google reviews. Still cooking with the same love and fire."}
+                    {timelineContent.e2026[lang] || timelineContent.e2026.en}
                   </p>
                 </div>
               </div>
@@ -403,10 +533,10 @@ export default function Home() {
           <div className="flex-1 flex flex-col justify-center space-y-10">
             <div>
               <h3 className="text-3xl sm:text-4xl font-black text-[#2B2620] mb-2" style={{ fontFamily: "var(--font-cairo)" }}>
-                {t.locationTitle || (lang === "ar" ? "الموقع والتواصل" : lang === "tr" ? "Konum ve İletişim" : "Location & Contact")}
+                {t.locationTitle || "Location & Contact"}
               </h3>
               <p className="text-sm text-[#7A7364] font-medium uppercase tracking-widest mt-1">
-                {t.locationSubtitle || "Taksim Meydanı'na 5 Dakika Mesafede"}
+                {t.locationSubtitle || "5 Minutes from Taksim Square"}
               </p>
             </div>
             
@@ -436,7 +566,7 @@ export default function Home() {
                   <Clock size={20} />
                 </div>
                 <p className="text-[#7A7364] text-sm sm:text-base font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                  {lang === "ar" ? "يومياً: 09:00 ص – 02:00 ص" : lang === "tr" ? "Her Gün: 09:00 – 02:00" : "Everyday: 09:00 AM – 02:00 AM"}
+                  {t.locationHours || "Everyday: 09:00 AM – 02:00 AM"}
                 </p>
               </div>
             </div>
