@@ -1,12 +1,17 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Phone, MapPin } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
 
 export default function MobileStickyCTA() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const { t, lang } = useAppContext();
+
+  const isDevProfile = pathname?.includes("tasarim-gelistirme") || pathname?.includes("design-development");
+  const isAdmin = pathname?.startsWith("/admin");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +27,7 @@ export default function MobileStickyCTA() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (isDevProfile || isAdmin) return null;
   if (!isVisible) return null;
 
   const phoneCallUrl = "tel:+902122513696";
@@ -43,7 +49,7 @@ export default function MobileStickyCTA() {
           className="flex-1 flex items-center justify-center gap-2 bg-[#4E5F4C] text-[#EAF0E6] py-3 px-4 rounded-xl font-bold text-sm shadow-md active:scale-95 transition-transform"
         >
           <Phone size={18} />
-          <span>{lang === "ar" ? "اتصل الآن" : lang === "tr" ? "Hemen Ara" : "Call Now"}</span>
+          <span>{t.callNow || (lang === "ar" ? "اتصل الآن" : lang === "tr" ? "Hemen Ara" : "Call Now")}</span>
         </a>
 
         <a
@@ -61,7 +67,7 @@ export default function MobileStickyCTA() {
           className="flex-1 flex items-center justify-center gap-2 bg-transparent border-2 border-[#9C7A3F]/50 text-[#2B2620] py-3 px-4 rounded-xl font-bold text-sm shadow-sm active:scale-95 transition-transform"
         >
           <MapPin size={18} className="text-[#9C7A3F]" />
-          <span>{lang === "ar" ? "الاتجاهات" : lang === "tr" ? "Yol Tarifi" : "Directions"}</span>
+          <span>{t.directions || (lang === "ar" ? "الاتجاهات" : lang === "tr" ? "Yol Tarifi" : "Directions")}</span>
         </a>
       </div>
     </div>

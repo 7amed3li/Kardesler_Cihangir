@@ -132,30 +132,40 @@ export default async function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/tasarim-gelistirme`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-      alternates: {
-        languages: {
-          tr: `${baseUrl}/tasarim-gelistirme`,
-          en: `${baseUrl}/en/design-development`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/design-development`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-      alternates: {
-        languages: {
-          tr: `${baseUrl}/tasarim-gelistirme`,
-          en: `${baseUrl}/en/design-development`,
-        },
-      },
-    },
+    // ── Developer Profile Pages (All 10 Languages) ──
+    ...(() => {
+      const devAlternates = {
+        tr: `${baseUrl}/tasarim-gelistirme`,
+        en: `${baseUrl}/en/design-development`,
+        ar: `${baseUrl}/ar/design-development`,
+        ru: `${baseUrl}/ru/design-development`,
+        fa: `${baseUrl}/fa/design-development`,
+        fr: `${baseUrl}/fr/design-development`,
+        de: `${baseUrl}/de/design-development`,
+        it: `${baseUrl}/it/design-development`,
+        es: `${baseUrl}/es/design-development`,
+        zh: `${baseUrl}/zh/design-development`,
+      };
+      const devPages = [
+        { url: `${baseUrl}/tasarim-gelistirme`, priority: 0.8 },
+        { url: `${baseUrl}/en/design-development`, priority: 0.8 },
+        { url: `${baseUrl}/ar/design-development`, priority: 0.8 },
+        { url: `${baseUrl}/ru/design-development`, priority: 0.7 },
+        { url: `${baseUrl}/fa/design-development`, priority: 0.7 },
+        { url: `${baseUrl}/fr/design-development`, priority: 0.7 },
+        { url: `${baseUrl}/de/design-development`, priority: 0.7 },
+        { url: `${baseUrl}/it/design-development`, priority: 0.7 },
+        { url: `${baseUrl}/es/design-development`, priority: 0.7 },
+        { url: `${baseUrl}/zh/design-development`, priority: 0.7 },
+      ];
+      return devPages.map(p => ({
+        url: p.url,
+        lastModified: currentDate,
+        changeFrequency: 'monthly',
+        priority: p.priority,
+        alternates: { languages: devAlternates },
+      }));
+    })(),
     // ── Dynamic Dish Pages (Live from Database) ──
     ...(await (async () => {
       const locales = ["en", "ar", "tr", "ru", "fa", "fr", "de", "it", "es", "zh"];

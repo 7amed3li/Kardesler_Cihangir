@@ -179,7 +179,18 @@ export default function DeveloperProfile({ content, isRTL, lang }) {
         >
           {isRTL ? <ArrowRight size={16} /> : <ArrowRight size={16} className="rotate-180" />}
           <span style={{ fontFamily: "var(--font-cairo)" }}>
-            {lang === "ar" ? "العودة للقائمة" : (lang === "tr" ? "Kardeşler Cihangir Ana Sayfasına Dön" : "Return to Kardeşler Cihangir")}
+            {content.returnHome || (
+              lang === "ar" ? "العودة إلى كارديشلر جيهانكير" :
+              lang === "tr" ? "Kardeşler Cihangir Ana Sayfasına Dön" :
+              lang === "fa" ? "بازگشت به کاردشلر جهانگیر" :
+              lang === "ru" ? "Вернуться в Kardeşler Cihangir" :
+              lang === "fr" ? "Retour à Kardeşler Cihangir" :
+              lang === "de" ? "Zurück zu Kardeşler Cihangir" :
+              lang === "it" ? "Torna a Kardeşler Cihangir" :
+              lang === "es" ? "Volver a Kardeşler Cihangir" :
+              lang === "zh" ? "返回 Kardeşler Cihangir" :
+              "Return to Kardeşler Cihangir"
+            )}
           </span>
         </Link>
       </div>

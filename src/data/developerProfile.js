@@ -52,8 +52,8 @@ export const devProfileContent = {
       whatsapp: "WhatsApp Me",
       email: "Email Me",
       portfolio: "See More Work →",
-      whatsappLink: "https://wa.me/902122513696", // TODO: REPLACE WITH ACTUAL NUMBER
-      emailLink: "mailto:hello@hamedmohamed.dev", // TODO: REPLACE WITH ACTUAL EMAIL
+      whatsappLink: "https://wa.me/905060453906", // TODO: REPLACE WITH ACTUAL NUMBER
+      emailLink: "mailto:hamed.m.kamel2@gmail.com", // TODO: REPLACE WITH ACTUAL EMAIL
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -110,8 +110,8 @@ export const devProfileContent = {
       whatsapp: "WhatsApp'tan Yaz",
       email: "E-posta Gönder",
       portfolio: "Daha Fazla Çalışma Gör →",
-      whatsappLink: "https://wa.me/902122513696",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -168,8 +168,8 @@ export const devProfileContent = {
       whatsapp: "كلمني واتساب",
       email: "ابعتلي إيميل",
       portfolio: "شوف شغل تاني →",
-      whatsappLink: "https://wa.me/902122513696",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -226,8 +226,8 @@ export const devProfileContent = {
       whatsapp: "WhatsApp schreiben",
       email: "E-Mail senden",
       portfolio: "Mehr Arbeiten sehen →",
-      whatsappLink: "https://wa.me/902122513696",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -284,8 +284,8 @@ export const devProfileContent = {
       whatsapp: "Escríbeme por WhatsApp",
       email: "Envíame un Email",
       portfolio: "Ver Más Trabajos →",
-      whatsappLink: "https://wa.me/905555555555",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -342,8 +342,8 @@ export const devProfileContent = {
       whatsapp: "پیام در واتس‌اپ",
       email: "ارسال ایمیل",
       portfolio: "مشاهده کارهای بیشتر →",
-      whatsappLink: "https://wa.me/905555555555",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -400,8 +400,8 @@ export const devProfileContent = {
       whatsapp: "Contactez-moi sur WhatsApp",
       email: "Envoyez-moi un E-mail",
       portfolio: "Voir d'autres projets →",
-      whatsappLink: "https://wa.me/905555555555",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -458,8 +458,8 @@ export const devProfileContent = {
       whatsapp: "Scrivimi su WhatsApp",
       email: "Inviami un'E-mail",
       portfolio: "Vedi Altri Lavori →",
-      whatsappLink: "https://wa.me/905555555555",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -516,8 +516,8 @@ export const devProfileContent = {
       whatsapp: "Написать в WhatsApp",
       email: "Написать на Email",
       portfolio: "Больше моих работ →",
-      whatsappLink: "https://wa.me/905555555555",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   },
@@ -574,8 +574,8 @@ export const devProfileContent = {
       whatsapp: "WhatsApp联系我",
       email: "发送电子邮件",
       portfolio: "查看更多作品 →",
-      whatsappLink: "https://wa.me/905555555555",
-      emailLink: "mailto:hello@hamedmohamed.dev",
+      whatsappLink: "https://wa.me/905060453906",
+      emailLink: "mailto:hamed.m.kamel2@gmail.com",
       portfolioLink: "https://hamedmohamed.dev"
     }
   }

@@ -41,20 +41,20 @@ export default function LanguageSwitcher() {
       parts.shift(); // Remove the locale part from the array
     }
 
-    let baseRoute = `/${parts.join("/")}`;
+    const routeWithoutLocale = `/${parts.join("/")}`;
     
-    // Special case for design-development route
-    if (baseRoute === "/tasarim-gelistirme" && code === "en") {
-      baseRoute = "/en/design-development";
-    } else if (baseRoute === "/design-development" || baseRoute === "/en/design-development") {
-      if (code === "tr") baseRoute = "/tasarim-gelistirme";
-      else if (code !== "tr") baseRoute = `/${code}/design-development`; 
-    }
+    // Check if current route is the developer profile (either /tasarim-gelistirme or /[lang]/design-development)
+    const isDevProfile = routeWithoutLocale === "/tasarim-gelistirme" || routeWithoutLocale === "/design-development";
 
-    // Default locale (tr) uses root paths, except for special cases like /en/design-development
-    let targetUrl = baseRoute;
-    if (code !== "tr" && baseRoute !== "/tasarim-gelistirme") {
-      targetUrl = baseRoute === "/" ? `/${code}` : `/${code}${baseRoute}`;
+    let targetUrl;
+    if (isDevProfile) {
+      targetUrl = code === "tr" ? "/tasarim-gelistirme" : `/${code}/design-development`;
+    } else {
+      if (code === "tr") {
+        targetUrl = routeWithoutLocale === "/" ? "/" : routeWithoutLocale;
+      } else {
+        targetUrl = routeWithoutLocale === "/" ? `/${code}` : `/${code}${routeWithoutLocale}`;
+      }
     }
 
     if (pathname !== targetUrl) {
