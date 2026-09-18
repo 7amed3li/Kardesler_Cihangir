@@ -155,6 +155,10 @@ export default function ReviewSection() {
       fa: "نظرات زنده و تایید شده ۵ ستاره مشتریان",
       fr: "Avis clients 5 étoiles vérifiés en direct",
       ru: "Живые проверенные отзывы 5 звезд",
+      de: "Echte verifizierte 5-Sterne-Gästebewertungen",
+      it: "Recensioni verificate a 5 stelle dei clienti",
+      es: "Reseñas verificadas de 5 estrellas en vivo",
+      zh: "真实顾客5星好评",
     },
     filter5Star: {
       tr: "5 Yıldızlı Yorumlar",
@@ -163,6 +167,10 @@ export default function ReviewSection() {
       fa: "نظرات ۵ ستاره",
       fr: "Avis 5 Étoiles",
       ru: "Отзывы 5 звезд",
+      de: "5-Sterne-Bewertungen",
+      it: "Recensioni a 5 stelle",
+      es: "Reseñas de 5 estrellas",
+      zh: "5星好评",
     },
     filterPhotos: {
       tr: "Fotoğraflı Yorumlar",
@@ -171,6 +179,10 @@ export default function ReviewSection() {
       fa: "همراه با عکس غذا",
       fr: "Avec photos des plats",
       ru: "С фото блюд",
+      de: "Mit Essensfotos",
+      it: "Con foto dei piatti",
+      es: "Con fotos de platos",
+      zh: "带美食图片",
     },
     verifiedGuest: {
       tr: "Doğrulanmış 5★ Deneyim",
@@ -179,6 +191,10 @@ export default function ReviewSection() {
       fa: "تجربه ۵★ تایید شده",
       fr: "Expérience 5★ vérifiée",
       ru: "Проверенный отзыв 5★",
+      de: "Verifizierter 5★ Gast",
+      it: "Ospite 5★ verificato",
+      es: "Huésped 5★ verificado",
+      zh: "已验证 5★ 顾客",
     },
     verifyLink: {
       tr: "Orijinal Yorumu İncele",
@@ -187,6 +203,10 @@ export default function ReviewSection() {
       fa: "مشاهده نظر اصلی",
       fr: "Voir l'avis original",
       ru: "Посмотреть оригинал",
+      de: "Originalbewertung ansehen",
+      it: "Vedi recensione originale",
+      es: "Ver reseña original",
+      zh: "查看原评",
     },
     totalStats: {
       tr: "Toplam 4,550+ Doğrulanmış Yorum",
@@ -195,6 +215,22 @@ export default function ReviewSection() {
       fa: "بیش از ۴,۵۵۰+ نظر واقعی در پلتفرم‌ها",
       fr: "Plus de 4 550+ avis vérifiés",
       ru: "Более 4 550+ проверенных отзывов",
+      de: "Über 4.550+ verifizierte Bewertungen auf allen Plattformen",
+      it: "Oltre 4.550+ recensioni verificate su varie piattaforme",
+      es: "Más de 4.550+ reseñas verificadas en todas las plataformas",
+      zh: "各平台累计超过 4,550+ 条真实评价",
+    },
+    photoBadge: {
+      tr: "Fotoğraf",
+      en: "Photo",
+      ar: "صورة",
+      fa: "عکس",
+      fr: "Photo",
+      ru: "Фото",
+      de: "Foto",
+      it: "Foto",
+      es: "Foto",
+      zh: "照片",
     }
   };
 
@@ -397,7 +433,7 @@ export default function ReviewSection() {
                           </span>
                           <span className="text-[10px] px-2 py-0.5 rounded-md bg-[#2B2620]/80 text-[#9C7A3F] font-bold flex items-center gap-1">
                             <Camera size={10} />
-                            Fotoğraf
+                            {labels.photoBadge[lang] || labels.photoBadge.en || "Photo"}
                           </span>
                         </div>
                       </div>

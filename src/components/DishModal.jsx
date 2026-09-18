@@ -12,7 +12,7 @@ import { trackViewItem } from "@/lib/analytics";
  * Extracted from FoodCard for reuse in DishModal.
  */
 function CartCounter({ item, compact = false }) {
-  const { addToCart, removeFromCart, getItemQuantity } = useAppContext();
+  const { addToCart, removeFromCart, getItemQuantity, t } = useAppContext();
   const qty = getItemQuantity(item.id);
 
   const handleAdd = (e) => {
@@ -37,7 +37,7 @@ function CartCounter({ item, compact = false }) {
         <Plus size={compact ? 16 : 20} weight="bold" />
         {!compact && (
           <span className="text-sm font-bold tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
-            Add to Order
+            {t?.addToCart || t?.order || "Add to Order"}
           </span>
         )}
       </button>

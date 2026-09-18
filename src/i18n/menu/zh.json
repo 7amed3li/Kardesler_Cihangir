@@ -361,6 +361,210 @@
     "karides_guvec": {
       "name": "Karides Güveç",
       "desc": "传统砂锅烹制虾"
+    },
+    "mezeli_adana_urfa": {
+      "name": "Mezeli Adana & Urfa 烤肉配前菜",
+      "desc": "140克 手工剁碎阿达纳/乌尔法烤肉，附赠4种每日新鲜自制冷前菜及热烤皮塔饼。"
+    },
+    "mezeli_dana_cop_sis": {
+      "name": "Mezeli 牛肉小串配前菜 (Dana Çöp Şiş)",
+      "desc": "200克 炭烤鲜嫩牛肉小串，配丰盛冷盘前菜及刚出炉的土耳其薄饼。"
+    },
+    "mezeli_kuzu_pirzola": {
+      "name": "Mezeli 羊排套餐配前菜 (Kuzu Pirzola)",
+      "desc": "320克 炭烤鲜嫩小羊排，配4种当日新鲜自制前菜及石炉热烤薄饼。"
+    },
+    "mezeli_kuzu_lokum": {
+      "name": "Mezeli 极品羊里脊配前菜 (Kuzu Lokum)",
+      "desc": "220克 入口即化的鲜嫩羊里脊，搭配多款特制前菜与热烤面饼。"
+    },
+    "mezeli_inegol_kofte": {
+      "name": "Mezeli 伊内格尔烤肉丸配前菜 (İnegöl Köfte)",
+      "desc": "150克 经典伊内格尔风味多汁烤牛肉丸，配新鲜自制前菜与现烤薄饼。"
+    },
+    "mezeli_kuzu_sis": {
+      "name": "Mezeli 烤羊肉串配前菜 (Kuzu Şiş)",
+      "desc": "150克 炭烤特选羊肉串，配每日特色新鲜前菜与热面包。"
+    },
+    "mezeli_dana_bonfile": {
+      "name": "Mezeli 炭烤牛里脊配前菜 (Dana Bonfile)",
+      "desc": "200克 特级炭烤嫩牛排，搭配精选新鲜冷热前菜。"
+    },
+    "mezeli_durum": {
+      "name": "Mezeli 烤肉卷饼配前菜 (Dürüm)",
+      "desc": "90克 传统炭火烤肉卷饼，搭配自制特色前菜拼盘。"
+    },
+    "mezeli_tavuk_kanat": {
+      "name": "Mezeli 香脆烤鸡翅配前菜 (Tavuk Kanat)",
+      "desc": "150克 秘制调味炭火金黄烤鸡翅，搭配每日新鲜前菜。"
+    },
+    "mezeli_tavuk_sis": {
+      "name": "Mezeli 炭烤鸡肉串配前菜 (Tavuk Şiş)",
+      "desc": "150克 鲜嫩多汁的特制腌料鸡肉串，搭配自制前菜。"
+    },
+    "karisik_meze_tabagi": {
+      "name": "主厨精选综合前菜拼盘 (Karışık Meze Tabağı)",
+      "desc": "主厨每日新鲜手工制作的6种地道特级初榨橄榄油土耳其冷前菜。"
+    },
+    "dana_cop_sis_durum": {
+      "name": "炭烤牛肉小串卷饼 (Dana Çöp Şiş Dürüm)",
+      "desc": "95克 鲜嫩牛肉串卷入酥脆现烤拉瓦什薄饼，配新鲜蔬菜与香料。"
+    },
+    "kofte_durum": {
+      "name": "炭烤肉丸卷饼 (Köfte Dürüm)",
+      "desc": "95克 纯牛肉多汁手工烤肉丸，搭配生菜番茄香料卷入热薄饼。"
+    },
+    "cigkofte_durum": {
+      "name": "素生肉丸卷饼 (Çiğköfte Dürüm)",
+      "desc": "传统香辣碎小麦草本植物素肉卷饼，配新鲜生菜、薄荷叶与特调石榴糖浆汁。"
+    },
+    "kasarli_yumurtali_pide": {
+      "name": "双倍芝士土鸡蛋烤饼 (Kaşarlı Yumurtalı Pide)",
+      "desc": "浓郁融化的土耳其卡夏尔芝士搭配有机农场鲜鸡蛋，柴火石炉现烤。"
+    },
+    "kasarli_sucuklu_pide": {
+      "name": "芝士香料牛肉肠烤饼 (Kaşarlı Sucuklu Pide)",
+      "desc": "金黄流心卡夏尔芝士搭配土耳其传统大蒜牛肉香肠薄片，香浓醇厚。"
+    },
+    "kasarli_sucuklu_yumurtali_pide": {
+      "name": "芝士牛肉肠加蛋三合一烤饼 (Kaşarlı Sucuklu Yumurtalı Pide)",
+      "desc": "芝士、大蒜牛肉香肠与鲜鸡蛋在450度高温石炉中的经典完美结合。"
+    },
+    "kavurmali_pide": {
+      "name": "秘制慢炖牛肉粒烤饼 (Kavurmalı Pide)",
+      "desc": "精选慢火久炖酥软的纯牛肉块（Kavurma），铺在香脆柴火饼皮上现烤。"
+    },
+    "beyaz_peynirli_pide": {
+      "name": "埃济内白奶酪香草烤饼 (Beyaz Peynirli Pide)",
+      "desc": "正宗埃济内特级全脂白奶酪（Ezine）与新鲜欧芹碎烘烤而成的清香风味。"
+    },
+    "kasarli_mantarli_sebzeli_pide": {
+      "name": "什锦蘑菇蔬菜芝士烤饼 (Kaşarlı Mantarlı Sebzeli Pide)",
+      "desc": "新鲜口蘑菇、彩椒、熟番茄配香浓卡夏尔芝士的健康素食柴火烤饼。"
+    },
+    "pastirmali_kasarli_pide": {
+      "name": "开塞利风干牛肉风味芝士烤饼 (Pastırmalı Kaşarlı Pide)",
+      "desc": "传承名产开塞利特色风干牛肉片（Pastırma）配浓郁拉丝奶酪。"
+    },
+    "tavuklu_kasarli_pide": {
+      "name": "香煎嫩鸡肉芝士烤饼 (Tavuklu Kaşarlı Pide)",
+      "desc": "特调香草嫩炒鸡胸肉配香浓芝士，在柴火石炉中烤至金黄焦脆。"
+    },
+    "etli_konya": {
+      "name": "科尼亚特长脆底肉馅饼 (Etli Konya Pidesi)",
+      "desc": "土耳其科尼亚传统细长超脆薄皮面饼，表面均匀铺满新鲜多汁牛肉碎。"
+    },
+    "etli_etmek": {
+      "name": "传统肉饼 (Etli Ekmek)",
+      "desc": "具有数百年历史的经典超薄脆底碎牛肉饼，搭配番茄青椒碎趁热享用。"
+    },
+    "ozel_lahmacun": {
+      "name": "特制全肉土耳其薄脆比萨 (Özel Lahmacun)",
+      "desc": "比普通Lahmacun拥有更多纯鲜肉馅、完全不加洋葱的特制升级版，薄脆多汁。"
+    },
+    "semiz_otu": {
+      "name": "马齿苋蒜香酸奶前菜 (Semiz Otu Mezesi)",
+      "desc": "新鲜嫩绿马齿苋叶混合蒜香纯浓缩酸奶与特级初榨橄榄油。"
+    },
+    "kuru_cacik": {
+      "name": "厚酸奶青瓜橄榄油冷盘 (Kuru Cacık)",
+      "desc": "浓郁过滤干酸奶配清脆黄瓜丁、初榨橄榄油、大蒜与干薄荷碎。"
+    },
+    "mutebbel": {
+      "name": "中东风味烤茄泥 (Mütebbel)",
+      "desc": "炭烤烟熏茄子与白芝麻酱、纯酸奶、大蒜完美融合的绵密经典冷盘。"
+    },
+    "otlu_yogurtlu_meze": {
+      "name": "爱琴海香草浓缩酸奶 (Otlu Yoğurtlu Meze)",
+      "desc": "特选爱琴海野生新鲜香草与厚浓缩酸奶及冷榨橄榄油精心调制。"
+    },
+    "havuc_tarator": {
+      "name": "香炒胡桃胡萝卜酸奶酱 (Havuç Taratör)",
+      "desc": "橄榄油轻炒甜胡萝卜丝，配香浓蒜味酸奶与香脆烤核桃仁碎。"
+    },
+    "koz_biberli_yogurt": {
+      "name": "炭火烤甜红椒酸奶 (Köz Biberli Yoğurt)",
+      "desc": "木炭火烘烤剥皮的甜味红角椒（Kapya）浸在冰凉浓缩酸奶中。"
+    },
+    "babagannush": {
+      "name": "传统烟熏烤茄子酱 (Babagannuş)",
+      "desc": "炭火烟熏茄肉、红甜椒、番茄碎、大蒜与特级橄榄油调和的招牌凉菜。"
+    },
+    "ezme_salata": {
+      "name": "手工剁剁香辣番茄沙拉 (Acılı Ezme Salata)",
+      "desc": "大刀剁碎新鲜红番茄与青椒，佐以核桃碎与浓郁酸甜石榴糖浆汁，微辣开胃。"
+    },
+    "humus": {
+      "name": "经典中东鹰嘴豆泥 (Humus)",
+      "desc": "细腻煮烂鹰嘴豆融入纯正白芝麻酱、特级初榨橄榄油、大蒜与孜然。"
+    },
+    "mevsim_salatasi": {
+      "name": "新鲜时蔬田园沙拉 (Mevsim Salatası)",
+      "desc": "当季爽脆生菜、紫甘蓝、甜玉米粒及甜胡萝卜，淋初榨橄榄油与纯柠檬汁。"
+    },
+    "yogurt": {
+      "name": "传统农场过滤厚酸奶 (Süzme Yoğurt)",
+      "desc": "纯天然农场新鲜羊奶与牛奶发酵浓缩而成的无糖厚质纯酸奶。"
+    },
+    "kazandibi": {
+      "name": "经典焦糖底部焦香奶冻 (Kazandibi)",
+      "desc": "底部微焦焦糖化、口感Q弹细腻滑润的土耳其传统皇家牛奶布丁甜品。"
+    },
+    "trilece": {
+      "name": "焦糖三奶湿蛋糕 (Karamelli Trileçe)",
+      "desc": "由三种优质牛奶充分浸润的松软海绵蛋糕，表面覆盖一层香甜浓郁的焦糖酱。"
+    },
+    "cola": {
+      "name": "可口可乐 (330ml)",
+      "desc": "冰镇听装易拉罐碳酸饮料。"
+    },
+    "fanta": {
+      "name": "芬达橙味汽水 (330ml)",
+      "desc": "冰镇听装易拉罐果味碳酸饮料。"
+    },
+    "sprite": {
+      "name": "雪碧柠檬味汽水 (330ml)",
+      "desc": "冰镇听装易拉罐清爽柠檬汽水。"
+    },
+    "camlica": {
+      "name": "Çamlıca 土耳其传统玻璃瓶汽水",
+      "desc": "经典怀旧玻璃瓶装清甜气泡水。"
+    },
+    "litrelik_cola": {
+      "name": "大瓶可口可乐 (1升装)",
+      "desc": "适合聚餐分享的大容量冰镇饮料。"
+    },
+    "ayran_kucuk": {
+      "name": "手工多泡酸奶饮品 (小份 Ayran)",
+      "desc": "土耳其传统摇桶搅打起泡的冰凉咸酸奶，解腻解辣绝配。"
+    },
+    "ayran_litrelik": {
+      "name": "大瓶手工酸奶饮品 (1升装 Ayran)",
+      "desc": "冰爽解腻的大瓶家庭装传统咸味酸奶饮品。"
+    },
+    "meyve_sulari": {
+      "name": "Cappy 精品果汁",
+      "desc": "桃汁、酸樱桃汁或综合果汁。"
+    },
+    "ice_tea": {
+      "name": "冰红茶 (Ice Tea)",
+      "desc": "水蜜桃味或柠檬味冰爽茶饮料。"
+    },
+    "sikma_portakal": {
+      "name": "100% 鲜榨纯橙汁",
+      "desc": "每日新鲜橙子现点现榨，不加水与糖，富含维生素C。"
+    },
+    "sikma_nar": {
+      "name": "100% 鲜榨纯石榴汁",
+      "desc": "土耳其当季高品质红石榴整颗现榨，酸甜纯正浓郁。"
+    },
+    "limonata": {
+      "name": "秘制薄荷手工柠檬水",
+      "desc": "新鲜柠檬与新鲜薄荷叶手工制作的清凉解渴特饮。"
+    },
+    "soda": {
+      "name": "天然富矿苏打矿泉水",
+      "desc": "土耳其天然泉眼出品，富含丰富矿物质的气泡矿泉水。"
     }
   }
 }

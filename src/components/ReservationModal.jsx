@@ -89,10 +89,66 @@ const reservationTranslations = {
     directCall: "Appeler directement",
     instantConfirmation: "Confirmation instantanée par WhatsApp",
   },
+  de: {
+    title: "Tischreservierung",
+    subtitle: "Reservieren Sie Ihren Tisch im Kardeşler Cihangir",
+    nameLabel: "Vollständiger Name",
+    namePlaceholder: "z.B. Max Mustermann",
+    guestsLabel: "Gästeanzahl",
+    dateLabel: "Datum",
+    timeLabel: "Uhrzeit",
+    notesLabel: "Besondere Wünsche / Notizen (Optional)",
+    notesPlaceholder: "z.B. Außensitzplatz, Geburtstag",
+    submitWhatsApp: "Über WhatsApp reservieren",
+    directCall: "Direkt anrufen",
+    instantConfirmation: "Sofortige Bestätigung über WhatsApp",
+  },
+  it: {
+    title: "Prenotazione Tavolo",
+    subtitle: "Prenota il tuo tavolo da Kardeşler Cihangir",
+    nameLabel: "Nome Completo",
+    namePlaceholder: "es: Mario Rossi",
+    guestsLabel: "Numero di ospiti",
+    dateLabel: "Data",
+    timeLabel: "Ora",
+    notesLabel: "Richieste particolari / Note (Opzionale)",
+    notesPlaceholder: "es: Tavolo all'aperto, festa",
+    submitWhatsApp: "Prenota su WhatsApp",
+    directCall: "Chiama direttamente",
+    instantConfirmation: "Conferma immediata via WhatsApp",
+  },
+  es: {
+    title: "Reserva de Mesa",
+    subtitle: "Reserva tu mesa en Kardeşler Cihangir",
+    nameLabel: "Nombre Completo",
+    namePlaceholder: "ej: Juan Pérez",
+    guestsLabel: "Número de personas",
+    dateLabel: "Fecha",
+    timeLabel: "Hora",
+    notesLabel: "Peticiones especiales / Notas (Opcional)",
+    notesPlaceholder: "ej: Mesa exterior, aniversario",
+    submitWhatsApp: "Reservar por WhatsApp",
+    directCall: "Llamar directamente",
+    instantConfirmation: "Confirmación inmediata por WhatsApp",
+  },
+  zh: {
+    title: "餐位预订",
+    subtitle: "在 Kardeşler Cihangir 预订您的专属餐位",
+    nameLabel: "姓名",
+    namePlaceholder: "例如：张先生",
+    guestsLabel: "用餐人数",
+    dateLabel: "日期",
+    timeLabel: "时间",
+    notesLabel: "特殊要求 / 备注（选填）",
+    notesPlaceholder: "例如：室外座位、生日聚会",
+    submitWhatsApp: "通过 WhatsApp 预订",
+    directCall: "直接致电",
+    instantConfirmation: "通过 WhatsApp 快速确认",
+  },
 };
 
 export default function ReservationModal({ isOpen, onClose }) {
-  const { lang, isRtl } = useAppContext();
+  const { lang, isRtl, t: appT } = useAppContext();
   const t = reservationTranslations[lang] || reservationTranslations.en;
 
   if (!isOpen) return null;
@@ -116,7 +172,7 @@ export default function ReservationModal({ isOpen, onClose }) {
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#9C7A3F]/15 border border-[#9C7A3F]/30 text-[#9C7A3F] text-xs font-bold uppercase tracking-wider mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
-            <span>VIP & Table Booking</span>
+            <span>{appT?.vipBooking || "VIP & Table Booking"}</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-black text-[#2B2620] tracking-tight" style={{ fontFamily: "var(--font-cairo)" }}>
             {t.title}
@@ -137,7 +193,7 @@ export default function ReservationModal({ isOpen, onClose }) {
             <span>{t.directCall}: +90 212 251 36 96</span>
           </a>
           <p className="text-center text-xs text-[#7A7364]">
-            {lang === "ar" ? "نحن نستقبل الحجوزات عبر الهاتف فقط لضمان أفضل خدمة." : "We accept reservations by phone only to ensure the best service."}
+            {appT?.phoneReservationNotice || (lang === "ar" ? "نحن نستقبل الحجوزات عبر الهاتف فقط لضمان أفضل خدمة." : "We accept reservations by phone only to ensure the best service.")}
           </p>
         </div>
 

@@ -32,13 +32,13 @@ export default function OrderFlow() {
   const labels = t.orderFlow || {};
   const isRTL = lang === "ar" || lang === "fa";
 
-  const waiterText = lang === "ar" ? "اعرض هذه القائمة للجرسون لإتمام طلبك" : 
+  const waiterText = t.showWaiter || (lang === "ar" ? "اعرض هذه القائمة للجرسون لإتمام طلبك" : 
                      lang === "tr" ? "Siparişinizi vermek için bu listeyi garsona gösterin" : 
-                     "Show this list to the waiter to order";
+                     "Show this list to the waiter to order");
 
-  const listTitle = lang === "ar" ? "قائمتي" : 
+  const listTitle = t.myList || (lang === "ar" ? "قائمتي" : 
                     lang === "tr" ? "Listem" : 
-                    "My List";
+                    "My List");
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -192,7 +192,7 @@ export default function OrderFlow() {
                 
                 {/* Total (Subtle) */}
                 <div className="flex items-center justify-center gap-2 text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                  <span>{labels.total || "Estimated Total:"}</span>
+                  <span>{t.estimatedTotal || labels.total || "Estimated Total:"}</span>
                   {pricesLoading ? (
                     <span className="animate-pulse">...</span>
                   ) : cartTotal == null ? (
@@ -208,7 +208,7 @@ export default function OrderFlow() {
                   className="w-full py-4 px-6 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-base tracking-wider uppercase flex items-center justify-center gap-3 transition-colors shadow-lg mt-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <span>{lang === 'ar' ? 'اتصل للطلب' : lang === 'tr' ? 'Sipariş İçin Ara' : 'Call to Order'}</span>
+                  <span>{t.callToOrder || (lang === 'ar' ? 'اتصل للطلب' : lang === 'tr' ? 'Sipariş İçin Ara' : 'Call to Order')}</span>
                 </a>
 
                 {/* Clear List */}

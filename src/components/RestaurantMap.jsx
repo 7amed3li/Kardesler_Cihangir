@@ -9,7 +9,8 @@ export default function RestaurantMap({
   className = "mb-8",
   showDirectionsButton = false 
 }) {
-  const { language } = useAppContext();
+  const { lang, language } = useAppContext();
+  const currentLang = lang || language || "tr";
   const [isMapVisible, setIsMapVisible] = useState(false);
   const [iframeFailed, setIframeFailed] = useState(false);
   const mapRef = useRef(null);
@@ -115,10 +116,46 @@ export default function RestaurantMap({
       loading: "Chargement de la carte...",
       tapToOpen: "Appuyez pour ouvrir la carte",
     },
+    de: {
+      openMaps: "In Maps öffnen",
+      restaurantName: "Kardeşler Kebap",
+      address: "Firuzağa No: 1/A, Cihangir",
+      nearTaksim: "5 Min. vom Taksim-Platz",
+      getDirections: "Wegbeschreibung",
+      loading: "Karte wird geladen...",
+      tapToOpen: "Tippen zum Öffnen der Karte",
+    },
+    it: {
+      openMaps: "Apri su Maps",
+      restaurantName: "Kardeşler Kebap",
+      address: "Firuzağa No: 1/A, Cihangir",
+      nearTaksim: "A 5 min da Piazza Taksim",
+      getDirections: "Ottieni indicazioni",
+      loading: "Caricamento mappa...",
+      tapToOpen: "Tocca per aprire la mappa",
+    },
+    es: {
+      openMaps: "Abrir en Maps",
+      restaurantName: "Kardeşler Kebap",
+      address: "Firuzağa No: 1/A, Cihangir",
+      nearTaksim: "A 5 min de la plaza Taksim",
+      getDirections: "Cómo llegar",
+      loading: "Cargando mapa...",
+      tapToOpen: "Toca para abrir el mapa",
+    },
+    zh: {
+      openMaps: "在地图中打开",
+      restaurantName: "Kardeşler Kebap",
+      address: "Firuzağa No: 1/A, Cihangir",
+      nearTaksim: "距离塔克西姆广场5分钟",
+      getDirections: "获取路线",
+      loading: "地图加载中...",
+      tapToOpen: "点击打开地图",
+    },
   };
 
-  const currentLabels = labels[language] || labels.tr;
-  const isRtl = language === "ar" || language === "fa";
+  const currentLabels = labels[currentLang] || labels.en || labels.tr;
+  const isRtl = currentLang === "ar" || currentLang === "fa";
 
   // Static map fallback for when iframe fails
   const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=41.0315,28.9835&zoom=16&size=600x300&markers=color:red%7C41.0315,28.9835&style=feature:all%7Celement:geometry%7Ccolor:0xEDE3CE`;

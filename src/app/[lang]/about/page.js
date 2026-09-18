@@ -106,8 +106,8 @@ function FacebookIcon({ size = 24 }) {
 }
 
 export default function AboutPage() {
-  const { t } = useAppContext();
-  const content = t.aboutPage || {};
+  const { t, lang } = useAppContext();
+  const content = t.aboutPage || aboutContent[lang] || aboutContent.tr || {};
 
   return (
     <div className="min-h-screen bg-[#EDE3CE] text-[#2B2620] pb-16">
@@ -157,7 +157,20 @@ export default function AboutPage() {
                 <MapPin size={18} />
               </div>
               <div>
-                <h3 className="font-bold text-[#2B2620] text-sm mb-1">Adres / Address</h3>
+                <h3 className="font-bold text-[#2B2620] text-sm mb-1">
+                  {content.addressLabel || t.contactPage?.addressLabel || (
+                    lang === "ar" ? "العنوان" :
+                    lang === "tr" ? "Adres" :
+                    lang === "fa" ? "آدرس" :
+                    lang === "ru" ? "Адрес" :
+                    lang === "zh" ? "地址" :
+                    lang === "de" ? "Adresse" :
+                    lang === "it" ? "Indirizzo" :
+                    lang === "es" ? "Dirección" :
+                    lang === "fr" ? "Adresse" :
+                    "Address"
+                  )}
+                </h3>
                 <p className="text-[#7A7364] text-sm font-medium leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                   {content.address}
                 </p>

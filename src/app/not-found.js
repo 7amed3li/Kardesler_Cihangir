@@ -66,6 +66,46 @@ const notFoundI18n = {
     whatsapp: "Commande directe WhatsApp",
     location: "Notre adresse à Cihangir",
   },
+  de: {
+    badge: "404 Fehler",
+    title: "Seite nicht gefunden",
+    subtitle: "Das gesuchte Gericht steht vielleicht an einem anderen Tisch!",
+    desc: "Die Seite wurde möglicherweise verschoben oder aktualisiert. Entdecken Sie jetzt unsere traditionelle türkische Speisekarte:",
+    menuBtn: "Speisekarte ansehen",
+    homeBtn: "Zur Startseite",
+    whatsapp: "WhatsApp Schnellbestellung",
+    location: "Unser Standort in Cihangir",
+  },
+  it: {
+    badge: "Errore 404",
+    title: "Pagina Non Trovata",
+    subtitle: "Il piatto che cerchi potrebbe essere su un altro tavolo!",
+    desc: "La pagina potrebbe essere stata spostata o aggiornata. Scopri subito il nostro menu tradizionale turco:",
+    menuBtn: "Esplora il Menu",
+    homeBtn: "Torna alla Home",
+    whatsapp: "Ordine rapido WhatsApp",
+    location: "La nostra posizione a Cihangir",
+  },
+  es: {
+    badge: "Error 404",
+    title: "Página No Encontrada",
+    subtitle: "¡El plato que buscas podría estar en otra mesa!",
+    desc: "Es posible que la página se haya movido o actualizado. Descubra de inmediato nuestro menú tradicional turco:",
+    menuBtn: "Explorar el Menú",
+    homeBtn: "Volver al Inicio",
+    whatsapp: "Pedido rápido por WhatsApp",
+    location: "Nuestra ubicación en Cihangir",
+  },
+  zh: {
+    badge: "404 错误",
+    title: "页面未找到",
+    subtitle: "您寻找的美食可能在另一张餐桌上！",
+    desc: "页面可能已被移动或更新。无需担心，您可以立即浏览我们正宗的土耳其菜单：",
+    menuBtn: "浏览完整菜单",
+    homeBtn: "返回首页",
+    whatsapp: "WhatsApp 快速订购",
+    location: "我们在吉汉吉尔的地址",
+  },
 };
 
 export default function NotFound() {
@@ -80,6 +120,10 @@ export default function NotFound() {
     { code: "ru", label: "RU" },
     { code: "fa", label: "فارسی" },
     { code: "fr", label: "FR" },
+    { code: "de", label: "DE" },
+    { code: "it", label: "IT" },
+    { code: "es", label: "ES" },
+    { code: "zh", label: "中文" },
   ];
 
   return (

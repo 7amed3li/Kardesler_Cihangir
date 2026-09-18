@@ -3,6 +3,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, UtensilsCrossed } from "lucide-react";
 
+import { useAppContext } from "@/context/AppContext";
+
 // Convert URLs in text to clickable links
 function renderMessageText(text) {
   // Match URLs: http(s)://..., wa.me/..., and bare domain patterns
@@ -20,7 +22,7 @@ function renderMessageText(text) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-gold/60 underline-offset-2 hover:text-gold transition-colors font-medium"
+          className="underline decoration-[#9C7A3F]/60 underline-offset-2 hover:text-[#9C7A3F] transition-colors font-medium"
         >
           {part}
         </a>
@@ -30,7 +32,81 @@ function renderMessageText(text) {
   });
 }
 
+const chatI18n = {
+  tr: {
+    greeting: "Merhaba! Menüden ne istersiniz? Yerel lezzetler mi, yoksa tanıdık tatlar mı arıyorsunuz? Herhangi bir diyet tercihiniz var mı?",
+    placeholder: "Mesajınızı yazın...",
+    send: "Gönder",
+    contact: "Bizimle WhatsApp üzerinden iletişime geçin",
+    loading: "Yazıyor..."
+  },
+  ar: {
+    greeting: "مرحباً بكم في كارديشلر! هل تبحث عن أطباق ومشاوي تقليدية أم اقتراحات خاصة؟ هل لديك أي تفضيلات غذائية؟",
+    placeholder: "اكتب استفسارك هنا...",
+    send: "إرسال",
+    contact: "تواصل معنا مباشرة عبر واتساب",
+    loading: "جاري الرد..."
+  },
+  fa: {
+    greeting: "سلام! به کاردشلر خوش آمدید. به دنبال غذاهای سنتی هستید یا پیشنهادهای ویژه؟",
+    placeholder: "پیام خود را بنویسید...",
+    send: "ارسال",
+    contact: "ارتباط با ما در واتس‌اپ",
+    loading: "در حال پاسخگویی..."
+  },
+  ru: {
+    greeting: "Здравствуйте! Ищете традиционные турецкие блюда или наши фирменные кебабы? Есть ли диетические пожелания?",
+    placeholder: "Напишите ваш вопрос...",
+    send: "Отправить",
+    contact: "Связаться через WhatsApp",
+    loading: "Печатает..."
+  },
+  fr: {
+    greeting: "Bonjour ! Cherchez-vous des spécialités traditionnelles au feu de bois ou des recommandations particulières ?",
+    placeholder: "Écrivez votre message...",
+    send: "Envoyer",
+    contact: "Contactez-nous sur WhatsApp",
+    loading: "En train d'écrire..."
+  },
+  de: {
+    greeting: "Hallo! Suchen Sie traditionelle Spezialitäten vom Holzkohlegrill oder Empfehlungen? Haben Sie Ernährungswünsche?",
+    placeholder: "Nachricht eingeben...",
+    send: "Senden",
+    contact: "Kontakt über WhatsApp",
+    loading: "Schreibt..."
+  },
+  it: {
+    greeting: "Ciao! Cerchi piatti tradizionali alla brace o consigli speciali? Hai preferenze alimentari?",
+    placeholder: "Scrivi un messaggio...",
+    send: "Invia",
+    contact: "Contattaci su WhatsApp",
+    loading: "Sta scrivendo..."
+  },
+  es: {
+    greeting: "¡Hola! ¿Buscas especialidades tradicionales al carbón o recomendaciones del chef? ¿Alguna preferencia?",
+    placeholder: "Escribe un mensaje...",
+    send: "Enviar",
+    contact: "Contáctanos por WhatsApp",
+    loading: "Escribiendo..."
+  },
+  zh: {
+    greeting: "您好！欢迎光临 Kardeşler。您想品尝正宗炭烤特色菜还是需要推荐？有特殊饮食偏好吗？",
+    placeholder: "请输入您的消息...",
+    send: "发送",
+    contact: "通过 WhatsApp 与我们联系",
+    loading: "正在输入..."
+  },
+  en: {
+    greeting: "Hi there! Looking for our charcoal grill specialties, traditional dishes, or recommendations? Any dietary preferences?",
+    placeholder: "Type a message...",
+    send: "Send",
+    contact: "Contact us on WhatsApp",
+    loading: "Typing..."
+  }
+};
+
 export default function ChatWidget() {
+  const { lang = "tr" } = useAppContext();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -42,46 +118,9 @@ export default function ChatWidget() {
   const inputRef = useRef(null);
   const chatWindowRef = useRef(null);
 
-  const getLocalizedStrings = () => {
-    // Basic client-side localization for static UI
-    const lang = typeof navigator !== "undefined" ? navigator.language : "en";
-    if (lang.startsWith("tr")) {
-      return {
-        greeting: "Merhaba! Menüden ne istersiniz? Yerel lezzetler mi, yoksa tanıdık tatlar mı arıyorsunuz? Herhangi bir diyet tercihiniz var mı?",
-        placeholder: "Mesajınızı yazın...",
-        send: "Gönder",
-        contact: "Bizimle WhatsApp üzerinden iletişime geçin",
-        loading: "Yazıyor..."
-      };
-    } else if (lang.startsWith("ar")) {
-      return {
-        greeting: "مرحباً! هل تبحث عن أطباق محلية أم مألوفة؟ هل لديك أي تفضيلات غذائية؟",
-        placeholder: "اكتب رسالة...",
-        send: "إرسال",
-        contact: "تواصل معنا عبر واتساب",
-        loading: "يكتب..."
-      };
-    } else if (lang.startsWith("es")) {
-      return {
-        greeting: "¡Hola! ¿Buscas algo local o más familiar? ¿Alguna preferencia alimentaria?",
-        placeholder: "Escribe un mensaje...",
-        send: "Enviar",
-        contact: "Contáctanos por WhatsApp",
-        loading: "Escribiendo..."
-      };
-    }
-    // Default English
-    return {
-      greeting: "Hi there! Looking for something local and traditional, or more familiar? Any dietary preferences?",
-      placeholder: "Type a message...",
-      send: "Send",
-      contact: "Contact us on WhatsApp",
-      loading: "Typing..."
-    };
-  };
-
-  const strings = getLocalizedStrings();
-  const isRTL = typeof navigator !== "undefined" && navigator.language.startsWith("ar");
+  const activeLang = lang || "tr";
+  const strings = chatI18n[activeLang] || chatI18n.en || chatI18n.tr;
+  const isRTL = activeLang === "ar" || activeLang === "fa";
 
   // Initialize with greeting on first open
   useEffect(() => {
@@ -135,7 +174,7 @@ export default function ChatWidget() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage, history })
+        body: JSON.stringify({ message: userMessage, history, lang: activeLang })
       });
 
       const data = await response.json();
@@ -231,10 +270,10 @@ export default function ChatWidget() {
           {/* Typing Indicator */}
           {isLoading && (
             <div className="flex justify-start animate-fadeIn">
-              <div className="bg-ink-2 border border-gold/10 text-cream px-4 py-3 rounded-2xl rounded-tl-sm flex gap-1 items-center h-10">
-                <span className="w-1.5 h-1.5 bg-gold rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></span>
-                <span className="w-1.5 h-1.5 bg-gold rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></span>
-                <span className="w-1.5 h-1.5 bg-gold rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></span>
+              <div className="bg-[#F7F2E7] border border-[#9C7A3F]/20 text-[#2B2620] px-4 py-3 rounded-2xl rounded-tl-sm flex gap-1 items-center h-10">
+                <span className="w-1.5 h-1.5 bg-[#9C7A3F] rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></span>
+                <span className="w-1.5 h-1.5 bg-[#9C7A3F] rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></span>
+                <span className="w-1.5 h-1.5 bg-[#9C7A3F] rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></span>
                 <span className="sr-only">{strings.loading}</span>
               </div>
             </div>
@@ -244,7 +283,7 @@ export default function ChatWidget() {
         </div>
 
         {/* Input Area */}
-        <div className="p-3 bg-ink-2 border-t border-gold/20 shrink-0" style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}>
+        <div className="p-3 bg-[#FAF7F0] border-t border-[#9C7A3F]/20 shrink-0" style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}>
           <form onSubmit={handleSubmit} className="relative flex items-center">
             <input
               ref={inputRef}
@@ -252,7 +291,7 @@ export default function ChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={strings.placeholder}
-              className={`w-full bg-ink text-cream border border-gold/30 rounded-full py-2.5 outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors
+              className={`w-full bg-[#EDE3CE] text-[#2B2620] placeholder:text-[#7A7364] border border-[#9C7A3F]/30 rounded-full py-2.5 outline-none focus:border-[#9C7A3F] focus:ring-1 focus:ring-[#9C7A3F] transition-colors
                 ${isRTL ? "pr-4 pl-12" : "pl-4 pr-12"}
               `}
               disabled={isLoading}
@@ -261,7 +300,7 @@ export default function ChatWidget() {
             <button
               type="submit"
               disabled={!input.trim() || isLoading}
-              className={`absolute top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-gold text-ink disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gold/90 transition-colors
+              className={`absolute top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-[#4E5F4C] text-[#EAF0E6] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#3D4B3B] transition-colors
                 ${isRTL ? "left-2" : "right-2"}
               `}
               aria-label={strings.send}

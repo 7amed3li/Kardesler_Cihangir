@@ -16,7 +16,30 @@ import it from "@/i18n/menu/it.json";
 import es from "@/i18n/menu/es.json";
 import zh from "@/i18n/menu/zh.json";
 
+import trLocale from "@/i18n/locales/tr.json";
+import enLocale from "@/i18n/locales/en.json";
+import arLocale from "@/i18n/locales/ar.json";
+import ruLocale from "@/i18n/locales/ru.json";
+import faLocale from "@/i18n/locales/fa.json";
+import frLocale from "@/i18n/locales/fr.json";
+import deLocale from "@/i18n/locales/de.json";
+import itLocale from "@/i18n/locales/it.json";
+import esLocale from "@/i18n/locales/es.json";
+import zhLocale from "@/i18n/locales/zh.json";
+
 const translations = { tr, en, ar, ru, fa, fr, de, it, es, zh };
+const uiLocales = {
+  tr: trLocale,
+  en: enLocale,
+  ar: arLocale,
+  ru: ruLocale,
+  fa: faLocale,
+  fr: frLocale,
+  de: deLocale,
+  it: itLocale,
+  es: esLocale,
+  zh: zhLocale,
+};
 
 export async function generateStaticParams() {
   const locales = ["tr", "en", "ar", "ru", "fa", "fr", "de", "it", "es", "zh"];
@@ -112,6 +135,7 @@ export default async function DishPage({ params }) {
   }
 
   const t = translations[lang] || translations.tr;
+  const uiLocale = uiLocales[lang] || uiLocales.en || uiLocales.tr;
   const itemName = t.items?.[id]?.name || itemData.id;
   const itemDesc = t.items?.[id]?.desc || "";
   
@@ -129,7 +153,7 @@ export default async function DishPage({ params }) {
           className="inline-flex items-center gap-2 text-[#9C7A3F] font-bold mb-6 hover:text-[#2B2620] transition-colors"
         >
           <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
-          <span>{lang === "tr" ? "Menüye Dön" : lang === "ar" ? "العودة للمنيو" : "Back to Menu"}</span>
+          <span>{uiLocale.backToMenu || (lang === "tr" ? "Menüye Dön" : lang === "ar" ? "العودة للمنيو" : "Back to Menu")}</span>
         </Link>
         
         <div className="bg-[#F7F2E7] rounded-2xl shadow-xl overflow-hidden border border-[#9C7A3F]/30 flex flex-col md:flex-row">
@@ -157,18 +181,18 @@ export default async function DishPage({ params }) {
             
             <div className="flex flex-wrap gap-2 mb-6">
               {itemData.tags?.includes("signature") && (
-                <span className="px-3 py-1 bg-gold/10 text-gold border border-gold/30 text-xs font-bold rounded-full uppercase tracking-wider">
-                  Signature
+                <span className="px-3 py-1 bg-[#9C7A3F]/15 text-[#9C7A3F] border border-[#9C7A3F]/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                  {uiLocale.signature || "Signature"}
                 </span>
               )}
               {itemData.tags?.includes("spicy") && (
-                <span className="px-3 py-1 bg-brick/10 text-brick border border-brick/30 text-xs font-bold rounded-full uppercase tracking-wider">
-                  Spicy
+                <span className="px-3 py-1 bg-[#A0422E]/15 text-[#A0422E] border border-[#A0422E]/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                  {uiLocale.spicy || "Spicy"}
                 </span>
               )}
               {itemData.tags?.includes("vegetarian") && (
-                <span className="px-3 py-1 bg-teal/10 text-teal border border-teal/30 text-xs font-bold rounded-full uppercase tracking-wider">
-                  Veg
+                <span className="px-3 py-1 bg-[#4E5F4C]/15 text-[#4E5F4C] border border-[#4E5F4C]/30 text-xs font-bold rounded-full uppercase tracking-wider">
+                  {uiLocale.vegetarian || "Veg"}
                 </span>
               )}
             </div>
