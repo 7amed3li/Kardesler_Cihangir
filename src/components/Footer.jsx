@@ -39,8 +39,12 @@ export default function Footer() {
     ru: "/ru/best-kebab-taksim",
     fa: "/fa/best-kebab-taksim",
     fr: "/fr/best-kebab-taksim",
+    de: "/de/best-kebab-taksim",
+    it: "/it/best-kebab-taksim",
+    es: "/es/best-kebab-taksim",
+    zh: "/zh/best-kebab-taksim",
     en: "/best-kebab-taksim",
-  }[lang] || "/best-kebab-taksim";
+  }[lang] || (lang === "en" ? "/best-kebab-taksim" : `/${lang}/best-kebab-taksim`);
 
   const isRTL = lang === "ar" || lang === "fa";
   const ArrowIcon = isRTL ? ChevronLeft : ChevronRight;
@@ -52,10 +56,10 @@ export default function Footer() {
         {/* Ottoman Divider */}
         <div className="ottoman-divider max-w-md mx-auto mb-12"></div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 text-center sm:text-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 text-start">
 
           {/* 1. Brand & Story */}
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start text-start">
             <h2 className="text-2xl sm:text-3xl font-black text-[#2B2620] mb-2 tracking-wide" style={{ fontFamily: "var(--font-cairo)" }}>
               {t.welcome || "Kardeşler"}
             </h2>
@@ -68,7 +72,7 @@ export default function Footer() {
           </div>
 
           {/* 2. Quick Links */}
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
               <span>
@@ -227,7 +231,7 @@ export default function Footer() {
           </div>
 
           {/* 3. Contact Info */}
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
               <span>
@@ -287,7 +291,7 @@ export default function Footer() {
           </div>
 
           {/* 4. Socials */}
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
               <span>{fc.social || "Sosyal Medya"}</span>
@@ -314,8 +318,8 @@ export default function Footer() {
         <div className="ottoman-divider max-w-sm mx-auto mb-6"></div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-start">
+        <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-start">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-start">
             <p className="text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
               &copy; {currentYear} Kardeşler Kebap Cihangir. {fc.rights || "Tüm Hakları Saklıdır."}
             </p>
@@ -342,11 +346,11 @@ export default function Footer() {
           <p className="text-[#7A7364] text-[10px] tracking-widest uppercase flex items-center gap-1">
             {fc.madeBy || "Tasarım & Geliştirme:"}
             <Link
-              href="/tasarim-gelistirme"
+              href={lang === "tr" ? "/tasarim-gelistirme" : `/${lang}/design-development`}
               className="text-[#9C7A3F] hover:text-[#2B2620] transition-colors underline underline-offset-2 font-bold"
-              title="Tasarım ve Geliştirme: Hamed Mohamed"
+              title={lang === "ar" ? "تصميم وتطوير: حامد محمد" : "Tasarım ve Geliştirme: Hamed Mohamed"}
             >
-              Hamed Mohamed
+              {lang === "ar" || lang === "fa" ? "حامد محمد" : lang === "ru" ? "Хамед Мохамед" : "Hamed Mohamed"}
             </Link>
           </p>
         </div>
