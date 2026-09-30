@@ -28,9 +28,9 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL("https://www.kardeslercihangir.com"),
-  title: "Kardeşler Cihangir | Kebap & Pide — Geleneksel Türk Mutfağı",
+  title: "Kardeşler Kebap & Pide Cihangir | 1998'den Beri Geleneksel Lezzetler",
   description:
-    "Authentic Turkish cuisine in the heart of Cihangir, 5 min from Taksim Square. 100+ dishes — Adana kebab, pide, lahmacun, mezes & more. Open daily 09:00-02:00.",
+    "Cihangir'in kalbinde 1998'den beri hizmet veren Kardeşler Kebap — Adana kebap, taş fırın pide, lahmacun, serpme kahvaltı ve 100+ geleneksel lezzet. Taksim'e 5 dk. Her gün 09:00–02:00.",
   keywords: [
     // Core Brand & Location
     "Kardeşler Cihangir",
@@ -99,9 +99,9 @@ export const metadata = {
   authors: [{ name: "Kardeşler Kebap Cihangir" }],
   creator: "Hamed Mohamed",
   openGraph: {
-    title: "Kardeşler Cihangir | Kebap & Pide",
+    title: "Kardeşler Kebap & Pide Cihangir | Geleneksel Türk Mutfağı",
     description:
-      "Authentic Turkish cuisine in the heart of Cihangir. 100+ dishes including kebabs, pide, and traditional mezes.",
+      "Cihangir'in kalbinde 1998'den beri: Adana kebap, taş fırın pide, lahmacun, serpme kahvaltı ve 100+ geleneksel lezzet.",
     url: "https://www.kardeslercihangir.com",
     siteName: "Kardeşler Cihangir",
     locale: "tr_TR",
@@ -117,9 +117,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kardeşler Cihangir | Kebap & Pide",
+    title: "Kardeşler Kebap & Pide Cihangir | Geleneksel Lezzetler",
     description:
-      "Authentic Turkish cuisine in the heart of Cihangir. Explore our digital menu.",
+      "Cihangir'de 1998'den beri — 100+ geleneksel lezzet. Dijital menümüzü keşfedin.",
     images: ["/images/hero-bg.webp"],
   },
   robots: {
@@ -144,7 +144,7 @@ const globalSchemaGraph = {
       "@type": "Restaurant",
       "@id": `${siteUrl}/#restaurant`,
       name: "Kardeşler Kebap & Cafe Cihangir",
-      alternateName: ["Kardeşler Cihangir", "Kardesler Cihangir", "كاردشلر جيهانغير"],
+      alternateName: ["Kardeşler Cihangir", "Kardesler Cihangir", "Kardeşler Kebap", "Kardesler Kebap", "Kardeşler Pide", "Kardeşler Kebap Cihangir", "كاردشلر جيهانغير", "كاردشلر كباب"],
       description: "Authentic Turkish kebab, pide & lahmacun restaurant in Cihangir, 5 minutes from Taksim Square. Serving traditional wood-fired cuisine for 28 years since 1998.",
       url: siteUrl,
       telephone: "+902122513696",

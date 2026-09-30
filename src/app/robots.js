@@ -1,53 +1,7 @@
 export default function robots() {
   const siteUrl = "https://www.kardeslercihangir.com";
 
-  // All public pages that should be crawled and indexed
-  const publicPages = [
-    "/",
-    "/menu",
-    "/about",
-    "/contact",
-    "/tasarim-gelistirme",
-    "/en/design-development",
-    "/ar/design-development",
-    "/ru/design-development",
-    "/fa/design-development",
-    "/fr/design-development",
-    "/de/design-development",
-    "/it/design-development",
-    "/es/design-development",
-    "/zh/design-development",
-    "/ar/tasarim-gelistirme",
-    "/ru/tasarim-gelistirme",
-    "/fa/tasarim-gelistirme",
-    "/fr/tasarim-gelistirme",
-    "/de/tasarim-gelistirme",
-    "/it/tasarim-gelistirme",
-    "/es/tasarim-gelistirme",
-    "/zh/tasarim-gelistirme",
-    "/best-kebab-taksim",
-    "/en/best-kebab-taksim",
-    "/ar/best-kebab-taksim",
-    "/tr/best-kebab-taksim",
-    "/ru/best-kebab-taksim",
-    "/fa/best-kebab-taksim",
-    "/fr/best-kebab-taksim",
-    "/turkish-breakfast-cihangir",
-    "/ar/turkish-breakfast-cihangir",
-    "/tr/turkish-breakfast-cihangir",
-    "/ru/turkish-breakfast-cihangir",
-    "/fa/turkish-breakfast-cihangir",
-    "/fr/turkish-breakfast-cihangir",
-    "/de/turkish-breakfast-cihangir",
-    "/it/turkish-breakfast-cihangir",
-    "/es/turkish-breakfast-cihangir",
-    "/zh/turkish-breakfast-cihangir",
-    "/images/",
-    "/logo.webp",
-    "/sitemap.xml",
-    "/manifest.webmanifest",
-  ];
-
+  // Paths explicitly blocked from crawling
   const blockedPages = [
     "/wp-admin/",
     "/wp-includes/",
@@ -59,6 +13,7 @@ export default function robots() {
     "/api/",
     "/*?*add-to-cart*",
     "/*?*wc-ajax*",
+    "/admin/",
   ];
 
   return {
@@ -66,14 +21,14 @@ export default function robots() {
       // ── Default rule for all crawlers ──
       {
         userAgent: "*",
-        allow: publicPages,
+        allow: ["/"],
         disallow: blockedPages,
       },
 
       // ── Google Search (primary) ──
       {
         userAgent: "Googlebot",
-        allow: publicPages,
+        allow: ["/"],
         disallow: blockedPages,
       },
 
@@ -86,73 +41,73 @@ export default function robots() {
       // ── Google AI (Gemini / AI Overviews) ──
       {
         userAgent: "Google-Extended",
-        allow: publicPages,
+        allow: ["/"],
       },
 
       // ── Bing Search & Copilot ──
       {
         userAgent: "Bingbot",
-        allow: publicPages,
+        allow: ["/"],
         disallow: blockedPages,
       },
 
       // ── Yandex (largest Russian search engine — key audience) ──
       {
         userAgent: "Yandex",
-        allow: publicPages,
+        allow: ["/"],
         disallow: blockedPages,
       },
 
       // ── ChatGPT / OpenAI ──
       {
         userAgent: "ChatGPT-User",
-        allow: publicPages,
+        allow: ["/"],
       },
       {
         userAgent: "OAI-SearchBot",
-        allow: publicPages,
+        allow: ["/"],
       },
       {
         userAgent: "GPTBot",
-        allow: publicPages,
+        allow: ["/"],
       },
 
       // ── Perplexity AI ──
       {
         userAgent: "PerplexityBot",
-        allow: publicPages,
+        allow: ["/"],
       },
 
       // ── Apple Search (Siri / Spotlight) ──
       {
         userAgent: "Applebot",
-        allow: publicPages,
+        allow: ["/"],
         disallow: blockedPages,
       },
 
       // ── DuckDuckGo ──
       {
         userAgent: "DuckDuckBot",
-        allow: publicPages,
+        allow: ["/"],
         disallow: blockedPages,
       },
 
       // ── Facebook / Meta ──
       {
         userAgent: "facebookexternalhit",
-        allow: publicPages,
+        allow: ["/"],
       },
 
       // ── Twitter / X ──
       {
         userAgent: "Twitterbot",
-        allow: publicPages,
+        allow: ["/"],
       },
 
       // ── LinkedIn ──
       {
         userAgent: "LinkedInBot",
-        allow: publicPages,
+        allow: ["/"],
       },
 
       // ── Block known malicious / spam bots ──

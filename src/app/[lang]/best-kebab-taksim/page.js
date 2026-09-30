@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
       "cihangir kebab restaurant"
     ],
     alternates: {
-      canonical: `https://kardeslercihangir.com/${lang}/best-kebab-taksim`,
+      canonical: `https://www.kardeslercihangir.com/${lang}/best-kebab-taksim`,
     },
   };
 }

@@ -41,7 +41,7 @@ export const RESTAURANT_INFO = {
   },
   googleMapsUrl: "https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g",
   googleMapsPlaceId: "ChIJMz3TWu23yhQRZJD_LzDM82g",
-  siteUrl: "https://kardeslercihangir.com",
+  siteUrl: "https://www.kardeslercihangir.com",
   instagram: "https://www.instagram.com/kardeslerkebapcihangir/",
   generalHours: { opens: "09:00", closes: "02:00" },
 };

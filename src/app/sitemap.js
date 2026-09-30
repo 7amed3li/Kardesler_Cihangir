@@ -132,6 +132,12 @@ export default async function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     // ── Developer Profile Pages (All 10 Languages) ──
     ...(() => {
       const devAlternates = {
