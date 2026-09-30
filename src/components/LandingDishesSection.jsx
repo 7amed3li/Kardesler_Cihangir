@@ -19,7 +19,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "كباب أضنة",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "الطبق المميز",
       desc: "لحم مفروم يدوياً ومتبل بالفلفل، مشوي على الفحم الطبيعي ويقدم مع الخبز الساخن.",
       image: "/images/adana.webp",
@@ -27,7 +27,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "كباب بيتي",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "وصفة المطعم",
       desc: "كباب ملفوف في خبز مقرمش من الفرن، مغطى بصلصة الطماطم والزبدة ويقدم مع اللبن الطازج.",
       image: "/images/beyti-1024x677.webp",
@@ -35,7 +35,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "مشاوي مشكلة",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "تكفي 2-3 أشخاص",
       desc: "تشكيلة مشوية على الفحم: كباب أضنة، شيش طاووق، أوصال لحم، كفتة وأجنحة دجاج.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -43,7 +43,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "فطيرة لحم بالجبن",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "من الفرن الحجري",
       desc: "عجينة رقيقة مغطاة بقطع اللحم المتبلة وجبن القشقوان الذائب وتُخبز فور الطلب.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -51,7 +51,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "لحم بعجين مقرمش",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "مخبوز في دقيقتين",
       desc: "عجينة رقيقة جداً ومقرمشة بلحم مفروم متبل بالفرن التركي، تقدم مع خس، بقدونس، طماطم وليمون.",
       image: "/images/lahmacun.webp",
@@ -59,7 +59,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "كنافة",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "حلوى طازجة",
       desc: "كنافة مقرمشة محشوة بالجبن الذائب وتُسقى بالقطر الساخن مع الفستق الحلبي.",
       image: "/images/kunefe.webp",
@@ -70,7 +70,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "Hand-Minced Artisanal Adana Kebab",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "Signature Since 1998",
       desc: "Prime lamb & beef hand-minced with traditional Zırh knife, spiced with Urfa pepper, slow-grilled over natural oak embers.",
       image: "/images/adana.webp",
@@ -78,7 +78,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "Royal Oven-Baked Beyti Kebab",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "Heritage Recipe",
       desc: "Tender kebab wrapped in stone-baked lavash, topped with sizzling melted butter tomato sauce and fresh farm yoghurt.",
       image: "/images/beyti-1024x677.webp",
@@ -86,7 +86,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "Sultan's Mixed Charcoal Grill Platter",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "Grand Feast for 2-3",
       desc: "The ultimate charcoal feast: Adana kebab, tender lamb cubes, chicken shish, Inegol meatballs & marinated wings with home mezes.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -94,7 +94,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "Marinated Beef & Melted Kaşar Pide",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "Stone Oven 450°C",
       desc: "Fresh hand-stretched dough, marinated tender beef cuts, and premium melting Kaşar cheese, baked instantly on hot stone tiles.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -102,7 +102,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "Crispy Traditional Stone-Oven Lahmacun",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "Baked to Order",
       desc: "Ultra-thin crispy dough topped with seasoned minced meat, baked in a stone oven, served with lettuce, parsley, tomatoes, and lemon.",
       image: "/images/lahmacun.webp",
@@ -110,7 +110,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "Warm Antakya Künefe with Antep Pistachios",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "Artisanal Dessert",
       desc: "Golden crispy shredded phyllo pastry with molten stringy cheese, scented warm syrup, and generous green Antep pistachios.",
       image: "/images/kunefe.webp",
@@ -171,7 +171,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "Фирменный Адана Кебаб ручной рубки",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "Хит с 1998 года",
       desc: "Свежая баранина и телятина, рубленная вручную османским ножом Зырх, обжаренная на углях из дуба. Подается с горячим лавашем.",
       image: "/images/adana.webp",
@@ -179,7 +179,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "Королевский Бейти Кебаб в лаваше",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "Исторический рецепт",
       desc: "Сочный кебаб, запеченный в хрустящем лаваше, политый горячим томатно-сливочным маслом и подаваемый с фермерским йогуртом.",
       image: "/images/beyti-1024x677.webp",
@@ -187,7 +187,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "Большое мясное ассорти на углях",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "Блюдо для 2-3 гостей",
       desc: "Богатое ассорти: Адана кебаб, шашлык из баранины, куриный шашлык, котлеты Инегёль и крылышки на углях с мезе.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -195,7 +195,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "Пиде с нежным мясом и сыром кашар",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "Каменная печь 450°C",
       desc: "Тонкое тесто ручной раскатки, маринованная сочная говядина и тянущийся сыр, выпекается на раскаленном камне печи.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -203,7 +203,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "Хрустящий турецкий лахмаджун",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "Выпекается за 2 мин",
       desc: "Ультратонкая хрустящая лепешка с мясным фаршем, запеченная в каменной печи, подается с листьями салата, петрушкой, помидорами и лимоном.",
       image: "/images/lahmacun.webp",
@@ -211,7 +211,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "Горячий кюнефе с антепскими фисташками",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "Традиционный десерт",
       desc: "Золотистое хрустящее тесто кадаиф, тягучий сыр, горячий ароматный сироп и щедрая порция зеленых фисташек.",
       image: "/images/kunefe.webp",
@@ -221,7 +221,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "کباب آدانا مخصوص ساطوری عثمانی",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "شاهکار رستوران از ۱۹۹۸",
       desc: "گوشت تازه بره و گوساله ساطوری شده با چاقوی زره و فلفل اورفا، کباب شده روی زغال طبیعی بلوط با نان لواش داغ تنوری.",
       image: "/images/adana.webp",
@@ -229,7 +229,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "بیتی کباب شاهانه پیچیده در لواش",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "دستورپخت تاریخی",
       desc: "کباب لذیذ پیچیده شده در نان تنوری با سس کره مخصوص گوجه‌فرنگی و ماست چکیده سنتی تازه.",
       image: "/images/beyti-1024x677.webp",
@@ -237,7 +237,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "سینی مجلل کباب شاهانه مخلوط",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "ولیمه ۲ الی ۳ نفره",
       desc: "مجموعه کباب‌های زغالی: کباب آدانا، کباب برگ و چنجه بره، جوجه کباب، کوفته مخصوص و بال کبابی با مخلفات.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -245,7 +245,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "پیده تنوری با گوشت راسته و پنیر کش‌دار",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "پخت در تنور ۴۵۰ درجه",
       desc: "خمیر دست‌ساز تازه، گوشت تازه مرینیت شده و پنیر درجه یک کاشار، پخته شده بر روی سنگ داغ تنور هیزمی.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -253,7 +253,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "لاه‌ماجون ترد و برشته سنتی",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "دست‌ساز و برشته",
       desc: "خمیر بسیار نازک و ترد با گوشت چرخ‌کرده، پخته شده در تنور سنگی، سرو شده با کاهو، جعفری، گوجه فرنگی و لیمو.",
       image: "/images/lahmacun.webp",
@@ -261,7 +261,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "کونفه داغ هاتای با پسته فراوان",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "دسر اصیل شیرین",
       desc: "رشته‌های کادایف طلایی با پنیر مخصوص و شهد داغ معطر و پودر پسته اعلا.",
       image: "/images/kunefe.webp",
@@ -271,7 +271,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "Adana Kebab Artisanal au Couteau Zırh",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "Plat Signature Depuis 1998",
       desc: "Agneau et bœuf frais hachés au couteau traditionnel, assaisonnés au piment d'Antep et grillés sur braises de chêne avec lavash chaud.",
       image: "/images/adana.webp",
@@ -279,7 +279,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "Beyti Kebab Signature au Four",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "Recette Historique",
       desc: "Kebab roulé dans un pain lavash croustillant, nappé de sauce tomate au beurre fondu et servi avec du yaourt frais fermier.",
       image: "/images/beyti-1024x677.webp",
@@ -287,7 +287,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "Plateau Royal de Grillades Mixtes",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "Festin pour 2-3 personnes",
       desc: "Le festin au charbon de bois : Adana kebab, agneau tendre, brochettes de poulet, boulettes İnegöl et ailes grillées.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -295,7 +295,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "Pide Gourmande Viande & Kaşar",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "Four à Pierre 450°C",
       desc: "Pâte fine étalée à la minute, dés de viande marinée et fromage Kaşar fondant, cuite sur pierre volcanique au feu de bois.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -303,7 +303,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "Lahmacun Traditionnel Croustillant",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "Cuit à la Minute",
       desc: "Pâte extra-fine garnie de viande hachée, cuite au four à pierre, servie avec de la laitue, du persil, des tomates et du citron.",
       image: "/images/lahmacun.webp",
@@ -311,7 +311,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "Künefe d'Antakya aux Pistaches",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "Dessert Chaud Artisanal",
       desc: "Cheveux d'ange dorés, fromage fondant d'Antakya, sirop parfumé chaud et éclats de pistaches vertes.",
       image: "/images/kunefe.webp",
@@ -321,7 +321,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "Handgehackter Adana Kebab",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "Signatur seit 1998",
       desc: "Lamm- und Rindfleisch, handgehackt mit dem Zırh-Messer, gewürzt und auf Eichenglut gegrillt.",
       image: "/images/adana.webp",
@@ -329,7 +329,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "Königlicher Beyti Kebab aus dem Ofen",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "Historisches Rezept",
       desc: "Zarter Kebab in knusprigem Lavash, mit geschmolzener Butter-Tomatensauce und frischem Joghurt.",
       image: "/images/beyti-1024x677.webp",
@@ -337,7 +337,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "Sultans Gemischter Grillteller",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "Festmahl für 2-3",
       desc: "Das ultimative Grillfest: Adana Kebab, Lammspieß, Hähnchenspieß, Inegöl-Frikadellen & Flügel.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -345,7 +345,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "Pide mit mariniertem Rindfleisch & Kaşar",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "Steinofen 450°C",
       desc: "Frischer Teig, mariniertes Rindfleisch und schmelzender Kaşar-Käse, gebacken auf heißem Stein.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -353,7 +353,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "Knuspriger Traditioneller Steinofen-Lahmacun",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "Frisch gebacken",
       desc: "Hauchdünner knuspriger Teig mit gewürztem Hackfleisch, gebacken im Steinofen, serviert mit Salat, Petersilie, Tomaten und Zitrone.",
       image: "/images/lahmacun.webp",
@@ -361,7 +361,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "Warmer Antakya Künefe mit Antep-Pistazien",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "Handwerkliches Dessert",
       desc: "Goldbraun gebackener Engelshaar-Teig mit geschmolzenem Käse, warmem Sirup und Pistazien.",
       image: "/images/kunefe.webp",
@@ -371,7 +371,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "Adana Kebab Artigianale Tagliato a Mano",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "Firma dal 1998",
       desc: "Agnello e manzo tritati a mano con il coltello Zırh, speziati e grigliati su brace di quercia.",
       image: "/images/adana.webp",
@@ -379,7 +379,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "Beyti Kebab Reale al Forno",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "Ricetta Storica",
       desc: "Kebab tenero avvolto in lavash croccante, condito con salsa di pomodoro al burro fuso e yogurt fresco.",
       image: "/images/beyti-1024x677.webp",
@@ -387,7 +387,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "Piatto Misto Grigliato del Sultano",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "Banchetto per 2-3",
       desc: "Il banchetto definitivo: Adana kebab, spiedini di agnello, pollo, polpette Inegöl e ali marinate.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -395,7 +395,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "Pide con Manzo Marinato e Formaggio Kaşar",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "Forno a Pietra 450°C",
       desc: "Impasto fresco, manzo marinato e formaggio Kaşar fuso, cotto istantaneamente su pietra calda.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -403,7 +403,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "Lahmacun Tradizionale Croccante al Forno di Pietra",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "Cotto al momento",
       desc: "Impasto sottilissimo e croccante con carne macinata speziata, cotto nel forno di pietra, servito con lattuga, prezzemolo, pomodori e limone.",
       image: "/images/lahmacun.webp",
@@ -411,7 +411,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "Künefe Caldo di Antakya con Pistacchi",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "Dessert Artigianale",
       desc: "Pasta fillo dorata e croccante con formaggio fuso, sciroppo caldo e pistacchi di Antep.",
       image: "/images/kunefe.webp",
@@ -421,7 +421,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "Adana Kebab Artesanal Picado a Mano",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "Firma desde 1998",
       desc: "Cordero y ternera picados a mano con cuchillo Zırh, especiados y asados a las brasas de roble.",
       image: "/images/adana.webp",
@@ -429,7 +429,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "Beyti Kebab Real al Horno",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "Receta Histórica",
       desc: "Tierno kebab envuelto en lavash crujiente, cubierto con salsa de tomate con mantequilla derretida y yogur.",
       image: "/images/beyti-1024x677.webp",
@@ -437,7 +437,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "Bandeja Mixta de Parrilla del Sultán",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "Banquete para 2-3",
       desc: "El gran banquete: Adana kebab, brochetas de cordero, pollo, albóndigas Inegöl y alitas marinadas.",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -445,7 +445,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "Pide de Ternera Marinada y Queso Kaşar",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "Horno de Piedra 450°C",
       desc: "Masa fresca, ternera marinada y queso Kaşar derretido, horneado al instante sobre piedra caliente.",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -453,7 +453,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "Lahmacun Tradicional Crujiente al Horno de Piedra",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "Horneado al instante",
       desc: "Masa extrafina y crujiente con carne picada especiada, horneada en horno de piedra, servida con lechuga, perejil, tomates y limón.",
       image: "/images/lahmacun.webp",
@@ -461,7 +461,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "Künefe Caliente de Antakya con Pistachos",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "Postre Artesanal",
       desc: "Masa dorada y crujiente con queso derretido, sirope caliente perfumado y pistachos de Antep.",
       image: "/images/kunefe.webp",
@@ -471,7 +471,7 @@ export const landingDishesData = {
     {
       id: "adana",
       menuItemId: "adana_urfa",
-      name: "手工切碎阿达纳烤肉",
+      name: "Zırhta Çekilmiş Hakiki Adana Kebabı",
       tag: "1998年以来的招牌",
       desc: "优质羊肉和牛肉，使用传统Zırh刀手工切碎，加入香料并在橡木炭火上慢烤。",
       image: "/images/adana.webp",
@@ -479,7 +479,7 @@ export const landingDishesData = {
     {
       id: "beyti",
       menuItemId: "beyti_kebap",
-      name: "皇家石炉烤Beyti烤肉",
+      name: "Özel Soslu Sarma Beyti Kebabı",
       tag: "历史秘方",
       desc: "嫩烤肉包裹在酥脆的薄饼中，淋上热黄油番茄酱，配以新鲜酸奶。",
       image: "/images/beyti-1024x677.webp",
@@ -487,7 +487,7 @@ export const landingDishesData = {
     {
       id: "karisik",
       menuItemId: "karisik_kebap_1",
-      name: "苏丹混合炭火烤肉拼盘",
+      name: "Ziyafet Karışık Izgara Tepsisi",
       tag: "2-3人盛宴",
       desc: "终极炭火盛宴：阿达纳烤肉、嫩羊肉块、鸡肉串、Inegol肉丸和腌制鸡翅。",
       image: "/images/27-Karisik-Kebap_1.webp",
@@ -495,7 +495,7 @@ export const landingDishesData = {
     {
       id: "kusbasi-pide",
       menuItemId: "kusbasili_kasarli_pide",
-      name: "腌制牛肉配融化Kaşar奶酪烤饼",
+      name: "Kuşbaşılı Kaşarlı Taş Fırın Pidesi",
       tag: "石炉 450°C",
       desc: "新鲜手擀面团，腌制嫩牛肉块和优质融化奶酪，在热石板上即时烘烤。",
       image: "/images/kusbasili_kasarli_pide.webp",
@@ -503,7 +503,7 @@ export const landingDishesData = {
     {
       id: "lahmacun",
       menuItemId: "lahmacun_item",
-      name: "传统酥脆石炉烤肉饼 (Lahmacun)",
+      name: "Çıtır Çıtır Taş Fırın Lahmacun",
       tag: "现点现烤",
       desc: "超薄酥脆面团，铺上调味碎肉，在石炉中烘烤，配以生菜、欧芹、西红柿和柠檬。",
       image: "/images/lahmacun.webp",
@@ -511,7 +511,7 @@ export const landingDishesData = {
     {
       id: "kunefe",
       menuItemId: "kunefe",
-      name: "安塔基亚热库内法配开心果",
+      name: "Bol Antep Fıstıklı Hatay Künefesi",
       tag: "手工甜点",
       desc: "金黄酥脆的丝状面点，内含融化的拉丝奶酪，淋上热糖浆并撒上开心果。",
       image: "/images/kunefe.webp",
