@@ -15,6 +15,18 @@ import {
 import { trackEvent, captureUTMParams } from "@/lib/trackingUtils";
 
 // ─── Helper: get breakfast items from menuData ───
+
+// Turkish dish names for authentic display
+const TURKISH_DISH_NAMES = {
+  serpme_kahvalti: "Serpme Kahvaltı (2 Kişilik)",
+  menemen: "Menemen",
+  omlet: "Omlet",
+  sahanda_yumurta: "Sahanda Yumurta",
+  sucuklu_yumurta: "Sucuklu Yumurta",
+  kavurmali_yumurta: "Kavurmalı Yumurta",
+  pacanga_boregi: "Paçanga Böreği",
+};
+
 function getBreakfastItems() {
   const kahvaltiCategory = menuData.find((cat) => cat.id === "kahvalti");
   if (!kahvaltiCategory) return { featured: null, dishes: [] };
@@ -154,7 +166,7 @@ export default function BreakfastLandingPage({ locale = "en" }) {
               )}
               <div className="flex items-start justify-between gap-4">
                 <h4 className="font-bold text-[#2B2620] uppercase tracking-wider text-sm">
-                  {dish.id.replace(/_/g, ' ')}
+                  {TURKISH_DISH_NAMES[dish.id] || dish.id.replace(/_/g, ' ')}
                 </h4>
                 <span className="font-serif text-[#9C7A3F]">
                   {getCurrencySymbol()}{convertPrice(getLivePrice(dish))}
