@@ -134,11 +134,6 @@ export function AppProvider({ children }) {
     // Refresh every 5 minutes
     const interval = setInterval(fetchRates, REFRESH_INTERVAL_MS);
 
-    return () => {
-      clearTimeout(initialFetchTimer);
-      clearInterval(interval);
-    };
-
     // Fetch live prices from unified API
     async function fetchPrices() {
       setPricesLoading(true);
@@ -163,6 +158,7 @@ export function AppProvider({ children }) {
     fetchPrices();
 
     return () => {
+      clearTimeout(initialFetchTimer);
       clearInterval(interval);
       // Cleanup cart-related timeouts
       if (pulseTimeoutRef.current) clearTimeout(pulseTimeoutRef.current);
