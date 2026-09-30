@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
+import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
 import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle } from "lucide-react";
 
@@ -40,12 +41,8 @@ export default function OrderFlow() {
                     lang === "tr" ? "Listem" : 
                     "My List");
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
+  const isMounted = useMounted();
+  if (!isMounted) return null;
 
   return (
     <>

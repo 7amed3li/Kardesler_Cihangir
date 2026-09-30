@@ -147,7 +147,7 @@ export default function LandingVerifiedReviews({ currentLocale = "ar" }) {
                 </div>
 
                 <p className="text-xs sm:text-sm text-[#2B2620] italic font-medium leading-relaxed">
-                  "{reviewText}"
+                  &ldquo;{reviewText}&rdquo;
                 </p>
               </div>
 

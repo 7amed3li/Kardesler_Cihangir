@@ -98,20 +98,13 @@ export function AppProvider({ children }) {
     // URL Locale > LocalStorage Locale
     const locales = ['tr', 'en', 'ar', 'ru', 'fa', 'fr', 'de', 'it', 'es', 'zh'];
     const pathLocale = window.location.pathname.split('/')[1];
-    
-    if (locales.includes(pathLocale)) {
-      setLang(pathLocale);
-      localStorage.setItem("app_lang", pathLocale);
-    } else {
-      // It's a root route like /best-kebab-taksim or / (which is the Turkish default)
-      setLang("tr");
-      localStorage.setItem("app_lang", "tr");
-    }
+    const initialLang = locales.includes(pathLocale) ? pathLocale : "tr";
+    localStorage.setItem("app_lang", initialLang);
+    requestAnimationFrame(() => setLang(initialLang));
     
     const savedCurrency = localStorage.getItem("app_currency");
     if (savedCurrency && ["TRY", "USD", "EUR", "GBP", "RUB", "SAR"].includes(savedCurrency)) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setCurrency(savedCurrency);
+      requestAnimationFrame(() => setCurrency(savedCurrency));
     }
 
     // Load cart from localStorage
@@ -120,8 +113,7 @@ export function AppProvider({ children }) {
       if (savedCart) {
         const parsed = JSON.parse(savedCart);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          // eslint-disable-next-line react-hooks/set-state-in-effect
-          setCart(parsed);
+          requestAnimationFrame(() => setCart(parsed));
         }
       }
     } catch (_) { /* ignore parse errors */ }
@@ -129,16 +121,23 @@ export function AppProvider({ children }) {
     // Load last known rates from localStorage immediately (instant, no network)
     const lastKnown = getLastKnownRates();
     if (lastKnown) {
-      setExchangeRates(lastKnown.rates);
-      setRatesSource(lastKnown.source + " (cached)");
-      setRatesLastUpdated(lastKnown.lastUpdated);
+      requestAnimationFrame(() => {
+        setExchangeRates(lastKnown.rates);
+        setRatesSource(lastKnown.source + " (cached)");
+        setRatesLastUpdated(lastKnown.lastUpdated);
+      });
     }
 
     // Then fetch fresh rates from the server
-    fetchRates();
+    const initialFetchTimer = setTimeout(fetchRates, 0);
 
     // Refresh every 5 minutes
     const interval = setInterval(fetchRates, REFRESH_INTERVAL_MS);
+
+    return () => {
+      clearTimeout(initialFetchTimer);
+      clearInterval(interval);
+    };
 
     // Fetch live prices from unified API
     async function fetchPrices() {
@@ -284,7 +283,7 @@ export function AppProvider({ children }) {
       setIsCartOpen(false);
       setOrderStatus("idle");
     }, 3000);
-  }, [cart, lang, clearCart]);
+  }, [cart, clearCart]);
 
   const createDeepProxy = (target, fallback) => {
     return new Proxy(target || {}, {

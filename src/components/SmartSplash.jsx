@@ -8,11 +8,16 @@ export default function SmartSplash() {
   const pathname = usePathname();
   const [show, setShow] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [prevPath, setPrevPath] = useState(pathname);
+
+  if (prevPath !== pathname) {
+    setPrevPath(pathname);
+    setShow(true);
+    setIsFadingOut(false);
+  }
 
   // Simplified lifecycle: manage timers in a single effect dependent only on pathname
   useEffect(() => {
-    setShow(true);
-    setIsFadingOut(false);
 
     // Fast, ultra-smooth fade out after 800ms
     const fadeOutTimer = setTimeout(() => {
@@ -241,10 +246,13 @@ export default function SmartSplash() {
 
       <div className="stage">
         <div className="halo" />
-        <img
+        <Image
           className="logo-layer layer-mid"
           src="/logo.webp"
           alt="Kardeşler Logo"
+          fill
+          priority
+          sizes="(max-width: 380px) 100vw, 380px"
         />
         <div className="shine" />
       </div>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import { useMounted } from "../hooks/useMounted";
 import { X, MagnifyingGlassPlus, Plus, Minus } from "@phosphor-icons/react";
 import { useAppContext } from "../context/AppContext";
 import { trackViewItem } from "@/lib/analytics";
@@ -95,15 +96,11 @@ export default function DishModal({
   const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, lang, pricesLoading, pricesError } = useAppContext();
   const isRTL = lang === "ar" || lang === "fa";
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const isMounted = useMounted();
 
   // Track view_item for Google Ads Dynamic Remarketing
   useEffect(() => {
-    if (mounted && isOpen && item) {
+    if (isMounted && isOpen && item) {
       const priceVal = customPrice !== undefined ? customPrice : getLivePrice(item);
       const itemName = customName || (menuT.items[item.id]?.name || item?.name?.en) || "Dish";
       trackViewItem({
@@ -113,9 +110,9 @@ export default function DishModal({
         price: priceVal || 0,
       });
     }
-  }, [mounted, isOpen, item, customName, customPrice, getLivePrice, menuT]);
+  }, [isMounted, isOpen, item, customName, customPrice, getLivePrice, menuT]);
 
-  if (!mounted || !isOpen) return null;
+  if (!isMounted || !isOpen) return null;
 
   // Resolve data either from context (if item is provided) or custom props
   const name = customName || (item ? (menuT.items[item.id]?.name || item?.name?.en) : "Special Dish");

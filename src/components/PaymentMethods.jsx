@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useAppContext } from "../context/AppContext";
-import { Banknote } from "lucide-react";
+import { Banknote, CreditCard } from "lucide-react";
 
 export const PAYMENT_METHODS = [
   {

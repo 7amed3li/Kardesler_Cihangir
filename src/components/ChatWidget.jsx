@@ -122,13 +122,13 @@ export default function ChatWidget() {
   const strings = chatI18n[activeLang] || chatI18n.en || chatI18n.tr;
   const isRTL = activeLang === "ar" || activeLang === "fa";
 
-  // Initialize with greeting on first open
-  useEffect(() => {
-    if (isOpen && !hasOpened) {
+  const handleOpen = () => {
+    setIsOpen(true);
+    if (!hasOpened) {
       setHasOpened(true);
       setMessages([{ role: "model", text: strings.greeting }]);
     }
-  }, [isOpen, hasOpened, strings.greeting]);
+  };
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -203,7 +203,7 @@ export default function ChatWidget() {
       {/* Floating Action Button */}
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={handleOpen}
           className="flex items-center justify-center w-12 h-12 rounded-full bg-[#4E5F4C] text-white shadow-md hover:bg-[#3D4B3B] transition-colors focus:outline-none"
           aria-label="Open AI Concierge"
         >

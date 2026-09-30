@@ -125,13 +125,14 @@ export default function Home() {
   const [contactRef, isContactVisible] = useReveal(0.1);
 
   useEffect(() => {
-    requestAnimationFrame(() => setHeroVisible(true));
-    
-    // Time-based CRO: Show breakfast if it's between 8 AM and 3 PM local time
-    const hour = new Date().getHours();
-    if (hour >= 8 && hour < 15) {
-      setTimeBasedHero("breakfast");
-    }
+    requestAnimationFrame(() => {
+      setHeroVisible(true);
+      // Time-based CRO: Show breakfast if it's between 8 AM and 3 PM local time
+      const hour = new Date().getHours();
+      if (hour >= 8 && hour < 15) {
+        setTimeBasedHero("breakfast");
+      }
+    });
   }, []);
 
   return (
@@ -446,7 +447,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="absolute start-6 sm:start-1/2 w-12 h-12 -translate-x-1/2 rounded-full bg-[#4E5F4C] text-[#EDE3CE] flex items-center justify-center font-black text-sm shadow-lg border-4 border-[#EDE3CE] z-10">
-                '98
+                &apos;98
               </div>
               <div className="ps-20 sm:ps-0 sm:w-1/2 sm:ms-auto">
                 <h3 className="text-xl font-black text-[#4E5F4C] sm:ps-12" style={{ fontFamily: "var(--font-cairo)" }}>1998</h3>
@@ -470,7 +471,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="absolute start-6 sm:start-1/2 w-12 h-12 -translate-x-1/2 rounded-full bg-[#9C7A3F] text-[#EDE3CE] flex items-center justify-center font-black text-sm shadow-lg border-4 border-[#EDE3CE] z-10">
-                '05
+                &apos;05
               </div>
               <div className="hidden sm:block sm:w-1/2"></div>
             </div>
@@ -485,7 +486,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="absolute start-6 sm:start-1/2 w-12 h-12 -translate-x-1/2 rounded-full bg-[#4E5F4C] text-[#EDE3CE] flex items-center justify-center font-black text-sm shadow-lg border-4 border-[#EDE3CE] z-10">
-                '15
+                &apos;15
               </div>
               <div className="ps-20 sm:ps-0 sm:w-1/2 sm:ms-auto">
                 <h3 className="text-xl font-black text-[#4E5F4C] sm:ps-12" style={{ fontFamily: "var(--font-cairo)" }}>2015</h3>

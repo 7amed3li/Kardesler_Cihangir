@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppContext } from "../context/AppContext";
+import { useMounted } from "../hooks/useMounted";
 import { X, MagnifyingGlassPlus, Plus, Minus, ShareNetwork, Check, CaretRight } from "@phosphor-icons/react";
 import Image from "next/image";
 
@@ -71,12 +72,8 @@ export default function FoodCard({ item, index, isVertical = false }) {
   const isRTL = lang === "ar" || lang === "fa";
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const isMounted = useMounted();
   const [isCopied, setIsCopied] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const name = menuT.items[item.id]?.name || item?.name?.en || "Yeni Ürün";
   const description = menuT.items[item.id]?.desc || item?.description?.en || "";
@@ -217,7 +214,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
       </div>
 
       {/* MODAL — Item Details + Cart Action */}
-      {mounted && isModalOpen && createPortal(
+      {isMounted && isModalOpen && createPortal(
         <div
           className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#2B2620]/75 backdrop-blur-sm p-4"
           onClick={() => setIsModalOpen(false)}
@@ -324,7 +321,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
       )}
 
       {/* Fullscreen Image Overlay */}
-      {mounted && isFullscreenImage && item.image && createPortal(
+      {isMounted && isFullscreenImage && item.image && createPortal(
         <div
           className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 modal-overlay"
           onClick={() => setIsFullscreenImage(false)}
