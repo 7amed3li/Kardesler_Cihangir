@@ -6,17 +6,23 @@ import { platforms as initialPlatforms, reviewsList as initialReviews } from "@/
 let cachedReviewsData = null;
 let cacheTimestamp = 0;
 const CACHE_DURATION_MS = 12 * 60 * 60 * 1000; // 12 Hours Cache
+const cacheHeaders = {
+  "Cache-Control": "public, max-age=0, s-maxage=43200, stale-while-revalidate=3600",
+};
 
 export async function GET() {
   const now = Date.now();
 
   // Return cached live data if still fresh (under 12 hours)
   if (cachedReviewsData && now - cacheTimestamp < CACHE_DURATION_MS) {
-    return Response.json({
-      ...cachedReviewsData,
-      cached: true,
-      nextSyncInSeconds: Math.round((CACHE_DURATION_MS - (now - cacheTimestamp)) / 1000),
-    });
+    return Response.json(
+      {
+        ...cachedReviewsData,
+        cached: true,
+        nextSyncInSeconds: Math.round((CACHE_DURATION_MS - (now - cacheTimestamp)) / 1000),
+      },
+      { headers: cacheHeaders }
+    );
   }
 
   try {
@@ -120,21 +126,27 @@ export async function GET() {
     };
     cacheTimestamp = now;
 
-    return Response.json({
-      ...cachedReviewsData,
-      cached: false,
-    });
+    return Response.json(
+      {
+        ...cachedReviewsData,
+        cached: false,
+      },
+      { headers: cacheHeaders }
+    );
   } catch (error) {
     // Graceful fallback
-    return Response.json({
-      platforms: initialPlatforms,
-      reviews: initialReviews,
-      aggregateRating: "4.6",
-      totalReviewsCount: "4,720+",
-      source: "fallback",
-      lastSynced: new Date().toISOString(),
-      cached: true,
-      error: error.message,
-    });
+    return Response.json(
+      {
+        platforms: initialPlatforms,
+        reviews: initialReviews,
+        aggregateRating: "4.6",
+        totalReviewsCount: "4,720+",
+        source: "fallback",
+        lastSynced: new Date().toISOString(),
+        cached: true,
+        error: error.message,
+      },
+      { headers: cacheHeaders }
+    );
   }
 }

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { z } from 'zod';
 
 const updatePriceSchema = z.object({
@@ -114,8 +115,12 @@ export async function POST(request) {
     }
 
     // Invalidate cached prices
-    const { revalidateTag } = require('next/cache');
-    revalidateTag('menu-prices');
+    revalidateTag('menu-prices', { expire: 0 });
+    revalidatePath('/api/prices');
+    revalidatePath('/menu');
+    revalidatePath('/[lang]/menu', 'page');
+    revalidatePath('/dish/[id]', 'page');
+    revalidatePath('/[lang]/dish/[id]', 'page');
 
     return NextResponse.json({ 
       success: true, 

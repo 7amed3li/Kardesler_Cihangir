@@ -5,17 +5,23 @@
 let cachedRates = null;
 let cacheTimestamp = 0;
 const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes
+const cacheHeaders = {
+  "Cache-Control": "public, max-age=0, s-maxage=300, stale-while-revalidate=300",
+};
 
 export async function GET() {
   const now = Date.now();
 
   // Return cached data if still fresh
   if (cachedRates && now - cacheTimestamp < CACHE_DURATION_MS) {
-    return Response.json({
-      ...cachedRates,
-      cached: true,
-      nextUpdate: Math.round((CACHE_DURATION_MS - (now - cacheTimestamp)) / 1000),
-    });
+    return Response.json(
+      {
+        ...cachedRates,
+        cached: true,
+        nextUpdate: Math.round((CACHE_DURATION_MS - (now - cacheTimestamp)) / 1000),
+      },
+      { headers: cacheHeaders }
+    );
   }
 
   try {
@@ -46,7 +52,7 @@ export async function GET() {
     };
     cacheTimestamp = now;
 
-    return Response.json({ ...cachedRates, cached: false });
+    return Response.json({ ...cachedRates, cached: false }, { headers: cacheHeaders });
   } catch (error) {
     // Fallback: return stale cache if available, or hardcoded defaults
     const fallback = cachedRates || {
@@ -63,6 +69,6 @@ export async function GET() {
       fetchedAt: new Date().toISOString(),
     };
 
-    return Response.json({ ...fallback, cached: true, error: error.message });
+    return Response.json({ ...fallback, cached: true, error: error.message }, { headers: cacheHeaders });
   }
 }
