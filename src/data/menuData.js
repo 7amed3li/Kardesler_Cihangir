@@ -91,6 +91,7 @@ export const menuData = [
       {
         id: "hunkarbegendi",
         price: 1500.00,
+        image: "/images/hunkarbegendi.webp",
         tags: ["signature"],
         trending: true,
       },
@@ -391,19 +392,13 @@ export const menuData = [
       {
         id: "ispanakli_pide",
         price: 410.00,
+        image: "/images/ispanakli_pide.webp",
         tags: ["vegetarian"],
       },
       {
         id: "patatesli_pide",
         price: 410.00,
         tags: ["vegetarian"],
-      },
-      {
-        id: "peymacun",
-        price: 340.00,
-        image: "/images/peymacun.webp",
-        tags: ["vegetarian"],
-        trending: true,
       },
       {
         id: "beyaz_peynirli_pide",
@@ -453,6 +448,13 @@ export const menuData = [
         id: "ozel_lahmacun",
         image: "/images/ozel_lahmacun.webp",
         tags: ["signature"],
+      },
+      {
+        id: "peymacun",
+        price: 340.00,
+        image: "/images/peymacun.webp",
+        tags: ["vegetarian"],
+        trending: true,
       }
     ]
   },

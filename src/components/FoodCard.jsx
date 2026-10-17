@@ -111,7 +111,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
         {/* Image Section */}
         {item.image && (
           <div 
-            className={`${isVertical ? "w-full aspect-[4/3] sm:aspect-square" : "w-32 sm:w-40 h-full shrink-0"} relative overflow-hidden bg-[#EDE3CE] z-10 cursor-pointer`}
+            className={`${isVertical ? "w-full aspect-[4/3] sm:aspect-square" : "w-32 sm:w-40 h-full shrink-0"} relative overflow-hidden bg-white z-10 cursor-pointer`}
             onClick={() => setIsModalOpen(true)}
           >
             <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
@@ -244,7 +244,7 @@ export default function FoodCard({ item, index, isVertical = false }) {
 
             {/* Modal Image */}
             {item.image && (
-              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-[#EDE3CE]">
+              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-white">
                 <Image src={item.image} alt={name} fill style={{ objectFit: "contain" }} sizes="(max-width: 768px) 100vw, 400px" />
                 
                 <button

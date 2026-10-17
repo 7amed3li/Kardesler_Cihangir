@@ -11,14 +11,14 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PU
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const newItems = [
-  { id: "hunkarbegendi", category_id: "kebap", price: 1500, image_url: null, tags: ["signature"], is_trending: true, is_available: true },
+  { id: "hunkarbegendi", category_id: "kebap", price: 1500, image_url: "/images/hunkarbegendi.webp", tags: ["signature"], is_trending: true, is_available: true },
   { id: "adana_kuzu_sis_kebap", category_id: "kebap", price: 1500, image_url: "/images/adana_kuzu_sis_kebap.webp", tags: ["signature"], is_trending: true, is_available: true },
   { id: "adana_tavuk_sis_kebap", category_id: "kebap", price: 1500, image_url: "/images/adana_tavuk_sis_kebap.webp", tags: ["signature"], is_trending: false, is_available: true },
   { id: "kuzu_tavuk_sis_kebap", category_id: "kebap", price: 1500, image_url: "/images/kuzu_tavuk_sis_kebap.webp", tags: [], is_trending: false, is_available: true },
   { id: "pastirma_kavurmali_kasarli_pide", category_id: "pide", price: 700, image_url: null, tags: [], is_trending: true, is_available: true },
-  { id: "ispanakli_pide", category_id: "pide", price: 410, image_url: null, tags: ["vegetarian"], is_trending: false, is_available: true },
+  { id: "ispanakli_pide", category_id: "pide", price: 410, image_url: "/images/ispanakli_pide.webp", tags: ["vegetarian"], is_trending: false, is_available: true },
   { id: "patatesli_pide", category_id: "pide", price: 410, image_url: null, tags: ["vegetarian"], is_trending: false, is_available: true },
-  { id: "peymacun", category_id: "pide", price: 340, image_url: null, tags: ["vegetarian"], is_trending: true, is_available: true },
+  { id: "peymacun", category_id: "lahmacun", price: 340, image_url: "/images/peymacun.webp", tags: ["vegetarian"], is_trending: true, is_available: true },
   { id: "kopogl", category_id: "meze", price: 180, image_url: null, tags: ["vegetarian"], is_trending: false, is_available: true },
   { id: "saksuka", category_id: "meze", price: 180, image_url: null, tags: ["vegetarian", "vegan"], is_trending: false, is_available: true },
   { id: "yogurtlu_karamelize_sogan", category_id: "meze", price: 180, image_url: null, tags: ["vegetarian"], is_trending: false, is_available: true },

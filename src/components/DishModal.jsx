@@ -171,7 +171,7 @@ export default function DishModal({
 
             {/* Modal Image */}
             {image && (
-              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-[#EDE3CE] group">
+              <div className="w-full h-56 sm:h-72 shrink-0 relative bg-white group">
                 <Image src={image} alt={name} fill style={{ objectFit: "contain" }} sizes="(max-width: 768px) 100vw, 400px" />
                 
                 {/* Zoom Button */}
