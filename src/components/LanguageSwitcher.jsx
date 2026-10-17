@@ -46,6 +46,9 @@ export default function LanguageSwitcher() {
     // Check if current route is the developer profile (either /tasarim-gelistirme or /[lang]/design-development)
     const isDevProfile = routeWithoutLocale === "/tasarim-gelistirme" || routeWithoutLocale === "/design-development";
 
+    // Preserve hash (menu category/filter state) across language switch
+    const currentHash = typeof window !== "undefined" ? window.location.hash : "";
+
     let targetUrl;
     if (isDevProfile) {
       targetUrl = code === "tr" ? "/tasarim-gelistirme" : `/${code}/design-development`;
@@ -57,7 +60,12 @@ export default function LanguageSwitcher() {
       }
     }
 
-    if (pathname !== targetUrl) {
+    // Append hash so menu state survives language switch
+    if (currentHash) {
+      targetUrl = `${targetUrl}${currentHash}`;
+    }
+
+    if (pathname + currentHash !== targetUrl) {
       router.push(targetUrl);
     }
   };

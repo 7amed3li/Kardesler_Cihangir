@@ -384,12 +384,39 @@ export default function MenuPage() {
   const { t } = useAppContext();
   const menuSectionRef = useRef(null);
 
+  // ── Restore state from URL hash on first mount ──────────────────────────
+  useEffect(() => {
+    const hash = window.location.hash.slice(1); // e.g. "kebap" or "kebap?filter=vegetarian"
+    if (!hash) return;
+    const [catPart, queryPart] = hash.split("?");
+    const catId = catPart?.trim();
+    if (catId && menuData.find(c => c.id === catId)) {
+      setActiveCategory(catId);
+    }
+    if (queryPart) {
+      const params = new URLSearchParams(queryPart);
+      const filter = params.get("filter");
+      if (filter) setActiveFilter(filter);
+    }
+  }, []);
+
+  // ── Persist state to URL hash whenever it changes ───────────────────────
+  useEffect(() => {
+    const hash = activeFilter
+      ? `${activeCategory}?filter=${activeFilter}`
+      : activeCategory;
+    // Use replaceState so back-button works naturally
+    const url = `${window.location.pathname}${window.location.search}#${hash}`;
+    window.history.replaceState(null, "", url);
+  }, [activeCategory, activeFilter]);
+
   const scrollToMenu = () => {
     menuSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleCategorySelect = (catId) => {
     setActiveCategory(catId);
+    setActiveFilter(null); // reset filter when switching category
     scrollToMenu();
   };
 
