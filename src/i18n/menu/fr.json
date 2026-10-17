@@ -493,6 +493,54 @@
     "karides_guvec": {
       "name": "Karides Güveç",
       "desc": "Crevettes cuites dans un pot en argile"
+    },
+    "hunkarbegendi": {
+      "name": "Hünkâr Beğendi",
+      "desc": "170 g Morceaux de viande fondante sur une purée d'aubergines fumées."
+    },
+    "adana_kuzu_sis_kebap": {
+      "name": "Kebab Adana & Brochette d'Agneau",
+      "desc": "350 g Combinaison de kebab Adana et brochette d'agneau grillée au charbon."
+    },
+    "adana_tavuk_sis_kebap": {
+      "name": "Kebab Adana & Brochette de Poulet",
+      "desc": "350 g Combinaison de kebab Adana épicé et brochette de poulet marinée."
+    },
+    "kuzu_tavuk_sis_kebap": {
+      "name": "Brochettes d'Agneau et Poulet",
+      "desc": "350 g Combinaison de brochette d'agneau et brochette de poulet mariné."
+    },
+    "vejetaryen_vegan_tabagi": {
+      "name": "Assiette Végétarienne & Végane",
+      "desc": "Assortiment de mezzés à l'huile d'olive et légumes grillés."
+    },
+    "pastirma_kavurmali_kasarli_pide": {
+      "name": "Pidé au Pastırma, Kavurma & Fromage",
+      "desc": "Pidé croustillant garni de pastırma, viande kavurma et fromage fondu."
+    },
+    "ispanakli_pide": {
+      "name": "Pidé aux Épinards",
+      "desc": "Pidé cuit au four traditionnel garni d'épinards frais et oignons."
+    },
+    "patatesli_pide": {
+      "name": "Pidé à la Pomme de Terre",
+      "desc": "Pidé doré au four garni d'une savoureuse purée de pommes de terre épicée."
+    },
+    "peymacun": {
+      "name": "Peymacun (Lahmacun au Fromage)",
+      "desc": "Pâte fine et croustillante cuite avec un mélange de fromages fondants et herbes."
+    },
+    "kopogl": {
+      "name": "Köpoğlu",
+      "desc": "Aubergines et poivrons grillés avec yaourt égoutté à l'ail et sauce tomate maison."
+    },
+    "saksuka": {
+      "name": "Şakşuka",
+      "desc": "Aubergines et poivrons sautés à l'huile d'olive dans une sauce tomate à l'ail."
+    },
+    "yogurtlu_karamelize_sogan": {
+      "name": "Oignons Caramélisés au Yaourt",
+      "desc": "Oignons doux caramélisés lentement mélangés à un yaourt épais et onctueux."
     }
   }
 }

@@ -30,7 +30,7 @@ export const metadata = {
   metadataBase: new URL("https://www.kardeslercihangir.com"),
   title: "Kardeşler Kebap & Pide Cihangir | 1998'den Beri Geleneksel Lezzetler",
   description:
-    "Cihangir'in kalbinde 1998'den beri hizmet veren Kardeşler Kebap — Adana kebap, taş fırın pide, lahmacun, serpme kahvaltı ve 100+ geleneksel lezzet. Taksim'e 5 dk. Her gün 09:00–02:00.",
+    "Cihangir'in kalbinde 1998'den beri hizmet veren Kardeşler Kebap — Adana kebap, taş fırın pide, lahmacun, serpme kahvaltı ve 100+ geleneksel lezzet. Taksim'e 10 dk yürüme mesafesinde. Her gün 09:00–02:00.",
   keywords: [
     // Core Brand & Location
     "Kardeşler Cihangir",

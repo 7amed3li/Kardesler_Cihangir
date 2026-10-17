@@ -74,6 +74,22 @@
       "name": "Patlıcanlı Kebap",
       "desc": "160 gr. Kömürde közlenmiş kemer patlıcanlar arasında özel zırh kıyması kebabı."
     },
+    "hunkarbegendi": {
+      "name": "Hünkâr Beğendi",
+      "desc": "170 gr. Kadifemsi közlenmiş patlıcan püresi üzerinde tereyağlı kuzu eti parçaları."
+    },
+    "adana_kuzu_sis_kebap": {
+      "name": "Adana & Kuzu Şiş Kebap",
+      "desc": "350 gr. Adana kebap ve kuzu şiş kombinasyonu; meşe kömüründe pişirilmiş iki farklı lezzetin bir arada sunumu."
+    },
+    "adana_tavuk_sis_kebap": {
+      "name": "Adana & Tavuk Şiş Kebap",
+      "desc": "350 gr. Adana kebap ve tavuk şiş kombinasyonu; acılı kıyma ile marine edilmiş tavuk göğsünün kömür ızgara buluşması."
+    },
+    "kuzu_tavuk_sis_kebap": {
+      "name": "Kuzu & Tavuk Şiş Kebap",
+      "desc": "350 gr. Kuzu şiş ve tavuk şiş kombinasyonu; iki farklı etin kömür ızgarada pişirilip bir tabakta sunulması."
+    },
     "kuzu_sis_kebap": {
       "name": "Kuzu Şiş Kebap",
       "desc": "150 gr. Lokum kıvamında marine edilmiş kuzu bud etlerinin şişte kömür ızgarası."
@@ -493,6 +509,38 @@
     "karides_guvec": {
       "name": "Karides Güveç",
       "desc": "Shrimp in Clay Pot"
+    },
+    "vejetaryen_vegan_tabagi": {
+      "name": "Vejetaryen & Vegan Tabağı",
+      "desc": "Çeşitli zeytinyağlı mezeler, közlenmiş sebzeler ve taze garnitürlerle zengin vegan tabağı."
+    },
+    "pastirma_kavurmali_kasarli_pide": {
+      "name": "Pastırma Kavurmalı Kaşarlı Pide",
+      "desc": "Çıtır hamur üzerinde özel Kayseri pastırması, Rize kavurması ve erimiş kaşar peyniri."
+    },
+    "ispanakli_pide": {
+      "name": "Ispanaklı Pide",
+      "desc": "Taze ıspanak, soğan ve özel baharatlarla fırınlanmış nefis pide."
+    },
+    "patatesli_pide": {
+      "name": "Patatesli Pide",
+      "desc": "Özel baharatlı patates püresi ile fırınlanmış yumuşacık lezzet."
+    },
+    "peymacun": {
+      "name": "Peymacun",
+      "desc": "Çıtır lahmacun hamuru üzerinde bol peynirli ve baharatlı özel lezzet."
+    },
+    "kopogl": {
+      "name": "Köpoğlu",
+      "desc": "Közlenmiş patlıcan, biber ve sarımsaklı süzme yoğurt üzerine nefis domates sosu."
+    },
+    "saksuka": {
+      "name": "Şakşuka",
+      "desc": "Zeytinyağında sotelenmiş köz patlıcan, biber ve domates soslu geleneksel meze."
+    },
+    "yogurtlu_karamelize_sogan": {
+      "name": "Yoğurtlu Karamelize Soğan",
+      "desc": "Ağır ateşte karamelize edilmiş tatlı soğanlar ve süzme yoğurdun ipeksi uyumu."
     }
   }
 }

@@ -493,6 +493,54 @@
     "karides_guvec": {
       "name": "Karides Güveç",
       "desc": "Camarones cocinados en cazuela de barro"
+    },
+    "hunkarbegendi": {
+      "name": "Hünkâr Beğendi",
+      "desc": "170 g Trozos de carne tierna sobre puré de berenjena ahumada."
+    },
+    "adana_kuzu_sis_kebap": {
+      "name": "Kebab Adana y Brocheta de Cordero",
+      "desc": "350 g Combinación de kebab Adana y brocheta de cordero a la brasa."
+    },
+    "adana_tavuk_sis_kebap": {
+      "name": "Kebab Adana y Brocheta de Pollo",
+      "desc": "350 g Combinación de kebab Adana picante y brocheta de pollo marinada."
+    },
+    "kuzu_tavuk_sis_kebap": {
+      "name": "Brocheta de Cordero y Pollo",
+      "desc": "350 g Combinación de brocheta de cordero y brocheta de pollo a la brasa."
+    },
+    "vejetaryen_vegan_tabagi": {
+      "name": "Plato Vegetariano y Vegano",
+      "desc": "Selección variada de mezzes en aceite de oliva y verduras asadas."
+    },
+    "pastirma_kavurmali_kasarli_pide": {
+      "name": "Pide de Pastırma, Kavurma y Queso",
+      "desc": "Pide crujiente con pastırma curado, carne kavurma y queso fundido."
+    },
+    "ispanakli_pide": {
+      "name": "Pide de Espinacas",
+      "desc": "Pide al horno de piedra relleno de espinacas frescas y cebolla."
+    },
+    "patatesli_pide": {
+      "name": "Pide de Patata",
+      "desc": "Pide horneado relleno de suave puré de patata especiado."
+    },
+    "peymacun": {
+      "name": "Peymacun (Lahmacun de Queso)",
+      "desc": "Masa fina y crujiente horneada con abundante mezcla de quesos y especias."
+    },
+    "kopogl": {
+      "name": "Köpoğlu",
+      "desc": "Berenjenas y pimientos asados con yogur colado al ajo y salsa de tomate casera."
+    },
+    "saksuka": {
+      "name": "Şakşuka",
+      "desc": "Berenjenas y pimientos fritos en aceite de oliva con salsa de tomate y ajo."
+    },
+    "yogurtlu_karamelize_sogan": {
+      "name": "Cebolla Caramelizada con Yogur",
+      "desc": "Cebollas dulces caramelizadas a fuego lento sobre yogur cremoso."
     }
   }
 }

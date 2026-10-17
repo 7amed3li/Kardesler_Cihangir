@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { Search, Save, CheckCircle, AlertCircle } from "lucide-react";
+import menuTr from "@/i18n/menu/tr.json";
 
 export default function OwnerDashboardClient({ items }) {
   // Helper to format slugs to readable Turkish names
   const formatProductName = (slug) => {
     if (!slug) return "";
+    if (menuTr?.items?.[slug]?.name) return menuTr.items[slug].name;
     const trMap = {
       'durum': 'Dürüm',
       'sis': 'Şiş',

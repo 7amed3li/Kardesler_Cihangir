@@ -565,6 +565,54 @@
     "soda": {
       "name": "Maden Suyu / Soda",
       "desc": "土耳其天然泉眼出品，富含丰富矿物质的气泡矿泉水。"
+    },
+    "hunkarbegendi": {
+      "name": "Hünkâr Beğendi",
+      "desc": "苏丹之喜 — 170克 慢炖嫩肉搭配丝滑烟熏茄子泥。"
+    },
+    "adana_kuzu_sis_kebap": {
+      "name": "阿达纳烤肉配羊肉串烤肉",
+      "desc": "350克 阿达纳烤肉碎肉与炭烤嫩羊肉串拼盘。"
+    },
+    "adana_tavuk_sis_kebap": {
+      "name": "阿达纳烤肉配鸡肉串烤肉",
+      "desc": "350克 经典辣味阿达纳烤肉与腌制鸡肉串拼盘。"
+    },
+    "kuzu_tavuk_sis_kebap": {
+      "name": "羊肉串配鸡肉串烤肉",
+      "desc": "350克 嫩羊肉串与炭烤香脆鸡肉串双拼。"
+    },
+    "vejetaryen_vegan_tabagi": {
+      "name": "素食与纯素拼盘",
+      "desc": "精选橄榄油冷盘小吃、炭烤蔬菜与新鲜配菜拼盘。"
+    },
+    "pastirma_kavurmali_kasarli_pide": {
+      "name": "熏牛肉碎肉干酪皮德",
+      "desc": "酥脆皮德面饼搭配土耳其风干牛肉 (Pastırma)、炖牛肉与浓郁奶酪。"
+    },
+    "ispanakli_pide": {
+      "name": "菠菜皮德",
+      "desc": "石炉现烤面饼，包裹鲜嫩菠菜、洋葱与秘制香料。"
+    },
+    "patatesli_pide": {
+      "name": "土豆皮德",
+      "desc": "烤制香脆面饼，包裹风味马铃薯泥馅料。"
+    },
+    "peymacun": {
+      "name": "芝士拉赫马琼 (Peymacun)",
+      "desc": "薄脆面饼搭配浓郁混合奶酪与香草烘烤而成。"
+    },
+    "kopogl": {
+      "name": "烤茄子蒜香酸奶 (Köpoğlu)",
+      "desc": "烤茄子与彩椒搭配蒜香过滤酸奶及浓郁番茄酱。"
+    },
+    "saksuka": {
+      "name": "橄榄油茄子杂烩 (Şakşuka)",
+      "desc": "橄榄油慢炒茄子与甜椒，裹挟浓郁蒜香番茄汁。"
+    },
+    "yogurtlu_karamelize_sogan": {
+      "name": "焦糖洋葱浓缩酸奶",
+      "desc": "慢火熬制焦糖洋葱与浓醇过滤酸奶的丝滑融合。"
     }
   }
 }

@@ -493,6 +493,54 @@
     "karides_guvec": {
       "name": "Karides Güveç",
       "desc": "Gamberi cotti in terracotta"
+    },
+    "hunkarbegendi": {
+      "name": "Hünkâr Beğendi",
+      "desc": "170 g Bocconcini di carne tenera su purea vellutata di melanzane affumicate."
+    },
+    "adana_kuzu_sis_kebap": {
+      "name": "Kebab Adana e Spiedini d'Agnello",
+      "desc": "350 g Combinazione di Adana kebab e spiedino d'agnello cotti alla brace."
+    },
+    "adana_tavuk_sis_kebap": {
+      "name": "Kebab Adana e Spiedini di Pollo",
+      "desc": "350 g Combinazione di Adana kebab speziato e spiedino di pollo marinato."
+    },
+    "kuzu_tavuk_sis_kebap": {
+      "name": "Spiedini d'Agnello e Pollo",
+      "desc": "350 g Combinazione di teneri spiedini d'agnello e pollo marinato."
+    },
+    "vejetaryen_vegan_tabagi": {
+      "name": "Piatto Vegetariano e Vegano",
+      "desc": "Ricco assortimento di antipasti all'olio d'oliva e verdure grigliate."
+    },
+    "pastirma_kavurmali_kasarli_pide": {
+      "name": "Pide con Pastırma, Kavurma e Formaggio",
+      "desc": "Pide croccante con pastırma, carne kavurma e formaggio fuso."
+    },
+    "ispanakli_pide": {
+      "name": "Pide agli Spinaci",
+      "desc": "Pide cotto nel forno a legna con spinaci freschi e cipolle."
+    },
+    "patatesli_pide": {
+      "name": "Pide alle Patate",
+      "desc": "Pide ripieno di purè di patate speziato cotto al forno."
+    },
+    "peymacun": {
+      "name": "Peymacun (Lahmacun al Formaggio)",
+      "desc": "Pasta sottile e croccante cotta al forno con formaggio fuso ed erbe aromatiche."
+    },
+    "kopogl": {
+      "name": "Köpoğlu",
+      "desc": "Melanzane e peperoni arrostiti con yogurt greco all'aglio e salsa di pomodoro."
+    },
+    "saksuka": {
+      "name": "Şakşuka",
+      "desc": "Melanzane e peperoni saltati in olio d'oliva con salsa di pomodoro all'aglio."
+    },
+    "yogurtlu_karamelize_sogan": {
+      "name": "Cipolle Caramellate con Yogurt",
+      "desc": "Cipolle dolci caramellate a fuego lento con yogurt greco cremoso."
     }
   }
 }

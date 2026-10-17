@@ -322,7 +322,7 @@ function MenuCategoryBar({ categories, activeCategory, setActiveCategory }) {
             >
               {categories.map((cat) => {
                 const isActive = activeCategory === cat.id;
-                const firstItemImage = cat.items && cat.items.length > 0 && cat.items[0].image ? cat.items[0].image : "";
+                const firstItemImage = cat.image || cat.items?.find((i) => i.image)?.image || "";
                 
                 return (
                   <button

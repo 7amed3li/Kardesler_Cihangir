@@ -493,6 +493,54 @@
     "karides_guvec": {
       "name": "Karides Güveç",
       "desc": "Shrimp cooked in a traditional clay pot"
+    },
+    "hunkarbegendi": {
+      "name": "Hünkâr Beğendi",
+      "desc": "170 gr. Tender sautéed meat served on a bed of velvety smoked eggplant puree."
+    },
+    "adana_kuzu_sis_kebap": {
+      "name": "Adana & Lamb Shish Kebab",
+      "desc": "350 gr. Combo of Adana kebab and grilled lamb skewers cooked over oak charcoal."
+    },
+    "adana_tavuk_sis_kebap": {
+      "name": "Adana & Chicken Shish Kebab",
+      "desc": "350 gr. Combo of spicy Adana kebab and marinated grilled chicken skewers."
+    },
+    "kuzu_tavuk_sis_kebap": {
+      "name": "Lamb & Chicken Shish Kebab",
+      "desc": "350 gr. Combo of tender lamb skewers and marinated chicken skewers."
+    },
+    "vejetaryen_vegan_tabagi": {
+      "name": "Vegetarian & Vegan Platter",
+      "desc": "Rich assortment of olive oil mezes, roasted vegetables, and fresh sides."
+    },
+    "pastirma_kavurmali_kasarli_pide": {
+      "name": "Pastırma, Kavurma & Cheese Pide",
+      "desc": "Crispy pide topped with seasoned pastırma, roasted beef kavurma, and melted kashar cheese."
+    },
+    "ispanakli_pide": {
+      "name": "Spinach Pide",
+      "desc": "Stone-baked pide filled with fresh seasoned spinach and onions."
+    },
+    "patatesli_pide": {
+      "name": "Potato Pide",
+      "desc": "Stone-baked pide stuffed with seasoned mashed potato filling."
+    },
+    "peymacun": {
+      "name": "Peymacun (Cheese Lahmacun)",
+      "desc": "Thin, crispy dough baked with a special melted cheese and herbs blend."
+    },
+    "kopogl": {
+      "name": "Köpoğlu",
+      "desc": "Roasted eggplant and peppers layered with garlic strained yogurt and rich tomato sauce."
+    },
+    "saksuka": {
+      "name": "Şakşuka",
+      "desc": "Fried eggplants, zucchini, and peppers sautéed in rich garlic tomato sauce."
+    },
+    "yogurtlu_karamelize_sogan": {
+      "name": "Caramelized Onion with Yogurt",
+      "desc": "Sweet slow-caramelized onions blended with thick strained yogurt."
     }
   }
 }

@@ -493,6 +493,54 @@
     "karides_guvec": {
       "name": "Karides Güveç",
       "desc": "Garnelen im Tontopf gebacken"
+    },
+    "hunkarbegendi": {
+      "name": "Hünkâr Beğendi",
+      "desc": "170 g Zartes Fleisch auf samtigem Auberginenpüree."
+    },
+    "adana_kuzu_sis_kebap": {
+      "name": "Adana & Lammspieß Kebab",
+      "desc": "350 g Kombination aus Adana Kebab und gegrilltem Lammspieß über Holzkohle."
+    },
+    "adana_tavuk_sis_kebap": {
+      "name": "Adana & Hähnchenspieß Kebab",
+      "desc": "350 g Kombination aus scharfem Adana Kebab und mariniertem Hähnchenspieß."
+    },
+    "kuzu_tavuk_sis_kebap": {
+      "name": "Lamm- & Hähnchenspieß Kebab",
+      "desc": "350 g Kombination aus zartem Lammspieß und mariniertem Hähnchenspieß."
+    },
+    "vejetaryen_vegan_tabagi": {
+      "name": "Vegetarische & Vegane Platte",
+      "desc": "Reichhaltige Auswahl an Mezes mit Olivenöl und gegrilltem Gemüse."
+    },
+    "pastirma_kavurmali_kasarli_pide": {
+      "name": "Pide mit Pastırma, Kavurma & Käse",
+      "desc": "Knuspriges Pide belegt mit Pastırma, Rinder-Kavurma und geschmolzenem Käse."
+    },
+    "ispanakli_pide": {
+      "name": "Spinat Pide",
+      "desc": "Im Steinofen gebackenes Pide mit frischem Spinat und Zwiebeln."
+    },
+    "patatesli_pide": {
+      "name": "Kartoffel Pide",
+      "desc": "Steinofen-Pide mit würziger Kartoffelfüllung."
+    },
+    "peymacun": {
+      "name": "Peymacun (Käse-Lahmacun)",
+      "desc": "Dünner, knuspriger Teig mit einer feinen Käse- und Kräutermischung überbacken."
+    },
+    "kopogl": {
+      "name": "Köpoğlu",
+      "desc": "Geröstete Auberginen und Paprika mit Knoblauch-Joghurt und aromatischer Tomatensauce."
+    },
+    "saksuka": {
+      "name": "Şakşuka",
+      "desc": "In Olivenöl gebratene Auberginen und Paprika in würziger Knoblauch-Tomatensauce."
+    },
+    "yogurtlu_karamelize_sogan": {
+      "name": "Karamellisierte Zwiebeln mit Joghurt",
+      "desc": "Süßlich karamellisierte Zwiebeln auf cremigem stichfestem Joghurt."
     }
   }
 }

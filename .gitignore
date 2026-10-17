@@ -43,3 +43,5 @@ next-env.d.ts
 /scratch/
 /images/
 menu.md
+/*.jpeg
+/*.jpg

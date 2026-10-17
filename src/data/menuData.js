@@ -11,12 +11,6 @@ export const menuData = [
         trending: true,
       },
       {
-        id: "pacanga_boregi",
-        price: 300.00,
-        image: "/images/2-Pacanga-Boregi.webp",
-        tags: [],
-      },
-      {
         id: "omlet",
         price: 250.00,
         image: "/images/3-Omlet.webp",
@@ -92,6 +86,31 @@ export const menuData = [
       {
         id: "patlicanli_kebap",
         image: "/images/14-Patlicanli-Kebap.webp",
+        tags: [],
+      },
+      {
+        id: "hunkarbegendi",
+        price: 1500.00,
+        tags: ["signature"],
+        trending: true,
+      },
+      {
+        id: "adana_kuzu_sis_kebap",
+        price: 1500.00,
+        image: "/images/adana_kuzu_sis_kebap_v2.webp",
+        tags: ["signature"],
+        trending: true,
+      },
+      {
+        id: "adana_tavuk_sis_kebap",
+        price: 1500.00,
+        image: "/images/adana_tavuk_sis_kebap_v2.webp",
+        tags: ["signature"],
+      },
+      {
+        id: "kuzu_tavuk_sis_kebap",
+        price: 1500.00,
+        image: "/images/kuzu_tavuk_sis_kebap_v2.webp",
         tags: [],
       },
       {
@@ -364,6 +383,29 @@ export const menuData = [
         tags: [],
       },
       {
+        id: "pastirma_kavurmali_kasarli_pide",
+        price: 700.00,
+        tags: [],
+        trending: true,
+      },
+      {
+        id: "ispanakli_pide",
+        price: 410.00,
+        tags: ["vegetarian"],
+      },
+      {
+        id: "patatesli_pide",
+        price: 410.00,
+        tags: ["vegetarian"],
+      },
+      {
+        id: "peymacun",
+        price: 340.00,
+        image: "/images/peymacun.webp",
+        tags: ["vegetarian"],
+        trending: true,
+      },
+      {
         id: "beyaz_peynirli_pide",
         image: "/images/beyaz_peynirli_pide.webp",
         tags: ["vegetarian"],
@@ -416,8 +458,30 @@ export const menuData = [
   },
   {
     id: "meze",
+    image: "/images/karisik_meze.webp",
     category: { en: "Appetizer" },
     items: [
+      {
+        id: "kopogl",
+        price: 180.00,
+        tags: ["vegetarian"],
+      },
+      {
+        id: "saksuka",
+        price: 180.00,
+        tags: ["vegetarian", "vegan"],
+      },
+      {
+        id: "yogurtlu_karamelize_sogan",
+        price: 180.00,
+        tags: ["vegetarian"],
+      },
+      {
+        id: "vejetaryen_vegan_tabagi",
+        price: 600.00,
+        tags: ["vegetarian", "vegan"],
+        trending: true,
+      },
       {
         id: "semiz_otu",
         price: 180.00,
