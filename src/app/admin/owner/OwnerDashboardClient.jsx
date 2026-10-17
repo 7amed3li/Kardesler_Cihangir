@@ -38,11 +38,13 @@ export default function OwnerDashboardClient({ items }) {
   const [message, setMessage] = useState({ type: "", text: "" });
 
   const categories = Array.from(
-    new Set(items.map((item) => item.categories?.name_tr || item.category_id))
+    new Set(items.map((item) => item.categories?.name_tr || item.category_id).filter(Boolean))
   );
 
   const filteredItems = localItems.filter((item) => {
-    const matchesSearch = item.id.toLowerCase().includes(searchTerm.toLowerCase());
+    const term = searchTerm.trim().toLowerCase();
+    const productName = formatProductName(item.id).toLowerCase();
+    const matchesSearch = !term || item.id.toLowerCase().includes(term) || productName.includes(term);
     const catName = item.categories?.name_tr || item.category_id;
     const matchesCat = categoryFilter === "all" || catName === categoryFilter;
     return matchesSearch && matchesCat;
