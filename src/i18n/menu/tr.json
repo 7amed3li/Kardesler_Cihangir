@@ -30,6 +30,22 @@
       "name": "Menemen",
       "desc": "Közlenmiş biber, sulu domates, halis tereyağı ve yumurta ile bakır sahanda pişen geleneksel lezzet."
     },
+    "sigara_boregi": {
+      "name": "Sigara Böreği",
+      "desc": ""
+    },
+    "gozleme_cesitleri": {
+      "name": "Gözleme Çeşitleri",
+      "desc": ""
+    },
+    "pastirmali_yumurta": {
+      "name": "Pastırmalı Yumurta",
+      "desc": ""
+    },
+    "simitli_yumurta": {
+      "name": "Simitli Yumurta",
+      "desc": ""
+    },
     "sahanda_yumurta": {
       "name": "Sahanda Yumurta",
       "desc": "Taze çiftlik yumurtalarının halis köy tereyağında bakır sahanda pişmiş hali."
@@ -513,6 +529,10 @@
     "vejetaryen_vegan_tabagi": {
       "name": "Vejetaryen & Vegan Tabağı",
       "desc": "Çeşitli zeytinyağlı mezeler, közlenmiş sebzeler ve taze garnitürlerle zengin vegan tabağı."
+    },
+    "kuru_dolma": {
+      "name": "Kuru Dolma",
+      "desc": ""
     },
     "pastirma_kavurmali_kasarli_pide": {
       "name": "Pastırma Kavurmalı Kaşarlı Pide",

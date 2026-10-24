@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
 import UserManagementClient from "./UserManagementClient";
 import OwnerDashboardClient from "../owner/OwnerDashboardClient";
+import { includeUnstoredNewMenuItems } from "@/lib/adminMenuItems";
 
 export default async function DeveloperPage() {
   const supabase = await createClient();
@@ -24,6 +25,7 @@ export default async function DeveloperPage() {
     .from("items")
     .select("*, categories(name_tr, name_en)")
     .order("category_id");
+  const adminItems = includeUnstoredNewMenuItems(items || []);
 
   // Fetch all users securely on the server
   const adminAuth = createAdminClient().auth.admin;
@@ -60,7 +62,7 @@ export default async function DeveloperPage() {
           {itemsError ? (
             <div className="text-red-500">Error loading items: {itemsError.message}</div>
           ) : (
-            <OwnerDashboardClient items={items || []} />
+            <OwnerDashboardClient items={adminItems} />
           )}
         </section>
 

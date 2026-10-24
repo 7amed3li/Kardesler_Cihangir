@@ -26,8 +26,8 @@ async function fetchPricesFromDb() {
 // Next.js cached function to ensure deduplication and caching across requests
 export const getCurrentMenuItems = unstable_cache(
   fetchPricesFromDb,
-  ['menu-prices'],
-  { tags: ['menu-prices'], revalidate: 3600 }
+  ['menu-prices-v2'],
+  { tags: ['menu-prices'], revalidate: 60 }
 );
 
 export async function getLivePricesMap() {

@@ -1810,7 +1810,8 @@
     "spicy": false,
     "signature": false,
     "trending": false,
-    "allergens": []
+    "allergens": [],
+    "image": "/images/pastirmali_kavurmali_kasarli_pide.webp"
   },
   {
     "id": "tavuklu_kasarli_pide",
@@ -3159,5 +3160,126 @@
       "ar": "سلطة"
     },
     "tags": []
+  },
+  {
+    "id": "sigara_boregi",
+    "name": {
+      "tr": "Sigara Böreği",
+      "en": "Cheese-Filled Pastry Rolls",
+      "ar": "لفائف الجبن المقرمشة"
+    },
+    "description": {
+      "tr": "",
+      "en": "Crispy cheese-filled pastry rolls",
+      "ar": ""
+    },
+    "price": 250,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار"
+    },
+    "image": "/images/sigara_boregi.webp",
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "gozleme_cesitleri",
+    "name": {
+      "tr": "Gözleme Çeşitleri",
+      "en": "Assorted Gözleme",
+      "ar": "أنواع الجوزلمة"
+    },
+    "description": {
+      "tr": "",
+      "en": "Traditional Turkish stuffed flatbreads",
+      "ar": ""
+    },
+    "price": 450,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار"
+    },
+    "image": "/images/gozleme_cesitleri.webp",
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "pastirmali_yumurta",
+    "name": {
+      "tr": "Pastırmalı Yumurta",
+      "en": "Eggs with Pastırma",
+      "ar": "بيض بالبسترمة"
+    },
+    "description": {
+      "tr": "",
+      "en": "Eggs with Turkish pastırma",
+      "ar": ""
+    },
+    "price": 350,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار"
+    },
+    "tags": [],
+    "image": "/images/pastirmali_yumurta.webp"
+  },
+  {
+    "id": "simitli_yumurta",
+    "name": {
+      "tr": "Simitli Yumurta",
+      "en": "Simit with Egg",
+      "ar": "سميت مع البيض"
+    },
+    "description": {
+      "tr": "",
+      "en": "Turkish simit served with egg",
+      "ar": ""
+    },
+    "price": 280,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار"
+    },
+    "tags": [],
+    "image": "/images/simitli_yumurta.webp"
+  },
+  {
+    "id": "kuru_dolma",
+    "name": {
+      "tr": "Kuru Dolma",
+      "en": "Stuffed Dried Vegetables",
+      "ar": "خضروات مجففة محشية"
+    },
+    "description": {
+      "tr": "",
+      "en": "Traditional stuffed dried vegetables",
+      "ar": ""
+    },
+    "price": 180,
+    "currency": "TRY",
+    "category": "meze",
+    "categoryName": {
+      "tr": "Meze",
+      "en": "Appetizers",
+      "ar": "مقبلات"
+    },
+    "image": "/images/kuru_dolma.webp",
+    "tags": [
+      "vegetarian"
+    ]
   }
 ]

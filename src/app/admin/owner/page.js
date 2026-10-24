@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import OwnerDashboardClient from "./OwnerDashboardClient";
+import { includeUnstoredNewMenuItems } from "@/lib/adminMenuItems";
 
 export default async function OwnerPage() {
   const supabase = await createClient();
@@ -20,6 +21,8 @@ export default async function OwnerPage() {
     return <div className="p-8 text-red-500">Error loading items: {itemsError.message}</div>;
   }
 
+  const adminItems = includeUnstoredNewMenuItems(items || []);
+
   return (
     <div className="min-h-screen bg-ink text-cream font-sans">
       <nav className="bg-ink-2 border-b border-teal-dim/20 px-6 py-4 flex justify-between items-center sticky top-0 z-10">
@@ -35,7 +38,7 @@ export default async function OwnerPage() {
       </nav>
       
       <main className="max-w-5xl mx-auto p-6">
-        <OwnerDashboardClient items={items} />
+        <OwnerDashboardClient items={adminItems} />
       </main>
     </div>
   );

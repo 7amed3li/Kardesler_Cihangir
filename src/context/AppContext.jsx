@@ -139,7 +139,7 @@ export function AppProvider({ children }) {
       setPricesLoading(true);
       setPricesError(null);
       try {
-        const res = await fetch('/api/prices');
+        const res = await fetch('/api/prices', { cache: 'no-store' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const result = await res.json();
         

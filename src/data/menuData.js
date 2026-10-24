@@ -24,6 +24,34 @@ export const menuData = [
         trending: true,
       },
       {
+        id: "sigara_boregi",
+        price: 250.00,
+        name: { en: "Cheese-Filled Pastry Rolls" },
+        image: "/images/sigara_boregi.webp",
+        tags: ["vegetarian"],
+      },
+      {
+        id: "gozleme_cesitleri",
+        price: 450.00,
+        name: { en: "Assorted Gözleme" },
+        image: "/images/gozleme_cesitleri.webp",
+        tags: ["vegetarian"],
+      },
+      {
+        id: "pastirmali_yumurta",
+        price: 350.00,
+        name: { en: "Eggs with Pastırma" },
+        image: "/images/pastirmali_yumurta.webp",
+        tags: [],
+      },
+      {
+        id: "simitli_yumurta",
+        price: 280.00,
+        name: { en: "Simit with Egg" },
+        image: "/images/simitli_yumurta.webp",
+        tags: [],
+      },
+      {
         id: "sahanda_yumurta",
         price: 200.00,
         image: "/images/5-Sahanda-Yumurta.webp",
@@ -386,6 +414,7 @@ export const menuData = [
       {
         id: "pastirma_kavurmali_kasarli_pide",
         price: 700.00,
+        image: "/images/pastirmali_kavurmali_kasarli_pide.webp",
         tags: [],
         trending: true,
       },
@@ -398,6 +427,7 @@ export const menuData = [
       {
         id: "patatesli_pide",
         price: 410.00,
+        image: "/images/patatesli_pide.webp",
         tags: ["vegetarian"],
       },
       {
@@ -412,7 +442,7 @@ export const menuData = [
       },
       {
         id: "pastirmali_kasarli_pide",
-        image: "/images/pastirmali_pide.webp",
+        image: "/images/pastirmali_kavurmali_kasarli_pide.webp",
         tags: [],
       },
       {
@@ -466,21 +496,32 @@ export const menuData = [
       {
         id: "kopogl",
         price: 180.00,
+        image: "/images/kopoglu_white.webp",
         tags: ["vegetarian"],
       },
       {
         id: "saksuka",
         price: 180.00,
+        image: "/images/saksuka.webp",
         tags: ["vegetarian", "vegan"],
       },
       {
         id: "yogurtlu_karamelize_sogan",
         price: 180.00,
+        image: "/images/yogurtlu_karamelize_sogan.webp",
+        tags: ["vegetarian"],
+      },
+      {
+        id: "kuru_dolma",
+        price: 180.00,
+        name: { en: "Stuffed Dried Vegetables" },
+        image: "/images/kuru_dolma.webp",
         tags: ["vegetarian"],
       },
       {
         id: "vejetaryen_vegan_tabagi",
         price: 600.00,
+        image: "/images/vejetaryen_vegan_tabagi.webp",
         tags: ["vegetarian", "vegan"],
         trending: true,
       },
@@ -586,11 +627,11 @@ export const menuData = [
         image: "/images/yogurt.webp",
         tags: ["vegetarian"],
       },
-    { id: "elma_dilim_patates", tags: ["vegetarian","vegan"] },
-    { id: "kizartmasi_patates", tags: ["vegetarian","vegan"] },
-    { id: "ton_balikli_salata", tags: [] },
-    { id: "tavuklu_salata", tags: [] },
-    { id: "karides_guvec", tags: [] },
+    { id: "elma_dilim_patates", image: "/images/elma_dilim_patates.webp", tags: ["vegetarian","vegan"] },
+    { id: "kizartmasi_patates", image: "/images/kizartmasi_patates.webp", tags: ["vegetarian","vegan"] },
+    { id: "ton_balikli_salata", image: "/images/ton_balikli_salata.webp", tags: [] },
+    { id: "tavuklu_salata", image: "/images/tavuklu_salata.webp", tags: [] },
+    { id: "karides_guvec", image: "/images/karides_guvec.webp", tags: [] },
     ]
   },
   {

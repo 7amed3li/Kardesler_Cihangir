@@ -8,7 +8,7 @@ export async function GET() {
       { success: true, data: pricesMap },
       {
         headers: {
-          'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=300',
+          'Cache-Control': 'no-store',
         },
       }
     );

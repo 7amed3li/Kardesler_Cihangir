@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/admin';
+import { menuData } from '@/data/menuData';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { z } from 'zod';
 
@@ -80,19 +82,46 @@ export async function POST(request) {
       .from('items')
       .select('price')
       .eq('id', itemId)
-      .single();
+      .maybeSingle();
 
-    if (fetchError || !currentItem) {
+    if (fetchError) {
+      return NextResponse.json({ error: 'Failed to load item' }, { status: 500 });
+    }
+
+    const menuItem = menuData
+      .flatMap((category) => category.items || [])
+      .find((item) => item.id === itemId);
+
+    if (!currentItem && !menuItem) {
       return NextResponse.json({ error: 'Item not found' }, { status: 404 });
     }
 
-    const oldPrice = currentItem.price;
+    const oldPrice = currentItem?.price ?? menuItem.price ?? newPrice;
 
-    // 4. Update the price
-    const { error: updateError } = await supabase
-      .from('items')
-      .update({ price: newPrice })
-      .eq('id', itemId);
+    // 4. Update an existing row, or provision a missing menu item on first save.
+    let updateError;
+    if (currentItem) {
+      ({ error: updateError } = await supabase
+        .from('items')
+        .update({ price: newPrice })
+        .eq('id', itemId));
+    } else {
+      const category = menuData.find((entry) =>
+        (entry.items || []).some((item) => item.id === itemId)
+      );
+      const adminClient = createAdminClient();
+      ({ error: updateError } = await adminClient
+        .from('items')
+        .insert({
+          id: itemId,
+          category_id: category.id,
+          price: newPrice,
+          image_url: menuItem.image || null,
+          tags: menuItem.tags || [],
+          is_trending: Boolean(menuItem.trending),
+          is_available: true,
+        }));
+    }
 
     if (updateError) {
       console.error('Update error:', updateError);

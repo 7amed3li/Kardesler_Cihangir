@@ -4,6 +4,14 @@ import { useState } from "react";
 import { Search, Save, CheckCircle, AlertCircle } from "lucide-react";
 import menuTr from "@/i18n/menu/tr.json";
 
+const recentMenuItemIds = new Set([
+  "sigara_boregi",
+  "gozleme_cesitleri",
+  "pastirmali_yumurta",
+  "simitli_yumurta",
+  "kuru_dolma",
+]);
+
 export default function OwnerDashboardClient({ items }) {
   // Helper to format slugs to readable Turkish names
   const formatProductName = (slug) => {
@@ -48,7 +56,7 @@ export default function OwnerDashboardClient({ items }) {
     const catName = item.categories?.name_tr || item.category_id;
     const matchesCat = categoryFilter === "all" || catName === categoryFilter;
     return matchesSearch && matchesCat;
-  });
+  }).sort((a, b) => Number(recentMenuItemIds.has(b.id)) - Number(recentMenuItemIds.has(a.id)));
 
   const handleEdit = (item) => {
     setEditingId(item.id);
@@ -146,7 +154,14 @@ export default function OwnerDashboardClient({ items }) {
                   {/* Ürün */}
                   <td className="flex justify-between md:table-cell p-2 md:p-4 border-b border-teal-dim/10 md:border-0">
                     <span className="md:hidden text-xs font-bold text-cream-dim uppercase tracking-widest mt-1">Ürün</span>
-                    <span className="font-medium text-cream">{formatProductName(item.id)}</span>
+                    <span className="font-medium text-cream flex items-center gap-2">
+                      {formatProductName(item.id)}
+                      {recentMenuItemIds.has(item.id) && (
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-gold/15 text-gold border border-gold/30">
+                          Yeni
+                        </span>
+                      )}
+                    </span>
                   </td>
                   
                   {/* Kategori */}
