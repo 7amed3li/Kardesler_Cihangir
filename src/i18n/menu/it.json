@@ -541,6 +541,26 @@
     "yogurtlu_karamelize_sogan": {
       "name": "Cipolle Caramellate con Yogurt",
       "desc": "Cipolle dolci caramellate a fuego lento con yogurt greco cremoso."
+    },
+    "sigara_boregi": {
+      "name": "Sigara Böreği",
+      "desc": "Involtini Croccanti al Formaggio — Sottile pasta fillo arrotolata e ripiena di formaggio bianco turco e prezzemolo fresco, fritta alla perfezione dorata."
+    },
+    "gozleme_cesitleri": {
+      "name": "Gözleme Çeşitleri",
+      "desc": "Assortimento di Gözleme — Sottile focaccia tradizionale tirata a mano e cotta su piastra tonda, farcita con formaggio, patate speziate o carne macinata e spennellata di burro fuso."
+    },
+    "pastirmali_yumurta": {
+      "name": "Pastırmalı Yumurta",
+      "desc": "Uova con Pastırma — Sottili fette di manzo essiccato e speziato (pastırma) saltate nel burro con uova fresche di fattoria nel tradizionale tegame di rame."
+    },
+    "simitli_yumurta": {
+      "name": "Simitli Yumurta",
+      "desc": "Simit con Uovo e Formaggio — Ciambella croccante al sesamo (simit) con formaggio kashar fuso e uovo fresco cotto al burro in padella."
+    },
+    "kuru_dolma": {
+      "name": "Kuru Dolma",
+      "desc": "Verdure Essiccate Ripiene — Melanzane e peperoni essiccati al sole farciti con riso aromatico speziato, sommacco e melassa di melagrana, stufati dolcemente in olio d'oliva."
     }
   }
 }

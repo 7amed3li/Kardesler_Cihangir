@@ -541,6 +541,26 @@
     "yogurtlu_karamelize_sogan": {
       "name": "Cebolla Caramelizada con Yogur",
       "desc": "Cebollas dulces caramelizadas a fuego lento sobre yogur cremoso."
+    },
+    "sigara_boregi": {
+      "name": "Sigara Böreği",
+      "desc": "Rollitos Crujientes de Queso — Finas hojas de masa filo enrolladas y rellenas de queso blanco turco y perejil fresco, fritas hasta quedar doradas y crujientes."
+    },
+    "gozleme_cesitleri": {
+      "name": "Gözleme Çeşitleri",
+      "desc": "Variedad de Gözleme — Pan plano tradicional estirado a mano y cocinado a la plancha, relleno de queso, patata especiada o carne picada, untado con mantequilla derretida."
+    },
+    "pastirmali_yumurta": {
+      "name": "Pastırmalı Yumurta",
+      "desc": "Huevos con Pastırma — Finas lonchas de carne de vacuno curada y especiada (pastırma) salteadas en mantequilla con huevos frescos de granja en sartén de cobre."
+    },
+    "simitli_yumurta": {
+      "name": "Simitli Yumurta",
+      "desc": "Simit con Huevo y Queso — Anillo de pan crujiente con sésamo (simit) cocinado a la sartén con queso kashar fundido y huevo fresco a la mantequilla."
+    },
+    "kuru_dolma": {
+      "name": "Kuru Dolma",
+      "desc": "Dolma de Verduras Secas — Berenjenas y pimientos secados al sol rellenos de arroz aromático especiado, zumaque y melaza de granada, cocinados a fuego lento en aceite de oliva."
     }
   }
 }

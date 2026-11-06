@@ -541,6 +541,26 @@
     "yogurtlu_karamelize_sogan": {
       "name": "Oignons Caramélisés au Yaourt",
       "desc": "Oignons doux caramélisés lentement mélangés à un yaourt épais et onctueux."
+    },
+    "sigara_boregi": {
+      "name": "Sigara Böreği",
+      "desc": "Rouleaux de Féta Croustillants — Feuilles de pâte filo croustillantes roulées et farcies au fromage blanc turc et persil frais, dorées à point."
+    },
+    "gozleme_cesitleri": {
+      "name": "Gözleme Çeşitleri",
+      "desc": "Assortiment de Gözleme — Crêpe traditionnelle turque étalée à la main et cuite sur plaque (sac), garnie de fromage, pommes de terre épicées ou viande hachée, badigeonnée de beurre."
+    },
+    "pastirmali_yumurta": {
+      "name": "Pastırmalı Yumurta",
+      "desc": "Œufs à la Pastırma — Fines tranches de bœuf séché et épicé (pastırma) revenues au beurre avec des œufs frais dans une poêle en cuivre traditionnelle."
+    },
+    "simitli_yumurta": {
+      "name": "Simitli Yumurta",
+      "desc": "Simit aux Œufs et Fromage — Anneau de pain au sésame croustillant (simit) garni de fromage kashar fondu et d'œufs frais mijotés au beurre."
+    },
+    "kuru_dolma": {
+      "name": "Kuru Dolma",
+      "desc": "Légumes Séchés Farcis — Aubergines et poivrons séchés au soleil farcis de riz aromatisé aux herbes, sumac et mélasse de grenade, mijotés délicatement à l'huile d'olive."
     }
   }
 }

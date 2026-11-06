@@ -613,6 +613,26 @@
     "yogurtlu_karamelize_sogan": {
       "name": "焦糖洋葱浓缩酸奶",
       "desc": "慢火熬制焦糖洋葱与浓醇过滤酸奶的丝滑融合。"
+    },
+    "sigara_boregi": {
+      "name": "酥脆芝士奶酪卷 (Sigara Böreği)",
+      "desc": "酥脆芝士春卷 — 传统薄脆千层酥皮包裹香浓白芝士与新鲜香芹碎，油炸至金黄酥脆，趁热享用口感绝佳。"
+    },
+    "gozleme_cesitleri": {
+      "name": "土耳其馅饼拼选 (Gözleme Çeşitleri)",
+      "desc": "传统土耳其铁板馅饼 — 现擀薄面皮在圆形铁板（Sac）上烙烤，可选用香浓奶酪、风味土豆或调味碎肉为馅，出锅刷上醇香黄油。"
+    },
+    "pastirmali_yumurta": {
+      "name": "风干牛肉煎蛋 (Pastırmalı Yumurta)",
+      "desc": "土耳其风干牛肉煎蛋 — 精选传统特调香料风干牛肉薄片（Pastırma），在铜锅中以纯黄油微微翻炒，打入新鲜农场鸡蛋煎熟，香气浓郁诱人。"
+    },
+    "simitli_yumurta": {
+      "name": "芝麻圈煎蛋 (Simitli Yumurta)",
+      "desc": "芝麻圈芝士煎蛋 — 酥脆的现烤伊斯坦布尔芝麻圈（Simit），中央注入融化的卡夏尔奶酪与黄油煎蛋，麦香与奶香融合的热门早餐。"
+    },
+    "kuru_dolma": {
+      "name": "风干茄子甜椒包饭 (Kuru Dolma)",
+      "desc": "干茄子彩椒风味填饭 — 经日光自然晾晒的风干茄子与甜椒，填入特制香草香料香米、漆树果（Sumac）与石榴浓汁，以特级初榨橄榄油慢火煨制。"
     }
   }
 }

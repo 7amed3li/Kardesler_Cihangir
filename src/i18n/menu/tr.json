@@ -32,19 +32,19 @@
     },
     "sigara_boregi": {
       "name": "Sigara Böreği",
-      "desc": ""
+      "desc": "İnce çıtır yufka içerisine sarılmış nefis beyaz peynir ve ince kıyılmış maydanoz harcı; altın sarısı kızartılarak sıcak servis edilir."
     },
     "gozleme_cesitleri": {
       "name": "Gözleme Çeşitleri",
-      "desc": ""
+      "desc": "Sac üzerinde el açması ince yufkadan hazırlanan; peynirli, patatesli veya kıymalı seçenekleriyle tereyağlanarak sıcak sunulan geleneksel lezzet."
     },
     "pastirmali_yumurta": {
       "name": "Pastırmalı Yumurta",
-      "desc": ""
+      "desc": "Özel baharatlı çemenli Kayseri pastırması ve taze çiftlik yumurtalarının tereyağlı bakır sahanda cızırdayan eşsiz lezzeti."
     },
     "simitli_yumurta": {
       "name": "Simitli Yumurta",
-      "desc": ""
+      "desc": "Taptaze susamlı İstanbul simidinin ortasında eriyen kaşar peyniri ve tereyağında pişmiş çiftlik yumurtasıyla hazırlanan enfes kahvaltı klasiği."
     },
     "sahanda_yumurta": {
       "name": "Sahanda Yumurta",
@@ -532,7 +532,7 @@
     },
     "kuru_dolma": {
       "name": "Kuru Dolma",
-      "desc": ""
+      "desc": "Güneşte kurutulmuş Gaziantep patlıcan ve biberlerinin; sumaklı, narekşili ve baharatlı pirinç harcıyla doldurulup zeytinyağında ağır ağır pişirildiği enfes meze."
     },
     "pastirma_kavurmali_kasarli_pide": {
       "name": "Pastırma Kavurmalı Kaşarlı Pide",

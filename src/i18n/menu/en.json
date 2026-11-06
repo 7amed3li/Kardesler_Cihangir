@@ -541,6 +541,26 @@
     "yogurtlu_karamelize_sogan": {
       "name": "Caramelized Onion with Yogurt",
       "desc": "Sweet slow-caramelized onions blended with thick strained yogurt."
+    },
+    "sigara_boregi": {
+      "name": "Sigara Böreği",
+      "desc": "Cheese-Filled Pastry Rolls — Crispy rolled phyllo pastry filled with seasoned Turkish white cheese and fresh parsley, fried to golden perfection."
+    },
+    "gozleme_cesitleri": {
+      "name": "Gözleme Çeşitleri",
+      "desc": "Assorted Turkish Gözleme — Traditional hand-rolled flatbread cooked on a hot griddle, filled with savory cheese, spiced potato, or minced meat, brushed with melted butter."
+    },
+    "pastirmali_yumurta": {
+      "name": "Pastırmalı Yumurta",
+      "desc": "Eggs with Turkish Pastırma — Thinly sliced premium spiced cured beef (pastırma) gently sautéed in butter with farm eggs in a traditional copper pan."
+    },
+    "simitli_yumurta": {
+      "name": "Simitli Yumurta",
+      "desc": "Simit with Egg — Freshly baked crispy sesame simit ring centered with melted kashar cheese and farm eggs sizzled in rich butter."
+    },
+    "kuru_dolma": {
+      "name": "Kuru Dolma",
+      "desc": "Stuffed Dried Vegetables — Sun-dried eggplants and peppers from Gaziantep stuffed with spiced aromatic rice, sumac, and pomegranate molasses, simmered gently in olive oil."
     }
   }
 }

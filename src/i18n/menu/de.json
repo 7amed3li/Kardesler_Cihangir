@@ -541,6 +541,26 @@
     "yogurtlu_karamelize_sogan": {
       "name": "Karamellisierte Zwiebeln mit Joghurt",
       "desc": "Süßlich karamellisierte Zwiebeln auf cremigem stichfestem Joghurt."
+    },
+    "sigara_boregi": {
+      "name": "Sigara Böreği",
+      "desc": "Zigarren-Börek — Knusprig gerollter Filoteig gefüllt mit feinem Schafskäse und frischer Petersilie, goldbraun frittiert."
+    },
+    "gozleme_cesitleri": {
+      "name": "Gözleme Çeşitleri",
+      "desc": "Traditionelle Gözleme — Handgerollte dünne Teigfladen auf dem heißen Sac gebacken, wahlweise mit Käse, gewürzten Kartoffeln oder Hackfleisch gefüllt und mit Butter bestrichen."
+    },
+    "pastirmali_yumurta": {
+      "name": "Pastırmalı Yumurta",
+      "desc": "Spiegeleier mit Pastirma — Feine Scheiben gewürzter Rinderpastirma sanft in Butter angebraten mit frischen Spiegeleiern in der traditionellen Kupferpfanne."
+    },
+    "simitli_yumurta": {
+      "name": "Simitli Yumurta",
+      "desc": "Simit mit Spiegelei — Knuspriger Sesamkringel (Simit) gefüllt mit geschmolzenem Kaschar-Käse und Spiegelei, zischend in feiner Butter serviert."
+    },
+    "kuru_dolma": {
+      "name": "Kuru Dolma",
+      "desc": "Gefülltes getrocknetes Gemüse — Sonnengereifte, getrocknete Auberginen und Paprika aus Gaziantep, gefüllt mit gewürztem Kräuterreis, Sumach und Granatapfelsirup, sanft in Olivenöl geschmort."
     }
   }
 }

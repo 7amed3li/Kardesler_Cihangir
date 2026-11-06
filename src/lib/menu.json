@@ -7,9 +7,9 @@
       "ar": "Serpme Kahvaltı (2 Kişilik)"
     },
     "description": {
-      "tr": "Zengin kahvaltı tabağı",
-      "en": "Mixed Breakfast (2 Person) - Rich breakfast platter",
-      "ar": "فطور تركي مشكّل (لشخصين) - تشكيلة فطور غنية ومتنوعة"
+      "tr": "Peynir tabağı, zeytin çeşitleri, bal kaymak, reçel çeşitleri, hellim peyniri, patates kızartması, çikolata, cevizli helva, yumurta, babagannuş, kuru kayısı ve ceviz, simit.",
+      "en": "Cheese plate, olive varieties, honey & clotted cream, jam varieties, halloumi cheese, french fries, chocolate, walnut halva, eggs, babagannoush, dried apricots and walnuts, simit.",
+      "ar": "طبق أجبان، تشكيلة زيتون، عسل وقشطة، تشكيلة مربيات، جبنة حلوم، بطاطس مقلية، شوكولاتة، حلاوة بالجوز، بيض، بابا غنوج، مشمش مجفف وجوز، سميت."
     },
     "price": 900,
     "currency": "TRY",
@@ -17,40 +17,13 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": false,
     "vegan": false,
     "spicy": false,
     "signature": true,
     "trending": true,
-    "allergens": []
-  },
-  {
-    "id": "pacanga_boregi",
-    "name": {
-      "tr": "Paçanga Böreği",
-      "en": "Paçanga Böreği",
-      "ar": "Paçanga Böreği"
-    },
-    "description": {
-      "tr": "",
-      "en": "Pachanga Pastry",
-      "ar": "بوريك باتشانجا (فطيرة بالجبنة واللحم)"
-    },
-    "price": 300,
-    "currency": "TRY",
-    "category": "kahvalti",
-    "categoryName": {
-      "tr": "Kahvaltı",
-      "en": "Breakfast",
-      "ar": "فطور وشوربات"
-    },
-    "vegetarian": false,
-    "vegan": false,
-    "spicy": false,
-    "signature": false,
-    "trending": false,
     "allergens": []
   },
   {
@@ -61,9 +34,9 @@
       "ar": "Omlet"
     },
     "description": {
-      "tr": "",
-      "en": "Omlette",
-      "ar": "أومليت"
+      "tr": "Taze çiftlik yumurtaları ve tereyağlı tavada hafif altın sarısı pişmiş nefis omlet.",
+      "en": "Farm Omelette — Fresh farm eggs cooked golden in butter, with optional melted kashar cheese.",
+      "ar": "أومليت المزرعة — بيض طازج مقلي بالسمن البلدي حتى يكتسب لوناً ذهبياً شهياً مع إمكانية إضافة جبن القشقوان"
     },
     "price": 250,
     "currency": "TRY",
@@ -71,7 +44,7 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": true,
     "vegan": false,
@@ -88,9 +61,9 @@
       "ar": "Menemen"
     },
     "description": {
-      "tr": "",
-      "en": "Tomatoes, Pepper with Egg",
-      "ar": "منمن (بيض بالطماطم والفلفل)"
+      "tr": "Közlenmiş biber, sulu domates, halis tereyağı ve yumurta ile bakır sahanda pişen geleneksel lezzet.",
+      "en": "Traditional Menemen — Fresh roasted peppers, juicy tomatoes, pure butter and eggs cooked in traditional copper pan.",
+      "ar": "مينيمين تركي تقليدي — فلفل طازج مشوي، طماطم معصورة، سمن بلدي وبيض مطهو على البطيء في مقلاة نحاسية تقليدية"
     },
     "price": 250,
     "currency": "TRY",
@@ -98,13 +71,121 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": true,
     "vegan": false,
     "spicy": false,
     "signature": false,
     "trending": true,
+    "allergens": []
+  },
+  {
+    "id": "sigara_boregi",
+    "name": {
+      "tr": "Sigara Böreği",
+      "en": "Sigara Böreği",
+      "ar": "Sigara Böreği"
+    },
+    "description": {
+      "tr": "İnce çıtır yufka içerisine sarılmış nefis beyaz peynir ve ince kıyılmış maydanoz harcı; altın sarısı kızartılarak sıcak servis edilir.",
+      "en": "Cheese-Filled Pastry Rolls — Crispy rolled phyllo pastry filled with seasoned Turkish white cheese and fresh parsley, fried to golden perfection.",
+      "ar": "لفائف البوريك المقرمشة بالجبن — أصابع رقائق الفيلو المقرمشة المحشوة بجبن الفيتا الأبيض والبقدونس الطازج، مقلية بلون ذهبي شهي وتقدم ساخنة."
+    },
+    "price": 250,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار التركي"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "gozleme_cesitleri",
+    "name": {
+      "tr": "Gözleme Çeşitleri",
+      "en": "Gözleme Çeşitleri",
+      "ar": "Gözleme Çeşitleri"
+    },
+    "description": {
+      "tr": "Sac üzerinde el açması ince yufkadan hazırlanan; peynirli, patatesli veya kıymalı seçenekleriyle tereyağlanarak sıcak sunulan geleneksel lezzet.",
+      "en": "Assorted Turkish Gözleme — Traditional hand-rolled flatbread cooked on a hot griddle, filled with savory cheese, spiced potato, or minced meat, brushed with melted butter.",
+      "ar": "فطائر الجوزلمة التركية المشكلة — فطائر عجين رقيقة مفرودة يدوياً ومخبوزة على الصاج التقليدي، محشوة بالجبن أو البطاطس المتبلة أو اللحم، ومدهونة بالزبدة البلدية الذائبة."
+    },
+    "price": 450,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار التركي"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "pastirmali_yumurta",
+    "name": {
+      "tr": "Pastırmalı Yumurta",
+      "en": "Pastırmalı Yumurta",
+      "ar": "Pastırmalı Yumurta"
+    },
+    "description": {
+      "tr": "Özel baharatlı çemenli Kayseri pastırması ve taze çiftlik yumurtalarının tereyağlı bakır sahanda cızırdayan eşsiz lezzeti.",
+      "en": "Eggs with Turkish Pastırma — Thinly sliced premium spiced cured beef (pastırma) gently sautéed in butter with farm eggs in a traditional copper pan.",
+      "ar": "بيض بالبسطرمة التركية — شرائح رقيقة من لحم البسطرمة البقري المعتق المتبل بالبهارات والچمن، مقلية بالزبدة البلدية مع بيض المزرعة الطازج في المقلاة النحاسية."
+    },
+    "price": 350,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار التركي"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "simitli_yumurta",
+    "name": {
+      "tr": "Simitli Yumurta",
+      "en": "Simitli Yumurta",
+      "ar": "Simitli Yumurta"
+    },
+    "description": {
+      "tr": "Taptaze susamlı İstanbul simidinin ortasında eriyen kaşar peyniri ve tereyağında pişmiş çiftlik yumurtasıyla hazırlanan enfes kahvaltı klasiği.",
+      "en": "Simit with Egg — Freshly baked crispy sesame simit ring centered with melted kashar cheese and farm eggs sizzled in rich butter.",
+      "ar": "سميت بالبيض والجبن — كعك السميت الإسطنبولي المقرمش بالسمسم، مخبوز مع بيض المزرعة وجبن القشقوان الذائب في مقلاة الزبدة البلدية الساخنة."
+    },
+    "price": 280,
+    "currency": "TRY",
+    "category": "kahvalti",
+    "categoryName": {
+      "tr": "Kahvaltı",
+      "en": "Breakfast",
+      "ar": "الإفطار التركي"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
     "allergens": []
   },
   {
@@ -115,9 +196,9 @@
       "ar": "Sahanda Yumurta"
     },
     "description": {
-      "tr": "",
-      "en": "Fried Egg",
-      "ar": "بيض مقلي"
+      "tr": "Taze çiftlik yumurtalarının halis köy tereyağında bakır sahanda pişmiş hali.",
+      "en": "Fried Eggs in Copper Pan — Fresh farm eggs fried sunny-side up in organic sheep butter.",
+      "ar": "بيض عيون بالنحاس — بيض المزرعة الطازج المقلي بسمن الغنم البلدي الصافي في المقلاة النحاسية"
     },
     "price": 200,
     "currency": "TRY",
@@ -125,7 +206,7 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": true,
     "vegan": false,
@@ -142,9 +223,9 @@
       "ar": "Sucuklu Yumurta"
     },
     "description": {
-      "tr": "",
-      "en": "Saussage with Egg",
-      "ar": "بيض بالسجق التركي"
+      "tr": "Baharatlı kasap sucuğu ve taze yumurtaların tereyağlı bakır sahanda muhteşem uyumu.",
+      "en": "Spiced Sucuk & Eggs — Spiced garlic beef sucuk sausages fried with fresh farm eggs in butter.",
+      "ar": "بيض بالسجق التركي — شرائح السجق البقري المتبل مقلية مع البيض الطازج والسمن البلدي"
     },
     "price": 230,
     "currency": "TRY",
@@ -152,7 +233,7 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": false,
     "vegan": false,
@@ -169,9 +250,9 @@
       "ar": "Kavurmalı Yumurta"
     },
     "description": {
-      "tr": "",
-      "en": "Beaf Roasted Meat with Egg",
-      "ar": "بيض باللحم المحمّر (كاورما)"
+      "tr": "Ağır ağır pişmiş özel dana kavurma ve bakır sahanda taze yumurta.",
+      "en": "Roasted Beef Kavurma & Eggs — Slow-cooked savory beef kavurma topped with fresh eggs in copper pan.",
+      "ar": "بيض بالقاورما البقرية — قطع القاورما البقرية المطهوة على نار هادئة مع البيض المقلي بالنحاس"
     },
     "price": 300,
     "currency": "TRY",
@@ -179,39 +260,12 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": false,
     "vegan": false,
     "spicy": false,
     "signature": false,
-    "trending": false,
-    "allergens": []
-  },
-  {
-    "id": "kuzu_gerdan_corba",
-    "name": {
-      "tr": "Kuzu Gerdan Çorba",
-      "en": "Kuzu Gerdan Çorba",
-      "ar": "Kuzu Gerdan Çorba"
-    },
-    "description": {
-      "tr": "",
-      "en": "Lamb Soup",
-      "ar": "شوربة لحم غنم"
-    },
-    "price": 330,
-    "currency": "TRY",
-    "category": "kahvalti",
-    "categoryName": {
-      "tr": "Kahvaltı",
-      "en": "Breakfast",
-      "ar": "فطور وشوربات"
-    },
-    "vegetarian": false,
-    "vegan": false,
-    "spicy": false,
-    "signature": true,
     "trending": false,
     "allergens": []
   },
@@ -223,9 +277,9 @@
       "ar": "Şehriyeli Tavuk Çorbası"
     },
     "description": {
-      "tr": "",
-      "en": "Chicken Soup",
-      "ar": "شوربة دجاج بالشعيرية"
+      "tr": "Taze köy tavuğu göğüs eti, tel şehriye ve karabiber aromalı nefis sıcak çorba.",
+      "en": "Chicken Noodle Soup — Shredded village chicken breast, vermicelli noodles, lemon and black pepper.",
+      "ar": "شوربة دجاج بالشعيرية — قطع صدر الدجاج البلدي مع الشعيرية والليمون والفلفل الأسود"
     },
     "price": 180,
     "currency": "TRY",
@@ -233,7 +287,7 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": false,
     "vegan": false,
@@ -250,9 +304,9 @@
       "ar": "Ezogelin / Mercimek Çorbası"
     },
     "description": {
-      "tr": "",
-      "en": "Lentil Soup",
-      "ar": "شوربة عدس"
+      "tr": "Geleneksel usulde kırmızı mercimek, nane, tereyağı ve limon eşliğinde süzme çorba.",
+      "en": "Traditional Lentil Soup — Strained red lentil soup served with mint butter, chili flakes and fresh lemon.",
+      "ar": "شوربة عدس إيزوجيلين — شوربة العدس الأحمر التقليدية تسبك بالنعناع والسمن البلدي والليمون الطازج"
     },
     "price": 150,
     "currency": "TRY",
@@ -260,7 +314,7 @@
     "categoryName": {
       "tr": "Kahvaltı",
       "en": "Breakfast",
-      "ar": "فطور وشوربات"
+      "ar": "الإفطار التركي"
     },
     "vegetarian": true,
     "vegan": false,
@@ -272,28 +326,53 @@
   {
     "id": "adana_urfa",
     "name": {
-      "tr": "Adana & Urfa Kebap",
-      "en": "Adana & Urfa Kebap",
-      "ar": "Adana & Urfa Kebap"
+      "tr": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)",
+      "en": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)",
+      "ar": "Adana Kebap (Acılı) veya Urfa Kebap (Acısız)"
     },
     "description": {
-      "tr": "140 gr. Zırh Kıyma",
-      "en": "Adana & Urfa Kebab - 140 gr. Grill Minced Beaf Meat",
-      "ar": "كباب أضنة وأورفا - 140 غرام - لحم مفروم مشوي على الفحم"
+      "tr": "Bilgi: Adana Kebap acılı, Urfa Kebap acısız seçeneğidir. 140 gr. zırh kıyması meşe kömüründe pişirilir, közlenmiş biber, domates ve sıcak lavaş ile servis edilir",
+      "en": "Adana Kebab (Spicy) or Urfa Kebab (Mild) — Note: Adana Kebab is spicy, while Urfa Kebab is mild and non-spicy. 140g hand-minced lamb charcoal-grilled, served with roasted peppers, tomatoes, warm lavash, and bulgur.",
+      "ar": "كباب أضنة أو أورفة — تنبيه: كباب أضنة (حار) وكباب أورفة (غير حار). لحم غنم مفروم بالساطور 140 غرام ومشوي على جمر السنديان، يقدم مع الفلفل والطماطم المشوية والخبز الساخن والبرغل"
     },
-    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
-    "spicy": true,
-    "signature": true,
+    "spicy": false,
+    "signature": false,
     "trending": true,
+    "allergens": []
+  },
+  {
+    "id": "kuzu_ciger",
+    "name": {
+      "tr": "Kuzu Ciğer",
+      "en": "Kuzu Ciğer",
+      "ar": "Kuzu Ciğer"
+    },
+    "description": {
+      "tr": "Geleneksel kuzu ciğer şiş",
+      "en": "Traditional lamb liver skewer",
+      "ar": "3 أسياخ كبدة غنم مشوية على الفحم الطبيعي"
+    },
+    "currency": "TRY",
+    "category": "kebap",
+    "categoryName": {
+      "tr": "Kebap",
+      "en": "Kebab",
+      "ar": "مشويات الكباب"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
     "allergens": []
   },
   {
@@ -304,23 +383,22 @@
       "ar": "Mardin Kebap"
     },
     "description": {
-      "tr": "180 gr.",
-      "en": "Mardin Kebab - 180 gr. Mardin Kebab",
-      "ar": "كباب ماردين - 180 غرام - كباب على طريقة ماردين"
+      "tr": "180 gr. Mardin usulü sarımsak ve özel baharatlarla harmanlanmış zırh kıyması kebabı.",
+      "en": "Mardin Style Garlic Kebab — 180g. Hand-minced meat seasoned with garlic and regional herbs from Mardin.",
+      "ar": "كباب ماردين بالثوم — كباب مفروم بالساطور 180 غرام على طريقة ماردين متبل بالثوم والأعشاب الإقليمية الخاصة"
     },
-    "price": 950,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
     "spicy": false,
-    "signature": true,
-    "trending": false,
+    "signature": false,
+    "trending": true,
     "allergens": []
   },
   {
@@ -331,23 +409,22 @@
       "ar": "Beyti Kebap"
     },
     "description": {
-      "tr": "170 gr. Sarımsaklı",
-      "en": "Beyti Kebab - 170 gr. Grill Minced Beaf Meat with Garlicky",
-      "ar": "كباب بيتي - 170 غرام - كباب لحم بالثوم ملفوف بالخبز"
+      "tr": "170 gr. Zırh kıymasının çıtır lavaşa sarılıp fırınlanması, domates sosu, tereyağı ve yoğurt ile.",
+      "en": "Beyti Kebab Wrap — 170g. Charcoal grilled minced kebab wrapped in crispy lavash, baked with tomato sauce, melted butter and strained yogurt.",
+      "ar": "كباب بيتي ملفوف — كباب مفروم 170 غرام ملفوف بخبز اللافاش المقرمش والمخبوز بالفرن، يعلوه صوص الطماطم والسمن البلدي واللبن"
     },
-    "price": 930,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
     "spicy": false,
     "signature": false,
-    "trending": false,
+    "trending": true,
     "allergens": []
   },
   {
@@ -358,17 +435,16 @@
       "ar": "Domatesli Kebap"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "Tomatoes Kebab - 150 gr. Grill Tomatoes, Beaf Meat",
-      "ar": "كباب بالطماطم - 150 غرام - كباب مشوي مع طماطم"
+      "tr": "150 gr. Zırh kıyması ve fırınlanmış sulu domates dilimlerinin kömür ateşinde buluşması.",
+      "en": "Tomato Skewered Kebab — 150g. Skewered hand-minced meat grilled sequentially with juicy roasted tomato halves.",
+      "ar": "كباب بالطماطم المشوية — كباب مفروم 150 غرام مشوي على الفحم بالتناوب مع أنصاف الطماطم المشوية"
     },
-    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -385,17 +461,124 @@
       "ar": "Patlıcanlı Kebap"
     },
     "description": {
-      "tr": "160 gr.",
-      "en": "Eggplant Kebab - 160 gr. Grill Eggplant, Minced Beaf Meat",
-      "ar": "كباب بالباذنجان - 160 غرام - كباب لحم مع باذنجان مشوي"
+      "tr": "160 gr. Kömürde közlenmiş kemer patlıcanlar arasında özel zırh kıyması kebabı.",
+      "en": "Eggplant Kebab — 160g. Minced kebab layered between roasted charcoal eggplant slices.",
+      "ar": "كباب بالباذنجان — كباب مفروم 160 غرام منسق بين دوائر الباذنجان المشوي على الفحم"
     },
-    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "hunkarbegendi",
+    "name": {
+      "tr": "Hünkâr Beğendi",
+      "en": "Hünkâr Beğendi",
+      "ar": "Hünkâr Beğendi"
+    },
+    "description": {
+      "tr": "170 gr. Kadifemsi közlenmiş patlıcan püresi üzerinde tereyağlı kuzu eti parçaları.",
+      "en": "170 gr. Tender sautéed meat served on a bed of velvety smoked eggplant puree.",
+      "ar": "هونكار بيغندي — 170 غرام قطع لحم طرية بالسمن تقدم فوق مهروس الباذنجان المشوي المخملي"
+    },
+    "price": 1500,
+    "currency": "TRY",
+    "category": "kebap",
+    "categoryName": {
+      "tr": "Kebap",
+      "en": "Kebab",
+      "ar": "مشويات الكباب"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": true,
+    "trending": true,
+    "allergens": []
+  },
+  {
+    "id": "adana_kuzu_sis_kebap",
+    "name": {
+      "tr": "Adana & Kuzu Şiş Kebap",
+      "en": "Adana & Lamb Shish Kebab",
+      "ar": "Adana & Kuzu Şiş Kebap"
+    },
+    "description": {
+      "tr": "350 gr. Adana kebap ve kuzu şiş kombinasyonu; meşe kömüründe pişirilmiş iki farklı lezzetin bir arada sunumu.",
+      "en": "350 gr. Combo of Adana kebab and grilled lamb skewers cooked over oak charcoal.",
+      "ar": "كباب أضنة وشيش لحم غنم — 350 غرام تشكيلة من كباب أضنة وشيش لحم الخروف المشوي على الفحم"
+    },
+    "price": 1500,
+    "currency": "TRY",
+    "category": "kebap",
+    "categoryName": {
+      "tr": "Kebap",
+      "en": "Kebab",
+      "ar": "مشويات الكباب"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": true,
+    "trending": true,
+    "allergens": []
+  },
+  {
+    "id": "adana_tavuk_sis_kebap",
+    "name": {
+      "tr": "Adana & Tavuk Şiş Kebap",
+      "en": "Adana & Chicken Shish Kebab",
+      "ar": "Adana & Tavuk Şiş Kebap"
+    },
+    "description": {
+      "tr": "350 gr. Adana kebap ve tavuk şiş kombinasyonu; acılı kıyma ile marine edilmiş tavuk göğsünün kömür ızgara buluşması.",
+      "en": "350 gr. Combo of spicy Adana kebab and marinated grilled chicken skewers.",
+      "ar": "كباب أضنة وشيش طاووق — 350 غرام تشكيلة من كباب أضنة الحار وشيش طاووق الدجاج المتبل والمشوي على الفحم"
+    },
+    "price": 1500,
+    "currency": "TRY",
+    "category": "kebap",
+    "categoryName": {
+      "tr": "Kebap",
+      "en": "Kebab",
+      "ar": "مشويات الكباب"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": true,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "kuzu_tavuk_sis_kebap",
+    "name": {
+      "tr": "Kuzu & Tavuk Şiş Kebap",
+      "en": "Lamb & Chicken Shish Kebab",
+      "ar": "Kuzu & Tavuk Şiş Kebap"
+    },
+    "description": {
+      "tr": "350 gr. Kuzu şiş ve tavuk şiş kombinasyonu; iki farklı etin kömür ızgarada pişirilip bir tabakta sunulması.",
+      "en": "350 gr. Combo of tender lamb skewers and marinated chicken skewers.",
+      "ar": "شيش لحم غنم وشيش طاووق — 350 غرام تشكيلة من شيش لحم الخروف وشيش طاووق الدجاج المشوي على الفحم"
+    },
+    "price": 1500,
+    "currency": "TRY",
+    "category": "kebap",
+    "categoryName": {
+      "tr": "Kebap",
+      "en": "Kebab",
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -412,17 +595,16 @@
       "ar": "Kuzu Şiş Kebap"
     },
     "description": {
-      "tr": "150 gr. Lokum gibi",
-      "en": "Lamb Shish Kebab - 150 gr. Lamb Shish Kebab",
-      "ar": "شيش لحم غنم - 150 غرام - قطع غنم طرية مشوية على أسياخ"
+      "tr": "150 gr. Lokum kıvamında marine edilmiş kuzu bud etlerinin şişte kömür ızgarası.",
+      "en": "Lamb Shish Kebab — 150g. Tender marinated lamb leg cubes grilled on charcoal iron skewers.",
+      "ar": "شيش كباب لحم غنم — قطع لحم الخروف الطرية 150 غرام المتبلة والمشوية على أسياخ الفحم"
     },
-    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -439,17 +621,16 @@
       "ar": "Ali Nazik Kebap"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "Ali Nazik Kebab - 150 gr. Grill Lamb Meat and Eggplant with Garlicky Yogurt",
-      "ar": "علي نازك - 150 غرام - لحم غنم مشوي على باذنجان مدخّن بالزبادي والثوم"
+      "tr": "150 gr. Yoğurtlu köz patlıcan yatağında tereyağlı ızgara et parçaları ve köz biber.",
+      "en": "Ali Nazik Kebab — 150g. Tender butter-grilled meat served over warm garlic yogurt roasted eggplant puree.",
+      "ar": "كباب علي نازيك — قطع اللحم المشوي بالسمن 150 غرام تقدم فوق مهروس الباذنجان المشوي باللبن والثوم"
     },
-    "price": 930,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -466,17 +647,16 @@
       "ar": "İnegöl Köfte"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "Grill Meatball - 150 gr. Grill Meatball",
-      "ar": "كفتة تركية مشوية - 150 غرام - كفتة على طريقة إينيغول"
+      "tr": "150 gr. Özel kıymadan hazırlanan yumuşacık İnegöl usulü ızgara köfteler.",
+      "en": "İnegöl Meatballs — 150g. Tender traditional grilled beef meatballs.",
+      "ar": "كفتة إينغول الشهيرة — أصابع الكفتة البقرية الطرية 150 غرام المشوية على الفحم"
     },
-    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -493,23 +673,22 @@
       "ar": "Vali Kebabı"
     },
     "description": {
-      "tr": "220 gr.",
-      "en": "Vali Kebab - 220 gr. Grill Chicken, Lamb, Mince Beaf Meat with Eggplant, Tomatoes and Pepper with Cheese",
-      "ar": "كباب الوالي (مشكّل) - 220 غرام - دجاج وغنم ولحم بقري مع باذنجان وطماطم وفلفل وجبنة"
+      "tr": "220 gr. Adana, kuzu şiş, tavuk şiş ve köfte kombinasyonlu krallara layık ziyafet porsiyonu.",
+      "en": "Governor's Mixed Feast Kebab — 220g. Royal combination of Adana, lamb shish, chicken shish & meatball.",
+      "ar": "كباب الوالي المشكل الفاخر — وجبة مشكلة 220 غرام من كباب أضنة، شيش اللحم، شيش الدجاج والكفتة"
     },
-    "price": 1070,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
     "spicy": false,
-    "signature": true,
-    "trending": false,
+    "signature": false,
+    "trending": true,
     "allergens": []
   },
   {
@@ -520,17 +699,16 @@
       "ar": "Tavuk Şiş Izgara"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "Chicken Shish - 150 gr. Chicken Shish",
-      "ar": "شيش طاووق (دجاج مشوي) - 150 غرام - صدور دجاج متبلة مشوية على أسياخ"
+      "tr": "150 gr. Özel sosla marine edilmiş taze tavuk göğüs etlerinin kömür ızgarası.",
+      "en": "Chicken Shish Kebab — 150g. Marinated chicken breast cubes grilled on charcoal fire.",
+      "ar": "شيش طاووق دجاج — مكعبات صدر الدجاج 150 غرام المتبلة بخلطة الشيف والمشوية على الفحم"
     },
-    "price": 775,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -547,17 +725,16 @@
       "ar": "Tavuk Kanat"
     },
     "description": {
-      "tr": "170 gr.",
-      "en": "Chicken Wings - 170 gr. Chicken Wings",
-      "ar": "أجنحة دجاج مشوية - 170 غرام"
+      "tr": "170 gr. Çıtır derili, özel baharat marinesi ile pişmiş nar gibi tavuk kanatları.",
+      "en": "Grilled Chicken Wings — 170g. Crispy spiced charcoal-grilled chicken wings.",
+      "ar": "أجنحة دجاج مشوية — أجنحة دجاج 170 غرام مقرمشة متبلة بالزبادي والبهارات والمشوية على الفحم"
     },
-    "price": 800,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -574,17 +751,16 @@
       "ar": "Kuzu Lokum"
     },
     "description": {
-      "tr": "220 gr.",
-      "en": "Lamb Loin - 220 gr. Lamb Loin with Bulgur Rice and with Salad",
-      "ar": "لحم غنم لوقم (طري) - 220 غرام - قطع لحم غنم طرية مع برغل وسلطة"
+      "tr": "220 gr. Özel dinlendirilmiş kuzu bonfile dilimlerinin kömürde pişen yumuşacık lezzeti.",
+      "en": "Lamb Tenderloin Lokum — 220g. Aged melt-in-the-mouth lamb tenderloin medallions.",
+      "ar": "لوقوم فيليه الخروف — شرائح فيليه الخروف 220 غرام المعتقة والطرية كالحلوى المشوية على الفحم"
     },
-    "price": 1300,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -601,17 +777,16 @@
       "ar": "Kuzu Pirzola"
     },
     "description": {
-      "tr": "320 gr.",
-      "en": "Lamb Chops - 320 gr. Lamb Chops",
-      "ar": "ريش غنم مشوية - 320 غرام - ريش غنم على الفحم"
+      "tr": "320 gr. Kömür ateşinde nar gibi kızarmış taze kuzu pirzola kalemleri.",
+      "en": "Lamb Chops — 320g. Fresh tender lamb chops grilled to perfection over oak embers.",
+      "ar": "ريش خروف مشوية — ريش الخروف الطازجة 320 غرام والمشوية على جمر الفحم"
     },
-    "price": 1550,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -628,17 +803,16 @@
       "ar": "Kiremit Kebap"
     },
     "description": {
-      "tr": "160 gr.",
-      "en": "Casserole Kebab - 160 gr. Casserole Kebab",
-      "ar": "كباب بالصاج (كاسرول) - 160 غرام - كباب مطبوخ على صاج فخاري"
+      "tr": "160 gr. Toprak kiremitte domates sosu, biber ve eritilmiş kaşar ile fırınlanmış kebap.",
+      "en": "Clay Dish Kebab — 160g. Kebab baked in clay dish with tomato sauce, peppers and melted kashar cheese.",
+      "ar": "كباب الفخار بالفرن — كباب 160 غرام مطهو في طبق فخاري مع صوص الطماطم والفلفل وجبن القشقوان الذائب"
     },
-    "price": 900,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -655,17 +829,16 @@
       "ar": "İskender Kebap"
     },
     "description": {
-      "tr": "140 gr.",
-      "en": "Iskender Kebab - 140 gr. Iskender Kebab",
-      "ar": "إسكندر كباب - 140 غرام - شرائح لحم فوق خبز بصلصة الطماطم والزبدة"
+      "tr": "140 gr. Tırnak pide yatağında zırh eti, domates sosu, coslayan tereyağı ve yoğurt.",
+      "en": "İskender Kebab — 140g. Sliced meat over warm pita cubes, topped with rich tomato sauce, sizzling butter & cold yogurt.",
+      "ar": "إسكندر كباب — شرائح اللحم 140 غرام فوق الخبز المحمص، يعلوه صوص الطماطم الخاص والسمن الساخن واللبن"
     },
-    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -682,17 +855,16 @@
       "ar": "Yoğurtlu Kebap"
     },
     "description": {
-      "tr": "140 gr.",
-      "en": "Kebab with Yogurt - 140 gr. Grill Minced Beaf Meat with Yogurt",
-      "ar": "كباب بالزبادي - 140 غرام - كباب لحم مع زبادي"
+      "tr": "140 gr. Çıtır pide küpleri üzerine zırh kebabı, özel salçalı sos ve süzme yoğurt.",
+      "en": "Yogurt Kebab — 140g. Minced kebab over crispy bread cubes with tomato sauce & strained yogurt.",
+      "ar": "كباب باللبن والخبز — كباب المفروم 140 غرام فوق مكعبات الخبز المقرمش مع صوص الطماطم واللبن"
     },
-    "price": 825,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -709,17 +881,16 @@
       "ar": "Altı Ezmeli Kebap"
     },
     "description": {
-      "tr": "140 gr.",
-      "en": "Mashed Tomatoes Kebab - 140 gr. Mashed Tomatoes Kebab",
-      "ar": "كباب على صلصة طماطم مشوية - 140 غرام - كباب فوق طماطم مهروسة مشوية"
+      "tr": "140 gr. Közlenmiş domates ve biber ezmesi yatağında zırh kıyması kebabı.",
+      "en": "Kebab over Roasted Tomato Mash — 140g. Minced kebab served over smoky charcoal-roasted tomato & pepper mash.",
+      "ar": "كباب فوق متبل الطماطم — كباب المفروم 140 غرام يقدم فوق مهروس الطماطم والفلفل المشوي على الفحم"
     },
-    "price": 850,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -736,17 +907,16 @@
       "ar": "Dana Bonfile"
     },
     "description": {
-      "tr": "200 gr.",
-      "en": "Beaf Veal Steak Sish - 200 gr. Beaf Veal Steak Sish with Bulgur Rice and Salad",
-      "ar": "ستيك لحم بقري (فيليه) - 200 غرام - ستيك فيليه بقري مع برغل وسلطة"
+      "tr": "200 gr. Dinlendirilmiş dana bonfile lokum dilimleri.",
+      "en": "Beef Tenderloin Steak — 200g. Aged grilled beef tenderloin slices.",
+      "ar": "ستيك بوفليك بقري — شرائح فيليه البقر 200 غرام المعتقة والمشوية"
     },
-    "price": 1150,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -763,17 +933,16 @@
       "ar": "Dana Çöp Şiş"
     },
     "description": {
-      "tr": "200 gr.",
-      "en": "Beaf Sish Kebab - 200 gr. Beaf Sish Kebap with Bulgur Rice and Salad",
-      "ar": "شيش لحم بقري (قطع صغيرة) - 200 غرام - قطع لحم بقري مشوية مع برغل وسلطة"
+      "tr": "200 gr. Ufak kesim dana etlerinin küçük şişlerde kömürde pişirilmiş hali.",
+      "en": "Beef Skewer Chöp Shish — 200g. Small tender beef cubes grilled on wooden skewers.",
+      "ar": "تشوب شيش بقري — قطع لحم البقر الصغيرة 200 غرام المشوية على أسياخ خشبية"
     },
-    "price": 950,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -790,17 +959,16 @@
       "ar": "Karışık Kebap 1"
     },
     "description": {
-      "tr": "350 gr.",
-      "en": "Mixed Kebab 1 - 350 gr. Grilled chicken, lamb, meatball, tomatoes kebab, mince beaf meat salad with bulgur rice",
-      "ar": "مشويات مشكّلة 1 - 350 غرام - تشكيلة: دجاج، غنم، كفتة، كباب بالطماطم، لحم مفروم مع برغل"
+      "tr": "350 gr. Tavuk şiş, kuzu şiş, Adana kebap, köfte ve zengin meze garnitürleri.",
+      "en": "Grand Mixed Kebab Feast 1 — 350g. Chicken shish, lamb shish, Adana kebab, meatball & meze sides.",
+      "ar": "مشاوي مشكلة فاخرة 1 — مشاوي 350 غرام: شيش دجاج، شيش لحم، كباب أضنة، كفتة ومقبلات"
     },
-    "price": 1800,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -817,17 +985,16 @@
       "ar": "Karışık Kebap 2"
     },
     "description": {
-      "tr": "550 gr.",
-      "en": "Mixed Kebab 2 - 550 gr. Grill lamb sish, meatball, lamb chops, beaf steak meat, mince beaf meat and Appetizers",
-      "ar": "مشويات مشكّلة 2 (فاخرة) - 550 غرام - تشكيلة فاخرة: شيش غنم، كفتة، ريش، ستيك، لحم مفروم مع مقبلات"
+      "tr": "550 gr. Zengin aile boyu karışık kebap ziyafeti (2-3 kişilik).",
+      "en": "Family Mixed Kebab Feast 2 — 550g. Family-size mixed kebab platter for 2-3 people.",
+      "ar": "وليمة مشاوي عائلية 2 — طبق مشاوي عائلي مشكل 550 غرام يكفي 2-3 أشخاص"
     },
-    "price": 2650,
     "currency": "TRY",
     "category": "kebap",
     "categoryName": {
       "tr": "Kebap",
       "en": "Kebab",
-      "ar": "مشويات وكباب"
+      "ar": "مشويات الكباب"
     },
     "vegetarian": false,
     "vegan": false,
@@ -844,17 +1011,16 @@
       "ar": "Mardin Kebap Menü"
     },
     "description": {
-      "tr": "180 gr.",
-      "en": "Special Mardin Kebab - 180 gr. Special Mardin Kebab",
-      "ar": "وجبة كباب ماردين - 180 غرام - وجبة كاملة مع مقبلات ومشروب"
+      "tr": "180 gr. Mardin kebap yanında meze, salata ve soğuk içecek menüsü.",
+      "en": "Mardin Kebab Set Menu — 180g. Mardin kebab set served with meze platter, salad & cold drink.",
+      "ar": "وجبة كباب ماردين — كباب ماردين 180 غرام مع طبق مقبلات، سلطة ومشروب بارد"
     },
-    "price": 1250,
     "currency": "TRY",
     "category": "ozel_menu",
     "categoryName": {
       "tr": "Özel Menü Kebaplar",
-      "en": "Special Menu Kebabs",
-      "ar": "وجبات كباب خاصة"
+      "en": "Chef's Special Kebabs",
+      "ar": "كباب الشيف الخاص"
     },
     "vegetarian": false,
     "vegan": false,
@@ -871,17 +1037,16 @@
       "ar": "Tavuk Kanat Menü"
     },
     "description": {
-      "tr": "160 gr.",
-      "en": "Special Chicken Wings - 160 gr. Special Chicken Wings",
-      "ar": "وجبة أجنحة دجاج - 160 غرام - وجبة كاملة مع مقبلات ومشروب"
+      "tr": "160 gr. Tavuk kanat yanında meze, pilav ve içecek menüsü.",
+      "en": "Chicken Wing Set Menu — 160g. Grilled wings served with rice, meze platter & drink.",
+      "ar": "وجبة أجنحة الدجاج — أجنحة دجاج 160 غرام مع أرز البرغل، مقبلات ومشروب"
     },
-    "price": 830,
     "currency": "TRY",
     "category": "ozel_menu",
     "categoryName": {
       "tr": "Özel Menü Kebaplar",
-      "en": "Special Menu Kebabs",
-      "ar": "وجبات كباب خاصة"
+      "en": "Chef's Special Kebabs",
+      "ar": "كباب الشيف الخاص"
     },
     "vegetarian": false,
     "vegan": false,
@@ -898,17 +1063,17 @@
       "ar": "Kuzu Ciğer Menü"
     },
     "description": {
-      "tr": "170 gr.",
-      "en": "Special Lamb Liver - 170 gr. Special Lamb Liver",
-      "ar": "وجبة كبدة غنم - 170 غرام - وجبة كاملة مع مقبلات ومشروب"
+      "tr": "170 gr. Kuzu ciğer şiş yanında lavaş, sumaklı soğan ve meze menüsü.",
+      "en": "Lamb Liver Skewer Menu — 170g. Charcoal lamb liver skewers with sumac onions, fresh lavash & mezes.",
+      "ar": "وجبة كبدة خروف — أسياخ كبدة الخروف 170 غرام المشوية مع بصل السماق، اللافاش والمقبلات"
     },
     "price": 1000,
     "currency": "TRY",
     "category": "ozel_menu",
     "categoryName": {
       "tr": "Özel Menü Kebaplar",
-      "en": "Special Menu Kebabs",
-      "ar": "وجبات كباب خاصة"
+      "en": "Chef's Special Kebabs",
+      "ar": "كباب الشيف الخاص"
     },
     "vegetarian": false,
     "vegan": false,
@@ -925,17 +1090,16 @@
       "ar": "Kuzu Şiş Kebap Menü"
     },
     "description": {
-      "tr": "140 gr.",
-      "en": "Special Lamb Shish Kebab - 140 gr. Special Lamb Shish Kebab",
-      "ar": "وجبة شيش غنم - 140 غرام - وجبة كاملة مع مقبلات ومشروب"
+      "tr": "140 gr. Kuzu şiş yanında meze tabağı, pilav ve içecek.",
+      "en": "Lamb Shish Set Menu — 140g. Lamb shish served with rice, meze platter & drink.",
+      "ar": "وجبة شيش اللحم — شيش لحم خروف 140 غرام مع الأرز والمقبلات والمشروب"
     },
-    "price": 1200,
     "currency": "TRY",
     "category": "ozel_menu",
     "categoryName": {
       "tr": "Özel Menü Kebaplar",
-      "en": "Special Menu Kebabs",
-      "ar": "وجبات كباب خاصة"
+      "en": "Chef's Special Kebabs",
+      "ar": "كباب الشيف الخاص"
     },
     "vegetarian": false,
     "vegan": false,
@@ -952,17 +1116,16 @@
       "ar": "Mezeli Adana & Urfa Kebap"
     },
     "description": {
-      "tr": "140 gr.",
-      "en": "Adana & Urfa with Appetizers - 140 gr. Grill Minced Beaf Meat with Appetizers",
-      "ar": "كباب أضنة وأورفا مع مقبلات - 140 غرام - كباب لحم مع تشكيلة مقبلات"
+      "tr": "140 gr. Zırh Adana/Urfa kebabı yanında 4 çeşit taze meze ve sıcak lavaş ikramı.",
+      "en": "Adana/Urfa Kebab + 4 Mezes — 140g. Adana or Urfa kebab served with 4 daily fresh mezes & hot lavash.",
+      "ar": "كباب أضنة/أورفا + 4 مقبلات — كباب 140 غرام مع 4 أنواع مقبلات طازجة يومية وخبز لافاش ساخن"
     },
-    "price": 925,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -979,17 +1142,16 @@
       "ar": "Mezeli Dana Çöp Şiş"
     },
     "description": {
-      "tr": "200 gr.",
-      "en": "Beaf Shish Kebab with Appetizers - 200 gr. Beaf Shish Kebab with Appetizers",
-      "ar": "شيش لحم بقري مع مقبلات - 200 غرام"
+      "tr": "200 gr. Dana çöp şiş yanında zengin meze tabağı ve fırın lavaşı.",
+      "en": "Beef Chöp Shish + 4 Mezes — 200g. Beef skewers served with 4 daily fresh mezes & fresh bread.",
+      "ar": "تشوب شيش بقري + 4 مقبلات — أسياخ لحم بقري 200 غرام مع 4 أنواع مقبلات طازجة"
     },
-    "price": 1000,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1006,17 +1168,16 @@
       "ar": "Mezeli Kuzu Pirzola"
     },
     "description": {
-      "tr": "320 gr.",
-      "en": "Lamb Chops with Appetizer - 320 gr. Lamb Chops with Appetizer",
-      "ar": "ريش غنم مع مقبلات - 320 غرام"
+      "tr": "320 gr. Kuzu pirzola yanında 4 çeşit günlük taze meze ve fırın lavaşı.",
+      "en": "Lamb Chops + 4 Mezes — 320g. Lamb chops served with 4 daily fresh mezes & oven lavash.",
+      "ar": "ريش خروف + 4 مقبلات — ريش خروف 320 غرام مع 4 أنواع مقبلات طازجة وخبز لافاش"
     },
-    "price": 1650,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1033,17 +1194,16 @@
       "ar": "Mezeli Kuzu Lokum"
     },
     "description": {
-      "tr": "220 gr.",
-      "en": "Lamb Delight with Appetizers - 220 gr. Lamb Delight with Appetizers",
-      "ar": "لحم غنم لوقم مع مقبلات - 220 غرام"
+      "tr": "220 gr. Kuzu lokum yanında zengin meze çeşitleri.",
+      "en": "Lamb Lokum + 4 Mezes — 220g. Tender lamb fillet served with generous meze platter.",
+      "ar": "لوقوم الخروف + 4 مقبلات — فيليه الخروف الطري 220 غرام مع تشكيلة مقبلات غنية"
     },
-    "price": 1300,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1060,17 +1220,16 @@
       "ar": "Mezeli İnegöl Köfte"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "İnegöl Meatballs with Appetizers - 150 gr. İnegöl Meatballs with Appetizers",
-      "ar": "كفتة تركية مع مقبلات - 150 غرام"
+      "tr": "150 gr. İnegöl köfte yanında taze meze tabağı ve fırın lavaşı.",
+      "en": "İnegöl Meatballs + Mezes — 150g. Meatballs served with meze platter & hot bread.",
+      "ar": "كفتة إينغول + مقبلات — كفتة مشوية 150 غرام مع طبق مقبلات وخبز ساخن"
     },
-    "price": 925,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1087,17 +1246,16 @@
       "ar": "Mezeli Kuzu Şiş"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "Lamb Shish with Appetizers - 150 gr. Lamb Shish with Appetizers",
-      "ar": "شيش غنم مع مقبلات - 150 غرام"
+      "tr": "150 gr. Kuzu şiş yanında zengin meze ikramları.",
+      "en": "Lamb Shish + Mezes — 150g. Lamb shish served with fresh daily mezes.",
+      "ar": "شيش لحم + مقبلات — شيش لحم خروف 150 غرام مع مقبلات طازجة"
     },
-    "price": 1000,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1114,17 +1272,16 @@
       "ar": "Mezeli Dana Bonfile"
     },
     "description": {
-      "tr": "200 gr.",
-      "en": "Beaf Tenderloin with Appetizers - 200 gr. Beaf Tenderloin with Appetizers",
-      "ar": "ستيك بقري مع مقبلات - 200 غرام"
+      "tr": "200 gr. Dana bonfile yanında özel meze çeşitleri.",
+      "en": "Beef Fillet + Mezes — 200g. Grilled fillet steak with fresh meze sides.",
+      "ar": "فيليه بقري + مقبلات — ستيك فيليه بقري 200 غرام مع مقبلات غنية"
     },
-    "price": 1250,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1141,17 +1298,16 @@
       "ar": "Mezeli Dürüm"
     },
     "description": {
-      "tr": "90 gr.",
-      "en": "Appetizer Wrap - 90 gr. Appetizer Wrap",
-      "ar": "ساندوتش دورم مع مقبلات - 90 غرام"
+      "tr": "90 gr. Dürüm kebap yanında meze ikramı.",
+      "en": "Wrap Kebab + Meze Side — 90g. Kebab wrap with side meze platter.",
+      "ar": "ساندويتش دوروم + مقبلات — ساندويتش كباب 90 غرام مع طبق مقبلات جانبي"
     },
-    "price": 680,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1168,17 +1324,16 @@
       "ar": "Mezeli Tavuk Kanat"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "Chicken Wings with Appetizers - 150 gr. Chicken Wings with Appetizers",
-      "ar": "أجنحة دجاج مع مقبلات - 150 غرام"
+      "tr": "150 gr. Tavuk kanat yanında meze ikramı.",
+      "en": "Chicken Wings + Mezes — 150g. Chicken wings with meze platter.",
+      "ar": "أجنحة دجاج + مقبلات — أجنحة دجاج مشوية 150 غرام مع مقبلات"
     },
-    "price": 925,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1195,50 +1350,18 @@
       "ar": "Mezeli Tavuk Şiş"
     },
     "description": {
-      "tr": "150 gr.",
-      "en": "Chicken Shish with Appetizers - 150 gr. Chicken Shish with Appetizers",
-      "ar": "شيش طاووق مع مقبلات - 150 غرام"
+      "tr": "150 gr. Tavuk şiş yanında meze ikramı.",
+      "en": "Chicken Shish + Mezes — 150g. Chicken shish with meze platter.",
+      "ar": "شيش طاووق + مقبلات — شيش طاووق 150 غرام مع مقبلات"
     },
-    "price": 825,
     "currency": "TRY",
     "category": "mezeli_kebaplar",
     "categoryName": {
       "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
+      "en": "Kebabs with Meze Platters",
+      "ar": "وجبات الكباب مع المقبلات"
     },
     "vegetarian": false,
-    "vegan": false,
-    "spicy": false,
-    "signature": false,
-    "trending": false,
-    "allergens": []
-  },
-  {
-    "id": "karisik_meze_tabagi",
-    "name": {
-      "tr": "Karışık Meze Tabağı",
-      "en": "Karışık Meze Tabağı",
-      "ar": "Karışık Meze Tabağı"
-    },
-    "description": {
-      "tr": "",
-      "en": "Mixed Appetizer Platter",
-      "ar": "طبق مقبلات مشكّل"
-    },
-    "price": 500,
-    "currency": "TRY",
-    "category": {
-      "tr": "Meze",
-      "en": "Appetizers",
-      "ar": "مقبلات"
-    },
-    "categoryName": {
-      "tr": "Mezeli Kebaplar",
-      "en": "Appetizers Kebabs",
-      "ar": "مشويات مع مقبلات"
-    },
-    "vegetarian": true,
     "vegan": false,
     "spicy": false,
     "signature": false,
@@ -1253,17 +1376,16 @@
       "ar": "Adana Dürüm"
     },
     "description": {
-      "tr": "95 gr.",
-      "en": "Adana Kebab Wrap - 95 gr. Adana Kebab Wrap",
-      "ar": "ساندوتش كباب أضنة - 95 غرام - كباب أضنة في خبز رقيق"
+      "tr": "95 gr. Zırh kıyması Adana kebabın fırın lavaşına sarılmış hali, yeşillik ve soğan ile.",
+      "en": "Adana Kebab Wrap — 95g. Hand-minced spicy Adana kebab wrapped in stone-baked lavash with fresh herbs & sumac onions.",
+      "ar": "ساندويتش كباب أضنة — كباب أضنة الحار 95 غرام مفروم بالساطور ملفوف بخبز اللافاش مع الخضار والسماق"
     },
-    "price": 330,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1280,17 +1402,16 @@
       "ar": "Urfa Dürüm"
     },
     "description": {
-      "tr": "95 gr.",
-      "en": "Urfa Kebab Wrap - 95 gr. Urfa Kebab Wrap",
-      "ar": "ساندوتش كباب أورفا - 95 غرام - كباب أورفا في خبز رقيق"
+      "tr": "95 gr. Acısız Urfa kebabın fırın lavaşına sarılmış hali.",
+      "en": "Urfa Kebab Wrap — 95g. Mild Urfa kebab wrapped in fresh lavash bread.",
+      "ar": "ساندويتش كباب أورفا — كباب أورفا العادي 95 غرام الملفوف بخبز اللافاش الطازج"
     },
-    "price": 330,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1307,17 +1428,16 @@
       "ar": "Dana Çöp Şiş Dürüm"
     },
     "description": {
-      "tr": "95 gr.",
-      "en": "Beef Shish Kebab Wrap - 95 gr. Beef Shish Kebab Wrap",
-      "ar": "ساندوتش شيش لحم بقري - 95 غرام"
+      "tr": "95 gr. Dana çöp şiş etlerinin lavaşa sarımı.",
+      "en": "Beef Chöp Shish Wrap — 95g. Grilled beef skewers wrapped in crispy lavash.",
+      "ar": "ساندويتش تشوب شيش بقري — أسياخ اللحم البقري المشوي 95 غرام الملفوفة باللافاش"
     },
-    "price": 380,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1334,17 +1454,16 @@
       "ar": "Tavuk Şiş Dürüm"
     },
     "description": {
-      "tr": "95 gr.",
-      "en": "Chicken Shish Wrap - 95 gr. Chicken Shish Wrap",
-      "ar": "ساندوتش شيش طاووق - 95 غرام - دجاج مشوي في خبز رقيق"
+      "tr": "95 gr. Izgara tavuk şiş etlerinin yeşillikli dürüm hali.",
+      "en": "Chicken Shish Wrap — 95g. Grilled chicken breast cubes wrapped in lavash bread.",
+      "ar": "ساندويتش شيش طاووق — مكعبات الدجاج المشوية 95 غرام الملفوفة باللافاش والخضار"
     },
-    "price": 300,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1361,17 +1480,16 @@
       "ar": "Kuzu Şiş Dürüm"
     },
     "description": {
-      "tr": "95 gr.",
-      "en": "Lamb Shish Kebab Wrap - 95 gr. Lamb Shish Kebab Wrap",
-      "ar": "ساندوتش شيش غنم - 95 غرام"
+      "tr": "95 gr. Lokum kuzu şiş etlerinin çıtır lavaşa sarımı.",
+      "en": "Lamb Shish Wrap — 95g. Tender lamb shish wrapped in wood-fired lavash.",
+      "ar": "ساندويتش شيش لحم خروف — شيش اللحم الطري 95 غرام الملفوف باللافاش المخبوز على الحطب"
     },
-    "price": 380,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1388,17 +1506,16 @@
       "ar": "Kuzu Ciğer Dürüm"
     },
     "description": {
-      "tr": "95 gr.",
-      "en": "Lamb Liver Wrap - 95 gr. Lamb Liver Wrap",
-      "ar": "ساندوتش كبدة غنم - 95 غرام"
+      "tr": "95 gr. Kömürde pişen kuzu ciğerinin kimyon ve sumaklı soğanlı dürümü.",
+      "en": "Lamb Liver Wrap — 95g. Charcoal grilled lamb liver wrapped with cumin & sumac onions.",
+      "ar": "ساندويتش كبدة خروف — كبدة الخروف المشوية 95 غرام على الفحم مع الكمون وبصل السماق"
     },
-    "price": 380,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1415,17 +1532,16 @@
       "ar": "Köfte Dürüm"
     },
     "description": {
-      "tr": "95 gr.",
-      "en": "Meatball Wrap - 95 gr. Meatball Wrap",
-      "ar": "ساندوتش كفتة - 95 غرام"
+      "tr": "95 gr. Izgara köftelerin fırın lavaşında lezzetli dürüm hali.",
+      "en": "Meatball Wrap — 95g. Grilled beef meatballs wrapped in warm lavash.",
+      "ar": "ساندويتش كفتة مشوية — أصابع الكفتة المشوية 95 غرام الملفوفة باللافاش الساخن"
     },
-    "price": 330,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1442,17 +1558,16 @@
       "ar": "Çiğköfte Dürüm"
     },
     "description": {
-      "tr": "",
-      "en": "Vegetarian Raw Wrap",
-      "ar": "ساندوتش تشي كفتة (نباتي)"
+      "tr": "Geleneksel acılı etsiz çiğköfte dürüm, marul ve nar ekşisi ile.",
+      "en": "Çiğköfte Vegan Wrap — Traditional spiced bulgur wrap with fresh lettuce, mint & pomegranate molasses.",
+      "ar": "ساندويتش تشي كفتة نباتي — التشي كفتة التقليدية المبهرة الملفوفة بالخس ودبس الرمان"
     },
-    "price": 250,
     "currency": "TRY",
     "category": "durumler",
     "categoryName": {
       "tr": "Dürümler",
-      "en": "Wraps",
-      "ar": "ساندوتشات (دورم)"
+      "en": "Wraps (Dürüm)",
+      "ar": "الساندويتشات (دوروم)"
     },
     "vegetarian": true,
     "vegan": false,
@@ -1469,17 +1584,16 @@
       "ar": "Kaşarlı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Cheddar Cheese",
-      "ar": "بيدا بالجبنة"
+      "tr": "Taş fırında odun ateşinde pişmiş, erimiş hakiki kaşar peynirli kıtır pide.",
+      "en": "Kashar Cheese Pide — Crispy wood-fired dough topped with melted real Ezine kashar cheese.",
+      "ar": "بيدا بالجبن — عجينة مقرمشة مخبوزة على الحطب ومغطاة بجبن القشقوان البلدي الذائب"
     },
-    "price": 390,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": true,
     "vegan": false,
@@ -1496,17 +1610,16 @@
       "ar": "Kaşarlı Yumurtalı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Cheddar Cheese, Egg",
-      "ar": "بيدا بالجبنة والبيض"
+      "tr": "Erimiş kaşar peyniri ve üzerine kırılmış taze çiftlik yumurtalı fırın pidesi.",
+      "en": "Kashar Cheese & Egg Pide — Wood-fired dough with melted kashar cheese and organic egg.",
+      "ar": "بيدا بالجبن والبيض — جبن القشقوان الذائب مع بيضة طازجة مخبوزة بالفرن الحجري"
     },
-    "price": 400,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": true,
     "vegan": false,
@@ -1523,17 +1636,16 @@
       "ar": "Kaşarlı Sucuklu Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Cheddar Cheese, Sausage",
-      "ar": "بيدا بالجبنة والسجق التركي"
+      "tr": "Erimiş kaşar peyniri ve kasap sucuğu dilimli odun ateşi pidesi.",
+      "en": "Kashar Cheese & Sucuk Pide — Melted kashar cheese and spicy Turkish garlic beef sucuk slices.",
+      "ar": "بيدا بالجبن والسجق — جبن القشقوان الذائب وشرائح السجق البقري المتبل"
     },
-    "price": 430,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1550,17 +1662,16 @@
       "ar": "Kaşarlı Sucuklu Yumurtalı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Cheddar Cheese Sausage, Egg",
-      "ar": "بيدا بالجبنة والسجق والبيض"
+      "tr": "Kaşar, baharatlı sucuk ve yumurtanın taş fırındaki lezzet buluşması.",
+      "en": "Kashar, Sucuk & Egg Pide — Combination of cheese, spiced sucuk and egg baked in stone oven.",
+      "ar": "بيدا بالجبن والسجق والبيض — مزيج غني من الجبن، السجق المتبل والبيض بالفرن الحجري"
     },
-    "price": 450,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1577,17 +1688,16 @@
       "ar": "Kıymalı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Minced Meat",
-      "ar": "بيدا باللحم المفروم"
+      "tr": "Özel kavrulmuş dana kıyması, soğan ve domates harçlı taş fırın pidesi.",
+      "en": "Minced Beef Pide — Seasoned minced beef, onions, tomatoes and green peppers on crispy dough.",
+      "ar": "بيدا باللحم المفروم — لحم بقري مفروم ومحمر مع البصل والطماطم والفلفل"
     },
-    "price": 430,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1604,17 +1714,16 @@
       "ar": "Kıymalı Kaşarlı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Mince, Cheddar Cheese",
-      "ar": "بيدا باللحم المفروم والجبنة"
+      "tr": "Dana kıyma harcı ve erimiş kaşar peynirli nefis fırın pidesi.",
+      "en": "Minced Beef & Kashar Pide — Minced beef topped with melted kashar cheese.",
+      "ar": "بيدا باللحم المفروم والجبن — لحم مفروم متبل يعلوه جبن القشقوان الذائب"
     },
-    "price": 460,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1631,17 +1740,16 @@
       "ar": "Kuşbaşılı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Chopped Meat",
-      "ar": "بيدا بقطع اللحم"
+      "tr": "Bıçak arası doğranmış dana eti, biber ve domates harçlı geleneksel pide.",
+      "en": "Diced Beef Pide — Hand-cut diced beef tenderloin, bell peppers and tomatoes.",
+      "ar": "بيدا بقطع اللحم (كوشباشي) — قطع لحم البقر المقطعة بالسكين مع الفلفل والطماطم"
     },
-    "price": 450,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1658,17 +1766,16 @@
       "ar": "Kuşbaşılı Kaşarlı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Chopped Meat, Cheddar Cheese",
-      "ar": "بيدا بقطع اللحم والجبنة"
+      "tr": "Kuşbaşı dana eti harcı ve erimiş kaşar peynirli taş fırın pidesi.",
+      "en": "Diced Beef & Kashar Pide — Hand-cut diced beef topped with melted kashar cheese.",
+      "ar": "بيدا بقطع اللحم والجبن — قطع اللحم المتبلة يعلوها جبن القشقوان الذائب"
     },
-    "price": 480,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1685,17 +1792,16 @@
       "ar": "Kavurmalı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Minced Lamb Meat",
-      "ar": "بيدا بالكاورما (لحم محمّر)"
+      "tr": "Özel lokum dana kavurma harçlı odun ateşi pidesi.",
+      "en": "Roasted Beef Kavurma Pide — Slow-cooked savory beef kavurma baked on crispy wood-fired crust.",
+      "ar": "بيدا بالقاورما البقرية — قطع القاورما البقرية المطهوة على البطيء ومخبوزة بالفرن"
     },
-    "price": 480,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1712,17 +1818,16 @@
       "ar": "Kavurmalı Kaşarlı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Minced Lamb Meat, Cheddar Cheese",
-      "ar": "بيدا بالكاورما والجبنة"
+      "tr": "Dana kavurma ve erimiş kaşar peynirinin zengin fırın pidesi.",
+      "en": "Kavurma & Kashar Cheese Pide — Beef kavurma topped with melted kashar cheese.",
+      "ar": "بيدا بالقاورما والجبن — القاورما البقرية الغنية مع جبن القشقوان الذائب"
     },
-    "price": 510,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1732,24 +1837,104 @@
     "allergens": []
   },
   {
-    "id": "beyez_peynirli_pide",
+    "id": "pastirma_kavurmali_kasarli_pide",
     "name": {
-      "tr": "beyez peynirli pide",
-      "en": "beyez peynirli pide",
-      "ar": "beyez peynirli pide"
+      "tr": "Pastırma Kavurmalı Kaşarlı Pide",
+      "en": "Pastırma, Kavurma & Cheese Pide",
+      "ar": "Pastırma Kavurmalı Kaşarlı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
+      "tr": "Çıtır hamur üzerinde özel Kayseri pastırması, Rize kavurması ve erimiş kaşar peyniri.",
+      "en": "Crispy pide topped with seasoned pastırma, roasted beef kavurma, and melted kashar cheese.",
+      "ar": "فطيرة بسطرمة وقاورما بالجبن — فطيرة تركية مقرمشة مغطاة بالبسطرمة الفاخرة، لحم القاورما وجبن القشقوان الذائب"
     },
-    "price": 390,
+    "price": 700,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": true,
+    "allergens": []
+  },
+  {
+    "id": "ispanakli_pide",
+    "name": {
+      "tr": "Ispanaklı Pide",
+      "en": "Spinach Pide",
+      "ar": "Ispanaklı Pide"
+    },
+    "description": {
+      "tr": "Taze ıspanak, soğan ve özel baharatlarla fırınlanmış nefis pide.",
+      "en": "Stone-baked pide filled with fresh seasoned spinach and onions.",
+      "ar": "فطيرة بالسبانخ — فطيرة تركية طازجة مخبوزة في الفرن الحجري بالسبانخ الطازج والبصل والبهارات"
+    },
+    "price": 410,
+    "currency": "TRY",
+    "category": "pide",
+    "categoryName": {
+      "tr": "Pide",
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "patatesli_pide",
+    "name": {
+      "tr": "Patatesli Pide",
+      "en": "Potato Pide",
+      "ar": "Patatesli Pide"
+    },
+    "description": {
+      "tr": "Özel baharatlı patates püresi ile fırınlanmış yumuşacık lezzet.",
+      "en": "Stone-baked pide stuffed with seasoned mashed potato filling.",
+      "ar": "فطيرة بالبطاطس — فطيرة مقرمشة بحشوة البطاطس المتبلة بالأعشاب والبهارات"
+    },
+    "price": 410,
+    "currency": "TRY",
+    "category": "pide",
+    "categoryName": {
+      "tr": "Pide",
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "beyaz_peynirli_pide",
+    "name": {
+      "tr": "Beyaz Peynirli Pide",
+      "en": "Beyaz Peynirli Pide",
+      "ar": "Beyaz Peynirli Pide"
+    },
+    "description": {
+      "tr": "Halis Ezine beyaz peyniri ve maydanoz harçlı fırın pidesi.",
+      "en": "Feta Cheese & Parsley Pide — Authentic Ezine feta cheese and fresh parsley blend.",
+      "ar": "بيدا بالجبنة البيضاء والبقدونس — جبنة إزينة البيضاء البلدية المخلوطة بالبقدونس الطازج"
+    },
+    "currency": "TRY",
+    "category": "pide",
+    "categoryName": {
+      "tr": "Pide",
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": true,
     "vegan": false,
@@ -1761,22 +1946,21 @@
   {
     "id": "kasarli_mantarli_sebzeli_pide",
     "name": {
-      "tr": "Kaşarlı Mantarlı Sebzeli Pide",
-      "en": "Kaşarlı Mantarlı Sebzeli Pide",
-      "ar": "Kaşarlı Mantarlı Sebzeli Pide"
+      "tr": "Kaşarlı Mantarli Sebzeli Pide",
+      "en": "Kaşarlı Mantarli Sebzeli Pide",
+      "ar": "Kaşarlı Mantarli Sebzeli Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Cheese, Mushrooms and Vegetables",
-      "ar": "بيدا بالجبنة والفطر والخضار"
+      "tr": "Taze kültür mantarı, renkli biberler, domates ve kaşar peynirli vejetaryen pide.",
+      "en": "Mushroom & Veggie Pide — Fresh mushrooms, bell peppers, tomatoes and kashar cheese.",
+      "ar": "بيدا بالفطر والخضار والجبن — فطر طازج، فلفل ملون، طماطم وجبن قشقوان"
     },
-    "price": 390,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": true,
     "vegan": false,
@@ -1793,25 +1977,23 @@
       "ar": "Pastırmalı Kaşarlı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Pastrami and Cheddar Cheese",
-      "ar": "بيدا بالبسطرمة والجبنة"
+      "tr": "Çemenli Kayseri pastırması ve erimiş kaşar peynirli fırın pidesi.",
+      "en": "Pastrami & Kashar Pide — Aged spiced beef pastrami with melted kashar cheese.",
+      "ar": "بيدا بالبسطرمة والجبن — شرائح البسطرمة المعتقة مع جبن القشقوان الذائب"
     },
-    "price": 480,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
     "spicy": false,
     "signature": false,
     "trending": false,
-    "allergens": [],
-    "image": "/images/pastirmali_kavurmali_kasarli_pide.webp"
+    "allergens": []
   },
   {
     "id": "tavuklu_kasarli_pide",
@@ -1821,17 +2003,16 @@
       "ar": "Tavuklu Kaşarlı Pide"
     },
     "description": {
-      "tr": "",
-      "en": "Chicken and Cheddar Pita",
-      "ar": "بيدا بالدجاج والجبنة"
+      "tr": "Sotelenmiş tavuk etleri ve kaşar peynirli odun ateşi pidesi.",
+      "en": "Chicken & Kashar Pide — Sautéed chicken breast with melted kashar cheese.",
+      "ar": "بيدا بالدجاج والجبن — قطع صدر الدجاج المحمرة مع جبن القشقوان"
     },
-    "price": 450,
     "currency": "TRY",
     "category": "pide",
     "categoryName": {
       "tr": "Pide",
-      "en": "Pitas",
-      "ar": "بيدا (بيتزا تركية)"
+      "en": "Pide (Turkish Pizza)",
+      "ar": "الفطائر التركية (بيدا)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1843,22 +2024,22 @@
   {
     "id": "etli_konya",
     "name": {
-      "tr": "Etli Konya",
-      "en": "Etli Konya",
-      "ar": "Etli Konya"
+      "tr": "Etli Konya Pidesi",
+      "en": "Etli Konya Pidesi",
+      "ar": "Etli Konya Pidesi"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Konya Meat",
-      "ar": "خبز باللحم على طريقة قونيا"
+      "tr": "Konya usulü incecik kıymalı uzun pide.",
+      "en": "Konya Style Long Pide — Ultra-thin long crispy pide with minced beef.",
+      "ar": "بيدا كونيا الطويلة باللحم — فطيرة كونيا الشهيرة الطويلة والرقيقة جداً باللحم المفروم"
     },
     "price": 430,
     "currency": "TRY",
     "category": "lahmacun",
     "categoryName": {
       "tr": "Lahmacun",
-      "en": "Turkish Pizza",
-      "ar": "لحم بعجين"
+      "en": "Lahmacun",
+      "ar": "لحم بعجين (لحمعجون)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1870,22 +2051,22 @@
   {
     "id": "etli_etmek",
     "name": {
-      "tr": "Etli Etmek",
-      "en": "Etli Etmek",
-      "ar": "Etli Etmek"
+      "tr": "Etli Ekmek",
+      "en": "Etli Ekmek",
+      "ar": "Etli Ekmek"
     },
     "description": {
-      "tr": "",
-      "en": "Pita with Chopped Meat",
-      "ar": "خبز باللحم (إتلي إكمك)"
+      "tr": "Geleneksel ince hamurlu etli ekmek.",
+      "en": "Traditional Etli Ekmek — Classic thin crispy dough topped with seasoned minced meat.",
+      "ar": "إتلي إكميك تقليدي — خبز باللحم المفروم على الطريقة التركية التقليدية"
     },
     "price": 460,
     "currency": "TRY",
     "category": "lahmacun",
     "categoryName": {
       "tr": "Lahmacun",
-      "en": "Turkish Pizza",
-      "ar": "لحم بعجين"
+      "en": "Lahmacun",
+      "ar": "لحم بعجين (لحمعجون)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1897,22 +2078,21 @@
   {
     "id": "lahmacun_item",
     "name": {
-      "tr": "Lahmacun",
-      "en": "Lahmacun",
-      "ar": "Lahmacun"
+      "tr": "Çıtır Fırın Lahmacun",
+      "en": "Çıtır Fırın Lahmacun",
+      "ar": "Çıtır Fırın Lahmacun"
     },
     "description": {
-      "tr": "Çıtır Çıtır",
-      "en": "Turkish Pizza Covered with Mince - Crispy",
-      "ar": "لحم بعجين - رقيق ومقرمش"
+      "tr": "İncecik taş fırın hamuru üzerine zırh kıyması ve baharatlar. Yeşillik ve limon ile.",
+      "en": "Crispy Stone-Baked Lahmacun — Ultra-thin crispy dough topped with minced meat, herbs & spices. Served with parsley, sumac onions & lemon.",
+      "ar": "لحم بعجين مقرمش على الحطب — عجينة رقيقة جداً ومقرمشة بلحم مفروم متبل، تقدم مع البقدونس وبصل السماق والليمون"
     },
-    "price": 190,
     "currency": "TRY",
     "category": "lahmacun",
     "categoryName": {
       "tr": "Lahmacun",
-      "en": "Turkish Pizza",
-      "ar": "لحم بعجين"
+      "en": "Lahmacun",
+      "ar": "لحم بعجين (لحمعجون)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1929,17 +2109,16 @@
       "ar": "Özel Lahmacun"
     },
     "description": {
-      "tr": "",
-      "en": "Special Turkish Pizza",
-      "ar": "لحم بعجين خاص (سبيشال)"
+      "tr": "Normal lahmacuna göre daha fazla saf et içeren, kesinlikle soğan kullanılmayan özel lahmacun.",
+      "en": "Special Lahmacun with a larger amount of pure minced meat than our regular Lahmacun, prepared completely without onions.",
+      "ar": "لحم بعجين مميز يتميز بكمية لحم صافي أكثر من اللحم بعجين العادي، ويُحضر بدون أي بصل نهائياً."
     },
-    "price": 320,
     "currency": "TRY",
     "category": "lahmacun",
     "categoryName": {
       "tr": "Lahmacun",
-      "en": "Turkish Pizza",
-      "ar": "لحم بعجين"
+      "en": "Lahmacun",
+      "ar": "لحم بعجين (لحمعجون)"
     },
     "vegetarian": false,
     "vegan": false,
@@ -1949,24 +2128,186 @@
     "allergens": []
   },
   {
-    "id": "semiz_otu",
+    "id": "peymacun",
     "name": {
-      "tr": "Semiz Otu",
-      "en": "Semiz Otu",
-      "ar": "Semiz Otu"
+      "tr": "Peymacun",
+      "en": "Peymacun (Cheese Lahmacun)",
+      "ar": "Peymacun"
     },
     "description": {
-      "tr": "",
-      "en": "Purslane",
-      "ar": "سلطة رجلة (بقلة)"
+      "tr": "Çıtır lahmacun hamuru üzerinde bol peynirli ve baharatlı özel lezzet.",
+      "en": "Thin, crispy dough baked with a special melted cheese and herbs blend.",
+      "ar": "بيماجون (لحم بعجين بالجبن) — عجينة رقيقة ومقرمشة مخبوزة بخليط الأجبان الغنية والأعشاب"
+    },
+    "price": 340,
+    "currency": "TRY",
+    "category": "lahmacun",
+    "categoryName": {
+      "tr": "Lahmacun",
+      "en": "Lahmacun",
+      "ar": "لحم بعجين (لحمعجون)"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": true,
+    "allergens": []
+  },
+  {
+    "id": "kopogl",
+    "name": {
+      "tr": "Köpoğlu",
+      "en": "Köpoğlu",
+      "ar": "Köpoğlu"
+    },
+    "description": {
+      "tr": "Közlenmiş patlıcan, biber ve sarımsaklı süzme yoğurt üzerine nefis domates sosu.",
+      "en": "Roasted eggplant and peppers layered with garlic strained yogurt and rich tomato sauce.",
+      "ar": "كوب أوغلو — باذنجان وفلفل مشوي مع لبن زبادي مصفى بالثوم وصلصة طماطم غنية"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "saksuka",
+    "name": {
+      "tr": "Şakşuka",
+      "en": "Şakşuka",
+      "ar": "Şakşuka"
+    },
+    "description": {
+      "tr": "Zeytinyağında sotelenmiş köz patlıcan, biber ve domates soslu geleneksel meze.",
+      "en": "Fried eggplants, zucchini, and peppers sautéed in rich garlic tomato sauce.",
+      "ar": "شكشوكة تركية — مكعبات الباذنجان والفلفل المقلية بزيت الزيتون والمغمورة بصلصة الطماطم والثوم"
+    },
+    "price": 180,
+    "currency": "TRY",
+    "category": "meze",
+    "categoryName": {
+      "tr": "Meze",
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "yogurtlu_karamelize_sogan",
+    "name": {
+      "tr": "Yoğurtlu Karamelize Soğan",
+      "en": "Caramelized Onion with Yogurt",
+      "ar": "Yoğurtlu Karamelize Soğan"
+    },
+    "description": {
+      "tr": "Ağır ateşte karamelize edilmiş tatlı soğanlar ve süzme yoğurdun ipeksi uyumu.",
+      "en": "Sweet slow-caramelized onions blended with thick strained yogurt.",
+      "ar": "لبن بالبصل المكرمل — بصل حلو مكرمل على نار هادئة ممزوج مع لبن زبادي مصفى كريمي وزيت الزيتون"
+    },
+    "price": 180,
+    "currency": "TRY",
+    "category": "meze",
+    "categoryName": {
+      "tr": "Meze",
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "kuru_dolma",
+    "name": {
+      "tr": "Kuru Dolma",
+      "en": "Kuru Dolma",
+      "ar": "Kuru Dolma"
+    },
+    "description": {
+      "tr": "Güneşte kurutulmuş Gaziantep patlıcan ve biberlerinin; sumaklı, narekşili ve baharatlı pirinç harcıyla doldurulup zeytinyağında ağır ağır pişirildiği enfes meze.",
+      "en": "Stuffed Dried Vegetables — Sun-dried eggplants and peppers from Gaziantep stuffed with spiced aromatic rice, sumac, and pomegranate molasses, simmered gently in olive oil.",
+      "ar": "محشي الخضروات المجففة (كورو دولما) — باذنجان وفلفل مجفف تحت أشعة الشمس على طريقة غازي عنتاب، محشو بالأرز المتبل، السماق، ودبس الرمان، ومطهو بزيت الزيتون البكر."
+    },
+    "price": 180,
+    "currency": "TRY",
+    "category": "meze",
+    "categoryName": {
+      "tr": "Meze",
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "vejetaryen_vegan_tabagi",
+    "name": {
+      "tr": "Vejetaryen & Vegan Tabağı",
+      "en": "Vegetarian & Vegan Platter",
+      "ar": "Vejetaryen & Vegan Tabağı"
+    },
+    "description": {
+      "tr": "Çeşitli zeytinyağlı mezeler, közlenmiş sebzeler ve taze garnitürlerle zengin vegan tabağı.",
+      "en": "Rich assortment of olive oil mezes, roasted vegetables, and fresh sides.",
+      "ar": "طبق نباتي وفيجان مشكل — تشكيلة غنية من المقبلات الباردة بزيت الزيتون والخضار المشوية الطازجة"
+    },
+    "price": 600,
+    "currency": "TRY",
+    "category": "meze",
+    "categoryName": {
+      "tr": "Meze",
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": true,
+    "allergens": []
+  },
+  {
+    "id": "semiz_otu",
+    "name": {
+      "tr": "Semiz Otu Mezesi",
+      "en": "Semiz Otu Mezesi",
+      "ar": "Semiz Otu Mezesi"
+    },
+    "description": {
+      "tr": "Taze semizotu ve süzme yoğurtlu zeytinyağlı meze.",
+      "en": "Purslane Yogurt Meze — Fresh purslane leaves mixed with garlic strained yogurt & olive oil.",
+      "ar": "مقبلات الرجلة بالزبادي — أوراق الرجلة الطازجة المخلوطة باللبن المصفى والثوم وزيت الزيتون"
+    },
+    "price": 180,
+    "currency": "TRY",
+    "category": "meze",
+    "categoryName": {
+      "tr": "Meze",
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -1983,17 +2324,17 @@
       "ar": "Kuru Cacık"
     },
     "description": {
-      "tr": "",
-      "en": "Dry Tzatziki",
-      "ar": "جاجيك سميك (زبادي بالخيار)"
+      "tr": "Süzme yoğurt, doğranmış salatalık, sarımsak ve zeytinyağlı nane.",
+      "en": "Strained Yogurt Tzatziki — Thick strained yogurt with diced cucumber, garlic, mint & olive oil.",
+      "ar": "جاجيك جاف بالزبادي — لبن مصفى كثيف مع قطع الخيار، الثوم والنعناع وزيت الزيتون"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2010,17 +2351,17 @@
       "ar": "Mütebbel"
     },
     "description": {
-      "tr": "",
-      "en": "Eggplant with Tahin",
-      "ar": "متبّل باذنجان"
+      "tr": "Közlenmiş patlıcan, tahin, süzme yoğurt ve sarımsaklı Ortadoğu mezesi.",
+      "en": "Mutabbal Eggplant Dip — Smoky roasted eggplant blended with tahini, garlic & thick yogurt.",
+      "ar": "متبل باذنجان بالتحينة — باذنجان مشوي على الفحم مع الطحينة، الثوم واللبن"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2037,17 +2378,17 @@
       "ar": "Otlu Yoğurtlu Meze"
     },
     "description": {
-      "tr": "",
-      "en": "Basil and Yogurt",
-      "ar": "زبادي بالأعشاب"
+      "tr": "Taze Ege otları ve süzme yoğurtlu soğuk meze.",
+      "en": "Aegean Herb Yogurt Dip — Fresh Aegean herbs mixed with strained yogurt & cold olive oil.",
+      "ar": "مقبلات أعشاب إيجة بالزبادي — أعشاب بحر إيجة الطازجة مع اللبن المصفى وزيت الزيتون"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2064,17 +2405,17 @@
       "ar": "Havuç Taratör"
     },
     "description": {
-      "tr": "",
-      "en": "Carrot with Yogurt",
-      "ar": "جزر بالزبادي"
+      "tr": "Sotelenmiş tatlı havuç, sarımsaklı yoğurt ve cevizli soğuk meze.",
+      "en": "Carrot Tarator Dip — Sautéed sweet carrots with garlic yogurt & roasted walnuts.",
+      "ar": "تاراتور الجزر بالعين جمل — جزر حلو محمر مع زبادي الثوم وجوز عين الجمل"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2091,17 +2432,17 @@
       "ar": "Köz Biberli Yoğurt"
     },
     "description": {
-      "tr": "",
-      "en": "Roasted Pepper Yogurt",
-      "ar": "زبادي بالفلفل المشوي"
+      "tr": "Kömürde közlenmiş kırmızı kapya biber ve süzme yoğurt.",
+      "en": "Roasted Red Pepper Yogurt — Charcoal-roasted sweet red capia peppers with strained yogurt.",
+      "ar": "زبادي بالفلفل الاحمر المشوي — فلفل أحمر حلو مشوي على الفحم مع اللبن المصفى"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2118,17 +2459,17 @@
       "ar": "Babagannuş"
     },
     "description": {
-      "tr": "",
-      "en": "Eggplant, Tomatoes and Pepper",
-      "ar": "بابا غنوج"
+      "tr": "Köz patlıcan, köz biber, domates, sarımsak ve zeytinyağı ezmesi.",
+      "en": "Baba Ghanoush Dip — Smoky roasted eggplant, red peppers, tomatoes, garlic & virgin olive oil.",
+      "ar": "بابا غنوج تقليدي — مهروس الباذنجان المشوي، الفلفل الأحرف، الطماطم، الثوم وزيت الزيتون البكر"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2140,22 +2481,22 @@
   {
     "id": "ezme_salata",
     "name": {
-      "tr": "Ezme Salata",
-      "en": "Ezme Salata",
-      "ar": "Ezme Salata"
+      "tr": "Acılı Ezme Salata",
+      "en": "Acılı Ezme Salata",
+      "ar": "Acılı Ezme Salata"
     },
     "description": {
-      "tr": "",
-      "en": "Spicy Salad",
-      "ar": "سلطة حارة (إزمة)"
+      "tr": "Zırhta kıyılmış taze domates, biber, nar ekşisi ve cevizli acılı ezme.",
+      "en": "Spicy Tomato & Pepper Ezme — Hand-chopped spicy tomato & pepper relish with pomegranate molasses & walnuts.",
+      "ar": "سلطة السلطة المفرومة الحارة — طماطم وفلفل مفروم بالساطور مع دبس الرمان والجوز"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2167,28 +2508,54 @@
   {
     "id": "humus",
     "name": {
-      "tr": "Humus",
-      "en": "Humus",
-      "ar": "Humus"
+      "tr": "Sıcak/Soğuk Humus",
+      "en": "Sıcak/Soğuk Humus",
+      "ar": "Sıcak/Soğuk Humus"
     },
     "description": {
-      "tr": "",
-      "en": "Hummus",
-      "ar": "حمص"
+      "tr": "Haşlanmış nohut, tahin, kimyon ve zeytinyağlı geleneksel humus.",
+      "en": "Classic Tahini Hummus — Smooth chickpeas blended with tahini, garlic, cumin & virgin olive oil.",
+      "ar": "حمص بطحينة وزيت زيتون — حمص مهروس بالطحينة، الثوم، الكمون وزيت الزيتون البكر"
     },
     "price": 180,
     "currency": "TRY",
     "category": "meze",
     "categoryName": {
       "tr": "Meze",
-      "en": "Appetizer",
-      "ar": "مقبلات"
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
     },
     "vegetarian": true,
     "vegan": false,
     "spicy": false,
     "signature": false,
     "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "karisik_meze_tabagi",
+    "name": {
+      "tr": "Karışık Meze Tabağı",
+      "en": "Karışık Meze Tabağı",
+      "ar": "Karışık Meze Tabağı"
+    },
+    "description": {
+      "tr": "Günlük hazırlanan 6 çeşit otantik zeytinyağlı ve meze ikramı.",
+      "en": "Chef's Mixed Meze Platter — Selection of 6 daily fresh authentic olive-oil cold mezes.",
+      "ar": "طبق مقبلات الشيف المشكل — تشكيلة من 6 أنواع مقبلات باردة محضرة يومياً بزيت الزيتون الصافي"
+    },
+    "currency": "TRY",
+    "category": "meze",
+    "categoryName": {
+      "tr": "Meze",
+      "en": "Mezes & Appetizers",
+      "ar": "المقبلات والمازة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": true,
     "allergens": []
   },
   {
@@ -2199,17 +2566,17 @@
       "ar": "Mevsim Salatası"
     },
     "description": {
-      "tr": "",
-      "en": "Season Salad - Carrot, Cucumber, Tomatoes, Vegatable",
-      "ar": "سلطة موسمية - جزر، خيار، طماطم، خضار طازجة"
+      "tr": "Taze havuç, mor lahana, mısır, zeytinyağı ve limon soslu salata.",
+      "en": "Fresh Garden Salad — Seasonal crisp lettuce, purple cabbage, carrots & lemon dressing.",
+      "ar": "سلطة الموسم الخضراء — خس طازج، ملفوف أحمر، جزر، ذرة مع صوص الليمون وزيت الزيتون"
     },
     "price": 200,
     "currency": "TRY",
     "category": "salata",
     "categoryName": {
       "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطات وأطباق جانبية"
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2226,17 +2593,17 @@
       "ar": "Çoban Salata"
     },
     "description": {
-      "tr": "",
-      "en": "Shepherd Salad - Tomatoes, Cucumber, Pepper, Vegatable",
-      "ar": "سلطة راعي (تشوبان) - طماطم، خيار، فلفل، بقدونس"
+      "tr": "Küp doğranmış domates, salatalık, biber, soğan, maydanoz ve zeytinyağı.",
+      "en": "Traditional Shepherd's Salad — Diced tomatoes, cucumbers, bell peppers, onions, parsley & extra virgin olive oil.",
+      "ar": "سلطة الراعي التركية — طماطم، خيار، فلفل، بصل، بقدونس مفروم مع زيت الزيتون البكر"
     },
     "price": 200,
     "currency": "TRY",
     "category": "salata",
     "categoryName": {
       "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطات وأطباق جانبية"
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2248,22 +2615,22 @@
   {
     "id": "cig_kofte",
     "name": {
-      "tr": "Çiğ Köfte",
-      "en": "Çiğ Köfte",
-      "ar": "Çiğ Köfte"
+      "tr": "Çiğ Köfte Porsiyon",
+      "en": "Çiğ Köfte Porsiyon",
+      "ar": "Çiğ Köfte Porsiyon"
     },
     "description": {
-      "tr": "",
-      "en": "Vegeterian Raw Meatball",
-      "ar": "تشي كفتة (نباتي)"
+      "tr": "Geleneksel acılı etsiz çiğ köfte porsiyonu, nar ekşisi ve marul ile.",
+      "en": "Vegan Çiğköfte Platter — Spiced bulgur pate served with fresh lettuce leaves & pomegranate glaze.",
+      "ar": "طبق تشي كفتة نباتي — طبق التشي كفتة المبهرة يقدم مع أوراق الخس الطازجة ودبس الرمان"
     },
     "price": 300,
     "currency": "TRY",
     "category": "salata",
     "categoryName": {
       "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطات وأطباق جانبية"
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2275,22 +2642,22 @@
   {
     "id": "icli_kofte",
     "name": {
-      "tr": "İçli Köfte",
-      "en": "İçli Köfte",
-      "ar": "İçli Köfte"
+      "tr": "İçli Köfte (3 Adet/Porsiyon)",
+      "en": "İçli Köfte (3 Adet/Porsiyon)",
+      "ar": "İçli Köfte (3 Adet/Porsiyon)"
     },
     "description": {
-      "tr": "",
-      "en": "Friese Meatball with Walnut",
-      "ar": "كبّة مقلية بالجوز"
+      "tr": "Kıymalı ve cevizli harçla doldurulmuş çıtır fırınlanmış/kızartılmış içli köfte.",
+      "en": "Kibbeh (İçli Köfte) — Crispy bulgur shell stuffed with spiced minced beef & walnuts.",
+      "ar": "كبة مقلية / مخبوزة (بالحبة) — كبة مقرمشة محشوة باللحم المفروم المتبل والجوز"
     },
     "price": 450,
     "currency": "TRY",
     "category": "salata",
     "categoryName": {
       "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطات وأطباق جانبية"
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2307,17 +2674,17 @@
       "ar": "Cacık"
     },
     "description": {
-      "tr": "",
-      "en": "Cucumber Yogurt",
-      "ar": "جاجيك (زبادي بالخيار والنعناع)"
+      "tr": "Sulu süzme yoğurt, doğranmış taze salatalık, sarımsak ve kuru nane.",
+      "en": "Chilled Cucumber Cacık — Chilled yogurt soup with cucumber, garlic, dried mint & olive oil.",
+      "ar": "شوربة جاجيك بالخيار واللبن — لبن مصفى مع الخيار المفروم، الثوم والنعناع الجاف"
     },
     "price": 150,
     "currency": "TRY",
     "category": "salata",
     "categoryName": {
       "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطات وأطباق جانبية"
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2329,22 +2696,22 @@
   {
     "id": "yogurt",
     "name": {
-      "tr": "Yoğurt",
-      "en": "Yoğurt",
-      "ar": "Yoğurt"
+      "tr": "Süzme Yoğurt",
+      "en": "Süzme Yoğurt",
+      "ar": "Süzme Yoğurt"
     },
     "description": {
-      "tr": "",
-      "en": "Yoghurt",
-      "ar": "زبادي"
+      "tr": "Halis koyun/inek sütünden yapılmış kıvamlı ev süzme yoğurdu.",
+      "en": "Strained Farm Yogurt — Pure thick strained farm sheep/cow milk yogurt.",
+      "ar": "لبن مصفى بلدي — لبن مصفى طبيعي كثيف غني بالطعم البلدي الأصيل"
     },
     "price": 120,
     "currency": "TRY",
     "category": "salata",
     "categoryName": {
       "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطات وأطباق جانبية"
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2354,24 +2721,154 @@
     "allergens": []
   },
   {
-    "id": "kunefe",
+    "id": "elma_dilim_patates",
     "name": {
-      "tr": "Künefe",
-      "en": "Künefe",
-      "ar": "Künefe"
+      "tr": "Elma Dilim Patates",
+      "en": "Elma Dilim Patates",
+      "ar": "Elma Dilim Patates"
     },
     "description": {
-      "tr": "Hatay usulü",
-      "en": "Kunefah - Hatay style",
-      "ar": "كنافة تركية - على طريقة هاتاي - بالجبنة والقطر"
+      "tr": "Patato Wedges",
+      "en": "Baked potato wedges",
+      "ar": "بطاطس ودجز محمصة"
+    },
+    "currency": "TRY",
+    "category": "salata",
+    "categoryName": {
+      "tr": "Salata",
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "kizartmasi_patates",
+    "name": {
+      "tr": "Kızartması Patates",
+      "en": "Kızartması Patates",
+      "ar": "Kızartması Patates"
+    },
+    "description": {
+      "tr": "French Fries",
+      "en": "Crispy french fries",
+      "ar": "بطاطا مقلية مقرمشة"
+    },
+    "currency": "TRY",
+    "category": "salata",
+    "categoryName": {
+      "tr": "Salata",
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
+    },
+    "vegetarian": true,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "ton_balikli_salata",
+    "name": {
+      "tr": "Ton Balıklı Salata",
+      "en": "Ton Balıklı Salata",
+      "ar": "Ton Balıklı Salata"
+    },
+    "description": {
+      "tr": "Tuna Salad",
+      "en": "Fresh salad with tuna",
+      "ar": "سلطة طازجة مع التونة"
+    },
+    "currency": "TRY",
+    "category": "salata",
+    "categoryName": {
+      "tr": "Salata",
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "tavuklu_salata",
+    "name": {
+      "tr": "Tavuklu Salata",
+      "en": "Tavuklu Salata",
+      "ar": "Tavuklu Salata"
+    },
+    "description": {
+      "tr": "Chicken with salad",
+      "en": "Chicken with salad",
+      "ar": "سلطة مع قطع الدجاج"
+    },
+    "currency": "TRY",
+    "category": "salata",
+    "categoryName": {
+      "tr": "Salata",
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "karides_guvec",
+    "name": {
+      "tr": "Karides Güveç",
+      "en": "Karides Güveç",
+      "ar": "Karides Güveç"
+    },
+    "description": {
+      "tr": "Shrimp in Clay Pot",
+      "en": "Shrimp cooked in a traditional clay pot",
+      "ar": "روبيان مطبوخ في الفخار التقليدي"
+    },
+    "currency": "TRY",
+    "category": "salata",
+    "categoryName": {
+      "tr": "Salata",
+      "en": "Salads",
+      "ar": "السلطات الطازجة"
+    },
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
+  },
+  {
+    "id": "kunefe",
+    "name": {
+      "tr": "Hatay Künefesi",
+      "en": "Hatay Künefesi",
+      "ar": "Hatay Künefesi"
+    },
+    "description": {
+      "tr": "Çıtır kadayıf arasında eriyen tuzsuz peynir, ılık şerbet ve üzerine Antep fıstığı.",
+      "en": "Hatay Künefe — Crispy shredded kadayıf pastry filled with unsalted melting cheese, warm syrup & crushed pistachios.",
+      "ar": "كنافة حتاوية بالجبنة — كنافة مقرمشة محشوة بالجبنة البلدية غير المملحة مع القطر الدافئ والفستق الحلبي"
     },
     "price": 250,
     "currency": "TRY",
     "category": "tatli",
     "categoryName": {
       "tr": "Tatlı",
-      "en": "Dessert",
-      "ar": "حلويات"
+      "en": "Desserts",
+      "ar": "الحلويات"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2388,17 +2885,17 @@
       "ar": "Fırın Sütlaç"
     },
     "description": {
-      "tr": "",
-      "en": "Rice Pudding",
-      "ar": "سطلاج (أرز بالحليب بالفرن)"
+      "tr": "Toprak güveçte fırınlanmış karamelize sütlaç.",
+      "en": "Baked Rice Pudding — Traditional creamy rice pudding caramelized in clay dish.",
+      "ar": "سوتلاج (أرز بالحليب بالفرن) — حلوى الأرز بالحليب المحمرة بالفرن في طبق فخاري"
     },
     "price": 200,
     "currency": "TRY",
     "category": "tatli",
     "categoryName": {
       "tr": "Tatlı",
-      "en": "Dessert",
-      "ar": "حلويات"
+      "en": "Desserts",
+      "ar": "الحلويات"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2410,22 +2907,22 @@
   {
     "id": "kazandibi",
     "name": {
-      "tr": "Kazandibi",
-      "en": "Kazandibi",
-      "ar": "Kazandibi"
+      "tr": "Geleneksel Kazandibi",
+      "en": "Geleneksel Kazandibi",
+      "ar": "Geleneksel Kazandibi"
     },
     "description": {
-      "tr": "",
-      "en": "Kazandibi Sweet",
-      "ar": "كازان ديبي (حلى حليب تركي)"
+      "tr": "Altı hafif yanık karamelize sütlü tatlı.",
+      "en": "Kazandibi Caramelized Pudding — Classic caramelized milk pudding with golden bottom.",
+      "ar": "قازان ديبي محمر — حلوى الحليب المحمرة من الأسفل بطعم الكراميل الأصيل"
     },
     "price": 200,
     "currency": "TRY",
     "category": "tatli",
     "categoryName": {
       "tr": "Tatlı",
-      "en": "Dessert",
-      "ar": "حلويات"
+      "en": "Desserts",
+      "ar": "الحلويات"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2437,22 +2934,22 @@
   {
     "id": "trilece",
     "name": {
-      "tr": "Trileçe",
-      "en": "Trileçe",
-      "ar": "Trileçe"
+      "tr": "Karamelli Trileçe",
+      "en": "Karamelli Trileçe",
+      "ar": "Karamelli Trileçe"
     },
     "description": {
-      "tr": "",
-      "en": "Trilece",
-      "ar": "تريليتشة (كيكة الحليب)"
+      "tr": "Üç sütlü hafif ıslak kek üzerine nefis karamel sos.",
+      "en": "Caramel Tres Leches Cake — Light sponge cake soaked in three milks topped with rich caramel.",
+      "ar": "تريليتشا بالكراميل — كيكة الحليب الثلاثية الخفيفة والمشربة مع صوص الكراميل"
     },
     "price": 200,
     "currency": "TRY",
     "category": "tatli",
     "categoryName": {
       "tr": "Tatlı",
-      "en": "Dessert",
-      "ar": "حلويات"
+      "en": "Desserts",
+      "ar": "الحلويات"
     },
     "vegetarian": true,
     "vegan": false,
@@ -2464,22 +2961,22 @@
   {
     "id": "cola",
     "name": {
-      "tr": "Cola",
-      "en": "Cola",
-      "ar": "Cola"
+      "tr": "Coca-Cola (33 cl)",
+      "en": "Coca-Cola (33 cl)",
+      "ar": "Coca-Cola (33 cl)"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": "كولا"
+      "tr": "Soğuk kutu içecek.",
+      "en": "Coca-Cola (33 cl) — Chilled canned beverage.",
+      "ar": "كوكاكولا (33 مل) — مشروب غازي بارد"
     },
     "price": 110,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2491,22 +2988,22 @@
   {
     "id": "fanta",
     "name": {
-      "tr": "Fanta",
-      "en": "Fanta",
-      "ar": "Fanta"
+      "tr": "Fanta (33 cl)",
+      "en": "Fanta (33 cl)",
+      "ar": "Fanta (33 cl)"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": "فانتا"
+      "tr": "Soğuk kutu içecek.",
+      "en": "Fanta (33 cl) — Chilled canned beverage.",
+      "ar": "فانتا (33 مل) — مشروب غازي بارد"
     },
     "price": 110,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2518,22 +3015,22 @@
   {
     "id": "sprite",
     "name": {
-      "tr": "Sprite",
-      "en": "Sprite",
-      "ar": "Sprite"
+      "tr": "Sprite (33 cl)",
+      "en": "Sprite (33 cl)",
+      "ar": "Sprite (33 cl)"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": "سبرايت"
+      "tr": "Soğuk kutu içecek.",
+      "en": "Sprite (33 cl) — Chilled canned beverage.",
+      "ar": "سبرايت (33 مل) — مشروب غازي بارد"
     },
     "price": 110,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2545,22 +3042,22 @@
   {
     "id": "camlica",
     "name": {
-      "tr": "Çamlıca",
-      "en": "Çamlıca",
-      "ar": "Çamlıca"
+      "tr": "Çamlıca Gazoz",
+      "en": "Çamlıca Gazoz",
+      "ar": "Çamlıca Gazoz"
     },
     "description": {
-      "tr": "",
-      "en": "Flavored Soft Drink",
-      "ar": "تشامليجا (مشروب غازي تركي)"
+      "tr": "Geleneksel cam şişe gazoz.",
+      "en": "Çamlıca Soda — Traditional glass bottle soda.",
+      "ar": "شاملجة كازوز — مشروب كازوز تركي تقليدي بزجاجة"
     },
     "price": 110,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2572,22 +3069,22 @@
   {
     "id": "litrelik_cola",
     "name": {
-      "tr": "Litrelik Cola",
-      "en": "Litrelik Cola",
-      "ar": "Litrelik Cola"
+      "tr": "Litrelik Coca-Cola (1 L)",
+      "en": "Litrelik Coca-Cola (1 L)",
+      "ar": "Litrelik Coca-Cola (1 L)"
     },
     "description": {
-      "tr": "",
-      "en": "Liter of Coke",
-      "ar": "كولا لتر"
+      "tr": "Aile boyu soğuk içecek.",
+      "en": "Coca-Cola (1 L) — 1 Liter bottle.",
+      "ar": "كوكاكولا عائلية (1 لتر) — مشروب غازي حجم عائلي"
     },
     "price": 180,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2599,22 +3096,22 @@
   {
     "id": "ayran_kucuk",
     "name": {
-      "tr": "Ayran (Küçük)",
-      "en": "Ayran (Küçük)",
-      "ar": "Ayran (Küçük)"
+      "tr": "Yayık Ayran (Küçük)",
+      "en": "Yayık Ayran (Küçük)",
+      "ar": "Yayık Ayran (Küçük)"
     },
     "description": {
-      "tr": "",
-      "en": "Yoghurt Drink (Small)",
-      "ar": "عيران (صغير)"
+      "tr": "Bol köpüklü soğuk yayık ayranı.",
+      "en": "Frothy Yayık Ayran (Small) — Cold whipped yogurt drink with foam.",
+      "ar": "عيران ياييك بالرغوة (صغير) — لبن عيران بارد برغوة كثيفة"
     },
     "price": 85,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2626,22 +3123,22 @@
   {
     "id": "ayran_litrelik",
     "name": {
-      "tr": "Ayran (Litrelik)",
-      "en": "Ayran (Litrelik)",
-      "ar": "Ayran (Litrelik)"
+      "tr": "Yayık Ayran (1 L)",
+      "en": "Yayık Ayran (1 L)",
+      "ar": "Yayık Ayran (1 L)"
     },
     "description": {
-      "tr": "",
-      "en": "Yoghurt Drink (Liter)",
-      "ar": "عيران (لتر)"
+      "tr": "Litrelik buz gibi yayık ayranı.",
+      "en": "Yayık Ayran (1 L) — 1 Liter chilled yogurt drink.",
+      "ar": "عيران ياييك عائلي (1 لتر) — لبن عيران بارد حجم 1 لتر"
     },
     "price": 170,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2653,22 +3150,22 @@
   {
     "id": "salgam",
     "name": {
-      "tr": "Şalgam",
-      "en": "Şalgam",
-      "ar": "Şalgam"
+      "tr": "Şalgam Suyu",
+      "en": "Şalgam Suyu",
+      "ar": "Şalgam Suyu"
     },
     "description": {
-      "tr": "",
-      "en": "Turnip Juice",
-      "ar": "شلغم (عصير لفت حامض)"
+      "tr": "Adana usulü acılı veya acısız şalgam suyu.",
+      "en": "Turnip Juice Şalgam — Traditional Adana spicy or mild turnip juice.",
+      "ar": "عصير شلغم أضنة — عصير الشلغم التقليدي (حار أو عادي)"
     },
     "price": 85,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2685,17 +3182,17 @@
       "ar": "Meyve Suları"
     },
     "description": {
-      "tr": "",
-      "en": "Fruit Juice",
-      "ar": "عصير فواكه"
+      "tr": "Cappy şeftali, vişne, karışık.",
+      "en": "Fruit Juices — Cappy peach, cherry, or mixed fruit juice.",
+      "ar": "عصائر فواكه راني/كابي — عصير خوخ، كرز، أو فواكه مشكلة"
     },
     "price": 110,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2712,17 +3209,17 @@
       "ar": "Ice Tea"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": "شاي مثلج"
+      "tr": "Şeftali veya limon aromalı soğuk çay.",
+      "en": "Ice Tea — Peach or lemon iced tea.",
+      "ar": "شاي مثلج آيس تي — شاي مثلج بنكهة الخوخ أو الليمون"
     },
     "price": 110,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2734,22 +3231,22 @@
   {
     "id": "sikma_portakal",
     "name": {
-      "tr": "Sıkma Portakal",
-      "en": "Sıkma Portakal",
-      "ar": "Sıkma Portakal"
+      "tr": "Taze Sıkma Portakal Suyu",
+      "en": "Taze Sıkma Portakal Suyu",
+      "ar": "Taze Sıkma Portakal Suyu"
     },
     "description": {
-      "tr": "",
-      "en": "Fresh Orange Juice",
-      "ar": "عصير برتقال طازج"
+      "tr": "%100 doğal taze sıkılmış portakal suyu.",
+      "en": "Fresh Orange Juice — 100% natural freshly squeezed orange juice.",
+      "ar": "عصير برتقال طبيعي طازج — عصير برتقال طبيعي 100% معصور طازجاً"
     },
     "price": 250,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2761,22 +3258,22 @@
   {
     "id": "sikma_nar",
     "name": {
-      "tr": "Sıkma Nar",
-      "en": "Sıkma Nar",
-      "ar": "Sıkma Nar"
+      "tr": "Taze Sıkma Nar Suyu",
+      "en": "Taze Sıkma Nar Suyu",
+      "ar": "Taze Sıkma Nar Suyu"
     },
     "description": {
-      "tr": "",
-      "en": "Fresh Pomegranate Juice",
-      "ar": "عصير رمان طازج"
+      "tr": "%100 doğal taze sıkılmış nar suyu.",
+      "en": "Fresh Pomegranate Juice — 100% natural freshly pressed pomegranate juice.",
+      "ar": "عصير رمان طبيعي طازج — عصير رمان طبيعي 100% معصور طازجاً"
     },
     "price": 280,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2788,22 +3285,22 @@
   {
     "id": "limonata",
     "name": {
-      "tr": "Limonata",
-      "en": "Limonata",
-      "ar": "Limonata"
+      "tr": "Ev Yapımı Limonata",
+      "en": "Ev Yapımı Limonata",
+      "ar": "Ev Yapımı Limonata"
     },
     "description": {
-      "tr": "",
-      "en": "Lemonade",
-      "ar": "ليموناضة"
+      "tr": "Taze nane yaprakları ile serinletici ev yapımı limonata.",
+      "en": "Homemade Lemonade — Refreshing homemade lemonade with fresh mint.",
+      "ar": "ليمونادة منزلي بالنعناع — ليمونادة منعشة محضرة منزلية مع أوراق النعناع الطازجة"
     },
     "price": 200,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2815,22 +3312,22 @@
   {
     "id": "soda",
     "name": {
-      "tr": "Soda",
-      "en": "Soda",
-      "ar": "Soda"
+      "tr": "Maden Suyu / Soda",
+      "en": "Maden Suyu / Soda",
+      "ar": "Maden Suyu / Soda"
     },
     "description": {
-      "tr": "",
-      "en": "Sparkling Water",
-      "ar": "صودا (مياه غازية)"
+      "tr": "Doğal zengin mineralli maden suyu.",
+      "en": "Mineral Water — Natural sparkling mineral water.",
+      "ar": "مياه معدنية غازية — مياه معدنية غازية غنية بالمعادن"
     },
     "price": 80,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2847,17 +3344,17 @@
       "ar": "Su"
     },
     "description": {
-      "tr": "",
-      "en": "Water",
-      "ar": "ماء"
+      "tr": "Soğuk şişe kaynak suyu.",
+      "en": "Bottled Water — Chilled spring water.",
+      "ar": "مياه معبأة نقية — زجاجة مياه شرب نقية باردة"
     },
     "price": 30,
     "currency": "TRY",
     "category": "soguk_icecek",
     "categoryName": {
       "tr": "Soğuk İçecek",
-      "en": "Cold Drink",
-      "ar": "مشروبات باردة"
+      "en": "Cold Beverages",
+      "ar": "المشروبات الباردة"
     },
     "vegetarian": false,
     "vegan": false,
@@ -2870,416 +3367,208 @@
     "id": "kucuk_cay",
     "name": {
       "tr": "Küçük Çay",
-      "en": "Small Tea",
-      "ar": "شاي صغير"
+      "en": "Küçük Çay",
+      "ar": "Küçük Çay"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
+      "tr": "Küçük Çay",
+      "en": "Small Turkish Tea",
+      "ar": "شاي تركي صغير"
     },
-    "price": 30,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   },
   {
     "id": "buyuk_cay",
     "name": {
       "tr": "Büyük Çay",
-      "en": "Large Tea",
-      "ar": "شاي كبير"
+      "en": "Büyük Çay",
+      "ar": "Büyük Çay"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
+      "tr": "Büyük Çay",
+      "en": "Large Turkish Tea",
+      "ar": "شاي تركي كبير"
     },
-    "price": 60,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   },
   {
     "id": "ada_cayi",
     "name": {
       "tr": "Ada Çayı",
-      "en": "Sage Tea",
-      "ar": "شاي المريمية"
+      "en": "Ada Çayı",
+      "ar": "Ada Çayı"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
+      "tr": "Ada Çayı",
+      "en": "Sage Tea",
+      "ar": "شاي الميرمية"
     },
-    "price": 70,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   },
   {
     "id": "nescafe",
     "name": {
       "tr": "Nescafe",
       "en": "Nescafe",
-      "ar": "نسكافيه"
+      "ar": "Nescafe"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
+      "tr": "Nescafe",
+      "en": "Nescafe (Instant Coffee)",
+      "ar": "نسكافيه"
     },
-    "price": 100,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   },
   {
     "id": "kivi_cayi",
     "name": {
       "tr": "Kivi",
+      "en": "Kivi",
+      "ar": "Kivi"
+    },
+    "description": {
+      "tr": "Kivi Çayı",
       "en": "Kiwi Tea",
       "ar": "شاي الكيوي"
     },
-    "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
-    },
-    "price": 30,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   },
   {
     "id": "oralet",
     "name": {
       "tr": "Oralet",
       "en": "Oralet",
-      "ar": "أوراليت"
+      "ar": "Oralet"
     },
     "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
+      "tr": "Oralet",
+      "en": "Oralet (Orange Flavored Hot Drink)",
+      "ar": "أوراليت (مشروب ساخن بنكهة البرتقال)"
     },
-    "price": 30,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   },
   {
     "id": "elma_cayi",
     "name": {
       "tr": "Elma Çayı",
+      "en": "Elma Çayı",
+      "ar": "Elma Çayı"
+    },
+    "description": {
+      "tr": "Elma Çayı",
       "en": "Apple Tea",
       "ar": "شاي التفاح"
     },
-    "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
-    },
-    "price": 30,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   },
   {
     "id": "turk_kahvesi",
     "name": {
       "tr": "Türk Kahvesi",
+      "en": "Türk Kahvesi",
+      "ar": "Türk Kahvesi"
+    },
+    "description": {
+      "tr": "Türk Kahvesi",
       "en": "Turkish Coffee",
       "ar": "قهوة تركية"
     },
-    "description": {
-      "tr": "",
-      "en": "",
-      "ar": ""
-    },
-    "price": 100,
-    "category": {
+    "currency": "TRY",
+    "category": "sicak_icecek",
+    "categoryName": {
       "tr": "Sıcak İçecekler",
       "en": "Hot Drinks",
       "ar": "مشروبات ساخنة"
     },
-    "image": "/images/menu/default-hot-drink.jpg",
-    "tags": []
-  },
-  {
-    "id": "kuzu_ciger",
-    "name": {
-      "tr": "Kuzu Ciğer",
-      "en": "Lamb Liver",
-      "ar": "كبدة غنم"
-    },
-    "description": {
-      "tr": "Geleneksel kuzu ciğer şiş",
-      "en": "Traditional lamb liver skewer",
-      "ar": "سيخ كبدة غنم تقليدية"
-    },
-    "price": 825,
-    "category": {
-      "tr": "Kebap",
-      "en": "Kebab",
-      "ar": "كباب"
-    },
-    "image": "/images/menu/kuzu_ciger_v3.webp",
-    "tags": []
-  },
-  {
-    "id": "elma_dilim_patates",
-    "name": {
-      "tr": "Elma Dilim Patates",
-      "en": "Potato Wedges",
-      "ar": "بطاطس ودجز"
-    },
-    "description": {
-      "tr": "Patato Wedges",
-      "en": "Baked potato wedges",
-      "ar": "بطاطس ودجز محمصة"
-    },
-    "price": 300,
-    "category": {
-      "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطة"
-    },
-    "tags": [
-      "vegetarian",
-      "vegan"
-    ]
-  },
-  {
-    "id": "kizartmasi_patates",
-    "name": {
-      "tr": "Kızartması Patates",
-      "en": "French Fries",
-      "ar": "بطاطا مقلية"
-    },
-    "description": {
-      "tr": "French Fries",
-      "en": "Crispy french fries",
-      "ar": "بطاطا مقلية مقرمشة"
-    },
-    "price": 250,
-    "category": {
-      "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطة"
-    },
-    "tags": [
-      "vegetarian",
-      "vegan"
-    ]
-  },
-  {
-    "id": "ton_balikli_salata",
-    "name": {
-      "tr": "Ton Balıklı Salata",
-      "en": "Tuna Salad",
-      "ar": "سلطة تونة"
-    },
-    "description": {
-      "tr": "Tuna Salad",
-      "en": "Fresh salad with tuna",
-      "ar": "سلطة طازجة مع التونة"
-    },
-    "price": 700,
-    "category": {
-      "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطة"
-    },
-    "tags": []
-  },
-  {
-    "id": "tavuklu_salata",
-    "name": {
-      "tr": "Tavuklu Salata",
-      "en": "Chicken Salad",
-      "ar": "سلطة دجاج"
-    },
-    "description": {
-      "tr": "Chicken with salad",
-      "en": "Chicken with salad",
-      "ar": "سلطة مع قطع الدجاج"
-    },
-    "price": 700,
-    "category": {
-      "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطة"
-    },
-    "tags": []
-  },
-  {
-    "id": "karides_guvec",
-    "name": {
-      "tr": "Karides Güveç",
-      "en": "Shrimp in Clay Pot",
-      "ar": "روبيان بالفخار"
-    },
-    "description": {
-      "tr": "Shrimp in Clay Pot",
-      "en": "Shrimp cooked in a traditional clay pot",
-      "ar": "روبيان مطبوخ في الفخار التقليدي"
-    },
-    "price": 700,
-    "category": {
-      "tr": "Salata",
-      "en": "Salad",
-      "ar": "سلطة"
-    },
-    "tags": []
-  },
-  {
-    "id": "sigara_boregi",
-    "name": {
-      "tr": "Sigara Böreği",
-      "en": "Cheese-Filled Pastry Rolls",
-      "ar": "لفائف الجبن المقرمشة"
-    },
-    "description": {
-      "tr": "",
-      "en": "Crispy cheese-filled pastry rolls",
-      "ar": ""
-    },
-    "price": 250,
-    "currency": "TRY",
-    "category": "kahvalti",
-    "categoryName": {
-      "tr": "Kahvaltı",
-      "en": "Breakfast",
-      "ar": "الإفطار"
-    },
-    "image": "/images/sigara_boregi.webp",
-    "tags": [
-      "vegetarian"
-    ]
-  },
-  {
-    "id": "gozleme_cesitleri",
-    "name": {
-      "tr": "Gözleme Çeşitleri",
-      "en": "Assorted Gözleme",
-      "ar": "أنواع الجوزلمة"
-    },
-    "description": {
-      "tr": "",
-      "en": "Traditional Turkish stuffed flatbreads",
-      "ar": ""
-    },
-    "price": 450,
-    "currency": "TRY",
-    "category": "kahvalti",
-    "categoryName": {
-      "tr": "Kahvaltı",
-      "en": "Breakfast",
-      "ar": "الإفطار"
-    },
-    "image": "/images/gozleme_cesitleri.webp",
-    "tags": [
-      "vegetarian"
-    ]
-  },
-  {
-    "id": "pastirmali_yumurta",
-    "name": {
-      "tr": "Pastırmalı Yumurta",
-      "en": "Eggs with Pastırma",
-      "ar": "بيض بالبسترمة"
-    },
-    "description": {
-      "tr": "",
-      "en": "Eggs with Turkish pastırma",
-      "ar": ""
-    },
-    "price": 350,
-    "currency": "TRY",
-    "category": "kahvalti",
-    "categoryName": {
-      "tr": "Kahvaltı",
-      "en": "Breakfast",
-      "ar": "الإفطار"
-    },
-    "tags": [],
-    "image": "/images/pastirmali_yumurta.webp"
-  },
-  {
-    "id": "simitli_yumurta",
-    "name": {
-      "tr": "Simitli Yumurta",
-      "en": "Simit with Egg",
-      "ar": "سميت مع البيض"
-    },
-    "description": {
-      "tr": "",
-      "en": "Turkish simit served with egg",
-      "ar": ""
-    },
-    "price": 280,
-    "currency": "TRY",
-    "category": "kahvalti",
-    "categoryName": {
-      "tr": "Kahvaltı",
-      "en": "Breakfast",
-      "ar": "الإفطار"
-    },
-    "tags": [],
-    "image": "/images/simitli_yumurta.webp"
-  },
-  {
-    "id": "kuru_dolma",
-    "name": {
-      "tr": "Kuru Dolma",
-      "en": "Stuffed Dried Vegetables",
-      "ar": "خضروات مجففة محشية"
-    },
-    "description": {
-      "tr": "",
-      "en": "Traditional stuffed dried vegetables",
-      "ar": ""
-    },
-    "price": 180,
-    "currency": "TRY",
-    "category": "meze",
-    "categoryName": {
-      "tr": "Meze",
-      "en": "Appetizers",
-      "ar": "مقبلات"
-    },
-    "image": "/images/kuru_dolma.webp",
-    "tags": [
-      "vegetarian"
-    ]
+    "vegetarian": false,
+    "vegan": false,
+    "spicy": false,
+    "signature": false,
+    "trending": false,
+    "allergens": []
   }
 ]
