@@ -5,7 +5,7 @@ export const menuData = [
     items: [
       {
         id: "serpme_kahvalti",
-        price: 900.00,
+        price: 1350.00,
         image: "/images/Serpme-Kahvalti-2-Kisilik.webp",
         tags: ["signature"],
         trending: true,
@@ -18,7 +18,7 @@ export const menuData = [
       },
       {
         id: "menemen",
-        price: 250.00,
+        price: 300.00,
         image: "/images/menemen.webp",
         tags: ["vegetarian"],
         trending: true,
@@ -59,13 +59,13 @@ export const menuData = [
       },
       {
         id: "sucuklu_yumurta",
-        price: 230.00,
+        price: 300.00,
         image: "/images/6-Sucuklu-Yumurta.webp",
         tags: [],
       },
       {
         id: "kavurmali_yumurta",
-        price: 300.00,
+        price: 350.00,
         image: "/images/7-Kavurmali-Yumurta.webp",
         tags: [],
       },
@@ -118,7 +118,7 @@ export const menuData = [
       },
       {
         id: "hunkarbegendi",
-        price: 1500.00,
+        price: 970.00,
         image: "/images/hunkarbegendi.webp",
         tags: ["signature"],
         trending: true,
