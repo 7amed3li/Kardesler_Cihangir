@@ -147,5 +147,12 @@
     "address": "Indirizzo",
     "note": "Nota",
     "greeting": "Buongiorno, vorrei effettuare un ordine."
+  },
+  "portions": {
+    "label": "Porzione",
+    "half": "Mezza",
+    "full": "1 porzione",
+    "oneHalf": "1,5 porzioni",
+    "double": "Doppia"
   }
 }

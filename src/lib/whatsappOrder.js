@@ -28,23 +28,32 @@ export function buildWhatsAppChatUrl(greeting) {
 }
 
 // Cart checkout link: composes a structured order message from the cart.
-// - cart: [{ id, qty }] from AppContext
+// - cart: [{ id, qty, portion? }] from AppContext (lines are keyed by
+//   dish + portion, so the same dish can appear at several portions)
 // - getItemName(id): localized dish name (menuT)
-// - getLivePrice(item): live TRY unit price or null
+// - getLivePrice(item): live TRY unit price (base portion) or null
+// - getUnitPrice(item) (optional): portion-aware TRY unit price or null;
+//   when provided it replaces getLivePrice so Duble/Yarım lines are
+//   priced — and totalled — correctly in the message.
+// - getPortionLabel(item) (optional): localized portion label for
+//   non-default portions (e.g. "Duble"), appended to the dish name so
+//   the restaurant sees which portion each line is.
 // - labels: { title, total, name, address, note } localized strings
 // Returns null when the cart is empty or any price is unavailable, so the
 // caller can hide the button instead of sending a broken order.
-export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, labels }) {
+export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnitPrice, getPortionLabel, labels }) {
   if (!Array.isArray(cart) || cart.length === 0) return null;
 
   const lines = [];
   let grandTotal = 0;
   for (const item of cart) {
-    const unitPrice = getLivePrice(item);
+    const unitPrice = getUnitPrice ? getUnitPrice(item) : getLivePrice(item);
     if (unitPrice == null) return null;
     const lineTotal = unitPrice * item.qty;
     grandTotal += lineTotal;
-    lines.push(`${item.qty} × ${getItemName(item.id)} — ${formatTRY(lineTotal)}`);
+    const portionLabel = getPortionLabel ? getPortionLabel(item) : null;
+    const name = portionLabel ? `${getItemName(item.id)} (${portionLabel})` : getItemName(item.id);
+    lines.push(`${item.qty} × ${name} — ${formatTRY(lineTotal)}`);
   }
 
   const divider = "———————————";

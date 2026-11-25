@@ -147,5 +147,12 @@
     "address": "Adres",
     "note": "Not",
     "greeting": "Merhaba, sipariş vermek istiyorum."
+  },
+  "portions": {
+    "label": "Porsiyon",
+    "half": "Yarım",
+    "full": "1 Porsiyon",
+    "oneHalf": "1,5 Porsiyon",
+    "double": "Duble"
   }
 }

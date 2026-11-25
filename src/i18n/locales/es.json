@@ -147,5 +147,12 @@
     "address": "Dirección",
     "note": "Nota",
     "greeting": "Hola, quiero hacer un pedido."
+  },
+  "portions": {
+    "label": "Ración",
+    "half": "Media",
+    "full": "1 ración",
+    "oneHalf": "1,5 raciones",
+    "double": "Doble"
   }
 }

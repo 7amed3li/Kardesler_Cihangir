@@ -147,5 +147,12 @@
     "address": "Adresse",
     "note": "Anmerkung",
     "greeting": "Hallo, ich möchte eine Bestellung aufgeben."
+  },
+  "portions": {
+    "label": "Portion",
+    "half": "Halb",
+    "full": "1 Portion",
+    "oneHalf": "1,5 Portionen",
+    "double": "Doppelt"
   }
 }

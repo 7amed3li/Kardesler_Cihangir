@@ -147,5 +147,12 @@
     "address": "地址",
     "note": "备注",
     "greeting": "您好，我想点餐。"
+  },
+  "portions": {
+    "label": "份量",
+    "half": "半份",
+    "full": "1份",
+    "oneHalf": "1.5份",
+    "double": "双份"
   }
 }

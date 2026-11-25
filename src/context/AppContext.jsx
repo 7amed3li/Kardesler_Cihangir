@@ -5,6 +5,13 @@ import { translations, menuTranslations } from "../i18n/translations";
 // WhatsApp functionality removed based on user request (phone calls only)
 import SaudiRiyalIcon from "../components/SaudiRiyalIcon";
 import { menuData } from "../data/menuData";
+import {
+  DEFAULT_PORTION,
+  getPortionOptions,
+  isSoupItem,
+  normalizePortion,
+  portionUnitPrice,
+} from "../lib/portions";
 
 // Flat lookup for menuData items by id (used only for images/names, NOT prices)
 const allMenuItems = menuData.flatMap(cat => cat.items || []);
@@ -114,7 +121,12 @@ export function AppProvider({ children }) {
       if (savedCart) {
         const parsed = JSON.parse(savedCart);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          requestAnimationFrame(() => setCart(parsed));
+          // Normalize legacy lines (saved before portions existed) to the default portion
+          const normalized = parsed.map((line) => ({
+            ...line,
+            portion: normalizePortion(line.id, line.portion || DEFAULT_PORTION),
+          }));
+          requestAnimationFrame(() => setCart(normalized));
         }
       }
     } catch (_) { /* ignore parse errors */ }
@@ -208,21 +220,24 @@ export function AppProvider({ children }) {
     } catch (_) { /* ignore storage errors */ }
   }, [cart]);
 
-  const addToCart = useCallback((item) => {
+  // A cart line is identified by (dish id + portion): the same dish at
+  // different portions is a separate line.
+  const addToCart = useCallback((item, portion = DEFAULT_PORTION) => {
     // Guard: don't add items if prices haven't loaded or item has no price
     if (pricesLoading || getLivePrice(item) === null) {
       console.warn(`Cannot add ${item.id} to cart: price not available`);
       return;
     }
+    const linePortion = normalizePortion(item.id, portion);
 
     setCart((prev) => {
-      const existing = prev.find((i) => i.id === item.id);
+      const existing = prev.find((i) => i.id === item.id && i.portion === linePortion);
       if (existing) {
         return prev.map((i) =>
-          i.id === item.id ? { ...i, qty: i.qty + 1 } : i
+          i.id === item.id && i.portion === linePortion ? { ...i, qty: i.qty + 1 } : i
         );
       }
-      return [...prev, { id: item.id, image: item.image, qty: 1 }];
+      return [...prev, { id: item.id, portion: linePortion, image: item.image, qty: 1 }];
     });
 
     // Trigger FAB pulse animation
@@ -231,16 +246,37 @@ export function AppProvider({ children }) {
     pulseTimeoutRef.current = setTimeout(() => setCartPulse(false), 600);
   }, [pricesLoading, getLivePrice]);
 
-  const removeFromCart = useCallback((itemId) => {
+  const removeFromCart = useCallback((itemId, portion = DEFAULT_PORTION) => {
+    const linePortion = normalizePortion(itemId, portion);
     setCart((prev) => {
-      const existing = prev.find((i) => i.id === itemId);
+      const existing = prev.find((i) => i.id === itemId && i.portion === linePortion);
       if (!existing) return prev;
       if (existing.qty === 1) {
-        return prev.filter((i) => i.id !== itemId);
+        return prev.filter((i) => !(i.id === itemId && i.portion === linePortion));
       }
       return prev.map((i) =>
-        i.id === itemId ? { ...i, qty: i.qty - 1 } : i
+        i.id === itemId && i.portion === linePortion ? { ...i, qty: i.qty - 1 } : i
       );
+    });
+  }, []);
+
+  // Move a whole cart line to another portion, merging into the target
+  // line when the same dish already exists at that portion.
+  const changeCartLinePortion = useCallback((itemId, fromPortion, toPortion) => {
+    const from = normalizePortion(itemId, fromPortion);
+    const to = normalizePortion(itemId, toPortion);
+    if (from === to) return;
+    setCart((prev) => {
+      const source = prev.find((i) => i.id === itemId && i.portion === from);
+      if (!source) return prev;
+      const target = prev.find((i) => i.id === itemId && i.portion === to);
+      const withoutSource = prev.filter((i) => !(i.id === itemId && i.portion === from));
+      if (target) {
+        return withoutSource.map((i) =>
+          i.id === itemId && i.portion === to ? { ...i, qty: i.qty + source.qty } : i
+        );
+      }
+      return [...withoutSource, { ...source, portion: to }];
     });
   }, []);
 
@@ -251,15 +287,32 @@ export function AppProvider({ children }) {
     } catch (_) { /* ignore */ }
   }, []);
 
+  // Total quantity of a dish across ALL of its portion lines (card badge)
   const getItemQuantity = useCallback((itemId) => {
-    return cart.find((i) => i.id === itemId)?.qty ?? 0;
+    return cart
+      .filter((i) => i.id === itemId)
+      .reduce((sum, i) => sum + i.qty, 0);
   }, [cart]);
+
+  // Quantity of one specific (dish + portion) line
+  const getPortionQuantity = useCallback((itemId, portion = DEFAULT_PORTION) => {
+    const linePortion = normalizePortion(itemId, portion);
+    return cart.find((i) => i.id === itemId && i.portion === linePortion)?.qty ?? 0;
+  }, [cart]);
+
+  // Unit price (TRY) of a dish at a portion — base price x multiplier,
+  // rounded to the nearest whole lira (see src/lib/portions.js)
+  const getPortionUnitPrice = useCallback((item, portion = DEFAULT_PORTION) => {
+    const base = getLivePrice(item);
+    if (base === null) return null;
+    return portionUnitPrice(base, normalizePortion(item.id, portion));
+  }, [getLivePrice]);
 
   // Derived values
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
   const cartTotal = cart.reduce((sum, item) => {
     if (sum === null) return null;
-    const price = getLivePrice(item);
+    const price = getPortionUnitPrice(item, item.portion);
     if (price === null) return null;
     return sum + price * item.qty;
   }, 0);
@@ -332,6 +385,11 @@ export function AppProvider({ children }) {
     removeFromCart,
     clearCart,
     getItemQuantity,
+    getPortionQuantity,
+    changeCartLinePortion,
+    getPortionUnitPrice,
+    getPortionOptions,
+    isSoupItem,
     submitOrder,
     orderStatus,
     pricesLoading,

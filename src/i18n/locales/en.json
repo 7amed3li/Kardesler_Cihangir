@@ -147,5 +147,12 @@
     "address": "Address",
     "note": "Note",
     "greeting": "Hello, I would like to place an order."
+  },
+  "portions": {
+    "label": "Portion",
+    "half": "Half",
+    "full": "1 Portion",
+    "oneHalf": "1.5 Portions",
+    "double": "Double"
   }
 }
