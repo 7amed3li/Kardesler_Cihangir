@@ -139,5 +139,13 @@
   "backToMenu": "返回菜单",
   "myList": "我的点单",
   "showWaiter": "点餐时请向服务员出示此清单",
-  "estimatedTotal": "预估总计:"
+  "estimatedTotal": "预估总计:",
+  "whatsappOrder": {
+    "button": "通过 WhatsApp 点餐",
+    "title": "新订单",
+    "name": "姓名",
+    "address": "地址",
+    "note": "备注",
+    "greeting": "您好，我想点餐。"
+  }
 }

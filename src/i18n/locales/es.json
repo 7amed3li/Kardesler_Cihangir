@@ -139,5 +139,13 @@
   "backToMenu": "Volver al Menú",
   "myList": "Mi Pedido",
   "showWaiter": "Muestre esta lista al camarero para pedir",
-  "estimatedTotal": "Total Estimado:"
+  "estimatedTotal": "Total Estimado:",
+  "whatsappOrder": {
+    "button": "Pedir por WhatsApp",
+    "title": "Nuevo pedido",
+    "name": "Nombre",
+    "address": "Dirección",
+    "note": "Nota",
+    "greeting": "Hola, quiero hacer un pedido."
+  }
 }

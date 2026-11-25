@@ -4,11 +4,13 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Phone, MapPin } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { buildWhatsAppChatUrl } from "@/lib/whatsappOrder";
 
 export default function MobileStickyCTA() {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
-  const { t, lang } = useAppContext();
+  const { t, lang, cartCount } = useAppContext();
 
   const isDevProfile = pathname?.includes("tasarim-gelistirme") || pathname?.includes("design-development");
   const isAdmin = pathname?.startsWith("/admin");
@@ -29,9 +31,17 @@ export default function MobileStickyCTA() {
 
   if (isDevProfile || isAdmin) return null;
   if (!isVisible) return null;
+  // When the list has items, the cart FAB (which opens the drawer with the
+  // WhatsApp checkout) is the primary action — hide the bar so the two
+  // never overlap or crowd each other.
+  if (cartCount > 0) return null;
 
   const phoneCallUrl = "tel:+902122513696";
   const mapUrl = "https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g";
+  const whatsappUrl = buildWhatsAppChatUrl(
+    t.whatsappOrder?.greeting ||
+      (lang === "ar" ? "مرحبًا، أودّ تقديم طلب." : lang === "tr" ? "Merhaba, sipariş vermek istiyorum." : "Hello, I would like to place an order.")
+  );
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#F7F2E7] border-t border-[#9C7A3F]/30 shadow-[0_-4px_20px_rgba(43,38,32,0.1)] pb-safe transition-transform duration-300 transform translate-y-0">
@@ -50,6 +60,25 @@ export default function MobileStickyCTA() {
         >
           <Phone size={18} />
           <span>{t.callNow || (lang === "ar" ? "اتصل الآن" : lang === "tr" ? "Hemen Ara" : "Call Now")}</span>
+        </a>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => {
+            if (typeof window !== "undefined" && window.gtag) {
+              window.gtag("event", "click_whatsapp", {
+                event_category: "engagement",
+                event_label: "mobile_sticky_cta",
+              });
+            }
+          }}
+          aria-label="WhatsApp"
+          className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 px-4 rounded-xl font-bold text-sm shadow-md active:scale-95 transition-transform"
+        >
+          <WhatsAppIcon size={18} />
+          <span className="hidden min-[400px]:inline">WhatsApp</span>
         </a>
 
         <a
