@@ -94,7 +94,10 @@
     "notePlaceholder": "¿Algo que añadir?",
     "fieldRequired": "Este campo es obligatorio",
     "phoneInvalid": "Introduce un número de teléfono válido",
-    "addressIncomplete": "Completa los campos obligatorios para hacer tu pedido"
+    "addressIncomplete": "Completa los campos obligatorios para hacer tu pedido",
+    "kvkkNotice": "Los datos de su pedido se tratan para atender su solicitud. Al enviar su pedido, este se nos transmite por WhatsApp; dado que la infraestructura de WhatsApp se encuentra en el extranjero, sus datos se transfieren al extranjero por esta vía. Para más detalles, consulte el:",
+    "kvkkLinkLabel": "Texto de información",
+    "noteHint": "Por favor, no escriba información de salud (alergias, etc.) en este campo."
   },
   "footer": {
     "quickLinks": "Enlaces Rápidos",

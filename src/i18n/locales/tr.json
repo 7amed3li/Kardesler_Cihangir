@@ -93,7 +93,10 @@
     "notePlaceholder": "Eklemek istedikleriniz",
     "fieldRequired": "Bu alan zorunludur",
     "phoneInvalid": "Geçerli bir telefon numarası girin",
-    "addressIncomplete": "Sipariş için lütfen zorunlu alanları doldurun"
+    "addressIncomplete": "Sipariş için lütfen zorunlu alanları doldurun",
+    "kvkkNotice": "Sipariş bilgileriniz, talebinizin karşılanması amacıyla işlenir. Siparişinizi gönderdiğinizde siparişiniz WhatsApp üzerinden işletmemize iletilir; WhatsApp altyapısı yurt dışında bulunduğundan bilgileriniz bu yolla yurt dışına aktarılır. Ayrıntılar için:",
+    "kvkkLinkLabel": "Aydınlatma Metni",
+    "noteHint": "Lütfen bu alana sağlık bilgisi (alerji vb.) yazmayınız."
   },
   "footer": {
     "quickLinks": "Hızlı Bağlantılar",

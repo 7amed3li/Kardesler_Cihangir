@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
+import Link from "next/link";
 import { useAppContext } from "@/context/AppContext";
 import { X, Calendar, Clock, Users, User, MessageCircle, Phone, CheckCircle } from "lucide-react";
 
@@ -70,6 +71,9 @@ const reservationTranslations = {
     sentBody: "Rezervasyon talebiniz WhatsApp üzerinden iletildi. Onayınız aynı sohbet içinde gönderilecektir.",
     openWhatsAppAgain: "WhatsApp'ı Tekrar Aç",
     doneButton: "Tamam",
+    kvkkNotice: "Rezervasyon bilgileriniz, talebinizin karşılanması amacıyla işlenir. Rezervasyonunuzu gönderdiğinizde talebiniz WhatsApp üzerinden işletmemize iletilir; WhatsApp altyapısı yurt dışında bulunduğundan bilgileriniz bu yolla yurt dışına aktarılır. Ayrıntılar için:",
+    kvkkLinkLabel: "Aydınlatma Metni",
+    notesHint: "Lütfen bu alana sağlık bilgisi (alerji vb.) yazmayınız.",
   },
   en: {
     title: "Table Reservation",
@@ -99,6 +103,9 @@ const reservationTranslations = {
     sentBody: "Your reservation request has been passed to WhatsApp. Your confirmation will be sent in the same chat.",
     openWhatsAppAgain: "Open WhatsApp Again",
     doneButton: "Done",
+    kvkkNotice: "Your reservation details are processed so we can fulfil your request. When you send your reservation, your request is transmitted to us via WhatsApp; as WhatsApp's infrastructure is located abroad, your details are transferred abroad through this channel. For details, see:",
+    kvkkLinkLabel: "Information Notice",
+    notesHint: "Please do not enter health information (allergies, etc.) in this field.",
   },
   ar: {
     title: "حجز طاولة",
@@ -128,6 +135,9 @@ const reservationTranslations = {
     sentBody: "تم إرسال طلب الحجز عبر واتساب، وسيصلك التأكيد في نفس المحادثة.",
     openWhatsAppAgain: "فتح واتساب مجدداً",
     doneButton: "تم",
+    kvkkNotice: "تُعالج بيانات حجزك لغرض تلبية طلبك. عند إرسال حجزك، يُرسل طلبك إلينا عبر واتساب؛ وبما أن البنية التحتية لواتساب موجودة خارج البلاد، تُنقل بياناتك إلى الخارج عبر هذه القناة. للتفاصيل، راجع:",
+    kvkkLinkLabel: "نص الإفصاح",
+    notesHint: "يرجى عدم كتابة معلومات صحية (حساسية وغيرها) في هذا الحقل.",
   },
   ru: {
     title: "Бронирование Столика",
@@ -157,6 +167,9 @@ const reservationTranslations = {
     sentBody: "Ваш запрос на бронирование передан в WhatsApp. Подтверждение придёт в том же чате.",
     openWhatsAppAgain: "Открыть WhatsApp снова",
     doneButton: "Готово",
+    kvkkNotice: "Данные вашего бронирования обрабатываются для выполнения вашего запроса. При отправке бронирования ваш запрос передаётся нам через WhatsApp; поскольку инфраструктура WhatsApp находится за рубежом, ваши данные при этом передаются за границу. Подробнее см.:",
+    kvkkLinkLabel: "Информационное уведомление",
+    notesHint: "Пожалуйста, не указывайте в этом поле сведения о здоровье (аллергии и т. п.).",
   },
   fa: {
     title: "رزرو میز",
@@ -186,6 +199,9 @@ const reservationTranslations = {
     sentBody: "درخواست رزرو شما از طریق واتس‌اپ ارسال شد. تأییدیه در همان گفتگو برایتان فرستاده می‌شود.",
     openWhatsAppAgain: "باز کردن دوباره واتس‌اپ",
     doneButton: "تمام",
+    kvkkNotice: "اطلاعات رزرو شما برای انجام درخواستتان پردازش می‌شود. هنگام ارسال رزرو، درخواست شما از طریق واتس‌اپ برای ما ارسال می‌شود؛ از آنجا که زیرساخت واتس‌اپ در خارج از کشور قرار دارد، اطلاعات شما از این طریق به خارج از کشور منتقل می‌شود. برای جزئیات، به این متن مراجعه کنید:",
+    kvkkLinkLabel: "متن اطلاع‌رسانی",
+    notesHint: "لطفاً در این قسمت اطلاعات سلامتی (حساسیت و غیره) ننویسید.",
   },
   fr: {
     title: "Réservation de Table",
@@ -215,6 +231,9 @@ const reservationTranslations = {
     sentBody: "Votre demande de réservation a été transmise sur WhatsApp. Votre confirmation sera envoyée dans la même conversation.",
     openWhatsAppAgain: "Rouvrir WhatsApp",
     doneButton: "Terminé",
+    kvkkNotice: "Les informations de votre réservation sont traitées afin de répondre à votre demande. Lorsque vous envoyez votre réservation, votre demande nous est transmise via WhatsApp ; l'infrastructure de WhatsApp étant située à l'étranger, vos informations sont ainsi transférées à l'étranger. Pour plus de détails, consultez la :",
+    kvkkLinkLabel: "Notice d'information",
+    notesHint: "Veuillez ne pas indiquer d'informations de santé (allergies, etc.) dans ce champ.",
   },
   de: {
     title: "Tischreservierung",
@@ -244,6 +263,9 @@ const reservationTranslations = {
     sentBody: "Ihre Reservierungsanfrage wurde per WhatsApp übermittelt. Ihre Bestätigung erhalten Sie im selben Chat.",
     openWhatsAppAgain: "WhatsApp erneut öffnen",
     doneButton: "Fertig",
+    kvkkNotice: "Ihre Reservierungsdaten werden verarbeitet, um Ihre Anfrage zu erfüllen. Wenn Sie Ihre Reservierung senden, wird Ihre Anfrage uns über WhatsApp übermittelt; da sich die WhatsApp-Infrastruktur im Ausland befindet, werden Ihre Daten auf diesem Weg ins Ausland übertragen. Einzelheiten finden Sie im:",
+    kvkkLinkLabel: "Aufklärungstext",
+    notesHint: "Bitte geben Sie in diesem Feld keine Gesundheitsdaten (Allergien usw.) an.",
   },
   it: {
     title: "Prenotazione Tavolo",
@@ -273,6 +295,9 @@ const reservationTranslations = {
     sentBody: "La tua richiesta di prenotazione è stata inoltrata su WhatsApp. La conferma arriverà nella stessa chat.",
     openWhatsAppAgain: "Riapri WhatsApp",
     doneButton: "Fatto",
+    kvkkNotice: "I dati della sua prenotazione vengono trattati per evadere la sua richiesta. Quando invia la prenotazione, la sua richiesta ci viene trasmessa tramite WhatsApp; poiché l'infrastruttura di WhatsApp si trova all'estero, i suoi dati vengono trasferiti all'estero tramite questo canale. Per i dettagli, consultare l':",
+    kvkkLinkLabel: "Informativa",
+    notesHint: "Si prega di non inserire informazioni sanitarie (allergie, ecc.) in questo campo.",
   },
   es: {
     title: "Reserva de Mesa",
@@ -302,6 +327,9 @@ const reservationTranslations = {
     sentBody: "Tu solicitud de reserva se envió por WhatsApp. Recibirás la confirmación en el mismo chat.",
     openWhatsAppAgain: "Abrir WhatsApp de nuevo",
     doneButton: "Listo",
+    kvkkNotice: "Los datos de su reserva se tratan para atender su solicitud. Al enviar su reserva, su solicitud se nos transmite por WhatsApp; dado que la infraestructura de WhatsApp se encuentra en el extranjero, sus datos se transfieren al extranjero por esta vía. Para más detalles, consulte el:",
+    kvkkLinkLabel: "Texto de información",
+    notesHint: "Por favor, no escriba información de salud (alergias, etc.) en este campo.",
   },
   zh: {
     title: "餐位预订",
@@ -331,6 +359,9 @@ const reservationTranslations = {
     sentBody: "您的预订请求已通过 WhatsApp 发送，确认信息将在同一聊天中回复。",
     openWhatsAppAgain: "重新打开 WhatsApp",
     doneButton: "完成",
+    kvkkNotice: "您的预订信息仅用于处理您的请求。提交预订时，您的请求将通过 WhatsApp 发送给我们；由于 WhatsApp 的基础设施位于境外，您的信息将由此传输至境外。详情请参阅：",
+    kvkkLinkLabel: "信息告知文本",
+    notesHint: "请勿在此栏填写健康信息（如过敏等）。",
   },
 };
 
@@ -639,6 +670,11 @@ export default function ReservationModal({ isOpen, onClose }) {
                 placeholder={t.notesPlaceholder}
                 className={`${inputClass} resize-none`}
               />
+              {/* Sensitive-data hint: free-text notes must not be used
+                  for health data (KVKK Art. 6). */}
+              <p className="text-[#7A7364] text-xs mt-1.5" style={{ fontFamily: "var(--font-inter)" }}>
+                {t.notesHint}
+              </p>
             </div>
 
             {/* Submit via WhatsApp */}
@@ -650,6 +686,17 @@ export default function ReservationModal({ isOpen, onClose }) {
                 <MessageCircle size={22} />
                 <span>{t.submitWhatsApp}</span>
               </button>
+              {/* KVKK short notice (Art. 10) — information only, no
+                  consent checkbox: reservation data rests on Art. 5/2-c. */}
+              <p className="text-start text-[11px] leading-relaxed text-[#7A7364]" style={{ fontFamily: "var(--font-inter)" }}>
+                {t.kvkkNotice}{" "}
+                <Link
+                  href={lang === "en" ? "/kvkk" : `/${lang}/kvkk`}
+                  className="font-semibold text-[#9C7A3F] underline underline-offset-2 hover:text-[#2B2620] transition-colors"
+                >
+                  {t.kvkkLinkLabel}
+                </Link>
+              </p>
               <p className="text-center text-xs text-[#7A7364] flex items-center justify-center gap-1.5">
                 <CheckCircle size={13} className="text-[#4E5F4C]" />
                 {t.instantConfirmation}

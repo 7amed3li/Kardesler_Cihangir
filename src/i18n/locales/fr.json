@@ -81,7 +81,10 @@
     "notePlaceholder": "Quelque chose à ajouter ?",
     "fieldRequired": "Ce champ est obligatoire",
     "phoneInvalid": "Saisissez un numéro de téléphone valide",
-    "addressIncomplete": "Veuillez remplir les champs obligatoires pour commander"
+    "addressIncomplete": "Veuillez remplir les champs obligatoires pour commander",
+    "kvkkNotice": "Les informations de votre commande sont traitées afin de répondre à votre demande. Lorsque vous envoyez votre commande, elle nous est transmise via WhatsApp ; l'infrastructure de WhatsApp étant située à l'étranger, vos informations sont ainsi transférées à l'étranger. Pour plus de détails, consultez la :",
+    "kvkkLinkLabel": "Notice d'information",
+    "noteHint": "Veuillez ne pas indiquer d'informations de santé (allergies, etc.) dans ce champ."
   },
   "footer": {
     "quickLinks": "Accès Rapide",

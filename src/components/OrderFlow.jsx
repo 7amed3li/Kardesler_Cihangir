@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useAppContext } from "../context/AppContext";
 import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
@@ -496,6 +497,11 @@ export default function OrderFlow() {
                           className="w-full rounded-lg border border-[#9C7A3F]/30 bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] resize-none"
                           style={{ fontFamily: "var(--font-inter)" }}
                         />
+                        {/* Sensitive-data hint: the free-text note must not be
+                            used for health data (KVKK Art. 6). */}
+                        <p className="text-[11px] text-[#7A7364] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
+                          {labels.noteHint || "Please do not enter health information (allergies, etc.) in this field."}
+                        </p>
                       </div>
                     </div>
                   )}
@@ -586,6 +592,18 @@ export default function OrderFlow() {
                     <span>{wa.button || "Order via WhatsApp"}</span>
                   </a>
                 )}
+
+                {/* KVKK short notice (Art. 10) — information only, no
+                    consent checkbox: order data rests on Art. 5/2-c. */}
+                <p className="text-[11px] leading-relaxed text-[#7A7364] px-1" style={{ fontFamily: "var(--font-inter)" }}>
+                  {labels.kvkkNotice || "Your order details are processed so that we can fulfil your request. When you send your order, it is transmitted to us via WhatsApp; as WhatsApp's infrastructure is located abroad, your details are transferred abroad through this channel. For details, see:"}{" "}
+                  <Link
+                    href={lang === "en" ? "/kvkk" : `/${lang}/kvkk`}
+                    className="font-semibold text-[#9C7A3F] underline underline-offset-2 hover:text-[#2B2620] transition-colors"
+                  >
+                    {labels.kvkkLinkLabel || "Information Notice"}
+                  </Link>
+                </p>
 
                 {/* Call to Order Button */}
                 <a

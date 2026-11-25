@@ -94,7 +94,10 @@
     "notePlaceholder": "还有什么要补充的？",
     "fieldRequired": "此字段为必填项",
     "phoneInvalid": "请输入有效的电话号码",
-    "addressIncomplete": "请填写必填字段以下单"
+    "addressIncomplete": "请填写必填字段以下单",
+    "kvkkNotice": "您的订单信息仅用于处理您的请求。提交订单时，订单将通过 WhatsApp 发送给我们；由于 WhatsApp 的基础设施位于境外，您的信息将由此传输至境外。详情请参阅：",
+    "kvkkLinkLabel": "信息告知文本",
+    "noteHint": "请勿在此栏填写健康信息（如过敏等）。"
   },
   "footer": {
     "quickLinks": "快速链接",
