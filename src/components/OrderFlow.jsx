@@ -69,7 +69,7 @@ export default function OrderFlow() {
   // only delivers there — and the district is one of the 5 delivery areas.
   const ADDRESS_STORAGE_KEY = "kardesler_address";
   const DELIVERY_CITY = "İstanbul";
-  const DELIVERY_DISTRICTS = ["Beyoğlu", "Şişli", "Beşiktaş", "Fatih", "Üsküdar"];
+  const DELIVERY_DISTRICTS = ["Beyoğlu", "Şişli", "Beşiktaş", "Fatih"];
   const EMPTY_ADDRESS = { name: "", phone: "", district: "", neighborhood: "", details: "", note: "" };
   const [address, setAddressState] = useState(EMPTY_ADDRESS);
   const [addressOpen, setAddressOpen] = useState(false);
