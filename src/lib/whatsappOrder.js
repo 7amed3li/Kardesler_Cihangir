@@ -1,7 +1,7 @@
 // WhatsApp ordering helpers for Kardeşler Kebap.
 //
 // The restaurant's WhatsApp number is the same number the site already
-// uses everywhere else (ChatWidget, AI assistant prompt, tel: links):
+// uses everywhere else (tel: links, reservation flow):
 // +90 212 251 36 96.
 export const RESTAURANT_WHATSAPP_NUMBER = "902122513696";
 
