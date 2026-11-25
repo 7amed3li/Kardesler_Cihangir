@@ -143,6 +143,14 @@ const featuredDishes = [
     image: "/images/karisik_meze.webp",
     badgeKey: "trending",
     defaultBadge: "EN ÇOK SATAN"
+  },
+  {
+    id: "vejetaryen_vegan_tabagi",
+    menuItemId: "vejetaryen_vegan_tabagi",
+    categoryId: "meze",
+    image: "/images/vejetaryen_vegan_tabagi.webp",
+    badgeKey: "trending",
+    defaultBadge: "EN ÇOK SATAN"
   }
 ];
 
