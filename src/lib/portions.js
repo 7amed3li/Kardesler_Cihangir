@@ -3,15 +3,17 @@ import { menuData } from "../data/menuData";
 /**
  * Portion options for menu dishes.
  *
- * Owner spec:
- *  - Every dish can be ordered as 1x (default), 1.5x ("1,5 Porsiyon") or
- *    2x ("Duble"). Price = base price x multiplier.
+ * Owner spec (narrowed 2026-11-25):
+ *  - The [1 | 1,5 | Duble] selector exists ONLY on kebab / ocakbaşı,
+ *    pide, lahmacun and dürüm dishes (see PORTION_CATEGORY_IDS below).
+ *    Price = base price x multiplier.
  *  - Soups ONLY get a half option (0.5x, "Yarım") instead — no 1.5x/2x
- *    for soups, and no half option for non-soups.
- *  - Breakfast ("kahvalti" category) dishes get NO portion options at
- *    all (owner rule, 2026-11-25) — they are sold at the base price
- *    only. The soups are the exception: they keep [Yarım | Tam] even
- *    though they live in the breakfast category (see audit note below).
+ *    for soups, and no half option for non-soups. They keep
+ *    [Yarım | Tam] even though they live in the breakfast category
+ *    (see audit note below).
+ *  - EVERYTHING else gets NO portion options at all — breakfast,
+ *    mezes, salads, desserts, drinks and every other category are
+ *    sold at the base price only.
  *
  * Soup detection — data audit note:
  *  menuData.js has NO soup category, and neither does the database
@@ -36,9 +38,6 @@ export function isSoupItem(itemId) {
   return SOUP_ITEM_IDS.has(itemId);
 }
 
-/** Category id of the breakfast section in menuData. */
-const BREAKFAST_CATEGORY_ID = "kahvalti";
-
 /** Item id -> category id, derived from menuData (same source as the soup set). */
 const ITEM_CATEGORY_IDS = new Map(
   menuData.flatMap((cat) =>
@@ -48,8 +47,31 @@ const ITEM_CATEGORY_IDS = new Map(
   )
 );
 
-export function isBreakfastItem(itemId) {
-  return ITEM_CATEGORY_IDS.get(itemId) === BREAKFAST_CATEGORY_ID;
+/**
+ * Categories that carry the standard [1 | 1,5 | Duble] portions
+ * (owner rule, 2026-11-25). Category ids are the real menuData ids:
+ *  - "kebap"            kebab / ocakbaşı mains
+ *  - "ozel_menu"        special set menus — every item is a kebab/grill
+ *                       main (Mardin kebap, chicken wings, lamb liver,
+ *                       lamb shish menus)
+ *  - "mezeli_kebaplar"  kebab dishes served with meze (incl. a dürüm)
+ *  - "durumler"         dürüm wraps
+ *  - "pide"             pide
+ *  - "lahmacun"         lahmacun & etli ekmek
+ * Any category not listed here (kahvalti, meze, salata, tatli,
+ * soguk_icecek, sicak_icecek) gets no standard portions.
+ */
+const PORTION_CATEGORY_IDS = new Set([
+  "kebap",
+  "ozel_menu",
+  "mezeli_kebaplar",
+  "durumler",
+  "pide",
+  "lahmacun",
+]);
+
+export function hasStandardPortions(itemId) {
+  return PORTION_CATEGORY_IDS.has(ITEM_CATEGORY_IDS.get(itemId));
 }
 
 export const DEFAULT_PORTION = "full";
@@ -79,12 +101,13 @@ const NO_OPTIONS = [];
 /**
  * Ordered portion options available for a dish.
  * Soups are checked first so they keep [Yarım | Tam] even though they
- * sit in the breakfast category; other breakfast dishes get no options.
+ * sit in the breakfast category; only the allowed grill/pide/lahmacun/
+ * dürüm categories get the standard options; everything else gets none.
  */
 export function getPortionOptions(itemId) {
   if (isSoupItem(itemId)) return SOUP_OPTIONS;
-  if (isBreakfastItem(itemId)) return NO_OPTIONS;
-  return STANDARD_OPTIONS;
+  if (hasStandardPortions(itemId)) return STANDARD_OPTIONS;
+  return NO_OPTIONS;
 }
 
 /** True when the portion key is a valid option for this dish. */
