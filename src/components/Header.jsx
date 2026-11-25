@@ -6,10 +6,10 @@ import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
 import { useAppContext } from "../context/AppContext";
-import { List, House, BookOpen, Info, Phone, MapPin, Coffee, CalendarBlank } from "@phosphor-icons/react";
+import { List, House, BookOpen, Info, Phone, MapPin, Coffee } from "@phosphor-icons/react";
 
 export default function Header() {
-  const { t, lang, setIsReservationOpen } = useAppContext();
+  const { t, lang } = useAppContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -84,18 +84,6 @@ export default function Header() {
       if (lang === "ru") return "Контакты";
       return t.contact || "Contact";
     }
-    if (key === "reserve") {
-      if (lang === "ar") return "حجز طاولة";
-      if (lang === "zh") return "预订";
-      if (lang === "de") return "Reservieren";
-      if (lang === "it") return "Prenota";
-      if (lang === "es") return "Reservar";
-      if (lang === "tr") return "Rezervasyon";
-      if (lang === "fa") return "رزرو میز";
-      if (lang === "fr") return "Réserver";
-      if (lang === "ru") return "Бронь столика";
-      return "Reserve";
-    }
     if (key === "taksimGuide") {
       if (lang === "ar") return "دليل أفضل كباب في تقسيم";
       if (lang === "zh") return "塔克西姆最佳烤肉指南";
@@ -163,17 +151,6 @@ export default function Header() {
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            {/* Reserve — primary booking entry point, visible on every page */}
-            <button
-              onClick={() => setIsReservationOpen(true)}
-              className="inline-flex items-center gap-1.5 h-10 px-2.5 sm:px-4 rounded-md bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] border border-[#4E5F4C] transition-colors shadow-sm"
-              aria-label={getNavLabel("reserve")}
-            >
-              <CalendarBlank size={17} weight="bold" />
-              <span className="hidden sm:inline text-xs font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-cairo)" }}>
-                {getNavLabel("reserve")}
-              </span>
-            </button>
             <CurrencySwitcher />
             <LanguageSwitcher />
 
@@ -226,13 +203,6 @@ export default function Header() {
                       <Phone size={18} weight="duotone" className="text-[#4E5F4C]" />
                       <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("contact")}</span>
                     </Link>
-                    <button
-                      onClick={() => { setIsMenuOpen(false); setIsReservationOpen(true); }}
-                      className="px-4 py-2.5 flex items-center gap-3 text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors text-start w-full"
-                    >
-                      <CalendarBlank size={18} weight="duotone" className="text-[#4E5F4C]" />
-                      <span style={{ fontFamily: "var(--font-cairo)" }}>{getNavLabel("reserve")}</span>
-                    </button>
                     <div className="h-px bg-[#9C7A3F]/20 my-1"></div>
                     <Link 
                       href={guideHref} 
