@@ -12,9 +12,11 @@ import Image from "next/image";
  * Inline cart counter — shows (+) when qty is 0, or (- N +) when qty > 0.
  * Used both on the card and inside the modal.
  * `compact` mode is for the card itself (smaller).
+ * `footer` mode is the modal footer slot beside Kapat: fixed width,
+ * stretched to the footer row height.
  * `portion` selects which (dish + portion) cart line the counter drives.
  */
-function CartCounter({ item, compact = false, portion = "full" }) {
+function CartCounter({ item, compact = false, portion = "full", footer = false }) {
   const { addToCart, removeFromCart, getPortionQuantity } = useAppContext();
   const qty = getPortionQuantity(item.id, portion);
 
@@ -33,7 +35,7 @@ function CartCounter({ item, compact = false, portion = "full" }) {
       <button
         onClick={handleAdd}
         aria-label="Add to list"
-        className={`flex items-center justify-center rounded-md border border-[#9C7A3F] text-[#9C7A3F] hover:bg-[#9C7A3F] hover:text-white transition-colors ${compact ? "w-8 h-8" : "w-10 h-10"}`}
+        className={`flex items-center justify-center rounded-md border border-[#9C7A3F] text-[#9C7A3F] hover:bg-[#9C7A3F] hover:text-white transition-colors ${footer ? "w-11 shrink-0 self-stretch" : compact ? "w-8 h-8" : "w-10 h-10"}`}
       >
         <Plus size={compact ? 16 : 20} weight="bold" />
       </button>
@@ -42,7 +44,7 @@ function CartCounter({ item, compact = false, portion = "full" }) {
 
   return (
     <div
-      className="flex items-center min-h-[44px] rounded-lg border border-[#9C7A3F]/30 bg-[#EDE3CE] px-1.5 py-1 gap-1 shrink-0"
+      className={`flex items-center min-h-[44px] rounded-lg border border-[#9C7A3F]/30 bg-[#EDE3CE] px-1.5 py-1 gap-1 shrink-0 ${footer ? "self-center" : ""}`}
       onClick={(e) => e.stopPropagation()}
     >
       <button
@@ -315,19 +317,26 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 </div>
               )}
               
-              {/* Modal Portion Selector + Cart Action — large counter or Add button */}
+              {/* Modal Portion Selector — stays in the body */}
               <div className="mt-4 flex flex-col items-center gap-3">
                 <PortionSelector itemId={item.id} value={portion} onChange={setPortion} />
-                <CartCounter item={item} compact={false} portion={portion} />
               </div>
 
-              <button
-                onClick={() => setIsModalOpen(false)}
-                aria-label="Close modal"
-                className="mt-2 w-full py-3 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors duration-300 border border-teal-dim/50 text-sm"
-              >
-                {t.close || "Close"}
-              </button>
+              {/* Footer row (owner layout, 2026-11-26): ONE row — Kapat
+                  takes flex-1 (most of the width) and the cart control sits
+                  in a fixed slot beside it: a square (+) button when the
+                  dish is not in the cart, the − N + stepper when it is.
+                  There is no separate add-button row in the modal body. */}
+              <div className="mt-2 flex items-stretch gap-2">
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  aria-label="Close modal"
+                  className="flex-1 py-3 rounded-xl bg-teal-dim/20 text-cream font-bold hover:bg-teal hover:text-ink transition-colors duration-300 border border-teal-dim/50 text-sm"
+                >
+                  {t.close || "Close"}
+                </button>
+                <CartCounter item={item} compact={false} portion={portion} footer />
+              </div>
             </div>
           </div>
         </div>,
