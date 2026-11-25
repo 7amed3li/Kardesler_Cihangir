@@ -139,5 +139,12 @@
   "backToMenu": "Back to Menu",
   "myList": "My List",
   "showWaiter": "Show this list to the waiter to order",
-  "estimatedTotal": "Estimated Total:"
+  "estimatedTotal": "Estimated Total:",
+  "portions": {
+    "label": "Portion",
+    "half": "Half",
+    "full": "1 Portion",
+    "oneHalf": "1.5 Portions",
+    "double": "Double"
+  }
 }

@@ -139,5 +139,12 @@
   "backToMenu": "Menüye Dön",
   "myList": "Listem",
   "showWaiter": "Siparişinizi vermek için bu listeyi garsona gösterin",
-  "estimatedTotal": "Tahmini Toplam:"
+  "estimatedTotal": "Tahmini Toplam:",
+  "portions": {
+    "label": "Porsiyon",
+    "half": "Yarım",
+    "full": "1 Porsiyon",
+    "oneHalf": "1,5 Porsiyon",
+    "double": "Duble"
+  }
 }

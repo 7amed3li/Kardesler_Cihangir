@@ -139,5 +139,12 @@
   "backToMenu": "Torna al Menu",
   "myList": "La Mia Lista",
   "showWaiter": "Mostra questa lista al cameriere per ordinare",
-  "estimatedTotal": "Totale Stimato:"
+  "estimatedTotal": "Totale Stimato:",
+  "portions": {
+    "label": "Porzione",
+    "half": "Mezza",
+    "full": "1 porzione",
+    "oneHalf": "1,5 porzioni",
+    "double": "Doppia"
+  }
 }

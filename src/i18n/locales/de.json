@@ -139,5 +139,12 @@
   "backToMenu": "Zurück zur Karte",
   "myList": "Meine Auswahl",
   "showWaiter": "Zeigen Sie diese Liste dem Kellner, um zu bestellen",
-  "estimatedTotal": "Geschätzte Summe:"
+  "estimatedTotal": "Geschätzte Summe:",
+  "portions": {
+    "label": "Portion",
+    "half": "Halb",
+    "full": "1 Portion",
+    "oneHalf": "1,5 Portionen",
+    "double": "Doppelt"
+  }
 }

@@ -139,5 +139,12 @@
   "backToMenu": "العودة للمنيو",
   "myList": "قائمتي",
   "showWaiter": "اعرض هذه القائمة للجرسون لإتمام طلبك",
-  "estimatedTotal": "المجموع التقديري:"
+  "estimatedTotal": "المجموع التقديري:",
+  "portions": {
+    "label": "الحصة",
+    "half": "نصف",
+    "full": "حصة كاملة",
+    "oneHalf": "حصة ونصف",
+    "double": "دبل"
+  }
 }

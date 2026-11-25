@@ -139,5 +139,12 @@
   "backToMenu": "Volver al Menú",
   "myList": "Mi Pedido",
   "showWaiter": "Muestre esta lista al camarero para pedir",
-  "estimatedTotal": "Total Estimado:"
+  "estimatedTotal": "Total Estimado:",
+  "portions": {
+    "label": "Ración",
+    "half": "Media",
+    "full": "1 ración",
+    "oneHalf": "1,5 raciones",
+    "double": "Doble"
+  }
 }

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
+import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
 import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle } from "lucide-react";
@@ -25,9 +26,13 @@ export default function OrderFlow() {
     convertPrice,
     getCurrencySymbol,
     getLivePrice,
+    getPortionUnitPrice,
+    changeCartLinePortion,
     pricesLoading,
     pricesError,
   } = useAppContext();
+
+  const portionLabels = t.portions || {};
 
   const symbol = getCurrencySymbol();
   const labels = t.orderFlow || {};
@@ -116,14 +121,17 @@ export default function OrderFlow() {
               ) : (
                 <div className="space-y-3">
                   {cart.map((item, idx) => {
+                    const portion = item.portion || "full";
                     const name = menuT.items[item.id]?.name || item.id;
-                    const price = getLivePrice(item);
-                    const itemSubtotal = price !== null ? price * item.qty : null;
+                    const portionLabel = portion !== "full" ? (portionLabels[portion] || portion) : null;
+                    const unitPrice = getPortionUnitPrice(item, portion);
+                    const itemSubtotal = unitPrice !== null ? unitPrice * item.qty : null;
                     return (
                       <div
-                        key={item.id}
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#9C7A3F]/15 shadow-sm group animate-fadeIn"
+                        key={`${item.id}__${portion}`}
+                        className="flex flex-col gap-2 p-3 rounded-xl bg-white border border-[#9C7A3F]/15 shadow-sm group animate-fadeIn"
                       >
+                      <div className="flex items-center gap-3">
                         {/* Thumbnail */}
                         {item.image ? (
                           <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 relative bg-[#EDE3CE]">
@@ -143,14 +151,21 @@ export default function OrderFlow() {
 
                         {/* Item info */}
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-bold text-[#2B2620] truncate" style={{ fontFamily: "var(--font-cairo)" }}>{name}</p>
+                          <p className="text-sm font-bold text-[#2B2620] truncate" style={{ fontFamily: "var(--font-cairo)" }}>
+                            {name}
+                            {portionLabel && (
+                              <span className="ms-1.5 inline-block align-middle px-1.5 py-0.5 rounded-[4px] bg-[#9C7A3F]/15 text-[#9C7A3F] text-[10px] font-bold" style={{ fontFamily: "var(--font-inter)" }}>
+                                {portionLabel}
+                              </span>
+                            )}
+                          </p>
                           {pricesLoading ? (
                             <p className="text-[11px] text-[#9C7A3F] mt-0.5 animate-pulse" style={{ fontFamily: "var(--font-inter)" }}>Loading...</p>
                           ) : itemSubtotal == null ? (
                             <p className="text-[11px] text-[#A0422E] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>Unavailable</p>
                           ) : (
                             <p className="text-[11px] text-[#7A7364] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
-                              {convertPrice(itemSubtotal)} {symbol}
+                              {item.qty} × {convertPrice(unitPrice)} {symbol} = {convertPrice(itemSubtotal)} {symbol}
                             </p>
                           )}
                         </div>
@@ -158,7 +173,7 @@ export default function OrderFlow() {
                         {/* Qty controls */}
                         <div className="flex items-center gap-1.5 shrink-0 bg-[#F7F2E7] rounded-lg p-1 border border-[#9C7A3F]/20">
                           <button
-                            onClick={() => removeFromCart(item.id)}
+                            onClick={() => removeFromCart(item.id, portion)}
                             className="w-7 h-7 rounded-md bg-white flex items-center justify-center text-[#2B2620] shadow-sm hover:text-[#A0422E] transition-colors"
                           >
                             {item.qty === 1 ? <Trash2 size={12} /> : <Minus size={12} />}
@@ -170,12 +185,21 @@ export default function OrderFlow() {
                             {item.qty}
                           </span>
                           <button
-                            onClick={() => addToCart(item)}
+                            onClick={() => addToCart(item, portion)}
                             className="w-7 h-7 rounded-md bg-[#9C7A3F] flex items-center justify-center text-white shadow-sm hover:bg-[#7A5F2E] transition-colors"
                           >
                             <Plus size={12} />
                           </button>
                         </div>
+                      </div>
+
+                      {/* Portion switcher — change this line's portion in place */}
+                      <PortionSelector
+                        itemId={item.id}
+                        value={portion}
+                        onChange={(next) => changeCartLinePortion(item.id, portion, next)}
+                        size="sm"
+                      />
                       </div>
                     );
                   })}

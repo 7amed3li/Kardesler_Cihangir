@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppContext } from "../context/AppContext";
+import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import { X, MagnifyingGlassPlus, Plus, Minus, ShareNetwork, Check, CaretRight } from "@phosphor-icons/react";
 import Image from "next/image";
@@ -11,19 +12,20 @@ import Image from "next/image";
  * Inline cart counter — shows (+) when qty is 0, or (- N +) when qty > 0.
  * Used both on the card and inside the modal.
  * `compact` mode is for the card itself (smaller).
+ * `portion` selects which (dish + portion) cart line the counter drives.
  */
-function CartCounter({ item, compact = false }) {
-  const { addToCart, removeFromCart, getItemQuantity } = useAppContext();
-  const qty = getItemQuantity(item.id);
+function CartCounter({ item, compact = false, portion = "full" }) {
+  const { addToCart, removeFromCart, getPortionQuantity } = useAppContext();
+  const qty = getPortionQuantity(item.id, portion);
 
   const handleAdd = (e) => {
     e.stopPropagation();
-    addToCart(item);
+    addToCart(item, portion);
   };
 
   const handleRemove = (e) => {
     e.stopPropagation();
-    removeFromCart(item.id);
+    removeFromCart(item.id, portion);
   };
 
   if (qty === 0) {
@@ -68,17 +70,25 @@ function CartCounter({ item, compact = false }) {
 }
 
 export default function FoodCard({ item, index, isVertical = false }) {
-  const { menuT, t, convertPrice, getLivePrice, getCurrencySymbol, getItemQuantity, lang, pricesLoading, pricesError } = useAppContext();
+  const { menuT, t, convertPrice, getLivePrice, getPortionUnitPrice, getCurrencySymbol, getItemQuantity, lang, pricesLoading, pricesError } = useAppContext();
   const isRTL = lang === "ar" || lang === "fa";
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const isMounted = useMounted();
   const [isCopied, setIsCopied] = useState(false);
+  // Selected portion for this card — default "full" keeps plain add-to-cart one tap.
+  // Reset when the card is reused for a different dish (render-phase adjustment).
+  const [portion, setPortion] = useState("full");
+  const [prevItemId, setPrevItemId] = useState(item.id);
+  if (item.id !== prevItemId) {
+    setPrevItemId(item.id);
+    setPortion("full");
+  }
 
   const name = menuT.items[item.id]?.name || item?.name?.en || "Yeni Ürün";
   const description = menuT.items[item.id]?.desc || item?.description?.en || "";
 
-  const rawPrice = getLivePrice(item);
+  const rawPrice = getPortionUnitPrice(item, portion);
   const displayPrice = rawPrice !== null ? convertPrice(rawPrice) : null;
   const symbol = getCurrencySymbol();
   const qty = getItemQuantity(item.id);
@@ -186,22 +196,25 @@ export default function FoodCard({ item, index, isVertical = false }) {
             )}
           </div>
 
-          {/* Bottom part — cart controls */}
-          <div className={`flex items-center justify-between ${isVertical ? "mt-3" : "mt-2"}`}>
-            {!item.image && (
-              <span className="text-[#9C7A3F] font-bold text-sm" style={{ fontFamily: "var(--font-inter)" }}>
-                {pricesLoading ? (
-                  <span className="animate-pulse">...</span>
-                ) : displayPrice == null ? (
-                  <span className="text-[#A0422E]">-</span>
-                ) : (
-                  <>{displayPrice} {symbol}</>
-                )}
-              </span>
-            )}
-            {item.image && <div />}
-            
-            <CartCounter item={item} compact={!isVertical} />
+          {/* Bottom part — portion selector + cart controls */}
+          <div className={`flex flex-col gap-2 ${isVertical ? "mt-3" : "mt-2"}`}>
+            <PortionSelector itemId={item.id} value={portion} onChange={setPortion} />
+            <div className="flex items-center justify-between">
+              {!item.image && (
+                <span className="text-[#9C7A3F] font-bold text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+                  {pricesLoading ? (
+                    <span className="animate-pulse">...</span>
+                  ) : displayPrice == null ? (
+                    <span className="text-[#A0422E]">-</span>
+                  ) : (
+                    <>{displayPrice} {symbol}</>
+                  )}
+                </span>
+              )}
+              {item.image && <div />}
+
+              <CartCounter item={item} compact={!isVertical} portion={portion} />
+            </div>
           </div>
         </div>
 
@@ -302,9 +315,10 @@ export default function FoodCard({ item, index, isVertical = false }) {
                 </div>
               )}
               
-              {/* Modal Cart Action — large counter or Add button */}
-              <div className="mt-4 flex items-center justify-center">
-                <CartCounter item={item} compact={false} />
+              {/* Modal Portion Selector + Cart Action — large counter or Add button */}
+              <div className="mt-4 flex flex-col items-center gap-3">
+                <PortionSelector itemId={item.id} value={portion} onChange={setPortion} />
+                <CartCounter item={item} compact={false} portion={portion} />
               </div>
 
               <button

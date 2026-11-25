@@ -139,5 +139,12 @@
   "backToMenu": "بازگشت به منو",
   "myList": "لیست من",
   "showWaiter": "برای ثبت سفارش این لیست را به گارسون نشان دهید",
-  "estimatedTotal": "مجموع تقریبی:"
+  "estimatedTotal": "مجموع تقریبی:",
+  "portions": {
+    "label": "پرس",
+    "half": "نیم پرس",
+    "full": "یک پرس",
+    "oneHalf": "یک و نیم پرس",
+    "double": "دوبل"
+  }
 }

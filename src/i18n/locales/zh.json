@@ -139,5 +139,12 @@
   "backToMenu": "返回菜单",
   "myList": "我的点单",
   "showWaiter": "点餐时请向服务员出示此清单",
-  "estimatedTotal": "预估总计:"
+  "estimatedTotal": "预估总计:",
+  "portions": {
+    "label": "份量",
+    "half": "半份",
+    "full": "1份",
+    "oneHalf": "1.5份",
+    "double": "双份"
+  }
 }

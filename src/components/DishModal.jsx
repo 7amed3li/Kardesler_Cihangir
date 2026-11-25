@@ -6,24 +6,27 @@ import Image from "next/image";
 import { useMounted } from "../hooks/useMounted";
 import { X, MagnifyingGlassPlus, Plus, Minus } from "@phosphor-icons/react";
 import { useAppContext } from "../context/AppContext";
+import PortionSelector from "./PortionSelector";
+import { portionUnitPrice, normalizePortion } from "../lib/portions";
 import { trackViewItem } from "@/lib/analytics";
 
 /**
  * Inline cart counter — shows (+) when qty is 0, or (- N +) when qty > 0.
  * Extracted from FoodCard for reuse in DishModal.
+ * `portion` selects which (dish + portion) cart line the counter drives.
  */
-function CartCounter({ item, compact = false }) {
-  const { addToCart, removeFromCart, getItemQuantity, t } = useAppContext();
-  const qty = getItemQuantity(item.id);
+function CartCounter({ item, compact = false, portion = "full" }) {
+  const { addToCart, removeFromCart, getPortionQuantity, t } = useAppContext();
+  const qty = getPortionQuantity(item.id, portion);
 
   const handleAdd = (e) => {
     e.stopPropagation();
-    addToCart(item);
+    addToCart(item, portion);
   };
 
   const handleRemove = (e) => {
     e.stopPropagation();
-    removeFromCart(item.id);
+    removeFromCart(item.id, portion);
   };
 
   if (qty === 0) {
@@ -97,6 +100,14 @@ export default function DishModal({
   const isRTL = lang === "ar" || lang === "fa";
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const isMounted = useMounted();
+  // Selected portion — reset whenever a different dish is shown
+  // (render-phase adjustment).
+  const [portion, setPortion] = useState("full");
+  const [prevItemId, setPrevItemId] = useState(item?.id);
+  if (item?.id !== prevItemId) {
+    setPrevItemId(item?.id);
+    setPortion("full");
+  }
 
   // Track view_item for Google Ads Dynamic Remarketing
   useEffect(() => {
@@ -118,7 +129,9 @@ export default function DishModal({
   const name = customName || (item ? (menuT.items[item.id]?.name || item?.name?.en) : "Special Dish");
   const description = customDesc || (item ? (menuT.items[item.id]?.desc || item?.description?.en) : "");
   const price = customPrice !== undefined ? customPrice : (item ? getLivePrice(item) : null);
-  const displayPrice = price !== null ? (convertPrice ? convertPrice(price) : price) : null;
+  const safePortion = item ? normalizePortion(item.id, portion) : "full";
+  const portionPrice = price !== null && price !== undefined ? portionUnitPrice(price, safePortion) : null;
+  const displayPrice = portionPrice !== null ? (convertPrice ? convertPrice(portionPrice) : portionPrice) : null;
   const symbol = getCurrencySymbol ? getCurrencySymbol() : "₺";
   const image = customImage || (item ? item.image : null);
   const baseTags = customTags || (item ? item.tags : []) || [];
@@ -241,10 +254,11 @@ export default function DishModal({
                 </div>
               )}
               
-              {/* Modal Cart Action */}
+              {/* Modal Portion Selector + Cart Action */}
               {!hideCart && item && (
-                <div className="mt-2 flex items-center justify-center">
-                  <CartCounter item={item} compact={false} />
+                <div className="mt-2 flex flex-col items-center gap-3">
+                  <PortionSelector itemId={item.id} value={safePortion} onChange={setPortion} />
+                  <CartCounter item={item} compact={false} portion={safePortion} />
                 </div>
               )}
 
