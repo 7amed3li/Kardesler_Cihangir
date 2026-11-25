@@ -69,7 +69,12 @@
     "table": "Masa",
     "sendWhatsApp": "Sipariş İçin Ara",
     "whatsappRedirect": "Sipariş İçin Ara",
-    "subtotal": "Ara Toplam"
+    "subtotal": "Ara Toplam",
+    "paymentMethod": "Ödeme Yöntemi",
+    "payCashAtDoor": "Kapıda Nakit",
+    "payCardAtDoor": "Kapıda Kart",
+    "loading": "Yükleniyor...",
+    "unavailable": "Mevcut Değil"
   },
   "footer": {
     "quickLinks": "Hızlı Bağlantılar",
@@ -146,7 +151,10 @@
     "name": "İsim",
     "address": "Adres",
     "note": "Not",
-    "greeting": "Merhaba, sipariş vermek istiyorum."
+    "greeting": "Merhaba, sipariş vermek istiyorum.",
+    "payment": "Ödeme",
+    "payCashAtDoor": "Kapıda Nakit Ödeme",
+    "payCardAtDoor": "Kapıda Kart ile Ödeme"
   },
   "portions": {
     "label": "Porsiyon",

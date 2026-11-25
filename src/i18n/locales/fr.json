@@ -57,7 +57,12 @@
     "table": "Table",
     "sendWhatsApp": "Appeler pour commander",
     "whatsappRedirect": "Appeler pour commander",
-    "subtotal": "Sous-total"
+    "subtotal": "Sous-total",
+    "paymentMethod": "Mode de paiement",
+    "payCashAtDoor": "Espèces à la livraison",
+    "payCardAtDoor": "Carte à la livraison",
+    "loading": "Chargement...",
+    "unavailable": "Indisponible"
   },
   "footer": {
     "quickLinks": "Accès Rapide",
@@ -146,7 +151,10 @@
     "name": "Nom",
     "address": "Adresse",
     "note": "Note",
-    "greeting": "Bonjour, je souhaite passer une commande."
+    "greeting": "Bonjour, je souhaite passer une commande.",
+    "payment": "Paiement",
+    "payCashAtDoor": "Espèces à la livraison",
+    "payCardAtDoor": "Carte à la livraison"
   },
   "portions": {
     "label": "Portion",

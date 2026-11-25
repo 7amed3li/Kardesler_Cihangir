@@ -70,7 +70,12 @@
     "table": "您的桌号",
     "sendWhatsApp": "致电订购",
     "whatsappRedirect": "致电订购",
-    "subtotal": "小计"
+    "subtotal": "小计",
+    "paymentMethod": "付款方式",
+    "payCashAtDoor": "上门现金付款",
+    "payCardAtDoor": "上门刷卡付款",
+    "loading": "加载中...",
+    "unavailable": "暂无价格"
   },
   "footer": {
     "quickLinks": "快速链接",
@@ -146,7 +151,10 @@
     "name": "姓名",
     "address": "地址",
     "note": "备注",
-    "greeting": "您好，我想点餐。"
+    "greeting": "您好，我想点餐。",
+    "payment": "付款",
+    "payCashAtDoor": "上门现金付款",
+    "payCardAtDoor": "上门刷卡付款"
   },
   "portions": {
     "label": "份量",

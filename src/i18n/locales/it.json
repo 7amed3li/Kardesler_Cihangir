@@ -70,7 +70,12 @@
     "table": "Tavolo",
     "sendWhatsApp": "Chiama per ordinare",
     "whatsappRedirect": "Chiama per ordinare",
-    "subtotal": "Subtotale"
+    "subtotal": "Subtotale",
+    "paymentMethod": "Metodo di pagamento",
+    "payCashAtDoor": "Contanti alla porta",
+    "payCardAtDoor": "Carta alla porta",
+    "loading": "Caricamento...",
+    "unavailable": "Non disponibile"
   },
   "footer": {
     "quickLinks": "Link Rapidi",
@@ -146,7 +151,10 @@
     "name": "Nome",
     "address": "Indirizzo",
     "note": "Nota",
-    "greeting": "Buongiorno, vorrei effettuare un ordine."
+    "greeting": "Buongiorno, vorrei effettuare un ordine.",
+    "payment": "Pagamento",
+    "payCashAtDoor": "Contanti alla porta",
+    "payCardAtDoor": "Carta alla porta"
   },
   "portions": {
     "label": "Porzione",

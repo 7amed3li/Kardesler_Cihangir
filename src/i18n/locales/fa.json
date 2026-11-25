@@ -57,7 +57,12 @@
     "table": "میز",
     "sendWhatsApp": "تماس برای سفارش",
     "whatsappRedirect": "تماس برای سفارش",
-    "subtotal": "جمع جزء"
+    "subtotal": "جمع جزء",
+    "paymentMethod": "روش پرداخت",
+    "payCashAtDoor": "نقدی دم در",
+    "payCardAtDoor": "با کارت دم در",
+    "loading": "در حال بارگذاری...",
+    "unavailable": "در دسترس نیست"
   },
   "footer": {
     "quickLinks": "دسترسی سریع",
@@ -146,7 +151,10 @@
     "name": "نام",
     "address": "نشانی",
     "note": "توضیحات",
-    "greeting": "سلام، می‌خواهم سفارش بدهم."
+    "greeting": "سلام، می‌خواهم سفارش بدهم.",
+    "payment": "پرداخت",
+    "payCashAtDoor": "پرداخت نقدی دم در",
+    "payCardAtDoor": "پرداخت با کارت دم در"
   },
   "portions": {
     "label": "پرس",

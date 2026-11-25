@@ -38,10 +38,14 @@ export function buildWhatsAppChatUrl(greeting) {
 // - getPortionLabel(item) (optional): localized portion label for
 //   non-default portions (e.g. "Duble"), appended to the dish name so
 //   the restaurant sees which portion each line is.
-// - labels: { title, total, name, address, note } localized strings
+// - labels: { title, total, name, address, note, payment } localized strings
+// - payment (optional): localized payment-method value chosen in the cart
+//   (e.g. "Kapıda Nakit Ödeme"); when provided it is added as its own line
+//   under the total so the restaurant knows whether to send the card
+//   terminal with the courier.
 // Returns null when the cart is empty or any price is unavailable, so the
 // caller can hide the button instead of sending a broken order.
-export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnitPrice, getPortionLabel, labels }) {
+export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnitPrice, getPortionLabel, labels, payment }) {
   if (!Array.isArray(cart) || cart.length === 0) return null;
 
   const lines = [];
@@ -63,6 +67,7 @@ export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnit
     ...lines,
     divider,
     `*${labels.total}: ${formatTRY(grandTotal)}*`,
+    ...(payment ? [`${labels.payment}: ${payment}`] : []),
     "",
     `${labels.name}:`,
     `${labels.address}:`,

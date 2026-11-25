@@ -70,7 +70,12 @@
     "table": "Tisch",
     "sendWhatsApp": "Anrufen zum Bestellen",
     "whatsappRedirect": "Anrufen zum Bestellen",
-    "subtotal": "Zwischensumme"
+    "subtotal": "Zwischensumme",
+    "paymentMethod": "Zahlungsmethode",
+    "payCashAtDoor": "Bar an der Tür",
+    "payCardAtDoor": "Karte an der Tür",
+    "loading": "Wird geladen...",
+    "unavailable": "Nicht verfügbar"
   },
   "footer": {
     "quickLinks": "Schnellzugriff",
@@ -146,7 +151,10 @@
     "name": "Name",
     "address": "Adresse",
     "note": "Anmerkung",
-    "greeting": "Hallo, ich möchte eine Bestellung aufgeben."
+    "greeting": "Hallo, ich möchte eine Bestellung aufgeben.",
+    "payment": "Zahlung",
+    "payCashAtDoor": "Barzahlung an der Tür",
+    "payCardAtDoor": "Kartenzahlung an der Tür"
   },
   "portions": {
     "label": "Portion",

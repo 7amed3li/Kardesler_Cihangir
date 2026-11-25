@@ -69,7 +69,12 @@
     "table": "Table",
     "sendWhatsApp": "Call to Order",
     "whatsappRedirect": "Call to Order",
-    "subtotal": "Subtotal"
+    "subtotal": "Subtotal",
+    "paymentMethod": "Payment Method",
+    "payCashAtDoor": "Cash at the Door",
+    "payCardAtDoor": "Card at the Door",
+    "loading": "Loading...",
+    "unavailable": "Unavailable"
   },
   "footer": {
     "quickLinks": "Quick Links",
@@ -146,7 +151,10 @@
     "name": "Name",
     "address": "Address",
     "note": "Note",
-    "greeting": "Hello, I would like to place an order."
+    "greeting": "Hello, I would like to place an order.",
+    "payment": "Payment",
+    "payCashAtDoor": "Cash at the door",
+    "payCardAtDoor": "Card at the door"
   },
   "portions": {
     "label": "Portion",

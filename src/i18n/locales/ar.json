@@ -69,7 +69,12 @@
     "table": "طاولة",
     "sendWhatsApp": "اتصل الآن للطلب",
     "whatsappRedirect": "اتصل الآن للطلب",
-    "subtotal": "المجموع الفرعي"
+    "subtotal": "المجموع الفرعي",
+    "paymentMethod": "طريقة الدفع",
+    "payCashAtDoor": "نقدًا عند الباب",
+    "payCardAtDoor": "بالبطاقة عند الباب",
+    "loading": "جارٍ التحميل...",
+    "unavailable": "غير متاح"
   },
   "footer": {
     "quickLinks": "الوصول السريع",
@@ -146,7 +151,10 @@
     "name": "الاسم",
     "address": "العنوان",
     "note": "ملاحظة",
-    "greeting": "مرحبًا، أودّ تقديم طلب."
+    "greeting": "مرحبًا، أودّ تقديم طلب.",
+    "payment": "الدفع",
+    "payCashAtDoor": "نقدًا عند الباب",
+    "payCardAtDoor": "بالبطاقة عند الباب"
   },
   "portions": {
     "label": "الحصة",

@@ -41,6 +41,27 @@ export default function OrderFlow() {
   const labels = t.orderFlow || {};
   const wa = t.whatsappOrder || {};
 
+  // Payment method for delivery orders: "cash" (default) or "card", both
+  // paid at the door. Persisted next to the cart (kardesler_cart) so the
+  // choice survives reloads, and read at order time into the WhatsApp
+  // message so the restaurant knows whether to send the card terminal.
+  const PAYMENT_STORAGE_KEY = "kardesler_payment_method";
+  const [paymentMethod, setPaymentMethodState] = useState("cash");
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(PAYMENT_STORAGE_KEY);
+      if (saved === "cash" || saved === "card") setPaymentMethodState(saved);
+    } catch {}
+  }, []);
+  // Persist on change only (in the setter, not an effect) so the initial
+  // "cash" state can never overwrite a saved choice before it loads.
+  const setPaymentMethod = (value) => {
+    setPaymentMethodState(value);
+    try {
+      localStorage.setItem(PAYMENT_STORAGE_KEY, value);
+    } catch {}
+  };
+
   // WhatsApp checkout: structured order message built from the cart with
   // live ₺ prices. Null while prices load or if any price is unavailable,
   // in which case the button is hidden (the call path stays available).
@@ -64,7 +85,12 @@ export default function OrderFlow() {
           name: wa.name || "Name",
           address: wa.address || "Address",
           note: wa.note || "Note",
+          payment: wa.payment || "Payment",
         },
+        payment:
+          paymentMethod === "card"
+            ? wa.payCardAtDoor || "Card at the door"
+            : wa.payCashAtDoor || "Cash at the door",
       });
   const isRTL = lang === "ar" || lang === "fa";
 
@@ -125,7 +151,7 @@ export default function OrderFlow() {
               </div>
               <button
                 onClick={() => setIsCartOpen(false)}
-                aria-label="Close list"
+                aria-label={t.close || "Close"}
                 className="w-8 h-8 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-colors"
               >
                 <X size={18} />
@@ -190,9 +216,9 @@ export default function OrderFlow() {
                             )}
                           </p>
                           {pricesLoading ? (
-                            <p className="text-[11px] text-[#9C7A3F] mt-0.5 animate-pulse" style={{ fontFamily: "var(--font-inter)" }}>Loading...</p>
+                            <p className="text-[11px] text-[#9C7A3F] mt-0.5 animate-pulse" style={{ fontFamily: "var(--font-inter)" }}>{labels.loading || "Loading..."}</p>
                           ) : itemSubtotal == null ? (
-                            <p className="text-[11px] text-[#A0422E] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>Unavailable</p>
+                            <p className="text-[11px] text-[#A0422E] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>{labels.unavailable || "Unavailable"}</p>
                           ) : (
                             <p className="text-[11px] text-[#7A7364] mt-0.5" style={{ fontFamily: "var(--font-inter)" }}>
                               {item.qty} × {convertPrice(unitPrice)} {symbol} = {convertPrice(itemSubtotal)} {symbol}
@@ -251,6 +277,42 @@ export default function OrderFlow() {
                   ) : (
                     <span>{convertPrice(cartTotal)} {symbol}</span>
                   )}
+                </div>
+
+                {/* Payment Method (at the door) */}
+                <div className="space-y-1.5">
+                  <p className="text-center text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                    {labels.paymentMethod || "Payment Method"}
+                  </p>
+                  <div
+                    role="radiogroup"
+                    aria-label={labels.paymentMethod || "Payment Method"}
+                    className="flex items-center rounded-lg border border-[#9C7A3F]/30 bg-[#EDE3CE] p-0.5 gap-0.5"
+                  >
+                    {[
+                      { key: "cash", text: labels.payCashAtDoor || "Cash at the Door" },
+                      { key: "card", text: labels.payCardAtDoor || "Card at the Door" },
+                    ].map((opt) => {
+                      const active = paymentMethod === opt.key;
+                      return (
+                        <button
+                          key={opt.key}
+                          type="button"
+                          role="radio"
+                          aria-checked={active}
+                          onClick={() => setPaymentMethod(opt.key)}
+                          className={`flex-1 rounded-md px-2.5 py-2 text-xs font-bold whitespace-nowrap transition-colors ${
+                            active
+                              ? "bg-[#9C7A3F] text-white shadow-sm"
+                              : "text-[#2B2620]/60 hover:text-[#2B2620] hover:bg-[#9C7A3F]/10"
+                          }`}
+                          style={{ fontFamily: "var(--font-inter)" }}
+                        >
+                          {opt.text}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Order via WhatsApp Button (primary) */}

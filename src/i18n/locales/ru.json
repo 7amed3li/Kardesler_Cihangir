@@ -57,7 +57,12 @@
     "table": "Стол",
     "sendWhatsApp": "Позвонить для заказа",
     "whatsappRedirect": "Позвонить для заказа",
-    "subtotal": "Промежуточный итог"
+    "subtotal": "Промежуточный итог",
+    "paymentMethod": "Способ оплаты",
+    "payCashAtDoor": "Наличными при получении",
+    "payCardAtDoor": "Картой при получении",
+    "loading": "Загрузка...",
+    "unavailable": "Недоступно"
   },
   "footer": {
     "quickLinks": "Быстрые ссылки",
@@ -146,7 +151,10 @@
     "name": "Имя",
     "address": "Адрес",
     "note": "Примечание",
-    "greeting": "Здравствуйте, я хочу сделать заказ."
+    "greeting": "Здравствуйте, я хочу сделать заказ.",
+    "payment": "Оплата",
+    "payCashAtDoor": "Наличными при получении",
+    "payCardAtDoor": "Картой при получении"
   },
   "portions": {
     "label": "Порция",

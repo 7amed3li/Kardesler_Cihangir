@@ -70,7 +70,12 @@
     "table": "Mesa",
     "sendWhatsApp": "Llamar para pedir",
     "whatsappRedirect": "Llamar para pedir",
-    "subtotal": "Subtotal"
+    "subtotal": "Subtotal",
+    "paymentMethod": "Método de pago",
+    "payCashAtDoor": "Efectivo en la puerta",
+    "payCardAtDoor": "Tarjeta en la puerta",
+    "loading": "Cargando...",
+    "unavailable": "No disponible"
   },
   "footer": {
     "quickLinks": "Enlaces Rápidos",
@@ -146,7 +151,10 @@
     "name": "Nombre",
     "address": "Dirección",
     "note": "Nota",
-    "greeting": "Hola, quiero hacer un pedido."
+    "greeting": "Hola, quiero hacer un pedido.",
+    "payment": "Pago",
+    "payCashAtDoor": "Efectivo en la puerta",
+    "payCardAtDoor": "Tarjeta en la puerta"
   },
   "portions": {
     "label": "Ración",
