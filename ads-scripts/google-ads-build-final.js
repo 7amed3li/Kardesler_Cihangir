@@ -3,7 +3,7 @@
  * Account: 135-039-4545 (₺, GMT+3)
  *
  * Builds ALL SIX Search campaigns (KBS-G2, KBS-G3 × TR/EN/AR),
- * ALL PAUSED: campaigns, ad groups, 176 keywords (plan match
+ * ALL PAUSED: campaigns, ad groups, 183 keywords (plan match
  * types), 3 RSAs per ad group (plan copy verbatim), shared
  * negative list KBS-NEG-SHARED + G2/G3-specific campaign negatives,
  * call asset, sitelinks, callouts, structured snippets, 5 km Presence
@@ -86,9 +86,11 @@ var CONFIG = {
 };
 
 /* ============================ NEGATIVES ============================ */
-/* KBS-NEG-SHARED — plan §6, ALL Phrase match, applied to all 6 campaigns.
- * (Negatives do not expand to close variants; singular/plural/synonyms
- * are listed explicitly, exactly as the plan specifies.) */
+/* KBS-NEG-SHARED — plan §6, applied to all 6 campaigns. Phrase match
+ * for every entry in NEG_SHARED; the entries in NEG_SHARED_EXACT are
+ * Exact (plan §6 v2). (Negatives do not expand to close variants;
+ * singular/plural/synonyms are listed explicitly, exactly as the plan
+ * specifies.) */
 var NEG_SHARED = [
   // TR — jobs
   'iş ilanları','iş ilanı','kariyer','eleman aranıyor','personel alımı','iş başvurusu',
@@ -99,7 +101,7 @@ var NEG_SHARED = [
   // TR — cheapest abuse
   'en ucuz','çok ucuz','ucuzcu',
   // TR — dishes we do not pay clicks for (çiğ köfte IS sold — owner ads decision)
-  'döner','şavurma','çiğ köfte','tantuni','sushi','suşi','pizza',
+  'döner','şavurma','çiğ köfte','tantuni','sushi','suşi','pizza hut','pizzacı','dominos',
   // TR — franchise / wholesale
   'franchise','bayilik','toptan','toptan satış',
   // TR — Beşiktaş breakfast street
@@ -112,8 +114,8 @@ var NEG_SHARED = [
   'free','for free','menu pdf','pdf menu',
   // EN — cheapest abuse
   'cheapest','very cheap','dirt cheap',
-  // EN — dishes we do not pay clicks for ('tantuni','sushi','pizza' already listed in the TR block above — same words)
-  'doner','shawarma','shawerma','cig kofte',
+  // EN — dishes we do not pay clicks for ('tantuni','sushi','pizza hut','dominos' already listed in the TR block above — same words; 'pizza' is Exact, see NEG_SHARED_EXACT)
+  'doner','shawarma','shawerma','cig kofte','papa johns',
   // EN — franchise / wholesale
   'wholesale','dealership',
   // EN — Beşiktaş breakfast street
@@ -127,7 +129,7 @@ var NEG_SHARED = [
   // AR — cheapest abuse
   'أرخص','رخيص جدا','الأرخص',
   // AR — dishes we do not pay clicks for
-  'دونر','شاورما','شاورمه','تشي كفته','طانطوني','سوشي','بيتزا',
+  'دونر','شاورما','شاورمه','تشي كفته','طانطوني','سوشي','بيتزا هت','دومينوز',
   // AR — franchise / wholesale
   'امتياز تجاري','فرنشايز','جملة','بيع بالجملة',
   // AR — Beşiktaş breakfast street
@@ -139,6 +141,13 @@ var NEG_SHARED = [
   'güvenç konyalı','hamdi restaurant','pandeli','çeşme bazlama','tatbak','hünkar'
 ];
 /* 'franchise' appears once above (TR block) — it is the same word in EN. */
+
+/* Exact-match shared negatives (plan §6 v2 — bracketed in the plan):
+ * 'pizza' / 'بيتزا' are Exact so phrase searches like "turkish pizza"
+ * (lahmacun/pide intent) are NOT blocked; the pizza chains are blocked
+ * explicitly as Phrase in NEG_SHARED above. 'döner' stays Phrase
+ * (owner decision). */
+var NEG_SHARED_EXACT = ['pizza','بيتزا'];
 
 /* Arabic competitor transliterations — added at campaign level to AR
  * campaigns only (plan §6). */
@@ -164,7 +173,8 @@ var NEG_G2_ONLY = { // pure order intent — G3 catches it, families must not co
 /* Plan §4 verbatim (breakfast lists excluded — they live in the plan
  * appendix since the 2026-11-25 cancellation). 'E' = Exact, 'P' =
  * Phrase. No Broad at launch.
- * Totals: TR 71 + EN 56 + AR 49 = 176. */
+ * Totals: TR 74 + EN 58 + AR 51 = 183 (v2 added 7 brand+order Exact
+ * keywords to the G3 Order-Kebab groups). */
 var KEYWORDS = {
 'KBS-G2-TR': {
   'Kebab & Ocakbaşı': [['cihangir kebap','E'],['taksim kebapçı','E'],['beyoğlu ocakbaşı','E'],['adana kebap istanbul','E'],['en yakın kebapçı','E'],['cihangir ocakbaşı','E'],['adana kebap cihangir','E'],['iskender kebap cihangir','E'],['taksim ocakbaşı','P'],['beyoğlu kebap','P'],['kebap restoranı taksim','P'],['urfa kebap cihangir','P'],['beyti kebap cihangir','P'],['kuzu pirzola cihangir','P'],['ocakbaşı istanbul','P'],['en yakın ocakbaşı','P'],['kebapçı beyoğlu','P'],['helal kebap istanbul','P']],
@@ -172,7 +182,7 @@ var KEYWORDS = {
   'Brand': [['kardeşler kebap','E'],['kardeşler kebap cihangir','E'],['kardesler kebap','E'],['kardesler kebap cihangir','E'],['kardeşler kebap menü','E'],['kardeşler kebap breakfast','E'],['kardeşler kebap kahvaltı','E'],['kardeşler kebap telefon','E'],['kardeşler kebap yol tarifi','E'],['kardeşler kebap & breakfast cihangir','E'],['kardeşler kebap istanbul','P'],['kardesler kebap menü','P']]
 },
 'KBS-G3-TR': {
-  'Order-Kebab': [['kebap sipariş ver','E'],['kebap sipariş','E'],['online kebap sipariş','E'],['adana kebap sipariş','E'],['iskender kebap sipariş','E'],['paket servis kebap','E'],['urfa kebap sipariş','P'],['beyti kebap sipariş','P'],['cihangir kebap sipariş','P'],['taksim kebap sipariş','P'],['beyoğlu kebap sipariş','P'],['eve kebap siparişi','P'],['kebap siparişi cihangir','P']],
+  'Order-Kebab': [['kebap sipariş ver','E'],['kebap sipariş','E'],['online kebap sipariş','E'],['adana kebap sipariş','E'],['iskender kebap sipariş','E'],['paket servis kebap','E'],['urfa kebap sipariş','P'],['beyti kebap sipariş','P'],['cihangir kebap sipariş','P'],['taksim kebap sipariş','P'],['beyoğlu kebap sipariş','P'],['eve kebap siparişi','P'],['kebap siparişi cihangir','P'],['kardeşler kebap sipariş','E'],['kardeşler kebap online sipariş','E'],['kardesler kebap sipariş','E']],
   'Order-Pide & Lahmacun': [['lahmacun sipariş','E'],['pide sipariş','E'],['pide lahmacun sipariş','E'],['online lahmacun sipariş','E'],['pide siparişi','P'],['lahmacun siparişi','P'],['online pide sipariş','P'],['cihangir lahmacun sipariş','P'],['taksim pide sipariş','P'],['beyoğlu lahmacun sipariş','P'],['paket servis lahmacun','P'],['paket servis pide','P'],['pide sipariş cihangir','P']]
 },
 'KBS-G2-EN': {
@@ -181,7 +191,7 @@ var KEYWORDS = {
   'Brand': [['kardesler kebap','E'],['kardesler kebap cihangir','E'],['kardeşler kebap','E'],['kardesler kebap menu','E'],['kardesler kebap istanbul','E'],['kardesler kebap breakfast','E'],['kardesler kebap phone','E'],['kardesler kebap directions','E'],['kardesler kebap & breakfast','P']]
 },
 'KBS-G3-EN': {
-  'Order-Kebab': [['order kebab istanbul','E'],['kebab delivery istanbul','E'],['kebab delivery cihangir','E'],['order adana kebab','E'],['order iskender kebab','E'],['kebab delivery taksim','P'],['kebab delivery beyoglu','P'],['kebab takeaway istanbul','P'],['turkish food delivery istanbul','P'],['order turkish food online','P'],['halal kebab delivery istanbul','P']],
+  'Order-Kebab': [['order kebab istanbul','E'],['kebab delivery istanbul','E'],['kebab delivery cihangir','E'],['order adana kebab','E'],['order iskender kebab','E'],['kebab delivery taksim','P'],['kebab delivery beyoglu','P'],['kebab takeaway istanbul','P'],['turkish food delivery istanbul','P'],['order turkish food online','P'],['halal kebab delivery istanbul','P'],['kardesler kebap order','E'],['kardesler kebap delivery','E']],
   'Order-Pide & Lahmacun': [['order lahmacun','E'],['lahmacun delivery istanbul','E'],['order pide','E'],['pide delivery istanbul','E'],['lahmacun delivery cihangir','P'],['pide delivery taksim','P'],['turkish pide delivery','P'],['lahmacun takeaway istanbul','P'],['pide delivery beyoglu','P']]
 },
 'KBS-G2-AR': {
@@ -190,7 +200,7 @@ var KEYWORDS = {
   'Brand': [['كارديشلر كباب','E'],['كارديشلر كباب جيهانغير','E'],['كارديشلر كباب اسطنبول','E'],['منيو كارديشلر كباب','E'],['كارديشلر كباب فطور','E'],['هاتف كارديشلر كباب','E'],['عنوان كارديشلر كباب','E'],['مطعم كارديشلر كباب','P']]
 },
 'KBS-G3-AR': {
-  'Order-Kebab': [['طلب كباب اسطنبول','E'],['توصيل كباب اسطنبول','E'],['توصيل كباب تقسيم','E'],['توصيل كباب جيهانغير','E'],['طلب أضنة كباب','E'],['طلب إسكندر كباب','P'],['طلب طعام تركي اون لاين','P'],['كباب سفري اسطنبول','P'],['توصيل طعام تركي اسطنبول','P'],['طلب كباب حلال','P']],
+  'Order-Kebab': [['طلب كباب اسطنبول','E'],['توصيل كباب اسطنبول','E'],['توصيل كباب تقسيم','E'],['توصيل كباب جيهانغير','E'],['طلب أضنة كباب','E'],['طلب إسكندر كباب','P'],['طلب طعام تركي اون لاين','P'],['كباب سفري اسطنبول','P'],['توصيل طعام تركي اسطنبول','P'],['طلب كباب حلال','P'],['طلب كارديشلر كباب','E'],['توصيل كارديشلر كباب','E']],
   'Order-Pide & Lahmacun': [['طلب لحماجون','E'],['توصيل لحماجون اسطنبول','E'],['طلب بيده تركية','E'],['توصيل بيده اسطنبول','E'],['لحماجون سفري اسطنبول','P'],['توصيل لحماجون تقسيم','P'],['طلب لحماجون جيهانغير','P'],['توصيل بيده جيهانغير','P']]
 }
 };
@@ -202,95 +212,97 @@ var KEYWORDS = {
  * No pinning (plan: pinning forbidden except name alternatives if
  * needed — not needed here). Headlines ≤30 chars, descriptions ≤90 —
  * the builder validates and logs any violation instead of failing.
- * PATCH (2026-11-25): phone numbers scrubbed from ALL copy below —
- * the Editorial policy prohibits entering a phone number in ad text
- * (the number is served by the call asset instead). Every phone line
- * was replaced with a digit-free call-to-action; all other copy,
- * prices, ratings and hours are unchanged from §5. */
+ * PLAN V2 (2026-11-25): the copy below is §5 v2 verbatim. Phone
+ * numbers are banned from ad text by the Editorial policy (the number
+ * is served by the call asset instead), so v2 replaced every phone
+ * line with digit-free CTAs ('Hemen Ara' / 'Bizi Hemen Arayın' /
+ * 'Aramak için dokunun.' and the EN/AR equivalents), added the
+ * no-minimum-order headline to the G3 sets, and put the restaurant's
+ * own-motorcycle delivery line in G3-TR Order-Kebab. */
 var RSA_COPY = {
 TR: {
 
 'Kebab & Ocakbaşı': { url:'/tr/menu', p1:'Cihangir', p2:'Kebap',
-  h1:['Kardeşler Kebap Cihangir',"Cihangir'de Gerçek Kebap",'Adana Kebap ₺725','İskender Kebap ₺725','Kömür Ateşinde Ocakbaşı',"1998'den Beri Aynı Ocak","Google'da 4,6 Puan",'Adana, Urfa, Beyti, İskender',"Taksim'e 5 Dakika",'Kuzu Pirzola Ustasından',"Beyoğlu'nda Kebap Keyfi",'Hemen Arayın','Her Gün 09.00-02.00 Açık',"Cihangir'in Kebapçısı",'Menüyü Gör, Yol Tarifi Al'],
-  d1:["Adana ve Urfa ₺725, İskender ₺725. Kömür ateşinde, 1998'den beri Cihangir'de.","Taksim'e 5 dakika. Ocakbaşı, pide ve lahmacun tek adreste. Menüyü gör, hemen ara.","Google'da 4,6 puan. Her gün 09.00-02.00 açığız. Sipariş için arayın.",'Komisyonsuz sipariş resmi siteden: aracı yok, fiyat menü fiyatıdır.'],
+  h1:['Kardeşler Kebap Cihangir',"Cihangir'de Gerçek Kebap",'Adana Kebap ₺725','İskender Kebap ₺725','Kömür Ateşinde Ocakbaşı',"1998'den Beri Aynı Ocak","Google'da 4,6 Puan",'Adana, Urfa, Beyti, İskender',"Taksim'e 5 Dakika",'Kuzu Pirzola Ustasından',"Beyoğlu'nda Kebap Keyfi",'Hemen Ara','Her Gün 09.00-02.00 Açık',"Cihangir'in Kebapçısı",'Menüyü Gör, Yol Tarifi Al'],
+  d1:["Adana ve Urfa ₺725, İskender ₺725. Kömür ateşinde, 1998'den beri Cihangir'de.","Taksim'e 5 dakika. Ocakbaşı, pide ve lahmacun tek adreste. Menüyü gör, hemen ara.","Google'da 4,6 puan. Her gün 09.00-02.00 açığız. Aramak için dokunun.",'Komisyonsuz sipariş resmi siteden: aracı yok, fiyat menü fiyatıdır.'],
   h2:['Kebap mı Arıyorsun?','Ocakbaşında Gerçek Lezzet','Közde Adana Kebap','Ustasından Beyti Kebap',"Cihangir'de Akşam Yemeği",'Kebap İçin Hemen Ara','Dumanı Üstünde Kebaplar',"Taksim'de Kebap Adresi",'İskender Sevenlere','Pirzola ve Şiş Çeşitleri','Ailecek Kebap Sofrası','Menü ve Fiyatlar Sitede','Yol Tarifi Al, Hemen Gel',"1998'den Beri Aynı Lezzet",'Beyoğlu Ocakbaşı Keyfi'],
-  h3:['Kebap Burada Yenir','Kömür Ateşi, Usta İşi',"₺725'den Başlayan Kebap",'Şimdi Arayın','Cihangir Kebap Durağı',"Gece 02.00'ye Kadar Açık",'Ocakbaşı Lezzeti Burada','Adana Acılı, Urfa Acısız','Günlük Taze Et','Kebapta Kardeşler Farkı',"Taksim'e Yürüme Mesafesi",'Hemen Menüyü İncele','Sofranı Kur, Kebap Söyle','Izgara ve Kebap Çeşitleri',"Cihangir'de Kebap Zamanı"]},
+  h3:['Kebap Burada Yenir','Kömür Ateşi, Usta İşi',"₺725'den Başlayan Kebap",'Bizi Hemen Arayın','Cihangir Kebap Durağı',"Gece 02.00'ye Kadar Açık",'Ocakbaşı Lezzeti Burada','Adana Acılı, Urfa Acısız','Günlük Taze Et','Kebapta Kardeşler Farkı',"Taksim'e Yürüme Mesafesi",'Hemen Menüyü İncele','Sofranı Kur, Kebap Söyle','Izgara ve Kebap Çeşitleri',"Cihangir'de Kebap Zamanı"]},
 'Pide & Lahmacun': { url:'/tr/menu', p1:'Cihangir', p2:'Lahmacun',
-  h1:['Çıtır Lahmacun ₺210','Taş Fırında Pide',"Cihangir'de Lahmacun",'Kardeşler Kebap Cihangir','İncecik Hamur, Bol Malzeme','Kaşarlı ve Kıymalı Pide',"1998'den Beri Cihangir","Google'da 4,6 Puan","Taksim'e 5 Dakika",'Lahmacun ve Pide Ustası','Her Gün 09.00-02.00 Açık','Bizi Arayın',"Beyoğlu'nda Pide Keyfi",'Fırından Sıcak Sıcak','Menüyü Gör, Hemen Ara'],
+  h1:['Çıtır Lahmacun ₺210','Taş Fırında Pide',"Cihangir'de Lahmacun",'Kardeşler Kebap Cihangir','İncecik Hamur, Bol Malzeme','Kaşarlı ve Kıymalı Pide',"1998'den Beri Cihangir","Google'da 4,6 Puan","Taksim'e 5 Dakika",'Lahmacun ve Pide Ustası','Her Gün 09.00-02.00 Açık','Hemen Ara',"Beyoğlu'nda Pide Keyfi",'Fırından Sıcak Sıcak','Menüyü Gör, Hemen Ara'],
   d1:["Çıtır lahmacun ₺210, taş fırın pideler günlük taze hamurla. 1998'den beri Cihangir'de.",'Kaşarlı, kıymalı ve karışık pide çeşitleri. Menü ve fiyatlar sitede, hemen ara.',"Taksim'e 5 dakika, Google'da 4,6 puan. Her gün 09.00-02.00 açığız.",'Komisyonsuz sipariş resmi siteden verilir: aracı yok, fiyat menü fiyatıdır.'],
   h2:['Lahmacun mu Arıyorsun?','Pide İçin Doğru Adres','Taş Fırından Çıtır Lezzet',"Cihangir'de Pide Zamanı",'İnce Hamur, Çıtır Kenar','Lahmacunda Kardeşler Farkı','Sıcak Sıcak Fırından','Pide ve Lahmacun Söyle','Menü ve Fiyatlar Sitede','Yol Tarifi Al, Hemen Gel',"Taksim'de Lahmacun",'Günlük Açılan Hamur','Ailecek Pide Sofrası','Kahvaltı da Kebap da',"1998'den Beri Aynı Fırın"],
   h3:['Lahmacun Burada',"₺210'a Çıtır Lahmacun",'Bizi Hemen Arayın','Cihangir Pide Durağı','Fırın Ateşi Hiç Sönmez','Pide Çeşitleri Bol',"Gece 02.00'ye Kadar",'Hemen Menüyü İncele',"Beyoğlu'nda Lahmacun",'Usta İşi Taş Fırın','Taze Hamur Her Gün','Lahmacun Sevenlere',"Cihangir'de Fırın Lezzeti",'Tek Dokunuşla Ara','Sofrada Pide Keyfi']},
 'Brand': { url:'/tr', p1:'Cihangir', p2:'Menu',
-  h1:['Kardeşler Kebap & Breakfast','Kardeşler Kebap Resmi Site',"Cihangir, 1998'den Beri",'Menü ve Güncel Fiyatlar',"Google'da 4,6 Puan",'Serpme Kahvaltı ve Kebap',"Taksim'e 5 Dakika",'Her Gün 09.00-02.00 Açık','Bize Ulaşın','Komisyonsuz Online Sipariş',"Cihangir'in Kebapçısı",'Taş Fırın Pide ve Lahmacun','Yol Tarifi Al','İki Kuşaktır Aynı Lezzet','Kahvaltı 09.00-13.00'],
-  d1:['Kardeşler Kebap & Breakfast resmi sitesi: menü, güncel fiyatlar ve komisyonsuz sipariş.',"1998'den beri Cihangir'de: serpme kahvaltı, kebap, pide ve lahmacun. Her gün 09.00-02.00.","Google'da 4,6 puan, Taksim'e 5 dakika. Hemen bize ulaşın.",'Sipariş doğrudan bize gelir, aracı komisyonu yok. Menüyü gör, WhatsApp\'tan yaz.'],
-  h2:['Bizi mi Arıyordunuz?','Kardeşler Kebap Cihangir','Resmi Sitedesiniz','Menüyü Hemen Gör',"1998'den Beri Aynı Ocak","Cihangir'de Aile İşletmesi",'Kahvaltıdan Kebab\'a','Fiyatlar Şeffaf, Menüde','Ara, Sor, Sipariş Ver',"Taksim'in Yanı Başında",'Güncel Menü ve Fiyatlar','Ocakbaşı ve Taş Fırın','Misafirlerimiz 4,6 Verdi','Hemen Yol Tarifi Al','Soframız Herkese Açık'],
-  h3:['Kardeşler Kebap Burada',"Cihangir'in Adresi",'Şimdi Bize Ulaşın','09.00-02.00 Her Gün','Aynı Ateş, Aynı Lezzet','Menü Sitede Hazır','Serpme Kahvaltı ₺1.350','Adana ve İskender ₺725','Lahmacun ₺210','Tek Dokunuşla Ara',"WhatsApp'tan Yazın",'İki Kuşaktır Biz',"Beyoğlu'nda Bir Klasik",'Hemen İncele','Kahvaltı da Var Kebap da']},
+  h1:['Kardeşler Kebap & Breakfast','Kardeşler Kebap Resmi Site',"Cihangir, 1998'den Beri",'Menü ve Güncel Fiyatlar',"Google'da 4,6 Puan",'Serpme Kahvaltı ve Kebap',"Taksim'e 5 Dakika",'Her Gün 09.00-02.00 Açık','Hemen Ara','Komisyonsuz Online Sipariş',"Cihangir'in Kebapçısı",'Taş Fırın Pide ve Lahmacun','Yol Tarifi Al','İki Kuşaktır Aynı Lezzet','Kahvaltı 09.00-13.00'],
+  d1:['Kardeşler Kebap & Breakfast resmi sitesi: menü, güncel fiyatlar ve komisyonsuz sipariş.',"1998'den beri Cihangir'de: serpme kahvaltı, kebap, pide ve lahmacun. Her gün 09.00-02.00.","Google'da 4,6 puan, Taksim'e 5 dakika. Aramak için dokunun.","Sipariş doğrudan bize gelir, aracı komisyonu yok. Menüyü gör, WhatsApp'tan yaz."],
+  h2:['Bizi mi Arıyordunuz?','Kardeşler Kebap Cihangir','Resmi Sitedesiniz','Menüyü Hemen Gör',"1998'den Beri Aynı Ocak","Cihangir'de Aile İşletmesi","Kahvaltıdan Kebab'a",'Fiyatlar Şeffaf, Menüde','Ara, Sor, Sipariş Ver',"Taksim'in Yanı Başında",'Güncel Menü ve Fiyatlar','Ocakbaşı ve Taş Fırın','Misafirlerimiz 4,6 Verdi','Hemen Yol Tarifi Al','Soframız Herkese Açık'],
+  h3:['Kardeşler Kebap Burada',"Cihangir'in Adresi",'Bizi Hemen Arayın','09.00-02.00 Her Gün','Aynı Ateş, Aynı Lezzet','Menü Sitede Hazır','Serpme Kahvaltı ₺1.350','Adana ve İskender ₺725','Lahmacun ₺210','Tek Dokunuşla Ara',"WhatsApp'tan Yazın",'İki Kuşaktır Biz',"Beyoğlu'nda Bir Klasik",'Hemen İncele','Kahvaltı da Var Kebap da']},
 'Order-Kebab': { url:'/tr/menu', p1:'Siparis', p2:'Kebap',
-  h1:['Kebap Siparişi Ver','Komisyonsuz Sipariş','Kardeşler Kebap Cihangir','Adana Kebap ₺725','İskender Kebap ₺725','Resmi Siteden Sipariş','Aracı Yok, Menü Fiyatı','WhatsApp ile Hızlı Onay','Sıcak ve Taze Teslimat',"Cihangir'e Paket Servis",'Her Gün 09.00-02.00','Sipariş İçin Arayın','Beyti ve Urfa da Var','Menüyü Gör, Sipariş Ver',"1998'den Beri Aynı Lezzet"],
-  d1:['Aracı komisyonu yok: sipariş doğrudan bize gelir, fiyat menü fiyatıdır. Adana ₺725.','Resmi siteden sipariş ver, WhatsApp ile hızlı onay al. Pide, lahmacun ve kebap çeşitleri.',"Cihangir ve çevresine paket servis. Hemen arayın, getirelim.","Google'da 4,6 puan alan ocakbaşından evinize: kömür ateşinde kebaplar."],
+  h1:['Kebap Siparişi Ver','Komisyonsuz Sipariş','Kardeşler Kebap Cihangir','Adana Kebap ₺725','İskender Kebap ₺725','Resmi Siteden Sipariş','Aracı Yok, Menü Fiyatı','WhatsApp ile Hızlı Onay','Sıcak ve Taze Teslimat',"Cihangir'e Paket Servis",'Her Gün 09.00-02.00','Hemen Ara','Minimum Sepet Tutarı Yok','Menüyü Gör, Sipariş Ver',"1998'den Beri Aynı Lezzet"],
+  d1:['Aracı komisyonu yok: sipariş doğrudan bize gelir, fiyat menü fiyatıdır. Adana ₺725.','Resmi siteden sipariş ver, WhatsApp ile hızlı onay al. Pide, lahmacun ve kebap çeşitleri.',"Cihangir, Taksim, Beyoğlu ve Şişli'ye kendi motorumuzla teslimat. Aramak için dokunun.","Google'da 4,6 puan alan ocakbaşından evinize: kömür ateşinde kebaplar."],
   h2:['Eve Kebap Söyle','Siparişin Doğrudan Bize','Komisyon Yok, Fark Yok','Ocakbaşından Kapına','Adana Siparişi Ver','İskender Siparişi Ver','Paket Servis Kebap','Menü Fiyatına Sipariş',"WhatsApp'tan Sipariş Ver","Taksim'e Paket Servis","Beyoğlu'na Paket Servis",'Ara, Siparişini Ver','Sıcak Sıcak Kapında','Günlük Taze Kebaplar','Sipariş İçin Tıkla'],
-  h3:['Kebap Kapına Gelsin',"₺725'den Başlayan Kebap",'Arayın, Kapınıza Gelsin','Komisyonsuz Tek Adres','Resmi Site, Gerçek Fiyat','Cihangir Paket Servis','Hemen Sipariş Ver','Usta İşi, Kapına Teslim',"WhatsApp'tan Yaz, Söyle",'Menüyü Gör, Seç, Söyle','Aynı Ocak, Evinizde',"Gece 02.00'ye Kadar",'Taze ve Sıcak Teslim','Beyti Siparişi de Var','Doğrudan Bizden Sipariş']},
+  h3:['Kebap Kapına Gelsin',"₺725'den Başlayan Kebap",'Bizi Hemen Arayın','Komisyonsuz Tek Adres','Resmi Site, Gerçek Fiyat','Cihangir Paket Servis','Hemen Sipariş Ver','Usta İşi, Kapına Teslim',"WhatsApp'tan Yaz, Söyle",'Menüyü Gör, Seç, Söyle','Aynı Ocak, Evinizde',"Gece 02.00'ye Kadar",'Taze ve Sıcak Teslim','Beyti Siparişi de Var','Doğrudan Bizden Sipariş']},
 'Order-Pide & Lahmacun': { url:'/tr/menu', p1:'Siparis', p2:'Lahmacun',
-  h1:['Lahmacun Siparişi Ver','Çıtır Lahmacun ₺210','Komisyonsuz Sipariş','Taş Fırın Pide Siparişi','Kardeşler Kebap Cihangir','Resmi Siteden Sipariş','Aracı Yok, Menü Fiyatı','WhatsApp ile Hızlı Onay','Kaşarlı, Kıymalı Pideler',"Cihangir'e Paket Servis",'Her Gün 09.00-02.00','Arayın, Sipariş Verin','Fırından Sıcak Teslimat','Menüyü Gör, Sipariş Ver',"1998'den Beri Aynı Fırın"],
-  d1:['Çıtır lahmacun ₺210 ve taş fırın pideler, aracısız resmi siteden kapınıza.','Sipariş doğrudan bize gelir, fiyat menü fiyatıdır. WhatsApp ile hızlı onay.','Kaşarlı ve kıymalı pide çeşitleri günlük taze hamurla. Hemen sipariş verin.',"Cihangir ve çevresine paket servis, her gün 09.00-02.00. Google'da 4,6 puan."],
+  h1:['Lahmacun Siparişi Ver','Çıtır Lahmacun ₺210','Komisyonsuz Sipariş','Taş Fırın Pide Siparişi','Kardeşler Kebap Cihangir','Resmi Siteden Sipariş','Aracı Yok, Menü Fiyatı','WhatsApp ile Hızlı Onay','Kaşarlı, Kıymalı Pideler',"Cihangir'e Paket Servis",'Her Gün 09.00-02.00','Hemen Ara','Fırından Sıcak Teslimat','Menüyü Gör, Sipariş Ver','Minimum Sepet Tutarı Yok'],
+  d1:['Çıtır lahmacun ₺210 ve taş fırın pideler, aracısız resmi siteden kapınıza.','Sipariş doğrudan bize gelir, fiyat menü fiyatıdır. WhatsApp ile hızlı onay.','Kaşarlı ve kıymalı pide çeşitleri günlük taze hamurla. Aramak için dokunun.',"Cihangir ve çevresine paket servis, her gün 09.00-02.00. Google'da 4,6 puan."],
   h2:['Eve Lahmacun Söyle','Pide Siparişi Ver','Fırından Kapına','İnce Hamur, Çıtır Kenar','Paket Servis Lahmacun','Paket Servis Pide','Menü Fiyatına Sipariş',"WhatsApp'tan Sipariş Ver","Taksim'e Paket Servis","Beyoğlu'na Paket Servis",'Ara, Siparişini Ver','Sıcak Sıcak Kapında','Günlük Taze Hamur','Sipariş İçin Tıkla','Lahmacun Sevenlere Müjde'],
-  h3:['Lahmacun Kapına Gelsin',"₺210'a Çıtır Lahmacun",'Sipariş İçin Bizi Arayın','Komisyonsuz Tek Adres','Resmi Site, Gerçek Fiyat','Cihangir Paket Servis','Hemen Sipariş Ver','Taş Fırın, Kapına Teslim',"WhatsApp'tan Yaz, Söyle",'Menüyü Gör, Seç, Söyle','Aynı Fırın, Evinizde',"Gece 02.00'ye Kadar",'Pide Siparişi de Var','Taze ve Sıcak Teslim','Doğrudan Bizden Sipariş']}
+  h3:['Lahmacun Kapına Gelsin',"₺210'a Çıtır Lahmacun",'Bizi Hemen Arayın','Komisyonsuz Tek Adres','Resmi Site, Gerçek Fiyat','Cihangir Paket Servis','Hemen Sipariş Ver','Taş Fırın, Kapına Teslim',"WhatsApp'tan Yaz, Söyle",'Menüyü Gör, Seç, Söyle','Aynı Fırın, Evinizde',"Gece 02.00'ye Kadar",'Pide Siparişi de Var','Taze ve Sıcak Teslim','Doğrudan Bizden Sipariş']}
 },
 EN: {
 
 'Kebab & Ocakbaşı': { url:'/en/menu', p1:'Cihangir', p2:'Kebab',
-  h1:['Kardesler Kebap Cihangir','Real Kebab in Cihangir','Adana Kebab ₺725','Iskender Kebab ₺725','Charcoal Grill Ocakbasi','Same Grill Since 1998','Rated 4.6 on Google','Adana, Urfa, Beyti, Iskender','5 Minutes from Taksim','Lamb Chops from the Master','Kebab Night in Beyoglu','Call Us Today','Open Daily 09:00-02:00',"Cihangir's Kebab House",'See Menu, Get Directions'],
-  d1:['Adana and Urfa ₺725, Iskender ₺725. Charcoal-grilled in Cihangir since 1998.','Five minutes from Taksim. Ocakbasi grill, pide and lahmacun in one house. See the menu.','Rated 4.6 on Google. Open every day 09:00-02:00. Call our restaurant today.','Order direct from our official site: no middleman, no commission, menu prices.'],
+  h1:['Kardesler Kebap Cihangir','Real Kebab in Cihangir','Adana Kebab ₺725','Iskender Kebab ₺725','Charcoal Grill Ocakbasi','Same Grill Since 1998','Rated 4.6 on Google','Adana, Urfa, Beyti, Iskender','5 Minutes from Taksim','Lamb Chops from the Master','Kebab Night in Beyoglu','Call Us Now','Open Daily 09:00-02:00',"Cihangir's Kebab House",'See Menu, Get Directions'],
+  d1:['Adana and Urfa ₺725, Iskender ₺725. Charcoal-grilled in Cihangir since 1998.','Five minutes from Taksim. Ocakbasi grill, pide and lahmacun in one house. See the menu.','Rated 4.6 on Google. Open every day 09:00-02:00. Tap to call.','Order direct from our official site: no middleman, no commission, menu prices.'],
   h2:['Looking for Real Kebab?','Ocakbasi Grill Experience','Adana Over Charcoal','Beyti from the Master','Dinner in Cihangir','Call for Kebab Tonight','Kebabs Fresh off the Grill',"Taksim's Kebab Address",'For Iskender Lovers','Lamb Chops & Skewers','A Family Kebab Table','Menu & Prices on Our Site','Get Directions, Visit Us','Same Taste Since 1998','Beyoglu Ocakbasi Nights'],
-  h3:['Kebab Is Eaten Here',"Charcoal Fire, Master's Hand",'Kebabs from ₺725','Call Us Anytime','Cihangir Kebab Stop','Open Until 2am','Ocakbasi Flavour Is Here','Adana Hot, Urfa Mild','Fresh Meat Daily','The Kardesler Difference','Walking Distance to Taksim','See the Menu Now','Set the Table, Order Kebab','Grill & Kebab Varieties','Kebab Time in Cihangir']},
+  h3:['Kebab Is Eaten Here',"Charcoal Fire, Master's Hand",'Kebabs from ₺725','Call Us Today','Cihangir Kebab Stop','Open Until 2am','Ocakbasi Flavour Is Here','Adana Hot, Urfa Mild','Fresh Meat Daily','The Kardesler Difference','Walking Distance to Taksim','See the Menu Now','Set the Table, Order Kebab','Grill & Kebab Varieties','Kebab Time in Cihangir']},
 'Pide & Lahmacun': { url:'/en/menu', p1:'Cihangir', p2:'Lahmacun',
-  h1:['Crispy Lahmacun ₺210','Stone-Oven Pide','Lahmacun in Cihangir','Kardesler Kebap Cihangir','Thin Dough, Rich Topping','Cheese & Minced-Meat Pide','In Cihangir Since 1998','Rated 4.6 on Google','5 Minutes from Taksim','Lahmacun & Pide Masters','Open Daily 09:00-02:00','Give Us a Call','Pide Time in Beyoglu','Hot from the Oven','See the Menu, Call Now'],
+  h1:['Crispy Lahmacun ₺210','Stone-Oven Pide','Lahmacun in Cihangir','Kardesler Kebap Cihangir','Thin Dough, Rich Topping','Cheese & Minced-Meat Pide','In Cihangir Since 1998','Rated 4.6 on Google','5 Minutes from Taksim','Lahmacun & Pide Masters','Open Daily 09:00-02:00','Call Us Now','Pide Time in Beyoglu','Hot from the Oven','See the Menu, Call Now'],
   d1:['Crispy lahmacun ₺210 and stone-oven pide with fresh dough daily. In Cihangir since 1998.','Cheese, minced-meat and mixed pide varieties. Menu and prices on our site — call us.','Five minutes from Taksim, rated 4.6 on Google. Open daily 09:00-02:00.','Order direct from our official site: no middleman, menu prices only.'],
   h2:['Looking for Lahmacun?','The Right Pide Address','Crispy Taste from Stone Oven','Pide Time in Cihangir','Thin Dough, Crispy Edges','The Kardesler Lahmacun','Hot, Straight from the Oven','Order Pide & Lahmacun','Menu & Prices on Our Site','Get Directions, Visit Us','Lahmacun Near Taksim','Dough Rolled Fresh Daily','A Family Pide Table','Breakfast & Kebab Too','Same Oven Since 1998'],
-  h3:['Lahmacun Is Here','Crispy Lahmacun for ₺210','Call Us Now','Cihangir Pide Stop','The Oven Fire Never Dies','Plenty of Pide Varieties','Open Until 2am','See the Menu Now','Lahmacun in Beyoglu','Master-Made Stone Oven','Fresh Dough Every Day','For Lahmacun Lovers','Oven Flavours of Cihangir','One Tap to Call Us','Pide Joy at the Table']},
+  h3:['Lahmacun Is Here','Crispy Lahmacun for ₺210','Call Us Today','Cihangir Pide Stop','The Oven Fire Never Dies','Plenty of Pide Varieties','Open Until 2am','See the Menu Now','Lahmacun in Beyoglu','Master-Made Stone Oven','Fresh Dough Every Day','For Lahmacun Lovers','Oven Flavours of Cihangir','One Tap to Call Us','Pide Joy at the Table']},
 'Brand': { url:'/en', p1:'Cihangir', p2:'Menu',
-  h1:['Kardesler Kebap & Breakfast','Kardesler Kebap Official Site','Cihangir, Since 1998','Menu & Current Prices','Rated 4.6 on Google','Serpme Breakfast & Kebab','5 Minutes from Taksim','Open Daily 09:00-02:00','Reach Out Today','Commission-Free Online Order',"Cihangir's Kebab House",'Stone-Oven Pide & Lahmacun','Get Directions','Two Generations, One Taste','Breakfast 09:00-13:00'],
-  d1:['Kardesler Kebap & Breakfast official site: menu, current prices and commission-free order.','In Cihangir since 1998: breakfast, kebab, pide and lahmacun. Open daily 09:00-02:00.','Rated 4.6 on Google, five minutes from Taksim. Get in touch with us.','Your order comes directly to us — no middleman commission. See the menu, message WhatsApp.'],
+  h1:['Kardesler Kebap & Breakfast','Kardesler Kebap Official Site','Cihangir, Since 1998','Menu & Current Prices','Rated 4.6 on Google','Serpme Breakfast & Kebab','5 Minutes from Taksim','Open Daily 09:00-02:00','Call Us Now','Commission-Free Online Order',"Cihangir's Kebab House",'Stone-Oven Pide & Lahmacun','Get Directions','Two Generations, One Taste','Breakfast 09:00-13:00'],
+  d1:['Kardesler Kebap & Breakfast official site: menu, current prices and commission-free order.','In Cihangir since 1998: breakfast, kebab, pide and lahmacun. Open daily 09:00-02:00.','Rated 4.6 on Google, five minutes from Taksim. Tap to call.','Your order comes directly to us — no middleman commission. See the menu, message WhatsApp.'],
   h2:['Looking for Us?','Kardesler Kebap Cihangir','You Are on the Official Site','See the Menu Right Away','Same Grill Since 1998','A Family House in Cihangir','From Breakfast to Kebab','Transparent Menu Prices','Call, Ask, Order','Right Next to Taksim','Current Menu & Prices','Ocakbasi & Stone Oven','Guests Rated Us 4.6','Get Directions Now','Our Table Is Open to All'],
-  h3:['Kardesler Kebap Is Here','The Address in Cihangir','Call the Restaurant','Open Daily 09:00-02:00','Same Fire, Same Taste','Menu Ready on Our Site','Serpme Breakfast ₺1,350','Adana & Iskender ₺725','Lahmacun ₺210','One Tap to Call','Message Us on WhatsApp','Two Generations of Us','A Beyoglu Classic','Explore Now','Breakfast & Kebab Both']},
+  h3:['Kardesler Kebap Is Here','The Address in Cihangir','Call Us Today','Open Daily 09:00-02:00','Same Fire, Same Taste','Menu Ready on Our Site','Serpme Breakfast ₺1,350','Adana & Iskender ₺725','Lahmacun ₺210','One Tap to Call','Message Us on WhatsApp','Two Generations of Us','A Beyoglu Classic','Explore Now','Breakfast & Kebab Both']},
 'Order-Kebab': { url:'/en/menu', p1:'Order', p2:'Kebab',
-  h1:['Order Kebab Online','Commission-Free Order','Kardesler Kebap Cihangir','Adana Kebab ₺725','Iskender Kebab ₺725','Order from the Official Site','No Middleman, Menu Prices','Fast WhatsApp Confirmation','Hot & Fresh Delivery','Delivery around Cihangir','Open Daily 09:00-02:00','Call to Order Now','Beyti & Urfa Available Too','See Menu, Place Your Order','Same Taste Since 1998'],
-  d1:['No middleman commission: your order comes directly to us at menu prices. Adana ₺725.','Order on the official site, confirm fast on WhatsApp. Pide, lahmacun and kebab varieties.','Takeaway delivery in Cihangir and around. Call to place your order.','From a 4.6-rated ocakbasi to your home: charcoal-grilled kebabs.'],
+  h1:['Order Kebab Online','Commission-Free Order','Kardesler Kebap Cihangir','Adana Kebab ₺725','Iskender Kebab ₺725','Order from the Official Site','No Middleman, Menu Prices','Fast WhatsApp Confirmation','Hot & Fresh Delivery','Delivery around Cihangir','Open Daily 09:00-02:00','Call Us Now','No Minimum Order','See Menu, Place Your Order','Same Taste Since 1998'],
+  d1:['No middleman commission: your order comes directly to us at menu prices. Adana ₺725.','Order on the official site, confirm fast on WhatsApp. Pide, lahmacun and kebab varieties.','Takeaway delivery in Cihangir and around. Tap to call.','From a 4.6-rated ocakbasi to your home: charcoal-grilled kebabs.'],
   h2:['Kebab to Your Door','Your Order Comes to Us','No Commission, No Markup','From Grill to Your Door','Order Adana Kebab','Order Iskender Kebab','Kebab Takeaway Service','Order at Menu Prices','Order via WhatsApp','Delivery to Taksim','Delivery to Beyoglu','Call & Place Your Order','Hot at Your Door','Fresh Kebabs Daily','Tap to Order Now'],
-  h3:['Kebab Delivered to You','Kebabs Starting at ₺725','Call & Get It Delivered','One Commission-Free Address','Official Site, Real Prices','Cihangir Takeaway','Order Right Now',"Master's Work, Delivered",'Message WhatsApp & Order','See, Choose, Order','Same Grill, at Your Home','Open Until 2am','Fresh & Hot Delivery','Beyti Orders Available','Order Directly from Us']},
+  h3:['Kebab Delivered to You','Kebabs Starting at ₺725','Call Us Today','One Commission-Free Address','Official Site, Real Prices','Cihangir Takeaway','Order Right Now',"Master's Work, Delivered",'Message WhatsApp & Order','See, Choose, Order','Same Grill, at Your Home','Open Until 2am','Fresh & Hot Delivery','Beyti Orders Available','Order Directly from Us']},
 'Order-Pide & Lahmacun': { url:'/en/menu', p1:'Order', p2:'Lahmacun',
-  h1:['Order Lahmacun Online','Crispy Lahmacun ₺210','Commission-Free Order','Stone-Oven Pide Orders','Kardesler Kebap Cihangir','Order from the Official Site','No Middleman, Menu Prices','Fast WhatsApp Confirmation','Cheese & Minced-Meat Pide','Delivery around Cihangir','Open Daily 09:00-02:00','Call Us to Order','Hot Delivery from the Oven','See Menu, Place Your Order','Same Oven Since 1998'],
-  d1:['Crispy lahmacun ₺210 and stone-oven pide, direct from our official site to your door.','Your order comes directly to us at menu prices. Fast confirmation on WhatsApp.','Cheese and minced-meat pide with fresh dough daily. Call us for delivery.','Takeaway delivery in Cihangir and around, daily 09:00-02:00. Rated 4.6 on Google.'],
+  h1:['Order Lahmacun Online','Crispy Lahmacun ₺210','Commission-Free Order','Stone-Oven Pide Orders','Kardesler Kebap Cihangir','Order from the Official Site','No Middleman, Menu Prices','Fast WhatsApp Confirmation','Cheese & Minced-Meat Pide','Delivery around Cihangir','Open Daily 09:00-02:00','Call Us Now','Hot Delivery from the Oven','See Menu, Place Your Order','No Minimum Order'],
+  d1:['Crispy lahmacun ₺210 and stone-oven pide, direct from our official site to your door.','Your order comes directly to us at menu prices. Fast confirmation on WhatsApp.','Cheese and minced-meat pide with fresh dough daily. Tap to call.','Takeaway delivery in Cihangir and around, daily 09:00-02:00. Rated 4.6 on Google.'],
   h2:['Lahmacun to Your Door','Order Pide Online','From Oven to Your Door','Thin Dough, Crispy Edges','Lahmacun Takeaway','Pide Takeaway Service','Order at Menu Prices','Order via WhatsApp','Delivery to Taksim','Delivery to Beyoglu','Call & Place Your Order','Hot at Your Door','Fresh Dough Daily','Tap to Order Now','Good News for Lahmacun Fans'],
-  h3:['Lahmacun Delivered to You','Crispy Lahmacun for ₺210','Call, Order, Enjoy','One Commission-Free Address','Official Site, Real Prices','Cihangir Takeaway','Order Right Now','Stone Oven, Delivered','Message WhatsApp & Order','See, Choose, Order','Same Oven, at Your Home','Open Until 2am','Pide Orders Available Too','Fresh & Hot Delivery','Order Directly from Us']}
+  h3:['Lahmacun Delivered to You','Crispy Lahmacun for ₺210','Call Us Today','One Commission-Free Address','Official Site, Real Prices','Cihangir Takeaway','Order Right Now','Stone Oven, Delivered','Message WhatsApp & Order','See, Choose, Order','Same Oven, at Your Home','Open Until 2am','Pide Orders Available Too','Fresh & Hot Delivery','Order Directly from Us']}
 },
 AR: {
 
 'Kebab & Ocakbaşı': { url:'/ar/menu', p1:'جيهانغير', p2:'كباب',
-  h1:['كارديشلر كباب جيهانغير','كباب حقيقي في جيهانغير','أضنة كباب بـ725 ليرة','إسكندر كباب بـ725 ليرة','مشويات فحم أوجاكباشي','نفس المشواة منذ 1998','تقييم 4.6 على جوجل','أضنة وأورفا وبيتي وإسكندر','على بعد 5 دقائق من تقسيم','ريش ضأن من يد الأستا','ليلة كباب في بيوغلو','اتصل بنا الآن','مفتوح يوميًا 09:00-02:00','بيت الكباب في جيهانغير','شاهد القائمة واحصل على الاتجاه'],
-  d1:['أضنة وأورفا بـ725 ليرة، وإسكندر بـ725 ليرة. مشويات فحم في جيهانغير منذ 1998.','على بعد 5 دقائق من تقسيم. أوجاكباشي وبيده ولحماجون في مكان واحد. شاهد القائمة.','تقييم 4.6 على جوجل. مفتوح كل يوم 09:00-02:00. نتشرف باتصالك.','اطلب مباشرة من موقعنا الرسمي: بدون وسيط وبدون عمولة وبأسعار القائمة.'],
+  h1:['كارديشلر كباب جيهانغير','كباب حقيقي في جيهانغير','أضنة كباب بـ725 ليرة','إسكندر كباب بـ725 ليرة','مشويات فحم أوجاكباشي','نفس المشواة منذ 1998','تقييم 4.6 على جوجل','أضنة وأورفا وبيتي وإسكندر','على بعد 5 دقائق من تقسيم','ريش ضأن من يد الأستا','ليلة كباب في بيوغلو','اتصل الآن','مفتوح يوميًا 09:00-02:00','بيت الكباب في جيهانغير','شاهد القائمة واحصل على الاتجاه'],
+  d1:['أضنة وأورفا بـ725 ليرة، وإسكندر بـ725 ليرة. مشويات فحم في جيهانغير منذ 1998.','على بعد 5 دقائق من تقسيم. أوجاكباشي وبيده ولحماجون في مكان واحد. شاهد القائمة.','تقييم 4.6 على جوجل. مفتوح كل يوم 09:00-02:00. اضغط للاتصال.','اطلب مباشرة من موقعنا الرسمي: بدون وسيط وبدون عمولة وبأسعار القائمة.'],
   h2:['تبحث عن كباب حقيقي؟','تجربة أوجاكباشي أصلية','أضنة على الفحم','بيتي من يد الأستا','عشاء في جيهانغير','اتصل لكباب الليلة','كباب طازج من المشواة','عنوان الكباب في تقسيم','لعشاق الإسكندر','ريش وأسياخ مشكلة','سفرة كباب عائلية','القائمة والأسعار على موقعنا','احصل على الاتجاهات وزورنا','نفس الطعم منذ 1998','ليالي أوجاكباشي بيوغلو'],
-  h3:['الكباب يؤكل هنا','نار فحم ويد أستا','كباب يبدأ من 725 ليرة','اتصل بنا في أي وقت','محطة كباب جيهانغير','مفتوح حتى 2 فجرًا','نكهة الأوجاكباشي هنا','أضنة حار وأورفا بدون','لحم طازج يوميًا','فارق كارديشلر','على مسافة مشي من تقسيم','شاهد القائمة الآن','جهز سفرتك واطلب كباب','أصناف مشويات وكباب','وقت الكباب في جيهانغير']},
+  h3:['الكباب يؤكل هنا','نار فحم ويد أستا','كباب يبدأ من 725 ليرة','اتصل بنا اليوم','محطة كباب جيهانغير','مفتوح حتى 2 فجرًا','نكهة الأوجاكباشي هنا','أضنة حار وأورفا بدون','لحم طازج يوميًا','فارق كارديشلر','على مسافة مشي من تقسيم','شاهد القائمة الآن','جهز سفرتك واطلب كباب','أصناف مشويات وكباب','وقت الكباب في جيهانغير']},
 'Pide & Lahmacun': { url:'/ar/menu', p1:'جيهانغير', p2:'لحماجون',
-  h1:['لحماجون مقرمش بـ210 ليرة','بيده من فرن حجري','لحماجون في جيهانغير','كارديشلر كباب جيهانغير','عجينة رقيقة وحشو غني','بيده بالجبن واللحم المفروم','في جيهانغير منذ 1998','تقييم 4.6 على جوجل','على بعد 5 دقائق من تقسيم','أساتذة اللحماجون والبيده','مفتوح يوميًا 09:00-02:00','اتصل بنا اليوم','وقت البيده في بيوغلو','ساخن من الفرن مباشرة','شاهد القائمة واتصل الآن'],
+  h1:['لحماجون مقرمش بـ210 ليرة','بيده من فرن حجري','لحماجون في جيهانغير','كارديشلر كباب جيهانغير','عجينة رقيقة وحشو غني','بيده بالجبن واللحم المفروم','في جيهانغير منذ 1998','تقييم 4.6 على جوجل','على بعد 5 دقائق من تقسيم','أساتذة اللحماجون والبيده','مفتوح يوميًا 09:00-02:00','اتصل الآن','وقت البيده في بيوغلو','ساخن من الفرن مباشرة','شاهد القائمة واتصل الآن'],
   d1:['لحماجون مقرمش بـ210 ليرة وبيده فرن حجري بعجينة طازجة يوميًا. في جيهانغير منذ 1998.','أصناف بيده بالجبن واللحم المفروم والخلطات. القائمة والأسعار على موقعنا — اتصل بنا.','على بعد 5 دقائق من تقسيم، وتقييم 4.6 على جوجل. مفتوح يوميًا 09:00-02:00.','اطلب مباشرة من موقعنا الرسمي: بدون وسيط وبأسعار القائمة فقط.'],
   h2:['تبحث عن لحماجون؟','عنوان البيده الصحيح','قرمشة من الفرن الحجري','وقت البيده في جيهانغير','عجينة رقيقة وحواف مقرمشة','لحماجون كارديشلر','ساخن مباشرة من الفرن','اطلب بيده ولحماجون','القائمة والأسعار على موقعنا','احصل على الاتجاهات وزورنا','لحماجون قرب تقسيم','عجينة تُفرد طازجة يوميًا','سفرة بيده عائلية','فطور وكباب أيضًا','نفس الفرن منذ 1998'],
-  h3:['اللحماجون هنا','لحماجون مقرمش بـ210','اتصل بنا مباشرة','محطة بيده جيهانغير','نار الفرن لا تنطفئ','أصناف بيده كثيرة','مفتوح حتى 2 فجرًا','شاهد القائمة الآن','لحماجون في بيوغلو','فرن حجري بيد أستا','عجينة طازجة كل يوم','لعشاق اللحماجون','نكهات فرن جيهانغير','اتصل بنا بضغطة واحدة','متعة البيده على السفرة']},
+  h3:['اللحماجون هنا','لحماجون مقرمش بـ210','اتصل بنا اليوم','محطة بيده جيهانغير','نار الفرن لا تنطفئ','أصناف بيده كثيرة','مفتوح حتى 2 فجرًا','شاهد القائمة الآن','لحماجون في بيوغلو','فرن حجري بيد أستا','عجينة طازجة كل يوم','لعشاق اللحماجون','نكهات فرن جيهانغير','اتصل بنا بضغطة واحدة','متعة البيده على السفرة']},
 'Brand': { url:'/ar', p1:'جيهانغير', p2:'القائمة',
-  h1:['كارديشلر كباب وفطور','الموقع الرسمي لكارديشلر كباب','جيهانغير، منذ 1998','القائمة والأسعار الحالية','تقييم 4.6 على جوجل','فطور سربمه وكباب','على بعد 5 دقائق من تقسيم','مفتوح يوميًا 09:00-02:00','تواصل معنا الآن','طلب أونلاين بدون عمولة','بيت الكباب في جيهانغير','بيده ولحماجون فرن حجري','احصل على الاتجاهات','جيلان وطعم واحد','الفطور 09:00-13:00'],
-  d1:['الموقع الرسمي لكارديشلر كباب وفطور: القائمة والأسعار الحالية وطلب بدون عمولة.','في جيهانغير منذ 1998: فطور سربمه وكباب وبيده ولحماجون. مفتوح يوميًا 09:00-02:00.','تقييم 4.6 على جوجل وعلى بعد 5 دقائق من تقسيم. تواصل معنا في أي وقت.','طلبك يصلنا مباشرة — بدون عمولة وسيط. شاهد القائمة وراسلنا واتساب.'],
+  h1:['كارديشلر كباب وفطور','الموقع الرسمي لكارديشلر كباب','جيهانغير، منذ 1998','القائمة والأسعار الحالية','تقييم 4.6 على جوجل','فطور سربمه وكباب','على بعد 5 دقائق من تقسيم','مفتوح يوميًا 09:00-02:00','اتصل الآن','طلب أونلاين بدون عمولة','بيت الكباب في جيهانغير','بيده ولحماجون فرن حجري','احصل على الاتجاهات','جيلان وطعم واحد','الفطور 09:00-13:00'],
+  d1:['الموقع الرسمي لكارديشلر كباب وفطور: القائمة والأسعار الحالية وطلب بدون عمولة.','في جيهانغير منذ 1998: فطور سربمه وكباب وبيده ولحماجون. مفتوح يوميًا 09:00-02:00.','تقييم 4.6 على جوجل وعلى بعد 5 دقائق من تقسيم. اضغط للاتصال.','طلبك يصلنا مباشرة — بدون عمولة وسيط. شاهد القائمة وراسلنا واتساب.'],
   h2:['هل تبحث عنا؟','كارديشلر كباب جيهانغير','أنت في الموقع الرسمي','شاهد القائمة فورًا','نفس المشواة منذ 1998','بيت عائلي في جيهانغير','من الفطور إلى الكباب','أسعار قائمة شفافة','اتصل واسأل واطلب','بجوار تقسيم مباشرة','قائمة وأسعار محدثة','أوجاكباشي وفرن حجري','ضيوفنا قيّمونا 4.6','احصل على الاتجاهات الآن','سفرتنا مفتوحة للجميع'],
-  h3:['كارديشلر كباب هنا','العنوان في جيهانغير','يسعدنا اتصالك','مفتوح يوميًا 09:00-02:00','نفس النار ونفس الطعم','القائمة جاهزة على موقعنا','فطور سربمه بـ1350 ليرة','أضنة وإسكندر بـ725 ليرة','لحماجون بـ210 ليرة','اتصل بضغطة واحدة','راسلنا على واتساب','جيلان منا نحن','كلاسيكية بيوغلو','اكتشف الآن','فطور وكباب معًا']},
+  h3:['كارديشلر كباب هنا','العنوان في جيهانغير','اتصل بنا اليوم','مفتوح يوميًا 09:00-02:00','نفس النار ونفس الطعم','القائمة جاهزة على موقعنا','فطور سربمه بـ1350 ليرة','أضنة وإسكندر بـ725 ليرة','لحماجون بـ210 ليرة','اتصل بضغطة واحدة','راسلنا على واتساب','جيلان منا نحن','كلاسيكية بيوغلو','اكتشف الآن','فطور وكباب معًا']},
 'Order-Kebab': { url:'/ar/menu', p1:'اطلب', p2:'كباب',
-  h1:['اطلب كباب أونلاين','طلب بدون عمولة','كارديشلر كباب جيهانغير','أضنة كباب بـ725 ليرة','إسكندر كباب بـ725 ليرة','اطلب من الموقع الرسمي','بدون وسيط وبأسعار القائمة','تأكيد سريع عبر واتساب','توصيل ساخن وطازج','توصيل حول جيهانغير','مفتوح يوميًا 09:00-02:00','اتصل واطلب الآن','بيتي وأورفا متوفر أيضًا','شاهد القائمة وقدم طلبك','نفس الطعم منذ 1998'],
-  d1:['بدون عمولة وسيط: طلبك يصلنا مباشرة وبأسعار القائمة. أضنة بـ725 ليرة.','اطلب من الموقع الرسمي وأكّد بسرعة عبر واتساب. أصناف بيده ولحماجون وكباب.','توصيل سفري في جيهانغير وحولها. اتصل بنا لطلبك.','من أوجاكباشي بتقييم 4.6 على جوجل إلى بيتك: كباب مشوي على الفحم.'],
+  h1:['اطلب كباب أونلاين','طلب بدون عمولة','كارديشلر كباب جيهانغير','أضنة كباب بـ725 ليرة','إسكندر كباب بـ725 ليرة','اطلب من الموقع الرسمي','بدون وسيط وبأسعار القائمة','تأكيد سريع عبر واتساب','توصيل ساخن وطازج','توصيل حول جيهانغير','مفتوح يوميًا 09:00-02:00','اتصل الآن','بدون حد أدنى للطلب','شاهد القائمة وقدم طلبك','نفس الطعم منذ 1998'],
+  d1:['بدون عمولة وسيط: طلبك يصلنا مباشرة وبأسعار القائمة. أضنة بـ725 ليرة.','اطلب من الموقع الرسمي وأكّد بسرعة عبر واتساب. أصناف بيده ولحماجون وكباب.','توصيل سفري في جيهانغير وحولها. اضغط للاتصال.','من أوجاكباشي بتقييم 4.6 على جوجل إلى بيتك: كباب مشوي على الفحم.'],
   h2:['كباب يصل إلى بابك','طلبك يصلنا مباشرة','بدون عمولة وبدون زيادة','من المشواة إلى بابك','اطلب أضنة كباب','اطلب إسكندر كباب','خدمة كباب سفري','اطلب بأسعار القائمة','اطلب عبر واتساب','توصيل إلى تقسيم','توصيل إلى بيوغلو','اتصل وقدم طلبك','ساخن عند بابك','كباب طازج يوميًا','اضغط للطلب الآن'],
-  h3:['كباب يوصلك أينما كنت','كباب يبدأ من 725 ليرة','اتصل وسيصلك طلبك','عنوان واحد بدون عمولة','موقع رسمي وأسعار حقيقية','سفري جيهانغير','اطلب الآن مباشرة','شغل أستا ويصلك جاهز','راسل واتساب واطلب','شاهد واختر واطلب','نفس المشواة في بيتك','مفتوح حتى 2 فجرًا','توصيل طازج وساخن','طلبات بيتي متوفرة','اطلب منا مباشرة']},
+  h3:['كباب يوصلك أينما كنت','كباب يبدأ من 725 ليرة','اتصل بنا اليوم','عنوان واحد بدون عمولة','موقع رسمي وأسعار حقيقية','سفري جيهانغير','اطلب الآن مباشرة','شغل أستا ويصلك جاهز','راسل واتساب واطلب','شاهد واختر واطلب','نفس المشواة في بيتك','مفتوح حتى 2 فجرًا','توصيل طازج وساخن','طلبات بيتي متوفرة','اطلب منا مباشرة']},
 'Order-Pide & Lahmacun': { url:'/ar/menu', p1:'اطلب', p2:'لحماجون',
-  h1:['اطلب لحماجون أونلاين','لحماجون مقرمش بـ210 ليرة','طلب بدون عمولة','طلبات بيده فرن حجري','كارديشلر كباب جيهانغير','اطلب من الموقع الرسمي','بدون وسيط وبأسعار القائمة','تأكيد سريع عبر واتساب','بيده بالجبن واللحم المفروم','توصيل حول جيهانغير','مفتوح يوميًا 09:00-02:00','اتصل لطلبك الآن','توصيل ساخن من الفرن','شاهد القائمة وقدم طلبك','نفس الفرن منذ 1998'],
-  d1:['لحماجون مقرمش بـ210 ليرة وبيده فرن حجري، من موقعنا الرسمي مباشرة إلى بابك.','طلبك يصلنا مباشرة وبأسعار القائمة. تأكيد سريع عبر واتساب.','بيده بالجبن واللحم المفروم بعجينة طازجة يوميًا. اتصل لتأكيد طلبك.','توصيل سفري في جيهانغير وحولها، يوميًا 09:00-02:00. تقييم 4.6 على جوجل.'],
+  h1:['اطلب لحماجون أونلاين','لحماجون مقرمش بـ210 ليرة','طلب بدون عمولة','طلبات بيده فرن حجري','كارديشلر كباب جيهانغير','اطلب من الموقع الرسمي','بدون وسيط وبأسعار القائمة','تأكيد سريع عبر واتساب','بيده بالجبن واللحم المفروم','توصيل حول جيهانغير','مفتوح يوميًا 09:00-02:00','اتصل الآن','توصيل ساخن من الفرن','شاهد القائمة وقدم طلبك','بدون حد أدنى للطلب'],
+  d1:['لحماجون مقرمش بـ210 ليرة وبيده فرن حجري، من موقعنا الرسمي مباشرة إلى بابك.','طلبك يصلنا مباشرة وبأسعار القائمة. تأكيد سريع عبر واتساب.','بيده بالجبن واللحم المفروم بعجينة طازجة يوميًا. اضغط للاتصال.','توصيل سفري في جيهانغير وحولها، يوميًا 09:00-02:00. تقييم 4.6 على جوجل.'],
   h2:['لحماجون يصل إلى بابك','اطلب بيده أونلاين','من الفرن إلى بابك','عجينة رقيقة وحواف مقرمشة','لحماجون سفري','خدمة بيده سفري','اطلب بأسعار القائمة','اطلب عبر واتساب','توصيل إلى تقسيم','توصيل إلى بيوغلو','اتصل وقدم طلبك','ساخن عند بابك','عجينة طازجة يوميًا','اضغط للطلب الآن','بشرى لعشاق اللحماجون'],
-  h3:['لحماجون يوصلك جاهز','لحماجون مقرمش بـ210','اتصل بنا للطلب','عنوان واحد بدون عمولة','موقع رسمي وأسعار حقيقية','سفري جيهانغير','اطلب الآن مباشرة','فرن حجري ويصلك جاهز','راسل واتساب واطلب','شاهد واختر واطلب','نفس الفرن في بيتك','مفتوح حتى 2 فجرًا','طلبات بيده متوفرة أيضًا','توصيل طازج وساخن','اطلب منا مباشرة']}
+  h3:['لحماجون يوصلك جاهز','لحماجون مقرمش بـ210','اتصل بنا اليوم','عنوان واحد بدون عمولة','موقع رسمي وأسعار حقيقية','سفري جيهانغير','اطلب الآن مباشرة','فرن حجري ويصلك جاهز','راسل واتساب واطلب','شاهد واختر واطلب','نفس الفرن في بيتك','مفتوح حتى 2 فجرًا','طلبات بيده متوفرة أيضًا','توصيل طازج وساخن','اطلب منا مباشرة']}
 }
 };
 
@@ -351,27 +363,45 @@ function getOrCreateNegativeList() {
     list = resultOf(AdsApp.newNegativeKeywordListBuilder().withName(CONFIG.NEG_LIST_NAME).build());
     log('Created negative keyword list: ' + CONFIG.NEG_LIST_NAME);
   }
-  var existing = {};
+  // Desired state (plan §6 v2): every NEG_SHARED entry as PHRASE,
+  // every NEG_SHARED_EXACT entry as EXACT. Match type is expressed by
+  // quoting the text (documented API): '"text"' = phrase, '[text]' =
+  // exact. The list already in the account was seeded by an earlier
+  // run whose entries may be BROAD, and 'pizza'/'بيتزا' were Phrase
+  // under v1 — converge: an entry whose match type differs from the
+  // plan is removed (loudly) and re-added below with the planned type.
+  // Entries that are NOT in the plan are left untouched, never removed.
+  var desired = {};
+  var i, t;
+  for (i = 0; i < NEG_SHARED.length; i++) desired[NEG_SHARED[i].toLowerCase()] = 'PHRASE';
+  for (i = 0; i < NEG_SHARED_EXACT.length; i++) desired[NEG_SHARED_EXACT[i].toLowerCase()] = 'EXACT';
+  var present = {};
+  var corrected = 0;
   var it = list.negativeKeywords().get();
   while (it.hasNext()) {
     var nk = it.next();
-    // Match type is expressed by quoting the text (documented API):
-    // '"text"' = phrase. An entry left over from the first (pre-patch)
-    // run may exist as BROAD; convert it so the list ends up as planned.
-    if (nk.getMatchType && nk.getMatchType() !== 'PHRASE') {
-      warn('Negative list entry "' + nk.getText() + '" exists as ' + nk.getMatchType() + ' — removing and re-adding as PHRASE.');
-      nk.remove();
+    var key = nk.getText().toLowerCase();
+    if (!desired[key]) continue; // not in the plan — leave as is
+    var mt = nk.getMatchType ? nk.getMatchType() : null;
+    if (mt === null || mt === desired[key]) {
+      present[key] = true;
     } else {
-      existing[nk.getText().toLowerCase()] = true;
+      warn('Negative list entry "' + nk.getText() + '" exists as ' + mt + ' but plan §6 wants ' + desired[key] + ' — removing and re-adding with the planned match type.');
+      nk.remove();
+      corrected++;
     }
   }
   var added = 0;
-  for (var i = 0; i < NEG_SHARED.length; i++) {
-    var t = NEG_SHARED[i];
-    if (!existing[t.toLowerCase()]) { list.addNegativeKeyword('"' + t + '"'); added++; }
+  for (i = 0; i < NEG_SHARED.length; i++) {
+    t = NEG_SHARED[i];
+    if (!present[t.toLowerCase()]) { list.addNegativeKeyword('"' + t + '"'); added++; }
+  }
+  for (i = 0; i < NEG_SHARED_EXACT.length; i++) {
+    t = NEG_SHARED_EXACT[i];
+    if (!present[t.toLowerCase()]) { list.addNegativeKeyword('[' + t + ']'); added++; }
   }
   STATS.negListEntries += added;
-  log('Negative list ' + CONFIG.NEG_LIST_NAME + ': ' + added + ' entries added (' + NEG_SHARED.length + ' in plan).');
+  log('Negative list ' + CONFIG.NEG_LIST_NAME + ': ' + added + ' entries added, ' + corrected + ' match-type corrections (' + NEG_SHARED.length + ' phrase + ' + NEG_SHARED_EXACT.length + ' exact in plan).');
   return list;
 }
 
@@ -639,11 +669,11 @@ function countPlan() {
 
 function main() {
   log('=== Kardeşler Kebap — Ads BUILD (final plan) ===');
-  log('Plan keywords total: ' + countPlan() + ' (expect 176).');
+  log('Plan keywords total: ' + countPlan() + ' (expect 183).');
   if (!CONFIG.AUTHORIZED) {
     log('DRY RUN — CONFIG.AUTHORIZED is false. Nothing will be created.');
     log('Would build campaigns (ALL PAUSED): ' + CONFIG.LANGUAGES_TO_BUILD.map(function (l) { return 'KBS-G2-' + l + ', KBS-G3-' + l; }).join(', '));
-    log('Would create negative list ' + CONFIG.NEG_LIST_NAME + ' with ' + NEG_SHARED.length + ' phrase negatives, applied to all 6 campaigns.');
+    log('Would create negative list ' + CONFIG.NEG_LIST_NAME + ' with ' + NEG_SHARED.length + ' phrase + ' + NEG_SHARED_EXACT.length + ' exact negatives, applied to all 6 campaigns.');
     for (var b in CONFIG.BUDGETS) log('  Budget (PAUSED): ' + b + ' = ₺' + CONFIG.BUDGETS[b] + '/day — 09:00–02:00');
     log('Set CONFIG.AUTHORIZED = true and re-run (Preview first, then Run) to build — ALL campaigns PAUSED.');
     return;
