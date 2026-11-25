@@ -51,20 +51,17 @@ const ITEM_CATEGORY_IDS = new Map(
  * Categories that carry the standard [1 | 1,5 | Duble] portions
  * (owner rule, 2026-11-25). Category ids are the real menuData ids:
  *  - "kebap"            kebab / ocakbaşı mains
- *  - "ozel_menu"        special set menus — every item is a kebab/grill
- *                       main (Mardin kebap, chicken wings, lamb liver,
- *                       lamb shish menus)
- *  - "mezeli_kebaplar"  kebab dishes served with meze (incl. a dürüm)
  *  - "durumler"         dürüm wraps
  *  - "pide"             pide
  *  - "lahmacun"         lahmacun & etli ekmek
- * Any category not listed here (kahvalti, meze, salata, tatli,
- * soguk_icecek, sicak_icecek) gets no standard portions.
+ * "ozel_menu" and "mezeli_kebaplar" carried portions briefly but the
+ * owner ordered them removed the same day — those dishes are sold at
+ * the base price only. Any category not listed here (kahvalti, meze,
+ * salata, tatli, soguk_icecek, sicak_icecek, ozel_menu,
+ * mezeli_kebaplar) gets no standard portions.
  */
 const PORTION_CATEGORY_IDS = new Set([
   "kebap",
-  "ozel_menu",
-  "mezeli_kebaplar",
   "durumler",
   "pide",
   "lahmacun",
