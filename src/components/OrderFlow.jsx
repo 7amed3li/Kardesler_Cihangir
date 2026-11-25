@@ -71,10 +71,15 @@ export default function OrderFlow() {
   const ADDRESS_STORAGE_KEY = "kardesler_address";
   const DELIVERY_CITY = "İstanbul";
   const DELIVERY_DISTRICTS = ["Beyoğlu", "Şişli", "Beşiktaş", "Fatih"];
+  // Minimum order amounts (₺) per delivery district — owner rule
+  // 2026-11-26: Beyoğlu ₺400, every other district ₺1,000. Compared
+  // against the cart's live estimated total at order time.
+  const DISTRICT_MINIMUMS = { "Beyoğlu": 400, "Şişli": 1000, "Beşiktaş": 1000, "Fatih": 1000 };
   const EMPTY_ADDRESS = { name: "", phone: "", district: "", neighborhood: "", details: "", note: "" };
   const [address, setAddressState] = useState(EMPTY_ADDRESS);
   const [addressOpen, setAddressOpen] = useState(false);
   const [orderAttempted, setOrderAttempted] = useState(false);
+  const [minAttempted, setMinAttempted] = useState(false);
   const addressSectionRef = useRef(null);
 
   useEffect(() => {
@@ -119,6 +124,16 @@ export default function OrderFlow() {
   const fullAddress = [DELIVERY_CITY, address.district, address.neighborhood.trim(), address.details.trim()]
     .filter(Boolean)
     .join(" / ");
+
+  // District minimum, checked against the same live estimated total the
+  // drawer shows ("Tahmini Toplam", ₺). Null while no district is chosen
+  // or prices are unavailable (the order button is hidden then anyway).
+  const districtMinimum = DISTRICT_MINIMUMS[address.district] ?? null;
+  const belowMinimum =
+    districtMinimum !== null && cartTotal !== null && cartTotal < districtMinimum;
+  const fillMoney = (v) => `${convertPrice(v)} ${symbol}`;
+  const fillTokens = (tpl, map) =>
+    Object.entries(map).reduce((s, [k, v]) => s.split(`{${k}}`).join(String(v)), tpl);
 
   // WhatsApp checkout: structured order message built from the cart with
   // live ₺ prices. Null while prices load or if any price is unavailable,
@@ -369,6 +384,21 @@ export default function OrderFlow() {
                         </p>
                       )}
 
+                      {minAttempted && belowMinimum && (
+                        <p className="text-[12px] font-medium text-[#A0422E] bg-[#A0422E]/10 rounded-lg px-3 py-2" style={{ fontFamily: "var(--font-inter)" }}>
+                          {fillTokens(
+                            labels.minimumOrderHint ||
+                              "The minimum order for {district} is {min}. Your cart is {total}; add {missing} more to place your order.",
+                            {
+                              district: address.district,
+                              min: fillMoney(districtMinimum),
+                              total: fillMoney(cartTotal),
+                              missing: fillMoney(districtMinimum - cartTotal),
+                            }
+                          )}
+                        </p>
+                      )}
+
                       {[
                         { key: "name", label: labels.nameLabel || "Name", placeholder: labels.namePlaceholder || "", autoComplete: "name", type: "text" },
                         { key: "phone", label: labels.phoneLabel || "Phone", placeholder: labels.phonePlaceholder || "", autoComplete: "tel", type: "tel" },
@@ -435,6 +465,13 @@ export default function OrderFlow() {
                         {orderAttempted && addressErrors.district && (
                           <p className="text-[11px] text-[#A0422E] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
                             {labels.fieldRequired || "This field is required"}
+                          </p>
+                        )}
+                        {districtMinimum !== null && (
+                          <p className="text-[11px] text-[#7A7364] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
+                            {fillTokens(labels.districtMinimum || "Minimum order for this district: {amount}", {
+                              amount: fillMoney(districtMinimum),
+                            })}
                           </p>
                         )}
                       </div>
@@ -573,6 +610,17 @@ export default function OrderFlow() {
                       if (!addressComplete) {
                         e.preventDefault();
                         setOrderAttempted(true);
+                        setAddressOpen(true);
+                        setTimeout(() => {
+                          addressSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+                        }, 60);
+                        return;
+                      }
+                      // District minimum — checked after the address, on
+                      // the same live estimated total shown in the drawer.
+                      if (belowMinimum) {
+                        e.preventDefault();
+                        setMinAttempted(true);
                         setAddressOpen(true);
                         setTimeout(() => {
                           addressSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });

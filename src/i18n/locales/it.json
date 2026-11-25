@@ -97,7 +97,9 @@
     "addressIncomplete": "Compila i campi obbligatori per effettuare l'ordine",
     "kvkkNotice": "I dati del suo ordine vengono trattati per evadere la sua richiesta. Quando invia l'ordine, questo ci viene trasmesso tramite WhatsApp; poiché l'infrastruttura di WhatsApp si trova all'estero, i suoi dati vengono trasferiti all'estero tramite questo canale. Per i dettagli, consultare l':",
     "kvkkLinkLabel": "Informativa",
-    "noteHint": "Si prega di non inserire informazioni sanitarie (allergie, ecc.) in questo campo."
+    "noteHint": "Si prega di non inserire informazioni sanitarie (allergie, ecc.) in questo campo.",
+    "districtMinimum": "Ordine minimo per questo distretto: {amount}",
+    "minimumOrderHint": "L'ordine minimo per {district} è {min}. Il tuo carrello è {total}; aggiungi altri {missing} per effettuare l'ordine."
   },
   "footer": {
     "quickLinks": "Link Rapidi",

@@ -96,7 +96,9 @@
     "addressIncomplete": "Sipariş için lütfen zorunlu alanları doldurun",
     "kvkkNotice": "Sipariş bilgileriniz, talebinizin karşılanması amacıyla işlenir. Siparişinizi gönderdiğinizde siparişiniz WhatsApp üzerinden işletmemize iletilir; WhatsApp altyapısı yurt dışında bulunduğundan bilgileriniz bu yolla yurt dışına aktarılır. Ayrıntılar için:",
     "kvkkLinkLabel": "Aydınlatma Metni",
-    "noteHint": "Lütfen bu alana sağlık bilgisi (alerji vb.) yazmayınız."
+    "noteHint": "Lütfen bu alana sağlık bilgisi (alerji vb.) yazmayınız.",
+    "districtMinimum": "Bu bölge için minimum sipariş: {amount}",
+    "minimumOrderHint": "{district} için minimum sipariş tutarı {min}. Sepetiniz {total}; sipariş verebilmek için {missing} daha ekleyin."
   },
   "footer": {
     "quickLinks": "Hızlı Bağlantılar",

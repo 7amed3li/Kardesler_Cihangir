@@ -97,7 +97,9 @@
     "addressIncomplete": "Bitte füllen Sie die Pflichtfelder aus, um zu bestellen",
     "kvkkNotice": "Ihre Bestelldaten werden verarbeitet, um Ihre Anfrage zu erfüllen. Wenn Sie Ihre Bestellung senden, wird sie uns über WhatsApp übermittelt; da sich die WhatsApp-Infrastruktur im Ausland befindet, werden Ihre Daten auf diesem Weg ins Ausland übertragen. Einzelheiten finden Sie im:",
     "kvkkLinkLabel": "Aufklärungstext",
-    "noteHint": "Bitte geben Sie in diesem Feld keine Gesundheitsdaten (Allergien usw.) an."
+    "noteHint": "Bitte geben Sie in diesem Feld keine Gesundheitsdaten (Allergien usw.) an.",
+    "districtMinimum": "Mindestbestellwert für diesen Bezirk: {amount}",
+    "minimumOrderHint": "Die Mindestbestellmenge für {district} beträgt {min}. Ihr Warenkorb beträgt {total}; fügen Sie noch {missing} hinzu, um zu bestellen."
   },
   "footer": {
     "quickLinks": "Schnellzugriff",

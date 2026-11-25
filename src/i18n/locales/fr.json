@@ -84,7 +84,9 @@
     "addressIncomplete": "Veuillez remplir les champs obligatoires pour commander",
     "kvkkNotice": "Les informations de votre commande sont traitées afin de répondre à votre demande. Lorsque vous envoyez votre commande, elle nous est transmise via WhatsApp ; l'infrastructure de WhatsApp étant située à l'étranger, vos informations sont ainsi transférées à l'étranger. Pour plus de détails, consultez la :",
     "kvkkLinkLabel": "Notice d'information",
-    "noteHint": "Veuillez ne pas indiquer d'informations de santé (allergies, etc.) dans ce champ."
+    "noteHint": "Veuillez ne pas indiquer d'informations de santé (allergies, etc.) dans ce champ.",
+    "districtMinimum": "Commande minimum pour ce district : {amount}",
+    "minimumOrderHint": "La commande minimum pour {district} est de {min}. Votre panier est de {total} ; ajoutez encore {missing} pour commander."
   },
   "footer": {
     "quickLinks": "Accès Rapide",

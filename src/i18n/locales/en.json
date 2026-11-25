@@ -96,7 +96,9 @@
     "addressIncomplete": "Please fill in the required fields to place your order",
     "kvkkNotice": "Your order details are processed so that we can fulfil your request. When you send your order, it is transmitted to us via WhatsApp; as WhatsApp's infrastructure is located abroad, your details are transferred abroad through this channel. For details, see:",
     "kvkkLinkLabel": "Information Notice",
-    "noteHint": "Please do not enter health information (allergies, etc.) in this field."
+    "noteHint": "Please do not enter health information (allergies, etc.) in this field.",
+    "districtMinimum": "Minimum order for this district: {amount}",
+    "minimumOrderHint": "The minimum order for {district} is {min}. Your cart is {total}; add {missing} more to place your order."
   },
   "footer": {
     "quickLinks": "Quick Links",
