@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
 import OrderFlowWrapper from "@/components/OrderFlowWrapper";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
+import AdsClickTracking from "@/components/AdsClickTracking";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleTagManager } from '@next/third-parties/google';
 import Script from "next/script";
@@ -374,6 +375,7 @@ export default async function RootLayout({ children }) {
           </main>
           <Footer />
           <MobileStickyCTA />
+          <AdsClickTracking />
           <OrderFlowWrapper />
         </AppProvider>
       </body>
