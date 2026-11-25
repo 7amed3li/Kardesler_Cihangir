@@ -139,5 +139,13 @@
   "backToMenu": "Retour au Menu",
   "myList": "Ma Liste",
   "showWaiter": "Présentez cette liste au serveur pour commander",
-  "estimatedTotal": "Total Estimé :"
+  "estimatedTotal": "Total Estimé :",
+  "whatsappOrder": {
+    "button": "Commander via WhatsApp",
+    "title": "Nouvelle commande",
+    "name": "Nom",
+    "address": "Adresse",
+    "note": "Note",
+    "greeting": "Bonjour, je souhaite passer une commande."
+  }
 }

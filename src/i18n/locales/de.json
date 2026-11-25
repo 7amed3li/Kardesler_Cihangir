@@ -139,5 +139,13 @@
   "backToMenu": "Zurück zur Karte",
   "myList": "Meine Auswahl",
   "showWaiter": "Zeigen Sie diese Liste dem Kellner, um zu bestellen",
-  "estimatedTotal": "Geschätzte Summe:"
+  "estimatedTotal": "Geschätzte Summe:",
+  "whatsappOrder": {
+    "button": "Per WhatsApp bestellen",
+    "title": "Neue Bestellung",
+    "name": "Name",
+    "address": "Adresse",
+    "note": "Anmerkung",
+    "greeting": "Hallo, ich möchte eine Bestellung aufgeben."
+  }
 }

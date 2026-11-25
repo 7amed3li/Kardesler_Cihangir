@@ -139,5 +139,13 @@
   "backToMenu": "Назад в меню",
   "myList": "Мой заказ",
   "showWaiter": "Покажите этот список официанту для заказа",
-  "estimatedTotal": "Примерная сумма:"
+  "estimatedTotal": "Примерная сумма:",
+  "whatsappOrder": {
+    "button": "Заказать через WhatsApp",
+    "title": "Новый заказ",
+    "name": "Имя",
+    "address": "Адрес",
+    "note": "Примечание",
+    "greeting": "Здравствуйте, я хочу сделать заказ."
+  }
 }

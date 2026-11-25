@@ -139,5 +139,13 @@
   "backToMenu": "Back to Menu",
   "myList": "My List",
   "showWaiter": "Show this list to the waiter to order",
-  "estimatedTotal": "Estimated Total:"
+  "estimatedTotal": "Estimated Total:",
+  "whatsappOrder": {
+    "button": "Order via WhatsApp",
+    "title": "New Order",
+    "name": "Name",
+    "address": "Address",
+    "note": "Note",
+    "greeting": "Hello, I would like to place an order."
+  }
 }

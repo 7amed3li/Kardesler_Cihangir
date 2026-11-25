@@ -5,6 +5,9 @@ import { useAppContext } from "../context/AppContext";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
 import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
+import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
+import { trackEvent } from "../lib/trackingUtils";
 
 export default function OrderFlow() {
   const {
@@ -31,6 +34,25 @@ export default function OrderFlow() {
 
   const symbol = getCurrencySymbol();
   const labels = t.orderFlow || {};
+  const wa = t.whatsappOrder || {};
+
+  // WhatsApp checkout: structured order message built from the cart with
+  // live ₺ prices. Null while prices load or if any price is unavailable,
+  // in which case the button is hidden (the call path stays available).
+  const whatsappUrl = pricesLoading
+    ? null
+    : buildWhatsAppOrderUrl({
+        cart,
+        getItemName: (id) => menuT.items[id]?.name || id,
+        getLivePrice,
+        labels: {
+          title: wa.title || "New Order",
+          total: labels.total || "Total",
+          name: wa.name || "Name",
+          address: wa.address || "Address",
+          note: wa.note || "Note",
+        },
+      });
   const isRTL = lang === "ar" || lang === "fa";
 
   const waiterText = t.showWaiter || (lang === "ar" ? "اعرض هذه القائمة للجرسون لإتمام طلبك" : 
@@ -198,6 +220,27 @@ export default function OrderFlow() {
                     <span>{convertPrice(cartTotal)} {symbol}</span>
                   )}
                 </div>
+
+                {/* Order via WhatsApp Button (primary) */}
+                {whatsappUrl && (
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackEvent("whatsapp_click", {
+                        event_category: "order",
+                        event_label: "cart_drawer_checkout",
+                        items_count: cartCount,
+                      })
+                    }
+                    className="w-full py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#1EB856] text-white font-bold text-base tracking-wide flex items-center justify-center gap-3 transition-colors shadow-lg mt-2"
+                    style={{ fontFamily: "var(--font-cairo)" }}
+                  >
+                    <WhatsAppIcon size={22} />
+                    <span>{wa.button || "Order via WhatsApp"}</span>
+                  </a>
+                )}
 
                 {/* Call to Order Button */}
                 <a

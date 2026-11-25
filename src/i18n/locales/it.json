@@ -139,5 +139,13 @@
   "backToMenu": "Torna al Menu",
   "myList": "La Mia Lista",
   "showWaiter": "Mostra questa lista al cameriere per ordinare",
-  "estimatedTotal": "Totale Stimato:"
+  "estimatedTotal": "Totale Stimato:",
+  "whatsappOrder": {
+    "button": "Ordina via WhatsApp",
+    "title": "Nuovo ordine",
+    "name": "Nome",
+    "address": "Indirizzo",
+    "note": "Nota",
+    "greeting": "Buongiorno, vorrei effettuare un ordine."
+  }
 }

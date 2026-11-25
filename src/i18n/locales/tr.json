@@ -139,5 +139,13 @@
   "backToMenu": "Menüye Dön",
   "myList": "Listem",
   "showWaiter": "Siparişinizi vermek için bu listeyi garsona gösterin",
-  "estimatedTotal": "Tahmini Toplam:"
+  "estimatedTotal": "Tahmini Toplam:",
+  "whatsappOrder": {
+    "button": "WhatsApp ile Sipariş Ver",
+    "title": "Yeni Sipariş",
+    "name": "İsim",
+    "address": "Adres",
+    "note": "Not",
+    "greeting": "Merhaba, sipariş vermek istiyorum."
+  }
 }
