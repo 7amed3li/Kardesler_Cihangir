@@ -74,7 +74,26 @@
     "payCashAtDoor": "Cash at the Door",
     "payCardAtDoor": "Card at the Door",
     "loading": "Loading...",
-    "unavailable": "Unavailable"
+    "unavailable": "Unavailable",
+    "addressTitle": "Delivery Address",
+    "addAddress": "Add Address",
+    "addressSaved": "Address saved",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your full name",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "City",
+    "districtLabel": "District",
+    "districtPlaceholder": "Select district",
+    "neighborhoodLabel": "Neighborhood",
+    "neighborhoodPlaceholder": "Your neighborhood",
+    "detailsLabel": "Address Details",
+    "detailsPlaceholder": "Street, building no, apartment, landmark…",
+    "noteLabel": "Note (optional)",
+    "notePlaceholder": "Anything to add?",
+    "fieldRequired": "This field is required",
+    "phoneInvalid": "Enter a valid phone number",
+    "addressIncomplete": "Please fill in the required fields to place your order"
   },
   "footer": {
     "quickLinks": "Quick Links",
@@ -154,7 +173,8 @@
     "greeting": "Hello, I would like to place an order.",
     "payment": "Payment",
     "payCashAtDoor": "Cash at the door",
-    "payCardAtDoor": "Card at the door"
+    "payCardAtDoor": "Card at the door",
+    "phone": "Phone"
   },
   "portions": {
     "label": "Portion",

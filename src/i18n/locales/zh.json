@@ -75,7 +75,26 @@
     "payCashAtDoor": "上门现金付款",
     "payCardAtDoor": "上门刷卡付款",
     "loading": "加载中...",
-    "unavailable": "暂无价格"
+    "unavailable": "暂无价格",
+    "addressTitle": "配送地址",
+    "addAddress": "添加地址",
+    "addressSaved": "地址已保存",
+    "nameLabel": "姓名",
+    "namePlaceholder": "您的全名",
+    "phoneLabel": "电话",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "城市",
+    "districtLabel": "区域",
+    "districtPlaceholder": "请选择区域",
+    "neighborhoodLabel": "社区",
+    "neighborhoodPlaceholder": "您所在的社区",
+    "detailsLabel": "详细地址",
+    "detailsPlaceholder": "街道、楼号、公寓、标志性建筑…",
+    "noteLabel": "备注（可选）",
+    "notePlaceholder": "还有什么要补充的？",
+    "fieldRequired": "此字段为必填项",
+    "phoneInvalid": "请输入有效的电话号码",
+    "addressIncomplete": "请填写必填字段以下单"
   },
   "footer": {
     "quickLinks": "快速链接",
@@ -154,7 +173,8 @@
     "greeting": "您好，我想点餐。",
     "payment": "付款",
     "payCashAtDoor": "上门现金付款",
-    "payCardAtDoor": "上门刷卡付款"
+    "payCardAtDoor": "上门刷卡付款",
+    "phone": "电话"
   },
   "portions": {
     "label": "份量",

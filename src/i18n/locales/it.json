@@ -75,7 +75,26 @@
     "payCashAtDoor": "Contanti alla porta",
     "payCardAtDoor": "Carta alla porta",
     "loading": "Caricamento...",
-    "unavailable": "Non disponibile"
+    "unavailable": "Non disponibile",
+    "addressTitle": "Indirizzo di consegna",
+    "addAddress": "Aggiungi indirizzo",
+    "addressSaved": "Indirizzo salvato",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Il tuo nome completo",
+    "phoneLabel": "Telefono",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "Città",
+    "districtLabel": "Distretto",
+    "districtPlaceholder": "Seleziona il distretto",
+    "neighborhoodLabel": "Quartiere",
+    "neighborhoodPlaceholder": "Il tuo quartiere",
+    "detailsLabel": "Dettagli dell'indirizzo",
+    "detailsPlaceholder": "Via, numero civico, appartamento, punto di riferimento…",
+    "noteLabel": "Nota (facoltativo)",
+    "notePlaceholder": "Qualcosa da aggiungere?",
+    "fieldRequired": "Questo campo è obbligatorio",
+    "phoneInvalid": "Inserisci un numero di telefono valido",
+    "addressIncomplete": "Compila i campi obbligatori per effettuare l'ordine"
   },
   "footer": {
     "quickLinks": "Link Rapidi",
@@ -154,7 +173,8 @@
     "greeting": "Buongiorno, vorrei effettuare un ordine.",
     "payment": "Pagamento",
     "payCashAtDoor": "Contanti alla porta",
-    "payCardAtDoor": "Carta alla porta"
+    "payCardAtDoor": "Carta alla porta",
+    "phone": "Telefono"
   },
   "portions": {
     "label": "Porzione",

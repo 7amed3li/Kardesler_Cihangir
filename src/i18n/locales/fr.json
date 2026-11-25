@@ -62,7 +62,26 @@
     "payCashAtDoor": "Espèces à la livraison",
     "payCardAtDoor": "Carte à la livraison",
     "loading": "Chargement...",
-    "unavailable": "Indisponible"
+    "unavailable": "Indisponible",
+    "addressTitle": "Adresse de livraison",
+    "addAddress": "Ajouter une adresse",
+    "addressSaved": "Adresse enregistrée",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom complet",
+    "phoneLabel": "Téléphone",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "Ville",
+    "districtLabel": "District",
+    "districtPlaceholder": "Sélectionnez le district",
+    "neighborhoodLabel": "Quartier",
+    "neighborhoodPlaceholder": "Votre quartier",
+    "detailsLabel": "Détails de l'adresse",
+    "detailsPlaceholder": "Rue, numéro du bâtiment, appartement, point de repère…",
+    "noteLabel": "Note (facultatif)",
+    "notePlaceholder": "Quelque chose à ajouter ?",
+    "fieldRequired": "Ce champ est obligatoire",
+    "phoneInvalid": "Saisissez un numéro de téléphone valide",
+    "addressIncomplete": "Veuillez remplir les champs obligatoires pour commander"
   },
   "footer": {
     "quickLinks": "Accès Rapide",
@@ -154,7 +173,8 @@
     "greeting": "Bonjour, je souhaite passer une commande.",
     "payment": "Paiement",
     "payCashAtDoor": "Espèces à la livraison",
-    "payCardAtDoor": "Carte à la livraison"
+    "payCardAtDoor": "Carte à la livraison",
+    "phone": "Téléphone"
   },
   "portions": {
     "label": "Portion",

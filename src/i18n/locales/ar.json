@@ -74,7 +74,26 @@
     "payCashAtDoor": "نقدًا عند الباب",
     "payCardAtDoor": "بالبطاقة عند الباب",
     "loading": "جارٍ التحميل...",
-    "unavailable": "غير متاح"
+    "unavailable": "غير متاح",
+    "addressTitle": "عنوان التوصيل",
+    "addAddress": "أضف عنوانًا",
+    "addressSaved": "تم حفظ العنوان",
+    "nameLabel": "الاسم",
+    "namePlaceholder": "الاسم الكامل",
+    "phoneLabel": "الهاتف",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "المدينة",
+    "districtLabel": "المنطقة",
+    "districtPlaceholder": "اختر المنطقة",
+    "neighborhoodLabel": "الحي",
+    "neighborhoodPlaceholder": "اسم الحي",
+    "detailsLabel": "تفاصيل العنوان",
+    "detailsPlaceholder": "الشارع، رقم البناء، الشقة، علامة مميزة…",
+    "noteLabel": "ملاحظة (اختياري)",
+    "notePlaceholder": "أي شيء تريد إضافته؟",
+    "fieldRequired": "هذا الحقل مطلوب",
+    "phoneInvalid": "أدخل رقم هاتف صحيحًا",
+    "addressIncomplete": "يرجى ملء الحقول المطلوبة لإتمام الطلب"
   },
   "footer": {
     "quickLinks": "الوصول السريع",
@@ -154,7 +173,8 @@
     "greeting": "مرحبًا، أودّ تقديم طلب.",
     "payment": "الدفع",
     "payCashAtDoor": "نقدًا عند الباب",
-    "payCardAtDoor": "بالبطاقة عند الباب"
+    "payCardAtDoor": "بالبطاقة عند الباب",
+    "phone": "الهاتف"
   },
   "portions": {
     "label": "الحصة",

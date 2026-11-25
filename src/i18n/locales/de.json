@@ -75,7 +75,26 @@
     "payCashAtDoor": "Bar an der Tür",
     "payCardAtDoor": "Karte an der Tür",
     "loading": "Wird geladen...",
-    "unavailable": "Nicht verfügbar"
+    "unavailable": "Nicht verfügbar",
+    "addressTitle": "Lieferadresse",
+    "addAddress": "Adresse hinzufügen",
+    "addressSaved": "Adresse gespeichert",
+    "nameLabel": "Name",
+    "namePlaceholder": "Ihr vollständiger Name",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "Stadt",
+    "districtLabel": "Stadtteil",
+    "districtPlaceholder": "Stadtteil wählen",
+    "neighborhoodLabel": "Viertel",
+    "neighborhoodPlaceholder": "Ihr Viertel",
+    "detailsLabel": "Adressdetails",
+    "detailsPlaceholder": "Straße, Hausnummer, Wohnung, Orientierungspunkt…",
+    "noteLabel": "Anmerkung (optional)",
+    "notePlaceholder": "Etwas hinzufügen?",
+    "fieldRequired": "Dieses Feld ist erforderlich",
+    "phoneInvalid": "Geben Sie eine gültige Telefonnummer ein",
+    "addressIncomplete": "Bitte füllen Sie die Pflichtfelder aus, um zu bestellen"
   },
   "footer": {
     "quickLinks": "Schnellzugriff",
@@ -154,7 +173,8 @@
     "greeting": "Hallo, ich möchte eine Bestellung aufgeben.",
     "payment": "Zahlung",
     "payCashAtDoor": "Barzahlung an der Tür",
-    "payCardAtDoor": "Kartenzahlung an der Tür"
+    "payCardAtDoor": "Kartenzahlung an der Tür",
+    "phone": "Telefon"
   },
   "portions": {
     "label": "Portion",

@@ -74,7 +74,26 @@
     "payCashAtDoor": "Kapıda Nakit",
     "payCardAtDoor": "Kapıda Kart",
     "loading": "Yükleniyor...",
-    "unavailable": "Mevcut Değil"
+    "unavailable": "Mevcut Değil",
+    "addressTitle": "Teslimat Adresi",
+    "addAddress": "Adres Ekle",
+    "addressSaved": "Adres kaydedildi",
+    "nameLabel": "İsim",
+    "namePlaceholder": "Adınız Soyadınız",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "Şehir",
+    "districtLabel": "İlçe",
+    "districtPlaceholder": "İlçe seçin",
+    "neighborhoodLabel": "Mahalle",
+    "neighborhoodPlaceholder": "Mahalleniz",
+    "detailsLabel": "Adres Detayı",
+    "detailsPlaceholder": "Sokak, bina no, daire, tarif…",
+    "noteLabel": "Not (isteğe bağlı)",
+    "notePlaceholder": "Eklemek istedikleriniz",
+    "fieldRequired": "Bu alan zorunludur",
+    "phoneInvalid": "Geçerli bir telefon numarası girin",
+    "addressIncomplete": "Sipariş için lütfen zorunlu alanları doldurun"
   },
   "footer": {
     "quickLinks": "Hızlı Bağlantılar",
@@ -154,7 +173,8 @@
     "greeting": "Merhaba, sipariş vermek istiyorum.",
     "payment": "Ödeme",
     "payCashAtDoor": "Kapıda Nakit Ödeme",
-    "payCardAtDoor": "Kapıda Kart ile Ödeme"
+    "payCardAtDoor": "Kapıda Kart ile Ödeme",
+    "phone": "Telefon"
   },
   "portions": {
     "label": "Porsiyon",

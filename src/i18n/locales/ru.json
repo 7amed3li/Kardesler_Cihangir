@@ -62,7 +62,26 @@
     "payCashAtDoor": "Наличными при получении",
     "payCardAtDoor": "Картой при получении",
     "loading": "Загрузка...",
-    "unavailable": "Недоступно"
+    "unavailable": "Недоступно",
+    "addressTitle": "Адрес доставки",
+    "addAddress": "Добавить адрес",
+    "addressSaved": "Адрес сохранён",
+    "nameLabel": "Имя",
+    "namePlaceholder": "Ваше полное имя",
+    "phoneLabel": "Телефон",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "Город",
+    "districtLabel": "Район",
+    "districtPlaceholder": "Выберите район",
+    "neighborhoodLabel": "Микрорайон",
+    "neighborhoodPlaceholder": "Название микрорайона",
+    "detailsLabel": "Детали адреса",
+    "detailsPlaceholder": "Улица, номер дома, квартира, ориентир…",
+    "noteLabel": "Примечание (необязательно)",
+    "notePlaceholder": "Что-нибудь добавить?",
+    "fieldRequired": "Это поле обязательно",
+    "phoneInvalid": "Введите действительный номер телефона",
+    "addressIncomplete": "Заполните обязательные поля, чтобы сделать заказ"
   },
   "footer": {
     "quickLinks": "Быстрые ссылки",
@@ -154,7 +173,8 @@
     "greeting": "Здравствуйте, я хочу сделать заказ.",
     "payment": "Оплата",
     "payCashAtDoor": "Наличными при получении",
-    "payCardAtDoor": "Картой при получении"
+    "payCardAtDoor": "Картой при получении",
+    "phone": "Телефон"
   },
   "portions": {
     "label": "Порция",

@@ -75,7 +75,26 @@
     "payCashAtDoor": "Efectivo en la puerta",
     "payCardAtDoor": "Tarjeta en la puerta",
     "loading": "Cargando...",
-    "unavailable": "No disponible"
+    "unavailable": "No disponible",
+    "addressTitle": "Dirección de entrega",
+    "addAddress": "Añadir dirección",
+    "addressSaved": "Dirección guardada",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "05XX XXX XX XX",
+    "cityLabel": "Ciudad",
+    "districtLabel": "Distrito",
+    "districtPlaceholder": "Selecciona el distrito",
+    "neighborhoodLabel": "Barrio",
+    "neighborhoodPlaceholder": "Tu barrio",
+    "detailsLabel": "Detalles de la dirección",
+    "detailsPlaceholder": "Calle, número, piso, referencia…",
+    "noteLabel": "Nota (opcional)",
+    "notePlaceholder": "¿Algo que añadir?",
+    "fieldRequired": "Este campo es obligatorio",
+    "phoneInvalid": "Introduce un número de teléfono válido",
+    "addressIncomplete": "Completa los campos obligatorios para hacer tu pedido"
   },
   "footer": {
     "quickLinks": "Enlaces Rápidos",
@@ -154,7 +173,8 @@
     "greeting": "Hola, quiero hacer un pedido.",
     "payment": "Pago",
     "payCashAtDoor": "Efectivo en la puerta",
-    "payCardAtDoor": "Tarjeta en la puerta"
+    "payCardAtDoor": "Tarjeta en la puerta",
+    "phone": "Teléfono"
   },
   "portions": {
     "label": "Ración",
