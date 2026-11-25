@@ -66,6 +66,7 @@ export function AppProvider({ children }) {
   // ═══════════════════════════════════════════
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isReservationOpen, setIsReservationOpen] = useState(false);
   const [cartPulse, setCartPulse] = useState(false);
   const [orderStatus, setOrderStatus] = useState("idle"); // "idle" | "sent"
   const pulseTimeoutRef = useRef(null);
@@ -321,6 +322,9 @@ export function AppProvider({ children }) {
     cart,
     isCartOpen,
     setIsCartOpen,
+    // Reservation modal
+    isReservationOpen,
+    setIsReservationOpen,
     cartCount,
     cartTotal,
     cartPulse,

@@ -3,6 +3,7 @@ import { AppProvider } from "@/context/AppContext";
 import Header from "@/components/Header";
 import SmartSplash from "@/components/SmartSplash";
 import OrderFlowWrapper from "@/components/OrderFlowWrapper";
+import ReservationModalWrapper from "@/components/ReservationModalWrapper";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleTagManager } from '@next/third-parties/google';
@@ -245,7 +246,7 @@ const globalSchemaGraph = {
       servesCuisine: ["Turkish", "Kebab", "Mediterranean", "Pide", "Lahmacun"],
       priceRange: "₺₺",
       menu: `${siteUrl}/menu`,
-      acceptsReservations: false,
+      acceptsReservations: "True",
       currenciesAccepted: "TRY",
       paymentAccepted: "Cash, Credit Card",
       aggregateRating: {
@@ -375,6 +376,7 @@ export default async function RootLayout({ children }) {
           <Footer />
           <MobileStickyCTA />
           <OrderFlowWrapper />
+          <ReservationModalWrapper />
         </AppProvider>
       </body>
     </html>
