@@ -44,6 +44,19 @@
  *  - Observation audience segments (In-Market: Restaurants, site
  *    visitors) — add in the UI; audience-by-name lookup is not reliable
  *    from scripts, so it is intentionally not attempted here.
+ *
+ * API PATCH (2026-11-25): AdsApp.newCampaignBuilder() does not exist in
+ * Google Ads Scripts (production crash: "AdsApp.newCampaignBuilder is
+ * not a function"). Campaigns + budgets are now created with the
+ * documented AdsApp.mutateAll() generic-mutate operations (budget +
+ * Search campaign in one atomic request, temporary IDs -1/-2), and the
+ * campaign is then read back through the AdsApp.campaigns() selector.
+ * Every other call was audited against the current scripts reference
+ * and aligned where the documented API differs: phone-number/snippet
+ * extension names, quoted match-type syntax for keywords and negative
+ * keywords, RSA withPath1/withPath2, add* operations executed via
+ * getResult() (they have no .build()), and
+ * campaign.addNegativeKeywordList() instead of list.applyToCampaign().
  ************************************************************/
 
 var CONFIG = {
@@ -335,11 +348,22 @@ function getOrCreateNegativeList() {
   }
   var existing = {};
   var it = list.negativeKeywords().get();
-  while (it.hasNext()) { var nk = it.next(); existing[nk.getText().toLowerCase()] = true; }
+  while (it.hasNext()) {
+    var nk = it.next();
+    // Match type is expressed by quoting the text (documented API):
+    // '"text"' = phrase. An entry left over from the first (pre-patch)
+    // run may exist as BROAD; convert it so the list ends up as planned.
+    if (nk.getMatchType && nk.getMatchType() !== 'PHRASE') {
+      warn('Negative list entry "' + nk.getText() + '" exists as ' + nk.getMatchType() + ' — removing and re-adding as PHRASE.');
+      nk.remove();
+    } else {
+      existing[nk.getText().toLowerCase()] = true;
+    }
+  }
   var added = 0;
   for (var i = 0; i < NEG_SHARED.length; i++) {
     var t = NEG_SHARED[i];
-    if (!existing[t.toLowerCase()]) { list.addNegativeKeyword(t, 'PHRASE'); added++; }
+    if (!existing[t.toLowerCase()]) { list.addNegativeKeyword('"' + t + '"'); added++; }
   }
   STATS.negListEntries += added;
   log('Negative list ' + CONFIG.NEG_LIST_NAME + ': ' + added + ' entries added (' + NEG_SHARED.length + ' in plan).');
@@ -355,7 +379,7 @@ function addCampaignNegatives(campaign, texts, label) {
   var added = 0;
   for (var i = 0; i < texts.length; i++) {
     if (!existing[texts[i].toLowerCase()]) {
-      try { campaign.createNegativeKeyword(texts[i], 'PHRASE'); added++; }
+      try { campaign.createNegativeKeyword('"' + texts[i] + '"'); added++; }
       catch (e) { warn('Campaign negative failed (' + label + ', ' + campaign.getName() + '): "' + texts[i] + '" — ' + e); }
     }
   }
@@ -364,19 +388,27 @@ function addCampaignNegatives(campaign, texts, label) {
 }
 
 function getOrCreateCallAsset() {
-  var it = AdsApp.extensions().calls().get();
+  // Documented names: the call extension is a PhoneNumber —
+  // AdsApp.extensions().phoneNumbers() / newPhoneNumberBuilder(), attached
+  // with campaign.addPhoneNumber(). (extensions().calls() and
+  // newCallBuilder() do not exist in the current scripts reference.)
+  var it = AdsApp.extensions().phoneNumbers().get();
   while (it.hasNext()) { var c = it.next(); if (c.getPhoneNumber() === CONFIG.PHONE_ASSET) return c; }
-  var call = resultOf(AdsApp.extensions().newCallBuilder()
+  var call = resultOf(AdsApp.extensions().newPhoneNumberBuilder()
     .withCountry(CONFIG.PHONE_COUNTRY)
     .withPhoneNumber(CONFIG.PHONE_ASSET)
-    .withCallOnly(false)
     .build());
-  log('Created call asset: ' + CONFIG.PHONE_ASSET + ' (verify in UI: call reporting OFF — plan §7).');
+  log('Created call (phone number) asset: ' + CONFIG.PHONE_ASSET + ' (verify in UI: call reporting OFF — plan §7).');
   return call;
 }
 function getOrCreateSitelink(text, url) {
   var it = AdsApp.extensions().sitelinks().get();
-  while (it.hasNext()) { var s = it.next(); if (s.getLinkText() === text && s.getFinalUrl() === url) return s; }
+  while (it.hasNext()) {
+    var s = it.next();
+    var fu = null;
+    try { fu = s.urls().getFinalUrl(); } catch (e) {} // Sitelink has no getFinalUrl(); it lives on urls()
+    if (s.getLinkText() === text && fu === url) return s;
+  }
   return resultOf(AdsApp.extensions().newSitelinkBuilder().withLinkText(text).withFinalUrl(url).build());
 }
 function getOrCreateCallout(text) {
@@ -386,16 +418,17 @@ function getOrCreateCallout(text) {
 }
 function getOrCreateSnippet(values) {
   var key = values.join('|');
-  var it = AdsApp.extensions().structuredSnippets().get();
+  var it = AdsApp.extensions().snippets().get();
   while (it.hasNext()) { var s = it.next(); if (s.getValues().join('|') === key) return s; }
-  var b = AdsApp.extensions().newStructuredSnippetBuilder().withHeader('Services');
-  for (var i = 0; i < values.length; i++) b.addValue(values[i]);
-  return resultOf(b.build());
+  // Documented builder: newSnippetBuilder().withHeader(...).withValues([...])
+  // (no extensions().structuredSnippets(), no newStructuredSnippetBuilder(),
+  // no addValue()).
+  return resultOf(AdsApp.extensions().newSnippetBuilder().withHeader('Services').withValues(values).build());
 }
 
 function attachAssets(campaign, lang) {
   var a = ASSETS[lang];
-  try { campaign.addCall(getOrCreateCallAsset()); STATS.assets++; } catch (e) { warn('Call asset attach failed on ' + campaign.getName() + ': ' + e); }
+  try { campaign.addPhoneNumber(getOrCreateCallAsset()); STATS.assets++; } catch (e) { warn('Phone number (call) attach failed on ' + campaign.getName() + ': ' + e); }
   for (var i = 0; i < a.sitelinks.length; i++) {
     try { campaign.addSitelink(getOrCreateSitelink(a.sitelinks[i][0], CONFIG.SITE + a.sitelinks[i][1])); STATS.assets++; }
     catch (e) { warn('Sitelink "' + a.sitelinks[i][0] + '" failed on ' + campaign.getName() + ': ' + e); }
@@ -404,8 +437,8 @@ function attachAssets(campaign, lang) {
     try { campaign.addCallout(getOrCreateCallout(a.callouts[j])); STATS.assets++; }
     catch (e) { warn('Callout "' + a.callouts[j] + '" failed on ' + campaign.getName() + ': ' + e); }
   }
-  try { campaign.addStructuredSnippet(getOrCreateSnippet(a.snippets)); STATS.assets++; }
-  catch (e) { warn('Structured snippet failed on ' + campaign.getName() + ': ' + e); }
+  try { campaign.addSnippet(getOrCreateSnippet(a.snippets)); STATS.assets++; }
+  catch (e) { warn('Snippet failed on ' + campaign.getName() + ': ' + e); }
   // LOCATION ASSET: cannot be linked from a script — link the GBP profile
   // in the UI and confirm status "Approved" before spending (plan §7/§12).
 }
@@ -414,7 +447,9 @@ function addGeoAndSchedule(campaign) {
   var hasProx = false;
   try { hasProx = campaign.targeting().targetedProximities().get().totalNumEntities() > 0; } catch (e) {}
   if (!hasProx) {
-    resultOf(campaign.addProximity(CONFIG.PIN_LAT, CONFIG.PIN_LNG, CONFIG.RADIUS_KM, 'KILOMETERS').build());
+    // addProximity returns a TargetedProximityOperation — it executes via
+    // getResult() (resultOf); operations have no .build() method.
+    resultOf(campaign.addProximity(CONFIG.PIN_LAT, CONFIG.PIN_LNG, CONFIG.RADIUS_KM, 'KILOMETERS'));
     log(campaign.getName() + ': proximity ' + CONFIG.RADIUS_KM + ' km @ Cihangir pin added. VERIFY in UI: Location options = Presence only.');
   }
   var existing = 0;
@@ -424,8 +459,8 @@ function addGeoAndSchedule(campaign) {
     // day: 09:00–24:00 and 00:00–02:00). There is no breakfast-only
     // window — breakfast campaigns were cancelled (owner, 2026-11-25).
     for (var d = 0; d < DAYS.length; d++) {
-      resultOf(campaign.addAdSchedule(DAYS[d], 9, 0, 24, 0, 1.0).build());
-      resultOf(campaign.addAdSchedule(DAYS[d], 0, 0, 2, 0, 1.0).build());
+      resultOf(campaign.addAdSchedule(DAYS[d], 9, 0, 24, 0, 1.0));
+      resultOf(campaign.addAdSchedule(DAYS[d], 0, 0, 2, 0, 1.0));
       STATS.schedules += 2;
     }
     log(campaign.getName() + ': ad schedule 09:00–02:00 (all days) added.');
@@ -467,8 +502,8 @@ function buildAds(adGroup, copy, groupLabel) {
     var b = adGroup.newAd().responsiveSearchAdBuilder().withFinalUrl(url);
     for (var i = 0; i < set.h.length; i++) b.addHeadline(set.h[i]);
     for (var j = 0; j < set.d.length; j++) b.addDescription(set.d[j]);
-    if (copy.p1) b.setPath1(copy.p1);
-    if (copy.p2) b.setPath2(copy.p2);
+    if (copy.p1) b.withPath1(copy.p1);
+    if (copy.p2) b.withPath2(copy.p2);
     resultOf(b.build());
     STATS.ads++;
   }
@@ -484,11 +519,58 @@ function buildKeywords(adGroup, list, groupLabel) {
     var text = list[i][0], match = list[i][1] === 'E' ? 'EXACT' : 'PHRASE';
     if (existing[text.toLowerCase() + '|' + match]) continue;
     var formatted = list[i][1] === 'E' ? '[' + text + ']' : '"' + text + '"';
-    resultOf(adGroup.createKeyword(formatted));
+    // AdGroup.createKeyword() does not exist in the current scripts
+    // reference; the documented path is newKeywordBuilder().withText(),
+    // which takes the same quoted match-type syntax already in `formatted`.
+    resultOf(adGroup.newKeywordBuilder().withText(formatted).build());
     added++;
   }
   STATS.keywords += added;
   log(groupLabel + ': +' + added + ' keywords (' + list.length + ' in plan).');
+}
+
+/* Campaign creation — the documented replacement for the nonexistent
+ * AdsApp.newCampaignBuilder(): generic mutate (AdsApp.mutateAll) with a
+ * CampaignBudget create + a Campaign create in ONE atomic request,
+ * linked by temporary IDs (-1 = budget, -2 = campaign), per the Google
+ * Ads Scripts "Mutate" guide and the Google Ads API "Create campaigns"
+ * field reference. Name, daily budget, PAUSED status, Maximize
+ * Conversions (embedded bidding-strategy field) and network settings
+ * (Google Search only, Search partners OFF, Display OFF) are all set in
+ * the create itself. containsEuPoliticalAdvertising is a required field
+ * on campaign create in the current API. */
+function createCampaignViaMutate(campaignName) {
+  var customerId = AdsApp.currentAccount().getCustomerId().replace(/[^0-9]/g, '');
+  var budgetResourceName = 'customers/' + customerId + '/campaignBudgets/-1';
+  var campaignResourceName = 'customers/' + customerId + '/campaigns/-2';
+  var operations = [
+    { campaignBudgetOperation: { create: {
+        resourceName: budgetResourceName,
+        name: campaignName + ' Budget',
+        amountMicros: Math.round(CONFIG.BUDGETS[campaignName] * 1000000),
+        deliveryMethod: 'STANDARD',
+        explicitlyShared: false } } },
+    { campaignOperation: { create: {
+        resourceName: campaignResourceName,
+        name: campaignName,
+        advertisingChannelType: 'SEARCH',
+        status: 'PAUSED',
+        campaignBudget: budgetResourceName,
+        maximizeConversions: {},
+        containsEuPoliticalAdvertising: 'DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING',
+        networkSettings: {
+          targetGoogleSearch: true,
+          targetSearchNetwork: false,
+          targetPartnerSearchNetwork: false,
+          targetContentNetwork: false } } } }
+  ];
+  var results = AdsApp.mutateAll(operations, { partialFailure: false });
+  for (var i = 0; i < results.length; i++) {
+    if (!results[i].isSuccessful()) {
+      throw new Error('Mutate create failed for ' + campaignName + ' (operation ' + i + '): ' + results[i].getErrorMessages().join(' | '));
+    }
+  }
+  return results[1].getResourceName();
 }
 
 function buildCampaign(campaignName, negList) {
@@ -496,35 +578,30 @@ function buildCampaign(campaignName, negList) {
   var family = parts[1], lang = parts[2];
   var campaign = findCampaignByName(campaignName);
   if (!campaign) {
-    var builder = AdsApp.newCampaignBuilder()
-      .withName(campaignName)
-      .withBudget(CONFIG.BUDGETS[campaignName])
-      .withStatus('PAUSED');
-    campaign = resultOf(builder.build());
+    createCampaignViaMutate(campaignName);
+    // Read the created campaign back through the normal selector so the
+    // rest of the build uses the standard AdsApp.Campaign object.
+    for (var attempt = 0; attempt < 5 && !campaign; attempt++) {
+      campaign = findCampaignByName(campaignName);
+    }
+    if (!campaign) throw new Error('Campaign ' + campaignName + ' was created via mutate but could not be read back by name.');
     STATS.campaigns++;
-    log('Created campaign (PAUSED): ' + campaignName + ' — budget ₺' + CONFIG.BUDGETS[campaignName] + '/day.');
-    // Bidding: Maximize Conversions, no target (plan §8). Best-effort —
-    // if the strategy call fails, set it in the UI before enabling.
+    log('Created campaign (PAUSED): ' + campaignName + ' — budget ₺' + CONFIG.BUDGETS[campaignName] + '/day, Maximize Conversions, networks = Google Search only (all set at creation via mutate). VERIFY in UI: network settings + Presence-only location options.');
+    // Bidding was set at creation (maximizeConversions in the mutate op);
+    // this documented call re-affirms it. Best-effort — if it fails, the
+    // creation-time setting stands; verify in the UI before enabling.
     try { campaign.bidding().setStrategy('MAXIMIZE_CONVERSIONS'); log(campaignName + ': bidding = Maximize Conversions.'); }
-    catch (e) { warn(campaignName + ': could not set Maximize Conversions from script (' + e + ') — SET MANUALLY in UI before enabling.'); }
-    // Networks: Google Search only, Search partners OFF, Display OFF (plan §2).
-    try {
-      var ns = campaign.networkSettings();
-      if (ns && ns.setTargetGoogleSearch) {
-        ns.setTargetGoogleSearch(true);
-        if (ns.setTargetSearchNetwork) ns.setTargetSearchNetwork(false);
-        if (ns.setTargetPartnerSearchNetwork) ns.setTargetPartnerSearchNetwork(false);
-        if (ns.setTargetContentNetwork) ns.setTargetContentNetwork(false);
-        log(campaignName + ': networks set to Google Search only.');
-      } else { warn(campaignName + ': network settings not scriptable here — VERIFY in UI: Google Search only, partners OFF, Display OFF.'); }
-    } catch (e) { warn(campaignName + ': network settings failed (' + e + ') — VERIFY in UI: Google Search only, partners OFF, Display OFF.'); }
+    catch (e) { warn(campaignName + ': could not re-affirm Maximize Conversions from script (' + e + ') — it was set at creation; VERIFY in UI before enabling.'); }
   } else {
-    log('Campaign exists: ' + campaignName + ' (status ' + campaign.getStatus() + ') — filling gaps only.');
-    if (campaign.getStatus() !== 'PAUSED') warn(campaignName + ' is NOT paused — this script never enables, but check before continuing.');
+    // AdsApp.Campaign has no getStatus(); derive it from the is* methods.
+    var statusDesc = campaign.isPaused() ? 'PAUSED' : (campaign.isEnabled() ? 'ENABLED' : (campaign.isRemoved() ? 'REMOVED' : 'UNKNOWN'));
+    log('Campaign exists: ' + campaignName + ' (status ' + statusDesc + ') — filling gaps only.');
+    if (!campaign.isPaused()) warn(campaignName + ' is NOT paused — this script never enables, but check before continuing.');
   }
 
-  // Shared negative list on every campaign.
-  try { negList.applyToCampaign(campaign); } catch (e) { warn('Applying ' + CONFIG.NEG_LIST_NAME + ' to ' + campaignName + ' failed: ' + e); }
+  // Shared negative list on every campaign. (NegativeKeywordList has no
+  // applyToCampaign(); the documented direction is Campaign.addNegativeKeywordList().)
+  try { campaign.addNegativeKeywordList(negList); } catch (e) { warn('Applying ' + CONFIG.NEG_LIST_NAME + ' to ' + campaignName + ' failed: ' + e); }
   // Family-specific negatives (plan §6).
   if (family === 'G3') addCampaignNegatives(campaign, NEG_G3_ONLY[lang], 'G3-reservation');
   if (family === 'G2') addCampaignNegatives(campaign, NEG_G2_ONLY[lang], 'G2-order-intent');
