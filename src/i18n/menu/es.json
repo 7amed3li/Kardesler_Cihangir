@@ -302,17 +302,9 @@
       "name": "Özel Lahmacun",
       "desc": "Lahmacun especial con más carne pura picada que el normal, preparado totalmente sin cebolla."
     },
-    "semiz_otu": {
-      "name": "Semiz Otu Mezesi",
-      "desc": "Mezze Verdolaga y Yogur — Verdolaga fresca con yogur al ajo."
-    },
     "kuru_cacik": {
       "name": "Kuru Cacık",
       "desc": "Salsa Tzatziki Turca — Yogurt espeso con pepino, ajo y menta."
-    },
-    "mutebbel": {
-      "name": "Mütebbel",
-      "desc": "Salsa Mutabbal Berenjena — Berenjena asada con tahini y yogur."
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
@@ -321,10 +313,6 @@
     "havuc_tarator": {
       "name": "Havuç Taratör",
       "desc": "Salsa Zanahoria & Nueces — Zanahorias salteadas con yogur al ajo y nueces."
-    },
-    "koz_biberli_yogurt": {
-      "name": "Köz Biberli Yoğurt",
-      "desc": "Salsa Pimiento y Yogur — Pimientos rojos asados con yogur."
     },
     "babagannush": {
       "name": "Babagannuş",
@@ -557,10 +545,6 @@
     "simitli_yumurta": {
       "name": "Simitli Yumurta",
       "desc": "Simit con Huevo y Queso — Anillo de pan crujiente con sésamo (simit) cocinado a la sartén con queso kashar fundido y huevo fresco a la mantequilla."
-    },
-    "kuru_dolma": {
-      "name": "Kuru Dolma",
-      "desc": "Dolma de Verduras Secas — Berenjenas y pimientos secados al sol rellenos de arroz aromático especiado, zumaque y melaza de granada, cocinados a fuego lento en aceite de oliva."
     }
   }
 }

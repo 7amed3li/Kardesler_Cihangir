@@ -302,17 +302,9 @@
       "name": "Özel Lahmacun",
       "desc": "Особый лахмаджун, в котором больше чистого мясного фарша, чем в обычном, и абсолютно нет лука."
     },
-    "semiz_otu": {
-      "name": "Semiz Otu Mezesi",
-      "desc": "Semiz Otu — Портулак (семизоту)"
-    },
     "kuru_cacik": {
       "name": "Kuru Cacık",
       "desc": "Kuru Cacık — Густой джаджик"
-    },
-    "mutebbel": {
-      "name": "Mütebbel",
-      "desc": "Mütebbel — Мутабаль (баклажаны с тахини)"
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
@@ -321,10 +313,6 @@
     "havuc_tarator": {
       "name": "Havuç Taratör",
       "desc": "Havuç Taratör — Морковный таратор (с йогуртом)"
-    },
-    "koz_biberli_yogurt": {
-      "name": "Köz Biberli Yoğurt",
-      "desc": "Köz Biberli Yoğurt — Йогурт с печеным перцем"
     },
     "babagannush": {
       "name": "Babagannuş",
@@ -557,10 +545,6 @@
     "simitli_yumurta": {
       "name": "Simitli Yumurta",
       "desc": "Симит с яйцом и сыром — Свежеиспеченный стамбульский бублик с кунжутом, внутри которого запекаются яйцо и расплавленный сыр кашар на сливочном масле."
-    },
-    "kuru_dolma": {
-      "name": "Kuru Dolma",
-      "desc": "Куру долма — Вяленые на солнце баклажаны и сладкий перец из Газиантепа, фаршированные пряным рисом с зеленью, сумахом и гранатовым соусом, томленые в оливковом масле."
     }
   }
 }

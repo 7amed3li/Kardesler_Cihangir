@@ -302,17 +302,9 @@
       "name": "Özel Lahmacun",
       "desc": "Special Lahmacun with a larger amount of pure minced meat than our regular Lahmacun, prepared completely without onions."
     },
-    "semiz_otu": {
-      "name": "Semiz Otu Mezesi",
-      "desc": "Purslane Yogurt Meze — Fresh purslane leaves mixed with garlic strained yogurt & olive oil."
-    },
     "kuru_cacik": {
       "name": "Kuru Cacık",
       "desc": "Strained Yogurt Tzatziki — Thick strained yogurt with diced cucumber, garlic, mint & olive oil."
-    },
-    "mutebbel": {
-      "name": "Mütebbel",
-      "desc": "Mutabbal Eggplant Dip — Smoky roasted eggplant blended with tahini, garlic & thick yogurt."
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
@@ -321,10 +313,6 @@
     "havuc_tarator": {
       "name": "Havuç Taratör",
       "desc": "Carrot Tarator Dip — Sautéed sweet carrots with garlic yogurt & roasted walnuts."
-    },
-    "koz_biberli_yogurt": {
-      "name": "Köz Biberli Yoğurt",
-      "desc": "Roasted Red Pepper Yogurt — Charcoal-roasted sweet red capia peppers with strained yogurt."
     },
     "babagannush": {
       "name": "Babagannuş",
@@ -557,10 +545,6 @@
     "simitli_yumurta": {
       "name": "Simitli Yumurta",
       "desc": "Simit with Egg — Freshly baked crispy sesame simit ring centered with melted kashar cheese and farm eggs sizzled in rich butter."
-    },
-    "kuru_dolma": {
-      "name": "Kuru Dolma",
-      "desc": "Stuffed Dried Vegetables — Sun-dried eggplants and peppers from Gaziantep stuffed with spiced aromatic rice, sumac, and pomegranate molasses, simmered gently in olive oil."
     }
   }
 }

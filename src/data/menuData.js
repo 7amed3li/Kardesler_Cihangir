@@ -512,13 +512,6 @@ export const menuData = [
         tags: ["vegetarian"],
       },
       {
-        id: "kuru_dolma",
-        price: 180.00,
-        name: { en: "Stuffed Dried Vegetables" },
-        image: "/images/kuru_dolma.webp",
-        tags: ["vegetarian"],
-      },
-      {
         id: "vejetaryen_vegan_tabagi",
         price: 600.00,
         image: "/images/vejetaryen_vegan_tabagi.webp",
@@ -526,21 +519,9 @@ export const menuData = [
         trending: true,
       },
       {
-        id: "semiz_otu",
-        price: 180.00,
-        image: "/images/semiz_otu.webp",
-        tags: ["vegetarian"],
-      },
-      {
         id: "kuru_cacik",
         price: 180.00,
         image: "/images/kuru_cacik.webp",
-        tags: ["vegetarian"],
-      },
-      {
-        id: "mutebbel",
-        price: 180.00,
-        image: "/images/mutebbel.webp",
         tags: ["vegetarian"],
       },
       {
@@ -553,12 +534,6 @@ export const menuData = [
         id: "havuc_tarator",
         price: 180.00,
         image: "/images/havuc_tarator.webp",
-        tags: ["vegetarian"],
-      },
-      {
-        id: "koz_biberli_yogurt",
-        price: 180.00,
-        image: "/images/koz_biberli.webp",
         tags: ["vegetarian"],
       },
       {

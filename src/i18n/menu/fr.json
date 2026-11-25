@@ -302,17 +302,9 @@
       "name": "Özel Lahmacun",
       "desc": "Lahmacun spécial contenant plus de viande pure hachée que le classique, préparé totalement sans oignons."
     },
-    "semiz_otu": {
-      "name": "Semiz Otu Mezesi",
-      "desc": "Semiz Otu — Pourpier"
-    },
     "kuru_cacik": {
       "name": "Kuru Cacık",
       "desc": "Kuru Cacık — Tzatziki sec"
-    },
-    "mutebbel": {
-      "name": "Mütebbel",
-      "desc": "Mütebbel — Aubergine au tahini"
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
@@ -321,10 +313,6 @@
     "havuc_tarator": {
       "name": "Havuç Taratör",
       "desc": "Havuç Taratör — Carottes au yaourt"
-    },
-    "koz_biberli_yogurt": {
-      "name": "Köz Biberli Yoğurt",
-      "desc": "Köz Biberli Yoğurt — Yaourt au poivron grillé"
     },
     "babagannush": {
       "name": "Babagannuş",
@@ -557,10 +545,6 @@
     "simitli_yumurta": {
       "name": "Simitli Yumurta",
       "desc": "Simit aux Œufs et Fromage — Anneau de pain au sésame croustillant (simit) garni de fromage kashar fondu et d'œufs frais mijotés au beurre."
-    },
-    "kuru_dolma": {
-      "name": "Kuru Dolma",
-      "desc": "Légumes Séchés Farcis — Aubergines et poivrons séchés au soleil farcis de riz aromatisé aux herbes, sumac et mélasse de grenade, mijotés délicatement à l'huile d'olive."
     }
   }
 }

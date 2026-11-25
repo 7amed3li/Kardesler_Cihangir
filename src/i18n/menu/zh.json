@@ -462,17 +462,9 @@
       "name": "Özel Lahmacun",
       "desc": "比普通Lahmacun拥有更多纯鲜肉馅、完全不加洋葱的特制升级版，薄脆多汁。"
     },
-    "semiz_otu": {
-      "name": "Semiz Otu Mezesi",
-      "desc": "新鲜嫩绿马齿苋叶混合蒜香纯浓缩酸奶与特级初榨橄榄油。"
-    },
     "kuru_cacik": {
       "name": "Kuru Cacık",
       "desc": "浓郁过滤干酸奶配清脆黄瓜丁、初榨橄榄油、大蒜与干薄荷碎。"
-    },
-    "mutebbel": {
-      "name": "Mütebbel",
-      "desc": "炭烤烟熏茄子与白芝麻酱、纯酸奶、大蒜完美融合的绵密经典冷盘。"
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
@@ -481,10 +473,6 @@
     "havuc_tarator": {
       "name": "Havuç Taratör",
       "desc": "橄榄油轻炒甜胡萝卜丝，配香浓蒜味酸奶与香脆烤核桃仁碎。"
-    },
-    "koz_biberli_yogurt": {
-      "name": "Köz Biberli Yoğurt",
-      "desc": "木炭火烘烤剥皮的甜味红角椒（Kapya）浸在冰凉浓缩酸奶中。"
     },
     "babagannush": {
       "name": "Babagannuş",
@@ -629,10 +617,6 @@
     "simitli_yumurta": {
       "name": "芝麻圈煎蛋 (Simitli Yumurta)",
       "desc": "芝麻圈芝士煎蛋 — 酥脆的现烤伊斯坦布尔芝麻圈（Simit），中央注入融化的卡夏尔奶酪与黄油煎蛋，麦香与奶香融合的热门早餐。"
-    },
-    "kuru_dolma": {
-      "name": "风干茄子甜椒包饭 (Kuru Dolma)",
-      "desc": "干茄子彩椒风味填饭 — 经日光自然晾晒的风干茄子与甜椒，填入特制香草香料香米、漆树果（Sumac）与石榴浓汁，以特级初榨橄榄油慢火煨制。"
     }
   }
 }

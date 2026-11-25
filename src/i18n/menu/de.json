@@ -302,17 +302,9 @@
       "name": "Özel Lahmacun",
       "desc": "Spezieller Lahmacun mit mehr reinem Hackfleisch als der klassische Lahmacun, komplett ohne Zwiebeln."
     },
-    "semiz_otu": {
-      "name": "Semiz Otu Mezesi",
-      "desc": "Portulak-Joghurt Meze — Frischer Portulak mit Knoblauchjoghurt."
-    },
     "kuru_cacik": {
       "name": "Kuru Cacık",
       "desc": "Cacik Joghurt-Dip — Dicker Joghurt mit Gurken, Knoblauch & Minze."
-    },
-    "mutebbel": {
-      "name": "Mütebbel",
-      "desc": "Müttabel Auberginen-Dip — Geröstete Aubergine mit Tahini & Joghurt."
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
@@ -321,10 +313,6 @@
     "havuc_tarator": {
       "name": "Havuç Taratör",
       "desc": "Karotten-Tarator Dip — Süße Karotten mit Knoblauchjoghurt & Walnüssen."
-    },
-    "koz_biberli_yogurt": {
-      "name": "Köz Biberli Yoğurt",
-      "desc": "Paprika-Joghurt Dip — Gegrillte rote Paprika mit Joghurt."
     },
     "babagannush": {
       "name": "Babagannuş",
@@ -557,10 +545,6 @@
     "simitli_yumurta": {
       "name": "Simitli Yumurta",
       "desc": "Simit mit Spiegelei — Knuspriger Sesamkringel (Simit) gefüllt mit geschmolzenem Kaschar-Käse und Spiegelei, zischend in feiner Butter serviert."
-    },
-    "kuru_dolma": {
-      "name": "Kuru Dolma",
-      "desc": "Gefülltes getrocknetes Gemüse — Sonnengereifte, getrocknete Auberginen und Paprika aus Gaziantep, gefüllt mit gewürztem Kräuterreis, Sumach und Granatapfelsirup, sanft in Olivenöl geschmort."
     }
   }
 }

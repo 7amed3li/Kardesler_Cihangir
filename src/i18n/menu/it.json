@@ -302,17 +302,9 @@
       "name": "Özel Lahmacun",
       "desc": "Lahmacun speciale con una quantità di pura carne macinata maggiore rispetto a quello normale, preparato rigorosamente senza cipolle."
     },
-    "semiz_otu": {
-      "name": "Semiz Otu Mezesi",
-      "desc": "Meze Portulaca e Yogurt — Portulaca fresca con yogurt all'aglio."
-    },
     "kuru_cacik": {
       "name": "Kuru Cacık",
       "desc": "Salsa Tzatziki Turca — Yogurt denso con cetrioli, aglio e menta."
-    },
-    "mutebbel": {
-      "name": "Mütebbel",
-      "desc": "Salsa Mutabbal Melanzane — Melanzana arrostita con tahina e yogurt."
     },
     "otlu_yogurtlu_meze": {
       "name": "Otlu Yoğurtlu Meze",
@@ -321,10 +313,6 @@
     "havuc_tarator": {
       "name": "Havuç Taratör",
       "desc": "Salsa Carote & Noci — Carote saltate con yogurt all'aglio e noci."
-    },
-    "koz_biberli_yogurt": {
-      "name": "Köz Biberli Yoğurt",
-      "desc": "Salsa Peperoni e Yogurt — Peperoni rossi grigliati con yogurt."
     },
     "babagannush": {
       "name": "Babagannuş",
@@ -557,10 +545,6 @@
     "simitli_yumurta": {
       "name": "Simitli Yumurta",
       "desc": "Simit con Uovo e Formaggio — Ciambella croccante al sesamo (simit) con formaggio kashar fuso e uovo fresco cotto al burro in padella."
-    },
-    "kuru_dolma": {
-      "name": "Kuru Dolma",
-      "desc": "Verdure Essiccate Ripiene — Melanzane e peperoni essiccati al sole farciti con riso aromatico speziato, sommacco e melassa di melagrana, stufati dolcemente in olio d'oliva."
     }
   }
 }

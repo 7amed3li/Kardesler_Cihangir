@@ -2236,33 +2236,6 @@
     "allergens": []
   },
   {
-    "id": "kuru_dolma",
-    "name": {
-      "tr": "Kuru Dolma",
-      "en": "Kuru Dolma",
-      "ar": "Kuru Dolma"
-    },
-    "description": {
-      "tr": "Güneşte kurutulmuş Gaziantep patlıcan ve biberlerinin; sumaklı, narekşili ve baharatlı pirinç harcıyla doldurulup zeytinyağında ağır ağır pişirildiği enfes meze.",
-      "en": "Stuffed Dried Vegetables — Sun-dried eggplants and peppers from Gaziantep stuffed with spiced aromatic rice, sumac, and pomegranate molasses, simmered gently in olive oil.",
-      "ar": "محشي الخضروات المجففة (كورو دولما) — باذنجان وفلفل مجفف تحت أشعة الشمس على طريقة غازي عنتاب، محشو بالأرز المتبل، السماق، ودبس الرمان، ومطهو بزيت الزيتون البكر."
-    },
-    "price": 180,
-    "currency": "TRY",
-    "category": "meze",
-    "categoryName": {
-      "tr": "Meze",
-      "en": "Mezes & Appetizers",
-      "ar": "المقبلات والمازة"
-    },
-    "vegetarian": true,
-    "vegan": false,
-    "spicy": false,
-    "signature": false,
-    "trending": false,
-    "allergens": []
-  },
-  {
     "id": "vejetaryen_vegan_tabagi",
     "name": {
       "tr": "Vejetaryen & Vegan Tabağı",
@@ -2290,33 +2263,6 @@
     "allergens": []
   },
   {
-    "id": "semiz_otu",
-    "name": {
-      "tr": "Semiz Otu Mezesi",
-      "en": "Semiz Otu Mezesi",
-      "ar": "Semiz Otu Mezesi"
-    },
-    "description": {
-      "tr": "Taze semizotu ve süzme yoğurtlu zeytinyağlı meze.",
-      "en": "Purslane Yogurt Meze — Fresh purslane leaves mixed with garlic strained yogurt & olive oil.",
-      "ar": "مقبلات الرجلة بالزبادي — أوراق الرجلة الطازجة المخلوطة باللبن المصفى والثوم وزيت الزيتون"
-    },
-    "price": 180,
-    "currency": "TRY",
-    "category": "meze",
-    "categoryName": {
-      "tr": "Meze",
-      "en": "Mezes & Appetizers",
-      "ar": "المقبلات والمازة"
-    },
-    "vegetarian": true,
-    "vegan": false,
-    "spicy": false,
-    "signature": false,
-    "trending": false,
-    "allergens": []
-  },
-  {
     "id": "kuru_cacik",
     "name": {
       "tr": "Kuru Cacık",
@@ -2327,33 +2273,6 @@
       "tr": "Süzme yoğurt, doğranmış salatalık, sarımsak ve zeytinyağlı nane.",
       "en": "Strained Yogurt Tzatziki — Thick strained yogurt with diced cucumber, garlic, mint & olive oil.",
       "ar": "جاجيك جاف بالزبادي — لبن مصفى كثيف مع قطع الخيار، الثوم والنعناع وزيت الزيتون"
-    },
-    "price": 180,
-    "currency": "TRY",
-    "category": "meze",
-    "categoryName": {
-      "tr": "Meze",
-      "en": "Mezes & Appetizers",
-      "ar": "المقبلات والمازة"
-    },
-    "vegetarian": true,
-    "vegan": false,
-    "spicy": false,
-    "signature": false,
-    "trending": false,
-    "allergens": []
-  },
-  {
-    "id": "mutebbel",
-    "name": {
-      "tr": "Mütebbel",
-      "en": "Mütebbel",
-      "ar": "Mütebbel"
-    },
-    "description": {
-      "tr": "Közlenmiş patlıcan, tahin, süzme yoğurt ve sarımsaklı Ortadoğu mezesi.",
-      "en": "Mutabbal Eggplant Dip — Smoky roasted eggplant blended with tahini, garlic & thick yogurt.",
-      "ar": "متبل باذنجان بالتحينة — باذنجان مشوي على الفحم مع الطحينة، الثوم واللبن"
     },
     "price": 180,
     "currency": "TRY",
@@ -2408,33 +2327,6 @@
       "tr": "Sotelenmiş tatlı havuç, sarımsaklı yoğurt ve cevizli soğuk meze.",
       "en": "Carrot Tarator Dip — Sautéed sweet carrots with garlic yogurt & roasted walnuts.",
       "ar": "تاراتور الجزر بالعين جمل — جزر حلو محمر مع زبادي الثوم وجوز عين الجمل"
-    },
-    "price": 180,
-    "currency": "TRY",
-    "category": "meze",
-    "categoryName": {
-      "tr": "Meze",
-      "en": "Mezes & Appetizers",
-      "ar": "المقبلات والمازة"
-    },
-    "vegetarian": true,
-    "vegan": false,
-    "spicy": false,
-    "signature": false,
-    "trending": false,
-    "allergens": []
-  },
-  {
-    "id": "koz_biberli_yogurt",
-    "name": {
-      "tr": "Köz Biberli Yoğurt",
-      "en": "Köz Biberli Yoğurt",
-      "ar": "Köz Biberli Yoğurt"
-    },
-    "description": {
-      "tr": "Kömürde közlenmiş kırmızı kapya biber ve süzme yoğurt.",
-      "en": "Roasted Red Pepper Yogurt — Charcoal-roasted sweet red capia peppers with strained yogurt.",
-      "ar": "زبادي بالفلفل الاحمر المشوي — فلفل أحمر حلو مشوي على الفحم مع اللبن المصفى"
     },
     "price": 180,
     "currency": "TRY",

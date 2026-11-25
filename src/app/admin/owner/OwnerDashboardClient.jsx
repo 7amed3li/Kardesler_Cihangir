@@ -9,7 +9,6 @@ const recentMenuItemIds = new Set([
   "gozleme_cesitleri",
   "pastirmali_yumurta",
   "simitli_yumurta",
-  "kuru_dolma",
 ]);
 
 export default function OwnerDashboardClient({ items }) {
