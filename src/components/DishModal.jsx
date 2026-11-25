@@ -34,16 +34,11 @@ function CartCounter({ item, compact = false, portion = "full" }) {
       <button
         onClick={handleAdd}
         aria-label="Add to cart"
-        className={`flex items-center justify-center gap-1.5 rounded-full bg-copper/90 hover:bg-copper text-cream transition-all duration-200 hover:scale-105 active:scale-95 ${
-          compact ? "w-8 h-8" : "px-4 py-2.5 w-full"
+        className={`flex items-center justify-center bg-copper/90 hover:bg-copper text-cream transition-all duration-200 hover:scale-105 active:scale-95 ${
+          compact ? "w-8 h-8 rounded-full" : "w-11 shrink-0 self-stretch rounded-md"
         }`}
       >
         <Plus size={compact ? 16 : 20} weight="bold" />
-        {!compact && (
-          <span className="text-sm font-bold tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
-            {t?.addToCart || t?.order || "Add to Order"}
-          </span>
-        )}
       </button>
     );
   }
@@ -51,7 +46,7 @@ function CartCounter({ item, compact = false, portion = "full" }) {
   return (
     <div
       className={`flex items-center justify-between rounded-full border border-teal-dim/40 bg-ink/80 backdrop-blur-sm ${
-        compact ? "gap-1 px-1 py-0.5" : "gap-2 px-3 py-2 w-full"
+        compact ? "gap-1 px-1 py-0.5" : "gap-2 px-3 py-2 shrink-0 self-center"
       }`}
       onClick={(e) => e.stopPropagation()}
     >
@@ -261,15 +256,12 @@ export default function DishModal({
                 </div>
               )}
 
-              {/* Footer row — cart action beside Close (owner layout, 2026-11-25):
-                  the add (+) button / quantity stepper shares one row with
-                  the Close button instead of sitting on its own row. */}
+              {/* Footer row (owner layout, 2026-11-26): ONE row — Close
+                  takes flex-1 (most of the width) and the cart control sits
+                  in a fixed slot beside it: a square (+) button when the
+                  dish is not in the cart, the − N + stepper when it is.
+                  There is no separate add-button row in the modal body. */}
               <div className="mt-2 flex items-stretch gap-2">
-                {!hideCart && item && (
-                  <div className="flex-1 flex">
-                    <CartCounter item={item} compact={false} portion={safePortion} />
-                  </div>
-                )}
                 <button
                   onClick={() => setIsOpen(false)}
                   aria-label="Close modal"
@@ -277,6 +269,9 @@ export default function DishModal({
                 >
                   {t?.close || "Close"}
                 </button>
+                {!hideCart && item && (
+                  <CartCounter item={item} compact={false} portion={safePortion} />
+                )}
               </div>
             </div>
           </div>
