@@ -8,6 +8,10 @@ import { menuData } from "../data/menuData";
  *    2x ("Duble"). Price = base price x multiplier.
  *  - Soups ONLY get a half option (0.5x, "Yarım") instead — no 1.5x/2x
  *    for soups, and no half option for non-soups.
+ *  - Breakfast ("kahvalti" category) dishes get NO portion options at
+ *    all (owner rule, 2026-11-25) — they are sold at the base price
+ *    only. The soups are the exception: they keep [Yarım | Tam] even
+ *    though they live in the breakfast category (see audit note below).
  *
  * Soup detection — data audit note:
  *  menuData.js has NO soup category, and neither does the database
@@ -32,6 +36,22 @@ export function isSoupItem(itemId) {
   return SOUP_ITEM_IDS.has(itemId);
 }
 
+/** Category id of the breakfast section in menuData. */
+const BREAKFAST_CATEGORY_ID = "kahvalti";
+
+/** Item id -> category id, derived from menuData (same source as the soup set). */
+const ITEM_CATEGORY_IDS = new Map(
+  menuData.flatMap((cat) =>
+    (cat.items || [])
+      .filter((item) => item && typeof item.id === "string")
+      .map((item) => [item.id, cat.id])
+  )
+);
+
+export function isBreakfastItem(itemId) {
+  return ITEM_CATEGORY_IDS.get(itemId) === BREAKFAST_CATEGORY_ID;
+}
+
 export const DEFAULT_PORTION = "full";
 
 /** Portion key -> price multiplier. */
@@ -53,9 +73,18 @@ const SOUP_OPTIONS = [
   { key: "full", mult: PORTION_MULTIPLIERS.full },
 ];
 
-/** Ordered portion options available for a dish. */
+/** No portion options — the dish is sold at its base price only. */
+const NO_OPTIONS = [];
+
+/**
+ * Ordered portion options available for a dish.
+ * Soups are checked first so they keep [Yarım | Tam] even though they
+ * sit in the breakfast category; other breakfast dishes get no options.
+ */
 export function getPortionOptions(itemId) {
-  return isSoupItem(itemId) ? SOUP_OPTIONS : STANDARD_OPTIONS;
+  if (isSoupItem(itemId)) return SOUP_OPTIONS;
+  if (isBreakfastItem(itemId)) return NO_OPTIONS;
+  return STANDARD_OPTIONS;
 }
 
 /** True when the portion key is a valid option for this dish. */

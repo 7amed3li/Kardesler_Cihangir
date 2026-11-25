@@ -126,7 +126,18 @@ export function AppProvider({ children }) {
             ...line,
             portion: normalizePortion(line.id, line.portion || DEFAULT_PORTION),
           }));
-          requestAnimationFrame(() => setCart(normalized));
+          // Normalizing can collapse distinct lines onto the same
+          // (dish + portion) key — e.g. a breakfast dish saved at 1,5x
+          // before breakfast portions were removed now falls back to
+          // "full" alongside an existing full line. Merge duplicates,
+          // summing quantities, so cart keys stay unique.
+          const merged = [];
+          for (const line of normalized) {
+            const existing = merged.find((i) => i.id === line.id && i.portion === line.portion);
+            if (existing) existing.qty += line.qty;
+            else merged.push({ ...line });
+          }
+          requestAnimationFrame(() => setCart(merged));
         }
       }
     } catch (_) { /* ignore parse errors */ }

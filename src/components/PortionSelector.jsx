@@ -8,7 +8,8 @@ import { getPortionOptions } from "../lib/portions";
  * Segmented portion selector (research decision: on the menu item card
  * itself, repeated inside the cart so a portion can be changed there).
  * Options come from src/lib/portions.js — soups get [Yarım | Tam],
- * everything else gets [1 | 1,5 Porsiyon | Duble].
+ * most dishes get [1 | 1,5 Porsiyon | Duble], and breakfast dishes get
+ * no options at all, in which case this component renders nothing.
  *
  * `size="sm"` is the compact variant used on cart lines.
  */
@@ -16,6 +17,9 @@ export default function PortionSelector({ itemId, value, onChange, size = "md" }
   const { t } = useAppContext();
   const labels = t.portions || {};
   const options = getPortionOptions(itemId);
+
+  // No portion options for this dish (e.g. breakfast) — render nothing.
+  if (options.length === 0) return null;
 
   const fallback = {
     half: "Yarım",
