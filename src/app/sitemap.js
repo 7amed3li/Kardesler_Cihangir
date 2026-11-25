@@ -138,6 +138,12 @@ export default async function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/kvkk`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
     // ── Developer Profile Pages (All 10 Languages) ──
     ...(() => {
       const devAlternates = {

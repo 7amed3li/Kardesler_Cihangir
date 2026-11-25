@@ -98,7 +98,8 @@
     "madeBy": "Дизайн и разработка от",
     "paymentMethods": "Принимаемые Способы Оплаты",
     "paymentSubtitle": "Принимаются все банковские карты, бесконтактные İstanbulkart и корпоративные карты на питание",
-    "paymentNote": "Мы принимаем наличные, кредитные карты (Visa, Mastercard, Troy), бесконтактные İstanbulkart и все турецкие корпоративные карты на питание (MultiNet, Metropol, Setcard, Pluxee, Ticket)."
+    "paymentNote": "Мы принимаем наличные, кредитные карты (Visa, Mastercard, Troy), бесконтактные İstanbulkart и все турецкие корпоративные карты на питание (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
+    "kvkk": "Информационное уведомление KVKK"
   },
   "aboutPage": {
     "storyTitle": "Наша История: Наследие от Отца к Сыну",

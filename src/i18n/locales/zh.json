@@ -111,7 +111,8 @@
     "paymentSubtitle": "支持所有银行卡、İstanbulkart闪付以及企业餐饮卡",
     "paymentNote": "我们接受现金、信用卡（Visa、Mastercard、Troy）、İstanbulkart闪付，以及所有土耳其企业餐饮卡（MultiNet、Metropol、Setcard、Pluxee、Ticket）。",
     "rights": "版权所有。",
-    "madeBy": "网站设计与开发："
+    "madeBy": "网站设计与开发：",
+    "kvkk": "KVKK 信息告知文本"
   },
   "aboutPage": {
     "storyTitle": "我们的故事：世代传承的家族财富",

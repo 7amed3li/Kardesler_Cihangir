@@ -111,7 +111,8 @@
     "paymentSubtitle": "Alle Bankkarten, kontaktlose İstanbulkart und Firmen-Essenskarten werden akzeptiert",
     "paymentNote": "Wir akzeptieren Bargeld, Kreditkarten (Visa, Mastercard, Troy), kontaktlose İstanbulkart und alle türkischen Firmen-Essenskarten (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
     "rights": "Alle Rechte vorbehalten.",
-    "madeBy": "Entworfen & Entwickelt von"
+    "madeBy": "Entworfen & Entwickelt von",
+    "kvkk": "KVKK Aufklärungstext"
   },
   "aboutPage": {
     "storyTitle": "Unsere Geschichte: Ein Vermächtnis von Vater zu Sohn",

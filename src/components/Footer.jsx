@@ -33,6 +33,8 @@ export default function Footer() {
     return () => observer.disconnect();
   }, []);
 
+  const kvkkHref = lang === "en" ? "/kvkk" : `/${lang}/kvkk`;
+
   const guideHref = {
     tr: "/tr/best-kebab-taksim",
     ar: "/ar/best-kebab-taksim",
@@ -203,6 +205,15 @@ export default function Footer() {
                       "Contact Us"
                     )}
                   </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={kvkkHref}
+                  className="text-[#7A7364] hover:text-[#2B2620] font-medium transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  <ArrowIcon size={13} className="text-[#9C7A3F]" />
+                  <span>{fc.kvkk || "KVKK Aydınlatma Metni"}</span>
                 </Link>
               </li>
               <li>

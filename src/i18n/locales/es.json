@@ -111,7 +111,8 @@
     "paymentSubtitle": "Se aceptan todas las tarjetas bancarias, İstanbulkart sin contacto y tarjetas de comida de empresa",
     "paymentNote": "Aceptamos Efectivo, Tarjetas de Crédito (Visa, Mastercard, Troy), İstanbulkart sin contacto y todas las tarjetas de comida de empresa turcas (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
     "rights": "Todos los derechos reservados.",
-    "madeBy": "Diseñado y Desarrollado por"
+    "madeBy": "Diseñado y Desarrollado por",
+    "kvkk": "Texto informativo KVKK"
   },
   "aboutPage": {
     "storyTitle": "Nuestra Historia: Un Legado de Padre a Hijo",

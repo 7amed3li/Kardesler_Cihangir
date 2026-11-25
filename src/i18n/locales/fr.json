@@ -98,7 +98,8 @@
     "madeBy": "Conçu et développé par",
     "paymentMethods": "Modes de Paiement Acceptés",
     "paymentSubtitle": "Toutes les cartes bancaires, İstanbulkart sans contact et cartes repas d'entreprise sont acceptées",
-    "paymentNote": "Nous acceptons les espèces, les cartes de crédit (Visa, Mastercard, Troy), İstanbulkart sans contact et toutes les cartes repas d'entreprise turques (MultiNet, Metropol, Setcard, Pluxee, Ticket)."
+    "paymentNote": "Nous acceptons les espèces, les cartes de crédit (Visa, Mastercard, Troy), İstanbulkart sans contact et toutes les cartes repas d'entreprise turques (MultiNet, Metropol, Setcard, Pluxee, Ticket).",
+    "kvkk": "Notice d'information KVKK"
   },
   "aboutPage": {
     "storyTitle": "Notre Histoire : Un Héritage de Père en Fils",
