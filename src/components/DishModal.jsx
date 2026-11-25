@@ -35,7 +35,7 @@ function CartCounter({ item, compact = false, portion = "full" }) {
         onClick={handleAdd}
         aria-label="Add to cart"
         className={`flex items-center justify-center gap-1.5 rounded-full bg-copper/90 hover:bg-copper text-cream transition-all duration-200 hover:scale-105 active:scale-95 ${
-          compact ? "w-8 h-8" : "px-5 py-2.5 w-full max-w-[200px]"
+          compact ? "w-8 h-8" : "px-4 py-2.5 w-full"
         }`}
       >
         <Plus size={compact ? 16 : 20} weight="bold" />
@@ -51,7 +51,7 @@ function CartCounter({ item, compact = false, portion = "full" }) {
   return (
     <div
       className={`flex items-center justify-between rounded-full border border-teal-dim/40 bg-ink/80 backdrop-blur-sm ${
-        compact ? "gap-1 px-1 py-0.5" : "gap-4 px-4 py-2 w-full max-w-[200px]"
+        compact ? "gap-1 px-1 py-0.5" : "gap-2 px-3 py-2 w-full"
       }`}
       onClick={(e) => e.stopPropagation()}
     >
@@ -254,21 +254,30 @@ export default function DishModal({
                 </div>
               )}
               
-              {/* Modal Portion Selector + Cart Action */}
+              {/* Modal Portion Selector */}
               {!hideCart && item && (
                 <div className="mt-2 flex flex-col items-center gap-3">
                   <PortionSelector itemId={item.id} value={safePortion} onChange={setPortion} />
-                  <CartCounter item={item} compact={false} portion={safePortion} />
                 </div>
               )}
 
-              <button
-                onClick={() => setIsOpen(false)}
-                aria-label="Close modal"
-                className="mt-2 w-full py-2.5 rounded-md bg-[#EDE3CE] text-[#2B2620] font-bold hover:bg-[#9C7A3F] hover:text-white transition-colors border border-[#9C7A3F]/30 text-xs uppercase tracking-wider"
-              >
-                {t?.close || "Close"}
-              </button>
+              {/* Footer row — cart action beside Close (owner layout, 2026-11-25):
+                  the add (+) button / quantity stepper shares one row with
+                  the Close button instead of sitting on its own row. */}
+              <div className="mt-2 flex items-stretch gap-2">
+                {!hideCart && item && (
+                  <div className="flex-1 flex">
+                    <CartCounter item={item} compact={false} portion={safePortion} />
+                  </div>
+                )}
+                <button
+                  onClick={() => setIsOpen(false)}
+                  aria-label="Close modal"
+                  className={`${hideCart || !item ? "w-full" : "flex-1"} py-2.5 rounded-md bg-[#EDE3CE] text-[#2B2620] font-bold hover:bg-[#9C7A3F] hover:text-white transition-colors border border-[#9C7A3F]/30 text-xs uppercase tracking-wider`}
+                >
+                  {t?.close || "Close"}
+                </button>
+              </div>
             </div>
           </div>
         </div>,
