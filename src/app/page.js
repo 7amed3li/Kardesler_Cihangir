@@ -109,8 +109,47 @@ const timelineContent = {
   }
 };
 
+const reservationContent = {
+  title: {
+    tr: "Masanızı Ayırtın",
+    en: "Reserve Your Table",
+    ar: "احجز طاولتك",
+    fa: "میزتان را رزرو کنید",
+    ru: "Забронируйте столик",
+    fr: "Réservez votre table",
+    de: "Reservieren Sie Ihren Tisch",
+    it: "Prenota il tuo tavolo",
+    es: "Reserva tu mesa",
+    zh: "预订您的餐位",
+  },
+  text: {
+    tr: "Rezervasyon talebinizi WhatsApp üzerinden saniyeler içinde gönderin; onayınız aynı sohbetten gelsin.",
+    en: "Send your reservation request via WhatsApp in seconds — your confirmation arrives in the same chat.",
+    ar: "أرسل طلب الحجز عبر واتساب في ثوانٍ، وسيصلك التأكيد في نفس المحادثة.",
+    fa: "درخواست رزرو خود را در چند ثانیه از طریق واتس‌اپ بفرستید؛ تأییدیه در همان گفتگو می‌آید.",
+    ru: "Отправьте запрос на бронирование через WhatsApp за секунды — подтверждение придёт в том же чате.",
+    fr: "Envoyez votre demande de réservation via WhatsApp en quelques secondes — la confirmation arrive dans la même conversation.",
+    de: "Senden Sie Ihre Reservierungsanfrage in Sekunden per WhatsApp — die Bestätigung erhalten Sie im selben Chat.",
+    it: "Invia la tua richiesta di prenotazione su WhatsApp in pochi secondi: la conferma arriva nella stessa chat.",
+    es: "Envía tu solicitud de reserva por WhatsApp en segundos: la confirmación llega en el mismo chat.",
+    zh: "通过 WhatsApp 几秒钟即可发送预订请求，确认信息将在同一聊天中回复。",
+  },
+  button: {
+    tr: "Rezervasyon Yap",
+    en: "Book a Table",
+    ar: "احجز الآن",
+    fa: "رزرو کنید",
+    ru: "Забронировать",
+    fr: "Réserver",
+    de: "Jetzt reservieren",
+    it: "Prenota ora",
+    es: "Reservar ahora",
+    zh: "立即预订",
+  },
+};
+
 export default function Home() {
-  const { t, lang } = useAppContext();
+  const { t, lang, setIsReservationOpen } = useAppContext();
   const [heroVisible, setHeroVisible] = useState(false);
   const [timeBasedHero, setTimeBasedHero] = useState("default");
 
@@ -123,6 +162,7 @@ export default function Home() {
   const [timelineRef, isTimelineVisible] = useReveal(0.1);
   const [reviewsRef, isReviewsVisible] = useReveal(0.1);
   const [contactRef, isContactVisible] = useReveal(0.1);
+  const [reserveRef, isReserveVisible] = useReveal(0.1);
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -523,6 +563,35 @@ export default function Home() {
           ═══════════════════════════════════════════ */}
       <section ref={reviewsRef} className={`transition-all duration-1000 ease-out ${isReviewsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
         <LandingVerifiedReviews currentLocale={lang} />
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          3.8. RESERVATION BAND
+          ═══════════════════════════════════════════ */}
+      <section ref={reserveRef} className={`py-10 px-4 max-w-5xl mx-auto transition-all duration-1000 ease-out ${isReserveVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#4E5F4C] px-6 py-12 sm:p-14 text-center shadow-xl">
+          <div className="absolute -top-10 -end-10 w-44 h-44 rounded-full bg-[#9C7A3F]/20"></div>
+          <div className="absolute -bottom-14 -start-8 w-52 h-52 rounded-full bg-[#9C7A3F]/15"></div>
+          <div className="relative space-y-5 flex flex-col items-center">
+            <span className="inline-flex items-center gap-2 text-[#EDE3CE]/80 text-xs font-bold uppercase tracking-widest">
+              <Clock size={16} />
+              <span>{t.locationHours || "Everyday: 09:00 AM – 02:00 AM"}</span>
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-[#F7F2E7] leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
+              {reservationContent.title[lang] || reservationContent.title.en}
+            </h2>
+            <p className="text-[#EAF0E6]/85 text-sm sm:text-base leading-relaxed max-w-xl" style={{ fontFamily: "var(--font-inter)" }}>
+              {reservationContent.text[lang] || reservationContent.text.en}
+            </p>
+            <button
+              onClick={() => setIsReservationOpen(true)}
+              className="min-h-[56px] px-10 bg-[#9C7A3F] hover:bg-[#8A6C36] text-[#F7F2E7] font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-3"
+            >
+              <span>{reservationContent.button[lang] || reservationContent.button.en}</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════

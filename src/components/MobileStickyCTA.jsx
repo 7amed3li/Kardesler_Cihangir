@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, Calendar } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
 
 export default function MobileStickyCTA() {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
-  const { t, lang } = useAppContext();
+  const { t, lang, setIsReservationOpen } = useAppContext();
 
   const isDevProfile = pathname?.includes("tasarim-gelistirme") || pathname?.includes("design-development");
   const isAdmin = pathname?.startsWith("/admin");
@@ -51,6 +51,22 @@ export default function MobileStickyCTA() {
           <Phone size={18} />
           <span>{t.callNow || (lang === "ar" ? "اتصل الآن" : lang === "tr" ? "Hemen Ara" : "Call Now")}</span>
         </a>
+
+        <button
+          onClick={() => {
+            if (typeof window !== "undefined" && window.gtag) {
+              window.gtag("event", "click_reserve", {
+                event_category: "engagement",
+                event_label: "mobile_sticky_cta",
+              });
+            }
+            setIsReservationOpen(true);
+          }}
+          className="flex-1 flex items-center justify-center gap-2 bg-[#9C7A3F] text-[#F7F2E7] py-3 px-4 rounded-xl font-bold text-sm shadow-md active:scale-95 transition-transform"
+        >
+          <Calendar size={18} />
+          <span>{lang === "ar" ? "احجز طاولة" : lang === "tr" ? "Rezervasyon" : "Reserve"}</span>
+        </button>
 
         <a
           href={mapUrl}
