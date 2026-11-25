@@ -348,7 +348,7 @@ function resultOf(op) { return (op && typeof op.getResult === 'function') ? op.g
 
 function findCampaignByName(name) {
   var it = AdsApp.campaigns().get();
-  while (it.hasNext()) { var c = it.next(); if (c.getName() === name) return c; }
+  while (it.hasNext()) { var c = it.next(); if (c.getName() === name && !c.isRemoved()) return c; }
   return null;
 }
 function findAdGroup(campaign, name) {
