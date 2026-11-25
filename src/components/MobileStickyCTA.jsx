@@ -45,7 +45,7 @@ export default function MobileStickyCTA() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#F7F2E7] border-t border-[#9C7A3F]/30 shadow-[0_-4px_20px_rgba(43,38,32,0.1)] pb-safe transition-transform duration-300 transform translate-y-0">
-      <div className="flex items-center justify-between p-3 gap-3">
+      <div className="flex items-center justify-between px-2 py-3 gap-2">
         <a
           href={phoneCallUrl}
           onClick={() => {
@@ -56,7 +56,7 @@ export default function MobileStickyCTA() {
               });
             }
           }}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#4E5F4C] text-[#EAF0E6] py-3 px-4 rounded-xl font-bold text-sm shadow-md active:scale-95 transition-transform"
+          className="flex-1 min-w-0 flex items-center justify-center gap-1.5 bg-[#4E5F4C] text-[#EAF0E6] py-3 px-2 rounded-xl font-bold text-[13px] whitespace-nowrap shadow-md active:scale-95 transition-transform"
         >
           <Phone size={18} />
           <span>{t.callNow || (lang === "ar" ? "اتصل الآن" : lang === "tr" ? "Hemen Ara" : "Call Now")}</span>
@@ -72,7 +72,7 @@ export default function MobileStickyCTA() {
             }
             setIsReservationOpen(true);
           }}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#9C7A3F] text-[#F7F2E7] py-3 px-4 rounded-xl font-bold text-sm shadow-md active:scale-95 transition-transform"
+          className="flex-1 min-w-0 flex items-center justify-center gap-1.5 bg-[#9C7A3F] text-[#F7F2E7] py-3 px-2 rounded-xl font-bold text-[13px] whitespace-nowrap shadow-md active:scale-95 transition-transform"
         >
           <Calendar size={18} />
           <span>{lang === "ar" ? "احجز طاولة" : lang === "tr" ? "Rezervasyon" : "Reserve"}</span>
@@ -91,7 +91,7 @@ export default function MobileStickyCTA() {
             }
           }}
           aria-label="WhatsApp"
-          className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 px-4 rounded-xl font-bold text-sm shadow-md active:scale-95 transition-transform"
+          className="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-3 px-2.5 rounded-xl font-bold text-[13px] whitespace-nowrap shadow-md active:scale-95 transition-transform"
         >
           <WhatsAppIcon size={18} />
           <span className="hidden min-[400px]:inline">WhatsApp</span>
@@ -109,7 +109,7 @@ export default function MobileStickyCTA() {
               });
             }
           }}
-          className="flex-1 flex items-center justify-center gap-2 bg-transparent border-2 border-[#9C7A3F]/50 text-[#2B2620] py-3 px-4 rounded-xl font-bold text-sm shadow-sm active:scale-95 transition-transform"
+          className="flex-1 min-w-0 flex items-center justify-center gap-1.5 bg-transparent border-2 border-[#9C7A3F]/50 text-[#2B2620] py-3 px-2 rounded-xl font-bold text-[13px] whitespace-nowrap shadow-sm active:scale-95 transition-transform"
         >
           <MapPin size={18} className="text-[#9C7A3F]" />
           <span>{t.directions || (lang === "ar" ? "الاتجاهات" : lang === "tr" ? "Yol Tarifi" : "Directions")}</span>
