@@ -735,7 +735,7 @@ export default function OrderFlow() {
                     boxes that hug their content instead of stretching
                     across the footer; single-select radio behavior */}
                 <div>
-                  <p className="text-center text-[#7A7364] text-xs leading-5 font-medium mb-1.5" style={{ fontFamily: "var(--font-inter)" }}>
+                  <p className="text-center text-[#7A7364] text-xs leading-4 font-medium mb-1.5" style={{ fontFamily: "var(--font-inter)" }}>
                     {labels.paymentMethod || "Payment Method"}
                   </p>
                   <div
