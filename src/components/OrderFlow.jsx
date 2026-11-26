@@ -1054,6 +1054,38 @@ export default function OrderFlow() {
                   })}
                 </div>
 
+                {/* "Add my location to the order" opt-in — one
+                    plain checkbox unit (same visual language as the
+                    payment checkboxes), OFF by default, never
+                    persisted. Mainly for foreign customers who can't
+                    write a Turkish address: when ON, tapping the
+                    order button first runs the accuracy-gated
+                    capture and appends a Google Maps link to the
+                    WhatsApp message (see the CTA handler). */}
+                <div>
+                  <button
+                    type="button"
+                    role="checkbox"
+                    aria-checked={addLocation}
+                    onClick={() => setAddLocation((v) => !v)}
+                    className="flex items-center gap-[6px] px-1 py-1.5 text-start transition-all duration-200 active:scale-[0.98]"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    <span
+                      className={`w-[15px] h-[15px] shrink-0 rounded-[4px] border-[1.5px] flex items-center justify-center transition-all duration-200 ${
+                        addLocation
+                          ? "bg-[#4E5F4C] border-[#4E5F4C]"
+                          : "bg-transparent border-[#7A7364]/50"
+                      }`}
+                    >
+                      {addLocation && <Check size={11} strokeWidth={3.5} className="text-white" />}
+                    </span>
+                    <span className={`text-[13px] leading-tight ${addLocation ? "font-semibold text-[#4E5F4C]" : "font-normal text-[#2B2620]"}`}>
+                      {labels.addLocationToOrder || "Add my location to the order"}
+                    </span>
+                  </button>
+                </div>
+
                 {/* Order via WhatsApp Button (primary) */}
                 {whatsappUrl && (
                   <a
@@ -1084,15 +1116,59 @@ export default function OrderFlow() {
                         event_label: "cart_drawer_checkout",
                         items_count: cartCount,
                       });
+                      // Location opt-in: sending waits for one
+                      // accuracy-gated capture, then the message goes
+                      // out with a Google Maps link appended. A blank
+                      // tab is opened NOW, inside the tap gesture, so
+                      // popup blockers don't eat it while the capture
+                      // runs; it is pointed at the final URL once the
+                      // fix resolves. A failed/denied capture sends
+                      // the plain order instead — the pin is a bonus,
+                      // never a blocker, and no error reaches the
+                      // message.
+                      if (addLocation) {
+                        e.preventDefault();
+                        if (orderLocating) return;
+                        setOrderLocating(true);
+                        const pendingTab = window.open("about:blank", "_blank");
+                        captureAccuratePosition()
+                          .then((fix) => {
+                            const url =
+                              (fix
+                                ? buildWhatsAppOrderUrl({
+                                    ...waOrderArgs,
+                                    location: { lat: fix.latitude, lng: fix.longitude },
+                                  })
+                                : null) || whatsappUrl;
+                            if (pendingTab) {
+                              pendingTab.location = url;
+                            } else {
+                              window.location.href = url;
+                            }
+                          })
+                          .finally(() => setOrderLocating(false));
+                      }
                     }}
                     className="w-full py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#1EB856] text-white font-bold text-base tracking-wide flex items-center justify-center gap-3 transition-colors shadow-lg mt-2"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
-                    <WhatsAppIcon size={22} />
+                    {orderLocating ? (
+                      <Loader2 size={22} className="animate-spin shrink-0" />
+                    ) : (
+                      <WhatsAppIcon size={22} />
+                    )}
                     {/* Smart label: while the address is incomplete the
                         button itself says what is missing; once the
-                        address is saved it becomes the order action. */}
-                    <span>{addressComplete ? (wa.button || "Order via WhatsApp") : (labels.addAddressFirst || wa.button || "Order via WhatsApp")}</span>
+                        address is saved it becomes the order action.
+                        While the location opt-in capture runs, it
+                        shows the locating state instead. */}
+                    <span>
+                      {orderLocating
+                        ? labels.locating || "Locating…"
+                        : addressComplete
+                          ? wa.button || "Order via WhatsApp"
+                          : labels.addAddressFirst || wa.button || "Order via WhatsApp"}
+                    </span>
                   </a>
                 )}
 

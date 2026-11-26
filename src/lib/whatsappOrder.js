@@ -51,9 +51,14 @@ export function buildWhatsAppChatUrl(greeting) {
 //   emitted for the customer to fill in by hand. No phone line is ever
 //   emitted: the message arrives from the customer's own WhatsApp, so
 //   the restaurant already sees the number.
+// - location (optional): { lat, lng } captured from the device when the
+//   customer opts in ("add my location to the order" — mainly for
+//   foreign customers who can't write a Turkish address). Appended as
+//   the final line as a Google Maps link with a fixed Turkish label
+//   ("Konum" — the message is kitchen language, like the portions).
 // Returns null when the cart is empty or any price is unavailable, so the
 // caller can hide the button instead of sending a broken order.
-export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnitPrice, getPortionLabel, labels, payment, delivery }) {
+export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnitPrice, getPortionLabel, labels, payment, delivery, location }) {
   if (!Array.isArray(cart) || cart.length === 0) return null;
 
   const lines = [];
@@ -86,6 +91,9 @@ export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnit
     ...(payment ? [`${labels.payment}: ${payment}`] : []),
     "",
     ...contactLines,
+    ...(location
+      ? [`Konum: https://www.google.com/maps?q=${location.lat.toFixed(6)},${location.lng.toFixed(6)}`]
+      : []),
   ].join("\n");
 
   return waUrl(message);
