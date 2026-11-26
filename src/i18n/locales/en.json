@@ -82,6 +82,8 @@
     "editAddress": "Edit",
     "phoneOrderLabel": "Order by Phone",
     "addAddressFirst": "Add your delivery address first",
+    "modeDineIn": "Dine-In",
+    "modeDelivery": "Delivery",
     "nameLabel": "Name",
     "namePlaceholder": "Your full name",
     "phoneLabel": "Phone",

@@ -70,6 +70,8 @@
     "editAddress": "Modifier",
     "phoneOrderLabel": "Commander par téléphone",
     "addAddressFirst": "Ajoutez d'abord votre adresse de livraison",
+    "modeDineIn": "Sur place",
+    "modeDelivery": "Livraison",
     "nameLabel": "Nom",
     "namePlaceholder": "Votre nom complet",
     "phoneLabel": "Téléphone",

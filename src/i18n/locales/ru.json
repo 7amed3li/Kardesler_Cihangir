@@ -70,6 +70,8 @@
     "editAddress": "Изменить",
     "phoneOrderLabel": "Заказ по телефону",
     "addAddressFirst": "Сначала добавьте адрес доставки",
+    "modeDineIn": "В ресторане",
+    "modeDelivery": "Доставка",
     "nameLabel": "Имя",
     "namePlaceholder": "Ваше полное имя",
     "phoneLabel": "Телефон",

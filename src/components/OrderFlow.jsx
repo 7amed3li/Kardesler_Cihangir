@@ -6,7 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
-import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone } from "lucide-react";
+import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone, UtensilsCrossed, Bike } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
 import { trackEvent } from "../lib/trackingUtils";
@@ -62,6 +62,29 @@ export default function OrderFlow() {
       localStorage.setItem(PAYMENT_STORAGE_KEY, value);
     } catch {}
   };
+
+  // Order mode: "dinein" (customer is at the restaurant — build a
+  // list, show it to the waiter) or "delivery" (online order —
+  // address form + WhatsApp). ONE drawer serves both audiences, and
+  // mixing the two journeys in a single layout confused both of
+  // them (owner complaint 2026-11-26), so the drawer renders exactly
+  // one path per mode. Persisted like the payment method, default
+  // "delivery" (the online flow is the site's primary use).
+  const MODE_STORAGE_KEY = "kardesler_order_mode";
+  const [orderMode, setOrderModeState] = useState("delivery");
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(MODE_STORAGE_KEY);
+      if (saved === "dinein" || saved === "delivery") setOrderModeState(saved);
+    } catch {}
+  }, []);
+  const setOrderMode = (value) => {
+    setOrderModeState(value);
+    try {
+      localStorage.setItem(MODE_STORAGE_KEY, value);
+    } catch {}
+  };
+  const isDineIn = orderMode === "dinein";
 
   // Delivery address (mandatory for WhatsApp orders). The whole form is
   // persisted next to the cart (kardesler_cart) so returning customers are
@@ -277,11 +300,42 @@ export default function OrderFlow() {
               </button>
             </div>
             
-            {/* Waiter Prominent Instruction */}
-            <div className="bg-[#4E5F4C] text-white px-6 py-3 text-center shrink-0 shadow-sm z-10">
-              <p className="font-bold text-sm sm:text-base leading-tight" style={{ fontFamily: "var(--font-cairo)" }}>
-                {waiterText}
-              </p>
+            {/* Order mode switch — segmented control directly under
+                the header. The drawer serves two audiences (dine-in
+                guests showing the list to a waiter, online customers
+                ordering delivery); each mode renders only its own
+                path, so the two never stack or compete. */}
+            <div className="px-5 py-3 shrink-0">
+              <div
+                role="tablist"
+                aria-label={labels.modeDelivery || "Order mode"}
+                className="flex rounded-[13px] bg-[#F7F2E7] border border-[#9C7A3F]/15 p-1 gap-1"
+              >
+                {[
+                  { key: "dinein", Icon: UtensilsCrossed, text: labels.modeDineIn || "Restoranda" },
+                  { key: "delivery", Icon: Bike, text: labels.modeDelivery || "Paket Sipariş" },
+                ].map(({ key, Icon, text }) => {
+                  const active = orderMode === key;
+                  return (
+                    <button
+                      key={key}
+                      type="button"
+                      role="tab"
+                      aria-selected={active}
+                      onClick={() => setOrderMode(key)}
+                      className={`flex-1 flex items-center justify-center gap-2 rounded-[10px] py-2.5 text-[15px] font-bold transition-colors ${
+                        active
+                          ? "bg-[#4E5F4C] text-white shadow-sm"
+                          : "text-[#7A7364] hover:text-[#2B2620]"
+                      }`}
+                      style={{ fontFamily: "var(--font-cairo)" }}
+                    >
+                      <Icon size={16} className="shrink-0" />
+                      <span>{text}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Delivery bar — pinned under the header, OUTSIDE the
@@ -290,7 +344,7 @@ export default function OrderFlow() {
                 address is incomplete, a one-line data summary once
                 saved. Tapping it scrolls to the form below and (while
                 incomplete) focuses the first missing field. */}
-            {cart.length > 0 && (
+            {orderMode === "delivery" && cart.length > 0 && (
               <button
                 type="button"
                 onClick={() => revealAddressForm(!addressComplete)}
@@ -422,11 +476,24 @@ export default function OrderFlow() {
                 </div>
               )}
 
+              {/* Dine-in instruction panel — the ONLY call to action
+                  in Restoranda mode: the guest shows this list to the
+                  waiter. Prominent olive panel under the items, so
+                  the path is unmistakable (the waiter text used to be
+                  a thin strip stacked on top of the delivery bar). */}
+              {isDineIn && cart.length > 0 && (
+                <div className="mt-4 rounded-2xl bg-[#4E5F4C] text-[#F7F2E7] px-5 py-6 text-center shadow-sm">
+                  <p className="text-[19px] font-bold leading-snug" style={{ fontFamily: "var(--font-cairo)" }}>
+                    {waiterText}
+                  </p>
+                </div>
+              )}
+
               {/* Delivery Address (mandatory for WhatsApp orders) —
                   directly under the items, before total/payment/order
                   button (sticky footer below). A failed order attempt
                   scrolls here and rings the section red until complete. */}
-              {cart.length > 0 && (
+              {orderMode === "delivery" && cart.length > 0 && (
                 <div
                   ref={addressSectionRef}
                   className={`mt-4 rounded-xl bg-white shadow-sm overflow-hidden border transition-shadow ${
@@ -647,6 +714,21 @@ export default function OrderFlow() {
                   )}
                 </div>
 
+                {isDineIn ? (
+                  /* Dine-in footer: total (above) + Clear only. The
+                     order is handed to the waiter from the list
+                     itself, so payment / WhatsApp / address actions
+                     do not belong in this mode. */
+                  <div className="flex items-center justify-end px-1 pt-1 pb-1">
+                    <button
+                      onClick={clearCart}
+                      className="text-[12px] text-[#A0422E] font-medium hover:underline opacity-80"
+                    >
+                      {labels.clear || "Clear List"}
+                    </button>
+                  </div>
+                ) : (
+                  <>
                 {/* Payment Method (at the door) */}
                 <div className="space-y-1.5">
                   <p className="text-center text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
@@ -799,6 +881,8 @@ export default function OrderFlow() {
                     {labels.clear || "Clear List"}
                   </button>
                 </div>
+                  </>
+                )}
               </div>
             )}
           </div>

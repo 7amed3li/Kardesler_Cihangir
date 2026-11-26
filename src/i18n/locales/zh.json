@@ -83,6 +83,8 @@
     "editAddress": "编辑",
     "phoneOrderLabel": "电话订餐",
     "addAddressFirst": "请先添加配送地址",
+    "modeDineIn": "堂食",
+    "modeDelivery": "外卖配送",
     "nameLabel": "姓名",
     "namePlaceholder": "您的全名",
     "phoneLabel": "电话",

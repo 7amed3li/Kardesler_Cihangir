@@ -82,6 +82,8 @@
     "editAddress": "تعديل",
     "phoneOrderLabel": "اطلب عبر الهاتف",
     "addAddressFirst": "أضف عنوان التوصيل أولاً",
+    "modeDineIn": "في المطعم",
+    "modeDelivery": "طلب توصيل",
     "nameLabel": "الاسم",
     "namePlaceholder": "الاسم الكامل",
     "phoneLabel": "الهاتف",

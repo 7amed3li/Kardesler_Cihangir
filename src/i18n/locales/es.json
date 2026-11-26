@@ -83,6 +83,8 @@
     "editAddress": "Editar",
     "phoneOrderLabel": "Pedir por teléfono",
     "addAddressFirst": "Primero añade tu dirección de entrega",
+    "modeDineIn": "En el restaurante",
+    "modeDelivery": "A domicilio",
     "nameLabel": "Nombre",
     "namePlaceholder": "Tu nombre completo",
     "phoneLabel": "Teléfono",

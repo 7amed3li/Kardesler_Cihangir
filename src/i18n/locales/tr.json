@@ -82,6 +82,8 @@
     "editAddress": "Düzenle",
     "phoneOrderLabel": "Telefonla Sipariş",
     "addAddressFirst": "Önce teslimat adresini ekle",
+    "modeDineIn": "Restoranda",
+    "modeDelivery": "Paket Sipariş",
     "nameLabel": "İsim",
     "namePlaceholder": "Adınız Soyadınız",
     "phoneLabel": "Telefon",
