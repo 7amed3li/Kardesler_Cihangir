@@ -92,6 +92,8 @@
     "addLocationToOrder": "Aggiungi la mia posizione all'ordine",
     "locationFilledCheck": "Compilato dalla tua posizione — controlla",
     "otherMahalle": "Altro",
+    "searchMahalle": "Cerca quartiere",
+    "noMahalleResults": "Nessun quartiere trovato",
     "nameLabel": "Nome",
     "namePlaceholder": "Il tuo nome completo",
     "phoneLabel": "Telefono",

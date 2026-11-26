@@ -92,6 +92,8 @@
     "addLocationToOrder": "将我的位置添加到订单",
     "locationFilledCheck": "已根据您的位置填写 — 请核对",
     "otherMahalle": "其他",
+    "searchMahalle": "搜索社区",
+    "noMahalleResults": "未找到社区",
     "nameLabel": "姓名",
     "namePlaceholder": "您的全名",
     "phoneLabel": "电话",

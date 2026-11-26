@@ -92,6 +92,8 @@
     "addLocationToOrder": "Añadir mi ubicación al pedido",
     "locationFilledCheck": "Completado desde tu ubicación — compruébalo",
     "otherMahalle": "Otro",
+    "searchMahalle": "Buscar barrio",
+    "noMahalleResults": "No se encontraron barrios",
     "nameLabel": "Nombre",
     "namePlaceholder": "Tu nombre completo",
     "phoneLabel": "Teléfono",

@@ -79,6 +79,8 @@
     "addLocationToOrder": "Ajouter ma position à la commande",
     "locationFilledCheck": "Rempli depuis votre position — veuillez vérifier",
     "otherMahalle": "Autre",
+    "searchMahalle": "Rechercher un quartier",
+    "noMahalleResults": "Aucun quartier trouvé",
     "nameLabel": "Nom",
     "namePlaceholder": "Votre nom complet",
     "phoneLabel": "Téléphone",

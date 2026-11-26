@@ -91,6 +91,8 @@
     "addLocationToOrder": "Konumumu siparişe ekle",
     "locationFilledCheck": "Konumunuzdan dolduruldu — lütfen kontrol edin",
     "otherMahalle": "Diğer",
+    "searchMahalle": "Mahalle ara",
+    "noMahalleResults": "Sonuç bulunamadı",
     "nameLabel": "İsim",
     "namePlaceholder": "Adınız Soyadınız",
     "phoneLabel": "Telefon",

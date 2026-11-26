@@ -4,8 +4,8 @@
 // fetched 2026-11-27 — Beyoğlu 45, Şişli 25, Beşiktaş 23, Fatih 57,
 // matching the counts those articles state. Names are the official
 // forms WITHOUT the "Mahallesi" suffix (e.g. "Cihangir"). The cart's
-// address form offers these as a select once a district is chosen,
-// with a free-text escape hatch for anything unlisted.
+// address form offers these in a searchable picker once a district
+// is chosen, with a free-text escape hatch for anything unlisted.
 
 export const MAHALLELER = {
   "Beyoğlu": [

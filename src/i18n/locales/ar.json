@@ -91,6 +91,8 @@
     "addLocationToOrder": "أضف موقعي إلى الطلب",
     "locationFilledCheck": "تمت التعبئة من موقعك — يرجى التحقق",
     "otherMahalle": "أخرى",
+    "searchMahalle": "ابحث عن الحي",
+    "noMahalleResults": "لا توجد نتائج",
     "nameLabel": "الاسم",
     "namePlaceholder": "الاسم الكامل",
     "phoneLabel": "الهاتف",

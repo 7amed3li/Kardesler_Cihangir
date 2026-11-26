@@ -6,7 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
-import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, Check, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone, LocateFixed, Loader2 } from "lucide-react";
+import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, Check, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone, LocateFixed, Loader2, Search } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
 import { PORTION_LABELS_TR } from "../lib/portions";
@@ -69,6 +69,24 @@ function captureAccuratePosition() {
     // Hard stop: some browsers never call back on a stalled watch.
     setTimeout(() => finish(best), 15500);
   });
+}
+
+// Turkish-aware fold for the mahalle picker search. A plain
+// toLowerCase breaks Turkish: "İ".toLowerCase() yields "i̇" (i +
+// combining dot) and "I" yields "ı", so "istiklal" would never match
+// "İstiklal". Locale lowercase (İ→i̇, I→ı), then stripping the
+// combining dot and folding ı→i, makes matching symmetric: "istiklal"
+// finds "İstiklal", "ISTIKLAL" finds it too, and "kadi" finds
+// "Kadımehmet Efendi". The remaining Turkish diacritics fold to
+// their ASCII base letters on BOTH sides, so a foreign customer
+// typing "kuloglu" or "sutluce" still finds "Kuloğlu" / "Sütlüce" —
+// exact Turkish typing is unaffected (the fold is symmetric).
+const MAHALLE_FOLD_MAP = { "ı": "i", "ğ": "g", "ş": "s", "ç": "c", "ö": "o", "ü": "u" };
+function foldMahalleSearch(s) {
+  return (s || "")
+    .toLocaleLowerCase("tr-TR")
+    .replace(/\u0307/g, "")
+    .replace(/[ığşçöü]/g, (ch) => MAHALLE_FOLD_MAP[ch]);
 }
 
 export default function OrderFlow() {
@@ -179,12 +197,32 @@ export default function OrderFlow() {
   // The note clears on the next manual field edit or the next attempt.
   const [locating, setLocating] = useState(false);
   const [locationNote, setLocationNote] = useState(null);
-  // Mahalle entry mode: with a district chosen, the mahalle is a
-  // select of that district's official mahalles (see lib/mahalleler);
+  // Mahalle entry mode: with a district chosen, the mahalle is
+  // picked from that district's official mahalles (see lib/mahalleler);
   // "other" mode swaps in the free-text input for anything unlisted.
   // A saved value that is not in the district's list opens in other
   // mode with its text preserved — the list never traps the user.
   const [mahalleOther, setMahalleOther] = useState(false);
+  // Mahalle picker: the field is a custom searchable picker, NOT a
+  // native <select> — on Android the native control opens the OS
+  // radio list (45-57 rows of blind scrolling, no search), which the
+  // owner rejected on his phone (2026-11-27). The picker is an
+  // overlay inside the drawer with a search box on top; its query
+  // resets on every open so it always starts from the full list.
+  const [mahallePickerOpen, setMahallePickerOpen] = useState(false);
+  const [mahalleQuery, setMahalleQuery] = useState("");
+  const selectedMahalleRef = useRef(null);
+  // Closing the drawer always closes the picker with it, so a
+  // reopened drawer starts on the form, never mid-pick.
+  useEffect(() => {
+    if (!isCartOpen) setMahallePickerOpen(false);
+  }, [isCartOpen]);
+  // On open, bring the current selection into view inside the list.
+  useEffect(() => {
+    if (mahallePickerOpen) {
+      selectedMahalleRef.current?.scrollIntoView({ block: "center" });
+    }
+  }, [mahallePickerOpen]);
   // "Add my location to the order" opt-in: OFF by default and never
   // persisted — sharing a live pin is a per-order consent.
   const [addLocation, setAddLocation] = useState(false);
@@ -455,6 +493,13 @@ export default function OrderFlow() {
         },
       };
   const whatsappUrl = pricesLoading ? null : buildWhatsAppOrderUrl(waOrderArgs);
+  // Mahalle picker list: the selected district's official mahalles,
+  // filtered by the search query through the Turkish-aware fold.
+  const mahalleList = MAHALLELER[address.district] || [];
+  const foldedMahalleQuery = foldMahalleSearch(mahalleQuery.trim());
+  const filteredMahalles = foldedMahalleQuery
+    ? mahalleList.filter((m) => foldMahalleSearch(m).includes(foldedMahalleQuery))
+    : mahalleList;
   const isRTL = lang === "ar" || lang === "fa";
 
   const waiterText = t.showWaiter || (lang === "ar" ? "اعرض هذه القائمة للجرسون لإتمام طلبك" : 
@@ -888,56 +933,49 @@ export default function OrderFlow() {
                       </div>
 
                       {/* Neighborhood (Mahalle) — with a district
-                          chosen, a select of that district's official
+                          chosen, a button that opens the searchable
+                          picker over that district's official
                           mahalles (saved values and location autofill
-                          preselect from the same string); "Diğer"
-                          swaps in the free-text input so an unlisted
-                          mahalle is never blocked. Without a district,
-                          the plain text input as before. */}
+                          preselect from the same string); "Diğer" in
+                          the picker swaps in the free-text input so
+                          an unlisted mahalle is never blocked.
+                          Without a district, the plain text input
+                          as before. */}
                       <div>
                         <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
                           {labels.neighborhoodLabel || "Neighborhood"}
                         </label>
                         {address.district && !mahalleOther ? (
-                          <div className="relative">
-                            <select
-                              ref={neighborhoodInputRef}
-                              value={
-                                (MAHALLELER[address.district] || []).includes(address.neighborhood)
-                                  ? address.neighborhood
-                                  : ""
-                              }
-                              onChange={(e) => {
-                                if (e.target.value === "__other__") {
-                                  // Escape hatch: reveal the text
-                                  // input, current text preserved.
-                                  setMahalleOther(true);
-                                } else {
-                                  editAddress({ neighborhood: e.target.value });
-                                }
-                              }}
-                              className={`w-full appearance-none rounded-lg border bg-[#FAF7F0] px-3 py-2.5 pe-9 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
-                                orderAttempted && addressErrors.neighborhood
-                                  ? "border-[#A0422E]/70"
-                                  : filledFields.neighborhood
-                                    ? "border-[#4E5F4C]/60 ring-2 ring-[#4E5F4C]/30"
-                                    : "border-[#9C7A3F]/30"
+                          <button
+                            ref={neighborhoodInputRef}
+                            type="button"
+                            aria-haspopup="dialog"
+                            onClick={() => {
+                              setMahalleQuery("");
+                              setMahallePickerOpen(true);
+                            }}
+                            className={`w-full flex items-center gap-2 rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm outline-none focus:border-[#9C7A3F] ${
+                              orderAttempted && addressErrors.neighborhood
+                                ? "border-[#A0422E]/70"
+                                : filledFields.neighborhood
+                                  ? "border-[#4E5F4C]/60 ring-2 ring-[#4E5F4C]/30"
+                                  : "border-[#9C7A3F]/30"
+                            }`}
+                            style={{ fontFamily: "var(--font-inter)" }}
+                          >
+                            <span
+                              className={`flex-1 min-w-0 truncate text-start ${
+                                mahalleList.includes(address.neighborhood)
+                                  ? "text-[#2B2620]"
+                                  : "text-[#7A7364]"
                               }`}
-                              style={{ fontFamily: "var(--font-inter)" }}
                             >
-                              <option value="">{labels.neighborhoodPlaceholder || ""}</option>
-                              {(MAHALLELER[address.district] || []).map((m) => (
-                                <option key={m} value={m}>
-                                  {m}
-                                </option>
-                              ))}
-                              <option value="__other__">{labels.otherMahalle || "Diğer"}</option>
-                            </select>
-                            <ChevronDown
-                              size={16}
-                              className="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-[#7A7364]"
-                            />
-                          </div>
+                              {mahalleList.includes(address.neighborhood)
+                                ? address.neighborhood
+                                : labels.neighborhoodPlaceholder || ""}
+                            </span>
+                            <ChevronDown size={16} className="shrink-0 text-[#7A7364]" />
+                          </button>
                         ) : (
                           <input
                             ref={neighborhoodInputRef}
@@ -1022,6 +1060,113 @@ export default function OrderFlow() {
                 </div>
               )}
             </div>
+
+            {/* Mahalle picker overlay — covers the drawer panel
+                (absolute inset-0 inside the relative panel), so the
+                drawer's own scroll and layout are untouched and
+                closing returns to the form exactly as it was. Search
+                stays pinned on top, the list is flex-1 min-h-0 (it
+                shrinks, never gets pushed off, when the keyboard
+                opens), and "Diğer" is pinned at the bottom: the
+                free-text escape hatch is reachable at all times,
+                mid-search included. */}
+            {mahallePickerOpen && address.district && (
+              <div
+                role="dialog"
+                aria-modal="true"
+                aria-label={labels.neighborhoodLabel || "Neighborhood"}
+                className="absolute inset-0 z-40 flex flex-col bg-[#FAF7F0]"
+              >
+                <div className="flex items-center gap-2.5 px-4 py-2.5 border-b border-[#9C7A3F]/20 shrink-0 bg-[#F7F2E7]">
+                  <h3
+                    className="flex-1 min-w-0 truncate text-[15px] font-semibold text-[#2B2620]"
+                    style={{ fontFamily: "var(--font-cairo)" }}
+                  >
+                    {labels.neighborhoodLabel || "Neighborhood"}
+                    <span className="text-[#7A7364] font-medium"> — {address.district}</span>
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setMahallePickerOpen(false)}
+                    aria-label={t.close || "Close"}
+                    className="w-9 h-9 shrink-0 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F]/25 active:scale-95 transition-all duration-200"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+                <div className="px-4 pt-3 pb-2 shrink-0">
+                  <div className="relative">
+                    <Search
+                      size={16}
+                      className="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-[#7A7364]"
+                    />
+                    <input
+                      type="text"
+                      value={mahalleQuery}
+                      autoFocus
+                      autoComplete="off"
+                      autoCorrect="off"
+                      autoCapitalize="off"
+                      spellCheck={false}
+                      onChange={(e) => setMahalleQuery(e.target.value)}
+                      placeholder={labels.searchMahalle || "Search"}
+                      className="w-full rounded-lg border border-[#9C7A3F]/30 bg-white ps-9 pe-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F]"
+                      style={{ fontFamily: "var(--font-inter)" }}
+                    />
+                  </div>
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto px-2 pb-2">
+                  {filteredMahalles.length === 0 ? (
+                    <p
+                      className="px-3 py-6 text-center text-[13px] text-[#7A7364]"
+                      style={{ fontFamily: "var(--font-inter)" }}
+                    >
+                      {labels.noMahalleResults || "No results"}
+                    </p>
+                  ) : (
+                    filteredMahalles.map((m) => {
+                      const selected = address.neighborhood === m;
+                      return (
+                        <button
+                          key={m}
+                          type="button"
+                          ref={selected ? selectedMahalleRef : undefined}
+                          aria-pressed={selected}
+                          onClick={() => {
+                            editAddress({ neighborhood: m });
+                            setMahallePickerOpen(false);
+                          }}
+                          className={`w-full flex items-center gap-2 rounded-lg px-3 py-2.5 text-start text-sm transition-colors ${
+                            selected
+                              ? "bg-[#4E5F4C]/10 font-semibold text-[#4E5F4C]"
+                              : "text-[#2B2620] hover:bg-[#9C7A3F]/10"
+                          }`}
+                          style={{ fontFamily: "var(--font-inter)" }}
+                        >
+                          <span className="flex-1 min-w-0 truncate">{m}</span>
+                          {selected && <Check size={16} className="shrink-0 text-[#4E5F4C]" />}
+                        </button>
+                      );
+                    })
+                  )}
+                </div>
+                <div className="shrink-0 border-t border-[#9C7A3F]/20 bg-[#F7F2E7] px-2 py-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      // Escape hatch: reveal the text input, current
+                      // text preserved (same as the old select).
+                      setMahalleOther(true);
+                      setMahallePickerOpen(false);
+                    }}
+                    className="w-full flex items-center gap-2 rounded-lg px-3 py-2.5 text-start text-sm font-medium text-[#2B2620] hover:bg-[#9C7A3F]/10 transition-colors"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    <span className="flex-1 min-w-0 truncate">{labels.otherMahalle || "Diğer"}</span>
+                  </button>
+                </div>
+              </div>
+            )}
 
             {/* Footer — sticky checkout actions (shrink-0 sibling of the
                 scroll area, so total → payment → WhatsApp order button

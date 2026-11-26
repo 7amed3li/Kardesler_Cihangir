@@ -92,6 +92,8 @@
     "addLocationToOrder": "Meinen Standort zur Bestellung hinzufügen",
     "locationFilledCheck": "Aus Ihrem Standort ausgefüllt — bitte prüfen",
     "otherMahalle": "Andere",
+    "searchMahalle": "Viertel suchen",
+    "noMahalleResults": "Keine Ergebnisse gefunden",
     "nameLabel": "Name",
     "namePlaceholder": "Ihr vollständiger Name",
     "phoneLabel": "Telefon",

@@ -91,6 +91,8 @@
     "addLocationToOrder": "Add my location to the order",
     "locationFilledCheck": "Filled from your location — please check",
     "otherMahalle": "Other",
+    "searchMahalle": "Search neighborhood",
+    "noMahalleResults": "No neighborhoods found",
     "nameLabel": "Name",
     "namePlaceholder": "Your full name",
     "phoneLabel": "Phone",

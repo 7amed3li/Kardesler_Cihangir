@@ -79,6 +79,8 @@
     "addLocationToOrder": "Добавить моё местоположение к заказу",
     "locationFilledCheck": "Заполнено по вашему местоположению — проверьте",
     "otherMahalle": "Другое",
+    "searchMahalle": "Поиск микрорайона",
+    "noMahalleResults": "Ничего не найдено",
     "nameLabel": "Имя",
     "namePlaceholder": "Ваше полное имя",
     "phoneLabel": "Телефон",

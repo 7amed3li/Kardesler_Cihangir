@@ -79,6 +79,8 @@
     "addLocationToOrder": "افزودن موقعیت من به سفارش",
     "locationFilledCheck": "از موقعیت شما پر شد — لطفاً بررسی کنید",
     "otherMahalle": "سایر",
+    "searchMahalle": "جستجوی محله",
+    "noMahalleResults": "محله‌ای یافت نشد",
     "nameLabel": "نام",
     "namePlaceholder": "نام کامل شما",
     "phoneLabel": "تلفن",
