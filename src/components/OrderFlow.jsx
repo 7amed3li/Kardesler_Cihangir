@@ -191,6 +191,12 @@ export default function OrderFlow() {
   // Spinner state for the WhatsApp CTA while it runs the position
   // capture for the location opt-in (sending waits for the capture).
   const [orderLocating, setOrderLocating] = useState(false);
+  // Fields the location autofill just wrote ({ district, neighborhood,
+  // details }): they render with an olive "detected — please check"
+  // ring (Baymard lookup + verification pattern: an auto-filled value
+  // is a suggestion the customer confirms, not a silent fact). Each
+  // field's ring clears when the customer edits that field.
+  const [filledFields, setFilledFields] = useState({});
   // KVKK footer notice: collapsed to a single truncated line by
   // default (owner rule — one line, tap to see the rest); the tap
   // expands the full text in place, a second tap collapses it.
@@ -234,6 +240,20 @@ export default function OrderFlow() {
       } catch {}
       return next;
     });
+  };
+
+  // Manual edits go through here: editing a field the autofill wrote
+  // also clears that field's "detected" ring — the customer has now
+  // verified/replaced the value themselves. (The autofill itself
+  // calls setAddress directly, then sets the rings.)
+  const editAddress = (patch) => {
+    setFilledFields((prev) => {
+      if (!Object.keys(patch).some((k) => prev[k])) return prev;
+      const next = { ...prev };
+      for (const k of Object.keys(patch)) next[k] = false;
+      return next;
+    });
+    setAddress(patch);
   };
 
   // Keep the mahalle entry mode in sync when the DISTRICT changes
@@ -303,8 +323,16 @@ export default function OrderFlow() {
         return;
       }
       const patch = { district: matched };
-      if (fix.accuracy <= 75) {
-        const rawMahalle = admin.level8 || g.district || g.suburb || g.neighbourhood || g.quarter || "";
+      // Graded trust in the mahalle (accuracy research notes): a
+      // value derived from a boundary polygon — admin.level8, or any
+      // field carrying the "…Mahallesi" form — outranks a bare suburb
+      // NODE name, which is only a nearest-label guess (the Kuloğlu
+      // failure was a bare node name). The standard gate (fix
+      // <= 75 m) trusts boundary-derived names; a bare node name is
+      // trusted only with a tight fix (<= 30 m).
+      const rawMahalle = admin.level8 || g.district || g.suburb || g.neighbourhood || g.quarter || "";
+      const boundaryDerived = !!admin.level8 || /mahallesi\.?$/i.test(rawMahalle.trim());
+      if (fix.accuracy <= 75 && (boundaryDerived || fix.accuracy <= 30)) {
         const mahalle = rawMahalle
           .trim()
           .replace(/\s+mahallesi\.?$/i, "")
@@ -321,6 +349,13 @@ export default function OrderFlow() {
         if (streetLine) patch.details = streetLine;
       }
       setAddress(patch);
+      // Ring exactly the fields this prefill wrote, so the customer
+      // verifies the detected values before they reach the kitchen.
+      setFilledFields({
+        district: !!patch.district,
+        neighborhood: !!patch.neighborhood,
+        details: !!patch.details,
+      });
       // The prefill may land while the district stays the same (the
       // district-change effect would not fire): sync the mahalle
       // entry mode with the detected value explicitly.
@@ -790,7 +825,7 @@ export default function OrderFlow() {
                         <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
                           {labels.districtLabel || "District"}
                         </label>
-                        <div className={`flex flex-wrap gap-2 ${orderAttempted && addressErrors.district ? "rounded-lg ring-2 ring-[#A0422E]/50 p-1 -m-1" : ""}`}>
+                        <div className={`flex flex-wrap gap-2 ${orderAttempted && addressErrors.district ? "rounded-lg ring-2 ring-[#A0422E]/50 p-1 -m-1" : filledFields.district ? "rounded-lg ring-2 ring-[#4E5F4C]/40 p-1 -m-1" : ""}`}>
                           {DELIVERY_DISTRICTS.map((d, i) => {
                             const active = address.district === d;
                             return (
@@ -799,7 +834,7 @@ export default function OrderFlow() {
                                 ref={i === 0 ? districtChipsRef : undefined}
                                 type="button"
                                 aria-pressed={active}
-                                onClick={() => setAddress({ district: d })}
+                                onClick={() => editAddress({ district: d })}
                                 className={`px-3.5 py-2 rounded-full text-sm font-bold border transition-colors ${
                                   active
                                     ? "bg-[#9C7A3F] text-white border-[#9C7A3F]"
@@ -838,7 +873,7 @@ export default function OrderFlow() {
                           autoComplete="name"
                           autoCorrect="off"
                           spellCheck={false}
-                          onChange={(e) => setAddress({ name: e.target.value })}
+                          onChange={(e) => editAddress({ name: e.target.value })}
                           placeholder={labels.namePlaceholder || ""}
                           className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
                             orderAttempted && addressErrors.name ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
@@ -878,11 +913,15 @@ export default function OrderFlow() {
                                   // input, current text preserved.
                                   setMahalleOther(true);
                                 } else {
-                                  setAddress({ neighborhood: e.target.value });
+                                  editAddress({ neighborhood: e.target.value });
                                 }
                               }}
                               className={`w-full appearance-none rounded-lg border bg-[#FAF7F0] px-3 py-2.5 pe-9 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
-                                orderAttempted && addressErrors.neighborhood ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
+                                orderAttempted && addressErrors.neighborhood
+                                  ? "border-[#A0422E]/70"
+                                  : filledFields.neighborhood
+                                    ? "border-[#4E5F4C]/60 ring-2 ring-[#4E5F4C]/30"
+                                    : "border-[#9C7A3F]/30"
                               }`}
                               style={{ fontFamily: "var(--font-inter)" }}
                             >
@@ -907,10 +946,14 @@ export default function OrderFlow() {
                             autoComplete="address-level3"
                             autoCorrect="off"
                             spellCheck={false}
-                            onChange={(e) => setAddress({ neighborhood: e.target.value })}
+                            onChange={(e) => editAddress({ neighborhood: e.target.value })}
                             placeholder={labels.neighborhoodPlaceholder || ""}
                             className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
-                              orderAttempted && addressErrors.neighborhood ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
+                              orderAttempted && addressErrors.neighborhood
+                                ? "border-[#A0422E]/70"
+                                : filledFields.neighborhood
+                                  ? "border-[#4E5F4C]/60 ring-2 ring-[#4E5F4C]/30"
+                                  : "border-[#9C7A3F]/30"
                             }`}
                             style={{ fontFamily: "var(--font-inter)" }}
                           />
@@ -934,11 +977,15 @@ export default function OrderFlow() {
                           autoCorrect="off"
                           autoCapitalize="off"
                           spellCheck={false}
-                          onChange={(e) => setAddress({ details: e.target.value })}
+                          onChange={(e) => editAddress({ details: e.target.value })}
                           placeholder={labels.detailsPlaceholder || ""}
                           rows={3}
                           className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] resize-none ${
-                            orderAttempted && addressErrors.details ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
+                            orderAttempted && addressErrors.details
+                              ? "border-[#A0422E]/70"
+                              : filledFields.details
+                                ? "border-[#4E5F4C]/60 ring-2 ring-[#4E5F4C]/30"
+                                : "border-[#9C7A3F]/30"
                           }`}
                           style={{ fontFamily: "var(--font-inter)" }}
                         />
@@ -958,7 +1005,7 @@ export default function OrderFlow() {
                           value={address.note}
                           autoCorrect="off"
                           spellCheck={false}
-                          onChange={(e) => setAddress({ note: e.target.value })}
+                          onChange={(e) => editAddress({ note: e.target.value })}
                           placeholder={labels.notePlaceholder || ""}
                           rows={2}
                           className="w-full rounded-lg border border-[#9C7A3F]/30 bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] resize-none"
