@@ -285,14 +285,16 @@ export default function OrderFlow() {
                 a TEXT-ONLY segmented switch (no in-tab icons, no
                 max-width cap) so both mode labels render fully even
                 at 360px, and a standard 36px close button. */}
-            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-[#9C7A3F]/20 shrink-0 bg-[#F7F2E7]">
-              <div className="flex items-center gap-1.5 shrink-0 whitespace-nowrap">
-                <ClipboardList size={19} className="text-[#9C7A3F] shrink-0" />
-                <h2 className="text-[15px] font-semibold text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
+            <div className="flex items-center gap-2.5 px-4 py-2.5 border-b border-[#9C7A3F]/20 shrink-0 bg-[#F7F2E7]">
+              <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
+                <span className="flex items-center justify-center rounded-lg bg-[#9C7A3F]/[0.12] p-1.5 shrink-0">
+                  <ClipboardList size={17} className="text-[#9C7A3F]" />
+                </span>
+                <h2 className="flex items-center text-[15px] font-semibold text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
                   {listTitle}
                   {cartCount > 0 && (
-                    <span className="text-[13px] text-[#7A7364] font-normal ms-1" style={{ fontFamily: "var(--font-inter)" }}>
-                      ({cartCount})
+                    <span className="ms-1.5 inline-flex items-center rounded-full bg-[#9C7A3F] px-[7px] py-[2px] text-[11px] font-bold leading-none text-[#F7F2E7]" style={{ fontFamily: "var(--font-inter)" }}>
+                      {cartCount}
                     </span>
                   )}
                 </h2>
@@ -314,10 +316,10 @@ export default function OrderFlow() {
                       role="tab"
                       aria-selected={active}
                       onClick={() => setOrderMode(key)}
-                      className={`flex-1 h-full flex items-center justify-center rounded-[8px] px-1 text-[13.5px] font-medium whitespace-nowrap transition-colors ${
+                      className={`flex-1 h-full flex items-center justify-center rounded-[8px] px-1 text-[13.5px] font-medium whitespace-nowrap transition-all duration-200 active:scale-[0.97] ${
                         active
                           ? "bg-[#4E5F4C] text-white shadow-sm"
-                          : "text-[#6B6353] hover:text-[#2B2620]"
+                          : "text-[#6B6353] hover:text-[#2B2620] hover:bg-[#4E5F4C]/10"
                       }`}
                       style={{ fontFamily: "var(--font-cairo)" }}
                     >
@@ -329,7 +331,7 @@ export default function OrderFlow() {
               <button
                 onClick={() => setIsCartOpen(false)}
                 aria-label={t.close || "Close"}
-                className="w-9 h-9 shrink-0 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-colors"
+                className="w-9 h-9 shrink-0 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F]/25 active:scale-95 transition-all duration-200"
               >
                 <X size={18} />
               </button>
@@ -345,7 +347,7 @@ export default function OrderFlow() {
               <button
                 type="button"
                 onClick={() => revealAddressForm(!addressComplete)}
-                className={`w-full flex items-center gap-2.5 px-4 py-2 text-start shrink-0 border-b transition-colors ${
+                className={`w-full flex items-center gap-2.5 px-4 py-2 text-start shrink-0 border-b transition-all duration-200 hover:brightness-105 active:scale-[0.99] ${
                   addressComplete
                     ? "bg-[#4E5F4C] border-[#4E5F4C]"
                     : "bg-[#9C7A3F]/10 border-[#9C7A3F]/25 hover:bg-[#9C7A3F]/15"
@@ -748,7 +750,7 @@ export default function OrderFlow() {
                           role="radio"
                           aria-checked={active}
                           onClick={() => setPaymentMethod(opt.key)}
-                          className={`flex-1 rounded-md px-2.5 py-2 text-xs font-bold whitespace-nowrap transition-colors ${
+                          className={`flex-1 rounded-md px-2.5 py-2 text-xs font-bold whitespace-nowrap transition-all duration-200 active:scale-[0.97] ${
                             active
                               ? "bg-[#9C7A3F] text-white shadow-sm"
                               : "text-[#2B2620]/60 hover:text-[#2B2620] hover:bg-[#9C7A3F]/10"
