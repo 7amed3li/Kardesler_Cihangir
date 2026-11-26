@@ -81,6 +81,7 @@
     "addressSaved": "地址已保存",
     "deliveryBarAdd": "添加配送地址",
     "editAddress": "编辑",
+    "phoneOrderLabel": "电话订餐",
     "addAddressFirst": "请先添加配送地址",
     "nameLabel": "姓名",
     "namePlaceholder": "您的全名",

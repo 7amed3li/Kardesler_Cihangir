@@ -6,7 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
-import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle, MapPin, ChevronDown, Phone } from "lucide-react";
+import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
 import { trackEvent } from "../lib/trackingUtils";
@@ -85,6 +85,10 @@ export default function OrderFlow() {
   const [addressOpen, setAddressOpen] = useState(true);
   const [orderAttempted, setOrderAttempted] = useState(false);
   const [minAttempted, setMinAttempted] = useState(false);
+  // KVKK footer notice: collapsed to a single truncated line by
+  // default (owner rule — one line, tap to see the rest); the tap
+  // expands the full text in place, a second tap collapses it.
+  const [kvkkOpen, setKvkkOpen] = useState(false);
   const addressSectionRef = useRef(null);
   // Field refs so a failed order attempt (or a tap on the delivery
   // bar) can move focus straight to the first missing field.
@@ -292,21 +296,21 @@ export default function OrderFlow() {
                 onClick={() => revealAddressForm(!addressComplete)}
                 className={`w-full flex items-center gap-2.5 px-5 py-2.5 text-start shrink-0 border-b transition-colors ${
                   addressComplete
-                    ? "bg-[#4E5F4C]/10 border-[#4E5F4C]/20"
+                    ? "bg-[#4E5F4C] border-[#4E5F4C]"
                     : "bg-[#9C7A3F]/10 border-[#9C7A3F]/25 hover:bg-[#9C7A3F]/15"
                 }`}
               >
                 {addressComplete ? (
-                  <CheckCircle size={16} className="text-[#4E5F4C] shrink-0" />
+                  <CheckCircle size={16} className="text-[#EDE3CE] shrink-0" />
                 ) : (
                   <MapPin size={16} className="text-[#9C7A3F] shrink-0" />
                 )}
                 {addressComplete ? (
                   <>
-                    <span className="flex-1 min-w-0 truncate text-[13px] font-semibold text-[#2B2620]" style={{ fontFamily: "var(--font-inter)" }}>
+                    <span className="flex-1 min-w-0 truncate text-[13px] font-semibold text-[#F7F2E7]" style={{ fontFamily: "var(--font-inter)" }}>
                       {address.district}, {address.neighborhood.trim()}, {address.details.trim()}
                     </span>
-                    <span className="text-[12px] font-bold text-[#9C7A3F] shrink-0" style={{ fontFamily: "var(--font-inter)" }}>
+                    <span className="text-[12px] font-bold text-[#EDE3CE] underline underline-offset-2 shrink-0" style={{ fontFamily: "var(--font-inter)" }}>
                       {labels.editAddress || "Edit"}
                     </span>
                   </>
@@ -629,7 +633,7 @@ export default function OrderFlow() {
                 scroll area, so total → payment → WhatsApp order button
                 stays visible while items + address form scroll above) */}
             {cart.length > 0 && (
-              <div className="px-5 py-4 border-t border-[#9C7A3F]/20 bg-[#FAF7F0] space-y-3 shrink-0">
+              <div className="px-5 py-3 border-t border-[#9C7A3F]/20 bg-[#FAF7F0] space-y-3 shrink-0">
                 
                 {/* Total (Subtle) */}
                 <div className="flex items-center justify-center gap-2 text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
@@ -722,33 +726,72 @@ export default function OrderFlow() {
                 )}
 
                 {/* KVKK short notice (Art. 10) — information only, no
-                    consent checkbox: order data rests on Art. 5/2-c. */}
-                <p className="text-[11px] leading-relaxed text-[#7A7364] px-1" style={{ fontFamily: "var(--font-inter)" }}>
-                  {labels.kvkkNotice || "Your order details are processed so that we can fulfil your request. When you send your order, it is transmitted to us via WhatsApp; as WhatsApp's infrastructure is located abroad, your details are transferred abroad through this channel. For details, see:"}{" "}
-                  <Link
-                    href={lang === "en" ? "/kvkk" : `/${lang}/kvkk`}
-                    className="font-semibold text-[#9C7A3F] underline underline-offset-2 hover:text-[#2B2620] transition-colors"
-                  >
-                    {labels.kvkkLinkLabel || "Information Notice"}
-                  </Link>
-                </p>
+                    consent checkbox: order data rests on Art. 5/2-c.
+                    Collapsed to ONE truncated line by default (owner
+                    rule: one line, tap to see the rest); the tap
+                    expands the full text in place and a second tap
+                    collapses it again. The /kvkk link stays visible
+                    in the collapsed line and inside the expanded
+                    text, so it is reachable in both states. */}
+                <div className="px-1 text-[11px] leading-relaxed text-[#7A7364]" style={{ fontFamily: "var(--font-inter)" }}>
+                  {kvkkOpen ? (
+                    <p>
+                      {labels.kvkkNotice || "Your order details are processed so that we can fulfil your request. When you send your order, it is transmitted to us via WhatsApp; as WhatsApp's infrastructure is located abroad, your details are transferred abroad through this channel. For details, see:"}{" "}
+                      <Link
+                        href={lang === "en" ? "/kvkk" : `/${lang}/kvkk`}
+                        className="font-semibold text-[#9C7A3F] underline underline-offset-2 hover:text-[#2B2620] transition-colors"
+                      >
+                        {labels.kvkkLinkLabel || "Information Notice"}
+                      </Link>{" "}
+                      <button
+                        type="button"
+                        onClick={() => setKvkkOpen(false)}
+                        aria-expanded={true}
+                        aria-label={labels.kvkkLinkLabel || "Information Notice"}
+                        className="inline-flex align-[-2px] text-[#9C7A3F] hover:text-[#2B2620] transition-colors"
+                      >
+                        <ChevronUp size={13} />
+                      </button>
+                    </p>
+                  ) : (
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        type="button"
+                        onClick={() => setKvkkOpen(true)}
+                        aria-expanded={false}
+                        className="flex min-w-0 flex-1 items-center gap-1 text-start"
+                      >
+                        <span className="truncate">
+                          {labels.kvkkNotice || "Your order details are processed so that we can fulfil your request. When you send your order, it is transmitted to us via WhatsApp; as WhatsApp's infrastructure is located abroad, your details are transferred abroad through this channel. For details, see:"}
+                        </span>
+                        <ChevronDown size={13} className="shrink-0 text-[#9C7A3F]" />
+                      </button>
+                      <Link
+                        href={lang === "en" ? "/kvkk" : `/${lang}/kvkk`}
+                        className="shrink-0 font-semibold text-[#9C7A3F] underline underline-offset-2 hover:text-[#2B2620] transition-colors"
+                      >
+                        {labels.kvkkLinkLabel || "Information Notice"}
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
-                {/* Call to Order — demoted to a small text link so it
-                    stays available as an alternate way out without
-                    competing with the WhatsApp CTA. */}
-                <div className="flex justify-center">
+                {/* Bottom link row (mockup): call-to-order demoted to
+                    a small text link on one side, Clear List on the
+                    other — one compact row so the whole sticky
+                    footer fits the sheet on short viewports. The
+                    label uses the drawer's own sentence-case key:
+                    the shared t.callToOrder string is ALL CAPS (it
+                    styles a homepage CTA) and must not leak in here. */}
+                <div className="flex items-center justify-between px-1 pt-1 pb-1">
                   <a
                     href="tel:+902122513696"
-                    className="inline-flex items-center gap-1.5 py-1 text-[13px] font-semibold text-[#4E5F4C] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#4E5F4C] hover:underline"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     <Phone size={14} />
-                    <span>{t.callToOrder || (lang === 'ar' ? 'اتصل للطلب' : lang === 'tr' ? 'Sipariş İçin Ara' : 'Call to Order')}: 0 (212) 251 36 96</span>
+                    <span>{labels.phoneOrderLabel || "Order by Phone"}</span>
                   </a>
-                </div>
-
-                {/* Clear List */}
-                <div className="flex justify-center pt-2 pb-1">
                   <button
                     onClick={clearCart}
                     className="text-[12px] text-[#A0422E] font-medium hover:underline opacity-80"
