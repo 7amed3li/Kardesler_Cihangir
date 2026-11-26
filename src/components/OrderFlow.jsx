@@ -150,22 +150,14 @@ export default function OrderFlow() {
   // address form + WhatsApp). ONE drawer serves both audiences, and
   // mixing the two journeys in a single layout confused both of
   // them (owner complaint 2026-11-26), so the drawer renders exactly
-  // one path per mode. Persisted like the payment method, default
-  // "delivery" (the online flow is the site's primary use).
-  const MODE_STORAGE_KEY = "kardesler_order_mode";
+  // one path per mode. The drawer ALWAYS opens in delivery mode
+  // (owner rule 2026-11-27): the mode used to persist in
+  // localStorage, so a phone that once tried "Restoranda" kept
+  // opening there. Switching inside an open session still works —
+  // the choice is deliberately no longer read from or written to
+  // storage, so every open starts on delivery.
   const [orderMode, setOrderModeState] = useState("delivery");
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(MODE_STORAGE_KEY);
-      if (saved === "dinein" || saved === "delivery") setOrderModeState(saved);
-    } catch {}
-  }, []);
-  const setOrderMode = (value) => {
-    setOrderModeState(value);
-    try {
-      localStorage.setItem(MODE_STORAGE_KEY, value);
-    } catch {}
-  };
+  const setOrderMode = (value) => setOrderModeState(value);
   const isDineIn = orderMode === "dinein";
 
   // Delivery address (mandatory for WhatsApp orders). The whole form is
