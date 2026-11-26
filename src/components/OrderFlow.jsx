@@ -6,7 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
-import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, Check, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone } from "lucide-react";
+import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, Check, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone, LocateFixed, Loader2 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
 import { PORTION_LABELS_TR } from "../lib/portions";
@@ -113,6 +113,12 @@ export default function OrderFlow() {
   const [addressOpen, setAddressOpen] = useState(true);
   const [orderAttempted, setOrderAttempted] = useState(false);
   const [minAttempted, setMinAttempted] = useState(false);
+  // "Use my location" autofill: spinner state + a quiet inline note
+  // ("outside" = geocoded district is not one of the 4 delivery areas,
+  // "failed" = permission denied / timeout / geocode error). The note
+  // clears on the next manual field edit or the next locate attempt.
+  const [locating, setLocating] = useState(false);
+  const [locationNote, setLocationNote] = useState(null);
   // KVKK footer notice: collapsed to a single truncated line by
   // default (owner rule — one line, tap to see the rest); the tap
   // expands the full text in place, a second tap collapses it.
@@ -146,6 +152,9 @@ export default function OrderFlow() {
   // Persist in the setter (same pattern as the payment method) so the
   // initial empty state can never overwrite a saved address on mount.
   const setAddress = (patch) => {
+    // Any manual edit (or a successful autofill patch) dismisses the
+    // location note from a previous locate attempt.
+    setLocationNote(null);
     setAddressState((prev) => {
       const next = { ...prev, ...patch };
       try {
@@ -153,6 +162,80 @@ export default function OrderFlow() {
       } catch {}
       return next;
     });
+  };
+
+  // "Use my location" autofill: one tap → device position → Nominatim
+  // reverse geocode (single request per tap, well inside its usage
+  // policy) → fill district / neighborhood / street line. Never blocks
+  // manual entry: denial, timeout or an out-of-area result only shows
+  // a quiet note under the button and leaves the form untouched.
+  const handleUseMyLocation = () => {
+    if (!("geolocation" in navigator)) {
+      setLocationNote("failed");
+      return;
+    }
+    setLocating(true);
+    setLocationNote(null);
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        try {
+          const { latitude, longitude } = pos.coords;
+          const res = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`,
+            { headers: { "Accept-Language": "tr" } }
+          );
+          if (!res.ok) throw new Error("reverse geocode failed");
+          const data = await res.json();
+          const a = data.address || {};
+          // Nominatim TR address parts: the ilçe (district) arrives as
+          // `county` (sometimes `state_district` / `town` /
+          // `city_district`); the mahalle as `neighbourhood`
+          // (sometimes `suburb` / `quarter`).
+          const rawDistrict = a.county || a.state_district || a.town || a.city_district || "";
+          // Turkish-aware fold so "BEYOĞLU" / "Şişli" compare equal,
+          // and drop a trailing "İlçesi" ("Beyoğlu İlçesi" → "Beyoğlu").
+          const normalizeDistrict = (s) =>
+            (s || "")
+              .trim()
+              .toLocaleLowerCase("tr-TR")
+              .replace(/\s+ilçesi$/, "")
+              .trim();
+          const matched = DELIVERY_DISTRICTS.find(
+            (d) => normalizeDistrict(d) === normalizeDistrict(rawDistrict)
+          );
+          if (!matched) {
+            setLocationNote("outside");
+            return;
+          }
+          const patch = { district: matched };
+          const rawMahalle = a.neighbourhood || a.suburb || a.quarter || "";
+          const mahalle = rawMahalle
+            .trim()
+            .replace(/\s+mahallesi\.?$/i, "")
+            .replace(/\s+mah\.?$/i, "")
+            .trim();
+          if (mahalle) patch.neighborhood = mahalle;
+          // Street line only fills an EMPTY details field — never
+          // overwrite something the customer already typed.
+          if (!address.details.trim()) {
+            const streetLine = [a.road, a.house_number ? `No:${a.house_number}` : ""]
+              .filter(Boolean)
+              .join(" ");
+            if (streetLine) patch.details = streetLine;
+          }
+          setAddress(patch);
+        } catch {
+          setLocationNote("failed");
+        } finally {
+          setLocating(false);
+        }
+      },
+      () => {
+        setLocating(false);
+        setLocationNote("failed");
+      },
+      { timeout: 10000, maximumAge: 60000 }
+    );
   };
 
   // Required: name, district, neighborhood, address details. Note is
@@ -543,6 +626,39 @@ export default function OrderFlow() {
 
                   {addressOpen && (
                     <div className="px-3 pb-3 pt-1 space-y-3 border-t border-[#9C7A3F]/10">
+                      {/* "Use my location" autofill — one tap fills
+                          district / neighborhood / street from the
+                          device position; manual entry stays untouched
+                          on any failure (see handleUseMyLocation). */}
+                      <div>
+                        <button
+                          type="button"
+                          onClick={handleUseMyLocation}
+                          disabled={locating}
+                          className="w-full h-10 rounded-lg bg-[#FAF7F0] border border-[#4E5F4C]/30 text-[#4E5F4C] text-sm font-bold flex items-center justify-center gap-2 transition-colors hover:border-[#4E5F4C]/60 disabled:opacity-60"
+                          style={{ fontFamily: "var(--font-inter)" }}
+                        >
+                          {locating ? (
+                            <Loader2 size={16} className="animate-spin shrink-0" />
+                          ) : (
+                            <LocateFixed size={16} className="shrink-0" />
+                          )}
+                          {locating
+                            ? labels.locating || "Locating…"
+                            : labels.useMyLocation || "Use my location"}
+                        </button>
+                        {locationNote === "outside" && (
+                          <p className="text-[12px] text-[#A0422E] mt-1.5" style={{ fontFamily: "var(--font-inter)" }}>
+                            {labels.locationOutsideArea || "Your location appears to be outside our delivery area"}
+                          </p>
+                        )}
+                        {locationNote === "failed" && (
+                          <p className="text-[12px] text-[#7A7364] mt-1.5" style={{ fontFamily: "var(--font-inter)" }}>
+                            {labels.locationFailed || "Couldn't get your location — please type your address"}
+                          </p>
+                        )}
+                      </div>
+
                       {orderAttempted && !addressComplete && (
                         <p className="text-[12px] font-medium text-[#A0422E] bg-[#A0422E]/10 rounded-lg px-3 py-2" style={{ fontFamily: "var(--font-inter)" }}>
                           {labels.addressIncomplete || "Please fill in the required fields to place your order"}
@@ -617,6 +733,8 @@ export default function OrderFlow() {
                           type="text"
                           value={address.name}
                           autoComplete="name"
+                          autoCorrect="off"
+                          spellCheck={false}
                           onChange={(e) => setAddress({ name: e.target.value })}
                           placeholder={labels.namePlaceholder || ""}
                           className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
@@ -641,6 +759,8 @@ export default function OrderFlow() {
                           type="text"
                           value={address.neighborhood}
                           autoComplete="address-level3"
+                          autoCorrect="off"
+                          spellCheck={false}
                           onChange={(e) => setAddress({ neighborhood: e.target.value })}
                           placeholder={labels.neighborhoodPlaceholder || ""}
                           className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
@@ -664,6 +784,9 @@ export default function OrderFlow() {
                           ref={detailsTextareaRef}
                           value={address.details}
                           autoComplete="street-address"
+                          autoCorrect="off"
+                          autoCapitalize="off"
+                          spellCheck={false}
                           onChange={(e) => setAddress({ details: e.target.value })}
                           placeholder={labels.detailsPlaceholder || ""}
                           rows={3}
@@ -686,6 +809,8 @@ export default function OrderFlow() {
                         </label>
                         <textarea
                           value={address.note}
+                          autoCorrect="off"
+                          spellCheck={false}
                           onChange={(e) => setAddress({ note: e.target.value })}
                           placeholder={labels.notePlaceholder || ""}
                           rows={2}
