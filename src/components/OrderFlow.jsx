@@ -731,9 +731,10 @@ export default function OrderFlow() {
                   </div>
                 ) : (
                   <>
-                {/* Payment Method (at the door) — compact checkbox
-                    boxes that hug their content instead of stretching
-                    across the footer; single-select radio behavior */}
+                {/* Payment Method (at the door) — plain inline units:
+                    a small checkbox square with the option word right
+                    beside it, no card/border/background around them;
+                    single-select radio behavior */}
                 <div>
                   <p className="text-center text-[#7A7364] text-xs leading-4 font-medium mb-1.5" style={{ fontFamily: "var(--font-inter)" }}>
                     {labels.paymentMethod || "Payment Method"}
@@ -741,7 +742,7 @@ export default function OrderFlow() {
                   <div
                     role="radiogroup"
                     aria-label={labels.paymentMethod || "Payment Method"}
-                    className="flex items-center justify-start gap-2"
+                    className="flex items-center justify-start gap-5"
                   >
                     {[
                       { key: "cash", text: labels.payCashAtDoor || "Cash at the Door" },
@@ -755,11 +756,7 @@ export default function OrderFlow() {
                           role="radio"
                           aria-checked={active}
                           onClick={() => setPaymentMethod(opt.key)}
-                          className={`flex-none flex items-center gap-[7px] rounded-lg border-[1.5px] px-3 py-2 text-start transition-all duration-200 active:scale-[0.98] ${
-                            active
-                              ? "border-[#4E5F4C] bg-[#4E5F4C]/5"
-                              : "border-[#9C7A3F]/30 bg-white hover:border-[#4E5F4C]/50"
-                          }`}
+                          className="flex-none flex items-center gap-[7px] px-1 py-1.5 text-start transition-all duration-200 active:scale-[0.98]"
                           style={{ fontFamily: "var(--font-inter)" }}
                         >
                           <span
@@ -771,7 +768,7 @@ export default function OrderFlow() {
                           >
                             {active && <Check size={12} strokeWidth={3.5} className="text-white" />}
                           </span>
-                          <span className={`text-[13.5px] leading-tight whitespace-nowrap ${active ? "font-semibold text-[#2B2620]" : "font-normal text-[#2B2620]/70"}`}>
+                          <span className={`text-[13.5px] leading-tight whitespace-nowrap ${active ? "font-semibold text-[#4E5F4C]" : "font-normal text-[#2B2620]"}`}>
                             {opt.text}
                           </span>
                         </button>
