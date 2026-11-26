@@ -737,50 +737,49 @@ export default function OrderFlow() {
                   </div>
                 ) : (
                   <>
-                {/* Payment Method (at the door) — plain inline units:
-                    a small checkbox square with the option word right
-                    beside it, no card/border/background around them;
-                    single-select radio behavior */}
-                <div>
-                  <p className="text-center text-[#7A7364] text-xs leading-4 font-medium mb-1.5" style={{ fontFamily: "var(--font-inter)" }}>
+                {/* Payment Method (at the door) — ONE line: the label
+                    and both plain checkbox units share a single flex
+                    row (label at inline-start, no separate label line);
+                    flex-wrap lets long locales wrap instead of
+                    overflowing. Single-select radio behavior. */}
+                <div
+                  role="radiogroup"
+                  aria-label={labels.paymentMethod || "Payment Method"}
+                  className="flex flex-wrap items-center gap-x-[10px] gap-y-1"
+                >
+                  <span className="shrink-0 text-[#7A7364] text-xs leading-4 font-medium" style={{ fontFamily: "var(--font-inter)" }}>
                     {labels.paymentMethod || "Payment Method"}
-                  </p>
-                  <div
-                    role="radiogroup"
-                    aria-label={labels.paymentMethod || "Payment Method"}
-                    className="flex items-center justify-start gap-5"
-                  >
-                    {[
-                      { key: "cash", text: labels.payCashAtDoor || "Cash at the Door" },
-                      { key: "card", text: labels.payCardAtDoor || "Card at the Door" },
-                    ].map((opt) => {
-                      const active = paymentMethod === opt.key;
-                      return (
-                        <button
-                          key={opt.key}
-                          type="button"
-                          role="radio"
-                          aria-checked={active}
-                          onClick={() => setPaymentMethod(opt.key)}
-                          className="flex-none flex items-center gap-[7px] px-1 py-1.5 text-start transition-all duration-200 active:scale-[0.98]"
-                          style={{ fontFamily: "var(--font-inter)" }}
+                  </span>
+                  {[
+                    { key: "cash", text: labels.payCashAtDoor || "Cash at the Door" },
+                    { key: "card", text: labels.payCardAtDoor || "Card at the Door" },
+                  ].map((opt) => {
+                    const active = paymentMethod === opt.key;
+                    return (
+                      <button
+                        key={opt.key}
+                        type="button"
+                        role="radio"
+                        aria-checked={active}
+                        onClick={() => setPaymentMethod(opt.key)}
+                        className="flex-none flex items-center gap-[6px] px-1 py-1.5 text-start transition-all duration-200 active:scale-[0.98]"
+                        style={{ fontFamily: "var(--font-inter)" }}
+                      >
+                        <span
+                          className={`w-[15px] h-[15px] shrink-0 rounded-[4px] border-[1.5px] flex items-center justify-center transition-all duration-200 ${
+                            active
+                              ? "bg-[#4E5F4C] border-[#4E5F4C]"
+                              : "bg-transparent border-[#7A7364]/50"
+                          }`}
                         >
-                          <span
-                            className={`w-4 h-4 shrink-0 rounded-[4px] border-[1.5px] flex items-center justify-center transition-all duration-200 ${
-                              active
-                                ? "bg-[#4E5F4C] border-[#4E5F4C]"
-                                : "bg-transparent border-[#7A7364]/50"
-                            }`}
-                          >
-                            {active && <Check size={12} strokeWidth={3.5} className="text-white" />}
-                          </span>
-                          <span className={`text-[13.5px] leading-tight whitespace-nowrap ${active ? "font-semibold text-[#4E5F4C]" : "font-normal text-[#2B2620]"}`}>
-                            {opt.text}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
+                          {active && <Check size={11} strokeWidth={3.5} className="text-white" />}
+                        </span>
+                        <span className={`text-[13px] leading-tight whitespace-nowrap ${active ? "font-semibold text-[#4E5F4C]" : "font-normal text-[#2B2620]"}`}>
+                          {opt.text}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {/* Order via WhatsApp Button (primary) */}
