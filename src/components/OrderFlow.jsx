@@ -6,7 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
-import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone, UtensilsCrossed, Bike } from "lucide-react";
+import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
 import { trackEvent } from "../lib/trackingUtils";
@@ -276,65 +276,63 @@ export default function OrderFlow() {
             className="bg-[#FAF7F0] w-full sm:max-w-md sm:h-full max-h-[94dvh] sm:max-h-full rounded-t-3xl sm:rounded-none overflow-hidden flex flex-col shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header stack — TWO calm rows (the owner rejected the
-                merged one-row variant as crowded): row 1 is the title
-                and close button, row 2 is the full-width order-mode
-                switch. The drawer serves two audiences (dine-in guests
-                showing the list to a waiter, online customers ordering
-                delivery) and each mode renders only its own path below.
-                One type rhythm for the whole stack: title 17px/600,
-                tabs 14px/500, nothing larger or bolder than the title. */}
-            <div className="shrink-0 bg-[#F7F2E7] border-b border-[#9C7A3F]/20">
-              <div className="flex items-center gap-2 px-4 pt-3 pb-2">
-                <ClipboardList size={20} className="text-[#9C7A3F] shrink-0" />
-                <h2 className="text-[17px] font-semibold text-[#2B2620] whitespace-nowrap" style={{ fontFamily: "var(--font-cairo)" }}>
+            {/* Header — ONE row, engineered for comfort. The drawer
+                serves two audiences (dine-in guests showing the list
+                to a waiter, online customers ordering delivery) and
+                each mode renders only its own path below. Comfort
+                rules for this row: a compact calm title cluster
+                (15px/600 — nothing in the row is larger or bolder),
+                a TEXT-ONLY segmented switch (no in-tab icons, no
+                max-width cap) so both mode labels render fully even
+                at 360px, and a standard 36px close button. */}
+            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-[#9C7A3F]/20 shrink-0 bg-[#F7F2E7]">
+              <div className="flex items-center gap-1.5 shrink-0 whitespace-nowrap">
+                <ClipboardList size={19} className="text-[#9C7A3F] shrink-0" />
+                <h2 className="text-[15px] font-semibold text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
                   {listTitle}
                   {cartCount > 0 && (
-                    <span className="text-[15px] text-[#7A7364] font-normal ms-1.5" style={{ fontFamily: "var(--font-inter)" }}>
+                    <span className="text-[13px] text-[#7A7364] font-normal ms-1" style={{ fontFamily: "var(--font-inter)" }}>
                       ({cartCount})
                     </span>
                   )}
                 </h2>
-                <button
-                  onClick={() => setIsCartOpen(false)}
-                  aria-label={t.close || "Close"}
-                  className="w-9 h-9 ms-auto shrink-0 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-colors"
-                >
-                  <X size={18} />
-                </button>
               </div>
-              <div className="px-4 pb-2">
-                <div
-                  role="tablist"
-                  aria-label={labels.modeDelivery || "Order mode"}
-                  className="flex rounded-xl bg-[#EDE3CE]/80 border border-[#9C7A3F]/15 p-1 gap-1"
-                >
-                  {[
-                    { key: "dinein", Icon: UtensilsCrossed, text: labels.modeDineIn || "Restoranda" },
-                    { key: "delivery", Icon: Bike, text: labels.modeDelivery || "Paket Sipariş" },
-                  ].map(({ key, Icon, text }) => {
-                    const active = orderMode === key;
-                    return (
-                      <button
-                        key={key}
-                        type="button"
-                        role="tab"
-                        aria-selected={active}
-                        onClick={() => setOrderMode(key)}
-                        className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg h-10 px-2 text-sm font-medium whitespace-nowrap transition-colors ${
-                          active
-                            ? "bg-[#4E5F4C] text-white shadow-sm"
-                            : "text-[#7A7364] hover:text-[#2B2620]"
-                        }`}
-                        style={{ fontFamily: "var(--font-cairo)" }}
-                      >
-                        <Icon size={16} className="shrink-0" />
-                        <span>{text}</span>
-                      </button>
-                    );
-                  })}
-                </div>
+              <div
+                role="tablist"
+                aria-label={labels.modeDelivery || "Order mode"}
+                className="flex-1 min-w-0 flex items-center h-9 rounded-[11px] bg-[#EDE3CE] border border-[#9C7A3F]/15 p-[3px] gap-[3px]"
+              >
+                {[
+                  { key: "dinein", text: labels.modeDineIn || "Restoranda" },
+                  { key: "delivery", text: labels.modeDelivery || "Paket Sipariş" },
+                ].map(({ key, text }) => {
+                  const active = orderMode === key;
+                  return (
+                    <button
+                      key={key}
+                      type="button"
+                      role="tab"
+                      aria-selected={active}
+                      onClick={() => setOrderMode(key)}
+                      className={`flex-1 h-full flex items-center justify-center rounded-[8px] px-1 text-[13.5px] font-medium whitespace-nowrap transition-colors ${
+                        active
+                          ? "bg-[#4E5F4C] text-white shadow-sm"
+                          : "text-[#6B6353] hover:text-[#2B2620]"
+                      }`}
+                      style={{ fontFamily: "var(--font-cairo)" }}
+                    >
+                      {text}
+                    </button>
+                  );
+                })}
               </div>
+              <button
+                onClick={() => setIsCartOpen(false)}
+                aria-label={t.close || "Close"}
+                className="w-9 h-9 shrink-0 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-colors"
+              >
+                <X size={18} />
+              </button>
             </div>
 
             {/* Delivery bar — pinned under the header, OUTSIDE the
