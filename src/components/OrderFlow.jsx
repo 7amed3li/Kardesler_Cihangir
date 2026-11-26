@@ -6,7 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import PortionSelector from "./PortionSelector";
 import { useMounted } from "../hooks/useMounted";
 import Image from "next/image";
-import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone } from "lucide-react";
+import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, Check, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
 import { trackEvent } from "../lib/trackingUtils";
@@ -736,7 +736,7 @@ export default function OrderFlow() {
                   <div
                     role="radiogroup"
                     aria-label={labels.paymentMethod || "Payment Method"}
-                    className="flex items-center rounded-lg border border-[#9C7A3F]/30 bg-[#EDE3CE] p-0.5 gap-0.5"
+                    className="flex items-stretch gap-2"
                   >
                     {[
                       { key: "cash", text: labels.payCashAtDoor || "Cash at the Door" },
@@ -750,14 +750,25 @@ export default function OrderFlow() {
                           role="radio"
                           aria-checked={active}
                           onClick={() => setPaymentMethod(opt.key)}
-                          className={`flex-1 rounded-md px-2.5 py-2 text-xs font-bold whitespace-nowrap transition-all duration-200 active:scale-[0.97] ${
+                          className={`flex-1 flex items-center gap-2 rounded-lg border-[1.5px] px-3 py-2.5 text-start transition-all duration-200 active:scale-[0.98] ${
                             active
-                              ? "bg-[#9C7A3F] text-white shadow-sm"
-                              : "text-[#2B2620]/60 hover:text-[#2B2620] hover:bg-[#9C7A3F]/10"
+                              ? "border-[#4E5F4C] bg-[#4E5F4C]/5"
+                              : "border-[#9C7A3F]/30 bg-white hover:border-[#4E5F4C]/50"
                           }`}
                           style={{ fontFamily: "var(--font-inter)" }}
                         >
-                          {opt.text}
+                          <span
+                            className={`w-[18px] h-[18px] shrink-0 rounded-[5px] border-[1.5px] flex items-center justify-center transition-all duration-200 ${
+                              active
+                                ? "bg-[#4E5F4C] border-[#4E5F4C]"
+                                : "bg-transparent border-[#7A7364]/50"
+                            }`}
+                          >
+                            {active && <Check size={14} strokeWidth={3} className="text-white" />}
+                          </span>
+                          <span className={`text-xs whitespace-nowrap ${active ? "font-semibold text-[#2B2620]" : "font-normal text-[#2B2620]/70"}`}>
+                            {opt.text}
+                          </span>
                         </button>
                       );
                     })}
