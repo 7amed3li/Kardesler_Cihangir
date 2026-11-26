@@ -75,7 +75,7 @@ export default function OrderFlow() {
   // 2026-11-26: Beyoğlu ₺400, every other district ₺1,000. Compared
   // against the cart's live estimated total at order time.
   const DISTRICT_MINIMUMS = { "Beyoğlu": 400, "Şişli": 1000, "Beşiktaş": 1000, "Fatih": 1000 };
-  const EMPTY_ADDRESS = { name: "", phone: "", district: "", neighborhood: "", details: "", note: "" };
+  const EMPTY_ADDRESS = { name: "", district: "", neighborhood: "", details: "", note: "" };
   const [address, setAddressState] = useState(EMPTY_ADDRESS);
   // Expanded by default: the address form sits directly under the cart
   // items (before the order button in the sticky footer) and must be
@@ -86,14 +86,21 @@ export default function OrderFlow() {
   const [orderAttempted, setOrderAttempted] = useState(false);
   const [minAttempted, setMinAttempted] = useState(false);
   const addressSectionRef = useRef(null);
+  // Field refs so a failed order attempt (or a tap on the delivery
+  // bar) can move focus straight to the first missing field.
+  const nameInputRef = useRef(null);
+  const districtChipsRef = useRef(null);
+  const neighborhoodInputRef = useRef(null);
+  const detailsTextareaRef = useRef(null);
 
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem(ADDRESS_STORAGE_KEY) || "null");
       if (saved && typeof saved === "object") {
+        // Legacy saved objects may still carry a phone — ignored on
+        // purpose (the phone field was removed; see addressErrors).
         setAddressState({
           name: saved.name || "",
-          phone: saved.phone || "",
           district: DELIVERY_DISTRICTS.includes(saved.district) ? saved.district : "",
           neighborhood: saved.neighborhood || "",
           details: saved.details || "",
@@ -116,11 +123,12 @@ export default function OrderFlow() {
     });
   };
 
-  // Required: name, phone (>= 10 digits after stripping formatting),
-  // district, neighborhood, address details. Note is optional.
+  // Required: name, district, neighborhood, address details. Note is
+  // optional. No phone field: the order arrives from the customer's
+  // own WhatsApp, so the restaurant already has the number — asking
+  // for it again only costs completions.
   const addressErrors = {
     name: !address.name.trim(),
-    phone: address.phone.replace(/\D/g, "").length < 10,
     district: !DELIVERY_DISTRICTS.includes(address.district),
     neighborhood: !address.neighborhood.trim(),
     details: !address.details.trim(),
@@ -129,6 +137,30 @@ export default function OrderFlow() {
   const fullAddress = [DELIVERY_CITY, address.district, address.neighborhood.trim(), address.details.trim()]
     .filter(Boolean)
     .join(" / ");
+
+  // Focus the first missing field (in form order) — used after a
+  // failed order attempt so the tap takes the user to the problem
+  // instead of just reporting it from a distance.
+  const focusFirstMissingField = () => {
+    const refs = {
+      district: districtChipsRef,
+      name: nameInputRef,
+      neighborhood: neighborhoodInputRef,
+      details: detailsTextareaRef,
+    };
+    const first = ["district", "name", "neighborhood", "details"].find((k) => addressErrors[k]);
+    if (first) refs[first].current?.focus({ preventScroll: true });
+  };
+
+  // Open the address form, smooth-scroll it into view, and optionally
+  // focus the first missing field once the scroll settles.
+  const revealAddressForm = (focusMissing) => {
+    setAddressOpen(true);
+    setTimeout(() => {
+      addressSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (focusMissing) setTimeout(focusFirstMissingField, 400);
+    }, 60);
+  };
 
   // District minimum, checked against the same live estimated total the
   // drawer shows ("Tahmini Toplam", ₺). Null while no district is chosen
@@ -161,7 +193,6 @@ export default function OrderFlow() {
           title: wa.title || "New Order",
           total: labels.total || "Total",
           name: wa.name || "Name",
-          phone: wa.phone || "Phone",
           address: wa.address || "Address",
           note: wa.note || "Note",
           payment: wa.payment || "Payment",
@@ -172,7 +203,6 @@ export default function OrderFlow() {
             : wa.payCashAtDoor || "Cash at the door",
         delivery: {
           name: address.name.trim(),
-          phone: address.phone.trim(),
           address: fullAddress,
           note: address.note.trim(),
         },
@@ -249,6 +279,47 @@ export default function OrderFlow() {
                 {waiterText}
               </p>
             </div>
+
+            {/* Delivery bar — pinned under the header, OUTSIDE the
+                scroll area, so the delivery-address state is visible
+                at every scroll position: a tappable prompt while the
+                address is incomplete, a one-line data summary once
+                saved. Tapping it scrolls to the form below and (while
+                incomplete) focuses the first missing field. */}
+            {cart.length > 0 && (
+              <button
+                type="button"
+                onClick={() => revealAddressForm(!addressComplete)}
+                className={`w-full flex items-center gap-2.5 px-5 py-2.5 text-start shrink-0 border-b transition-colors ${
+                  addressComplete
+                    ? "bg-[#4E5F4C]/10 border-[#4E5F4C]/20"
+                    : "bg-[#9C7A3F]/10 border-[#9C7A3F]/25 hover:bg-[#9C7A3F]/15"
+                }`}
+              >
+                {addressComplete ? (
+                  <CheckCircle size={16} className="text-[#4E5F4C] shrink-0" />
+                ) : (
+                  <MapPin size={16} className="text-[#9C7A3F] shrink-0" />
+                )}
+                {addressComplete ? (
+                  <>
+                    <span className="flex-1 min-w-0 truncate text-[13px] font-semibold text-[#2B2620]" style={{ fontFamily: "var(--font-inter)" }}>
+                      {address.district} · {address.neighborhood.trim()} · {address.details.trim()}
+                    </span>
+                    <span className="text-[12px] font-bold text-[#9C7A3F] shrink-0" style={{ fontFamily: "var(--font-inter)" }}>
+                      {labels.editAddress || "Edit"}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="flex-1 min-w-0 text-[13px] font-bold text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
+                      {labels.deliveryBarAdd || labels.addAddress || "Add your delivery address"}
+                    </span>
+                    <Plus size={16} className="text-[#9C7A3F] shrink-0" />
+                  </>
+                )}
+              </button>
+            )}
 
             {/* List Items */}
             <div className="flex-1 overflow-y-auto no-scrollbar px-5 py-4 bg-[#EDE3CE]/30">
@@ -414,69 +485,35 @@ export default function OrderFlow() {
                         </p>
                       )}
 
-                      {[
-                        { key: "name", label: labels.nameLabel || "Name", placeholder: labels.namePlaceholder || "", autoComplete: "name", type: "text" },
-                        { key: "phone", label: labels.phoneLabel || "Phone", placeholder: labels.phonePlaceholder || "", autoComplete: "tel", type: "tel" },
-                      ].map((f) => (
-                        <div key={f.key}>
-                          <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
-                            {f.label}
-                          </label>
-                          <input
-                            type={f.type}
-                            value={address[f.key]}
-                            autoComplete={f.autoComplete}
-                            inputMode={f.key === "phone" ? "tel" : undefined}
-                            onChange={(e) => setAddress({ [f.key]: e.target.value })}
-                            placeholder={f.placeholder}
-                            className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
-                              orderAttempted && addressErrors[f.key] ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
-                            }`}
-                            style={{ fontFamily: "var(--font-inter)" }}
-                          />
-                          {orderAttempted && addressErrors[f.key] && (
-                            <p className="text-[11px] text-[#A0422E] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
-                              {f.key === "phone"
-                                ? labels.phoneInvalid || "Enter a valid phone number"
-                                : labels.fieldRequired || "This field is required"}
-                            </p>
-                          )}
-                        </div>
-                      ))}
-
-                      {/* City — fixed to İstanbul, locked */}
-                      <div>
-                        <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
-                          {labels.cityLabel || "City"}
-                        </label>
-                        <input
-                          type="text"
-                          value={DELIVERY_CITY}
-                          disabled
-                          readOnly
-                          className="w-full rounded-lg border border-[#9C7A3F]/20 bg-[#EDE3CE]/60 px-3 py-2.5 text-sm text-[#7A7364] outline-none cursor-not-allowed"
-                          style={{ fontFamily: "var(--font-inter)" }}
-                        />
-                      </div>
-
-                      {/* District — one of the 5 delivery districts */}
+                      {/* District — 4 tappable chips instead of a
+                          dropdown: every option visible, one tap, no
+                          picker friction on mobile. */}
                       <div>
                         <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
                           {labels.districtLabel || "District"}
                         </label>
-                        <select
-                          value={address.district}
-                          onChange={(e) => setAddress({ district: e.target.value })}
-                          className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
-                            orderAttempted && addressErrors.district ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
-                          }`}
-                          style={{ fontFamily: "var(--font-inter)" }}
-                        >
-                          <option value="">{labels.districtPlaceholder || "Select district"}</option>
-                          {DELIVERY_DISTRICTS.map((d) => (
-                            <option key={d} value={d}>{d}</option>
-                          ))}
-                        </select>
+                        <div className={`flex flex-wrap gap-2 ${orderAttempted && addressErrors.district ? "rounded-lg ring-2 ring-[#A0422E]/50 p-1 -m-1" : ""}`}>
+                          {DELIVERY_DISTRICTS.map((d, i) => {
+                            const active = address.district === d;
+                            return (
+                              <button
+                                key={d}
+                                ref={i === 0 ? districtChipsRef : undefined}
+                                type="button"
+                                aria-pressed={active}
+                                onClick={() => setAddress({ district: d })}
+                                className={`px-3.5 py-2 rounded-full text-sm font-bold border transition-colors ${
+                                  active
+                                    ? "bg-[#9C7A3F] text-white border-[#9C7A3F]"
+                                    : "bg-[#FAF7F0] text-[#2B2620] border-[#9C7A3F]/30 hover:border-[#9C7A3F]"
+                                }`}
+                                style={{ fontFamily: "var(--font-inter)" }}
+                              >
+                                {d}
+                              </button>
+                            );
+                          })}
+                        </div>
                         {orderAttempted && addressErrors.district && (
                           <p className="text-[11px] text-[#A0422E] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
                             {labels.fieldRequired || "This field is required"}
@@ -491,12 +528,37 @@ export default function OrderFlow() {
                         )}
                       </div>
 
+                      {/* Name */}
+                      <div>
+                        <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
+                          {labels.nameLabel || "Name"}
+                        </label>
+                        <input
+                          ref={nameInputRef}
+                          type="text"
+                          value={address.name}
+                          autoComplete="name"
+                          onChange={(e) => setAddress({ name: e.target.value })}
+                          placeholder={labels.namePlaceholder || ""}
+                          className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
+                            orderAttempted && addressErrors.name ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
+                          }`}
+                          style={{ fontFamily: "var(--font-inter)" }}
+                        />
+                        {orderAttempted && addressErrors.name && (
+                          <p className="text-[11px] text-[#A0422E] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
+                            {labels.fieldRequired || "This field is required"}
+                          </p>
+                        )}
+                      </div>
+
                       {/* Neighborhood (Mahalle) */}
                       <div>
                         <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
                           {labels.neighborhoodLabel || "Neighborhood"}
                         </label>
                         <input
+                          ref={neighborhoodInputRef}
                           type="text"
                           value={address.neighborhood}
                           autoComplete="address-level3"
@@ -520,7 +582,9 @@ export default function OrderFlow() {
                           {labels.detailsLabel || "Address Details"}
                         </label>
                         <textarea
+                          ref={detailsTextareaRef}
                           value={address.details}
+                          autoComplete="street-address"
                           onChange={(e) => setAddress({ details: e.target.value })}
                           placeholder={labels.detailsPlaceholder || ""}
                           rows={3}
@@ -623,14 +687,13 @@ export default function OrderFlow() {
                     rel="noopener noreferrer"
                     onClick={(e) => {
                       // Delivery address is mandatory: block the order,
-                      // open the address form and point at what's missing.
+                      // open the address form, scroll to it and focus
+                      // the first missing field — the tap takes the
+                      // user to the problem instead of failing silently.
                       if (!addressComplete) {
                         e.preventDefault();
                         setOrderAttempted(true);
-                        setAddressOpen(true);
-                        setTimeout(() => {
-                          addressSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-                        }, 60);
+                        revealAddressForm(true);
                         return;
                       }
                       // District minimum — checked after the address, on
@@ -638,10 +701,7 @@ export default function OrderFlow() {
                       if (belowMinimum) {
                         e.preventDefault();
                         setMinAttempted(true);
-                        setAddressOpen(true);
-                        setTimeout(() => {
-                          addressSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-                        }, 60);
+                        revealAddressForm(false);
                         return;
                       }
                       trackEvent("whatsapp_click", {
@@ -654,7 +714,10 @@ export default function OrderFlow() {
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
                     <WhatsAppIcon size={22} />
-                    <span>{wa.button || "Order via WhatsApp"}</span>
+                    {/* Smart label: while the address is incomplete the
+                        button itself says what is missing; once the
+                        address is saved it becomes the order action. */}
+                    <span>{addressComplete ? (wa.button || "Order via WhatsApp") : (labels.addAddressFirst || wa.button || "Order via WhatsApp")}</span>
                   </a>
                 )}
 
@@ -670,14 +733,19 @@ export default function OrderFlow() {
                   </Link>
                 </p>
 
-                {/* Call to Order Button */}
-                <a
-                  href="tel:+902122513696"
-                  className="w-full py-4 px-6 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-[#EAF0E6] font-bold text-base tracking-wider uppercase flex items-center justify-center gap-3 transition-colors shadow-lg mt-2"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <span>{t.callToOrder || (lang === 'ar' ? 'اتصل للطلب' : lang === 'tr' ? 'Sipariş İçin Ara' : 'Call to Order')}</span>
-                </a>
+                {/* Call to Order — demoted to a small text link so it
+                    stays available as an alternate way out without
+                    competing with the WhatsApp CTA. */}
+                <div className="flex justify-center">
+                  <a
+                    href="tel:+902122513696"
+                    className="inline-flex items-center gap-1.5 py-1 text-[13px] font-semibold text-[#4E5F4C] hover:underline"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>{t.callToOrder || (lang === 'ar' ? 'اتصل للطلب' : lang === 'tr' ? 'Sipariş İçin Ara' : 'Call to Order')}: 0 (212) 251 36 96</span>
+                  </a>
+                </div>
 
                 {/* Clear List */}
                 <div className="flex justify-center pt-2 pb-1">

@@ -38,17 +38,19 @@ export function buildWhatsAppChatUrl(greeting) {
 // - getPortionLabel(item) (optional): localized portion label for
 //   non-default portions (e.g. "Duble"), appended to the dish name so
 //   the restaurant sees which portion each line is.
-// - labels: { title, total, name, phone, address, note, payment } localized
+// - labels: { title, total, name, address, note, payment } localized
 //   strings
 // - payment (optional): localized payment-method value chosen in the cart
 //   (e.g. "Kapıda Nakit Ödeme"); when provided it is added as its own line
 //   under the total so the restaurant knows whether to send the card
 //   terminal with the courier.
-// - delivery (optional): { name, phone, address, note } from the cart's
+// - delivery (optional): { name, address, note } from the cart's
 //   delivery-address form. When provided, the contact lines at the end of
 //   the message are filled from it (the note line only when a note was
 //   given); when absent, the legacy blank Name/Address/Note lines are
-//   emitted for the customer to fill in by hand.
+//   emitted for the customer to fill in by hand. No phone line is ever
+//   emitted: the message arrives from the customer's own WhatsApp, so
+//   the restaurant already sees the number.
 // Returns null when the cart is empty or any price is unavailable, so the
 // caller can hide the button instead of sending a broken order.
 export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnitPrice, getPortionLabel, labels, payment, delivery }) {
@@ -69,7 +71,6 @@ export function buildWhatsAppOrderUrl({ cart, getItemName, getLivePrice, getUnit
   const contactLines = delivery
     ? [
         `${labels.name}: ${delivery.name}`,
-        ...(delivery.phone ? [`${labels.phone}: ${delivery.phone}`] : []),
         `${labels.address}: ${delivery.address}`,
         ...(delivery.note ? [`${labels.note}: ${delivery.note}`] : []),
       ]
