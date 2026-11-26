@@ -10,7 +10,66 @@ import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, Check, CheckCircl
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
 import { PORTION_LABELS_TR } from "../lib/portions";
+import { MAHALLELER } from "../lib/mahalleler";
 import { trackEvent } from "../lib/trackingUtils";
+
+// Accuracy-gated position capture — shared by the address autofill and
+// the "add my location to the order" opt-in. A one-shot
+// getCurrentPosition returns the fastest fix, which without high
+// accuracy requested is often a Wi-Fi/cell position 100-500 m off:
+// wider than a whole mahalle in Beyoğlu, and it silently filled the
+// wrong neighbourhood (Kuloğlu for a customer in Cihangir). Instead we
+// WATCH fixes with high accuracy requested and no cached values, keep
+// the best fix seen, stop as soon as one is good enough (<= 30 m),
+// and give up at 15 s with the best fix seen. Resolves null when no
+// fix arrives at all (denied / unavailable) — callers treat that as
+// "no location", never as an error worth blocking on. The resolved
+// fix carries its accuracy radius so callers can gate on it.
+function captureAccuratePosition() {
+  return new Promise((resolve) => {
+    if (!("geolocation" in navigator)) {
+      resolve(null);
+      return;
+    }
+    let best = null;
+    let settled = false;
+    let watchId = null;
+    const finish = (value) => {
+      if (settled) return;
+      settled = true;
+      if (watchId !== null) {
+        try {
+          navigator.geolocation.clearWatch(watchId);
+        } catch {}
+      }
+      resolve(value);
+    };
+    const startedAt = Date.now();
+    try {
+      watchId = navigator.geolocation.watchPosition(
+        (pos) => {
+          const fix = {
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude,
+            accuracy: pos.coords.accuracy,
+          };
+          if (!best || fix.accuracy < best.accuracy) best = fix;
+          if (fix.accuracy <= 30) finish(fix);
+          else if (Date.now() - startedAt >= 15000) finish(best);
+        },
+        // Denied / unavailable: if a usable fix already arrived, keep
+        // it; otherwise resolve null (the caller's "failed" path).
+        () => finish(best),
+        { enableHighAccuracy: true, maximumAge: 0, timeout: 15000 }
+      );
+    } catch {
+      resolve(null);
+      return;
+    }
+    // Hard stop: some browsers never call back on a stalled watch.
+    setTimeout(() => finish(best), 15500);
+  });
+}
 
 export default function OrderFlow() {
   const {
@@ -115,10 +174,23 @@ export default function OrderFlow() {
   const [minAttempted, setMinAttempted] = useState(false);
   // "Use my location" autofill: spinner state + a quiet inline note
   // ("outside" = geocoded district is not one of the 4 delivery areas,
-  // "failed" = permission denied / timeout / geocode error). The note
-  // clears on the next manual field edit or the next locate attempt.
+  // "failed" = permission denied / timeout / geocode error, "filled" =
+  // the form was just prefilled from the position — please verify).
+  // The note clears on the next manual field edit or the next attempt.
   const [locating, setLocating] = useState(false);
   const [locationNote, setLocationNote] = useState(null);
+  // Mahalle entry mode: with a district chosen, the mahalle is a
+  // select of that district's official mahalles (see lib/mahalleler);
+  // "other" mode swaps in the free-text input for anything unlisted.
+  // A saved value that is not in the district's list opens in other
+  // mode with its text preserved — the list never traps the user.
+  const [mahalleOther, setMahalleOther] = useState(false);
+  // "Add my location to the order" opt-in: OFF by default and never
+  // persisted — sharing a live pin is a per-order consent.
+  const [addLocation, setAddLocation] = useState(false);
+  // Spinner state for the WhatsApp CTA while it runs the position
+  // capture for the location opt-in (sending waits for the capture).
+  const [orderLocating, setOrderLocating] = useState(false);
   // KVKK footer notice: collapsed to a single truncated line by
   // default (owner rule — one line, tap to see the rest); the tap
   // expands the full text in place, a second tap collapses it.
@@ -164,78 +236,103 @@ export default function OrderFlow() {
     });
   };
 
-  // "Use my location" autofill: one tap → device position → Nominatim
-  // reverse geocode (single request per tap, well inside its usage
-  // policy) → fill district / neighborhood / street line. Never blocks
-  // manual entry: denial, timeout or an out-of-area result only shows
-  // a quiet note under the button and leaves the form untouched.
-  const handleUseMyLocation = () => {
-    if (!("geolocation" in navigator)) {
+  // Keep the mahalle entry mode in sync when the DISTRICT changes
+  // (chip tap, saved-address load, location autofill): a value in the
+  // new district's official list shows the select; a non-empty value
+  // outside the list keeps the free-text input, text preserved.
+  const prevDistrictRef = useRef(address.district);
+  useEffect(() => {
+    if (prevDistrictRef.current === address.district) return;
+    prevDistrictRef.current = address.district;
+    const list = MAHALLELER[address.district] || [];
+    setMahalleOther(!!address.neighborhood && !list.includes(address.neighborhood));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [address.district]);
+
+  // "Use my location" autofill: one tap → accuracy-gated position
+  // (see captureAccuratePosition) → Nominatim reverse geocode in
+  // geocodejson format — the stable classification, whose `admin`
+  // levels come from real boundary containment (level6 = ilçe,
+  // level8 = mahalle) instead of nearest-object guessing → fill
+  // district / neighborhood / street line. Confidence gate: with a
+  // fix wider than 75 m the mahalle is NOT prefilled (a 100 m circle
+  // at Sıraselviler spans Cihangir, Kuloğlu and Firuzağa at once) —
+  // the district and street still fill and the customer picks the
+  // mahalle from the list. Never blocks manual entry: denial, timeout
+  // or an out-of-area result only shows a quiet note under the button
+  // and leaves the form untouched.
+  const handleUseMyLocation = async () => {
+    if (locating) return;
+    setLocating(true);
+    setLocationNote(null);
+    const fix = await captureAccuratePosition();
+    if (!fix) {
+      setLocating(false);
       setLocationNote("failed");
       return;
     }
-    setLocating(true);
-    setLocationNote(null);
-    navigator.geolocation.getCurrentPosition(
-      async (pos) => {
-        try {
-          const { latitude, longitude } = pos.coords;
-          const res = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`,
-            { headers: { "Accept-Language": "tr" } }
-          );
-          if (!res.ok) throw new Error("reverse geocode failed");
-          const data = await res.json();
-          const a = data.address || {};
-          // Nominatim TR address parts: the ilçe (district) arrives as
-          // `county` (sometimes `state_district` / `town` /
-          // `city_district`); the mahalle as `neighbourhood`
-          // (sometimes `suburb` / `quarter`).
-          const rawDistrict = a.county || a.state_district || a.town || a.city_district || "";
-          // Turkish-aware fold so "BEYOĞLU" / "Şişli" compare equal,
-          // and drop a trailing "İlçesi" ("Beyoğlu İlçesi" → "Beyoğlu").
-          const normalizeDistrict = (s) =>
-            (s || "")
-              .trim()
-              .toLocaleLowerCase("tr-TR")
-              .replace(/\s+ilçesi$/, "")
-              .trim();
-          const matched = DELIVERY_DISTRICTS.find(
-            (d) => normalizeDistrict(d) === normalizeDistrict(rawDistrict)
-          );
-          if (!matched) {
-            setLocationNote("outside");
-            return;
-          }
-          const patch = { district: matched };
-          const rawMahalle = a.neighbourhood || a.suburb || a.quarter || "";
-          const mahalle = rawMahalle
-            .trim()
-            .replace(/\s+mahallesi\.?$/i, "")
-            .replace(/\s+mah\.?$/i, "")
-            .trim();
-          if (mahalle) patch.neighborhood = mahalle;
-          // Street line only fills an EMPTY details field — never
-          // overwrite something the customer already typed.
-          if (!address.details.trim()) {
-            const streetLine = [a.road, a.house_number ? `No:${a.house_number}` : ""]
-              .filter(Boolean)
-              .join(" ");
-            if (streetLine) patch.details = streetLine;
-          }
-          setAddress(patch);
-        } catch {
-          setLocationNote("failed");
-        } finally {
-          setLocating(false);
-        }
-      },
-      () => {
-        setLocating(false);
-        setLocationNote("failed");
-      },
-      { timeout: 10000, maximumAge: 60000 }
-    );
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=geocodejson&lat=${fix.latitude}&lon=${fix.longitude}&zoom=18`,
+        { headers: { "Accept-Language": "tr" } }
+      );
+      if (!res.ok) throw new Error("reverse geocode failed");
+      const data = await res.json();
+      const g = data?.features?.[0]?.properties?.geocoding || {};
+      const admin = g.admin || {};
+      // Turkish-aware fold so "BEYOĞLU" / "Şişli" compare equal, and
+      // drop a trailing "İlçesi" ("Beyoğlu İlçesi" → "Beyoğlu").
+      const normalizeDistrict = (s) =>
+        (s || "")
+          .trim()
+          .toLocaleLowerCase("tr-TR")
+          .replace(/\s+ilçesi$/, "")
+          .trim();
+      // geocodejson field map (verified live): the ilçe arrives as
+      // admin.level6 (or `city`); the mahalle as admin.level8 (or
+      // `district` / `suburb`); the street as `street` + `housenumber`.
+      let matched = null;
+      for (const candidate of [admin.level6, g.city, g.county]) {
+        matched = DELIVERY_DISTRICTS.find(
+          (d) => normalizeDistrict(d) === normalizeDistrict(candidate)
+        );
+        if (matched) break;
+      }
+      if (!matched) {
+        setLocationNote("outside");
+        return;
+      }
+      const patch = { district: matched };
+      if (fix.accuracy <= 75) {
+        const rawMahalle = admin.level8 || g.district || g.suburb || g.neighbourhood || g.quarter || "";
+        const mahalle = rawMahalle
+          .trim()
+          .replace(/\s+mahallesi\.?$/i, "")
+          .replace(/\s+mah\.?$/i, "")
+          .trim();
+        if (mahalle) patch.neighborhood = mahalle;
+      }
+      // Street line only fills an EMPTY details field — never
+      // overwrite something the customer already typed.
+      if (!address.details.trim()) {
+        const streetLine = [g.street, g.housenumber ? `No:${g.housenumber}` : ""]
+          .filter(Boolean)
+          .join(" ");
+        if (streetLine) patch.details = streetLine;
+      }
+      setAddress(patch);
+      // The prefill may land while the district stays the same (the
+      // district-change effect would not fire): sync the mahalle
+      // entry mode with the detected value explicitly.
+      if (patch.neighborhood) {
+        setMahalleOther(!(MAHALLELER[matched] || []).includes(patch.neighborhood));
+      }
+      setLocationNote("filled");
+    } catch {
+      setLocationNote("failed");
+    } finally {
+      setLocating(false);
+    }
   };
 
   // Required: name, district, neighborhood, address details. Note is
@@ -290,9 +387,9 @@ export default function OrderFlow() {
   // WhatsApp checkout: structured order message built from the cart with
   // live ₺ prices. Null while prices load or if any price is unavailable,
   // in which case the button is hidden (the call path stays available).
-  const whatsappUrl = pricesLoading
-    ? null
-    : buildWhatsAppOrderUrl({
+  // The args are kept in one object so the location opt-in can rebuild
+  // the identical message with a maps link appended at send time.
+  const waOrderArgs = {
         cart,
         getItemName: (id) => menuT.items[id]?.name || id,
         getLivePrice,
@@ -321,7 +418,8 @@ export default function OrderFlow() {
           address: fullAddress,
           note: address.note.trim(),
         },
-      });
+      };
+  const whatsappUrl = pricesLoading ? null : buildWhatsAppOrderUrl(waOrderArgs);
   const isRTL = lang === "ar" || lang === "fa";
 
   const waiterText = t.showWaiter || (lang === "ar" ? "اعرض هذه القائمة للجرسون لإتمام طلبك" : 
@@ -657,6 +755,11 @@ export default function OrderFlow() {
                             {labels.locationFailed || "Couldn't get your location — please type your address"}
                           </p>
                         )}
+                        {locationNote === "filled" && (
+                          <p className="text-[12px] font-medium text-[#4E5F4C] mt-1.5" style={{ fontFamily: "var(--font-inter)" }}>
+                            {labels.locationFilledCheck || "Filled from your location — please check"}
+                          </p>
+                        )}
                       </div>
 
                       {orderAttempted && !addressComplete && (
@@ -749,25 +852,69 @@ export default function OrderFlow() {
                         )}
                       </div>
 
-                      {/* Neighborhood (Mahalle) */}
+                      {/* Neighborhood (Mahalle) — with a district
+                          chosen, a select of that district's official
+                          mahalles (saved values and location autofill
+                          preselect from the same string); "Diğer"
+                          swaps in the free-text input so an unlisted
+                          mahalle is never blocked. Without a district,
+                          the plain text input as before. */}
                       <div>
                         <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
                           {labels.neighborhoodLabel || "Neighborhood"}
                         </label>
-                        <input
-                          ref={neighborhoodInputRef}
-                          type="text"
-                          value={address.neighborhood}
-                          autoComplete="address-level3"
-                          autoCorrect="off"
-                          spellCheck={false}
-                          onChange={(e) => setAddress({ neighborhood: e.target.value })}
-                          placeholder={labels.neighborhoodPlaceholder || ""}
-                          className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
-                            orderAttempted && addressErrors.neighborhood ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
-                          }`}
-                          style={{ fontFamily: "var(--font-inter)" }}
-                        />
+                        {address.district && !mahalleOther ? (
+                          <div className="relative">
+                            <select
+                              ref={neighborhoodInputRef}
+                              value={
+                                (MAHALLELER[address.district] || []).includes(address.neighborhood)
+                                  ? address.neighborhood
+                                  : ""
+                              }
+                              onChange={(e) => {
+                                if (e.target.value === "__other__") {
+                                  // Escape hatch: reveal the text
+                                  // input, current text preserved.
+                                  setMahalleOther(true);
+                                } else {
+                                  setAddress({ neighborhood: e.target.value });
+                                }
+                              }}
+                              className={`w-full appearance-none rounded-lg border bg-[#FAF7F0] px-3 py-2.5 pe-9 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
+                                orderAttempted && addressErrors.neighborhood ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
+                              }`}
+                              style={{ fontFamily: "var(--font-inter)" }}
+                            >
+                              <option value="">{labels.neighborhoodPlaceholder || ""}</option>
+                              {(MAHALLELER[address.district] || []).map((m) => (
+                                <option key={m} value={m}>
+                                  {m}
+                                </option>
+                              ))}
+                              <option value="__other__">{labels.otherMahalle || "Diğer"}</option>
+                            </select>
+                            <ChevronDown
+                              size={16}
+                              className="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-[#7A7364]"
+                            />
+                          </div>
+                        ) : (
+                          <input
+                            ref={neighborhoodInputRef}
+                            type="text"
+                            value={address.neighborhood}
+                            autoComplete="address-level3"
+                            autoCorrect="off"
+                            spellCheck={false}
+                            onChange={(e) => setAddress({ neighborhood: e.target.value })}
+                            placeholder={labels.neighborhoodPlaceholder || ""}
+                            className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
+                              orderAttempted && addressErrors.neighborhood ? "border-[#A0422E]/70" : "border-[#9C7A3F]/30"
+                            }`}
+                            style={{ fontFamily: "var(--font-inter)" }}
+                          />
+                        )}
                         {orderAttempted && addressErrors.neighborhood && (
                           <p className="text-[11px] text-[#A0422E] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
                             {labels.fieldRequired || "This field is required"}
