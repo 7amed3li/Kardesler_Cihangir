@@ -273,43 +273,30 @@ export default function OrderFlow() {
           onClick={() => setIsCartOpen(false)}
         >
           <div
-            className="bg-[#FAF7F0] w-full sm:max-w-md sm:h-full max-h-[90vh] sm:max-h-full rounded-t-3xl sm:rounded-none overflow-hidden flex flex-col shadow-2xl relative"
+            className="bg-[#FAF7F0] w-full sm:max-w-md sm:h-full max-h-[94dvh] sm:max-h-full rounded-t-3xl sm:rounded-none overflow-hidden flex flex-col shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-[#9C7A3F]/20 shrink-0 bg-[#F7F2E7]">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full bg-[#9C7A3F]/15 flex items-center justify-center">
-                  <ClipboardList size={18} className="text-[#9C7A3F]" />
-                </div>
-                <h2 className="text-xl font-bold text-[#2B2620]" style={{ fontFamily: "var(--font-cairo)" }}>
-                  {listTitle}
-                </h2>
+            {/* Header — title, order-mode switch and close share ONE
+                compact row so the pinned chrome stays slim and the
+                items get the vertical space. The segmented control
+                is the compact variant of the mode switch: the drawer
+                serves two audiences (dine-in guests showing the list
+                to a waiter, online customers ordering delivery) and
+                each mode renders only its own path below. */}
+            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#9C7A3F]/20 shrink-0 bg-[#F7F2E7]">
+              <ClipboardList size={18} className="text-[#9C7A3F] shrink-0" />
+              <h2 className="text-lg font-bold text-[#2B2620] whitespace-nowrap" style={{ fontFamily: "var(--font-cairo)" }}>
+                {listTitle}
                 {cartCount > 0 && (
-                  <span className="text-sm text-[#7A7364] font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                  <span className="text-[13px] text-[#7A7364] font-medium ms-1" style={{ fontFamily: "var(--font-inter)" }}>
                     ({cartCount})
                   </span>
                 )}
-              </div>
-              <button
-                onClick={() => setIsCartOpen(false)}
-                aria-label={t.close || "Close"}
-                className="w-8 h-8 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-colors"
-              >
-                <X size={18} />
-              </button>
-            </div>
-            
-            {/* Order mode switch — segmented control directly under
-                the header. The drawer serves two audiences (dine-in
-                guests showing the list to a waiter, online customers
-                ordering delivery); each mode renders only its own
-                path, so the two never stack or compete. */}
-            <div className="px-5 py-3 shrink-0">
+              </h2>
               <div
                 role="tablist"
                 aria-label={labels.modeDelivery || "Order mode"}
-                className="flex rounded-[13px] bg-[#F7F2E7] border border-[#9C7A3F]/15 p-1 gap-1"
+                className="flex-1 min-w-0 max-w-[300px] mx-auto flex rounded-[10px] bg-[#EDE3CE]/80 border border-[#9C7A3F]/15 p-0.5 gap-0.5"
               >
                 {[
                   { key: "dinein", Icon: UtensilsCrossed, text: labels.modeDineIn || "Restoranda" },
@@ -323,19 +310,26 @@ export default function OrderFlow() {
                       role="tab"
                       aria-selected={active}
                       onClick={() => setOrderMode(key)}
-                      className={`flex-1 flex items-center justify-center gap-2 rounded-[10px] py-2.5 text-[15px] font-bold transition-colors ${
+                      className={`flex-1 min-w-0 flex items-center justify-center gap-1 rounded-[8px] h-9 px-1 text-[13px] font-bold whitespace-nowrap transition-colors ${
                         active
                           ? "bg-[#4E5F4C] text-white shadow-sm"
                           : "text-[#7A7364] hover:text-[#2B2620]"
                       }`}
                       style={{ fontFamily: "var(--font-cairo)" }}
                     >
-                      <Icon size={16} className="shrink-0" />
-                      <span>{text}</span>
+                      <Icon size={15} className="shrink-0" />
+                      <span className="truncate">{text}</span>
                     </button>
                   );
                 })}
               </div>
+              <button
+                onClick={() => setIsCartOpen(false)}
+                aria-label={t.close || "Close"}
+                className="w-8 h-8 shrink-0 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-colors"
+              >
+                <X size={17} />
+              </button>
             </div>
 
             {/* Delivery bar — pinned under the header, OUTSIDE the
@@ -348,7 +342,7 @@ export default function OrderFlow() {
               <button
                 type="button"
                 onClick={() => revealAddressForm(!addressComplete)}
-                className={`w-full flex items-center gap-2.5 px-5 py-2.5 text-start shrink-0 border-b transition-colors ${
+                className={`w-full flex items-center gap-2.5 px-4 py-2 text-start shrink-0 border-b transition-colors ${
                   addressComplete
                     ? "bg-[#4E5F4C] border-[#4E5F4C]"
                     : "bg-[#9C7A3F]/10 border-[#9C7A3F]/25 hover:bg-[#9C7A3F]/15"
