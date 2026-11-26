@@ -9,6 +9,7 @@ import Image from "next/image";
 import { ClipboardList, X, Plus, Minus, Trash2, MessageCircle, Check, CheckCircle, MapPin, ChevronDown, ChevronUp, Phone } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { buildWhatsAppOrderUrl } from "../lib/whatsappOrder";
+import { PORTION_LABELS_TR } from "../lib/portions";
 import { trackEvent } from "../lib/trackingUtils";
 
 export default function OrderFlow() {
@@ -36,7 +37,11 @@ export default function OrderFlow() {
     pricesError,
   } = useAppContext();
 
-  const portionLabels = t.portions || {};
+  // Portion labels inside the cart are ALWAYS Turkish (owner ruling
+  // 2026-11-26: portions are kitchen language) — the item badge, the
+  // portion chips and the WhatsApp order message all read from this
+  // locale-independent source, never from the active locale.
+  const portionLabels = PORTION_LABELS_TR;
 
   const symbol = getCurrencySymbol();
   const labels = t.orderFlow || {};
@@ -471,6 +476,7 @@ export default function OrderFlow() {
                         value={portion}
                         onChange={(next) => changeCartLinePortion(item.id, portion, next)}
                         size="sm"
+                        labelsOverride={PORTION_LABELS_TR}
                       />
                       </div>
                     );

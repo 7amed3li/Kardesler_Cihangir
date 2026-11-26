@@ -12,10 +12,15 @@ import { getPortionOptions } from "../lib/portions";
  * no options at all, in which case this component renders nothing.
  *
  * `size="sm"` is the compact variant used on cart lines.
+ *
+ * `labelsOverride` replaces the localized labels when given — the
+ * cart passes the Turkish labels (kitchen language, owner ruling:
+ * cart portions are always Turkish, in every UI locale). Menu
+ * callers omit it and keep the active locale's labels.
  */
-export default function PortionSelector({ itemId, value, onChange, size = "md" }) {
+export default function PortionSelector({ itemId, value, onChange, size = "md", labelsOverride }) {
   const { t } = useAppContext();
-  const labels = t.portions || {};
+  const labels = labelsOverride || t.portions || {};
   const options = getPortionOptions(itemId);
 
   // No portion options for this dish (e.g. breakfast) — render nothing.

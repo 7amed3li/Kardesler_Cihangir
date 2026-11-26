@@ -81,6 +81,21 @@ export const PORTION_MULTIPLIERS = {
   double: 2,
 };
 
+/**
+ * Turkish portion labels — kitchen language (owner ruling 2026-11-26:
+ * "what's in the cart is Turkish only"). The cart drawer and the
+ * WhatsApp order message ALWAYS use these strings, whatever the UI
+ * locale is; menu pages keep their localized labels. Keep in sync
+ * with the "portions" block of src/i18n/locales/tr.json.
+ */
+export const PORTION_LABELS_TR = {
+  label: "Porsiyon",
+  half: "Yarım",
+  full: "1 Porsiyon",
+  oneHalf: "1,5 Porsiyon",
+  double: "Duble",
+};
+
 const STANDARD_OPTIONS = [
   { key: "full", mult: PORTION_MULTIPLIERS.full },
   { key: "oneHalf", mult: PORTION_MULTIPLIERS.oneHalf },
