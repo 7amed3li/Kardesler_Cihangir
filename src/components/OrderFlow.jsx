@@ -378,8 +378,11 @@ export default function OrderFlow() {
               </button>
             )}
 
-            {/* List Items */}
-            <div className="flex-1 overflow-y-auto no-scrollbar px-5 py-4 bg-[#EDE3CE]/30">
+            {/* List Items — min-h-0 is load-bearing: without it this
+                flex child can be forced taller than its allotment and
+                its translucent bg paints over the footer's top edge
+                (the washed-out payment label the owner screenshotted) */}
+            <div className="flex-1 min-h-0 overflow-y-auto no-scrollbar px-5 py-4 bg-[#EDE3CE]/30">
               {cart.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <div className="w-20 h-20 rounded-full bg-[#9C7A3F]/10 flex items-center justify-center mb-5">
@@ -699,7 +702,7 @@ export default function OrderFlow() {
                 scroll area, so total → payment → WhatsApp order button
                 stays visible while items + address form scroll above) */}
             {cart.length > 0 && (
-              <div className="px-5 py-3 border-t border-[#9C7A3F]/20 bg-[#FAF7F0] space-y-3 shrink-0">
+              <div className="relative z-10 px-5 py-3 border-t border-[#9C7A3F]/20 bg-[#FAF7F0] space-y-3 shrink-0">
                 
                 {/* Total (Subtle) */}
                 <div className="flex items-center justify-center gap-2 text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
@@ -728,15 +731,17 @@ export default function OrderFlow() {
                   </div>
                 ) : (
                   <>
-                {/* Payment Method (at the door) */}
-                <div className="space-y-1.5">
-                  <p className="text-center text-[#7A7364] text-xs font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                {/* Payment Method (at the door) — compact checkbox
+                    boxes that hug their content instead of stretching
+                    across the footer; single-select radio behavior */}
+                <div>
+                  <p className="text-center text-[#7A7364] text-xs leading-5 font-medium mb-1.5" style={{ fontFamily: "var(--font-inter)" }}>
                     {labels.paymentMethod || "Payment Method"}
                   </p>
                   <div
                     role="radiogroup"
                     aria-label={labels.paymentMethod || "Payment Method"}
-                    className="flex items-stretch gap-2"
+                    className="flex items-center justify-start gap-2"
                   >
                     {[
                       { key: "cash", text: labels.payCashAtDoor || "Cash at the Door" },
@@ -750,7 +755,7 @@ export default function OrderFlow() {
                           role="radio"
                           aria-checked={active}
                           onClick={() => setPaymentMethod(opt.key)}
-                          className={`flex-1 flex items-center gap-2 rounded-lg border-[1.5px] px-3 py-2.5 text-start transition-all duration-200 active:scale-[0.98] ${
+                          className={`flex-none flex items-center gap-[7px] rounded-lg border-[1.5px] px-3 py-2 text-start transition-all duration-200 active:scale-[0.98] ${
                             active
                               ? "border-[#4E5F4C] bg-[#4E5F4C]/5"
                               : "border-[#9C7A3F]/30 bg-white hover:border-[#4E5F4C]/50"
@@ -758,15 +763,15 @@ export default function OrderFlow() {
                           style={{ fontFamily: "var(--font-inter)" }}
                         >
                           <span
-                            className={`w-[18px] h-[18px] shrink-0 rounded-[5px] border-[1.5px] flex items-center justify-center transition-all duration-200 ${
+                            className={`w-4 h-4 shrink-0 rounded-[4px] border-[1.5px] flex items-center justify-center transition-all duration-200 ${
                               active
                                 ? "bg-[#4E5F4C] border-[#4E5F4C]"
                                 : "bg-transparent border-[#7A7364]/50"
                             }`}
                           >
-                            {active && <Check size={14} strokeWidth={3} className="text-white" />}
+                            {active && <Check size={12} strokeWidth={3.5} className="text-white" />}
                           </span>
-                          <span className={`text-xs whitespace-nowrap ${active ? "font-semibold text-[#2B2620]" : "font-normal text-[#2B2620]/70"}`}>
+                          <span className={`text-[13.5px] leading-tight whitespace-nowrap ${active ? "font-semibold text-[#2B2620]" : "font-normal text-[#2B2620]/70"}`}>
                             {opt.text}
                           </span>
                         </button>
