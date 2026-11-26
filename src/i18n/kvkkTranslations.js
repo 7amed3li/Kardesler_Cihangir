@@ -5,7 +5,7 @@
 // prevails. The data controller is named in the text (business name first,
 // then the owner, per the KVKK naming rule for a şahıs işletmesi).
 // Contact e-mail is the business's published address
-// (Kardeskebap@gmail.com). The business has no KEP address (KEP is
+// (kardeslerkebappidesalonu@gmail.com). The business has no KEP address (KEP is
 // not mandatory for a şahıs işletmesi), so no KEP channel is listed.
 //
 // Shape per locale:
@@ -23,7 +23,7 @@ export const kvkkContent = {
         heading: "1. Veri Sorumlusu",
         paragraphs: [
           "Bu Aydınlatma Metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun (“KVKK”) 10. maddesi uyarınca, veri sorumlusu sıfatıyla Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (“İşletme”) tarafından hazırlanmıştır.",
-          "Adres: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 212 251 36 96 · E-posta: Kardeskebap@gmail.com · Web sitesi: https://www.kardeslercihangir.com",
+          "Adres: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 212 251 36 96 · E-posta: kardeslerkebappidesalonu@gmail.com · Web sitesi: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -86,7 +86,7 @@ export const kvkkContent = {
       {
         heading: "9. Başvuru Yöntemi",
         paragraphs: [
-          "Haklarınızı kullanmak için talebinizi, kimliğinizi tevsik edici bilgilerle birlikte Kardeskebap@gmail.com adresine e-posta ile veya Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul adresine yazılı olarak iletebilirsiniz. Başvurularınız, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca en geç 30 gün içinde ücretsiz olarak sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi hâlinde Kurulca belirlenen tarifedeki ücret alınabilir.",
+          "Haklarınızı kullanmak için talebinizi, kimliğinizi tevsik edici bilgilerle birlikte kardeslerkebappidesalonu@gmail.com adresine e-posta ile veya Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul adresine yazılı olarak iletebilirsiniz. Başvurularınız, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca en geç 30 gün içinde ücretsiz olarak sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi hâlinde Kurulca belirlenen tarifedeki ücret alınabilir.",
         ],
       },
       {
@@ -105,7 +105,7 @@ export const kvkkContent = {
         heading: "1. Data Controller",
         paragraphs: [
           "This Information Notice has been prepared by Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (the “Business”), as the data controller, pursuant to Article 10 of the Law on the Protection of Personal Data No. 6698 (“KVKK”).",
-          "Address: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Phone: +90 212 251 36 96 · E-mail: Kardeskebap@gmail.com · Website: https://www.kardeslercihangir.com",
+          "Address: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Phone: +90 212 251 36 96 · E-mail: kardeslerkebappidesalonu@gmail.com · Website: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -168,7 +168,7 @@ export const kvkkContent = {
       {
         heading: "9. How to Apply",
         paragraphs: [
-          "To exercise your rights, you may send your request, together with information verifying your identity, by e-mail to Kardeskebap@gmail.com, or in writing to Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Your applications will be concluded free of charge within 30 days at the latest, in accordance with the Communiqué on the Procedures and Principles of Application to the Data Controller; if the transaction requires an additional cost, the fee in the tariff determined by the Board may be charged.",
+          "To exercise your rights, you may send your request, together with information verifying your identity, by e-mail to kardeslerkebappidesalonu@gmail.com, or in writing to Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Your applications will be concluded free of charge within 30 days at the latest, in accordance with the Communiqué on the Procedures and Principles of Application to the Data Controller; if the transaction requires an additional cost, the fee in the tariff determined by the Board may be charged.",
         ],
       },
       {
@@ -189,7 +189,7 @@ export const kvkkContent = {
         heading: "1. المسؤول عن البيانات",
         paragraphs: [
           "أُعدّ نص الإفصاح هذا من قبل Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (“المنشأة”)، بصفتها المسؤول عن البيانات، وفقاً للمادة 10 من قانون حماية البيانات الشخصية رقم 6698 (“KVKK”).",
-          "العنوان: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · الهاتف: +90 212 251 36 96 · البريد الإلكتروني: Kardeskebap@gmail.com · الموقع الإلكتروني: https://www.kardeslercihangir.com",
+          "العنوان: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · الهاتف: +90 212 251 36 96 · البريد الإلكتروني: kardeslerkebappidesalonu@gmail.com · الموقع الإلكتروني: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -252,7 +252,7 @@ export const kvkkContent = {
       {
         heading: "9. طريقة التقديم",
         paragraphs: [
-          "لممارسة حقوقك، يمكنك إرسال طلبك، مع المعلومات التي تثبت هويتك، عبر البريد الإلكتروني إلى Kardeskebap@gmail.com، أو كتابياً إلى Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. تُنجز طلباتك مجاناً في غضون 30 يوماً كحد أقصى، وفقاً للبيان الخاص بإجراءات ومبادئ التقديم إلى المسؤول عن البيانات؛ وإذا تطلبت العملية تكلفة إضافية، يمكن تحصيل الرسوم الواردة في التعريفة التي يحددها المجلس.",
+          "لممارسة حقوقك، يمكنك إرسال طلبك، مع المعلومات التي تثبت هويتك، عبر البريد الإلكتروني إلى kardeslerkebappidesalonu@gmail.com، أو كتابياً إلى Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. تُنجز طلباتك مجاناً في غضون 30 يوماً كحد أقصى، وفقاً للبيان الخاص بإجراءات ومبادئ التقديم إلى المسؤول عن البيانات؛ وإذا تطلبت العملية تكلفة إضافية، يمكن تحصيل الرسوم الواردة في التعريفة التي يحددها المجلس.",
         ],
       },
       {
@@ -273,7 +273,7 @@ export const kvkkContent = {
         heading: "1. Verantwortlicher",
         paragraphs: [
           "Dieser Aufklärungstext wurde von Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (das “Unternehmen”) als Verantwortlichem gemäß Art. 10 des Gesetzes Nr. 6698 zum Schutz personenbezogener Daten (“KVKK”) erstellt.",
-          "Adresse: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 212 251 36 96 · E-Mail: Kardeskebap@gmail.com · Website: https://www.kardeslercihangir.com",
+          "Adresse: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 212 251 36 96 · E-Mail: kardeslerkebappidesalonu@gmail.com · Website: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -336,7 +336,7 @@ export const kvkkContent = {
       {
         heading: "9. Antragsverfahren",
         paragraphs: [
-          "Um Ihre Rechte auszuüben, können Sie Ihren Antrag zusammen mit Angaben, die Ihre Identität belegen, per E-Mail an Kardeskebap@gmail.com oder schriftlich an Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul senden. Ihre Anträge werden gemäß der Bekanntmachung über die Verfahren und Grundsätze für Anträge an den Verantwortlichen spätestens innerhalb von 30 Tagen kostenlos abgeschlossen; erfordert der Vorgang zusätzliche Kosten, kann die Gebühr nach dem vom Ausschuss festgelegten Tarif erhoben werden.",
+          "Um Ihre Rechte auszuüben, können Sie Ihren Antrag zusammen mit Angaben, die Ihre Identität belegen, per E-Mail an kardeslerkebappidesalonu@gmail.com oder schriftlich an Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul senden. Ihre Anträge werden gemäß der Bekanntmachung über die Verfahren und Grundsätze für Anträge an den Verantwortlichen spätestens innerhalb von 30 Tagen kostenlos abgeschlossen; erfordert der Vorgang zusätzliche Kosten, kann die Gebühr nach dem vom Ausschuss festgelegten Tarif erhoben werden.",
         ],
       },
       {
@@ -357,7 +357,7 @@ export const kvkkContent = {
         heading: "1. Responsable del tratamiento",
         paragraphs: [
           "Este texto informativo ha sido preparado por Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (la “Empresa”), en calidad de responsable del tratamiento, de conformidad con el artículo 10 de la Ley n.º 6698 de Protección de Datos Personales (“KVKK”).",
-          "Dirección: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Teléfono: +90 212 251 36 96 · Correo electrónico: Kardeskebap@gmail.com · Sitio web: https://www.kardeslercihangir.com",
+          "Dirección: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Teléfono: +90 212 251 36 96 · Correo electrónico: kardeslerkebappidesalonu@gmail.com · Sitio web: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -420,7 +420,7 @@ export const kvkkContent = {
       {
         heading: "9. Cómo presentar una solicitud",
         paragraphs: [
-          "Para ejercer sus derechos, puede enviar su solicitud, junto con la información que acredite su identidad, por correo electrónico a Kardeskebap@gmail.com, o por escrito a Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Sus solicitudes se resolverán de forma gratuita en un plazo máximo de 30 días, de conformidad con el Comunicado sobre los procedimientos y principios de solicitud al responsable del tratamiento; si la operación requiere un coste adicional, podrá cobrarse la tarifa determinada por el Consejo.",
+          "Para ejercer sus derechos, puede enviar su solicitud, junto con la información que acredite su identidad, por correo electrónico a kardeslerkebappidesalonu@gmail.com, o por escrito a Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Sus solicitudes se resolverán de forma gratuita en un plazo máximo de 30 días, de conformidad con el Comunicado sobre los procedimientos y principios de solicitud al responsable del tratamiento; si la operación requiere un coste adicional, podrá cobrarse la tarifa determinada por el Consejo.",
         ],
       },
       {
@@ -441,7 +441,7 @@ export const kvkkContent = {
         heading: "1. مسئول داده",
         paragraphs: [
           "این متن اطلاع‌رسانی توسط Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur («کسب‌وکار»)، به عنوان مسئول داده، طبق ماده ۱۰ قانون حفاظت از داده‌های شخصی شماره ۶۶۹۸ («KVKK») تهیه شده است.",
-          "نشانی: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · تلفن: +90 212 251 36 96 · ایمیل: Kardeskebap@gmail.com · وب‌سایت: https://www.kardeslercihangir.com",
+          "نشانی: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · تلفن: +90 212 251 36 96 · ایمیل: kardeslerkebappidesalonu@gmail.com · وب‌سایت: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -504,7 +504,7 @@ export const kvkkContent = {
       {
         heading: "9. روش درخواست",
         paragraphs: [
-          "برای استفاده از حقوق خود، می‌توانید درخواست خود را همراه با اطلاعات احراز هویت، از طریق ایمیل به Kardeskebap@gmail.com، یا به صورت کتبی به Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul ارسال کنید. درخواست‌های شما حداکثر ظرف ۳۰ روز به صورت رایگان و طبق اطلاعیه مربوط به اصول و رویه‌های درخواست به مسئول داده به نتیجه می‌رسد؛ اگر این فرایند هزینه اضافی داشته باشد، ممکن است هزینه مندرج در تعرفه تعیین‌شده توسط هیئت دریافت شود.",
+          "برای استفاده از حقوق خود، می‌توانید درخواست خود را همراه با اطلاعات احراز هویت، از طریق ایمیل به kardeslerkebappidesalonu@gmail.com، یا به صورت کتبی به Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul ارسال کنید. درخواست‌های شما حداکثر ظرف ۳۰ روز به صورت رایگان و طبق اطلاعیه مربوط به اصول و رویه‌های درخواست به مسئول داده به نتیجه می‌رسد؛ اگر این فرایند هزینه اضافی داشته باشد، ممکن است هزینه مندرج در تعرفه تعیین‌شده توسط هیئت دریافت شود.",
         ],
       },
       {
@@ -525,7 +525,7 @@ export const kvkkContent = {
         heading: "1. Responsable du traitement",
         paragraphs: [
           "La présente notice d'information a été préparée par Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (l'« Établissement »), en sa qualité de responsable du traitement, conformément à l'article 10 de la loi n° 6698 sur la protection des données personnelles (« KVKK »).",
-          "Adresse : Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Téléphone : +90 212 251 36 96 · E-mail : Kardeskebap@gmail.com · Site web : https://www.kardeslercihangir.com",
+          "Adresse : Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Téléphone : +90 212 251 36 96 · E-mail : kardeslerkebappidesalonu@gmail.com · Site web : https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -588,7 +588,7 @@ export const kvkkContent = {
       {
         heading: "9. Modalités de demande",
         paragraphs: [
-          "Pour exercer vos droits, vous pouvez adresser votre demande, accompagnée des informations justifiant de votre identité, par e-mail à Kardeskebap@gmail.com, ou par écrit à Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Vos demandes sont traitées gratuitement dans un délai maximal de 30 jours, conformément au communiqué relatif aux procédures et principes de demande auprès du responsable du traitement ; si l'opération entraîne un coût supplémentaire, les frais prévus par le tarif fixé par le Conseil peuvent être appliqués.",
+          "Pour exercer vos droits, vous pouvez adresser votre demande, accompagnée des informations justifiant de votre identité, par e-mail à kardeslerkebappidesalonu@gmail.com, ou par écrit à Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Vos demandes sont traitées gratuitement dans un délai maximal de 30 jours, conformément au communiqué relatif aux procédures et principes de demande auprès du responsable du traitement ; si l'opération entraîne un coût supplémentaire, les frais prévus par le tarif fixé par le Conseil peuvent être appliqués.",
         ],
       },
       {
@@ -609,7 +609,7 @@ export const kvkkContent = {
         heading: "1. Titolare del trattamento",
         paragraphs: [
           "La presente informativa è stata predisposta da Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (l'“Esercizio”), in qualità di titolare del trattamento, ai sensi dell'articolo 10 della Legge n. 6698 sulla protezione dei dati personali (“KVKK”).",
-          "Indirizzo: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefono: +90 212 251 36 96 · E-mail: Kardeskebap@gmail.com · Sito web: https://www.kardeslercihangir.com",
+          "Indirizzo: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefono: +90 212 251 36 96 · E-mail: kardeslerkebappidesalonu@gmail.com · Sito web: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -672,7 +672,7 @@ export const kvkkContent = {
       {
         heading: "9. Modalità di richiesta",
         paragraphs: [
-          "Per esercitare i suoi diritti, può inviare la sua richiesta, corredata dalle informazioni che attestano la sua identità, via e-mail a Kardeskebap@gmail.com, oppure per iscritto a Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Le sue richieste saranno concluse gratuitamente entro un massimo di 30 giorni, in conformità al Comunicato sulle procedure e sui principi per le richieste al titolare del trattamento; se l'operazione richiede un costo aggiuntivo, potrà essere applicata la tariffa stabilita dal Consiglio.",
+          "Per esercitare i suoi diritti, può inviare la sua richiesta, corredata dalle informazioni che attestano la sua identità, via e-mail a kardeslerkebappidesalonu@gmail.com, oppure per iscritto a Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Le sue richieste saranno concluse gratuitamente entro un massimo di 30 giorni, in conformità al Comunicato sulle procedure e sui principi per le richieste al titolare del trattamento; se l'operazione richiede un costo aggiuntivo, potrà essere applicata la tariffa stabilita dal Consiglio.",
         ],
       },
       {
@@ -693,7 +693,7 @@ export const kvkkContent = {
         heading: "1. Оператор персональных данных",
         paragraphs: [
           "Настоящее информационное уведомление подготовлено Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur («Предприятие») в качестве оператора персональных данных в соответствии со статьёй 10 Закона № 6698 о защите персональных данных («KVKK»).",
-          "Адрес: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Телефон: +90 212 251 36 96 · Электронная почта: Kardeskebap@gmail.com · Веб-сайт: https://www.kardeslercihangir.com",
+          "Адрес: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Телефон: +90 212 251 36 96 · Электронная почта: kardeslerkebappidesalonu@gmail.com · Веб-сайт: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -756,7 +756,7 @@ export const kvkkContent = {
       {
         heading: "9. Порядок обращения",
         paragraphs: [
-          "Чтобы воспользоваться своими правами, вы можете направить запрос вместе с информацией, удостоверяющей вашу личность, по электронной почте на адрес Kardeskebap@gmail.com или в письменной форме по адресу Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Ваши обращения будут рассмотрены бесплатно не позднее чем в течение 30 дней в соответствии с Коммюнике о процедурах и принципах обращения к оператору данных; если операция требует дополнительных затрат, может взиматься плата по тарифу, установленному Советом.",
+          "Чтобы воспользоваться своими правами, вы можете направить запрос вместе с информацией, удостоверяющей вашу личность, по электронной почте на адрес kardeslerkebappidesalonu@gmail.com или в письменной форме по адресу Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul. Ваши обращения будут рассмотрены бесплатно не позднее чем в течение 30 дней в соответствии с Коммюнике о процедурах и принципах обращения к оператору данных; если операция требует дополнительных затрат, может взиматься плата по тарифу, установленному Советом.",
         ],
       },
       {
@@ -777,7 +777,7 @@ export const kvkkContent = {
         heading: "1. 数据控制者",
         paragraphs: [
           "本信息告知文本由 Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur（以下简称“本企业”）作为数据控制者，依据第 6698 号《个人数据保护法》（“KVKK”）第 10 条编制。",
-          "地址：Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · 电话：+90 212 251 36 96 · 电子邮箱：Kardeskebap@gmail.com · 网站：https://www.kardeslercihangir.com",
+          "地址：Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · 电话：+90 212 251 36 96 · 电子邮箱：kardeslerkebappidesalonu@gmail.com · 网站：https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -840,7 +840,7 @@ export const kvkkContent = {
       {
         heading: "9. 申请方式",
         paragraphs: [
-          "为行使您的权利，您可将申请连同证明您身份的信息，通过电子邮件发送至 Kardeskebap@gmail.com，或以书面形式发送至 Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul。您的申请将依据《向数据控制者申请的程序与原则公报》在最迟 30 天内免费处理完毕；如该处理需要额外费用，可能会按委员会确定的收费标准收取费用。",
+          "为行使您的权利，您可将申请连同证明您身份的信息，通过电子邮件发送至 kardeslerkebappidesalonu@gmail.com，或以书面形式发送至 Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul。您的申请将依据《向数据控制者申请的程序与原则公报》在最迟 30 天内免费处理完毕；如该处理需要额外费用，可能会按委员会确定的收费标准收取费用。",
         ],
       },
       {
