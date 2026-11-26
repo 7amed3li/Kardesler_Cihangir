@@ -77,7 +77,12 @@ export default function OrderFlow() {
   const DISTRICT_MINIMUMS = { "Beyoğlu": 400, "Şişli": 1000, "Beşiktaş": 1000, "Fatih": 1000 };
   const EMPTY_ADDRESS = { name: "", phone: "", district: "", neighborhood: "", details: "", note: "" };
   const [address, setAddressState] = useState(EMPTY_ADDRESS);
-  const [addressOpen, setAddressOpen] = useState(false);
+  // Expanded by default: the address form sits directly under the cart
+  // items (before the order button in the sticky footer) and must be
+  // reachable without hunting — owner UX fix 2026-11-26. Still
+  // collapsible via the section header for returning customers whose
+  // saved address is already complete.
+  const [addressOpen, setAddressOpen] = useState(true);
   const [orderAttempted, setOrderAttempted] = useState(false);
   const [minAttempted, setMinAttempted] = useState(false);
   const addressSectionRef = useRef(null);
@@ -342,9 +347,19 @@ export default function OrderFlow() {
                 </div>
               )}
 
-              {/* Delivery Address (mandatory for WhatsApp orders) */}
+              {/* Delivery Address (mandatory for WhatsApp orders) —
+                  directly under the items, before total/payment/order
+                  button (sticky footer below). A failed order attempt
+                  scrolls here and rings the section red until complete. */}
               {cart.length > 0 && (
-                <div ref={addressSectionRef} className="mt-4 rounded-xl bg-white border border-[#9C7A3F]/15 shadow-sm overflow-hidden">
+                <div
+                  ref={addressSectionRef}
+                  className={`mt-4 rounded-xl bg-white shadow-sm overflow-hidden border transition-shadow ${
+                    orderAttempted && !addressComplete
+                      ? "border-[#A0422E]/70 ring-2 ring-[#A0422E]/70"
+                      : "border-[#9C7A3F]/15"
+                  }`}
+                >
                   <button
                     type="button"
                     onClick={() => setAddressOpen((v) => !v)}
@@ -546,7 +561,9 @@ export default function OrderFlow() {
               )}
             </div>
 
-            {/* Footer — Actions */}
+            {/* Footer — sticky checkout actions (shrink-0 sibling of the
+                scroll area, so total → payment → WhatsApp order button
+                stays visible while items + address form scroll above) */}
             {cart.length > 0 && (
               <div className="px-5 py-4 border-t border-[#9C7A3F]/20 bg-[#FAF7F0] space-y-3 shrink-0">
                 
