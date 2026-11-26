@@ -251,8 +251,8 @@ const globalSchemaGraph = {
       paymentAccepted: "Cash, Credit Card",
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.5",
-        reviewCount: "1200",
+        ratingValue: "4.6",
+        reviewCount: "1725",
         bestRating: "5",
         worstRating: "1",
       },

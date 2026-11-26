@@ -304,7 +304,7 @@ export default function ReviewSection() {
             }`}
           >
             <span>{labels.filter5Star[lang] || labels.filter5Star.en}</span>
-            <span className="text-[10px] px-1.5 py-0.5 bg-black/10 rounded-full font-bold">4,720+</span>
+            <span className="text-[10px] px-1.5 py-0.5 bg-black/10 rounded-full font-bold">4,970+</span>
           </button>
 
           {/* 3. Google Maps Filter */}
@@ -318,7 +318,7 @@ export default function ReviewSection() {
           >
             <PlatformIcon id="google" size="sm" />
             <span>Google Maps</span>
-            <span className="text-[10px] opacity-80 font-semibold">{googlePlatform.reviewsCount || "1,450+"}</span>
+            <span className="text-[10px] opacity-80 font-semibold">{googlePlatform.reviewsCount || "1,700+"}</span>
           </button>
 
           {/* 4. Yemeksepeti Filter */}

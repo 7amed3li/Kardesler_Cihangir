@@ -30,7 +30,7 @@ export async function GET() {
     const googlePlaceId = process.env.GOOGLE_PLACE_ID || "ChIJMz3TWu23yhQRZJD_LzDM82g"; // Kardeşler Kebap Cihangir
 
     let liveGoogleRating = "4.6";
-    let liveGoogleCount = "1,450+";
+    let liveGoogleCount = "1,700+";
     let liveYemeksepetiRating = "4.5";
     let liveYemeksepetiCount = "2,450+";
     let liveYandexRating = "4.7";
@@ -120,7 +120,7 @@ export async function GET() {
       platforms: updatedPlatforms,
       reviews: initialReviews,
       aggregateRating: liveGoogleRating,
-      totalReviewsCount: "4,720+",
+      totalReviewsCount: "4,970+",
       source: "live_sync_12h",
       lastSynced: new Date().toISOString(),
     };
@@ -140,7 +140,7 @@ export async function GET() {
         platforms: initialPlatforms,
         reviews: initialReviews,
         aggregateRating: "4.6",
-        totalReviewsCount: "4,720+",
+        totalReviewsCount: "4,970+",
         source: "fallback",
         lastSynced: new Date().toISOString(),
         cached: true,
