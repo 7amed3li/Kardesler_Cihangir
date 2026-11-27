@@ -340,22 +340,22 @@ export default async function RootLayout({ children }) {
            Set NEXT_PUBLIC_GTM_ID in your .env.local or hosting env vars
            Example: NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
       ── */}
-      {/* ── GA4 gtag.js
-           Set NEXT_PUBLIC_GA4_ID in your .env.local or hosting env vars
-           Example: NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX
-      ── */}
-      {process.env.NEXT_PUBLIC_GA4_ID && (
-        <>
-          <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}`} />
-          <Script
-            id="ga4-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');`,
-            }}
-          />
-        </>
-      )}
+      {/* ── Google Ads & GA4 gtag.js ── */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID || "AW-17852480798"}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-17852480798');${
+            process.env.NEXT_PUBLIC_GA4_ID
+              ? `gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');`
+              : ""
+          }`,
+        }}
+      />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

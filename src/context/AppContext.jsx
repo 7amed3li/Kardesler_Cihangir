@@ -12,6 +12,7 @@ import {
   normalizePortion,
   portionUnitPrice,
 } from "../lib/portions";
+import { trackGoogleAdsCallConversion } from "../lib/trackingUtils";
 
 // Flat lookup for menuData items by id (used only for images/names, NOT prices)
 const allMenuItems = menuData.flatMap(cat => cat.items || []);
@@ -328,10 +329,24 @@ export function AppProvider({ children }) {
     return sum + price * item.qty;
   }, 0);
 
+  // Global Google Ads Call Click conversion listener for any tel: link across the site
+  useEffect(() => {
+    const handleTelClick = (e) => {
+      const anchor = e.target?.closest?.('a[href^="tel:"]');
+      if (anchor) {
+        trackGoogleAdsCallConversion();
+      }
+    };
+    document.addEventListener("click", handleTelClick, { capture: true });
+    return () => document.removeEventListener("click", handleTelClick, { capture: true });
+  }, []);
+
   // Initiate phone call instead of WhatsApp
   const submitOrder = useCallback(() => {
     if (cart.length === 0) return;
-    
+
+    trackGoogleAdsCallConversion();
+
     // Redirect user to phone dialer
     window.location.href = "tel:+902122513696";
     

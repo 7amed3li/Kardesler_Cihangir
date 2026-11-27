@@ -16,6 +16,32 @@ function getUTMParams() {
   }
 }
 
+const GOOGLE_ADS_CALL_SEND_TO = "AW-17852480798/nc8MCNXrpcAdEJ763MBC";
+let lastCallConversionAt = 0;
+
+/**
+ * Fire Google Ads Call Click conversion ("Call Click (website)")
+ * Debounced (500ms) to prevent duplicate firing across overlapping handlers.
+ */
+export function trackGoogleAdsCallConversion() {
+  if (typeof window === "undefined") return;
+
+  const now = Date.now();
+  if (now - lastCallConversionAt < 500) return;
+  lastCallConversionAt = now;
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "conversion", {
+      send_to: GOOGLE_ADS_CALL_SEND_TO,
+    });
+  } else if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push({
+      event: "google_ads_call_conversion",
+      send_to: GOOGLE_ADS_CALL_SEND_TO,
+    });
+  }
+}
+
 /**
  * Fire a tracking event to GTM dataLayer and gtag
  * @param {string} eventName - e.g. 'whatsapp_click', 'phone_click'
@@ -23,6 +49,10 @@ function getUTMParams() {
  */
 export function trackEvent(eventName, params = {}) {
   if (typeof window === "undefined") return;
+
+  if (eventName === "phone_click") {
+    trackGoogleAdsCallConversion();
+  }
 
   const utm = getUTMParams();
   const enrichedParams = {
