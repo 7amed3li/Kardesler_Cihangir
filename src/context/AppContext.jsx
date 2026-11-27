@@ -12,7 +12,11 @@ import {
   normalizePortion,
   portionUnitPrice,
 } from "../lib/portions";
-import { trackGoogleAdsCallConversion } from "../lib/trackingUtils";
+import {
+  trackGoogleAdsCallConversion,
+  trackGoogleAdsDirectionsConversion,
+  trackGoogleAdsWhatsAppConversion,
+} from "../lib/trackingUtils";
 
 // Flat lookup for menuData items by id (used only for images/names, NOT prices)
 const allMenuItems = menuData.flatMap(cat => cat.items || []);
@@ -329,16 +333,30 @@ export function AppProvider({ children }) {
     return sum + price * item.qty;
   }, 0);
 
-  // Global Google Ads Call Click conversion listener for any tel: link across the site
+  // Global Google Ads conversion listener for Call, WhatsApp, and Directions links across the site
   useEffect(() => {
-    const handleTelClick = (e) => {
-      const anchor = e.target?.closest?.('a[href^="tel:"]');
-      if (anchor) {
+    const handleActionLinkClick = (e) => {
+      const anchor = e.target?.closest?.("a[href]");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href") || "";
+
+      if (href.startsWith("tel:")) {
         trackGoogleAdsCallConversion();
+      } else if (
+        (href.includes("wa.me/") || href.includes("api.whatsapp.com/")) &&
+        !href.includes("905060453906") &&
+        !window.location.pathname.includes("tasarim-gelistirme")
+      ) {
+        trackGoogleAdsWhatsAppConversion();
+      } else if (
+        href.includes("google.com/maps") ||
+        href.includes("maps.app.goo.gl")
+      ) {
+        trackGoogleAdsDirectionsConversion();
       }
     };
-    document.addEventListener("click", handleTelClick, { capture: true });
-    return () => document.removeEventListener("click", handleTelClick, { capture: true });
+    document.addEventListener("click", handleActionLinkClick, { capture: true });
+    return () => document.removeEventListener("click", handleActionLinkClick, { capture: true });
   }, []);
 
   // Initiate phone call instead of WhatsApp

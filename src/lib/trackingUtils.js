@@ -16,30 +16,58 @@ function getUTMParams() {
   }
 }
 
-const GOOGLE_ADS_CALL_SEND_TO = "AW-17852480798/nc8MCNXrpcAdEJ763MBC";
-let lastCallConversionAt = 0;
+const GOOGLE_ADS_CONVERSIONS = {
+  call: {
+    sendTo: "AW-17852480798/nc8MCNXrpcAdEJ763MBC",
+    dlEvent: "google_ads_call_conversion",
+  },
+  whatsapp: {
+    sendTo: "AW-17852480798/DVkMCK2AosAdEJ763MBC",
+    dlEvent: "google_ads_whatsapp_conversion",
+  },
+  directions: {
+    sendTo: "AW-17852480798/Rey_CLCAosAdEJ763MBC",
+    dlEvent: "google_ads_directions_conversion",
+  },
+};
+
+const lastConversionAt = {};
 
 /**
- * Fire Google Ads Call Click conversion ("Call Click (website)")
- * Debounced (500ms) to prevent duplicate firing across overlapping handlers.
+ * Fire a Google Ads conversion event with 500ms per-action debounce
+ * to prevent duplicate firing across overlapping click handlers.
  */
-export function trackGoogleAdsCallConversion() {
+function fireGoogleAdsConversion(key) {
   if (typeof window === "undefined") return;
+  const target = GOOGLE_ADS_CONVERSIONS[key];
+  if (!target) return;
 
   const now = Date.now();
-  if (now - lastCallConversionAt < 500) return;
-  lastCallConversionAt = now;
+  if (now - (lastConversionAt[key] || 0) < 500) return;
+  lastConversionAt[key] = now;
 
   if (typeof window.gtag === "function") {
     window.gtag("event", "conversion", {
-      send_to: GOOGLE_ADS_CALL_SEND_TO,
+      send_to: target.sendTo,
     });
   } else if (Array.isArray(window.dataLayer)) {
     window.dataLayer.push({
-      event: "google_ads_call_conversion",
-      send_to: GOOGLE_ADS_CALL_SEND_TO,
+      event: target.dlEvent,
+      send_to: target.sendTo,
     });
   }
+}
+
+export function trackGoogleAdsCallConversion() {
+  fireGoogleAdsConversion("call");
+}
+
+export function trackGoogleAdsWhatsAppConversion() {
+  fireGoogleAdsConversion("whatsapp");
+}
+
+export function trackGoogleAdsDirectionsConversion() {
+  fireGoogleAdsConversion("directions");
 }
 
 /**
@@ -52,6 +80,10 @@ export function trackEvent(eventName, params = {}) {
 
   if (eventName === "phone_click") {
     trackGoogleAdsCallConversion();
+  } else if (eventName === "whatsapp_click") {
+    trackGoogleAdsWhatsAppConversion();
+  } else if (eventName === "directions_click" || eventName === "click_directions") {
+    trackGoogleAdsDirectionsConversion();
   }
 
   const utm = getUTMParams();
