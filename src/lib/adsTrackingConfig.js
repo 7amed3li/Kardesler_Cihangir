@@ -5,7 +5,7 @@
  *  Single source of truth for the Google Ads conversion actions
  *  used by kardeslercihangir.com (plan: FINAL-ADS-PLAN.md §8).
  *
- *  Account: Google Ads 135-039-4545 (₺, GMT+3).
+ *  Account: Google Ads 704-528-3992 (₺, GMT+3) — restaurant account (kardeslerkebappidesalonu@gmail.com).
  *
  *  HOW TO ACTIVATE (after the conversion actions are created in
  *  the Google Ads account — plan §12 launch gate, item 7):
@@ -26,14 +26,14 @@
  */
 export const ADS_TRACKING_CONFIG = {
   // TODO(ads-launch): real Google Ads tag id, e.g. "AW-1234567890"
-  googleAdsId: "AW-XXXXXXXXX",
+  googleAdsId: "AW-17852480798",
 
   conversions: {
     // PRIMARY for G3 order campaigns — click on any wa.me /
     // WhatsApp order link anywhere on the site.
     whatsappOrderClick: {
       // TODO(ads-launch): label of the "WhatsApp order click" action
-      label: "REPLACE_WITH_WHATSAPP_ORDER_LABEL",
+      label: "H0nPCNmFo8AdEJ763MBC",
       eventName: "whatsapp_click",
     },
     // SECONDARY for G2/G3 — click on any tel: phone link.
