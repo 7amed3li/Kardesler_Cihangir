@@ -265,8 +265,8 @@ export default function Footer() {
             </a>
             <div className="flex items-center gap-2.5 mb-2.5">
               <Phone size={15} className="text-[#4E5F4C] shrink-0" />
-              <a href="tel:+902122513696" className="text-[#2B2620] text-xs sm:text-sm font-semibold hover:text-[#9C7A3F] transition-colors">
-                +90 212 251 36 96
+              <a href="tel:+905439233696" className="text-[#2B2620] text-xs sm:text-sm font-semibold hover:text-[#9C7A3F] transition-colors">
+                +90 543 923 36 96
               </a>
             </div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -284,7 +284,7 @@ export default function Footer() {
             </div>
             {/* Phone Quick Link */}
             <a
-              href="tel:+902122513696"
+              href="tel:+905439233696"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-[#4E5F4C] text-white hover:bg-[#3D4B3B] transition-colors group"
             >
               <Phone size={16} className="text-white" />

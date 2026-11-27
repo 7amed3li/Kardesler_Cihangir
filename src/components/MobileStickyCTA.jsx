@@ -36,7 +36,7 @@ export default function MobileStickyCTA() {
   // never overlap or crowd each other.
   if (cartCount > 0) return null;
 
-  const phoneCallUrl = "tel:+902122513696";
+  const phoneCallUrl = "tel:+905439233696";
   const mapUrl = "https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g";
   const whatsappUrl = buildWhatsAppChatUrl(
     t.whatsappOrder?.greeting ||

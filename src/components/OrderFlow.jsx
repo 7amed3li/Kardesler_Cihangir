@@ -1496,7 +1496,7 @@ export default function OrderFlow() {
                     styles a homepage CTA) and must not leak in here. */}
                 <div className="flex items-center justify-between px-1 pt-1 pb-1">
                   <a
-                    href="tel:+902122513696"
+                    href="tel:+905439233696"
                     className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#4E5F4C] hover:underline"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >

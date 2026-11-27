@@ -108,7 +108,7 @@ export default function ContactPage() {
 
           {/* Phone */}
           <a
-            href="tel:+902122513696"
+            href="tel:+905439233696"
             className="bg-[#F7F2E7] border border-[#9C7A3F]/30 rounded-xl p-6 flex items-start gap-4 hover:border-[#9C7A3F] transition-colors shadow-sm group"
           >
             <div className="w-12 h-12 rounded-md bg-[#EDE3CE] text-[#4E5F4C] flex items-center justify-center shrink-0 border border-[#9C7A3F]/20">
@@ -117,7 +117,7 @@ export default function ContactPage() {
             <div>
               <h3 className="font-bold text-[#2B2620] text-sm mb-1">{c.phoneLabel}</h3>
               <p className="text-[#7A7364] text-sm font-medium" style={{ fontFamily: "var(--font-inter)" }}>
-                +90 212 251 36 96
+                +90 543 923 36 96
               </p>
             </div>
           </a>

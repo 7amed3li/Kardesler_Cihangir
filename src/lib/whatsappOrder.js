@@ -2,8 +2,8 @@
 //
 // The restaurant's WhatsApp number is the same number the site already
 // uses everywhere else (tel: links, reservation flow):
-// +90 212 251 36 96.
-export const RESTAURANT_WHATSAPP_NUMBER = "902122513696";
+// +90 543 923 36 96.
+export const RESTAURANT_WHATSAPP_NUMBER = "905439233696";
 
 const tryFormatter = new Intl.NumberFormat("tr-TR", {
   style: "currency",

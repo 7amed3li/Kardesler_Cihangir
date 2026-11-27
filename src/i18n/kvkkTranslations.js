@@ -23,7 +23,7 @@ export const kvkkContent = {
         heading: "1. Veri Sorumlusu",
         paragraphs: [
           "Bu Aydınlatma Metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun (“KVKK”) 10. maddesi uyarınca, veri sorumlusu sıfatıyla Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (“İşletme”) tarafından hazırlanmıştır.",
-          "Adres: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 212 251 36 96 · E-posta: kardeslerkebappidesalonu@gmail.com · Web sitesi: https://www.kardeslercihangir.com",
+          "Adres: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 543 923 36 96 · E-posta: kardeslerkebappidesalonu@gmail.com · Web sitesi: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -105,7 +105,7 @@ export const kvkkContent = {
         heading: "1. Data Controller",
         paragraphs: [
           "This Information Notice has been prepared by Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (the “Business”), as the data controller, pursuant to Article 10 of the Law on the Protection of Personal Data No. 6698 (“KVKK”).",
-          "Address: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Phone: +90 212 251 36 96 · E-mail: kardeslerkebappidesalonu@gmail.com · Website: https://www.kardeslercihangir.com",
+          "Address: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Phone: +90 543 923 36 96 · E-mail: kardeslerkebappidesalonu@gmail.com · Website: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -189,7 +189,7 @@ export const kvkkContent = {
         heading: "1. المسؤول عن البيانات",
         paragraphs: [
           "أُعدّ نص الإفصاح هذا من قبل Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (“المنشأة”)، بصفتها المسؤول عن البيانات، وفقاً للمادة 10 من قانون حماية البيانات الشخصية رقم 6698 (“KVKK”).",
-          "العنوان: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · الهاتف: +90 212 251 36 96 · البريد الإلكتروني: kardeslerkebappidesalonu@gmail.com · الموقع الإلكتروني: https://www.kardeslercihangir.com",
+          "العنوان: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · الهاتف: +90 543 923 36 96 · البريد الإلكتروني: kardeslerkebappidesalonu@gmail.com · الموقع الإلكتروني: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -273,7 +273,7 @@ export const kvkkContent = {
         heading: "1. Verantwortlicher",
         paragraphs: [
           "Dieser Aufklärungstext wurde von Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (das “Unternehmen”) als Verantwortlichem gemäß Art. 10 des Gesetzes Nr. 6698 zum Schutz personenbezogener Daten (“KVKK”) erstellt.",
-          "Adresse: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 212 251 36 96 · E-Mail: kardeslerkebappidesalonu@gmail.com · Website: https://www.kardeslercihangir.com",
+          "Adresse: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefon: +90 543 923 36 96 · E-Mail: kardeslerkebappidesalonu@gmail.com · Website: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -357,7 +357,7 @@ export const kvkkContent = {
         heading: "1. Responsable del tratamiento",
         paragraphs: [
           "Este texto informativo ha sido preparado por Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (la “Empresa”), en calidad de responsable del tratamiento, de conformidad con el artículo 10 de la Ley n.º 6698 de Protección de Datos Personales (“KVKK”).",
-          "Dirección: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Teléfono: +90 212 251 36 96 · Correo electrónico: kardeslerkebappidesalonu@gmail.com · Sitio web: https://www.kardeslercihangir.com",
+          "Dirección: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Teléfono: +90 543 923 36 96 · Correo electrónico: kardeslerkebappidesalonu@gmail.com · Sitio web: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -441,7 +441,7 @@ export const kvkkContent = {
         heading: "1. مسئول داده",
         paragraphs: [
           "این متن اطلاع‌رسانی توسط Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur («کسب‌وکار»)، به عنوان مسئول داده، طبق ماده ۱۰ قانون حفاظت از داده‌های شخصی شماره ۶۶۹۸ («KVKK») تهیه شده است.",
-          "نشانی: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · تلفن: +90 212 251 36 96 · ایمیل: kardeslerkebappidesalonu@gmail.com · وب‌سایت: https://www.kardeslercihangir.com",
+          "نشانی: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · تلفن: +90 543 923 36 96 · ایمیل: kardeslerkebappidesalonu@gmail.com · وب‌سایت: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -525,7 +525,7 @@ export const kvkkContent = {
         heading: "1. Responsable du traitement",
         paragraphs: [
           "La présente notice d'information a été préparée par Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (l'« Établissement »), en sa qualité de responsable du traitement, conformément à l'article 10 de la loi n° 6698 sur la protection des données personnelles (« KVKK »).",
-          "Adresse : Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Téléphone : +90 212 251 36 96 · E-mail : kardeslerkebappidesalonu@gmail.com · Site web : https://www.kardeslercihangir.com",
+          "Adresse : Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Téléphone : +90 543 923 36 96 · E-mail : kardeslerkebappidesalonu@gmail.com · Site web : https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -609,7 +609,7 @@ export const kvkkContent = {
         heading: "1. Titolare del trattamento",
         paragraphs: [
           "La presente informativa è stata predisposta da Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur (l'“Esercizio”), in qualità di titolare del trattamento, ai sensi dell'articolo 10 della Legge n. 6698 sulla protezione dei dati personali (“KVKK”).",
-          "Indirizzo: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefono: +90 212 251 36 96 · E-mail: kardeslerkebappidesalonu@gmail.com · Sito web: https://www.kardeslercihangir.com",
+          "Indirizzo: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Telefono: +90 543 923 36 96 · E-mail: kardeslerkebappidesalonu@gmail.com · Sito web: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -693,7 +693,7 @@ export const kvkkContent = {
         heading: "1. Оператор персональных данных",
         paragraphs: [
           "Настоящее информационное уведомление подготовлено Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur («Предприятие») в качестве оператора персональных данных в соответствии со статьёй 10 Закона № 6698 о защите персональных данных («KVKK»).",
-          "Адрес: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Телефон: +90 212 251 36 96 · Электронная почта: kardeslerkebappidesalonu@gmail.com · Веб-сайт: https://www.kardeslercihangir.com",
+          "Адрес: Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · Телефон: +90 543 923 36 96 · Электронная почта: kardeslerkebappidesalonu@gmail.com · Веб-сайт: https://www.kardeslercihangir.com",
         ],
       },
       {
@@ -777,7 +777,7 @@ export const kvkkContent = {
         heading: "1. 数据控制者",
         paragraphs: [
           "本信息告知文本由 Kardeşler Kebap & Breakfast Cihangir - Istanbul işletmesinin sahibi Emine Berrak Songur（以下简称“本企业”）作为数据控制者，依据第 6698 号《个人数据保护法》（“KVKK”）第 10 条编制。",
-          "地址：Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · 电话：+90 212 251 36 96 · 电子邮箱：kardeslerkebappidesalonu@gmail.com · 网站：https://www.kardeslercihangir.com",
+          "地址：Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul · 电话：+90 543 923 36 96 · 电子邮箱：kardeslerkebappidesalonu@gmail.com · 网站：https://www.kardeslercihangir.com",
         ],
       },
       {

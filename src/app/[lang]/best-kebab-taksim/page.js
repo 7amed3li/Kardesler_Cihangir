@@ -59,7 +59,7 @@ export default async function BestKebabTaksimPage({ params }) {
   const lang = resolvedParams?.lang || "tr";
   const t = kebabTranslations[lang] || kebabTranslations.tr;
   const isRTL = lang === "ar" || lang === "fa";
-  const phoneCallUrl = "tel:+902122513696";
+  const phoneCallUrl = "tel:+905439233696";
 
   return (
     <article className="min-h-screen bg-[#EDE3CE] text-[#2B2620] font-sans selection:bg-[#9C7A3F] selection:text-[#EDE3CE]" dir={isRTL ? "rtl" : "ltr"}>
@@ -211,7 +211,7 @@ export default async function BestKebabTaksimPage({ params }) {
                 {t.reservationsText}
               </p>
               <a href={phoneCallUrl} className="text-[#9C7A3F] font-bold text-xs uppercase tracking-[0.1em] hover:text-[#2B2620] transition-colors">
-                +90 212 251 36 96
+                +90 543 923 36 96
               </a>
             </div>
           </div>
