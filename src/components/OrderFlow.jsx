@@ -172,7 +172,7 @@ export default function OrderFlow() {
   // 2026-11-26: Beyoğlu ₺400, every other district ₺1,000. Compared
   // against the cart's live estimated total at order time.
   const DISTRICT_MINIMUMS = { "Beyoğlu": 400, "Şişli": 1000, "Beşiktaş": 1000, "Fatih": 1000 };
-  const EMPTY_ADDRESS = { name: "", district: "", neighborhood: "", details: "", note: "" };
+  const EMPTY_ADDRESS = { name: "", district: "", neighborhood: "", details: "", buildingNo: "", floor: "", apartment: "", note: "" };
   const [address, setAddressState] = useState(EMPTY_ADDRESS);
   // Expanded by default: the address form sits directly under the cart
   // items (before the order button in the sticky footer) and must be
@@ -250,6 +250,9 @@ export default function OrderFlow() {
           district: DELIVERY_DISTRICTS.includes(saved.district) ? saved.district : "",
           neighborhood: saved.neighborhood || "",
           details: saved.details || "",
+          buildingNo: saved.buildingNo || "",
+          floor: saved.floor || "",
+          apartment: saved.apartment || "",
           note: saved.note || "",
         });
       }
@@ -411,7 +414,18 @@ export default function OrderFlow() {
     details: !address.details.trim(),
   };
   const addressComplete = !Object.values(addressErrors).some(Boolean);
-  const fullAddress = [DELIVERY_CITY, address.district, address.neighborhood.trim(), address.details.trim()]
+  // Optional structured building details (Bina No / Kat / Daire):
+  // appended to the address as one segment when any of them is
+  // filled, with fixed Turkish labels — the WhatsApp order message
+  // is kitchen language, like the portion labels.
+  const buildingSegment = [
+    address.buildingNo.trim() ? `Bina No: ${address.buildingNo.trim()}` : "",
+    address.floor.trim() ? `Kat: ${address.floor.trim()}` : "",
+    address.apartment.trim() ? `Daire: ${address.apartment.trim()}` : "",
+  ]
+    .filter(Boolean)
+    .join(", ");
+  const fullAddress = [DELIVERY_CITY, address.district, address.neighborhood.trim(), address.details.trim(), buildingSegment]
     .filter(Boolean)
     .join(" / ");
 
@@ -969,24 +983,55 @@ export default function OrderFlow() {
                             <ChevronDown size={16} className="shrink-0 text-[#7A7364]" />
                           </button>
                         ) : (
-                          <input
-                            ref={neighborhoodInputRef}
-                            type="text"
-                            value={address.neighborhood}
-                            autoComplete="address-level3"
-                            autoCorrect="off"
-                            spellCheck={false}
-                            onChange={(e) => editAddress({ neighborhood: e.target.value })}
-                            placeholder={labels.neighborhoodPlaceholder || ""}
-                            className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
-                              orderAttempted && addressErrors.neighborhood
-                                ? "border-[#A0422E]/70"
-                                : filledFields.neighborhood
-                                  ? "border-[#4E5F4C]/60 ring-2 ring-[#4E5F4C]/30"
-                                  : "border-[#9C7A3F]/30"
-                            }`}
-                            style={{ fontFamily: "var(--font-inter)" }}
-                          />
+                          <div className="relative">
+                            <input
+                              ref={neighborhoodInputRef}
+                              type="text"
+                              value={address.neighborhood}
+                              autoComplete="address-level3"
+                              autoCorrect="off"
+                              spellCheck={false}
+                              onChange={(e) => editAddress({ neighborhood: e.target.value })}
+                              placeholder={labels.neighborhoodPlaceholder || ""}
+                              className={`w-full rounded-lg border bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F] ${
+                                address.district ? "pe-11" : ""
+                              } ${
+                                orderAttempted && addressErrors.neighborhood
+                                  ? "border-[#A0422E]/70"
+                                  : filledFields.neighborhood
+                                    ? "border-[#4E5F4C]/60 ring-2 ring-[#4E5F4C]/30"
+                                    : "border-[#9C7A3F]/30"
+                              }`}
+                              style={{ fontFamily: "var(--font-inter)" }}
+                            />
+                            {/* Way back to the list: "other" mode used
+                                to be a one-way trap — a saved free-text
+                                mahalle (not in the district's official
+                                list) rendered this plain input with no
+                                affordance to reopen the picker, so the
+                                selection looked missing entirely (owner
+                                report 2026-11-27, desktop). With a
+                                district chosen, the trailing button
+                                reopens the picker; picking a listed
+                                mahalle returns the field to picker
+                                mode, closing without picking keeps the
+                                typed text. */}
+                            {address.district && (
+                              <button
+                                type="button"
+                                aria-haspopup="dialog"
+                                aria-label={labels.chooseFromList || "Choose from list"}
+                                title={labels.chooseFromList || "Choose from list"}
+                                onClick={() => {
+                                  setMahalleQuery("");
+                                  setMahallePickerOpen(true);
+                                }}
+                                className="absolute end-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg flex items-center justify-center text-[#7A7364] hover:bg-[#9C7A3F]/15 hover:text-[#2B2620] active:scale-95 transition-all duration-200"
+                              >
+                                <ChevronDown size={16} />
+                              </button>
+                            )}
+                          </div>
                         )}
                         {orderAttempted && addressErrors.neighborhood && (
                           <p className="text-[11px] text-[#A0422E] mt-1" style={{ fontFamily: "var(--font-inter)" }}>
@@ -1024,6 +1069,36 @@ export default function OrderFlow() {
                             {labels.fieldRequired || "This field is required"}
                           </p>
                         )}
+                      </div>
+
+                      {/* Building / floor / apartment — optional
+                          structured details (owner request
+                          2026-11-27): one compact row, same input
+                          styling, persisted with the rest of the
+                          address. NOT part of the completeness
+                          gates — they only ride along into the
+                          WhatsApp message when filled. */}
+                      <div className="grid grid-cols-3 gap-2">
+                        {[
+                          { key: "buildingNo", text: labels.buildingNoLabel || "Bina No" },
+                          { key: "floor", text: labels.floorLabel || "Kat" },
+                          { key: "apartment", text: labels.apartmentLabel || "Daire" },
+                        ].map((f) => (
+                          <div key={f.key}>
+                            <label className="block text-[11px] font-bold text-[#7A7364] mb-1" style={{ fontFamily: "var(--font-inter)" }}>
+                              {f.text}
+                            </label>
+                            <input
+                              type="text"
+                              value={address[f.key]}
+                              autoCorrect="off"
+                              spellCheck={false}
+                              onChange={(e) => editAddress({ [f.key]: e.target.value })}
+                              className="w-full rounded-lg border border-[#9C7A3F]/30 bg-[#FAF7F0] px-3 py-2.5 text-sm text-[#2B2620] outline-none focus:border-[#9C7A3F]"
+                              style={{ fontFamily: "var(--font-inter)" }}
+                            />
+                          </div>
+                        ))}
                       </div>
 
                       {/* Note — optional */}
@@ -1126,6 +1201,11 @@ export default function OrderFlow() {
                           aria-pressed={selected}
                           onClick={() => {
                             editAddress({ neighborhood: m });
+                            // A listed mahalle was picked, so the
+                            // field returns to picker-button mode
+                            // even when the picker was opened from
+                            // the free-text ("other") field.
+                            setMahalleOther(false);
                             setMahallePickerOpen(false);
                           }}
                           className={`w-full flex items-center gap-2 rounded-lg px-3 py-2.5 text-start text-sm transition-colors ${
