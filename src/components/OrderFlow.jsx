@@ -1283,7 +1283,7 @@ export default function OrderFlow() {
                   aria-label={labels.paymentMethod || "Payment Method"}
                   className="flex flex-wrap items-center gap-x-[10px] gap-y-1"
                 >
-                  <span className="shrink-0 text-[#7A7364] text-xs leading-4 font-medium" style={{ fontFamily: "var(--font-inter)" }}>
+                  <span className="shrink-0 text-[#2B2620] text-[13px] leading-4 font-bold" style={{ fontFamily: "var(--font-inter)" }}>
                     {labels.paymentMethod || "Payment Method"}
                   </span>
                   {[
