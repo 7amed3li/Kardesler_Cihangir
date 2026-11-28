@@ -37,7 +37,7 @@ export default function MobileStickyCTA() {
   if (cartCount > 0) return null;
 
   const phoneCallUrl = "tel:+902122513696";
-  const mapUrl = "https://www.google.com/maps/dir/?api=1&destination=41.0315,28.9835&destination_place_id=ChIJMz3TWu23yhQRZJD_LzDM82g";
+  const mapUrl = "https://www.google.com/maps/dir/?api=1&destination=Karde%C5%9Fler+Kebap%2C+Firuza%C4%9Fa+Camii+Sok.+No%3A1A%2C+Beyo%C4%9Flu%2C+%C4%B0stanbul&destination_place_id=ChIJMz3TWu23yhQRZJD_LzDM82g";
   const whatsappUrl = buildWhatsAppChatUrl(
     t.whatsappOrder?.greeting ||
       (lang === "ar" ? "مرحبًا، أودّ تقديم طلب." : lang === "tr" ? "Merhaba, sipariş vermek istiyorum." : "Hello, I would like to place an order.")

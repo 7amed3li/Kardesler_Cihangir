@@ -15,7 +15,7 @@ export default function RestaurantMap({
   const [iframeFailed, setIframeFailed] = useState(false);
   const mapRef = useRef(null);
 
-  const googleMapsUrl = "https://www.google.com/maps/dir/?api=1&destination=41.0315,28.9835&destination_place_id=ChIJMz3TWu23yhQRZJD_LzDM82g";
+  const googleMapsUrl = "https://www.google.com/maps/dir/?api=1&destination=Karde%C5%9Fler+Kebap%2C+Firuza%C4%9Fa+Camii+Sok.+No%3A1A%2C+Beyo%C4%9Flu%2C+%C4%B0stanbul&destination_place_id=ChIJMz3TWu23yhQRZJD_LzDM82g";
   
   // Use the Google Maps embed endpoint — more reliable on mobile browsers
   const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1505.5!2d28.9835!3d41.0315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7eb5ad33d33%3A0x68f3cc302fff9064!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1";
@@ -24,7 +24,7 @@ export default function RestaurantMap({
   const mapEmbedFallback = "https://www.google.com/maps/embed/v1/place?key=&q=Kardeşler+Kebap,Cihangir,Istanbul";
 
   // Use the simpler, most compatible format as primary
-  const primaryEmbedUrl = "https://maps.google.com/maps?q=41.0315,28.9835&z=16&output=embed";
+  const primaryEmbedUrl = "https://maps.google.com/maps?q=Karde%C5%9Fler+Kebap,+Firuza%C4%9Fa+Camii+Sok.+No:1A,+Cihangir,+Beyo%C4%9Flu,+%C4%B0stanbul&z=17&output=embed";
 
   useEffect(() => {
     // More aggressive observer for mobile — lower threshold and margin
