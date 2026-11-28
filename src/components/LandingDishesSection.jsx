@@ -637,7 +637,7 @@ export default function LandingDishesSection({ currentLocale = "ar" }) {
     return getLivePrice(menuItem);
   };
 
-  const phoneOrderLink = "tel:+905439233696";
+  const phoneOrderLink = "tel:+902122513696";
 
   return (
     <section className="py-14 sm:py-20 bg-[#EDE3CE] border-y border-[#9C7A3F]/20 px-4 sm:px-6 lg:px-8">

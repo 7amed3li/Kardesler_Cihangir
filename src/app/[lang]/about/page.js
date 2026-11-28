@@ -184,7 +184,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="font-bold text-[#2B2620] text-sm mb-1">{content.orderLine}</h3>
-                <a href="tel:+905439233696" className="text-[#7A7364] text-sm font-medium hover:text-[#2B2620] transition-colors">+90 543 923 36 96</a>
+                <a href="tel:+902122513696" className="text-[#7A7364] text-sm font-medium hover:text-[#2B2620] transition-colors">+90 212 251 36 96</a>
               </div>
             </div>
 

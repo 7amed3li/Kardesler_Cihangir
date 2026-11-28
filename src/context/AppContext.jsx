@@ -366,7 +366,7 @@ export function AppProvider({ children }) {
     trackGoogleAdsCallConversion();
 
     // Redirect user to phone dialer
-    window.location.href = "tel:+905439233696";
+    window.location.href = "tel:+902122513696";
     
     setOrderStatus("sent");
 

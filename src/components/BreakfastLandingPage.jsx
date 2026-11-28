@@ -210,11 +210,11 @@ export default function BreakfastLandingPage({ locale = "en" }) {
               {t.walkInsWelcome}
             </p>
             <a 
-              href="tel:+905439233696"
+              href="tel:+902122513696"
               className="inline-flex items-center gap-2 px-6 py-3 border border-[#2B2620]/30 hover:bg-[#2B2620]/5 text-[#2B2620] font-bold text-[10px] tracking-[0.2em] uppercase transition-colors mt-2"
             >
               <Phone size={14} />
-              <span>+90 543 923 36 96</span>
+              <span>+90 212 251 36 96</span>
             </a>
           </div>
         </div>

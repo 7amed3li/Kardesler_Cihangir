@@ -8,7 +8,7 @@ import { X, Calendar, Clock, Users, User, MessageCircle, Phone, CheckCircle } fr
 // Restaurant WhatsApp number — the same wa.me number used across the site
 // (about pages, chat widget, AI system prompt).
 const WHATSAPP_NUMBER = "905439233696";
-const PHONE_DISPLAY = "+90 543 923 36 96";
+const PHONE_DISPLAY = "+90 212 251 36 96";
 
 // Reservation slots inside opening hours (09:00 – 02:00), every 30 minutes.
 function buildAllSlots() {
@@ -701,7 +701,7 @@ export default function ReservationModal({ isOpen, onClose }) {
                 <CheckCircle size={13} className="text-[#4E5F4C]" />
                 {t.instantConfirmation}
                 <span aria-hidden="true">•</span>
-                <a href="tel:+905439233696" dir="ltr" className="font-semibold text-[#2B2620] hover:text-[#9C7A3F] transition-colors [unicode-bidi:isolate] whitespace-nowrap">
+                <a href="tel:+902122513696" dir="ltr" className="font-semibold text-[#2B2620] hover:text-[#9C7A3F] transition-colors [unicode-bidi:isolate] whitespace-nowrap">
                   {t.orCall}: {PHONE_DISPLAY}
                 </a>
               </p>

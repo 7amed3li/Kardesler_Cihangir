@@ -148,7 +148,7 @@ const globalSchemaGraph = {
       alternateName: ["Kardeşler Cihangir", "Kardesler Cihangir", "Kardeşler Kebap", "Kardesler Kebap", "Kardeşler Pide", "Kardeşler Kebap Cihangir", "كاردشلر جيهانغير", "كاردشلر كباب"],
       description: "Authentic Turkish kebab, pide & lahmacun restaurant in Cihangir, 5 minutes from Taksim Square. Serving traditional wood-fired cuisine for 28 years since 1998.",
       url: siteUrl,
-      telephone: "+905439233696",
+      telephone: "+902122513696",
       logo: {
         "@type": "ImageObject",
         "@id": `${siteUrl}/#logo`,

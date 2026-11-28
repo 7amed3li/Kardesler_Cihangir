@@ -26,8 +26,8 @@ export const BREAKFAST_HOURS = {
 // ─── Restaurant Contact & Location (single source) ───
 export const RESTAURANT_INFO = {
   name: "Kardeşler Kebap & Breakfast Cihangir - Istanbul",
-  phone: "+905439233696",
-  phoneDisplay: "+90 543 923 36 96",
+  phone: "+902122513696",
+  phoneDisplay: "+90 212 251 36 96",
   address: {
     street: "Defterdar Yokuşu No:1/A, Firuzağa Mah.",
     locality: "Cihangir, Beyoğlu",

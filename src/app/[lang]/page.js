@@ -320,7 +320,7 @@ export default function Home() {
               <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
             </Link>
             <a
-              href="tel:+905439233696"
+              href="tel:+902122513696"
               className="w-full sm:w-auto min-h-[56px] px-10 bg-transparent hover:bg-[#F7F2E7] text-[#4E5F4C] border border-[#4E5F4C] font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full transition-all duration-300 inline-flex items-center justify-center gap-3"
             >
               <span>{t.callToOrder || "TELEFONLA SİPARİŞ"}</span>
@@ -622,12 +622,12 @@ export default function Home() {
                 </div>
               </a>
               
-              <a href="tel:+905439233696" className="flex items-center gap-4 group">
+              <a href="tel:+902122513696" className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-[#EDE3CE] flex items-center justify-center shrink-0 group-hover:bg-[#4E5F4C] group-hover:text-[#EDE3CE] transition-colors">
                   <Phone size={20} />
                 </div>
                 <p className="text-[#2B2620] text-sm sm:text-base font-semibold group-hover:text-[#9C7A3F] transition-colors">
-                  +90 543 923 36 96
+                  +90 212 251 36 96
                 </p>
               </a>
 
