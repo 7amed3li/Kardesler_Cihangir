@@ -257,7 +257,7 @@ export default function Footer() {
                 )}
               </span>
             </h3>
-            <a href="https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 mb-3 text-start group">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=41.0315,28.9835&destination_place_id=ChIJMz3TWu23yhQRZJD_LzDM82g" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 mb-3 text-start group">
               <MapPin size={15} className="text-[#4E5F4C] mt-0.5 shrink-0" />
               <p className="text-[#2B2620] text-xs sm:text-sm font-medium leading-relaxed max-w-xs" style={{ fontFamily: "var(--font-inter)" }}>
                 Firuzağa Mah. Firuzağa Camii Sok.<br /> No:1A, Cihangir, Beyoğlu, İstanbul

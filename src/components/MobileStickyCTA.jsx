@@ -37,7 +37,7 @@ export default function MobileStickyCTA() {
   if (cartCount > 0) return null;
 
   const phoneCallUrl = "tel:+905439233696";
-  const mapUrl = "https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g";
+  const mapUrl = "https://www.google.com/maps/dir/?api=1&destination=41.0315,28.9835&destination_place_id=ChIJMz3TWu23yhQRZJD_LzDM82g";
   const whatsappUrl = buildWhatsAppChatUrl(
     t.whatsappOrder?.greeting ||
       (lang === "ar" ? "مرحبًا، أودّ تقديم طلب." : lang === "tr" ? "Merhaba, sipariş vermek istiyorum." : "Hello, I would like to place an order.")
@@ -109,10 +109,10 @@ export default function MobileStickyCTA() {
               });
             }
           }}
-          className="flex-1 min-w-0 flex items-center justify-center gap-1.5 bg-transparent border-2 border-[#9C7A3F]/50 text-[#2B2620] py-3 px-2 rounded-xl font-bold text-[13px] whitespace-nowrap shadow-sm active:scale-95 transition-transform"
+          className="flex-1 min-w-0 flex items-center justify-center gap-1 bg-transparent border-2 border-[#9C7A3F]/50 text-[#2B2620] py-3 px-2 rounded-xl font-bold text-[12px] whitespace-nowrap shadow-sm active:scale-95 transition-transform"
         >
-          <MapPin size={18} className="text-[#9C7A3F]" />
-          <span>{t.directions || (lang === "ar" ? "الاتجاهات" : lang === "tr" ? "Yol Tarifi" : "Directions")}</span>
+          <MapPin size={16} className="text-[#9C7A3F] shrink-0" />
+          <span className="truncate">{t.directions || (lang === "ar" ? "الاتجاهات" : lang === "tr" ? "Yol Tarifi" : "Directions")}</span>
         </a>
       </div>
     </div>

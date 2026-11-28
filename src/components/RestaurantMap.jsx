@@ -15,7 +15,7 @@ export default function RestaurantMap({
   const [iframeFailed, setIframeFailed] = useState(false);
   const mapRef = useRef(null);
 
-  const googleMapsUrl = "https://www.google.com/maps/place/?q=place_id:ChIJMz3TWu23yhQRZJD_LzDM82g";
+  const googleMapsUrl = "https://www.google.com/maps/dir/?api=1&destination=41.0315,28.9835&destination_place_id=ChIJMz3TWu23yhQRZJD_LzDM82g";
   
   // Use the Google Maps embed endpoint — more reliable on mobile browsers
   const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1505.5!2d28.9835!3d41.0315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7eb5ad33d33%3A0x68f3cc302fff9064!2sKarde%C5%9Fler%20Kebap!5e0!3m2!1str!2str!4v1";
